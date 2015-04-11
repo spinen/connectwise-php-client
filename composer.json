@@ -1,0 +1,34 @@
+{
+    "name": "spinen/connectwise-php-client",
+    "description": "PHP Client for ConnectWise using spinen/connectwise-php-library.",
+    "keywords": [
+        "connectwise",
+        "client",
+        "spinen"
+    ],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Jimmy Puckett",
+            "email": "jimmy.puckett@spinen.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "league/container": "1.*@dev",
+        "php": ">=5.4.0",
+        "spinen/connectwise-php-library": "2.*"
+    },
+    "require-dev": {
+        "psy/psysh": "0.4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spinen\\ConnectWise\\Client": ""
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}
