@@ -23,4 +23,4 @@ To use the client, you new it up with the following array...
 
 All of the methods are added via the Signature Trait with the pattern of camelCase of the API name with the StudlyCase of the method name (i.e. memberApiFindMembers to get the FindMembers method on the MemberApi).
 
-You can pass the parameters as an associative array to the call (i.e. `$client-&gt;memberApiFindMembers(['limit' =&gt; 5]);` to limit the return data to only 5 members);
+You can pass the parameters as an associative array to the call (i.e. `$client->memberApiFindMembers(['limit' =>; 5]);` to limit the return data to only 5 members);
