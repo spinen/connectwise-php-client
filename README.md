@@ -11,16 +11,16 @@ To use the client, you new it up with the following array...
 ```php
         $config = [
             "connectwise" => [
-                "host"     => "&lt;host.to.your.connectwise&gt;",
-                "company"  => "&lt;company&gt;",
-                "username" => "&lt;user&gt;",
-                "password" => "&lt;password&gt;"
+                "host"     => "<host.to.your.connectwise>",
+                "company"  => "<company>",
+                "username" => "<user>",
+                "password" => "<passwor>;"
             ],
         ];
         
-        $client = new  Spinen\ConnectWise\Client\Client($config);
+        $client = new Spinen\ConnectWise\Client\Client($config);
 ```
 
 All of the methods are added via the Signature Trait with the pattern of camelCase of the API name with the StudlyCase of the method name (i.e. memberApiFindMembers to get the FindMembers method on the MemberApi).
 
-You can pass the parameters as an associative array to the call (i.e. $client-&gt;memberApiFindMembers(['limit' =&gt; 5] to limit the return data to only 5 members);
+You can pass the parameters as an associative array to the call (i.e. `$client-&gt;memberApiFindMembers(['limit' =&gt; 5]);` to limit the return data to only 5 members);
