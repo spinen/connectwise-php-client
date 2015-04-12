@@ -5,13 +5,14 @@ namespace Spinen\ConnectWise\Client;
 use Spinen\ConnectWise\Library\Api\ApiCredentials;
 use Spinen\ConnectWise\Library\Api\Signature;
 use Spinen\ConnectWise\Library\Container;
+use Spinen\ConnectWise\Library\Contracts\Container as ContainerInterface;
 
 /**
  * Class Client
  *
  * @package Spinen\ConnectWise\Client
  */
-class Client extends Container
+class Client extends Container implements ContainerInterface
 {
 
     // Pull in the methods from the generator
