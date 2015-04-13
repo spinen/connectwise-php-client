@@ -37,11 +37,13 @@ class ServiceProvider extends LaravelServiceProvider
      */
     public function register()
     {
-        $configs = ['connectwise' => $this->app['config']['services']['connectwise']];
+        $configs = ['connectwise' => $this->app->make('config')['services']['connectwise']];
 
-        $this->app->bind('connectwise', function () use ($configs) {
+        $this->app->singleton('connectwise', function () use ($configs) {
+            // @codeCoverageIgnoreStart
             return new Client($configs);
-        }, true);
+            // @codeCoverageIgnoreEnd
+        });
     }
 
 }
