@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Client\Processors;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Library\Contracts\Processor;
 
 /**
@@ -38,6 +39,25 @@ class ConvertResponse implements Processor
     }
 
     /**
+     * Get the value of the property from the response and convert any DateTime's to Carbon
+     *
+     * @param mixed  $response
+     * @param string $getter
+     *
+     * @return mixed
+     */
+    private function getPropertyValue($response, $getter)
+    {
+        $value = $response->{$getter}();
+
+        if (is_a($value, 'DateTime')) {
+            return Carbon::instance($value);
+        }
+
+        return $value;
+    }
+
+    /**
      * Checks to see if we have a single Result object
      *
      * @param array $getters
@@ -69,7 +89,7 @@ class ConvertResponse implements Processor
         $unwrapped = [];
 
         foreach ($getters as $getter) {
-            $unwrapped[$this->buildPropertyName($getter)] = $response->{$getter}();
+            $unwrapped[$this->buildPropertyName($getter)] = $this->getPropertyValue($response, $getter);
         }
 
         return $unwrapped;
