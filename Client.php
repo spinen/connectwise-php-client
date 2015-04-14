@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Client;
 
+use Spinen\ConnectWise\Client\Processors\ConvertResponse;
 use Spinen\ConnectWise\Library\Api\ApiCredentials;
 use Spinen\ConnectWise\Library\Api\Signature;
 use Spinen\ConnectWise\Library\Container;
@@ -41,15 +42,39 @@ class Client extends Container implements ContainerInterface, SignatureInterface
     ];
 
     /**
-     * @param array $options
+     * @var ConvertResponse
      */
-    public function __construct(array $options = [])
+    private $converter;
+
+    /**
+     * @param array                $options
+     * @param ConvertResponse|null $converter
+     */
+    public function __construct(array $options = [], ConvertResponse $converter = null)
     {
         parent::__construct($options);
 
         $this->registerApiCredentials();
 
         $this->registerApiBindings();
+
+        $this->converter = $this->checkConverter($converter);
+    }
+
+    /**
+     * Allow the client to be created without the converter, and make it if null
+     *
+     * @param ConvertResponse|null $converter
+     *
+     * @return ConvertResponse
+     */
+    private function checkConverter(ConvertResponse $converter = null)
+    {
+        if (!is_null($converter)) {
+            return $converter;
+        }
+
+        return $this->get('Spinen\\ConnectWise\\Client\\Processors\\ConvertResponse');
     }
 
     /**
@@ -59,7 +84,7 @@ class Client extends Container implements ContainerInterface, SignatureInterface
      * @param string $method
      * @param array  $arguments
      *
-     * @return mixed
+     * @return \Spinen\ConnectWise\Library\Support\Collection
      */
     public function execute($api, $method, array $arguments = [])
     {
@@ -74,8 +99,10 @@ class Client extends Container implements ContainerInterface, SignatureInterface
             }
         }
 
-        return $this->get($this->getApiNamespace($api))
-                    ->{$method}($parameters);
+        $response = $this->get($this->getApiNamespace($api))
+                         ->{$method}($parameters);
+
+        return $this->get('Spinen\\ConnectWise\\Library\\Support\\Collection', [$this->converter->process($response)]);
     }
 
     /**
