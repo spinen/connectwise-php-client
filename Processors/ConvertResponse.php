@@ -76,10 +76,17 @@ class ConvertResponse implements Processor
      */
     public function process($response)
     {
+        // Multiple items to process?
         if (is_array($response)) {
             return array_map([$this, "process"], $response);
         }
 
+        // Single value, so nothing more to do
+        if (!is_object($response)) {
+            return $response;
+        }
+
+        // Look up property getters
         $getters = (array)$this->getters->process($response);
 
         if ($this->isSingleResult($getters)) {
@@ -88,6 +95,7 @@ class ConvertResponse implements Processor
 
         $unwrapped = [];
 
+        // Build values associative array to return
         foreach ($getters as $getter) {
             $unwrapped[$this->buildPropertyName($getter)] = $this->getPropertyValue($response, $getter);
         }

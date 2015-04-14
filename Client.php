@@ -99,10 +99,19 @@ class Client extends Container implements ContainerInterface, SignatureInterface
             }
         }
 
+        // Get the response from the WSDL
         $response = $this->get($this->getApiNamespace($api))
                          ->{$method}($parameters);
 
-        return $this->get('Spinen\\ConnectWise\\Library\\Support\\Collection', [$this->converter->process($response)]);
+        // Unwrap all of the nested values that the WSDL returns
+        $response = $this->converter->process($response);
+
+        // If we have an array, then make collection
+        if (is_array($response)) {
+            return $this->get('Spinen\\ConnectWise\\Library\\Support\\Collection', [$response]);
+        }
+
+        return $response;
     }
 
     /**
