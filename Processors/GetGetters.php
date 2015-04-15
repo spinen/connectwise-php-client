@@ -21,16 +21,17 @@ class GetGetters implements Processor
 
     public function process($object)
     {
-        $methods = $this->reflector->reflect($object)->getMethods(ReflectionMethod::IS_PUBLIC);
+        $methods = $this->reflector->reflect($object)
+                                   ->getMethods(ReflectionMethod::IS_PUBLIC);
 
         // Get the actual name of the method
-        $methods = array_map(function($reflection) {
+        $methods = array_map(function ($reflection) {
             return $reflection->getName();
         }, $methods);
 
         // Filter out all but the getters
-        $methods = array_filter($methods, function($method) {
-            return preg_match("/get[A-Z]/u", $method);
+        $methods = array_filter($methods, function ($method) {
+            return preg_match("/^get[A-Z]/u", $method);
         });
 
         // Make sure to reindex the results after the filters
