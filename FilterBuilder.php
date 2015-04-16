@@ -7,6 +7,7 @@ namespace Spinen\ConnectWise\Client;
  *
  * @package Spinen\ConnectWise\Client
  */
+use Carbon\Carbon;
 use DateTime;
 use InvalidArgumentException;
 use RuntimeException;
@@ -154,8 +155,10 @@ class FilterBuilder
     private function padValue($value)
     {
         if ($value instanceof DateTime) {
+            // Make the value a Carbon if not already so, as DateTime does not return correct ISO8601 date
+            $value = (($value instanceof Carbon) ? $value : Carbon::instance($value));
             // ISO 8601
-            return '[' . $value->format('c') . ']';
+            return '[' . $value->toIso8601String() . ']';
         }
 
         return '\'' . $value . '\'';
