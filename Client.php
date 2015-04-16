@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Client;
 
+use InvalidArgumentException;
 use Spinen\ConnectWise\Client\Processors\ConvertResponse;
 use Spinen\ConnectWise\Library\Api\ApiCredentials;
 use Spinen\ConnectWise\Library\Api\Signature;
@@ -20,12 +21,32 @@ class Client extends Container implements ContainerInterface, SignatureInterface
     // Pull in the methods from the generator
     use Signature;
 
+
+    /**
+     * This api that is going to be called
+     *
+     * @var string
+     */
+    protected $api = null;
+
     /**
      * Base namespace path to the api
      *
      * @var string
      */
     protected $api_namespace = 'Spinen\\ConnectWise\\Library\\Api\\Generated';
+
+    /**
+     * @var ConvertResponse
+     */
+    protected $converter;
+
+    /**
+     * The method on the api that is getting called
+     *
+     * @var
+     */
+    protected $method = null;
 
     /**
      * Required properties when initializing
@@ -40,11 +61,6 @@ class Client extends Container implements ContainerInterface, SignatureInterface
             'password' => 'required',
         ],
     ];
-
-    /**
-     * @var ConvertResponse
-     */
-    private $converter;
 
     /**
      * @param array                $options
@@ -80,15 +96,13 @@ class Client extends Container implements ContainerInterface, SignatureInterface
     /**
      * Resolve the item from the IoC & execute the method on it
      *
-     * @param string $api
-     * @param string $method
-     * @param array  $arguments
+     * @param array $arguments
      *
      * @return \Spinen\ConnectWise\Library\Support\Collection
      */
-    public function execute($api, $method, array $arguments = [])
+    public function execute(array $arguments = [])
     {
-        $parameters = $this->get($this->getApiNamespace($method));
+        $parameters = $this->get($this->getApiNamespace($this->method));
 
         // Run through all of the keys in the argument, and call a setter on them if it exists
         foreach ($arguments as $argument => $value) {
@@ -100,8 +114,8 @@ class Client extends Container implements ContainerInterface, SignatureInterface
         }
 
         // Get the response from the WSDL
-        $response = $this->get($this->getApiNamespace($api))
-                         ->{$method}($parameters);
+        $response = $this->get($this->getApiNamespace($this->api))
+                         ->{$this->method}($parameters);
 
         // Unwrap all of the nested values that the WSDL returns
         $response = $this->converter->process($response);
@@ -136,6 +150,23 @@ class Client extends Container implements ContainerInterface, SignatureInterface
     public static function getClient()
     {
         return static::getInstance();
+    }
+
+    /**
+     * Make a filter builder
+     *
+     * @param array $filter
+     *
+     * @return FilterBuilder
+     * @throws InvalidArgumentException
+     */
+    public function makeFilterBuilder(array $filter = [])
+    {
+        if ((is_null($this->api)) || (is_null($this->method))) {
+            throw new InvalidArgumentException("api and method must be set before making a FilterBuilder");
+        }
+
+        return $this->get('Spinen\\ConnectWise\\Client\\FilterBuilder', [$this, $filter]);
     }
 
     /**
@@ -179,6 +210,20 @@ class Client extends Container implements ContainerInterface, SignatureInterface
     }
 
     /**
+     * Set the Api
+     *
+     * @param string $api
+     *
+     * @return $this
+     */
+    public function setApi($api)
+    {
+        $this->api = $api;
+
+        return $this;
+    }
+
+    /**
      * Allow the namespace to be overwritten
      *
      * @param $api_namespace
@@ -189,7 +234,20 @@ class Client extends Container implements ContainerInterface, SignatureInterface
     {
         $this->api_namespace = $api_namespace;
 
-        // Allow chaining
+        return $this;
+    }
+
+    /**
+     * Set the method
+     *
+     * @param string $method
+     *
+     * @return $this
+     */
+    public function setMethod($method)
+    {
+        $this->method = $method;
+
         return $this;
     }
 
