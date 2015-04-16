@@ -71,7 +71,9 @@ class FilterBuilder
         $this->client = $client;
 
         // Set any passed in filters
-        array_map([$this, 'set'], $filters);
+        foreach ($filters as $property => $value) {
+            $this->set($property, $value);
+        }
     }
 
     /**
@@ -157,6 +159,7 @@ class FilterBuilder
         if ($value instanceof DateTime) {
             // Make the value a Carbon if not already so, as DateTime does not return correct ISO8601 date
             $value = (($value instanceof Carbon) ? $value : Carbon::instance($value));
+
             // ISO 8601
             return '[' . $value->toIso8601String() . ']';
         }
