@@ -135,6 +135,16 @@ class FilterBuilder
     }
 
     /**
+     * Return the filter
+     *
+     * @return array
+     */
+    public function getFilter()
+    {
+        return $this->filter;
+    }
+
+    /**
      * Pads the value with the proper delimiters based on type
      *
      * @param mixes $value
