@@ -63,12 +63,14 @@ class FilterBuilder
 
     /**
      * @param Client $client
-     * @param array  $filter
+     * @param array  $filters
      */
-    public function __construct(Client $client, array $filter = [])
+    public function __construct(Client $client, array $filters = [])
     {
         $this->client = $client;
-        $this->filter = $filter;
+
+        // Set any passed in filters
+        array_map([$this, 'set'], $filters);
     }
 
     /**
