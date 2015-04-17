@@ -50,6 +50,10 @@ class FilterBuilder
      */
     function __call($method, $arguments)
     {
+        if ($this->isCoreMethod($method)) {
+            return $this->runCoreMethod($method, $arguments);
+        }
+
         $parts = [];
 
         if ($this->isWhereRawMethod($method, $arguments, $parts)) {
@@ -111,6 +115,18 @@ class FilterBuilder
     public function getFilter()
     {
         return $this->filter;
+    }
+
+    /**
+     * Check to see if the magic method call is for a core method
+     *
+     * @param string $method
+     *
+     * @return bool
+     */
+    private function isCoreMethod($method)
+    {
+        return in_array($method, ['set', 'orderBy', 'where', 'whereRaw']);
     }
 
     /**
@@ -179,6 +195,21 @@ class FilterBuilder
     private function isWhereWithPropertyMethod($method, array &$parts)
     {
         return (preg_match("/^(?:(?:(and|or)?W)|w)here(.+)$/u", $method, $parts));
+    }
+
+    /**
+     * Calls core method on filter
+     * 
+     * @param string $method
+     * @param array $arguments
+     *
+     * @return $this
+     */
+    private function runCoreMethod($method, array $arguments)
+    {
+        $this->filter = call_user_func_array([$this->filter, $method], $arguments);
+
+        return $this;
     }
 
     /**
@@ -333,8 +364,7 @@ class FilterBuilder
                 // Remove description off of the end of the property
                 $property = str_replace($description, '', $property);
 
-                $this->filter = $this->filter->where($property, $value, $operator,
-                    $logical);
+                $this->filter = $this->filter->where($property, $value, $operator, $logical);
 
                 return $this;
             }
