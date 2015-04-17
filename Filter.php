@@ -2,7 +2,9 @@
 
 namespace Spinen\ConnectWise\Client;
 
+use ArrayAccess;
 use Carbon\Carbon;
+use Countable;
 use DateTime;
 use InvalidArgumentException;
 
@@ -11,13 +13,13 @@ use InvalidArgumentException;
  *
  * @package Spinen\ConnectWise\Client
  */
-class Filter
+class Filter implements ArrayAccess, Countable
 {
 
     /**
      * @var array
      */
-    protected $filter = [];
+    protected $filters = [];
 
     /**
      * The operators that is supported in conditions
@@ -36,6 +38,26 @@ class Filter
         'contains' => 'Contains',
         'like'     => 'Like',
     ];
+
+    /**
+     * Return the number of filters
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return count($this->filters);
+    }
+
+    /**
+     * Delete a filter
+     *
+     * @param string $filter
+     */
+    public function delete($filter)
+    {
+        unset($this->filters[$filter]);
+    }
 
     /**
      * Encloses the value with the proper delimiters based on type
@@ -66,13 +88,23 @@ class Filter
     }
 
     /**
-     * Return the filter
+     * Return the filter or value of optional passed property
+     *
+     * @param string|null $filter
      *
      * @return array
      */
-    public function getFilter()
+    public function getFilter($filter = null)
     {
-        return $this->filter;
+        if ((!is_null($filter)) && !($this->hasFilter($filter))) {
+            throw new InvalidArgumentException(sprintf("Filter [%s] is not set.", $filter));
+        }
+
+        if (!is_null($filter)) {
+            return $this->filters[$filter];
+        }
+
+        return $this->filters;
     }
 
     /**
@@ -83,6 +115,64 @@ class Filter
     public function getOperators()
     {
         return $this->operators;
+    }
+
+    /**
+     * Checks to see if a filter is set
+     *
+     * @param $filter
+     *
+     * @return bool
+     */
+    public function hasFilter($filter)
+    {
+        return array_key_exists($filter, $this->getFilter());
+    }
+
+    /**
+     * Is there a filter set for the name
+     *
+     * @param mixed $filter
+     *
+     * @return bool
+     */
+    public function offsetExists($filter)
+    {
+        return $this->hasFilter($filter);
+    }
+
+    /**
+     * Returns the value from the filter
+     *
+     * @param mixed $filter
+     *
+     * @return mixed
+     */
+    public function offsetGet($filter)
+    {
+        return $this->getFilter($filter);
+    }
+
+    /**
+     * Set a filter
+     *
+     * @param mixed $filter
+     *
+     * @param mixed $value
+     */
+    public function offsetSet($filter, $value)
+    {
+        $this->set($filter, $value);
+    }
+
+    /**
+     * Remove a filter
+     *
+     * @param mixed $filter
+     */
+    public function offsetUnset($filter)
+    {
+        $this->delete($filter);
     }
 
     /**
@@ -112,7 +202,7 @@ class Filter
 
         $logical = is_null($logical) ? $logical : ',';
 
-        $this->filter['OrderBy'] .= implode(" ", array_filter(compact("logical", "column", "order")));
+        $this->filters['OrderBy'] .= implode(" ", array_filter(compact("logical", "column", "order")));
 
         return $this;
     }
@@ -128,15 +218,15 @@ class Filter
      */
     private function processLogical($logical, $key)
     {
-        // If no logical or no existing conditions, then set logical & conditions to null
-        if ((empty($logical)) || (!array_key_exists($key, $this->filter))) {
-            return $this->filter[$key] = null;
-        }
-
         $logical = strtoupper($logical);
 
-        if (!in_array($logical, ['AND', 'OR'])) {
+        if ((!empty($logical)) && (!in_array($logical, ['AND', 'OR'], true))) {
             throw new InvalidArgumentException(sprintf("Provided an invalid logical operator [%s].", $logical));
+        }
+
+        // If no logical or no existing conditions, then set logical & conditions to null
+        if ((empty($logical)) || (!array_key_exists($key, $this->filters))) {
+            return $this->filters[$key] = null;
         }
 
         return ' ' . $logical;
@@ -145,18 +235,18 @@ class Filter
     /**
      * Set a property in the query
      *
-     * @param string $property
+     * @param string $filter
      * @param mixed  $value
      *
      * @return $this
      */
-    public function set($property, $value)
+    public function set($filter, $value)
     {
-        if (empty($property)) {
+        if (empty($filter)) {
             throw new InvalidArgumentException("You must pass a property and value to set on the filter.");
         }
 
-        $this->filter[$property] = $this->encloseValue($value);
+        $this->filters[$filter] = $this->encloseValue($value);
 
         return $this;
     }
@@ -164,7 +254,7 @@ class Filter
     /**
      * Set the Where(s) as there can be more than one
      *
-     * @param string      $property
+     * @param string      $column
      * @param mixed       $value
      * @param string|null $operator
      * @param string|null $logical
@@ -172,9 +262,11 @@ class Filter
      * @return $this
      * @throws InvalidArgumentException
      */
-    public function where($property, $value, $operator = null, $logical = null)
+    public function where($column, $value, $operator = null, $logical = null)
     {
-        if (empty($property)) {
+        var_export($logical);
+
+        if (empty($column)) {
             throw new InvalidArgumentException("You must pass at least property and value to filter the results.");
         }
 
@@ -189,7 +281,7 @@ class Filter
 
         $value = $this->encloseValue($value);
 
-        $this->filter['Conditions'] .= implode(" ", array_filter(compact("logical", "property", "operator", "value")));
+        $this->filters['Conditions'] .= implode(" ", array_filter(compact("logical", "column", "operator", "value")));
 
         return $this;
     }
@@ -211,7 +303,7 @@ class Filter
 
         $logical = $this->processLogical($logical, 'Conditions');
 
-        $this->filter['Conditions'] .= $logical . $condition;
+        $this->filters['Conditions'] .= implode(" ", array_filter(compact("logical", "condition")));
 
         return $this;
     }
