@@ -264,8 +264,6 @@ class Filter implements ArrayAccess, Countable
      */
     public function where($column, $value, $operator = null, $logical = null)
     {
-        var_export($logical);
-
         if (empty($column)) {
             throw new InvalidArgumentException("You must pass at least property and value to filter the results.");
         }
