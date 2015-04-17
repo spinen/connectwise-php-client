@@ -126,7 +126,7 @@ class FilterBuilder
      */
     private function isCoreMethod($method)
     {
-        return in_array($method, ['set', 'orderBy', 'where', 'whereRaw']);
+        return $this->filter->isCoreMethod($method);
     }
 
     /**
@@ -199,7 +199,7 @@ class FilterBuilder
 
     /**
      * Calls core method on filter
-     * 
+     *
      * @param string $method
      * @param array $arguments
      *

@@ -17,6 +17,13 @@ class Filter implements ArrayAccess, Countable
 {
 
     /**
+     * Core methods in the class
+     *
+     * @var array
+     */
+    protected $core_methods = ['set', 'orderBy', 'where', 'whereRaw'];
+
+    /**
      * @var array
      */
     protected $filters = [];
@@ -127,6 +134,18 @@ class Filter implements ArrayAccess, Countable
     public function hasFilter($filter)
     {
         return array_key_exists($filter, $this->getFilter());
+    }
+
+    /**
+     * Checks to see if method is core
+     *
+     * @param string $method
+     *
+     * @return bool
+     */
+    public function isCoreMethod($method)
+    {
+        return in_array($method, $this->core_methods, true);
     }
 
     /**
