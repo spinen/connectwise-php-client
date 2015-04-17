@@ -155,18 +155,21 @@ class Client extends Container implements ContainerInterface, SignatureInterface
     /**
      * Make a filter builder
      *
-     * @param array $filter
+     * @param array $filters
      *
      * @return FilterBuilder
      * @throws InvalidArgumentException
      */
-    public function makeFilterBuilder(array $filter = [])
+    public function makeFilterBuilder(array $filters = [])
     {
         if ((is_null($this->api)) || (is_null($this->method))) {
             throw new InvalidArgumentException("api and method must be set before making a FilterBuilder");
         }
 
-        return $this->get('Spinen\\ConnectWise\\Client\\FilterBuilder', [$this, $filter]);
+        // Because we are building up the FilterBuilder then we need to make this
+        $filter = $this->get('Spinen\\ConnectWise\\Client\\Filter');
+
+        return $this->get('Spinen\\ConnectWise\\Client\\FilterBuilder', [$this, $filter, $filters]);
     }
 
     /**

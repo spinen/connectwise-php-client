@@ -2,13 +2,6 @@
 
 namespace Spinen\ConnectWise\Client;
 
-/**
- * Class FilterBuilder
- *
- * @package Spinen\ConnectWise\Client
- */
-use Carbon\Carbon;
-use DateTime;
 use InvalidArgumentException;
 
 /**
@@ -27,43 +20,29 @@ class FilterBuilder
     /**
      * Filter to run through the call
      *
-     * @var array
+     * @var Filter
      */
-    protected $filter = [];
-
-    /**
-     * The operators that is supported in conditions
-     *
-     * NOTE: Order is important as we match top down
-     *
-     * @var array
-     */
-    protected $operators = [
-        '!='       => 'NotEquals',
-        '<='       => 'LessThanEquals',
-        '>='       => 'GreaterThanEquals',
-        '='        => 'Equals',
-        '<'        => 'LessThan',
-        '>'        => 'GreaterThan',
-        'contains' => 'Contains',
-        'like'     => 'Like',
-    ];
+    protected $filter;
 
     /**
      * @param Client $client
+     * @param Filter $filter
      * @param array  $filters
      */
-    public function __construct(Client $client, array $filters = [])
+    public function __construct(Client $client, Filter $filter, array $filters = [])
     {
         $this->client = $client;
+        $this->filter = $filter;
 
         // Set any passed in filters
         foreach ($filters as $property => $value) {
-            $this->set($property, $value);
+            $this->filter->set($property, $value);
         }
     }
 
     /**
+     * Magic method to make the queries more expressive
+     *
      * @param $method
      * @param $arguments
      *
@@ -108,13 +87,15 @@ class FilterBuilder
     public function get(array $columns = [])
     {
         if (!empty($columns)) {
-            $this->filter['ReturnFields'] = $columns;
+            $this->filter->set('ReturnFields', $columns);
         }
 
         return $this->client->execute($this->getFilter());
     }
 
     /**
+     * Return the client
+     *
      * @return Client
      */
     public function getClient()
@@ -129,10 +110,12 @@ class FilterBuilder
      */
     public function getFilter()
     {
-        return (array)$this->filter;
+        return $this->filter->getFilter();
     }
 
     /**
+     * Check to see if the magic method call is for an OrderBy
+     *
      * @param string $method
      * @param array  $parts
      *
@@ -144,6 +127,8 @@ class FilterBuilder
     }
 
     /**
+     * Check to see if the magic method call is for an OrderBy with a property in the method name
+     *
      * @param string $method
      * @param array  $parts
      *
@@ -155,6 +140,8 @@ class FilterBuilder
     }
 
     /**
+     * Check to see if the magic method call is for a Where
+     *
      * @param string $method
      * @param array  $parts
      *
@@ -166,6 +153,8 @@ class FilterBuilder
     }
 
     /**
+     * Check to see if the magic method call is for a WhereRaw
+     *
      * @param string $method
      * @param array  $arguments
      * @param array  $parts
@@ -176,10 +165,12 @@ class FilterBuilder
     {
         return ((preg_match("/^(and|or)WhereRaw$/u", $method, $parts)) &&
                 (count($arguments) === 1) &&
-                str_contains($arguments[0], array_keys($this->operators)));
+                str_contains($arguments[0], array_keys($this->filter->getOperators())));
     }
 
     /**
+     * Check to see if the magic method call is for a Where with a property in the method name
+     *
      * @param string $method
      * @param array  $parts
      *
@@ -191,86 +182,8 @@ class FilterBuilder
     }
 
     /**
-     * Set the orderBys as there can be more than one
+     * Determines the parameters and calls OrderBy
      *
-     * @param string      $column
-     * @param string|null $order
-     * @param bool|null   $logical
-     *
-     * @return $this
-     */
-    public function orderBy($column, $order = null, $logical = null)
-    {
-        // Default to asc & make sure that all lower case
-        $order = empty($order) ? 'asc' : strtolower($order);
-
-        if (!in_array($order, ['asc', 'desc'])) {
-            throw new InvalidArgumentException(sprintf("Invalid order [%s] to order the columns by.", $order));
-        }
-
-        $logical = $this->processLogical($logical, 'OrderBy');
-
-        $logical = is_null($logical) ? $logical : ',';
-
-        $this->filter['OrderBy'] .= implode(" ", array_filter(compact("logical", "column", "order")));
-
-        return $this;
-    }
-
-    /**
-     * Pads the value with the proper delimiters based on type
-     *
-     * @param mixed $value
-     *
-     * @return string
-     */
-    private function padValue($value)
-    {
-        if ($value instanceof DateTime) {
-            // Make the value a Carbon if not already so, as DateTime does not return correct ISO8601 date
-            $value = $value instanceof Carbon ? $value : Carbon::instance($value);
-
-            // ISO 8601
-            return '[' . $value->toIso8601String() . ']';
-        }
-
-        if ((is_bool($value)) || (is_integer($value))) {
-            return $value;
-        }
-
-        if (is_null($value)) {
-            return "null";
-        }
-
-        return '\'' . $value . '\'';
-    }
-
-    /**
-     * If there are not any existing conditions, then null out the logical.  Otherwise, pad it
-     *
-     * @param string $logical
-     *
-     * @param string $key
-     *
-     * @return null|string
-     */
-    private function processLogical($logical, $key)
-    {
-        // If no logical or no existing conditions, then set logical & conditions to null
-        if ((empty($logical)) || (!array_key_exists($key, $this->filter))) {
-            return $this->filter[$key] = null;
-        }
-
-        $logical = strtoupper($logical);
-
-        if (!in_array($logical, ['AND', 'OR'])) {
-            throw new InvalidArgumentException(sprintf("Provided an invalid logical operator [%s].", $logical));
-        }
-
-        return ' ' . $logical;
-    }
-
-    /**
      * @param array $arguments
      * @param array &$parts
      *
@@ -289,10 +202,14 @@ class FilterBuilder
         $order = $arguments[1];
         $continue = $parts[1];
 
-        return $this->orderBy($column, $order, $continue);
+        $this->filter = $this->filter->orderBy($column, $order, $continue);
+
+        return $this;
     }
 
     /**
+     * Determines the parameters and calls OrderBy with a property in the method name
+     *
      * @param array &$parts
      *
      * @return $this
@@ -310,10 +227,14 @@ class FilterBuilder
         $order = $parts[3];
         $continue = $parts[1];
 
-        return $this->orderBy($column, $order, $continue);
+        $this->filter = $this->filter->orderBy($column, $order, $continue);
+
+        return $this;
     }
 
     /**
+     * Determines the parameters and calls Set
+     *
      * @param $method
      * @param $arguments
      *
@@ -331,10 +252,14 @@ class FilterBuilder
 
         $value = $arguments[0];
 
-        return $this->set($property, $value);
+        $this->filter = $this->filter->set($property, $value);
+
+        return $this;
     }
 
     /**
+     * Determines the parameters and calls Where
+     *
      * @param array $arguments
      * @param array &$parts
      *
@@ -354,10 +279,14 @@ class FilterBuilder
         $operator = $arguments[2];
         $logical = $parts[1];
 
-        return $this->where($property, $value, $operator, $logical);
+        $this->filter = $this->filter->where($property, $value, $operator, $logical);
+
+        return $this;
     }
 
     /**
+     * Determines the parameters and calls WhereRaw
+     *
      * @param array $arguments
      * @param array &$parts
      *
@@ -373,10 +302,14 @@ class FilterBuilder
         $condition = $arguments[0];
         $logical = $parts[1];
 
-        return $this->whereRaw($condition, $logical);
+        $this->filter = $this->filter->whereRaw($condition, $logical);
+
+        return $this;
     }
 
     /**
+     * Determines the parameters and calls Where with a property in the method name
+     *
      * @param array $arguments
      * @param array &$parts
      *
@@ -395,74 +328,17 @@ class FilterBuilder
         $value = $arguments[0];
         $logical = $parts[1];
 
-        foreach ($this->operators as $operator => $description) {
+        foreach ($this->filter->getOperators() as $operator => $description) {
             if (ends_with($property, $description)) {
-                return $this->where(str_replace($description, '', $property), $value, $operator, $logical);
+                $this->filter = $this->filter->where(str_replace($description, '', $property), $value, $operator,
+                    $logical);
+
+                return $this;
             }
         }
 
         // Default to equals
-        return $this->where($property, $value, '=', $logical);
-    }
-
-    /**
-     * Set a property in the query
-     *
-     * @param string $property
-     * @param mixed  $value
-     *
-     * @return $this
-     */
-    public function set($property, $value)
-    {
-        $this->filter[$property] = $this->padValue($value);
-
-        return $this;
-    }
-
-    /**
-     * Build a where condition for the filter
-     *
-     * @param string      $property
-     * @param mixed       $value
-     * @param string|null $operator
-     * @param string|null $logical
-     *
-     * @return $this
-     * @throws InvalidArgumentException
-     */
-    public function where($property, $value, $operator = null, $logical = null)
-    {
-        // Default to Equals
-        $operator = empty($operator) ? '=' : $operator;
-
-        if (!array_key_exists($operator, $this->operators)) {
-            throw new InvalidArgumentException(sprintf("Provided an invalid operator [%s].", $operator));
-        }
-
-        $logical = $this->processLogical($logical, 'Conditions');
-
-        $value = $this->padValue($value);
-
-        $this->filter['Conditions'] .= implode(" ", array_filter(compact("logical", "property", "operator", "value")));
-
-        return $this;
-    }
-
-    /**
-     * Raw condition statement
-     *
-     * @param string      $condition
-     * @param string|null $logical
-     *
-     * @return $this
-     * @throws InvalidArgumentException
-     */
-    public function whereRaw($condition, $logical = null)
-    {
-        $logical = $this->processLogical($logical, 'Conditions');
-
-        $this->filter['Conditions'] .= $logical . $condition;
+        $this->filter = $this->filter->where($property, $value, '=', $logical);
 
         return $this;
     }
