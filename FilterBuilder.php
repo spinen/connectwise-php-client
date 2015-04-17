@@ -90,7 +90,7 @@ class FilterBuilder
             $this->filter->set('ReturnFields', $columns);
         }
 
-        return $this->client->execute($this->getFilter());
+        return $this->client->execute($this->filter->getFilter());
     }
 
     /**
@@ -106,11 +106,11 @@ class FilterBuilder
     /**
      * Return the filter
      *
-     * @return array
+     * @return Filter
      */
     public function getFilter()
     {
-        return $this->filter->getFilter();
+        return $this->filter;
     }
 
     /**
