@@ -330,7 +330,10 @@ class FilterBuilder
 
         foreach ($this->filter->getOperators() as $operator => $description) {
             if (ends_with($property, $description)) {
-                $this->filter = $this->filter->where(str_replace($description, '', $property), $value, $operator,
+                // Remove description off of the end of the property
+                $property = str_replace($description, '', $property);
+
+                $this->filter = $this->filter->where($property, $value, $operator,
                     $logical);
 
                 return $this;
