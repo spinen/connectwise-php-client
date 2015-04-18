@@ -4,6 +4,7 @@ namespace Spinen\ConnectWise\Client\Processors;
 
 use Carbon\Carbon;
 use Spinen\ConnectWise\Library\Contracts\Processor;
+use Spinen\ConnectWise\Library\Support\Collection;
 
 /**
  * Class ConvertResponse
@@ -78,7 +79,9 @@ class ConvertResponse implements Processor
     {
         // Multiple items to process?
         if (is_array($response)) {
-            return array_map([$this, "process"], $response);
+            $response = array_map([$this, "process"], $response);
+
+            return new Collection($response);
         }
 
         // Single value, so nothing more to do
@@ -100,7 +103,7 @@ class ConvertResponse implements Processor
             $unwrapped[$this->buildPropertyName($getter)] = $this->getPropertyValue($response, $getter);
         }
 
-        return $unwrapped;
+        return new Collection($unwrapped);
     }
 
 }
