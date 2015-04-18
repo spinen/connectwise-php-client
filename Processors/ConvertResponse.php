@@ -15,6 +15,11 @@ class ConvertResponse implements Processor
 {
 
     /**
+     * @var array
+     */
+    protected $columns = [];
+
+    /**
      * @var GetGetters
      */
     private $getters;
@@ -98,12 +103,33 @@ class ConvertResponse implements Processor
 
         $unwrapped = [];
 
+        // If there are specific columns that we want, then only have those getters
+        if (!empty($this->columns)) {
+            $getters = array_intersect($this->columns, $getters);
+        }
+
         // Build values associative array to return
         foreach ($getters as $getter) {
             $unwrapped[$this->buildPropertyName($getter)] = $this->getPropertyValue($response, $getter);
         }
 
         return new Collection($unwrapped);
+    }
+
+    /**
+     * Set the columns that we need to return
+     *
+     * @param array $columns
+     *
+     * @return $this
+     */
+    public function setColumns(array $columns)
+    {
+        foreach ($columns as $column) {
+            $this->columns[] = 'get' . studly_case($column);
+        }
+
+        return $this;
     }
 
 }
