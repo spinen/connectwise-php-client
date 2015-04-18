@@ -97,10 +97,11 @@ class Client extends Container implements ContainerInterface, SignatureInterface
      * Resolve the item from the IoC & execute the method on it
      *
      * @param array $arguments
+     * @param array $columns
      *
      * @return \Spinen\ConnectWise\Library\Support\Collection
      */
-    public function execute(array $arguments = [])
+    public function execute(array $arguments = [], $columns = [])
     {
         $parameters = $this->get($this->getApiNamespace($this->method));
 
@@ -118,7 +119,8 @@ class Client extends Container implements ContainerInterface, SignatureInterface
                          ->{$this->method}($parameters);
 
         // Unwrap all of the nested values that the WSDL returns
-        $response = $this->converter->process($response);
+        $response = $this->converter->setColumns($columns)
+                                    ->process($response);
 
         return $response;
     }

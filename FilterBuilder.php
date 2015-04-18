@@ -104,7 +104,7 @@ class FilterBuilder
             $this->filter->set('ReturnFields', $columns);
         }
 
-        return $this->client->execute($this->filter->getFilter());
+        return $this->client->execute($this->filter->getFilter(), $columns);
     }
 
     /**
