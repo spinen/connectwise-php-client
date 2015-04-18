@@ -50,16 +50,21 @@ class FilterBuilder
      */
     function __call($method, $arguments)
     {
+        // Core ----------------------------------
         if ($this->isCoreMethod($method)) {
             return $this->runCoreMethod($method, $arguments);
         }
+        //----------------------------------------
 
         $parts = [];
 
-        if ($this->isWhereRawMethod($method, $arguments, $parts)) {
+        // WhereRaw ------------------------------
+        if ($this->isWhereRawMethod($method, $parts)) {
             return $this->runWhereRawMethod($arguments, $parts);
         }
+        //----------------------------------------
 
+        // Where ---------------------------------
         if ($this->isWhereWithPropertyMethod($method, $parts)) {
             return $this->runWhereWithPropertyMethod($arguments, $parts);
         }
@@ -67,7 +72,9 @@ class FilterBuilder
         if ($this->isWhereMethod($method, $parts)) {
             return $this->runWhereMethod($arguments, $parts);
         }
+        //----------------------------------------
 
+        // OrderBy -------------------------------
         if ($this->isOrderByWithPropertyMethod($method, $parts)) {
             return $this->runOrderByWithPropertyMethod($parts);
         }
@@ -75,8 +82,11 @@ class FilterBuilder
         if ($this->isOrderByMethod($method, $parts)) {
             return $this->runOrderByMethod($arguments, $parts);
         }
+        //----------------------------------------
 
+        // Set -----------------------------------
         return $this->runSetMethod($method, $arguments);
+        //----------------------------------------
     }
 
     /**
@@ -172,16 +182,13 @@ class FilterBuilder
      * Check to see if the magic method call is for a WhereRaw
      *
      * @param string $method
-     * @param array  $arguments
      * @param array  $parts
      *
      * @return bool
      */
-    private function isWhereRawMethod($method, array $arguments, array &$parts)
+    private function isWhereRawMethod($method, array &$parts)
     {
-        return ((preg_match("/^(and|or)WhereRaw$/u", $method, $parts)) &&
-                (count($arguments) === 1) &&
-                str_contains($arguments[0], array_keys($this->filter->getOperators())));
+        return (preg_match("/^(and|or)WhereRaw$/u", $method, $parts));
     }
 
     /**
@@ -201,7 +208,7 @@ class FilterBuilder
      * Calls core method on filter
      *
      * @param string $method
-     * @param array $arguments
+     * @param array  $arguments
      *
      * @return $this
      */
@@ -227,6 +234,7 @@ class FilterBuilder
             throw new InvalidArgumentException("You must pass at least a column to order the results.");
         }
 
+        $arguments = array_pad($arguments, 2, null);
         $parts = array_pad($parts, 2, null);
 
         $column = $arguments[0];
@@ -247,10 +255,6 @@ class FilterBuilder
      */
     private function runOrderByWithPropertyMethod(array &$parts)
     {
-        if (!((count($parts) === 3) || (count($parts) === 4))) {
-            throw new InvalidArgumentException("You must pass at least the column and value to filter the results.");
-        }
-
         $parts = array_pad($parts, 4, null);
 
         // Trim any Asc or Desc off of the end
@@ -303,6 +307,7 @@ class FilterBuilder
             throw new InvalidArgumentException("You must pass at least property and value to filter the results.");
         }
 
+        $arguments = array_pad($arguments, 3, null);
         $parts = array_pad($parts, 2, null);
 
         $property = $arguments[0];
