@@ -120,11 +120,6 @@ class Client extends Container implements ContainerInterface, SignatureInterface
         // Unwrap all of the nested values that the WSDL returns
         $response = $this->converter->process($response);
 
-        // If we have an array, then make collection
-        if (is_array($response)) {
-            return $this->get('Spinen\\ConnectWise\\Library\\Support\\Collection', [$response]);
-        }
-
         return $response;
     }
 
