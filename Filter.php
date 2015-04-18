@@ -85,7 +85,7 @@ class Filter implements ArrayAccess, Countable
             return '[' . $value->toIso8601String() . ']';
         }
 
-        if ((is_bool($value)) || (is_integer($value))) {
+        if ((is_array($value)) || (is_bool($value)) || (is_integer($value))) {
             return $value;
         }
 
