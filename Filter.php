@@ -63,6 +63,8 @@ class Filter implements ArrayAccess, Countable
      */
     public function delete($filter)
     {
+        $filter = studly_case($filter);
+
         unset($this->filters[$filter]);
     }
 
@@ -108,6 +110,8 @@ class Filter implements ArrayAccess, Countable
         }
 
         if (!is_null($filter)) {
+            $filter = studly_case($filter);
+
             return $this->filters[$filter];
         }
 
@@ -133,6 +137,8 @@ class Filter implements ArrayAccess, Countable
      */
     public function hasFilter($filter)
     {
+        $filter = studly_case($filter);
+
         return array_key_exists($filter, $this->getFilter());
     }
 
@@ -210,6 +216,8 @@ class Filter implements ArrayAccess, Countable
             throw new InvalidArgumentException("You must pass at least the column and value to filter the results.");
         }
 
+        $column = studly_case($column);
+
         // Default to asc & make sure that all lower case
         $order = empty($order) ? 'asc' : strtolower($order);
 
@@ -265,6 +273,8 @@ class Filter implements ArrayAccess, Countable
             throw new InvalidArgumentException("You must pass a property and value to set on the filter.");
         }
 
+        $filter = studly_case($filter);
+
         $this->filters[$filter] = $this->encloseValue($value);
 
         return $this;
@@ -286,6 +296,8 @@ class Filter implements ArrayAccess, Countable
         if (empty($column)) {
             throw new InvalidArgumentException("You must pass at least property and value to filter the results.");
         }
+
+        $column = studly_case($column);
 
         // Default to Equals
         $operator = empty($operator) ? '=' : $operator;
