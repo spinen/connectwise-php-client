@@ -21,7 +21,6 @@ class Client extends Container implements ContainerInterface, SignatureInterface
     // Pull in the methods from the generator
     use Signature;
 
-
     /**
      * This api that is going to be called
      *
