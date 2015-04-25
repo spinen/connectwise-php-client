@@ -41,6 +41,21 @@ class Client extends Container implements ContainerInterface, SignatureInterface
     protected $converter;
 
     /**
+     * Core items to register with the container
+     *
+     * @var array
+     */
+    protected $core_services = [
+        'urls' => [
+            'class' => 'Spinen\\ConnectWise\\Library\\UrlEntry',
+            'arguments' => [
+                'Spinen\\ConnectWise\\Client\\Client',
+                'Spinen\\ConnectWise\\Library\\Validator',
+            ]
+        ]
+    ];
+
+    /**
      * The method on the api that is getting called
      *
      * @var
