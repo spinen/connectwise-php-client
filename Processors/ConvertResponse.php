@@ -126,15 +126,12 @@ class ConvertResponse implements Processor
     }
 
     /**
-     * @param mixed       $response
-     * @param string|null $api
+     * @param mixed $response
      *
      * @return object
      */
-    public function process($response, $api = null)
+    public function process($response)
     {
-        $this->setApi($api);
-
         if (is_array($response)) {
             return $this->processArray($response);
         }
@@ -143,15 +140,12 @@ class ConvertResponse implements Processor
             return $this->processSingleValue($response);
         }
 
-        // Look up property getters
         $getters = (array)$this->getters->process($response);
 
         if ($this->isSingleResult($getters)) {
-            // Must be working with a single object
             return $this->processSingleObject($response, $getters);
         }
 
-        // Must be working with an object
         return $this->processObject($response, $getters);
     }
 
@@ -220,6 +214,20 @@ class ConvertResponse implements Processor
     }
 
     /**
+     * Trim the Api from the end and set the property
+     *
+     * @param string $api
+     *
+     * @return $this
+     */
+    public function setApi($api)
+    {
+        $this->api = substr($api, 0, - 3);
+
+        return $this;
+    }
+
+    /**
      * Set the columns that we need to return
      *
      * @param array $columns
@@ -231,20 +239,6 @@ class ConvertResponse implements Processor
         foreach ($columns as $column) {
             $this->columns[] = 'get' . studly_case($column);
         }
-
-        return $this;
-    }
-
-    /**
-     * Trim the Api from the end and set the property
-     *
-     * @param string $api
-     *
-     * @return $this
-     */
-    public function setApi($api)
-    {
-        $this->api = substr($api, 0, - 3);
 
         return $this;
     }

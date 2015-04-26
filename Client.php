@@ -47,7 +47,7 @@ class Client extends Container implements ContainerInterface, SignatureInterface
      */
     protected $core_services = [
         'urls' => [
-            'class' => 'Spinen\\ConnectWise\\Library\\UrlEntry',
+            'class'     => 'Spinen\\ConnectWise\\Library\\UrlEntry',
             'arguments' => [
                 'Spinen\\ConnectWise\\Client\\Client',
                 'Spinen\\ConnectWise\\Library\\Validator',
@@ -133,8 +133,9 @@ class Client extends Container implements ContainerInterface, SignatureInterface
                          ->{$this->method}($parameters);
 
         // Unwrap all of the nested values that the WSDL returns
-        $response = $this->converter->setColumns($columns)
-                                    ->process($response, $this->api);
+        $response = $this->converter->setApi($this->api)
+                                    ->setColumns($columns)
+                                    ->process($response);
 
         return $response;
     }
