@@ -136,16 +136,11 @@ class ConvertResponse implements Processor
         $this->setApi($api);
 
         if (is_array($response)) {
-            // Must be working with an array
-            $response = array_map([$this, "process"], $response);
-
-            return $this->makeCollection($response);
+            return $this->processArray($response);
         }
 
-
         if (!is_object($response)) {
-            // Must be working with a single value, so nothing more to do
-            return $response;
+            return $this->processSingleValue($response);
         }
 
         // Look up property getters
@@ -153,10 +148,37 @@ class ConvertResponse implements Processor
 
         if ($this->isSingleResult($getters)) {
             // Must be working with a single object
-            return $this->process($response->{$getters[0]}());
+            return $this->processSingleObject($response, $getters);
         }
 
         // Must be working with an object
+        return $this->processObject($response, $getters);
+    }
+
+    /**
+     * Loop through the values in the array, and process each of them
+     *
+     * @param array $response
+     *
+     * @return object
+     */
+    private function processArray(array $response)
+    {
+        $response = array_map([$this, "process"], $response);
+
+        return $this->makeCollection($response);
+    }
+
+    /**
+     * Pull out all of the properties from the object into an collection
+     *
+     * @param object $response
+     * @param array  $getters
+     *
+     * @return object
+     */
+    private function processObject($response, array $getters)
+    {
         $value_object = [];
 
         // If there are specific columns that we want, then only have those getters
@@ -170,6 +192,31 @@ class ConvertResponse implements Processor
         }
 
         return $this->makeValueObject($value_object);
+    }
+
+    /**
+     * Peel off the top level object
+     *
+     * @param object $response
+     * @param array  $getters
+     *
+     * @return object
+     */
+    private function processSingleObject($response, array $getters)
+    {
+        return $this->process($response->{$getters[0]}());
+    }
+
+    /**
+     * have a single value, so return it
+     *
+     * @param mixed $response
+     *
+     * @return mixed
+     */
+    private function processSingleValue($response)
+    {
+        return $response;
     }
 
     /**
@@ -195,11 +242,9 @@ class ConvertResponse implements Processor
      *
      * @return $this
      */
-    private function setApi($api)
+    public function setApi($api)
     {
-        if (!is_null($api)) {
-            $this->api = substr($api, 0, - 3);
-        }
+        $this->api = substr($api, 0, - 3);
 
         return $this;
     }
