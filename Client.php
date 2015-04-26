@@ -134,7 +134,7 @@ class Client extends Container implements ContainerInterface, SignatureInterface
 
         // Unwrap all of the nested values that the WSDL returns
         $response = $this->converter->setColumns($columns)
-                                    ->process($response);
+                                    ->process($response, $this->api);
 
         return $response;
     }
