@@ -86,25 +86,24 @@ class ConvertResponse implements Processor
 
     /**
      * @param string $type
-     * @param string $class
      * @param array  $data
      *
      * @return object
      */
-    private function makeClassIfExists($type, $class, array $data)
+    private function makeClassIfExists($type, array $data)
     {
-        $path = 'Spinen\\ConnectWise\\Library\\Support\\Value' . str_plural($type) . '\\';
+        $path = 'Spinen\\ConnectWise\\Library\\Results\\';
 
-        $class = $path . $class;
+        $class = $path . $this->api . $type;
 
         // Collection specifically for the api data?
         if (!class_exists($class)) {
-            $class = $path . $type;
+            $class = $path . $this->api;
         }
 
-        // Fall back to standard collection
+        // Object specifically for the api data?
         if (!class_exists($class)) {
-            $class = 'Spinen\\ConnectWise\\Library\\Support\\Collection';
+            $class = $path . $type;
         }
 
         $class = new ReflectionClass($class);
@@ -119,7 +118,7 @@ class ConvertResponse implements Processor
      */
     public function makeCollection(array $response)
     {
-        return $this->makeClassIfExists('Collection', str_plural($this->api), [$response]);
+        return $this->makeClassIfExists('Collection', [$response]);
     }
 
     /**
@@ -129,7 +128,7 @@ class ConvertResponse implements Processor
      */
     public function makeValueObject(array $value_object)
     {
-        return $this->makeClassIfExists('Object', $this->api, [$value_object]);
+        return $this->makeClassIfExists('ValueObject', [$value_object]);
     }
 
     /**
