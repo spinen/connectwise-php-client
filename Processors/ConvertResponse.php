@@ -3,8 +3,8 @@
 namespace Spinen\ConnectWise\Client\Processors;
 
 use Carbon\Carbon;
+use ReflectionClass;
 use Spinen\ConnectWise\Library\Contracts\Processor;
-use Spinen\ConnectWise\Library\Support\Collection;
 
 /**
  * Class ConvertResponse
@@ -15,6 +15,15 @@ class ConvertResponse implements Processor
 {
 
     /**
+     * The name of the api that is being called
+     *
+     * @var string|null
+     */
+    protected $api = null;
+
+    /**
+     * Columns to return
+     *
      * @var array
      */
     protected $columns = [];
@@ -76,21 +85,66 @@ class ConvertResponse implements Processor
     }
 
     /**
-     * @param $response
+     * @param string $class
+     * @param array  $data
      *
-     * @return array
+     * @return object
      */
-    public function process($response)
+    private function makeClassIfExists($class, array $data)
     {
-        // Multiple items to process?
-        if (is_array($response)) {
-            $response = array_map([$this, "process"], $response);
-
-            return new Collection($response);
+        if (!class_exists($class)) {
+            $class = 'Spinen\\ConnectWise\\Library\\Support\\Collection';
         }
 
-        // Single value, so nothing more to do
+        $class = new ReflectionClass($class);
+
+        return $class->newInstanceArgs($data);
+    }
+
+    /**
+     * @param array $response
+     *
+     * @return object
+     */
+    public function makeCollection(array $response)
+    {
+        $class = 'Spinen\\ConnectWise\\Library\\Support\\Collections\\' . str_plural($this->api);
+
+        return $this->makeClassIfExists($class, [$response]);
+    }
+
+    /**
+     * @param array $value_object
+     *
+     * @return object
+     */
+    public function makeValueObject(array $value_object)
+    {
+        $class = 'Spinen\\ConnectWise\\Library\\Support\\ValueObjects\\' . $this->api;
+
+        return $this->makeClassIfExists($class, [$value_object]);
+    }
+
+    /**
+     * @param mixed       $response
+     * @param string|null $api
+     *
+     * @return object
+     */
+    public function process($response, $api = null)
+    {
+        $this->setApi($api);
+
+        if (is_array($response)) {
+            // Must be working with an array
+            $response = array_map([$this, "process"], $response);
+
+            return $this->makeCollection($response);
+        }
+
+
         if (!is_object($response)) {
+            // Must be working with a single value, so nothing more to do
             return $response;
         }
 
@@ -98,10 +152,12 @@ class ConvertResponse implements Processor
         $getters = (array)$this->getters->process($response);
 
         if ($this->isSingleResult($getters)) {
+            // Must be working with a single object
             return $this->process($response->{$getters[0]}());
         }
 
-        $unwrapped = [];
+        // Must be working with an object
+        $value_object = [];
 
         // If there are specific columns that we want, then only have those getters
         if (!empty($this->columns)) {
@@ -110,10 +166,10 @@ class ConvertResponse implements Processor
 
         // Build values associative array to return
         foreach ($getters as $getter) {
-            $unwrapped[$this->buildPropertyName($getter)] = $this->getPropertyValue($response, $getter);
+            $value_object[$this->buildPropertyName($getter)] = $this->getPropertyValue($response, $getter);
         }
 
-        return new Collection($unwrapped);
+        return $this->makeValueObject($value_object);
     }
 
     /**
@@ -127,6 +183,22 @@ class ConvertResponse implements Processor
     {
         foreach ($columns as $column) {
             $this->columns[] = 'get' . studly_case($column);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Trim the Api from the end and set the property
+     *
+     * @param string $api
+     *
+     * @return $this
+     */
+    private function setApi($api)
+    {
+        if (!is_null($api)) {
+            $this->api = substr($api, 0, - 3);
         }
 
         return $this;
