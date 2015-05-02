@@ -3,7 +3,9 @@
 namespace Spinen\ConnectWise\Client\Processors;
 
 use Carbon\Carbon;
+use DateTime;
 use ReflectionClass;
+use Spinen\ConnectWise\Client\Client;
 use Spinen\ConnectWise\Library\Contracts\Processor;
 
 /**
@@ -22,6 +24,11 @@ class ConvertResponse implements Processor
     protected $api = null;
 
     /**
+     * @var Client
+     */
+    protected $client;
+
+    /**
      * Columns to return
      *
      * @var array
@@ -34,10 +41,12 @@ class ConvertResponse implements Processor
     private $getters;
 
     /**
+     * @param Client     $client
      * @param GetGetters $getters
      */
-    function __construct(GetGetters $getters)
+    function __construct(Client $client, GetGetters $getters)
     {
+        $this->client = $client;
         $this->getters = $getters;
     }
 
@@ -50,11 +59,12 @@ class ConvertResponse implements Processor
      */
     private function buildPropertyName($getter)
     {
-        return studly_case(preg_replace("/get([A-Z].*)/u", "$1", $getter));
+        // Remove the leading "get" & tailing "UTC"
+        return studly_case(preg_replace("/^get([A-Z].*?)(?:UTC)?$/u", "$1", $getter));
     }
 
     /**
-     * Get the value of the property from the response and convert any DateTime's to Carbon
+     * Get the value of the property from the response and convert any DateTime's to Carbon in the proper time zone
      *
      * @param mixed  $response
      * @param string $getter
@@ -65,8 +75,12 @@ class ConvertResponse implements Processor
     {
         $value = $response->{$getter}();
 
-        if (is_a($value, 'DateTime')) {
-            return Carbon::instance($value);
+        if ($value instanceof DateTime) {
+            $value = Carbon::instance($value);
+        }
+
+        if ($this->needsTimeZoneSet($value)) {
+            $value->setTimezone($this->client->get('config')['timezone']);
         }
 
         return $value;
@@ -129,6 +143,19 @@ class ConvertResponse implements Processor
     public function makeValueObject(array $value_object)
     {
         return $this->makeClassIfExists('ValueObject', [$value_object]);
+    }
+
+    /**
+     * @param $value
+     *
+     * @return bool
+     */
+    private function needsTimeZoneSet($value)
+    {
+        return
+            ($value instanceof Carbon) &&
+            ($this->client->get('config')
+                          ->has('timezone'));
     }
 
     /**
