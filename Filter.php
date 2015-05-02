@@ -81,7 +81,8 @@ class Filter implements ArrayAccess, Countable
             // Make the value a Carbon if not already so, as DateTime does not return correct ISO8601 date
             $value = $value instanceof Carbon ? $value : Carbon::instance($value);
 
-            // ISO 8601
+            $value->setTimezone('UTC');
+
             return '[' . $value->toIso8601String() . ']';
         }
 
