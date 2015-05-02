@@ -82,6 +82,8 @@ class Client extends Container implements ContainerInterface, SignatureInterface
      */
     public function __construct(array $options = [], ConvertResponse $converter = null)
     {
+        $options = $this->ensureTimeZone($options);
+
         parent::__construct($options);
 
         $this->registerApiCredentials();
@@ -105,6 +107,18 @@ class Client extends Container implements ContainerInterface, SignatureInterface
         }
 
         return $this->get('Spinen\\ConnectWise\\Client\\Processors\\ConvertResponse');
+    }
+
+    /**
+     * Set timezone to system if there was not one passed in the options
+     *
+     * @param array $options
+     *
+     * @return array
+     */
+    private function ensureTimeZone(array $options)
+    {
+        return array_merge(['timezone' => date_default_timezone_get()], $options);
     }
 
     /**
