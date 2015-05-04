@@ -102,11 +102,15 @@ class Client extends Container implements ContainerInterface, SignatureInterface
      */
     private function checkConverter(ConvertResponse $converter = null)
     {
-        if (!is_null($converter)) {
-            return $converter;
+        if (is_null($converter)) {
+            $converter = $this->get('Spinen\\ConnectWise\\Client\\Processors\\ConvertResponse');;
         }
 
-        return $this->get('Spinen\\ConnectWise\\Client\\Processors\\ConvertResponse');
+        if ('UTC' !== $this->get('config')['timezone']) {
+            $converter->setTimeZone($this->get('config')['timezone']);
+        }
+
+        return $converter;
     }
 
     /**

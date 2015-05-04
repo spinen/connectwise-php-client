@@ -38,15 +38,20 @@ class ConvertResponse implements Processor
     /**
      * @var GetGetters
      */
-    private $getters;
+    protected $getters;
 
     /**
-     * @param Client     $client
+     * The time zone to set any dates
+     *
+     * @var string
+     */
+    protected $time_zone = null;
+
+    /**
      * @param GetGetters $getters
      */
-    function __construct(Client $client, GetGetters $getters)
+    function __construct(GetGetters $getters)
     {
-        $this->client = $client;
         $this->getters = $getters;
     }
 
@@ -80,7 +85,7 @@ class ConvertResponse implements Processor
         }
 
         if ($this->needsTimeZoneSet($value)) {
-            $value->setTimezone($this->client->get('config')['timezone']);
+            $value->setTimezone($this->time_zone);
         }
 
         return $value;
@@ -152,10 +157,7 @@ class ConvertResponse implements Processor
      */
     private function needsTimeZoneSet($value)
     {
-        return
-            ($value instanceof Carbon) &&
-            ($this->client->get('config')
-                          ->has('timezone'));
+        return (($value instanceof Carbon) && (!(is_null($this->time_zone))));
     }
 
     /**
@@ -272,6 +274,20 @@ class ConvertResponse implements Processor
         foreach ($columns as $column) {
             $this->columns[] = 'get' . studly_case($column);
         }
+
+        return $this;
+    }
+
+    /**
+     * Set the time zone
+     *
+     * @param string $time_zone
+     *
+     * @return $this
+     */
+    public function setTimeZone($time_zone)
+    {
+        $this->time_zone = $time_zone;
 
         return $this;
     }
