@@ -11,7 +11,6 @@ use InvalidArgumentException;
  */
 class FilterBuilder
 {
-
     /**
      * @var Client
      */
@@ -380,5 +379,4 @@ class FilterBuilder
 
         return $this;
     }
-
 }

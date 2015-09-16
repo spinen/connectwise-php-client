@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Facade;
  */
 class ConnectWise extends Facade
 {
-
     /**
      * Get the registered name of the component.
      *
@@ -23,5 +22,4 @@ class ConnectWise extends Facade
     {
         return 'connectwise';
     }
-
 }

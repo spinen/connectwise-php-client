@@ -12,7 +12,6 @@ use Spinen\ConnectWise\Client\Client;
  */
 class ServiceProvider extends LaravelServiceProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -45,5 +44,4 @@ class ServiceProvider extends LaravelServiceProvider
             // @codeCoverageIgnoreEnd
         });
     }
-
 }

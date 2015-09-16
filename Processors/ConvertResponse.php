@@ -15,7 +15,6 @@ use Spinen\ConnectWise\Library\Contracts\Processor;
  */
 class ConvertResponse implements Processor
 {
-
     /**
      * The name of the api that is being called
      *
@@ -291,5 +290,4 @@ class ConvertResponse implements Processor
 
         return $this;
     }
-
 }

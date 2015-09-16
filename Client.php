@@ -17,7 +17,6 @@ use Spinen\ConnectWise\Library\Contracts\Signature as SignatureInterface;
  */
 class Client extends Container implements ContainerInterface, SignatureInterface
 {
-
     // Pull in the methods from the generator
     use Signature;
 
@@ -51,8 +50,8 @@ class Client extends Container implements ContainerInterface, SignatureInterface
             'arguments' => [
                 'Spinen\\ConnectWise\\Client\\Client',
                 'Spinen\\ConnectWise\\Library\\Validator',
-            ]
-        ]
+            ],
+        ],
     ];
 
     /**
@@ -283,5 +282,4 @@ class Client extends Container implements ContainerInterface, SignatureInterface
 
         return $this;
     }
-
 }

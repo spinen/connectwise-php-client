@@ -8,7 +8,6 @@ use Spinen\ConnectWise\Library\Support\ClassReflector;
 
 class GetGetters implements Processor
 {
-
     /**
      * @var ClassReflector
      */
@@ -37,5 +36,4 @@ class GetGetters implements Processor
         // Make sure to reindex the results after the filters
         return array_values($methods);
     }
-
 }

@@ -15,7 +15,6 @@ use InvalidArgumentException;
  */
 class Filter implements ArrayAccess, Countable
 {
-
     /**
      * Core methods in the class
      *
@@ -341,5 +340,4 @@ class Filter implements ArrayAccess, Countable
 
         return $this;
     }
-
 }
