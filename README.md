@@ -14,10 +14,10 @@ This repository is a READ-ONLY subtree spit of the Generator package, so all of 
 
 All test for this library are ran in the generator repository, so this is the status of that package.
 
-| Branch | Status | Coverage |
-| ------ | :----: | :------: |
-| Develop | [![Build Status](https://travis-ci.org/spinen/connectwise-php-generator.svg?branch=develop)](https://travis-ci.org/spinen/connectwise-php-generator) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-library-generator/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/spinen/connectwise-php-library-generator/?branch=develop) |
-| Master | [![Build Status](https://travis-ci.org/spinen/connectwise-php-generator.svg?branch=master)](https://travis-ci.org/spinen/connectwise-php-generator) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-library-generator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/spinen/connectwise-php-library-generator/?branch=master) |
+| Branch | Status | Coverage | Code Quality |
+| ------ | :----: | :------: | :----------: |
+| Develop | [![Build Status](https://travis-ci.org/spinen/connectwise-php-generator.svg?branch=develop)](https://travis-ci.org/spinen/connectwise-php-generator) | [![Coverage Status](https://coveralls.io/repos/spinen/connectwise-php-library-generator/badge.svg?branch=develop&service=github)](https://coveralls.io/github/spinen/connectwise-php-library-generator?branch=develop) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-library-generator/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/spinen/connectwise-php-library-generator/?branch=develop) |
+| Master | [![Build Status](https://travis-ci.org/spinen/connectwise-php-generator.svg?branch=master)](https://travis-ci.org/spinen/connectwise-php-generator) | [![Coverage Status](https://coveralls.io/repos/spinen/connectwise-php-library-generator/badge.svg?branch=master&service=github)](https://coveralls.io/github/spinen/connectwise-php-library-generator?branch=master) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-library-generator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/spinen/connectwise-php-library-generator/?branch=master) |
 
 ## Usage
 
