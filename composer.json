@@ -1,6 +1,6 @@
 {
     "name": "spinen/connectwise-php-client",
-    "description": "PHP Client for ConnectWise using spinen/connectwise-php-library.",
+    "description": "SPINEN's PHP Client for ConnectWise.",
     "keywords": [
         "connectwise",
         "client",
@@ -17,13 +17,13 @@
     "minimum-stability": "stable",
     "require": {
         "illuminate/support": "~5.0",
-        "league/container": "1.*",
+        "league/container": "~1.3.2",
         "nesbot/carbon": "1.*",
         "php": ">=5.4.0",
-        "spinen/connectwise-php-library": "2.*"
+        "spinen/connectwise-php-library": "~2.0"
     },
     "require-dev": {
-        "psy/psysh": "0.4.*"
+        "psy/psysh": "~0.5.1"
     },
     "autoload": {
         "psr-4": {
