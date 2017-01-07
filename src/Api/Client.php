@@ -190,7 +190,7 @@ class Client
      */
     public function getHeaders()
     {
-        if ($this->token->isIntegratorLogIn($this->integrator)) {
+        if ($this->token->isForUser($this->integrator)) {
             return [
                 'x-cw-usertype' => 'integrator',
             ];

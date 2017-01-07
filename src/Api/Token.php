@@ -139,7 +139,7 @@ class Token
      *
      * @return bool
      */
-    public function isIntegratorLogIn($username)
+    public function isForUser($username)
     {
         return $username === $this->username;
     }
