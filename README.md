@@ -49,7 +49,7 @@ CW_URL=https://<FQDN to ConnectWise server>
 ```php
 'providers' => [
     # other providers omitted
-    Spinen\ConnectWise\Laravel\ConnectWiseProvider::class,
+    Spinen\ConnectWise\Laravel\ServiceProvider::class,
 ],
 ```
 
@@ -58,7 +58,7 @@ CW_URL=https://<FQDN to ConnectWise server>
 ```php
 'aliases' => [
     # other aliases omitted
-    'ConnectWise' => Spinen\ConnectWise\Laravel\ConnectWiseFacade::class,
+    'ConnectWise' => Spinen\ConnectWise\Laravel\Facades\ConnectWise::class,
 ],
 ```
 
