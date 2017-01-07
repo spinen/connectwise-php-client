@@ -129,7 +129,7 @@ class Token
     {
         return !is_null($this->expiration) &&
                Carbon::now()
-                     ->gte(Carbon::parse($this->expiration));
+                     ->gte($this->expiration);
     }
 
     /**
