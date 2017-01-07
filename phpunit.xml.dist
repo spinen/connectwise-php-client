@@ -36,7 +36,11 @@
             <directory suffix=".php">src/</directory>
             <exclude>
                 <!--<file>src/file.php</file>-->
-                <directory suffix=".php">src/config</directory>
+                <directory suffix=".php">src/Exceptions</directory>
+                <directory suffix=".php">src/Laravel</directory>
+                <!-- This is temp until we decide what we are doing about porting the filter -->
+                <file>src/Filter.php</file>
+                <file>src/FilterBuilder.php</file>
             </exclude>
         </whitelist>
     </filter>
