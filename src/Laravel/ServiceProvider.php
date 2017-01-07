@@ -1,16 +1,20 @@
 <?php
 
-namespace Spinen\ConnectWise\Client\Laravel;
+namespace Spinen\ConnectWise\Laravel;
 
-use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
-use Spinen\ConnectWise\Client\Client;
+use App\Services\ConnectWise\Api\Client;
+use App\Services\ConnectWise\Api\Token;
+use App\Services\ConnectWise\Exceptions\NoLoggedInUser;
+use GuzzleHttp\Client as Guzzle;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\ServiceProvider;
 
 /**
- * Class ServiceProvider
+ * Class ConnectWiseProvider
  *
- * @package Spinen\ConnectWise\Client\Laravel
+ * @package Spinen\ConnectWise\Laravel
  */
-class ServiceProvider extends LaravelServiceProvider
+class ConnectWiseProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
@@ -20,28 +24,81 @@ class ServiceProvider extends LaravelServiceProvider
     protected $defer = true;
 
     /**
+     * Bootstrap the application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
+    }
+
+    /**
+     * Register the application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->registerToken();
+
+        $this->registerClient();
+
+        $this->app->alias(Client::class, 'connectwise');
+    }
+
+    /**
+     * Register the client object
+     *
+     * A Client needs to have some properties set, so in Laravel, we are going to pull them from the configs.
+     */
+    protected function registerClient()
+    {
+        $this->app->singleton(Client::class, function (Application $app) {
+            $client = new Client($app->make(Token::class), $app->make(Guzzle::class));
+
+            $client->setIntegrator($app->config->get('services.connectwise.integrator'))
+                   ->setPassword($app->config->get('services.connectwise.password'))
+                   ->setUrl($app->config->get('services.connectwise.url'));
+
+            return $client;
+        });
+    }
+
+    /**
      * Get the services provided by the provider.
      *
      * @return array
      */
     public function provides()
     {
-        return ['connectwise'];
+        return [
+            Client::class,
+            Token::class,
+        ];
     }
 
     /**
-     * Register the service provider.
+     * Register the token object
      *
-     * @return void
+     * For our setup, everyone's ConnectWise username (member id) is the front part of their email less the dot
+     * between the first & last name.
      */
-    public function register()
+    protected function registerToken()
     {
-        $configs = ['connectwise' => $this->app->make('config')['services']['connectwise']];
+        $this->app->singleton(Token::class, function (Application $app) {
+            if (!$app->auth->check()) {
+                throw new NoLoggedInUser("There is not a currently logged in user.");
+            }
 
-        $this->app->singleton('connectwise', function () use ($configs) {
-            // @codeCoverageIgnoreStart
-            return new Client($configs);
-            // @codeCoverageIgnoreEnd
+            $member_id = str_replace('.', '', explode('@', $app->auth->user()->email)[0]);
+
+            $token = new Token();
+
+            $token->setCompanyId($app->config->get('services.connectwise.company_id'))
+                  ->setMemberId($member_id);
+
+            return $token;
         });
     }
 }

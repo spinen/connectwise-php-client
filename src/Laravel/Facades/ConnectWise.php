@@ -1,22 +1,20 @@
 <?php
 
-namespace Spinen\ConnectWise\Client\Laravel\Facades;
+namespace Spinen\ConnectWise\Laravel\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Class ConnectWise
+ * Class ConnectWiseFacade
  *
- * @package Spinen\ConnectWise\Client\Laravel
+ * @package Spinen\ConnectWise\Laravel\Facades
  */
-class ConnectWise extends Facade
+class ConnectWiseFacade extends Facade
 {
     /**
      * Get the registered name of the component.
      *
      * @return string
-     *
-     * @throws \RuntimeException
      */
     protected static function getFacadeAccessor()
     {
