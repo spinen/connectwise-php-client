@@ -2,9 +2,9 @@
 
 namespace Spinen\ConnectWise\Laravel;
 
-use App\Services\ConnectWise\Api\Client;
-use App\Services\ConnectWise\Api\Token;
-use App\Services\ConnectWise\Exceptions\NoLoggedInUser;
+use Spinen\ConnectWise\Api\Client;
+use Spinen\ConnectWise\Api\Token;
+use Spinen\ConnectWise\Exceptions\NoLoggedInUser;
 use GuzzleHttp\Client as Guzzle;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
