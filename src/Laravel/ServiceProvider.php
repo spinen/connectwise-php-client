@@ -94,7 +94,7 @@ class ServiceProvider extends LaravelServiceProvider
             $token = new Token();
 
             $token->setCompanyId($app->config->get('services.connectwise.company_id'))
-                  ->setMemberId($app->user()->connect_wise_member_id);
+                  ->setMemberId($app->auth->user()->connect_wise_member_id);
 
             return $token;
         });
