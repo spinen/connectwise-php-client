@@ -4,7 +4,7 @@ namespace Spinen\ConnectWise\Laravel;
 
 use GuzzleHttp\Client as Guzzle;
 use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 use Spinen\ConnectWise\Api\Client;
 use Spinen\ConnectWise\Api\Token;
 use Spinen\ConnectWise\Exceptions\NoLoggedInUser;
@@ -14,7 +14,7 @@ use Spinen\ConnectWise\Exceptions\NoLoggedInUser;
  *
  * @package Spinen\ConnectWise\Laravel
  */
-class ConnectWiseProvider extends ServiceProvider
+class ServiceProvider extends LaravelServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.

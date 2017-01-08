@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Facade;
  *
  * @package Spinen\ConnectWise\Laravel\Facades
  */
-class ConnectWiseFacade extends Facade
+class ConnectWise extends Facade
 {
     /**
      * Get the registered name of the component.
