@@ -39,9 +39,6 @@
                 <directory suffix=".php">src/Exceptions</directory>
                 <file>src/Laravel/Facades/ConnectWise.php</file>
                 <file>src/Laravel/ServiceProvider.php</file>
-                <!-- This is temp until we decide what we are doing about porting the filter -->
-                <file>src/Filter.php</file>
-                <file>src/FilterBuilder.php</file>
             </exclude>
         </whitelist>
     </filter>
