@@ -66,4 +66,83 @@ CW_URL=https://<FQDN to ConnectWise server>
 
 ### Usage
 
+Here is an example of getting the system information...
+
+```
+$ php artisan tinker
+Psy Shell v0.8.0 (PHP 7.0.7 — cli) by Justin Hileman
+>>> Auth::loginUsingId(1);
+=> App\User {#983
+     id: "1",
+     first_name: "Joe",
+     last_name: "Doe",
+     email: "joe.doe@domain.tld",
+     admin: "0",
+     created_at: "2017-01-02 18:30:47",
+     updated_at: "2017-01-08 02:10:37",
+     logged_in_at: "2017-01-08 02:10:37",
+     deleted_at: null,
+   }
+>>> $cw = app('Spinen\ConnectWise\Api\Client');
+=> Spinen\ConnectWise\Api\Client {#934}
+>>> $cw->get('system/info');
+=> [
+     "version" => "v2016.6.43325",
+     "isCloud" => false,
+     "serverTimeZone" => "Eastern Standard Time",
+   ]
+>>>
+```
+
+Same call using the facade...
+
+```
+$ php artisan tinker
+Psy Shell v0.8.0 (PHP 7.0.7 — cli) by Justin Hileman
+>>> Auth::loginUsingId(1);
+=> App\User {#983
+     id: "1",
+     first_name: "Joe",
+     last_name: "Doe",
+     email: "joe.doe@domain.tld",
+     admin: "0",
+     created_at: "2017-01-02 18:30:47",
+     updated_at: "2017-01-08 02:10:37",
+     logged_in_at: "2017-01-08 02:10:37",
+     deleted_at: null,
+   }
+>>> ConnectWise::get('system/info');
+=> [
+     "version" => "v2016.6.43325",
+     "isCloud" => false,
+     "serverTimeZone" => "Eastern Standard Time",
+   ]
+>>>
+```
+
 ## Non-Laravel Usage
+
+To use the client outside of Laravel, you just need to new-up the objects...
+ 
+```
+$ php -a
+Interactive shell
+
+php > // Autoload classes
+php > require 'vendor/autoload.php';
+php > // New-up objects
+php > $token = new Spinen\ConnectWise\Api\Token();
+php > $guzzle = new GuzzleHttp\Client();
+php > $client = new Spinen\ConnectWise\Api\Client($token, $guzzle);
+php > // Now set your configs
+php > $token->setCompanyId('<company_id>')->setMemberId('<member_id>');
+php > $client->setIntegrator('<integrator>')->setPassword('<password>')->setUrl('https://<domain.tld>');
+php > $response = $client->get('system/info');
+php > var_export($response);
+array (
+  'version' => 'v2016.6.43325',
+  'isCloud' => false,
+  'serverTimeZone' => 'Eastern Standard Time',
+)
+php >
+```
