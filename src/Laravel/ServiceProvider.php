@@ -2,12 +2,12 @@
 
 namespace Spinen\ConnectWise\Laravel;
 
-use Spinen\ConnectWise\Api\Client;
-use Spinen\ConnectWise\Api\Token;
-use Spinen\ConnectWise\Exceptions\NoLoggedInUser;
 use GuzzleHttp\Client as Guzzle;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
+use Spinen\ConnectWise\Api\Client;
+use Spinen\ConnectWise\Api\Token;
+use Spinen\ConnectWise\Exceptions\NoLoggedInUser;
 
 /**
  * Class ConnectWiseProvider
@@ -91,12 +91,10 @@ class ConnectWiseProvider extends ServiceProvider
                 throw new NoLoggedInUser("There is not a currently logged in user.");
             }
 
-            $member_id = str_replace('.', '', explode('@', $app->auth->user()->email)[0]);
-
             $token = new Token();
 
             $token->setCompanyId($app->config->get('services.connectwise.company_id'))
-                  ->setMemberId($member_id);
+                  ->setMemberId($app->user()->connect_wise_member_id);
 
             return $token;
         });

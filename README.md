@@ -14,7 +14,7 @@ We are using the "Member Impersonation" model where you setup an integrator user
 application.  We make all of our users in ConnnectWise member id equal to their email user (i.e. joe.doe@spinen.com has
 member id of joedoe in connectwise) [NOTE: The "." was removed from joe.doe as ConnectWise does not allow dots in the
 member id].  By following this convention, we can infer the member id from the logged in user's email address in our
-applications.
+applications.  We have included a trait that you can use on the User model that will preform the logic above.
 
 We solely use [Laravel](http://www.laravel.com) for our applications, so there is some Laravel specific files that you 
 can use if you are using this client in a Laravel application.  We have tried to make sure that you can use the client
@@ -61,6 +61,8 @@ CW_URL=https://<FQDN to ConnectWise server>
     'ConnectWise' => Spinen\ConnectWise\Laravel\Facades\ConnectWise::class,
 ],
 ```
+
+5. Use the ```ConnectWiseMemberIdFromEmail``` trait on the User model, which is located at ```Spinen\ConnectWise\Laravel\ConnectWiseMemberIdFromEmail```, if your ConnectWise member_id is a match to your email as described above.  If you do not follow that convention, then you can define your own ```getConnectWiseMemberIdAttribute``` accessor on the User model or just add a ```connect_wise_member_id``` column to your user table that you populate with the appropriate values.
 
 ### Usage
 
