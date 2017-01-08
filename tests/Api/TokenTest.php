@@ -55,7 +55,8 @@ class TokenTest extends TestCase
 
         $response = [
             'expiration' => Carbon::now()
-                                  ->addHours(4),
+                                  ->addHours(4)
+                                  ->toDateTimeString(),
             'privateKey' => 'private',
             'publicKey'  => 'public',
         ];
@@ -71,7 +72,8 @@ class TokenTest extends TestCase
         $this->token->fetch($client);
 
         $this->assertInstanceOf(Carbon::class, $this->token->getExpiration());
-        $this->assertTrue($response['expiration']->eq($this->token->getExpiration()));
+        $expiration = Carbon::parse($response['expiration']);
+        $this->assertTrue($expiration->eq($this->token->getExpiration()));
         $this->assertEquals('Acme+public', $this->token->getUsername());
         $this->assertEquals('private', $this->token->getPassword());
     }
@@ -87,7 +89,8 @@ class TokenTest extends TestCase
 
         $response = [
             'expiration' => Carbon::now()
-                                  ->addHours(4),
+                                  ->addHours(4)
+                                  ->toDateTimeString(),
             'privateKey' => 'private',
             'publicKey'  => 'public',
         ];
@@ -112,7 +115,8 @@ class TokenTest extends TestCase
         $this->token->refresh($client);
 
         $this->assertInstanceOf(Carbon::class, $this->token->getExpiration());
-        $this->assertTrue($response['expiration']->eq($this->token->getExpiration()));
+        $expiration = Carbon::parse($response['expiration']);
+        $this->assertTrue($expiration->eq($this->token->getExpiration()));
         $this->assertEquals('Acme+public', $this->token->getUsername());
         $this->assertEquals('private', $this->token->getPassword());
     }
