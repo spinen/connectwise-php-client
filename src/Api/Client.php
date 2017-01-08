@@ -12,12 +12,12 @@ use InvalidArgumentException;
  *
  * @package Spinen\ConnectWise\Api
  *
+ * @method array delete(string $resource, array $options = [])
  * @method array get(string $resource, array $options = [])
  * @method array head(string $resource, array $options = [])
- * @method array put(string $resource, array $options = [])
- * @method array post(string $resource, array $options = [])
  * @method array patch(string $resource, array $options = [])
- * @method array delete(string $resource, array $options = [])
+ * @method array post(string $resource, array $options = [])
+ * @method array put(string $resource, array $options = [])
  */
 class Client
 {
@@ -117,7 +117,9 @@ class Client
      */
     public function addHeader(array $header)
     {
-        $this->headers[] = $header;
+        foreach ($header as $key => $value) {
+            $this->headers[$key] = $value;
+        }
 
         return $this;
     }
@@ -127,7 +129,7 @@ class Client
      *
      * @return array
      */
-    protected function buildAuth()
+    public function buildAuth()
     {
         if ($this->token->needsRefreshing()) {
             $this->token->refresh($this);
@@ -149,7 +151,7 @@ class Client
      *
      * @return array
      */
-    protected function buildOptions(array $options = [])
+    public function buildOptions(array $options = [])
     {
         return array_merge_recursive($options, [
             'auth'    => $this->buildAuth(),
@@ -164,7 +166,7 @@ class Client
      *
      * @return string
      */
-    protected function buildUri($resource)
+    public function buildUri($resource)
     {
         return $this->url . '/v4_6_release/apis/3.0/' . ltrim($resource, '/');
     }
@@ -313,7 +315,7 @@ class Client
     public function setUrl($url)
     {
         if (!filter_var($url, FILTER_VALIDATE_URL)) {
-            throw new InvalidArgumentException(sprintf("The URL provided[%] is not a valid format."), $url);
+            throw new InvalidArgumentException(sprintf("The URL provided[%] is not a valid format.", $url));
         }
 
         $this->url = rtrim($url, '/');
