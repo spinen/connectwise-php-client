@@ -212,12 +212,10 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     public function setAttribute($attribute, $value)
     {
         if ($this->hasSetter($attribute)) {
-            var_dump("Calling setter");
             return $this->{$this->setterMethodName($attribute)}($value);
         }
 
         if ($cast = $this->getCasts($attribute)) {
-            var_dump("Casting ]" . $attribute . "[ to ]" . $cast . "[");
             $value = $this->castTo($value, $cast);
         }
 
