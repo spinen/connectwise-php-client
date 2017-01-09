@@ -3,6 +3,7 @@
 namespace Spinen\ConnectWise\Api;
 
 use Carbon\Carbon;
+use Illuminate\Contracts\Support\Arrayable;
 
 /**
  * Class Token
@@ -167,14 +168,14 @@ class Token
     /**
      * Parse the tokens into properties
      *
-     * @param array $tokens
+     * @param Arrayable|array $token
      */
-    protected function parse(array $tokens)
+    protected function parse($token)
     {
         // TODO: Put guard here to make sure that we got a token.
-        $this->setExpiration($tokens['expiration']);
-        $this->password = $tokens['privateKey'];
-        $this->username = $tokens['publicKey'];
+        $this->setExpiration($token['expiration']);
+        $this->password = $token['privateKey'];
+        $this->username = $token['publicKey'];
     }
 
     /**
