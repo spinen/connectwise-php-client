@@ -9,12 +9,28 @@ use Illuminate\Contracts\Support\Jsonable;
 use InvalidArgumentException;
 use JsonSerializable;
 
+/**
+ * Class Model
+ *
+ * @package Spinen\ConnectWise\Support
+ */
 abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
 {
+    /**
+     * @var array
+     */
     protected $attributes = [];
 
+    /**
+     * @var array
+     */
     protected $casts = [];
 
+    /**
+     * Model constructor.
+     *
+     * @param array $attributes
+     */
     public function __construct(array $attributes)
     {
         $this->fill($attributes);
@@ -32,6 +48,8 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
 
     /**
      * @param string $attribute
+     *
+     * @return mixed|void
      */
     public function __get($attribute)
     {
@@ -40,6 +58,8 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
 
     /**
      * @param string $attribute
+     *
+     * @return bool
      */
     public function __isset($attribute)
     {
@@ -63,6 +83,12 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
         unset($this->attributes[$attribute]);
     }
 
+    /**
+     * @param $value
+     * @param $cast
+     *
+     * @return Collection|string|static
+     */
     public function castTo($value, $cast)
     {
         if (is_null($value)) {
@@ -104,9 +130,17 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
             throw new InvalidArgumentException(sprintf("Attributes cannot be casted to [%s] type.", $cast));
         }
 
-        return settype($value, $cast);
+        settype($value, $cast);
+
+        // settype returns true/false for pass/fail, not the value
+        return $value;
     }
 
+    /**
+     * @param array $attributes
+     *
+     * @return $this
+     */
     public function fill(array $attributes)
     {
         foreach ($attributes as $attribute => $value) {
@@ -116,21 +150,43 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
         return $this;
     }
 
+    /**
+     * @param $attribute
+     *
+     * @return bool
+     */
     public function hasGetter($attribute)
     {
         return method_exists($this, $this->getterMethodName($attribute));
     }
 
+    /**
+     * @param $attribute
+     *
+     * @return bool
+     */
     public function hasSetter($attribute)
     {
         return method_exists($this, $this->setterMethodName($attribute));
     }
 
+    /**
+     * @param $attribute
+     *
+     * @return bool
+     */
     public function hasCast($attribute)
     {
-        return empty($this->getCasts($attribute));
+        $cast = $this->getCasts($attribute);
+
+        return !empty($cast) && is_string($cast);
     }
 
+    /**
+     * @param $attribute
+     *
+     * @return mixed|void
+     */
     public function getAttribute($attribute)
     {
         if (!$attribute) {
@@ -146,6 +202,11 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
         return $this->attributes[$attribute];
     }
 
+    /**
+     * @param null $attribute
+     *
+     * @return array|mixed
+     */
     public function getCasts($attribute = null)
     {
         if (array_key_exists($attribute, $this->casts)) {
@@ -155,6 +216,11 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
         return $this->casts;
     }
 
+    /**
+     * @param $attribute
+     *
+     * @return string
+     */
     protected function getterMethodName($attribute)
     {
         return 'get' . studly_case($attribute) . 'Attribute';
@@ -209,14 +275,20 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
         unset($this->$attribute);
     }
 
+    /**
+     * @param $attribute
+     * @param $value
+     *
+     * @return $this
+     */
     public function setAttribute($attribute, $value)
     {
         if ($this->hasSetter($attribute)) {
             return $this->{$this->setterMethodName($attribute)}($value);
         }
 
-        if ($cast = $this->getCasts($attribute)) {
-            $value = $this->castTo($value, $cast);
+        if ($this->hasCast($attribute)) {
+            $value = $this->castTo($value, $this->getCasts($attribute));
         }
 
         $this->attributes[$attribute] = $value;
@@ -224,6 +296,11 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
         return $this;
     }
 
+    /**
+     * @param $attribute
+     *
+     * @return string
+     */
     protected function setterMethodName($attribute)
     {
         return 'set' . studly_case($attribute) . 'Attribute';
