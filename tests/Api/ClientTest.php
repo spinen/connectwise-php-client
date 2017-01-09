@@ -3,6 +3,7 @@
 namespace Spinen\ConnectWise\Api;
 
 use GuzzleHttp\Client as Guzzle;
+use GuzzleHttp\Psr7\Response;
 use Mockery;
 use Mockery\Mock;
 use Spinen\ConnectWise\TestCase;
@@ -333,7 +334,7 @@ class ClientTest extends TestCase
 
     protected function mockOutEverythingForTestingThatGuzzleIsCalled()
     {
-        $response = Mockery::mock();
+        $response = Mockery::mock(Response::class);
 
         $response->shouldReceive('getBody')
                  ->once()

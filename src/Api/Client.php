@@ -5,6 +5,7 @@ namespace Spinen\ConnectWise\Api;
 use GuzzleHttp\Client as Guzzle;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
+use GuzzleHttp\Psr7\Response;
 use InvalidArgumentException;
 
 /**
@@ -239,6 +240,19 @@ class Client
         }
     }
 
+    protected function processResponse($resource, Response $response)
+    {
+        $model = 'Spinen\ConnectWise\\' . studly_case(explode('/', $resource)[0]);
+
+        $response = (array)json_decode($response->getBody(), true);
+
+        if (class_exists($model)) {
+            return new $model($response);
+        }
+
+        return $response;
+    }
+
     /**
      * Make call to the resource
      *
@@ -252,13 +266,11 @@ class Client
     {
         try {
             $response = $this->guzzle->request($method, $this->buildUri($resource), $this->buildOptions($options));
+
+            return $this->processResponse($resource, $response);
         } catch (RequestException $e) {
             $this->processError($e);
         }
-
-        // TODO: Return a collection of Models of some sorts
-        // TODO: Should we test for JSON first & then cast?
-        return json_decode($response->getBody(), true);
     }
 
     /**
