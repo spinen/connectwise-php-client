@@ -7,6 +7,7 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Response;
 use InvalidArgumentException;
+use Spinen\ConnectWise\Support\Collection;
 
 /**
  * Class Client
@@ -33,6 +34,23 @@ class Client
      * @var array
      */
     protected $headers = [];
+
+    /**
+     * @var array
+     */
+    protected $resource_model_map = [
+        'system/audittrail'              => 'System\AuditTrail',
+        'system/batch'                   => 'System\Batch',
+        'system/callbacks'               => 'System\Callback',
+        'system/connectwisehostedsetups' => 'System\ConnectWiseHostedSetup',
+        'system/documents'               => 'System\Document',
+        'system/info'                    => 'System\Info',
+        'system/links'                   => 'System\Link',
+        'system/members'                 => 'System\Member',
+        'system/menuentries'             => 'System\MenuEntry',
+        'system/reports'                 => 'System\Report',
+        'system/userDefinedFields'       => 'System\UserDefinedField',
+    ];
 
     /**
      * Integrator username to make global calls
@@ -185,6 +203,20 @@ class Client
     }
 
     /**
+     * @param $resource
+     *
+     * @return string|null
+     */
+    public function findResourceModel($resource)
+    {
+        if (array_key_exists(strtolower($resource), $this->resource_model_map)) {
+            return $this->resource_model_map[strtolower($resource)];
+        }
+
+        return null;
+    }
+
+    /**
      * The headers to send
      *
      * When making an integrator call (expired token), then you have to only send the "x-cw-usertype" header.
@@ -240,13 +272,29 @@ class Client
         }
     }
 
+    /**
+     * @param          $resource
+     * @param Response $response
+     *
+     * @return array|Response
+     */
     protected function processResponse($resource, Response $response)
     {
-        $model = 'Spinen\ConnectWise\\' . studly_case(explode('/', $resource)[0]);
-
         $response = (array)json_decode($response->getBody(), true);
 
-        if (class_exists($model)) {
+        if ($model = $this->findResourceModel($resource)) {
+            $model = 'Spinen\ConnectWise\Models\\' . $model;
+
+            if ($this->isCollection($response)) {
+                $response = array_map(function ($item) use ($model) {
+                    $item = new $model($item);
+
+                    return $item;
+                }, $response);
+
+                return new Collection($response);
+            }
+
             return new $model($response);
         }
 
@@ -333,5 +381,15 @@ class Client
         $this->url = rtrim($url, '/');
 
         return $this;
+    }
+
+    protected function isCollection(array $array)
+    {
+        // Keys of the array
+        $keys = array_keys($array);
+
+        // If the array keys of the keys match the keys, then the array must
+        // not be associative (e.g. the keys array looked like {0:0, 1:1...}).
+        return array_keys($keys) === $keys;
     }
 }
