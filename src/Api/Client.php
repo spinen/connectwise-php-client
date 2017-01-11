@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Api;
 
+use Exception;
 use GuzzleHttp\Client as Guzzle;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
@@ -39,17 +40,35 @@ class Client
      * @var array
      */
     protected $resource_model_map = [
-        'system/audittrail'              => 'System\AuditTrail',
-        'system/batch'                   => 'System\Batch',
-        'system/callbacks'               => 'System\Callback',
-        'system/connectwisehostedsetups' => 'System\ConnectWiseHostedSetup',
-        'system/documents'               => 'System\Document',
-        'system/info'                    => 'System\Info',
-        'system/links'                   => 'System\Link',
-        'system/members'                 => 'System\Member',
-        'system/menuentries'             => 'System\MenuEntry',
-        'system/reports'                 => 'System\Report',
-        'system/userDefinedFields'       => 'System\UserDefinedField',
+        'company/companies'                               => 'Company\Company',
+        'company/companies/statuses'                      => 'Company\CompanyStatus',
+        'company/companies/types'                         => 'Company\CompanyTypes',
+        'company/companies/{id}/managementSummaryReports' => 'Company\CompanyManagementSummaryReport',
+        'company/companies/{id}/sites'                    => 'Company\CompanySite',
+        'company/companies/{id}/teams'                    => 'Company\CompanyTeam',
+        'company/company/configurations'                  => 'Company\Configuration',
+        'company/company/configurations/types'            => 'Company\ConfigurationType',
+        'company/company/contacts/departments'            => 'Company\ContactDepartment',
+        'company/company/contacts/{id}/communications'    => 'Company\ContactCommunication',
+        'company/configurations/statuses'                 => 'Company\ConfigurationStatus',
+        'company/configurations/types/{id}/questions'     => 'Company\ConfigurationTypeQuestion',
+        'company/contacts'                                => 'Company\contact',
+        'company/contacts/relationships'                  => 'Company\ContactRelationship',
+        'company/contacts/types'                          => 'Company\ContactType',
+        'company/contacts/{id}/notes'                     => 'Company\ContactNote',
+        'company/contacts/{id}/tracks'                    => 'Company\ContactTrack',
+        'company/notes'                                   => 'Company\CompanyNote',
+        'system/audittrail'                               => 'System\AuditTrail',
+        'system/batch'                                    => 'System\Batch',
+        'system/callbacks'                                => 'System\Callback',
+        'system/connectwisehostedsetups'                  => 'System\ConnectWiseHostedSetup',
+        'system/documents'                                => 'System\Document',
+        'system/info'                                     => 'System\Info',
+        'system/links'                                    => 'System\Link',
+        'system/members'                                  => 'System\Member',
+        'system/menuentries'                              => 'System\MenuEntry',
+        'system/reports'                                  => 'System\Report',
+        'system/userDefinedFields'                        => 'System\UserDefinedField',
     ];
 
     /**
@@ -203,17 +222,42 @@ class Client
     }
 
     /**
-     * @param $resource
+     * Find the model to fill with the results from the request
+     *
+     * This is a little more complicated than you would think that it needs to be, but we have to map the response to
+     * a model by looking at the URI.  If the URI is for a specific id, then the id has to be converted to the wildcard
+     * in the map or it is a single resource & not a collection, then the id has to be removed from the end.
+     *
+     * @param string $uri
      *
      * @return string|null
      */
-    public function findResourceModel($resource)
+    public function findResourceModel($uri)
     {
-        if (array_key_exists(strtolower($resource), $this->resource_model_map)) {
-            return $this->resource_model_map[strtolower($resource)];
-        }
+        // Pull leading slash off
+        $uri = ltrim($uri, '/');
 
-        return null;
+        // Bust the resource into the parts
+        $uri_parts = parse_url($uri);
+
+        // Trim /\\d+ off the end
+        $pattern = preg_replace('|/\\d+$|u', '', $uri_parts['path']);
+
+        // Replace /\\d+/ with /{id}}/
+        $pattern = preg_replace('|/\\d+/|u', '/{id}/', $pattern);
+
+        // Make regex
+        $pattern = '|^/?' . $pattern . '/?\\d*?$|ui';
+
+        // This is convoluted, but it is getting the first value of the filtered resources that the key matches the
+        // associative array
+        // TODO: Consider flipping the resource map array to put the resources second to clean this up?
+        try {
+            return array_values(array_intersect_key($this->resource_model_map,
+                array_flip(preg_grep($pattern, array_keys($this->resource_model_map)))))[0];
+        } catch (Exception $exception) {
+            return null;
+        }
     }
 
     /**
