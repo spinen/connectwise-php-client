@@ -58,6 +58,8 @@ class Client
         'company/contacts/{id}/notes'                     => 'Company\ContactNote',
         'company/contacts/{id}/tracks'                    => 'Company\ContactTrack',
         'company/notes'                                   => 'Company\CompanyNote',
+        'expense/entries'                                 => 'Expense\ExpenseEntry',
+        'expense/types'                                   => 'Expense\ExpenseType',
         'system/audittrail'                               => 'System\AuditTrail',
         'system/batch'                                    => 'System\Batch',
         'system/callbacks'                                => 'System\Callback',
