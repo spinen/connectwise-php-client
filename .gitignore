@@ -2,3 +2,5 @@
 phpunit.xml
 /build
 composer.lock
+/generator/Generated
+/generator/swagger
