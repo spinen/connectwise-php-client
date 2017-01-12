@@ -12,14 +12,11 @@ class ContactCommunication extends Model
      * @var array
      */
     protected $casts = [
-        'id'          => 'integer',
-        'contactId'   => 'integer',
-        //        'type'               => 'CommunicationTypeReference',
-        'value'       => 'string',
-        'extension'   => 'string',
+        'id' => 'integer',
+        'contactId' => 'integer',
+        'value' => 'string',
+        'extension' => 'string',
         'defaultFlag' => 'boolean',
-        //        'mobileGuid'         => 'Guid',
-        //        'communicationType ' => 'Enum',
-        //        '_info'              => 'Metadata',
+        'communicationType' => 'string',
     ];
 }

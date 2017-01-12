@@ -12,13 +12,12 @@ class Callback extends Model
      * @var array
      */
     protected $casts = [
-        'id'          => 'integer',
+        'id' => 'integer',
         'description' => 'string',
-        'url'         => 'string',
-        'objectId'    => 'integer',
-        'type'        => 'string',
-        'level'       => 'string',
-        'memberId'    => 'integer',
-//        '_info'       => 'Metadata',
+        'url' => 'string',
+        'objectId' => 'integer',
+        'type' => 'string',
+        'level' => 'string',
+        'memberId' => 'integer',
     ];
 }

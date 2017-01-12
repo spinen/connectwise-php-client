@@ -12,9 +12,8 @@ class ContactType extends Model
      * @var array
      */
     protected $casts = [
-        'id'          => 'integer',
+        'id' => 'integer',
         'description' => 'string',
         'defaultFlag' => 'boolean',
-        //        '_info'       => 'Metadata',
     ];
 }

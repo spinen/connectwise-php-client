@@ -4,7 +4,7 @@ namespace Spinen\ConnectWise\Models\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
-class ConfigurationTypeQuestions extends Model
+class ConfigurationTypeQuestion extends Model
 {
     /**
      * Properties that need to be casts to a specific object or type
@@ -12,16 +12,15 @@ class ConfigurationTypeQuestions extends Model
      * @var array
      */
     protected $casts = [
-        'id'                   => 'integer',
-        'configurationTypeId ' => 'integer',
-        //        'fieldType'            => 'Enum',
-        //        'entryType'            => 'Enum',
-        'sequenceNumber'       => 'double',
-        'question'             => 'string',
-        'numberOfDecimals'     => 'integer',
-        'requiredFlag'         => 'boolean',
-        'inactiveFlag'         => 'boolean',
-        //        'possibleAnswers'      => 'string[]',
-        //        '_info '               => 'Metadata',
+        'id' => 'integer',
+        'configurationTypeId' => 'integer',
+        'fieldType' => 'string',
+        'entryType' => 'string',
+        'sequenceNumber' => 'double',
+        'question' => 'string',
+        'numberOfDecimals' => 'integer',
+        'requiredFlag' => 'boolean',
+        'inactiveFlag' => 'boolean',
+        'possibleAnswers' => 'array',
     ];
 }

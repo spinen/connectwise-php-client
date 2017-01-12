@@ -6,12 +6,12 @@ use Spinen\ConnectWise\Support\Model;
 
 class AuditTrail extends Model
 {
+    /**
+     * Properties that need to be casts to a specific object or type
+     *
+     * @var array
+     */
     protected $casts = [
-        'text'         => 'string',
-        'enteredDate'  => 'string',
-        'enteredBy'    => 'string',
-        'auditType'    => 'string',
-        'auditSubType' => 'string',
-        'auditSource'  => 'string',
+        'count' => 'integer',
     ];
 }

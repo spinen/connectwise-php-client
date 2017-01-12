@@ -12,12 +12,9 @@ class CompanyNote extends Model
      * @var array
      */
     protected $casts = [
-        'id'         => 'integer',
-        'text'       => 'string',
-        //        'type'       => 'NoteTypeReference',
-        'flagged'    => 'boolean',
-        'enteredBy ' => 'string',
-        //        'company '   => 'CompanyReference',
-        //        '_info'      => 'Metadata',
+        'id' => 'integer',
+        'text' => 'string',
+        'flagged' => 'boolean',
+        'enteredBy' => 'string',
     ];
 }

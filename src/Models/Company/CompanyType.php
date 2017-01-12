@@ -12,10 +12,9 @@ class CompanyType extends Model
      * @var array
      */
     protected $casts = [
-        'id'          => 'integer',
-        'name'        => 'string',
+        'id' => 'integer',
+        'name' => 'string',
         'defaultFlag' => 'boolean',
-        'vendorFlag'  => 'boolean',
-        //        '_info'       => 'Metadata',
+        'vendorFlag' => 'boolean',
     ];
 }

@@ -12,15 +12,5 @@ class Document extends Model
      * @var array
      */
     protected $casts = [
-        'id'             => 'integer',
-        'title'          => 'string',
-        'fileName'       => 'string',
-        'serverFileName' => 'string',
-        'owner'          => 'string',
-        'linkFlag'       => 'boolean',
-        'imageFlag'      => 'boolean',
-        'publicFlag'     => 'boolean',
-        'readOnlyFlag'   => 'boolean',
-//        '_info'          => 'Metadata',
     ];
 }

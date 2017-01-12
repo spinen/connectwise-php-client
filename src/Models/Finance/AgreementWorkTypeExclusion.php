@@ -12,9 +12,6 @@ class AgreementWorkTypeExclusion extends Model
      * @var array
      */
     protected $casts = [
-        'id'          => 'integer',
-        //        'workType'    => 'WorkTypeReference',
-        'agreementId' => 'integer',
-        //        '_info'       => 'Metadata',
+        'count' => 'integer',
     ];
 }

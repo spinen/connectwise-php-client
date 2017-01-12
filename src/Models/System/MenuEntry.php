@@ -12,17 +12,5 @@ class MenuEntry extends Model
      * @var array
      */
     protected $casts = [
-        'id'                 => 'integer',
-        //        'menuLocation'       => 'MenuLocationReference',
-        'caption'            => 'string',
-        'link'               => 'string',
-        'newWindowFlag'      => 'boolean',
-        //        'locationIds'        => 'integer[]',
-        'origin'             => 'string',
-        'addAllLocations'    => 'boolean',
-        'removeAllLocations' => 'boolean',
-        'smallMenuIconId '   => 'integer',
-        'largeMenuIconId '   => 'integer',
-        //        '_info'              => 'Metadata',
     ];
 }

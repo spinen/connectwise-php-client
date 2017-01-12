@@ -12,15 +12,13 @@ class TaxCodeXRef extends Model
      * @var array
      */
     protected $casts = [
-        'id'          => 'integer',
+        'id' => 'integer',
         'description' => 'string',
         'defaultFlag' => 'boolean',
-        //        'levelOne'    => 'Enum',
-        //        'levelTwo'    => 'Enum',
-        //        'levelThree'  => 'Enum',
-        //        'levelFour'   => 'Enum',
-        //        'levelFive'   => 'Enum',
-        //        'taxCode'     => 'TaxCodeReference',
-        //        '_info'       => 'Metadata',
+        'levelOne' => 'string',
+        'levelTwo' => 'string',
+        'levelThree' => 'string',
+        'levelFour' => 'string',
+        'levelFive' => 'string',
     ];
 }

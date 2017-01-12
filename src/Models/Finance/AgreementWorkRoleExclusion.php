@@ -12,9 +12,6 @@ class AgreementWorkRoleExclusion extends Model
      * @var array
      */
     protected $casts = [
-        'id'          => 'integer',
-        //        'workRole'    => 'WorkRoleReference',
-        'agreementId' => 'integer',
-        //        '_info'       => 'Metadata',
+        'count' => 'integer',
     ];
 }

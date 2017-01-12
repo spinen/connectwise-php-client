@@ -12,8 +12,8 @@ class Info extends Model
      * @var array
      */
     protected $casts = [
-        'version'        => 'string',
-        'isCloud'        => 'boolean',
+        'version' => 'string',
+        'isCloud' => 'boolean',
         'serverTimeZone' => 'string',
     ];
 }

@@ -12,11 +12,8 @@ class AgreementBoardDefault extends Model
      * @var array
      */
     protected $casts = [
-        'id'          => 'integer',
-        //        'board'       => 'BoardReference',
-        //        'serviceType' => 'ServiceTypeReference',
+        'id' => 'integer',
         'defaultFlag' => 'boolean',
         'agreementId' => 'integer',
-        //        '_info'       => 'Metadata',
     ];
 }

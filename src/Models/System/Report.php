@@ -12,6 +12,5 @@ class Report extends Model
      * @var array
      */
     protected $casts = [
-        'name' => 'string',
     ];
 }

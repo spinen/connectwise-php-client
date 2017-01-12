@@ -12,18 +12,17 @@ class ExpenseType extends Model
      * @var array
      */
     protected $casts = [
-        'id'                  => 'integer',
-        'name'                => 'string',
-        'amountCaption'       => 'string',
-        'reimbursementRate'   => 'double',
-        //        'billExpenses'        => 'Enum',
-        //        'invoiceMarkupOption' => 'Enum',
+        'id' => 'integer',
+        'name' => 'string',
+        'amountCaption' => 'string',
+        'reimbursementRate' => 'double',
+        'billExpenses' => 'string',
+        'invoiceMarkupOption' => 'string',
         'invoiceMarkupAmount' => 'double',
-        'advancedAmountFlag'  => 'boolean',
-        'mileageFlag'         => 'boolean',
-        'quantityFlag'        => 'boolean',
-        'inactiveFlag'        => 'boolean',
-        'maxAmount'           => 'double',
-        //        '_info'               => 'Metadata',
+        'advancedAmountFlag' => 'boolean',
+        'mileageFlag' => 'boolean',
+        'quantityFlag' => 'boolean',
+        'inactiveFlag' => 'boolean',
+        'maxAmount' => 'double',
     ];
 }

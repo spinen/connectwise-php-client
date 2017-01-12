@@ -12,12 +12,10 @@ class ContactNote extends Model
      * @var array
      */
     protected $casts = [
-        'id'         => 'integer',
-        'contactId ' => 'integer',
-        'text'       => 'string',
-        //        'type'       => 'NoteTypeReference',
-        'flagged'    => 'boolean',
-        'enteredBy ' => 'string',
-        //        '_info'     => 'Metadata',
+        'id' => 'integer',
+        'contactId' => 'integer',
+        'text' => 'string',
+        'flagged' => 'boolean',
+        'enteredBy' => 'string',
     ];
 }

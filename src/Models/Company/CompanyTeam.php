@@ -12,16 +12,11 @@ class CompanyTeam extends Model
      * @var array
      */
     protected $casts = [
-        'id'                 => 'integer',
-        //        'company'            => 'CompanyReference',
-        //        'teamRole'           => 'TeamRoleReference',
-        'locationId'         => 'integer',
-        'businessUnitId'     => 'integer',
-        //        'contact'            => 'ContactReference',
-        //        'member'             => 'MemberReference',
+        'id' => 'integer',
+        'locationId' => 'integer',
+        'businessUnitId' => 'integer',
         'accountManagerFlag' => 'boolean',
-        'techFlag'           => 'boolean',
-        'salesFlag'          => 'boolean',
-        //        '_info'              => 'Metadata',
+        'techFlag' => 'boolean',
+        'salesFlag' => 'boolean',
     ];
 }

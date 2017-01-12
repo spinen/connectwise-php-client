@@ -12,10 +12,7 @@ class AgreementSite extends Model
      * @var array
      */
     protected $casts = [
-        'id'          => 'integer',
-        //        'company'     => 'CompanyReference',
-        //        'site'        => 'SiteReference',
+        'id' => 'integer',
         'agreementId' => 'integer',
-        //        '_info'       => 'Metadata',
     ];
 }

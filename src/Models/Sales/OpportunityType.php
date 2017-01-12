@@ -1,10 +1,10 @@
 <?php
 
-namespace Spinen\ConnectWise\Models\System;
+namespace Spinen\ConnectWise\Models\Sales;
 
 use Spinen\ConnectWise\Support\Model;
 
-class Batch extends Model
+class OpportunityType extends Model
 {
     /**
      * Properties that need to be casts to a specific object or type
@@ -12,8 +12,8 @@ class Batch extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'string',
-        // TODO: Make this actual class
-        // 'responses'        => 'EndpointResponse',
+        'id' => 'integer',
+        'description' => 'string',
+        'inactiveFlag' => 'boolean',
     ];
 }

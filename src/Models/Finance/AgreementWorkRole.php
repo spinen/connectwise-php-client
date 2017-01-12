@@ -12,15 +12,13 @@ class AgreementWorkRole extends Model
      * @var array
      */
     protected $casts = [
-        'id'            => 'integer',
-        //        'workRole'      => 'WorkRoleReference',
-        'locationId'    => 'integer',
-        //        'rateType'      => 'Enum',
-        'rate'          => 'double',
-        'limitTo'       => 'double',
+        'id' => 'integer',
+        'locationId' => 'integer',
+        'rateType' => 'string',
+        'rate' => 'double',
+        'limitTo' => 'double',
         'effectiveDate' => 'carbon',
-        'endingDate'    => 'carbon',
-        'agreementId'   => 'integer',
-        //        '_info'         => 'Metadata',
+        'endingDate' => 'carbon',
+        'agreementId' => 'integer',
     ];
 }

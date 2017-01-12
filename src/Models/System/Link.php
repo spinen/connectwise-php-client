@@ -12,10 +12,9 @@ class Link extends Model
      * @var array
      */
     protected $casts = [
-        'id'               => 'integer',
-        'name'             => 'string',
+        'id' => 'integer',
+        'name' => 'string',
         'tableReferenceId' => 'integer',
-        'url'              => 'string',
-//        '_info '           => 'Metadata',
+        'url' => 'string',
     ];
 }

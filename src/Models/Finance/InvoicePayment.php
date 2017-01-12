@@ -12,12 +12,10 @@ class InvoicePayment extends Model
      * @var array
      */
     protected $casts = [
-        'id'          => 'integer',
-        'type'        => 'string',
-        //        'invoice'     => 'InvoiceReference',
-        'amount'      => 'double',
+        'id' => 'integer',
+        'type' => 'string',
+        'amount' => 'double',
         'paymentDate' => 'carbon',
-        'appliedBy'   => 'string',
-        //        '_info'       => 'Metadata',
+        'appliedBy' => 'string',
     ];
 }

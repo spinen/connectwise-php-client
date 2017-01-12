@@ -12,13 +12,12 @@ class Currency extends Model
      * @var array
      */
     protected $casts = [
-        'id'                 => 'integer',
+        'id' => 'integer',
         'currencyIdentifier' => 'string',
-        'name'               => 'string',
-        'symbol'             => 'string',
-        'displayIdFlag'      => 'boolean',
-        'displaySymbolFlag'  => 'boolean',
-        'isoCode'            => 'string',
-        //        '_info'              => 'Metadata',
+        'name' => 'string',
+        'symbol' => 'string',
+        'displayIdFlag' => 'boolean',
+        'displaySymbolFlag' => 'boolean',
+        'isoCode' => 'string',
     ];
 }

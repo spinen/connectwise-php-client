@@ -12,16 +12,13 @@ class ContactTrack extends Model
      * @var array
      */
     protected $casts = [
-        'id'              => 'integer',
-        'trackId'         => 'integer',
-        'name'            => 'string',
-        'startDate'       => 'string',
-        'endDate'         => 'string',
-        'actionTaken'     => 'integer',
+        'id' => 'integer',
+        'trackId' => 'integer',
+        'name' => 'string',
+        'startDate' => 'string',
+        'endDate' => 'string',
+        'actionTaken' => 'integer',
         'actionRemaining' => 'integer',
-        'startedBy'       => 'string',
-        //        'company'         => 'CompanyReference',
-        //        'contact'         => 'ContactReference',
-        //        '_info'           => 'Metadata',
+        'startedBy' => 'string',
     ];
 }

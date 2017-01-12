@@ -12,11 +12,10 @@ class AgreementAdjustment extends Model
      * @var array
      */
     protected $casts = [
-        'id'            => 'integer',
-        'amount'        => 'double',
-        'description'   => 'string',
+        'id' => 'integer',
+        'amount' => 'double',
+        'description' => 'string',
         'effectiveDate' => 'carbon',
-        'agreementId'   => 'integer',
-        //        '_info'         => 'Metadata',
+        'agreementId' => 'integer',
     ];
 }
