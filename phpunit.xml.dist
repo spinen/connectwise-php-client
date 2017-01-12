@@ -37,6 +37,8 @@
             <exclude>
                 <!--<file>src/file.php</file>-->
                 <directory suffix=".php">src/Exceptions</directory>
+                <!--Since the Models are generated, there is no reason to test them-->
+                <directory suffix=".php">src/Models</directory>
                 <file>src/Laravel/Facades/ConnectWise.php</file>
                 <file>src/Laravel/ServiceProvider.php</file>
             </exclude>
