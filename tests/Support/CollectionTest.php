@@ -15,12 +15,4 @@ class CollectionTest extends TestCase
 
         $this->assertInstanceOf(Collection::class, $collection);
     }
-
-    /**
-     * @test
-     */
-    public function it_needs_a_bunch_more_test()
-    {
-        $this->markTestIncomplete("Need to write a bunch more tests");
-    }
 }
