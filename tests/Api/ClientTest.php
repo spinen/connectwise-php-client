@@ -147,6 +147,51 @@ class ClientTest extends TestCase
     /**
      * @test
      */
+    public function it_returns_an_array_when_there_is_not_a_model_to_map()
+    {
+        $response = Mockery::mock(Response::class);
+
+        $response->shouldReceive('getBody')
+                 ->once()
+                 ->withNoArgs()
+                 ->andReturn('{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"}');
+
+        $this->guzzle->shouldReceive('request')
+                     ->once()
+                     ->withAnyArgs()
+                     ->andReturn($response);
+
+        $this->resolver->shouldReceive('find')
+                       ->once()
+                       ->with('uri')
+                       ->andReturnNull();
+
+        $this->token->shouldReceive('needsRefreshing')
+                    ->once()
+                    ->withNoArgs()
+                    ->andReturn(false);
+
+        $this->token->shouldReceive('getUsername')
+                    ->once()
+                    ->withNoArgs()
+                    ->andReturn('integrator');
+
+        $this->token->shouldReceive('getPassword')
+                    ->once()
+                    ->withNoArgs()
+                    ->andReturn('pass');
+
+        $this->token->shouldReceive('isForUser')
+                    ->once()
+                    ->with(Mockery::any())
+                    ->andReturn(false);
+
+        $this->assertTrue(is_array($this->client->get('uri')));
+    }
+
+    /**
+     * @test
+     */
     public function it_has_functioning_integrator_getters_and_setters()
     {
         $integrator = 'integrator';
