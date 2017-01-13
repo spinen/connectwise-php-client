@@ -8,6 +8,7 @@ use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 use Spinen\ConnectWise\Api\Client;
 use Spinen\ConnectWise\Api\Token;
 use Spinen\ConnectWise\Exceptions\NoLoggedInUser;
+use Spinen\ConnectWise\Support\ModelResolver;
 
 /**
  * Class ConnectWiseProvider
@@ -55,7 +56,7 @@ class ServiceProvider extends LaravelServiceProvider
     protected function registerClient()
     {
         $this->app->singleton(Client::class, function (Application $app) {
-            $client = new Client($app->make(Token::class), $app->make(Guzzle::class));
+            $client = new Client($app->make(Token::class), $app->make(Guzzle::class), $app->make(ModelResolver::class));
 
             $client->setIntegrator($app->config->get('services.connectwise.integrator'))
                    ->setPassword($app->config->get('services.connectwise.password'))
