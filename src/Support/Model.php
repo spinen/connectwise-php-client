@@ -131,6 +131,10 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
             return new Collection((array)$value);
         }
 
+        if (in_array($cast, ["bool", "boolean"])) {
+            return filter_var($value, FILTER_VALIDATE_BOOLEAN);
+        }
+
         $cast_types = [
             "array",
             "bool",
