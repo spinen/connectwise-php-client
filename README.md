@@ -68,10 +68,13 @@ CW_URL=https://<FQDN to ConnectWise server>
 
 Here is an example of getting the system information...
 
+As of version 3.1.0, the response is either a Laravel collection of models or a single model.  You can see the models in ```src/Models```.  They all extend ```Spinen\ConnectWise\Support```, so you can see the methods that they provide.
+
 ```
 $ php artisan tinker
-Psy Shell v0.8.0 (PHP 7.0.7 — cli) by Justin Hileman
+Psy Shell v0.8.0 (PHP 7.0.14 — cli) by Justin Hileman
 >>> Auth::loginUsingId(1);
+PHP warning:  unlink(/Users/jimmy.puckett/git/swaginator.com/storage/framework/sessions/1aMf1yhUe6h4Ij2GRvq5UYab1IqK7GVn1qkyWPY6): No such file or directory in /Users/jimmy.puckett/git/swaginator.com/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php on line 172
 => App\User {#983
      id: "1",
      first_name: "Joe",
@@ -79,27 +82,35 @@ Psy Shell v0.8.0 (PHP 7.0.7 — cli) by Justin Hileman
      email: "joe.doe@domain.tld",
      admin: "0",
      created_at: "2017-01-02 18:30:47",
-     updated_at: "2017-01-08 02:10:37",
-     logged_in_at: "2017-01-08 02:10:37",
+     updated_at: "2017-01-12 22:22:39",
+     logged_in_at: "2017-01-12 22:22:39",
      deleted_at: null,
    }
 >>> $cw = app('Spinen\ConnectWise\Api\Client');
 => Spinen\ConnectWise\Api\Client {#934}
->>> $cw->get('system/info');
+>>> $info = $cw->get('system/info');
+=> Spinen\ConnectWise\Models\System\Info {#1008}
+>>> $info->toArray();
 => [
      "version" => "v2016.6.43325",
      "isCloud" => false,
      "serverTimeZone" => "Eastern Standard Time",
    ]
->>>
+>>> $info->toJson()
+=> "{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"}"
+>>> $info->isCloud
+=> false
+>>> $info['isCloud'];
+=> false
 ```
 
 Same call using the facade...
 
 ```
 $ php artisan tinker
-Psy Shell v0.8.0 (PHP 7.0.7 — cli) by Justin Hileman
+Psy Shell v0.8.0 (PHP 7.0.14 — cli) by Justin Hileman
 >>> Auth::loginUsingId(1);
+PHP warning:  unlink(/Users/jimmy.puckett/git/swaginator.com/storage/framework/sessions/1aMf1yhUe6h4Ij2GRvq5UYab1IqK7GVn1qkyWPY6): No such file or directory in /Users/jimmy.puckett/git/swaginator.com/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php on line 172
 => App\User {#983
      id: "1",
      first_name: "Joe",
@@ -107,16 +118,24 @@ Psy Shell v0.8.0 (PHP 7.0.7 — cli) by Justin Hileman
      email: "joe.doe@domain.tld",
      admin: "0",
      created_at: "2017-01-02 18:30:47",
-     updated_at: "2017-01-08 02:10:37",
-     logged_in_at: "2017-01-08 02:10:37",
+     updated_at: "2017-01-12 22:22:39",
+     logged_in_at: "2017-01-12 22:22:39",
      deleted_at: null,
    }
 >>> ConnectWise::get('system/info');
+=> Spinen\ConnectWise\Models\System\Info {#1005}
+>>> ConnectWise::get('system/info')->toArray();
 => [
      "version" => "v2016.6.43325",
      "isCloud" => false,
      "serverTimeZone" => "Eastern Standard Time",
    ]
+>>> ConnectWise::get('system/info')->toJson();
+=> "{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"}"
+>>> ConnectWise::get('system/info')->isCloud;
+=> false
+>>> ConnectWise::get('system/info')['isCloud'];
+=> false
 >>>
 ```
 
@@ -133,16 +152,38 @@ php > require 'vendor/autoload.php';
 php > // New-up objects
 php > $token = new Spinen\ConnectWise\Api\Token();
 php > $guzzle = new GuzzleHttp\Client();
-php > $client = new Spinen\ConnectWise\Api\Client($token, $guzzle);
+php > $resolver = new Spinen\ConnectWise\Support\ModelResolver();
+php > $client = new Spinen\ConnectWise\Api\Client($token, $guzzle, $resolver);
 php > // Now set your configs
 php > $token->setCompanyId('<company_id>')->setMemberId('<member_id>');
 php > $client->setIntegrator('<integrator>')->setPassword('<password>')->setUrl('https://<domain.tld>');
-php > $response = $client->get('system/info');
-php > var_export($response);
+php > $info = $client->get('system/info');
+php > var_export($info, false);
+Spinen\ConnectWise\Models\System\Info::__set_state(array(
+   'casts' =>
+  array (
+    'version' => 'string',
+    'isCloud' => 'boolean',
+    'serverTimeZone' => 'string',
+  ),
+   'attributes' =>
+  array (
+    'version' => 'v2016.6.43325',
+    'isCloud' => false,
+    'serverTimeZone' => 'Eastern Standard Time',
+  ),
+))
+php > var_export($info->toArray(), false);
 array (
   'version' => 'v2016.6.43325',
   'isCloud' => false,
   'serverTimeZone' => 'Eastern Standard Time',
 )
+php > var_export($info->tojson(), false);
+'{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"}'
+php > var_export($info->isCloud, false);
+false
+php > var_export($info['isCloud'], false);
+false
 php >
 ```

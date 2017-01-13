@@ -3,8 +3,13 @@
 namespace Spinen\ConnectWise\Api;
 
 use GuzzleHttp\Client as Guzzle;
+use GuzzleHttp\Psr7\Response;
+use InvalidArgumentException;
 use Mockery;
 use Mockery\Mock;
+use Spinen\ConnectWise\Models\System\Info;
+use Spinen\ConnectWise\Support\Collection;
+use Spinen\ConnectWise\Support\ModelResolver;
 use Spinen\ConnectWise\TestCase;
 
 class ClientTest extends TestCase
@@ -22,6 +27,11 @@ class ClientTest extends TestCase
     /**
      * @var Mock
      */
+    protected $resolver;
+
+    /**
+     * @var Mock
+     */
     protected $token;
 
     protected function setUp()
@@ -31,7 +41,9 @@ class ClientTest extends TestCase
         // to ConnectWise, so we are mocking it out for the test...
         $this->guzzle = Mockery::mock(Guzzle::class);
 
-        $this->client = new Client($this->token, $this->guzzle);
+        $this->resolver = Mockery::mock(ModelResolver::class);
+
+        $this->client = new Client($this->token, $this->guzzle, $this->resolver);
     }
 
     /**
@@ -40,6 +52,141 @@ class ClientTest extends TestCase
     public function it_can_be_constructed()
     {
         $this->assertInstanceOf(Client::class, $this->client);
+    }
+
+    /**
+     * @test
+     */
+    public function it_returns_a_model_for_an_object_response()
+    {
+        $response = Mockery::mock(Response::class);
+
+        $response->shouldReceive('getBody')
+                 ->once()
+                 ->withNoArgs()
+                 ->andReturn('{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"}');
+
+        $this->guzzle->shouldReceive('request')
+                     ->once()
+                     ->withAnyArgs()
+                     ->andReturn($response);
+
+        $this->resolver->shouldReceive('find')
+                       ->once()
+                       ->with('uri')
+                       ->andReturn('System\Info');
+
+        $this->token->shouldReceive('needsRefreshing')
+                    ->once()
+                    ->withNoArgs()
+                    ->andReturn(false);
+
+        $this->token->shouldReceive('getUsername')
+                    ->once()
+                    ->withNoArgs()
+                    ->andReturn('integrator');
+
+        $this->token->shouldReceive('getPassword')
+                    ->once()
+                    ->withNoArgs()
+                    ->andReturn('pass');
+
+        $this->token->shouldReceive('isForUser')
+                    ->once()
+                    ->with(Mockery::any())
+                    ->andReturn(false);
+
+        $this->assertInstanceOf(Info::class, $this->client->get('uri'));
+    }
+
+    /**
+     * @test
+     */
+    public function it_returns_a_collection_for_an_array_response()
+    {
+        $response = Mockery::mock(Response::class);
+
+        $response->shouldReceive('getBody')
+                 ->once()
+                 ->withNoArgs()
+                 ->andReturn('[{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"},{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"}]');
+
+        $this->guzzle->shouldReceive('request')
+                     ->once()
+                     ->withAnyArgs()
+                     ->andReturn($response);
+
+        $this->resolver->shouldReceive('find')
+                       ->once()
+                       ->with('uri')
+                       ->andReturn('System\Info');
+
+        $this->token->shouldReceive('needsRefreshing')
+                    ->once()
+                    ->withNoArgs()
+                    ->andReturn(false);
+
+        $this->token->shouldReceive('getUsername')
+                    ->once()
+                    ->withNoArgs()
+                    ->andReturn('integrator');
+
+        $this->token->shouldReceive('getPassword')
+                    ->once()
+                    ->withNoArgs()
+                    ->andReturn('pass');
+
+        $this->token->shouldReceive('isForUser')
+                    ->once()
+                    ->with(Mockery::any())
+                    ->andReturn(false);
+
+        $this->assertInstanceOf(Collection::class, $this->client->get('uri'));
+    }
+
+    /**
+     * @test
+     */
+    public function it_returns_an_array_when_there_is_not_a_model_to_map()
+    {
+        $response = Mockery::mock(Response::class);
+
+        $response->shouldReceive('getBody')
+                 ->once()
+                 ->withNoArgs()
+                 ->andReturn('{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"}');
+
+        $this->guzzle->shouldReceive('request')
+                     ->once()
+                     ->withAnyArgs()
+                     ->andReturn($response);
+
+        $this->resolver->shouldReceive('find')
+                       ->once()
+                       ->with('uri')
+                       ->andReturnNull();
+
+        $this->token->shouldReceive('needsRefreshing')
+                    ->once()
+                    ->withNoArgs()
+                    ->andReturn(false);
+
+        $this->token->shouldReceive('getUsername')
+                    ->once()
+                    ->withNoArgs()
+                    ->andReturn('integrator');
+
+        $this->token->shouldReceive('getPassword')
+                    ->once()
+                    ->withNoArgs()
+                    ->andReturn('pass');
+
+        $this->token->shouldReceive('isForUser')
+                    ->once()
+                    ->with(Mockery::any())
+                    ->andReturn(false);
+
+        $this->assertTrue(is_array($this->client->get('uri')));
     }
 
     /**
@@ -260,7 +407,7 @@ class ClientTest extends TestCase
     {
         $this->mockOutEverythingForTestingThatGuzzleIsCalled();
 
-        $this->client->get('uri');
+        $this->client->delete('uri');
     }
 
     /**
@@ -290,7 +437,7 @@ class ClientTest extends TestCase
     {
         $this->mockOutEverythingForTestingThatGuzzleIsCalled();
 
-        $this->client->head('uri');
+        $this->client->patch('uri');
     }
 
     /**
@@ -300,7 +447,7 @@ class ClientTest extends TestCase
     {
         $this->mockOutEverythingForTestingThatGuzzleIsCalled();
 
-        $this->client->head('uri');
+        $this->client->post('uri');
     }
 
     /**
@@ -310,7 +457,7 @@ class ClientTest extends TestCase
     {
         $this->mockOutEverythingForTestingThatGuzzleIsCalled();
 
-        $this->client->head('uri');
+        $this->client->put('uri');
     }
 
     /**
@@ -333,7 +480,7 @@ class ClientTest extends TestCase
 
     protected function mockOutEverythingForTestingThatGuzzleIsCalled()
     {
-        $response = Mockery::mock();
+        $response = Mockery::mock(Response::class);
 
         $response->shouldReceive('getBody')
                  ->once()
@@ -344,6 +491,11 @@ class ClientTest extends TestCase
                      ->once()
                      ->withAnyArgs()
                      ->andReturn($response);
+
+        $this->resolver->shouldReceive('find')
+                       ->once()
+                       ->with('uri')
+                       ->andReturn('Model');
 
         $this->token->shouldReceive('needsRefreshing')
                     ->once()

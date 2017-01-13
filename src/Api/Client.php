@@ -2,10 +2,14 @@
 
 namespace Spinen\ConnectWise\Api;
 
+use Exception;
 use GuzzleHttp\Client as Guzzle;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
+use GuzzleHttp\Psr7\Response;
 use InvalidArgumentException;
+use Spinen\ConnectWise\Support\Collection;
+use Spinen\ConnectWise\Support\ModelResolver;
 
 /**
  * Class Client
@@ -48,6 +52,13 @@ class Client
     protected $password;
 
     /**
+     * Resolves a model for the uri
+     *
+     * @var ModelResolver
+     */
+    protected $resolver;
+
+    /**
      * Public & private keys to log into CW
      *
      * @var Token
@@ -78,13 +89,15 @@ class Client
     /**
      * Client constructor.
      *
-     * @param Token  $token
-     * @param Guzzle $guzzle
+     * @param Token         $token
+     * @param Guzzle        $guzzle
+     * @param ModelResolver $resolver
      */
-    public function __construct(Token $token, Guzzle $guzzle)
+    public function __construct(Token $token, Guzzle $guzzle, ModelResolver $resolver)
     {
         $this->token = $token;
         $this->guzzle = $guzzle;
+        $this->resolver = $resolver;
     }
 
     /**
@@ -240,6 +253,35 @@ class Client
     }
 
     /**
+     * @param          $resource
+     * @param Response $response
+     *
+     * @return array|Response
+     */
+    protected function processResponse($resource, Response $response)
+    {
+        $response = (array)json_decode($response->getBody(), true);
+
+        if ($model = $this->resolver->find($resource)) {
+            $model = 'Spinen\ConnectWise\Models\\' . $model;
+
+            if ($this->isCollection($response)) {
+                $response = array_map(function ($item) use ($model) {
+                    $item = new $model($item);
+
+                    return $item;
+                }, $response);
+
+                return new Collection($response);
+            }
+
+            return new $model($response);
+        }
+
+        return $response;
+    }
+
+    /**
      * Make call to the resource
      *
      * @param string     $method
@@ -252,13 +294,11 @@ class Client
     {
         try {
             $response = $this->guzzle->request($method, $this->buildUri($resource), $this->buildOptions($options));
+
+            return $this->processResponse($resource, $response);
         } catch (RequestException $e) {
             $this->processError($e);
         }
-
-        // TODO: Return a collection of Models of some sorts
-        // TODO: Should we test for JSON first & then cast?
-        return json_decode($response->getBody(), true);
     }
 
     /**
@@ -321,5 +361,15 @@ class Client
         $this->url = rtrim($url, '/');
 
         return $this;
+    }
+
+    protected function isCollection(array $array)
+    {
+        // Keys of the array
+        $keys = array_keys($array);
+
+        // If the array keys of the keys match the keys, then the array must
+        // not be associative (e.g. the keys array looked like {0:0, 1:1...}).
+        return array_keys($keys) === $keys;
     }
 }
