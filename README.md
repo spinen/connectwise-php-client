@@ -152,7 +152,8 @@ php > require 'vendor/autoload.php';
 php > // New-up objects
 php > $token = new Spinen\ConnectWise\Api\Token();
 php > $guzzle = new GuzzleHttp\Client();
-php > $client = new Spinen\ConnectWise\Api\Client($token, $guzzle);
+php > $resolver = new Spinen\ConnectWise\Support\ModelResolver();
+php > $client = new Spinen\ConnectWise\Api\Client($token, $guzzle, $resolver);
 php > // Now set your configs
 php > $token->setCompanyId('<company_id>')->setMemberId('<member_id>');
 php > $client->setIntegrator('<integrator>')->setPassword('<password>')->setUrl('https://<domain.tld>');
