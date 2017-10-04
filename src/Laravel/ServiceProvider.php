@@ -35,6 +35,27 @@ class ServiceProvider extends LaravelServiceProvider
     }
 
     /**
+     * Determine the member Id to use for API call
+     *
+     * Allow a default member id to use for the API calls if there is no logged in user.
+     *
+     * @return mixed
+     * @throws NoLoggedInUser
+     */
+    protected function determineMemberId()
+    {
+        if ($this->app->auth->check()) {
+            return $this->app->auth->user()->connect_wise_member_id;
+        }
+
+        if (!empty($this->app->config->get('services.connectwise.default_member_id'))) {
+            return $this->app->config->get('services.connectwise.default_member_id');
+        }
+
+        throw new NoLoggedInUser("There is not a currently logged in user.");
+    }
+
+    /**
      * Register the application services.
      *
      * @return void
@@ -55,15 +76,22 @@ class ServiceProvider extends LaravelServiceProvider
      */
     protected function registerClient()
     {
-        $this->app->singleton(Client::class, function (Application $app) {
-            $client = new Client($app->make(Token::class), $app->make(Guzzle::class), $app->make(ModelResolver::class));
+        $this->app->singleton(
+            Client::class,
+            function (Application $app) {
+                $client = new Client(
+                    $app->make(Token::class),
+                    $app->make(Guzzle::class),
+                    $app->make(ModelResolver::class)
+                );
 
-            $client->setIntegrator($app->config->get('services.connectwise.integrator'))
-                   ->setPassword($app->config->get('services.connectwise.password'))
-                   ->setUrl($app->config->get('services.connectwise.url'));
+                $client->setIntegrator($app->config->get('services.connectwise.integrator'))
+                       ->setPassword($app->config->get('services.connectwise.password'))
+                       ->setUrl($app->config->get('services.connectwise.url'));
 
-            return $client;
-        });
+                return $client;
+            }
+        );
     }
 
     /**
@@ -87,17 +115,16 @@ class ServiceProvider extends LaravelServiceProvider
      */
     protected function registerToken()
     {
-        $this->app->singleton(Token::class, function (Application $app) {
-            if (!$app->auth->check()) {
-                throw new NoLoggedInUser("There is not a currently logged in user.");
+        $this->app->singleton(
+            Token::class,
+            function (Application $app) {
+                $token = new Token();
+
+                $token->setCompanyId($app->config->get('services.connectwise.company_id'))
+                      ->setMemberId($this->determineMemberId());
+
+                return $token;
             }
-
-            $token = new Token();
-
-            $token->setCompanyId($app->config->get('services.connectwise.company_id'))
-                  ->setMemberId($app->auth->user()->connect_wise_member_id);
-
-            return $token;
-        });
+        );
     }
 }
