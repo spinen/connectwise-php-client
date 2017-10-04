@@ -3,22 +3,25 @@
 [![Latest Stable Version](https://poser.pugx.org/spinen/connectwise-php-client/v/stable)](https://packagist.org/packages/spinen/connectwise-php-client)
 [![Total Downloads](https://poser.pugx.org/spinen/connectwise-php-client/downloads)](https://packagist.org/packages/spinen/connectwise-php-client)
 [![Latest Unstable Version](https://poser.pugx.org/spinen/connectwise-php-client/v/unstable)](https://packagist.org/packages/spinen/connectwise-php-client)
-[![Dependency Status](https://www.versioneye.com/php/spinen:connectwise-php-client/0.1.1/badge.svg)](https://www.versioneye.com/php/spinen:connectwise-php-client/0.1.1)
+[![Dependency Status](https://www.versioneye.com/php/spinen:connectwise-php-client/badge.svg)](https://www.versioneye.com/php/spinen:connectwise-php-client)
 [![License](https://poser.pugx.org/spinen/connectwise-php-client/license)](https://packagist.org/packages/spinen/connectwise-php-client)
 
-PHP client for the RestFull ConnectWise API's.  This package used to be based on the SOAP API's & had 3 separate 
-repositories, but as of this version there is on this one.
-
-We are using the "Member Impersonation" model where you setup an integrator username & password with access to the 
-"Member API", which makes all calls to ConnectWise performed under the permission of the user (member id) of the 
-application.  We make all of our users in ConnnectWise member id equal to their email user (i.e. joe.doe@spinen.com has
-member id of joedoe in connectwise) [NOTE: The "." was removed from joe.doe as ConnectWise does not allow dots in the
-member id].  By following this convention, we can infer the member id from the logged in user's email address in our
-applications.  We have included a trait that you can use on the User model that will preform the logic above.
+PHP client for the RestFull ConnectWise APIs. This package used to be based on the SOAP APIs & had 3 separate 
+repositories, but as of this version there is only this one.
 
 We solely use [Laravel](http://www.laravel.com) for our applications, so there is some Laravel specific files that you 
-can use if you are using this client in a Laravel application.  We have tried to make sure that you can use the client
+can use if you are using this client in a Laravel application. We have tried to make sure that you can use the client
 outside of Laravel, and have some documentation about it below.
+
+## Note about the integration
+We are using the "Member Impersonation" model where you setup an integrator username & password with access to the 
+"Member API", which makes all calls to ConnectWise performed under the permission of the user (member id) of the 
+application. 
+
+We make all of our ConnectWise users' member ID equal to their email (i.e. joe.doe@spinen.com has
+a member ID of joedoe in connectwise) [NOTE: The "." was removed from joe.doe as ConnectWise does not allow dots in the
+member ID]. By following this convention, we can infer the member ID from the logged in user's email address in our
+applications. We have included a trait that you can use on the User model that will preform the logic above.
 
 ## Laravel Configuration and Usage
 
@@ -29,16 +32,19 @@ outside of Laravel, and have some documentation about it below.
 ```php
     'connectwise' =>  [
         'company_id' => env('CW_COMPANY_ID'),
+        // Optional member id to use if there is not a logged in user
+        'default_member_id' => env('CW_DEFAULT_MEMBER_ID'),
         'integrator' => env('CW_INTEGRATOR'),
         'password' => env('CW_PASSWORD'),
         'url' => env('CW_URL'),
     ],
 ```
 
-2. Add the appropriate values to ```.env```...
+2. Add the appropriate values to your ```.env```...
 
 ```bash
 CW_COMPANY_ID=<company_id>
+CW_DEFAULT_MEMBER_ID=<default_member_id>
 CW_INTEGRATOR=<integrator username>
 CW_PASSWORD=<integrator password>
 CW_URL=https://<FQDN to ConnectWise server>
@@ -68,13 +74,12 @@ CW_URL=https://<FQDN to ConnectWise server>
 
 Here is an example of getting the system information...
 
-As of version 3.1.0, the response is either a Laravel collection of models or a single model.  You can see the models in ```src/Models```.  They all extend ```Spinen\ConnectWise\Support```, so you can see the methods that they provide.
+As of version 3.1.0, the response is either a Laravel collection of models or a single model. You can see the models in ```src/Models```.  They all extend ```Spinen\ConnectWise\Support```, so you can see the methods that they provide.
 
 ```
 $ php artisan tinker
 Psy Shell v0.8.0 (PHP 7.0.14 — cli) by Justin Hileman
->>> Auth::loginUsingId(1);
-PHP warning:  unlink(/Users/jimmy.puckett/git/swaginator.com/storage/framework/sessions/1aMf1yhUe6h4Ij2GRvq5UYab1IqK7GVn1qkyWPY6): No such file or directory in /Users/jimmy.puckett/git/swaginator.com/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php on line 172
+>>> Auth::loginUsingId(1); // If not useing the default member id
 => App\User {#983
      id: "1",
      first_name: "Joe",
@@ -109,8 +114,7 @@ Same call using the facade...
 ```
 $ php artisan tinker
 Psy Shell v0.8.0 (PHP 7.0.14 — cli) by Justin Hileman
->>> Auth::loginUsingId(1);
-PHP warning:  unlink(/Users/jimmy.puckett/git/swaginator.com/storage/framework/sessions/1aMf1yhUe6h4Ij2GRvq5UYab1IqK7GVn1qkyWPY6): No such file or directory in /Users/jimmy.puckett/git/swaginator.com/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php on line 172
+>>> Auth::loginUsingId(1);  // If not useing the default member id
 => App\User {#983
      id: "1",
      first_name: "Joe",
