@@ -44,7 +44,7 @@ applications. We have included a trait that you can use on the User model that w
 
 ```bash
 CW_COMPANY_ID=<company_id>
-CW_DEFAULT_MEMBER_ID=<company_id>
+CW_DEFAULT_MEMBER_ID=<default_member_id>
 CW_INTEGRATOR=<integrator username>
 CW_PASSWORD=<integrator password>
 CW_URL=https://<FQDN to ConnectWise server>
