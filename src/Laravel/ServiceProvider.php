@@ -48,6 +48,10 @@ class ServiceProvider extends LaravelServiceProvider
             return $app->auth->user()->connect_wise_member_id;
         }
 
+        if (!is_null($this->app->config->get('services.connectwise.default_member_id'))) {
+            return $this->app->config->get('services.connectwise.default_member_id');
+        }
+
         throw new NoLoggedInUser("There is not a currently logged in user.");
     }
 
