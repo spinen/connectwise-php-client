@@ -80,7 +80,6 @@ As of version 3.1.0, the response is either a Laravel collection of models or a 
 $ php artisan tinker
 Psy Shell v0.8.0 (PHP 7.0.14 — cli) by Justin Hileman
 >>> Auth::loginUsingId(1); // If not useing the default member id
-PHP warning:  unlink(/Users/jimmy.puckett/git/swaginator.com/storage/framework/sessions/1aMf1yhUe6h4Ij2GRvq5UYab1IqK7GVn1qkyWPY6): No such file or directory in /Users/jimmy.puckett/git/swaginator.com/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php on line 172
 => App\User {#983
      id: "1",
      first_name: "Joe",
@@ -116,7 +115,6 @@ Same call using the facade...
 $ php artisan tinker
 Psy Shell v0.8.0 (PHP 7.0.14 — cli) by Justin Hileman
 >>> Auth::loginUsingId(1);  // If not useing the default member id
-PHP warning:  unlink(/Users/jimmy.puckett/git/swaginator.com/storage/framework/sessions/1aMf1yhUe6h4Ij2GRvq5UYab1IqK7GVn1qkyWPY6): No such file or directory in /Users/jimmy.puckett/git/swaginator.com/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php on line 172
 => App\User {#983
      id: "1",
      first_name: "Joe",
