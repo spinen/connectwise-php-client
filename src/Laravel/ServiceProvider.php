@@ -35,6 +35,23 @@ class ServiceProvider extends LaravelServiceProvider
     }
 
     /**
+     * Determine the member Id to use for API call
+     *
+     * Allow a default member id to use for the API calls if there is no logged in user.
+     *
+     * @return mixed
+     * @throws NoLoggedInUser
+     */
+    protected function determineMemberId()
+    {
+        if ($app->auth->check()) {
+            return $app->auth->user()->connect_wise_member_id;
+        }
+
+        throw new NoLoggedInUser("There is not a currently logged in user.");
+    }
+
+    /**
      * Register the application services.
      *
      * @return void
@@ -88,14 +105,10 @@ class ServiceProvider extends LaravelServiceProvider
     protected function registerToken()
     {
         $this->app->singleton(Token::class, function (Application $app) {
-            if (!$app->auth->check()) {
-                throw new NoLoggedInUser("There is not a currently logged in user.");
-            }
-
             $token = new Token();
 
             $token->setCompanyId($app->config->get('services.connectwise.company_id'))
-                  ->setMemberId($app->auth->user()->connect_wise_member_id);
+                  ->setMemberId($this->determineMemberId());
 
             return $token;
         });
