@@ -48,7 +48,7 @@ class ServiceProvider extends LaravelServiceProvider
             return $this->app->auth->user()->connect_wise_member_id;
         }
 
-        if (!is_null($this->app->config->get('services.connectwise.default_member_id'))) {
+        if (!empty($this->app->config->get('services.connectwise.default_member_id'))) {
             return $this->app->config->get('services.connectwise.default_member_id');
         }
 
