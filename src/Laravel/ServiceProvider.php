@@ -76,15 +76,22 @@ class ServiceProvider extends LaravelServiceProvider
      */
     protected function registerClient()
     {
-        $this->app->singleton(Client::class, function (Application $app) {
-            $client = new Client($app->make(Token::class), $app->make(Guzzle::class), $app->make(ModelResolver::class));
+        $this->app->singleton(
+            Client::class,
+            function (Application $app) {
+                $client = new Client(
+                    $app->make(Token::class),
+                    $app->make(Guzzle::class),
+                    $app->make(ModelResolver::class)
+                );
 
-            $client->setIntegrator($app->config->get('services.connectwise.integrator'))
-                   ->setPassword($app->config->get('services.connectwise.password'))
-                   ->setUrl($app->config->get('services.connectwise.url'));
+                $client->setIntegrator($app->config->get('services.connectwise.integrator'))
+                       ->setPassword($app->config->get('services.connectwise.password'))
+                       ->setUrl($app->config->get('services.connectwise.url'));
 
-            return $client;
-        });
+                return $client;
+            }
+        );
     }
 
     /**
@@ -108,13 +115,16 @@ class ServiceProvider extends LaravelServiceProvider
      */
     protected function registerToken()
     {
-        $this->app->singleton(Token::class, function (Application $app) {
-            $token = new Token();
+        $this->app->singleton(
+            Token::class,
+            function (Application $app) {
+                $token = new Token();
 
-            $token->setCompanyId($app->config->get('services.connectwise.company_id'))
-                  ->setMemberId($this->determineMemberId());
+                $token->setCompanyId($app->config->get('services.connectwise.company_id'))
+                      ->setMemberId($this->determineMemberId());
 
-            return $token;
-        });
+                return $token;
+            }
+        );
     }
 }
