@@ -44,8 +44,8 @@ class ServiceProvider extends LaravelServiceProvider
      */
     protected function determineMemberId()
     {
-        if ($app->auth->check()) {
-            return $app->auth->user()->connect_wise_member_id;
+        if ($this->app->auth->check()) {
+            return $this->app->auth->user()->connect_wise_member_id;
         }
 
         if (!is_null($this->app->config->get('services.connectwise.default_member_id'))) {
