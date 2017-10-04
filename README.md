@@ -32,6 +32,8 @@ applications. We have included a trait that you can use on the User model that w
 ```php
     'connectwise' =>  [
         'company_id' => env('CW_COMPANY_ID'),
+        // Optional member id to use if there is not a logged in user
+        'default_member_id' => env('CW_DEFAULT_MEMBER_ID'),
         'integrator' => env('CW_INTEGRATOR'),
         'password' => env('CW_PASSWORD'),
         'url' => env('CW_URL'),
@@ -42,6 +44,7 @@ applications. We have included a trait that you can use on the User model that w
 
 ```bash
 CW_COMPANY_ID=<company_id>
+CW_DEFAULT_MEMBER_ID=<default_member_id>
 CW_INTEGRATOR=<integrator username>
 CW_PASSWORD=<integrator password>
 CW_URL=https://<FQDN to ConnectWise server>
@@ -76,8 +79,7 @@ As of version 3.1.0, the response is either a Laravel collection of models or a 
 ```
 $ php artisan tinker
 Psy Shell v0.8.0 (PHP 7.0.14 — cli) by Justin Hileman
->>> Auth::loginUsingId(1);
-PHP warning:  unlink(/Users/jimmy.puckett/git/swaginator.com/storage/framework/sessions/1aMf1yhUe6h4Ij2GRvq5UYab1IqK7GVn1qkyWPY6): No such file or directory in /Users/jimmy.puckett/git/swaginator.com/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php on line 172
+>>> Auth::loginUsingId(1); // If not useing the default member id
 => App\User {#983
      id: "1",
      first_name: "Joe",
@@ -112,8 +114,7 @@ Same call using the facade...
 ```
 $ php artisan tinker
 Psy Shell v0.8.0 (PHP 7.0.14 — cli) by Justin Hileman
->>> Auth::loginUsingId(1);
-PHP warning:  unlink(/Users/jimmy.puckett/git/swaginator.com/storage/framework/sessions/1aMf1yhUe6h4Ij2GRvq5UYab1IqK7GVn1qkyWPY6): No such file or directory in /Users/jimmy.puckett/git/swaginator.com/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php on line 172
+>>> Auth::loginUsingId(1);  // If not useing the default member id
 => App\User {#983
      id: "1",
      first_name: "Joe",
