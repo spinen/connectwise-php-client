@@ -6,24 +6,56 @@
 [![Dependency Status](https://www.versioneye.com/php/spinen:connectwise-php-client/badge.svg)](https://www.versioneye.com/php/spinen:connectwise-php-client)
 [![License](https://poser.pugx.org/spinen/connectwise-php-client/license)](https://packagist.org/packages/spinen/connectwise-php-client)
 
-PHP client for the RestFull ConnectWise APIs. This package used to be based on the SOAP APIs & had 3 separate 
+PHP client for the RestFull ConnectWise APIs. This package used to be based on the SOAP APIs & had 3 separate
 repositories, but as of this version there is only this one.
 
-We solely use [Laravel](http://www.laravel.com) for our applications, so there is some Laravel specific files that you 
+We solely use [Laravel](http://www.laravel.com) for our applications, so there is some Laravel specific files that you
 can use if you are using this client in a Laravel application. We have tried to make sure that you can use the client
 outside of Laravel, and have some documentation about it below.
 
 ## Note about the integration
-We are using the "Member Impersonation" model where you setup an integrator username & password with access to the 
-"Member API", which makes all calls to ConnectWise performed under the permission of the user (member id) of the 
-application. 
+We are using the "Member Impersonation" model where you setup an integrator username & password with access to the
+"Member API", which makes all calls to ConnectWise performed under the permission of the user (member id) of the
+application.
 
 We make all of our ConnectWise users' member ID equal to their email (i.e. joe.doe@spinen.com has
 a member ID of joedoe in connectwise) [NOTE: The "." was removed from joe.doe as ConnectWise does not allow dots in the
 member ID]. By following this convention, we can infer the member ID from the logged in user's email address in our
 applications. We have included a trait that you can use on the User model that will preform the logic above.
 
+## Install
+
+Install ConnectWise PHP Client:
+
+```bash
+    $ composer require spinen/connectwise-php-client
+```
+
 ## Laravel Configuration and Usage
+
+### For >= Laravel 5.5, you are done with the Install
+
+The package uses the auto registration feature
+
+### For < Laravel 5.5, you have to register the Service Provider
+
+1. Add the provider to ```config/app.php```
+
+```php
+    'providers' => [
+        # other providers omitted
+        Spinen\ConnectWise\Laravel\ServiceProvider::class,
+    ],
+```
+
+2. [Optional] Add the alias to ```config/app.php```
+
+```php
+    'aliases' => [
+        # other aliases omitted
+        'ConnectWise' => Spinen\ConnectWise\Laravel\Facades\ConnectWise::class,
+    ],
+```
 
 ### Configuration
 
@@ -50,25 +82,7 @@ CW_PASSWORD=<integrator password>
 CW_URL=https://<FQDN to ConnectWise server>
 ```
 
-3. Add the provider to ```config/app.php```
-
-```php
-'providers' => [
-    # other providers omitted
-    Spinen\ConnectWise\Laravel\ServiceProvider::class,
-],
-```
-
-4. [Optional] Add the alias to ```config/app.php```
-
-```php
-'aliases' => [
-    # other aliases omitted
-    'ConnectWise' => Spinen\ConnectWise\Laravel\Facades\ConnectWise::class,
-],
-```
-
-5. Use the ```ConnectWiseMemberIdFromEmail``` trait on the User model, which is located at ```Spinen\ConnectWise\Laravel\ConnectWiseMemberIdFromEmail```, if your ConnectWise member_id is a match to your email as described above.  If you do not follow that convention, then you can define your own ```getConnectWiseMemberIdAttribute``` accessor on the User model or just add a ```connect_wise_member_id``` column to your user table that you populate with the appropriate values.
+3. Use the ```ConnectWiseMemberIdFromEmail``` trait on the User model, which is located at ```Spinen\ConnectWise\Laravel\ConnectWiseMemberIdFromEmail```, if your ConnectWise member_id is a match to your email as described above.  If you do not follow that convention, then you can define your own ```getConnectWiseMemberIdAttribute``` accessor on the User model or just add a ```connect_wise_member_id``` column to your user table that you populate with the appropriate values.
 
 ### Usage
 
@@ -146,7 +160,7 @@ Psy Shell v0.8.0 (PHP 7.0.14 — cli) by Justin Hileman
 ## Non-Laravel Usage
 
 To use the client outside of Laravel, you just need to new-up the objects...
- 
+
 ```
 $ php -a
 Interactive shell
