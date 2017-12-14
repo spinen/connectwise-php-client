@@ -36,6 +36,13 @@
             "Spinen\\ConnectWise\\": "tests/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spinen\\ConnectWise\\Laravel\\ServiceProvider"
+            ]
+        }
+    },
     "config": {
         "sort-packages": true
     },
