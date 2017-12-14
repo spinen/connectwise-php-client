@@ -25,7 +25,7 @@ applications. We have included a trait that you can use on the User model that w
 
 ## Install
 
-Install Garbage Man:
+Install ConnectWise PHP Client:
 
 ```bash
     $ composer require spinen/connectwise-php-client
