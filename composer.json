@@ -23,7 +23,7 @@
     "require-dev": {
         "mockery/mockery": "~0.9.4",
         "phpunit/phpunit": "~5.4",
-        "psy/psysh": "0.7.*|0.8.*",
+        "psy/psysh": "0.8.*",
         "satooshi/php-coveralls": "^1.0"
     },
     "autoload": {
