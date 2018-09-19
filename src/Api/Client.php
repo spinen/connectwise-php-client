@@ -262,23 +262,25 @@ class Client
     {
         $response = (array)json_decode($response->getBody(), true);
 
-        if ($model = $this->resolver->find($resource)) {
-            $model = 'Spinen\ConnectWise\Models\\' . $model;
+        $model = $this->resolver->find($resource);
 
-            if ($this->isCollection($response)) {
-                $response = array_map(function ($item) use ($model) {
-                    $item = new $model($item);
-
-                    return $item;
-                }, $response);
-
-                return new Collection($response);
-            }
-
-            return new $model($response);
+        if (! $model) {
+            return $response;
         }
 
-        return $response;
+        $model = 'Spinen\ConnectWise\Models\\' . $model;
+
+        if ($this->isCollection($response)) {
+            $response = array_map(function ($item) use ($model) {
+                $item = new $model($item);
+
+                return $item;
+            }, $response);
+
+            return new Collection($response);
+        }
+
+        return new $model($response);
     }
 
     /**
