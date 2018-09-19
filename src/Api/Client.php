@@ -103,12 +103,12 @@ class Client
     /**
      * Magic method to allow short cut to the request types
      *
-     * @param string $verb
-     * @param array  $args
+     * @param string      $verb
+     * @param array|null  $args
      *
      * @return array
      */
-    public function __call($verb, $args)
+    public function __call($verb, $args = [])
     {
         if (count($args) < 1) {
             throw new InvalidArgumentException('Magic request methods require a resource and optional options array');
