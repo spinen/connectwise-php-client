@@ -18,7 +18,6 @@ class KnowledgeBaseArticle extends Model
         'resolution' => 'string',
         'locationId' => 'integer',
         'businessUnitId' => 'integer',
-        'boardId' => 'integer',
         'categoryId' => 'integer',
         'subCategoryId' => 'integer',
         'dateCreated' => 'string',

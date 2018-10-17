@@ -46,5 +46,6 @@ class ProjectPhase extends Model
         'estimatedTimeRevenue' => 'double',
         'estimatedExpenseRevenue' => 'double',
         'estimatedProductRevenue' => 'double',
+        'customFields' => 'array',
     ];
 }

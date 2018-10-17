@@ -14,5 +14,6 @@ class AgreementSite extends Model
     protected $casts = [
         'id' => 'integer',
         'agreementId' => 'integer',
+        'customFields' => 'array',
     ];
 }

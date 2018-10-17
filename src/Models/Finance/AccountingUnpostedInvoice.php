@@ -44,6 +44,9 @@ class AccountingUnpostedinvoice extends Model
         'compositeTaxFlag' => 'boolean',
         'compositeTaxXref' => 'string',
         'compositeTaxAmount' => 'double',
+        'levelSixTaxFlag' => 'boolean',
+        'levelSixTaxXref' => 'string',
+        'levelSixTaxAmount' => 'double',
         'createdBy' => 'string',
         'dateClosed' => 'carbon',
     ];

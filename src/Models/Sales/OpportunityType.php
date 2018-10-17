@@ -12,8 +12,10 @@ class OpportunityType extends Model
      * @var array
      */
     protected $casts = [
+        'type' => 'string',
+        'count' => 'integer',
         'id' => 'integer',
         'description' => 'string',
-        'inactiveFlag' => 'boolean',
+        'hyperlink' => 'string',
     ];
 }

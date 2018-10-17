@@ -23,5 +23,8 @@ class ExpenseEntry extends Model
         'notes' => 'string',
         'invoiceAmount' => 'double',
         'taxes' => 'array',
+        'status' => 'string',
+        'billAmount' => 'double',
+        'customFields' => 'array',
     ];
 }

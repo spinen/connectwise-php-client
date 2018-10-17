@@ -24,5 +24,6 @@ class ExpenseType extends Model
         'quantityFlag' => 'boolean',
         'inactiveFlag' => 'boolean',
         'maxAmount' => 'double',
+        'integrationXRef' => 'string',
     ];
 }

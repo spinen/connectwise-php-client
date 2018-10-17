@@ -20,6 +20,7 @@ class ScheduleEntry extends Model
         'doneFlag' => 'boolean',
         'acknowledgedFlag' => 'boolean',
         'ownerFlag' => 'boolean',
+        'meetingFlag' => 'boolean',
         'allowScheduleConflictsFlag' => 'boolean',
         'addMemberToProjectFlag' => 'boolean',
         'projectRoleId' => 'integer',

@@ -15,5 +15,7 @@ class Info extends Model
         'version' => 'string',
         'isCloud' => 'boolean',
         'serverTimeZone' => 'string',
+        'licenseBits' => 'array',
+        'cloudRegion' => 'string',
     ];
 }

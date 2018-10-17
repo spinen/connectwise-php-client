@@ -16,5 +16,6 @@ class Link extends Model
         'name' => 'string',
         'tableReferenceId' => 'integer',
         'url' => 'string',
+        'screenLink' => 'string',
     ];
 }

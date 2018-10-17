@@ -45,6 +45,9 @@ class AccountingUnpostedExpense extends Model
         'compositeTaxFlag' => 'boolean',
         'compositeTaxXref' => 'string',
         'compositeTaxAmount' => 'double',
+        'levelSixTaxFlag' => 'boolean',
+        'levelSixTaxXref' => 'string',
+        'levelSixTaxAmount' => 'double',
         'dateClosed' => 'carbon',
     ];
 }

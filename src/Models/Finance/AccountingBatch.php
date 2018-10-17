@@ -12,21 +12,6 @@ class AccountingBatch extends Model
      * @var array
      */
     protected $casts = [
-        'thruDate' => 'carbon',
-        'transactionsClosedDate' => 'carbon',
-        'locationId' => 'integer',
-        'summarizeInvoices' => 'integer',
-        'includedInvoiceIds' => 'array',
-        'includedExpenseIds' => 'array',
-        'includedProductIds' => 'array',
-        'excludedInvoiceIds' => 'array',
-        'excludedExpenseIds' => 'array',
-        'excludedProductIds' => 'array',
-        'id' => 'integer',
-        'batchIdentifier' => 'string',
-        'exportInvoicesFlag' => 'boolean',
-        'exportExpensesFlag' => 'boolean',
-        'exportProductsFlag' => 'boolean',
-        'closedFlag' => 'boolean',
+        'count' => 'integer',
     ];
 }
