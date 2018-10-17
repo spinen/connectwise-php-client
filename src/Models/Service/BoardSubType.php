@@ -14,10 +14,9 @@ class BoardSubType extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'inactive' => 'boolean',
+        'inactiveFlag' => 'boolean',
         'typeAssociationIds' => 'array',
-        'addAllTypes' => 'boolean',
-        'removeAllTypes' => 'boolean',
-        'boardId' => 'integer',
+        'addAllTypesFlag' => 'boolean',
+        'removeAllTypesFlag' => 'boolean',
     ];
 }

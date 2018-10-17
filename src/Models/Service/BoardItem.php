@@ -14,11 +14,6 @@ class BoardItem extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'inactive' => 'boolean',
-        'typeAssociations' => 'array',
-        'addAllSubTypes' => 'boolean',
-        'removeAllSubTypes' => 'boolean',
-        'typeId' => 'integer',
-        'boardId' => 'integer',
+        'inactiveFlag' => 'boolean',
     ];
 }

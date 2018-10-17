@@ -19,6 +19,7 @@ class CompanySite extends Model
         'city' => 'string',
         'state' => 'string',
         'zip' => 'string',
+        'addressFormat' => 'string',
         'phoneNumber' => 'string',
         'faxNumber' => 'string',
         'taxCodeId' => 'integer',
@@ -27,5 +28,6 @@ class CompanySite extends Model
         'defaultShippingFlag' => 'boolean',
         'defaultBillingFlag' => 'boolean',
         'defaultMailingFlag' => 'boolean',
+        'inactiveFlag' => 'boolean',
     ];
 }

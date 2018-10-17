@@ -12,10 +12,10 @@ class Group extends Model
      * @var array
      */
     protected $casts = [
+        'type' => 'string',
+        'count' => 'integer',
         'id' => 'integer',
-        'name' => 'string',
-        'publicDescription' => 'string',
-        'publicFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
+        'description' => 'string',
+        'hyperlink' => 'string',
     ];
 }

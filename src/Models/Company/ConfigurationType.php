@@ -12,9 +12,10 @@ class ConfigurationType extends Model
      * @var array
      */
     protected $casts = [
+        'type' => 'string',
+        'count' => 'integer',
         'id' => 'integer',
-        'name' => 'string',
-        'inactiveFlag' => 'boolean',
-        'systemFlag' => 'boolean',
+        'description' => 'string',
+        'hyperlink' => 'string',
     ];
 }

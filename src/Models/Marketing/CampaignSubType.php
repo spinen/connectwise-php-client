@@ -13,7 +13,6 @@ class CampaignSubType extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'typeId' => 'integer',
         'name' => 'string',
     ];
 }

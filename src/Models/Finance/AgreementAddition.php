@@ -38,5 +38,6 @@ class AgreementAddition extends Model
         'extendedProrateCost' => 'double',
         'extendedProratePrice' => 'double',
         'prorateCurrentPeriodFlag' => 'boolean',
+        'customFields' => 'array',
     ];
 }

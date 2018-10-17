@@ -35,6 +35,7 @@ class TimeEntry extends Model
         'enteredBy' => 'string',
         'dateEntered' => 'carbon',
         'hourlyRate' => 'double',
+        'status' => 'string',
         'customFields' => 'array',
     ];
 }

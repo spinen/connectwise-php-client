@@ -25,6 +25,7 @@ class ConnectWiseHostedSetup extends Model
         'toolbarButtonToolTip' => 'string',
         'toolbarButtonIconDocumentId' => 'integer',
         'disabledFlag' => 'boolean',
+        'locationIds' => 'array',
         'createdBy' => 'string',
         'dateCreated' => 'string',
     ];
