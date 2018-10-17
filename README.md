@@ -3,7 +3,6 @@
 [![Latest Stable Version](https://poser.pugx.org/spinen/connectwise-php-client/v/stable)](https://packagist.org/packages/spinen/connectwise-php-client)
 [![Total Downloads](https://poser.pugx.org/spinen/connectwise-php-client/downloads)](https://packagist.org/packages/spinen/connectwise-php-client)
 [![Latest Unstable Version](https://poser.pugx.org/spinen/connectwise-php-client/v/unstable)](https://packagist.org/packages/spinen/connectwise-php-client)
-[![Dependency Status](https://www.versioneye.com/php/spinen:connectwise-php-client/badge.svg)](https://www.versioneye.com/php/spinen:connectwise-php-client)
 [![License](https://poser.pugx.org/spinen/connectwise-php-client/license)](https://packagist.org/packages/spinen/connectwise-php-client)
 
 PHP client for the RestFull ConnectWise APIs. This package used to be based on the SOAP APIs & had 3 separate
@@ -22,6 +21,14 @@ We make all of our ConnectWise users' member ID equal to their email (i.e. joe.d
 a member ID of joedoe in connectwise) [NOTE: The "." was removed from joe.doe as ConnectWise does not allow dots in the
 member ID]. By following this convention, we can infer the member ID from the logged in user's email address in our
 applications. We have included a trait that you can use on the User model that will preform the logic above.
+
+## Models
+
+The responses are cast into models with the properties cast into the types as defined in the Swagger documentation.  You can review the models in the `src/Models` folder.  There is a property named `casts` on each model that instructs the factory on how to cast the properties from the response.  If the `casts` property is empty, then the properties are not defined in the swagger, so an array is returned.
+
+## Relationships
+
+Some of the responses have links to the related resource.  If a property has a relationship, you can call it as a method, and the additional calls are automatically made & returned.  The value is stored in place of the original data, so once it is loaded it is cached.
 
 ## Install
 
