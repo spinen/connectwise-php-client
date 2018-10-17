@@ -16,5 +16,7 @@ class CompanyType extends Model
         'name' => 'string',
         'defaultFlag' => 'boolean',
         'vendorFlag' => 'boolean',
+        'serviceAlertFlag' => 'boolean',
+        'serviceAlertMessage' => 'string',
     ];
 }

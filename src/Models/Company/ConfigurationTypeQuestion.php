@@ -13,7 +13,6 @@ class ConfigurationTypeQuestion extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'configurationTypeId' => 'integer',
         'fieldType' => 'string',
         'entryType' => 'string',
         'sequenceNumber' => 'double',
@@ -21,6 +20,5 @@ class ConfigurationTypeQuestion extends Model
         'numberOfDecimals' => 'integer',
         'requiredFlag' => 'boolean',
         'inactiveFlag' => 'boolean',
-        'possibleAnswers' => 'array',
     ];
 }

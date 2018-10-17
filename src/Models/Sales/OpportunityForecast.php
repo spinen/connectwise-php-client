@@ -21,5 +21,7 @@ class OpportunityForecast extends Model
         'percent' => 'double',
         'margin' => 'double',
         'opportunityId' => 'integer',
+        'QuoteNumber' => 'string',
+        'QuoteName' => 'string',
     ];
 }

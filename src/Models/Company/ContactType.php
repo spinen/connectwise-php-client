@@ -15,5 +15,7 @@ class ContactType extends Model
         'id' => 'integer',
         'description' => 'string',
         'defaultFlag' => 'boolean',
+        'serviceAlertFlag' => 'boolean',
+        'serviceAlertMessage' => 'string',
     ];
 }

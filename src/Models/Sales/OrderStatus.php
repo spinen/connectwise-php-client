@@ -12,11 +12,10 @@ class OrderStatus extends Model
      * @var array
      */
     protected $casts = [
+        'type' => 'string',
+        'count' => 'integer',
         'id' => 'integer',
-        'name' => 'string',
-        'defaultFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
-        'sortOrder' => 'integer',
-        'closedFlag' => 'boolean',
+        'description' => 'string',
+        'hyperlink' => 'string',
     ];
 }

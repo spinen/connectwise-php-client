@@ -20,5 +20,7 @@ class TaxCodeXRef extends Model
         'levelThree' => 'string',
         'levelFour' => 'string',
         'levelFive' => 'string',
+        'levelSix' => 'string',
+        'taxableLevels' => 'array',
     ];
 }

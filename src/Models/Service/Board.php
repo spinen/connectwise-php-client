@@ -12,17 +12,10 @@ class Board extends Model
      * @var array
      */
     protected $casts = [
+        'type' => 'string',
+        'count' => 'integer',
         'id' => 'integer',
-        'name' => 'string',
-        'locationId' => 'integer',
-        'businessUnitId' => 'integer',
-        'inactive' => 'boolean',
-        'sendToContact' => 'boolean',
-        'contactTemplateId' => 'integer',
-        'sendToResource' => 'boolean',
-        'resourceTemplateId' => 'integer',
-        'projectFlag' => 'boolean',
-        'showDependenciesFlag' => 'boolean',
-        'showEstimatesFlag' => 'boolean',
+        'description' => 'string',
+        'hyperlink' => 'string',
     ];
 }

@@ -14,7 +14,6 @@ class BoardStatus extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'boardId' => 'integer',
         'sortOrder' => 'integer',
         'displayOnBoard' => 'boolean',
         'inactive' => 'boolean',
@@ -22,5 +21,8 @@ class BoardStatus extends Model
         'timeEntryNotAllowed' => 'boolean',
         'defaultFlag' => 'boolean',
         'escalationStatus' => 'string',
+        'customerPortalDescription' => 'string',
+        'customerPortalFlag' => 'boolean',
+        'customStatusIndicatorName' => 'string',
     ];
 }

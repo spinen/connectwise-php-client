@@ -22,7 +22,6 @@ class TicketStopwatch extends Model
         'notes' => 'string',
         'startTime' => 'carbon',
         'status' => 'string',
-        'ticketId' => 'integer',
         'totalPauseTime' => 'integer',
         'showNotesInDiscussionFlag' => 'boolean',
         'showNotesInInternalFlag' => 'boolean',

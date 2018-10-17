@@ -17,5 +17,6 @@ class AgreementAdjustment extends Model
         'description' => 'string',
         'effectiveDate' => 'carbon',
         'agreementId' => 'integer',
+        'customFields' => 'array',
     ];
 }

@@ -13,9 +13,9 @@ class Project extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'actualEnd' => 'string',
+        'actualEnd' => 'carbon',
         'actualHours' => 'double',
-        'actualStart' => 'string',
+        'actualStart' => 'carbon',
         'billExpenses' => 'string',
         'billingAmount' => 'double',
         'billingAttention' => 'string',
@@ -33,6 +33,7 @@ class Project extends Model
         'description' => 'string',
         'downpayment' => 'double',
         'estimatedEnd' => 'carbon',
+        'percentComplete' => 'double',
         'estimatedExpenseRevenue' => 'double',
         'estimatedHours' => 'double',
         'estimatedProductRevenue' => 'double',
@@ -44,8 +45,14 @@ class Project extends Model
         'name' => 'string',
         'projectTemplateId' => 'integer',
         'restrictDownPaymentFlag' => 'boolean',
-        'scheduledEnd' => 'string',
+        'scheduledEnd' => 'carbon',
         'scheduledHours' => 'double',
-        'scheduledStart' => 'string',
+        'scheduledStart' => 'carbon',
+        'doNotDisplayInPortalFlag' => 'boolean',
+        'billingStartDate' => 'carbon',
+        'estimatedTimeCost' => 'double',
+        'estimatedExpenseCost' => 'double',
+        'estimatedProductCost' => 'double',
+        'customFields' => 'array',
     ];
 }
