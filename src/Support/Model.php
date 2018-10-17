@@ -8,6 +8,7 @@ use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
 use InvalidArgumentException;
 use JsonSerializable;
+use Spinen\ConnectWise\Api\Client;
 
 /**
  * Class Model
@@ -35,12 +36,21 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     protected $casts = [];
 
     /**
+     * Client instance to go get related properties
+     *
+     * @var Client|null
+     */
+    protected $client;
+
+    /**
      * Model constructor.
      *
      * @param array $attributes
+     * @param Client|null $client
      */
-    public function __construct(array $attributes)
+    public function __construct(array $attributes, Client $client = null)
     {
+        $this->client = $client;
         $this->fill($attributes);
     }
 
@@ -52,6 +62,36 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     public function __toString()
     {
         return $this->toJson();
+    }
+
+    /**
+     * Magic method to allow getting related items
+     *
+     * @param string $method
+     * @param mixed $arguments
+     *
+     * @return mixed
+     */
+    public function __call($method, $arguments)
+    {
+        // Call existing method
+        if (method_exists($this, $method)) {
+            return call_user_func_array([$this, $method], $arguments);
+        }
+
+        // Look to see if the property has a relationship to call
+        if ($this->client && is_array($this->{$method}) && array_key_exists('_info', $this->{$method})) {
+            foreach ($this->{$method}['_info'] as $k => $v) {
+                if (starts_with($v, $this->client->getUrl())) {
+                    // Cache so that other request will not trigger additional calls
+                    $this->{$method} = $this->client->get(str_replace_first($this->client->getUrl(), '', $v));
+
+                    return $this->{$method};
+                }
+            }
+        }
+
+        trigger_error('Call to undefined method ' . __CLASS__ . '::' . $method . '()', E_USER_ERROR);
     }
 
     /**
@@ -229,7 +269,6 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
             return $this->{$this->getterMethodName($attribute)}();
         }
 
-        // TODO: If there is that "_info" key, then make additional call?
         return $this->attributes[$attribute];
     }
 

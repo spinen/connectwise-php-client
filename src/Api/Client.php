@@ -9,6 +9,7 @@ use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Response;
 use InvalidArgumentException;
 use Spinen\ConnectWise\Support\Collection;
+use Spinen\ConnectWise\Support\Model;
 use Spinen\ConnectWise\Support\ModelResolver;
 
 /**
@@ -181,7 +182,7 @@ class Client
      */
     public function buildUri($resource)
     {
-        return $this->url . '/v4_6_release/apis/3.0/' . ltrim($resource, '/');
+        return $this->getUrl() . ltrim($resource, '/');
     }
 
     /**
@@ -235,6 +236,16 @@ class Client
     }
 
     /**
+     * Expose the url
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url . '/v4_6_release/apis/3.0/';
+    }
+
+    /**
      * Process the error received from ConnectWise
      *
      * @param RequestException $exception
@@ -256,7 +267,7 @@ class Client
      * @param          $resource
      * @param Response $response
      *
-     * @return array|Response
+     * @return Collection|Model|Response
      */
     protected function processResponse($resource, Response $response)
     {
@@ -267,7 +278,7 @@ class Client
 
             if ($this->isCollection($response)) {
                 $response = array_map(function ($item) use ($model) {
-                    $item = new $model($item);
+                    $item = new $model($item, $this);
 
                     return $item;
                 }, $response);
@@ -275,7 +286,7 @@ class Client
                 return new Collection($response);
             }
 
-            return new $model($response);
+            return new $model($response, $this);
         }
 
         return $response;
