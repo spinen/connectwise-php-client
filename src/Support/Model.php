@@ -115,7 +115,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     public function __isset($attribute)
     {
-        return !is_null($this->getAttribute($attribute));
+        return array_key_exists($attribute, $this->attributes);
     }
 
     /**
@@ -269,7 +269,11 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
             return $this->{$this->getterMethodName($attribute)}();
         }
 
-        return $this->attributes[$attribute];
+        if (isset($this->$attribute)) {
+            return $this->attributes[$attribute];
+        };
+
+        trigger_error('Undefined property:'. __CLASS__ . '::$' . $attribute);
     }
 
     /**
