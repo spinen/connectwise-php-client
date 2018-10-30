@@ -1147,8 +1147,8 @@ class ModelResolver
         // Bust the resource into the parts
         $uri_parts = parse_url($uri);
 
-        // Trim /\\d+ off the end
-        $pattern = preg_replace('|/\\d+$|u', '', $uri_parts['path']);
+        // Trim /\\d* off the end (i.e. '/' or '/123')
+        $pattern = preg_replace('|/\\d*$|u', '', $uri_parts['path']);
 
         // Replace /\\d+/ with /{id}}/
         $pattern = preg_replace('|/\\d+/|u', '/{id}/', $pattern);
