@@ -1147,14 +1147,14 @@ class ModelResolver
         // Bust the resource into the parts
         $uri_parts = parse_url($uri);
 
-        // Trim /\\d* off the end (i.e. '/' or '/123')
-        $pattern = preg_replace('|/\\d*$|u', '', $uri_parts['path']);
+        // Trim "/" off the end
+        $pattern = rtrim($uri_parts['path'], '/');
 
-        // Replace /\\d+/ with /{id}}/
-        $pattern = preg_replace('|/\\d+/|u', '/{id}/', $pattern);
+        // Replace /(/)d+(/?)/ with /$1{id}$2/
+        $pattern = preg_replace('|(/)\\d+(/?)|u', '$1{id}$2', $pattern);
 
         // Make regex
-        $pattern = '|^/?' . $pattern . '/?\\d*?$|ui';
+        $pattern = '|^/' . $pattern . '$|ui';
 
         // This is convoluted, but it is getting the first value of the filtered resources that the key matches the
         // associative array
