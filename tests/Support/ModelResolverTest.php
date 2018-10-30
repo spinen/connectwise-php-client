@@ -32,6 +32,11 @@ class ModelResolverTest extends TestCase
         $this->assertEquals('Some/Model', $resolver->find('some/uri/'), 'simple uris with trailing slash');
         $this->assertEquals('Some/Model', $resolver->find('/some/uri/'), 'simple uris with leading & trailing slash');
         $this->assertEquals('Some/ModelWithParam', $resolver->find('some/uri/45'), 'uri to direct resource');
+        $this->assertEquals(
+            'Some/ModelWithParam',
+            $resolver->find('some/uri/45?param=1&param=2'),
+            'uri to direct resource'
+        );
         $this->assertEquals('Some/Model', $resolver->find('some/uri?param=1&param=2'), 'uri with parameters');
 
         $this->assertEquals('Other/Model', $resolver->find('specific/987/uri'), 'nested resource uri');
