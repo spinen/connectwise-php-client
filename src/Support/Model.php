@@ -154,7 +154,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
             return $value;
         }
 
-        $class = 'Spinen\ConnectWise\\' . Str::studly($cast);
+        $class = 'Spinen\ConnectWise\\' . $cast;
 
         if (class_exists($class)) {
             return new $class($value);
