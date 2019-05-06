@@ -12,7 +12,7 @@ class Model extends BaseModel
      * @var array
      */
     protected $casts = [
-        'object_attribute'     => 'Models\System\Info',
+        'object_attribute'     => 'Models\v2019_2\System\Info',
         'carbon_attribute'     => 'carbon',
         'json_attribute'       => 'json',
         'collection_attribute' => 'collection',

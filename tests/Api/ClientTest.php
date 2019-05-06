@@ -7,7 +7,7 @@ use GuzzleHttp\Psr7\Response;
 use InvalidArgumentException;
 use Mockery;
 use Mockery\Mock;
-use Spinen\ConnectWise\Models\System\Info;
+use Spinen\ConnectWise\Models\v2019_2\System\Info;
 use Spinen\ConnectWise\Support\Collection;
 use Spinen\ConnectWise\Support\ModelResolver;
 use Spinen\ConnectWise\TestCase;
@@ -73,8 +73,8 @@ class ClientTest extends TestCase
 
         $this->resolver->shouldReceive('find')
                        ->once()
-                       ->with('uri')
-                       ->andReturn('System\Info');
+                       ->with('uri', Mockery::any())
+                       ->andReturn('v2019_2\System\Info');
 
         $this->token->shouldReceive('needsRefreshing')
                     ->once()
@@ -109,7 +109,9 @@ class ClientTest extends TestCase
         $response->shouldReceive('getBody')
                  ->once()
                  ->withNoArgs()
-                 ->andReturn('[{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"},{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"}]');
+                 ->andReturn(
+                     '[{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"},{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"}]'
+                 );
 
         $this->guzzle->shouldReceive('request')
                      ->once()
@@ -118,8 +120,8 @@ class ClientTest extends TestCase
 
         $this->resolver->shouldReceive('find')
                        ->once()
-                       ->with('uri')
-                       ->andReturn('System\Info');
+                       ->with('uri', '2019.2')
+                       ->andReturn('v2019_2\System\Info');
 
         $this->token->shouldReceive('needsRefreshing')
                     ->once()
@@ -163,7 +165,7 @@ class ClientTest extends TestCase
 
         $this->resolver->shouldReceive('find')
                        ->once()
-                       ->with('uri')
+                       ->with('uri', '2019.2')
                        ->andReturnNull();
 
         $this->token->shouldReceive('needsRefreshing')
@@ -298,6 +300,7 @@ class ClientTest extends TestCase
             ],
             'headers' => [
                 'added' => 'header',
+                'Accept' => 'application/vnd.connectwise.com+json; version=2019.2',
             ],
         ];
 
@@ -342,8 +345,10 @@ class ClientTest extends TestCase
     {
         $this->client->setUrl('https://host.tld');
 
-        $this->assertEquals('https://host.tld/v4_6_release/apis/3.0/some/resource',
-            $this->client->buildUri('/some/resource'));
+        $this->assertEquals(
+            'https://host.tld/v4_6_release/apis/3.0/some/resource',
+            $this->client->buildUri('/some/resource')
+        );
     }
 
     /**
@@ -360,23 +365,45 @@ class ClientTest extends TestCase
                     ->with($integrator)
                     ->andReturn(false);
 
-        $this->assertEquals([], $this->client->getHeaders());
+        $this->assertEquals(
+            ['Accept' => 'application/vnd.connectwise.com+json; version=2019.2'],
+            $this->client->getHeaders()
+        );
 
-        $this->client->addHeader([
-            'added' => 'header',
-        ]);
+        $this->client->addHeader(
+            [
+                'added' => 'header',
+            ]
+        );
 
-        $this->assertEquals(['added' => 'header'], $this->client->getHeaders());
+        $this->assertEquals(
+            [
+                'added'  => 'header',
+                'Accept' => 'application/vnd.connectwise.com+json; version=2019.2',
+            ],
+            $this->client->getHeaders()
+        );
 
-        $this->client->setHeaders([
-            'set' => 'headers',
-        ]);
+        $this->client->setHeaders(
+            [
+                'set' => 'headers',
+            ]
+        );
 
-        $this->assertEquals(['set' => 'headers'], $this->client->getHeaders());
+        $this->assertEquals(
+            [
+                'set'    => 'headers',
+                'Accept' => 'application/vnd.connectwise.com+json; version=2019.2',
+            ],
+            $this->client->getHeaders()
+        );
 
         $this->client->emptyHeaders();
 
-        $this->assertEquals([], $this->client->getHeaders());
+        $this->assertEquals(
+            ['Accept' => 'application/vnd.connectwise.com+json; version=2019.2'],
+            $this->client->getHeaders()
+        );
     }
 
     /**
@@ -393,9 +420,11 @@ class ClientTest extends TestCase
                     ->with($integrator)
                     ->andReturn(true);
 
-        $this->client->addHeader([
-            'added' => 'header',
-        ]);
+        $this->client->addHeader(
+            [
+                'added' => 'header',
+            ]
+        );
 
         $this->assertEquals(['x-cw-usertype' => 'integrator'], $this->client->getHeaders());
     }
@@ -494,7 +523,7 @@ class ClientTest extends TestCase
 
         $this->resolver->shouldReceive('find')
                        ->once()
-                       ->with('uri')
+                       ->with('uri', '2019.2')
                        ->andReturn('Model');
 
         $this->token->shouldReceive('needsRefreshing')
