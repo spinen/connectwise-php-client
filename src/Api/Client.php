@@ -2,8 +2,8 @@
 
 namespace Spinen\ConnectWise\Api;
 
-use Exception;
 use GuzzleHttp\Client as Guzzle;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Response;
@@ -105,9 +105,10 @@ class Client
      * Magic method to allow short cut to the request types
      *
      * @param string $verb
-     * @param array  $args
+     * @param array $args
      *
-     * @return array
+     * @return Collection|Model|Response
+     * @throws GuzzleException
      */
     public function __call($verb, $args)
     {
@@ -295,11 +296,12 @@ class Client
     /**
      * Make call to the resource
      *
-     * @param string     $method
-     * @param string     $resource
+     * @param string $method
+     * @param string $resource
      * @param array|null $options
      *
-     * @return array
+     * @return Collection|Model|Response
+     * @throws GuzzleException
      */
     protected function request($method, $resource, array $options = [])
     {
