@@ -88,17 +88,26 @@ class Client
     ];
 
     /**
+     * Version of the API being requested
+     *
+     * @var string
+     */
+    protected $version;
+
+    /**
      * Client constructor.
      *
-     * @param Token         $token
-     * @param Guzzle        $guzzle
+     * @param Token $token
+     * @param Guzzle $guzzle
      * @param ModelResolver $resolver
+     * @param string $version Version of the models to use with the API responses
      */
-    public function __construct(Token $token, Guzzle $guzzle, ModelResolver $resolver)
+    public function __construct(Token $token, Guzzle $guzzle, ModelResolver $resolver, $version = '2019.2')
     {
         $this->token = $token;
         $this->guzzle = $guzzle;
         $this->resolver = $resolver;
+        $this->setVersion($version);
     }
 
     /**
@@ -168,10 +177,13 @@ class Client
      */
     public function buildOptions(array $options = [])
     {
-        return array_merge_recursive($options, [
-            'auth'    => $this->buildAuth(),
-            'headers' => $this->getHeaders(),
-        ]);
+        return array_merge_recursive(
+            $options,
+            [
+                'auth'    => $this->buildAuth(),
+                'headers' => $this->getHeaders(),
+            ]
+        );
     }
 
     /**
@@ -213,7 +225,12 @@ class Client
             ];
         }
 
-        return $this->headers;
+        return array_merge(
+            [
+                'Accept' => 'application/vnd.connectwise.com+json; version=' . $this->version,
+            ],
+            $this->headers
+        );
     }
 
     /**
@@ -274,15 +291,18 @@ class Client
     {
         $response = (array)json_decode($response->getBody(), true);
 
-        if ($model = $this->resolver->find($resource)) {
+        if ($model = $this->resolver->find($resource, $this->version)) {
             $model = 'Spinen\ConnectWise\Models\\' . $model;
 
             if ($this->isCollection($response)) {
-                $response = array_map(function ($item) use ($model) {
-                    $item = new $model($item, $this);
+                $response = array_map(
+                    function ($item) use ($model) {
+                        $item = new $model($item, $this);
 
-                    return $item;
-                }, $response);
+                        return $item;
+                    },
+                    $response
+                );
 
                 return new Collection($response);
             }
@@ -372,6 +392,28 @@ class Client
         }
 
         $this->url = rtrim($url, '/');
+
+        return $this;
+    }
+
+    /**
+     * Set the version of the API response models
+     *
+     * @param string $version
+     *
+     * @return $this
+     */
+    public function setVersion($version)
+    {
+        $supported = [
+            '2019.2',
+        ];
+
+        if (!in_array($version, $supported)) {
+            throw new InvalidArgumentException(sprintf("The Version provided[%] is not supported.", $version));
+        }
+
+        $this->version = $version;
 
         return $this;
     }
