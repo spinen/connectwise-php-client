@@ -84,7 +84,8 @@ class ServiceProvider extends LaravelServiceProvider
                     $app->make(ModelResolver::class)
                 ))->setIntegrator($app->config->get('services.connectwise.integrator'))
                   ->setPassword($app->config->get('services.connectwise.password'))
-                  ->setUrl($app->config->get('services.connectwise.url'));
+                  ->setUrl($app->config->get('services.connectwise.url'))
+                  ->setVersion($app->config->get('services.connectwise.version'));
             }
         );
     }
