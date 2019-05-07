@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Support;
 
-use Illuminate\Support\Facades\File;
 use Spinen\ConnectWise\TestCase;
 
 class ModelResolverTest extends TestCase
@@ -22,17 +21,6 @@ class ModelResolverTest extends TestCase
      */
     public function it_finds_the_expected_model()
     {
-        File::shouldReceive('get')
-            ->once()
-            ->with('../Models/v1_2_3/map.php')
-            ->andReturn(
-                [
-                    '/some/uri'          => 'Some/Model',
-                    '/some/uri/{id}'     => 'Some/ModelWithParam',
-                    '/specific/{id}/uri' => 'Other/Model',
-                ]
-            );
-
         $resolver = new ModelResolver();
 
         $this->assertEquals('Some/Model', $resolver->find('some/uri', '1.2.3'), 'simple uri');
@@ -95,17 +83,22 @@ class ModelResolverTest extends TestCase
      */
     public function it_returns_null_for_uris_that_dont_match()
     {
-        File::shouldReceive('get')
-            ->once()
-            ->with('../Models/v1_2_3/map.php')
-            ->andReturn(
-                [
-                    'some/uri' => 'Some/Model',
-                ]
-            );
-
         $resolver = new ModelResolver();
 
         $this->assertNull($resolver->find('invalid/uri', '1.2.3'));
     }
+}
+
+function file_get_contents($file)
+{
+    var_dump('File...');
+    var_dump($file);
+
+    return json_encode(
+        [
+            '/some/uri'          => 'Some/Model',
+            '/some/uri/{id}'     => 'Some/ModelWithParam',
+            '/specific/{id}/uri' => 'Other/Model',
+        ]
+    );
 }
