@@ -4,7 +4,7 @@ namespace Spinen\ConnectWise\Support;
 
 use Carbon\Carbon;
 use InvalidArgumentException;
-use Spinen\ConnectWise\Models\System\Info;
+use Spinen\ConnectWise\Models\v2019_2\System\Info;
 use Spinen\ConnectWise\TestCase;
 
 class ModelTest extends TestCase

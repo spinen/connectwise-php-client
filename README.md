@@ -76,6 +76,8 @@ The package uses the auto registration feature
         'integrator' => env('CW_INTEGRATOR'),
         'password' => env('CW_PASSWORD'),
         'url' => env('CW_URL'),
+        // Optional version of the API models to use
+        //'version' => '' // default is the latest supported
     ],
 ```
 
@@ -115,7 +117,7 @@ Psy Shell v0.8.0 (PHP 7.0.14 — cli) by Justin Hileman
 >>> $cw = app('Spinen\ConnectWise\Api\Client');
 => Spinen\ConnectWise\Api\Client {#934}
 >>> $info = $cw->get('system/info');
-=> Spinen\ConnectWise\Models\System\Info {#1008}
+=> Spinen\ConnectWise\Models\v2019_3\System\Info {#1008}
 >>> $info->toArray();
 => [
      "version" => "v2016.6.43325",
@@ -148,15 +150,19 @@ Psy Shell v0.8.0 (PHP 7.0.14 — cli) by Justin Hileman
      deleted_at: null,
    }
 >>> ConnectWise::get('system/info');
-=> Spinen\ConnectWise\Models\System\Info {#1005}
+=> Spinen\ConnectWise\Models\v2019_3\System\Info {#1005}
 >>> ConnectWise::get('system/info')->toArray();
 => [
-     "version" => "v2016.6.43325",
-     "isCloud" => false,
-     "serverTimeZone" => "Eastern Standard Time",
-   ]
+        "version" => "v2018.6.59996",
+        "isCloud" => false,
+        "serverTimeZone" => "Eastern Standard Time",
+        "licenseBits" => [
+          // ... All of the properties
+        ],
+        "cloudRegion" => "NA",
+      ]
 >>> ConnectWise::get('system/info')->toJson();
-=> "{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"}"
+=> "{"version":"v2018.6.59996",...}"
 >>> ConnectWise::get('system/info')->isCloud;
 => false
 >>> ConnectWise::get('system/info')['isCloud'];
@@ -169,46 +175,52 @@ Psy Shell v0.8.0 (PHP 7.0.14 — cli) by Justin Hileman
 To use the client outside of Laravel, you just need to new-up the objects...
 
 ```
-$ php -a
-Interactive shell
+$ psysh
+Psy Shell v0.8.18 (PHP 7.2.17 — cli) by Justin Hileman
 
-php > // Autoload classes
-php > require 'vendor/autoload.php';
-php > // New-up objects
-php > $token = new Spinen\ConnectWise\Api\Token();
-php > $guzzle = new GuzzleHttp\Client();
-php > $resolver = new Spinen\ConnectWise\Support\ModelResolver();
-php > $client = new Spinen\ConnectWise\Api\Client($token, $guzzle, $resolver);
-php > // Now set your configs
-php > $token->setCompanyId('<company_id>')->setMemberId('<member_id>');
-php > $client->setIntegrator('<integrator>')->setPassword('<password>')->setUrl('https://<domain.tld>');
-php > $info = $client->get('system/info');
-php > var_export($info, false);
-Spinen\ConnectWise\Models\System\Info::__set_state(array(
-   'casts' =>
-  array (
-    'version' => 'string',
-    'isCloud' => 'boolean',
-    'serverTimeZone' => 'string',
-  ),
-   'attributes' =>
-  array (
-    'version' => 'v2016.6.43325',
-    'isCloud' => false,
-    'serverTimeZone' => 'Eastern Standard Time',
-  ),
-))
-php > var_export($info->toArray(), false);
-array (
-  'version' => 'v2016.6.43325',
-  'isCloud' => false,
-  'serverTimeZone' => 'Eastern Standard Time',
-)
-php > var_export($info->tojson(), false);
-'{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"}'
-php > var_export($info->isCloud, false);
-false
-php > var_export($info['isCloud'], false);
-false
-php >
+>>> // New-up objects
+>>> $token = (new Spinen\ConnectWise\Api\Token())->setCompanyId('<company_id>')->setMemberId('<member_id>');
+=> Spinen\ConnectWise\Api\Token {#208}
+>>> $guzzle = new GuzzleHttp\Client();
+=> GuzzleHttp\Client {#196}
+>>> $resolver = new Spinen\ConnectWise\Support\ModelResolver();
+=> Spinen\ConnectWise\Support\ModelResolver {#201}
+>>> $client = (new Spinen\ConnectWise\Api\Client($token, $guzzle, $resolver))->setIntegrator('<integrator>')->setPassword('<password>')->setUrl('https://<domain.tld>');
+=> Spinen\ConnectWise\Api\Client {#231}
+>>> $info = $client->get('system/info');                                                                                                                                                 => Spinen\ConnectWise\Models\v2019_3\System\Info {#237}
+>>> $info->toArray();
+=> [
+     "version" => "v2018.6.59996",
+     "isCloud" => false,
+     "serverTimeZone" => "Eastern Standard Time",
+     "licenseBits" => [
+       // ... All of the properties
+     ],
+     "cloudRegion" => "NA",
+   ]
+>>> // Set client to use different version
+>>> $client->setVersion('2019.1')
+=> Spinen\ConnectWise\Api\Client {#231}
+>>> $info = $client->get('system/info');
+>>> /// NOTE: the version in the namespace
+=> Spinen\ConnectWise\Models\v2019_1\System\Info {#235}
 ```
+
+## Supported API Model Versions
+
+You can specify the version of the model you want in one of the 3 ways...
+
+1. The 4th parameter in teh `Client` construct
+2. Calling the `setVersion` method on the `client` object
+3. [Laravel only] Setting the `version` property in the config
+
+The supported versions are
+
+* 2018.4
+* 2018.5
+* 2018.6
+* 2019.1
+* 2019.2
+* 2019.3 `(default)`
+
+You can see the differences of the models by looking at the `casts` property on the individual `models` in `src/Models/<version>` directory.

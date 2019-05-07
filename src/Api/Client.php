@@ -2,8 +2,8 @@
 
 namespace Spinen\ConnectWise\Api;
 
-use Exception;
 use GuzzleHttp\Client as Guzzle;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Response;
@@ -88,26 +88,36 @@ class Client
     ];
 
     /**
+     * Version of the API being requested
+     *
+     * @var string
+     */
+    protected $version;
+
+    /**
      * Client constructor.
      *
-     * @param Token         $token
-     * @param Guzzle        $guzzle
+     * @param Token $token
+     * @param Guzzle $guzzle
      * @param ModelResolver $resolver
+     * @param string $version Version of the models to use with the API responses
      */
-    public function __construct(Token $token, Guzzle $guzzle, ModelResolver $resolver)
+    public function __construct(Token $token, Guzzle $guzzle, ModelResolver $resolver, $version = null)
     {
         $this->token = $token;
         $this->guzzle = $guzzle;
         $this->resolver = $resolver;
+        $this->setVersion($version ?? '2019.3');
     }
 
     /**
      * Magic method to allow short cut to the request types
      *
      * @param string $verb
-     * @param array  $args
+     * @param array $args
      *
-     * @return array
+     * @return Collection|Model|Response
+     * @throws GuzzleException
      */
     public function __call($verb, $args)
     {
@@ -167,10 +177,13 @@ class Client
      */
     public function buildOptions(array $options = [])
     {
-        return array_merge_recursive($options, [
-            'auth'    => $this->buildAuth(),
-            'headers' => $this->getHeaders(),
-        ]);
+        return array_merge_recursive(
+            $options,
+            [
+                'auth'    => $this->buildAuth(),
+                'headers' => $this->getHeaders(),
+            ]
+        );
     }
 
     /**
@@ -212,7 +225,12 @@ class Client
             ];
         }
 
-        return $this->headers;
+        return array_merge(
+            [
+                'Accept' => 'application/vnd.connectwise.com+json; version=' . $this->version,
+            ],
+            $this->headers
+        );
     }
 
     /**
@@ -273,15 +291,18 @@ class Client
     {
         $response = (array)json_decode($response->getBody(), true);
 
-        if ($model = $this->resolver->find($resource)) {
+        if ($model = $this->resolver->find($resource, $this->version)) {
             $model = 'Spinen\ConnectWise\Models\\' . $model;
 
             if ($this->isCollection($response)) {
-                $response = array_map(function ($item) use ($model) {
-                    $item = new $model($item, $this);
+                $response = array_map(
+                    function ($item) use ($model) {
+                        $item = new $model($item, $this);
 
-                    return $item;
-                }, $response);
+                        return $item;
+                    },
+                    $response
+                );
 
                 return new Collection($response);
             }
@@ -295,11 +316,12 @@ class Client
     /**
      * Make call to the resource
      *
-     * @param string     $method
-     * @param string     $resource
+     * @param string $method
+     * @param string $resource
      * @param array|null $options
      *
-     * @return array
+     * @return Collection|Model|Response
+     * @throws GuzzleException
      */
     protected function request($method, $resource, array $options = [])
     {
@@ -370,6 +392,33 @@ class Client
         }
 
         $this->url = rtrim($url, '/');
+
+        return $this;
+    }
+
+    /**
+     * Set the version of the API response models
+     *
+     * @param string $version
+     *
+     * @return $this
+     */
+    public function setVersion($version)
+    {
+        $supported = [
+            '2018.4',
+            '2018.5',
+            '2018.6',
+            '2019.1',
+            '2019.2',
+            '2019.3',
+        ];
+
+        if (!in_array($version, $supported)) {
+            throw new InvalidArgumentException(sprintf("The Version provided[%] is not supported.", $version));
+        }
+
+        $this->version = $version;
 
         return $this;
     }

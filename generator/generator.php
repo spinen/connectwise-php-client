@@ -13,6 +13,8 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+use Illuminate\Support\Str;
+
 function determinePropertyType($properties)
 {
     if (array_key_exists('format', $properties)) {
@@ -82,7 +84,6 @@ function parseResponse($response, $uri)
         $definition = getDefinitions($item);
 
         foreach ($definition as $attribute => $properties) {
-
             // TODO: Handle recursive defs
             if (!array_key_exists('$ref', $properties)) {
                 $attributes[$attribute] = determinePropertyType($properties);
@@ -95,21 +96,30 @@ function parseResponse($response, $uri)
 
 function processPaths()
 {
-    $namespace = studly_case($GLOBALS['api']);
+    $namespace = Str::studly($GLOBALS['api']);
+    $path = __DIR__ . '/Generated/' . $GLOBALS['version'] . '/';
 
-    mkdir(__DIR__ . '/Generated/' . $namespace, 0755, true);
+    mkdir($path . $namespace, 0755, true);
 
     foreach ($GLOBALS['swagger']['paths'] as $uri => $actions) {
         if (array_key_exists('get', $actions)) {
             $docs = $actions['get'];
-            $class = str_singular($docs['tags'][0]);
-            $file = __DIR__ . '/Generated/' . $namespace . '/' . $class . '.php';
+            $class = Str::singular($docs['tags'][0]);
+            $file = $path . '/' . $namespace . '/' . $class . '.php';
 
-            mapResourceToClass($uri, $namespace, $class);
+            if (!file_exists($file)) {
+                $GLOBALS['map'][$uri] = $GLOBALS['version'] . '\\' . $namespace . '\\' . $class;
 
-            $attributes = parseResponse(getResponse($docs['responses']), $uri);
+                $attributes = parseResponse(getResponse($docs['responses']), $uri);
 
-            writeClassFile($file, $namespace, $class, $attributes);
+                writeClassFile(
+                    $file,
+                    $namespace,
+                    $GLOBALS['version'],
+                    $class,
+                    $attributes
+                );
+            }
         }
     }
 }
@@ -119,15 +129,19 @@ function readSwagger($file)
     return json_decode(file_get_contents($file), true);
 }
 
-function writeClassFile($file_path, $namespace, $class, $attributes)
+function writeClassFile($file_path, $namespace, $version, $class, $attributes)
 {
     $template = <<<EOF
 <?php
 
-namespace Spinen\ConnectWise\Models\{{ Namespace }};
+namespace Spinen\ConnectWise\Models\{{ Version }}\{{ Namespace }};
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class {{ Class }}
+ *{{ Properties }}
+ */
 class {{ Class }} extends Model
 {
     /**
@@ -142,23 +156,34 @@ class {{ Class }} extends Model
 EOF;
 
     $casts = null;
+    $properties = null;
 
     foreach ($attributes as $attribute => $type) {
         $casts .= "\n        '" . $attribute . "' => '" . $type . "',";
+        $properties .= "\n * @property " . $type . ' $' . $attribute;
     }
 
     $file = preg_replace('|{{ Namespace }}|u', $namespace, $template);
+    $file = preg_replace('|{{ Version }}|u', $version, $file);
     $file = preg_replace('|{{ Class }}|u', $class, $file);
     $file = preg_replace('|{{ Casts }}|u', $casts, $file);
+    $file = preg_replace('|{{ Properties }}|u', $properties, $file);
 
     file_put_contents($file_path, $file);
 }
 
-foreach (glob(__DIR__ . "/swagger/*.json") as $swaggerfile) {
-    $GLOBALS['api'] = explode('.', basename($swaggerfile))[0];
-    $GLOBALS['swagger'] = readSwagger($swaggerfile);
+foreach (glob(__DIR__ . "/swagger/*") as $version) {
+    $GLOBALS['version'] = basename($version);
+    $GLOBALS['map'] = null;
 
-    processPaths();
+    foreach (glob(__DIR__ . "/swagger/" . $GLOBALS['version'] . "/*.json") as $swaggerfile) {
+        $GLOBALS['api'] = explode('.', basename($swaggerfile))[0];
+        $GLOBALS['swagger'] = readSwagger($swaggerfile);
+
+        processPaths();
+    }
+
+    file_put_contents(__DIR__ . '/Generated/' . $GLOBALS['version'] . '/map.json', json_encode($GLOBALS['map']));
 }
 
 

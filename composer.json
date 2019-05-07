@@ -16,6 +16,7 @@
     ],
     "require": {
         "php": ">=7.1",
+        "ext-json": "*",
         "guzzlehttp/guzzle": "^6.2",
         "illuminate/support": "~5.3",
         "nesbot/carbon": "~1.20"
