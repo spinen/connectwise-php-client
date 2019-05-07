@@ -89,11 +89,15 @@ class ModelResolverTest extends TestCase
     }
 }
 
+/**
+ * Override to inject "fake" file
+ *
+ * @param $file
+ *
+ * @return false|string
+ */
 function file_get_contents($file)
 {
-    var_dump('File...');
-    var_dump($file);
-
     return json_encode(
         [
             '/some/uri'          => 'Some/Model',
