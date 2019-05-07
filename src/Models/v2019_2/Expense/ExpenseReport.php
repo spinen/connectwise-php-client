@@ -4,6 +4,18 @@ namespace Spinen\ConnectWise\Models\v2019_2\Expense;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ExpenseReport
+ *
+ * @property integer $id
+ * @property integer $year
+ * @property integer $period
+ * @property carbon $dateStart
+ * @property carbon $dateEnd
+ * @property string $status
+ * @property double $total
+ * @property carbon $dueDate
+ */
 class ExpenseReport extends Model
 {
     /**

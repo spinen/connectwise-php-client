@@ -4,6 +4,24 @@ namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class AgreementWorkType
+ *
+ * @property integer $id
+ * @property integer $locationId
+ * @property string $rateType
+ * @property string $billTime
+ * @property double $rate
+ * @property double $hoursMax
+ * @property double $hoursMin
+ * @property double $roundBillHours
+ * @property double $overageRate
+ * @property string $overageRateType
+ * @property double $agreementLimit
+ * @property carbon $effectiveDate
+ * @property carbon $endingDate
+ * @property integer $agreementId
+ */
 class AgreementWorkType extends Model
 {
     /**

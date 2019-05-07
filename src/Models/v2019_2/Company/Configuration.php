@@ -4,6 +4,51 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class Configuration
+ *
+ * @property integer $id
+ * @property string $name
+ * @property integer $locationId
+ * @property integer $businessUnitId
+ * @property string $deviceIdentifier
+ * @property string $serialNumber
+ * @property string $modelNumber
+ * @property string $tagNumber
+ * @property carbon $purchaseDate
+ * @property carbon $installationDate
+ * @property carbon $warrantyExpirationDate
+ * @property string $vendorNotes
+ * @property string $notes
+ * @property string $macAddress
+ * @property string $lastLoginName
+ * @property boolean $billFlag
+ * @property integer $backupSuccesses
+ * @property integer $backupIncomplete
+ * @property integer $backupFailed
+ * @property integer $backupRestores
+ * @property carbon $lastBackupDate
+ * @property string $backupServerName
+ * @property double $backupBillableSpaceGb
+ * @property string $backupProtectedDeviceList
+ * @property integer $backupYear
+ * @property integer $backupMonth
+ * @property string $ipAddress
+ * @property string $defaultGateway
+ * @property string $osType
+ * @property string $osInfo
+ * @property string $cpuSpeed
+ * @property string $ram
+ * @property string $localHardDrives
+ * @property integer $parentConfigurationId
+ * @property array $questions
+ * @property boolean $activeFlag
+ * @property string $managementLink
+ * @property string $remoteLink
+ * @property boolean $displayVendorFlag
+ * @property integer $companyLocationId
+ * @property array $customFields
+ */
 class Configuration extends Model
 {
     /**
@@ -51,6 +96,7 @@ class Configuration extends Model
         'managementLink' => 'string',
         'remoteLink' => 'string',
         'displayVendorFlag' => 'boolean',
+        'companyLocationId' => 'integer',
         'customFields' => 'array',
     ];
 }

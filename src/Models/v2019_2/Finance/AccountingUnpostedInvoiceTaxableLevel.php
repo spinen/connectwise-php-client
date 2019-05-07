@@ -4,6 +4,14 @@ namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class AccountingUnpostedInvoiceTaxableLevel
+ *
+ * @property integer $id
+ * @property integer $taxLevel
+ * @property string $taxCodeXref
+ * @property double $taxAmount
+ */
 class AccountingUnpostedInvoiceTaxableLevel extends Model
 {
     /**

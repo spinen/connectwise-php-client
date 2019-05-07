@@ -4,6 +4,19 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class Imap
+ *
+ * @property integer $id
+ * @property string $name
+ * @property string $imapName
+ * @property string $processedName
+ * @property string $server
+ * @property string $userName
+ * @property string $password
+ * @property integer $port
+ * @property boolean $sslFlag
+ */
 class Imap extends Model
 {
     /**

@@ -4,6 +4,16 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class TimeZone
+ *
+ * @property integer $id
+ * @property string $name
+ * @property double $offset
+ * @property carbon $startDate
+ * @property carbon $endDate
+ * @property boolean $daylightSavingsFlag
+ */
 class TimeZone extends Model
 {
     /**

@@ -4,6 +4,27 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class EmailToken
+ *
+ * @property integer $id
+ * @property string $token
+ * @property string $description
+ * @property boolean $addressFlag
+ * @property boolean $agreementFlag
+ * @property boolean $companyFlag
+ * @property boolean $configFlag
+ * @property boolean $contactFlag
+ * @property boolean $invoiceFlag
+ * @property boolean $purchaseOrderFlag
+ * @property boolean $purchaseOrderStatusFlag
+ * @property boolean $rmaFlag
+ * @property boolean $salesFlag
+ * @property boolean $serviceFlag
+ * @property boolean $tracksFlag
+ * @property boolean $workflowFlag
+ * @property boolean $portalPasswordFlag
+ */
 class EmailToken extends Model
 {
     /**

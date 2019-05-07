@@ -4,6 +4,16 @@ namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class BoardSubType
+ *
+ * @property integer $id
+ * @property string $name
+ * @property boolean $inactiveFlag
+ * @property array $typeAssociationIds
+ * @property boolean $addAllTypesFlag
+ * @property boolean $removeAllTypesFlag
+ */
 class BoardSubType extends Model
 {
     /**

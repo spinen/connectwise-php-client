@@ -4,6 +4,14 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ManagedDevicesIntegrationCrossReference
+ *
+ * @property integer $id
+ * @property string $vendorType
+ * @property string $vendorLevel
+ * @property boolean $inactiveFlag
+ */
 class ManagedDevicesIntegrationCrossReference extends Model
 {
     /**

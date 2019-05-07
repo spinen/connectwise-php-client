@@ -4,6 +4,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\Time;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class WorkRole
+ *
+ * @property string $type
+ * @property integer $count
+ * @property integer $id
+ * @property string $description
+ * @property string $hyperlink
+ */
 class WorkRole extends Model
 {
     /**
@@ -12,14 +21,10 @@ class WorkRole extends Model
      * @var array
      */
     protected $casts = [
+        'type' => 'string',
+        'count' => 'integer',
         'id' => 'integer',
-        'name' => 'string',
-        'hourlyRate' => 'double',
-        'integrationXref' => 'string',
-        'inactiveFlag' => 'boolean',
-        'addAllLocations' => 'boolean',
-        'removeAllLocations' => 'boolean',
-        'addAllAgreementExclusions' => 'boolean',
-        'locationIds' => 'array',
+        'description' => 'string',
+        'hyperlink' => 'string',
     ];
 }

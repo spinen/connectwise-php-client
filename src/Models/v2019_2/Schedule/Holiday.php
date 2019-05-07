@@ -4,6 +4,16 @@ namespace Spinen\ConnectWise\Models\v2019_2\Schedule;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class Holiday
+ *
+ * @property integer $id
+ * @property string $name
+ * @property boolean $allDayFlag
+ * @property string $date
+ * @property string $timeStart
+ * @property string $timeEnd
+ */
 class Holiday extends Model
 {
     /**

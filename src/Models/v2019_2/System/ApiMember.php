@@ -4,6 +4,18 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ApiMember
+ *
+ * @property integer $id
+ * @property string $identifier
+ * @property string $name
+ * @property string $emailAddress
+ * @property boolean $inactiveFlag
+ * @property carbon $inactiveDate
+ * @property string $notes
+ * @property array $excludedServiceBoardIds
+ */
 class ApiMember extends Model
 {
     /**

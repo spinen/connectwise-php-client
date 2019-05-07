@@ -4,6 +4,11 @@ namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class AgreementTypeWorkTypeExclusion
+ *
+ * @property integer $id
+ */
 class AgreementTypeWorkTypeExclusion extends Model
 {
     /**

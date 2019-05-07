@@ -4,6 +4,12 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ReportCardDetail
+ *
+ * @property integer $id
+ * @property integer $sortOrder
+ */
 class ReportCardDetail extends Model
 {
     /**

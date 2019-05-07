@@ -4,6 +4,14 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ConfigurationTypeQuestionValue
+ *
+ * @property integer $id
+ * @property string $value
+ * @property boolean $defaultFlag
+ * @property boolean $inactiveFlag
+ */
 class ConfigurationTypeQuestionValue extends Model
 {
     /**

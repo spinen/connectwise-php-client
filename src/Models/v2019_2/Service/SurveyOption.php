@@ -4,6 +4,14 @@ namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class SurveyOption
+ *
+ * @property integer $id
+ * @property string $caption
+ * @property integer $points
+ * @property boolean $visibleflag
+ */
 class SurveyOption extends Model
 {
     /**

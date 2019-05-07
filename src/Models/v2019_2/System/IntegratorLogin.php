@@ -4,6 +4,67 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class IntegratorLogin
+ *
+ * @property integer $id
+ * @property string $username
+ * @property string $password
+ * @property boolean $canAccessAllRecordsFlag
+ * @property boolean $canAccessAllApisFlag
+ * @property boolean $inactiveFlag
+ * @property carbon $dateInactivated
+ * @property boolean $serviceTicketApiFlag
+ * @property string $serviceBoardCallbackUrl
+ * @property boolean $serviceBoardLegacyCallbackFlag
+ * @property boolean $timeEntryApiFlag
+ * @property string $timeEntryCallbackUrl
+ * @property boolean $timeEntryLegacyCallbackFlag
+ * @property boolean $managedServicesApiFlag
+ * @property boolean $managedServicesAutoChildFlag
+ * @property boolean $managedServicesChildingFlag
+ * @property boolean $contactApiFlag
+ * @property string $contactCallbackUrl
+ * @property boolean $contactLegacyCallbackFlag
+ * @property boolean $companyApiFlag
+ * @property string $companyCallbackUrl
+ * @property boolean $CompanyLegacyCallbackFlag
+ * @property boolean $activityApiFlag
+ * @property string $activityCallbackUrl
+ * @property boolean $activityLegacyCallbackFlag
+ * @property boolean $ntrSupportApiFlag
+ * @property boolean $logMeInSupportApiFlag
+ * @property boolean $invoiceApiFlag
+ * @property boolean $productApiFlag
+ * @property string $productCallbackUrl
+ * @property boolean $productLegacyCallbackFlag
+ * @property boolean $opportunityApiFlag
+ * @property string $opportunityCallbackUrl
+ * @property boolean $opportunityLegacyCallbackFlag
+ * @property boolean $opportunityConversionApiFlag
+ * @property boolean $memberApiFlag
+ * @property boolean $marketingApiFlag
+ * @property boolean $purchasingApiFlag
+ * @property string $purchasingCallbackUrl
+ * @property boolean $purchasingLegacyCallbackFlag
+ * @property boolean $reportingApiFlag
+ * @property boolean $systemApiFlag
+ * @property boolean $projectApiFlag
+ * @property string $projectCallbackUrl
+ * @property boolean $projectLegacyCallbackFlag
+ * @property boolean $configurationApiFlag
+ * @property boolean $configurationAutoChildFlag
+ * @property boolean $configurationChildlingFlag
+ * @property string $configurationCallbackUrl
+ * @property boolean $configurationLegacyCallbackFlag
+ * @property boolean $scheduleApiFlag
+ * @property string $scheduleCallbackUrl
+ * @property boolean $scheduleLegacyCallbackFlag
+ * @property boolean $agreementApiFlag
+ * @property string $agreementCallbackUrl
+ * @property boolean $agreementCallbackLegacyFlag
+ * @property boolean $documentApiFlag
+ */
 class IntegratorLogin extends Model
 {
     /**

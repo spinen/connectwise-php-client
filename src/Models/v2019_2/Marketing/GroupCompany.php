@@ -4,6 +4,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\Marketing;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class GroupCompany
+ *
+ * @property integer $id
+ * @property integer $groupId
+ * @property boolean $defaultContactFlag
+ * @property boolean $allContactsFlag
+ * @property boolean $unsubscribeFlag
+ */
 class GroupCompany extends Model
 {
     /**

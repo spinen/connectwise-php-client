@@ -4,6 +4,14 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class MemberDelegation
+ *
+ * @property integer $id
+ * @property string $delegationType
+ * @property carbon $dateStart
+ * @property carbon $dateEnd
+ */
 class MemberDelegation extends Model
 {
     /**

@@ -4,6 +4,14 @@ namespace Spinen\ConnectWise\Models\v2019_2\Expense;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class PaymentType
+ *
+ * @property integer $id
+ * @property string $name
+ * @property boolean $defaultFlag
+ * @property boolean $companyFlag
+ */
 class PaymentType extends Model
 {
     /**

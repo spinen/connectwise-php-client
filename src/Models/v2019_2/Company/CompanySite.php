@@ -4,6 +4,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class CompanySite
+ *
+ * @property string $type
+ * @property integer $count
+ * @property integer $id
+ * @property string $description
+ * @property string $hyperlink
+ */
 class CompanySite extends Model
 {
     /**
@@ -12,22 +21,10 @@ class CompanySite extends Model
      * @var array
      */
     protected $casts = [
+        'type' => 'string',
+        'count' => 'integer',
         'id' => 'integer',
-        'name' => 'string',
-        'addressLine1' => 'string',
-        'addressLine2' => 'string',
-        'city' => 'string',
-        'state' => 'string',
-        'zip' => 'string',
-        'addressFormat' => 'string',
-        'phoneNumber' => 'string',
-        'faxNumber' => 'string',
-        'taxCodeId' => 'integer',
-        'expenseReimbursement' => 'double',
-        'primaryAddressFlag' => 'boolean',
-        'defaultShippingFlag' => 'boolean',
-        'defaultBillingFlag' => 'boolean',
-        'defaultMailingFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
+        'description' => 'string',
+        'hyperlink' => 'string',
     ];
 }

@@ -4,6 +4,20 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class CorporateStructure
+ *
+ * @property integer $id
+ * @property string $levelCount
+ * @property string $level1Name
+ * @property string $level2Name
+ * @property string $level3Name
+ * @property string $level4Name
+ * @property string $level5Name
+ * @property string $fiscalYearStart
+ * @property string $locationCaption
+ * @property string $groupCaption
+ */
 class CorporateStructure extends Model
 {
     /**

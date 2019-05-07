@@ -4,6 +4,17 @@ namespace Spinen\ConnectWise\Models\v2019_2\Sales;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ActivityType
+ *
+ * @property integer $id
+ * @property string $name
+ * @property integer $points
+ * @property boolean $defaultFlag
+ * @property boolean $inactiveFlag
+ * @property boolean $emailFlag
+ * @property boolean $memoFlag
+ */
 class ActivityType extends Model
 {
     /**

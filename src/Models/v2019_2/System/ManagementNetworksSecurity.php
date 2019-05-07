@@ -4,6 +4,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ManagementNetworksSecurity
+ *
+ * @property integer $id
+ * @property string $name
+ * @property string $username
+ * @property string $password
+ * @property string $site
+ */
 class ManagementNetworksSecurity extends Model
 {
     /**

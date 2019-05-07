@@ -4,6 +4,26 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class SecurityRoleSetting
+ *
+ * @property integer $id
+ * @property string $addLevel
+ * @property string $editLevel
+ * @property string $deleteLevel
+ * @property string $inquireLevel
+ * @property string $moduleFunctionName
+ * @property string $moduleFunctionDescription
+ * @property boolean $myAllFlag
+ * @property string $moduleFunctionIdentifier
+ * @property boolean $reportFlag
+ * @property boolean $restrictFlag
+ * @property boolean $customFlag
+ * @property string $moduleDescription
+ * @property string $moduleIdentifier
+ * @property string $moduleName
+ * @property integer $sortOrder
+ */
 class SecurityRoleSetting extends Model
 {
     /**

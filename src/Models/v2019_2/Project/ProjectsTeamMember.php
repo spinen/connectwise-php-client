@@ -4,6 +4,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\Project;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ProjectsTeamMember
+ *
+ * @property integer $id
+ * @property integer $projectId
+ * @property double $hours
+ * @property carbon $startDate
+ * @property carbon $endDate
+ */
 class ProjectsTeamMember extends Model
 {
     /**

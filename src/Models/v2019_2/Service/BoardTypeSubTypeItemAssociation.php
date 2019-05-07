@@ -4,6 +4,11 @@ namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class BoardTypeSubTypeItemAssociation
+ *
+ * @property integer $id
+ */
 class BoardTypeSubTypeItemAssociation extends Model
 {
     /**

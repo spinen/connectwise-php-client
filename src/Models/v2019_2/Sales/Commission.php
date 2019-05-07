@@ -4,6 +4,22 @@ namespace Spinen\ConnectWise\Models\v2019_2\Sales;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class Commission
+ *
+ * @property integer $id
+ * @property double $commissionPercent
+ * @property carbon $dateStart
+ * @property carbon $dateEnd
+ * @property string $billingMethod
+ * @property integer $numberOfMonths
+ * @property string $commissionBasis
+ * @property string $invoiceOption
+ * @property boolean $servicesFlag
+ * @property boolean $agreementsFlag
+ * @property boolean $productsFlag
+ * @property boolean $myOpportunitiesFlag
+ */
 class Commission extends Model
 {
     /**

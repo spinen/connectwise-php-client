@@ -4,6 +4,18 @@ namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class SurveyResult
+ *
+ * @property integer $id
+ * @property integer $ticketId
+ * @property string $emailAddress
+ * @property string $footerResponse
+ * @property boolean $contactMeFlag
+ * @property array $results
+ * @property integer $totalPoints
+ * @property integer $surveyId
+ */
 class SurveyResult extends Model
 {
     /**

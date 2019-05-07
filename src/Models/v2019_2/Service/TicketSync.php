@@ -4,6 +4,20 @@ namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class TicketSync
+ *
+ * @property integer $id
+ * @property string $name
+ * @property string $vendorType
+ * @property string $url
+ * @property string $userName
+ * @property string $password
+ * @property string $psg
+ * @property boolean $problemDescriptionFlag
+ * @property boolean $internalAnalysisFlag
+ * @property boolean $resolutionFlag
+ */
 class TicketSync extends Model
 {
     /**

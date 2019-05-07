@@ -4,6 +4,17 @@ namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class Currency
+ *
+ * @property integer $id
+ * @property string $currencyIdentifier
+ * @property string $name
+ * @property string $symbol
+ * @property boolean $displayIdFlag
+ * @property boolean $displaySymbolFlag
+ * @property string $isoCode
+ */
 class Currency extends Model
 {
     /**

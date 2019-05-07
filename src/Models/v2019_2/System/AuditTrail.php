@@ -4,6 +4,11 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class AuditTrail
+ *
+ * @property integer $count
+ */
 class AuditTrail extends Model
 {
     /**

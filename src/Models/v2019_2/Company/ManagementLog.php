@@ -4,6 +4,10 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ManagementLog
+ *
+ */
 class ManagementLog extends Model
 {
     /**

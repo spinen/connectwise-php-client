@@ -4,6 +4,91 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class Member
+ *
+ * @property integer $id
+ * @property string $identifier
+ * @property string $password
+ * @property string $firstName
+ * @property string $middleInitial
+ * @property string $lastName
+ * @property string $title
+ * @property string $licenseClass
+ * @property boolean $disableOnlineFlag
+ * @property boolean $enableMobileFlag
+ * @property string $employeeIdentifer
+ * @property string $vendorNumber
+ * @property string $notes
+ * @property array $serviceBoardTeamIds
+ * @property boolean $enableMobileGpsFlag
+ * @property carbon $inactiveDate
+ * @property boolean $inactiveFlag
+ * @property string $lastLogin
+ * @property boolean $partnerPortalFlag
+ * @property string $clientId
+ * @property string $stsUserAdminUrl
+ * @property string $token
+ * @property boolean $toastNotificationFlag
+ * @property string $officeEmail
+ * @property string $officePhone
+ * @property string $officeExtension
+ * @property string $mobileEmail
+ * @property string $mobilePhone
+ * @property string $mobileExtension
+ * @property string $homeEmail
+ * @property string $homePhone
+ * @property string $homeExtension
+ * @property string $defaultEmail
+ * @property string $defaultPhone
+ * @property boolean $adminFlag
+ * @property boolean $restrictLocationFlag
+ * @property boolean $restrictDepartmentFlag
+ * @property double $billableForecast
+ * @property double $dailyCapacity
+ * @property double $hourlyCost
+ * @property double $hourlyRate
+ * @property boolean $includeInUtilizationReportingFlag
+ * @property boolean $requireExpenseEntryFlag
+ * @property boolean $requireTimeSheetEntryFlag
+ * @property boolean $requireStartAndEndTimeOnTimeEntryFlag
+ * @property boolean $allowInCellEntryOnTimeSheet
+ * @property boolean $enterTimeAgainstCompanyFlag
+ * @property boolean $allowExpensesEnteredAgainstCompaniesFlag
+ * @property boolean $timeReminderEmailFlag
+ * @property integer $daysTolerance
+ * @property double $minimumHours
+ * @property carbon $timeSheetStartDate
+ * @property carbon $hireDate
+ * @property boolean $restrictServiceDefaultLocationFlag
+ * @property boolean $restrictServiceDefaultDepartmentFlag
+ * @property array $excludedServiceBoardIds
+ * @property boolean $restrictProjectDefaultLocationFlag
+ * @property boolean $restrictProjectDefaultDepartmentFlag
+ * @property array $excludedProjectBoardIds
+ * @property double $scheduleCapacity
+ * @property boolean $restrictScheduleFlag
+ * @property boolean $hideMemberInDispatchPortalFlag
+ * @property boolean $restrictDefaultSalesTerritoryFlag
+ * @property boolean $restrictDefaultWarehouseFlag
+ * @property boolean $restrictDefaultWarehouseBinFlag
+ * @property string $mapiName
+ * @property boolean $calendarSyncIntegrationFlag
+ * @property boolean $enableLdapAuthenticationFlag
+ * @property string $ldapUserName
+ * @property string $companyActivityTabFormat
+ * @property string $invoiceTimeTabFormat
+ * @property string $invoiceScreenDefaultTabFormat
+ * @property string $invoicingDisplayOptions
+ * @property string $agreementInvoicingDisplayOptions
+ * @property string $remotePackage
+ * @property string $remotePackagePlatform
+ * @property string $remotePackageUserName
+ * @property string $remotePackagePassword
+ * @property string $remotePackageAccount
+ * @property string $authenticationServiceType
+ * @property boolean $timebasedOneTimePasswordActivated
+ */
 class Member extends Model
 {
     /**
@@ -30,6 +115,11 @@ class Member extends Model
         'inactiveDate' => 'carbon',
         'inactiveFlag' => 'boolean',
         'lastLogin' => 'string',
+        'partnerPortalFlag' => 'boolean',
+        'clientId' => 'string',
+        'stsUserAdminUrl' => 'string',
+        'token' => 'string',
+        'toastNotificationFlag' => 'boolean',
         'officeEmail' => 'string',
         'officePhone' => 'string',
         'officeExtension' => 'string',

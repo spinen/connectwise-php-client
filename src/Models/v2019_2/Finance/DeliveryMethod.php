@@ -4,6 +4,17 @@ namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class DeliveryMethod
+ *
+ * @property integer $id
+ * @property string $name
+ * @property boolean $defaultFlag
+ * @property boolean $emailFlag
+ * @property boolean $integrationEmailFlag
+ * @property boolean $integrationPrintFlag
+ * @property boolean $integrationActiveFlag
+ */
 class DeliveryMethod extends Model
 {
     /**

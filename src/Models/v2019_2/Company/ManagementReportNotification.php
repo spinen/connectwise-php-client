@@ -4,6 +4,13 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ManagementReportNotification
+ *
+ * @property integer $id
+ * @property string $email
+ * @property boolean $globalFlag
+ */
 class ManagementReportNotification extends Model
 {
     /**

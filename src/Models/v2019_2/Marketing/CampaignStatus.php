@@ -4,6 +4,14 @@ namespace Spinen\ConnectWise\Models\v2019_2\Marketing;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class CampaignStatus
+ *
+ * @property integer $id
+ * @property string $name
+ * @property boolean $defaultFlag
+ * @property boolean $inactiveFlag
+ */
 class CampaignStatus extends Model
 {
     /**

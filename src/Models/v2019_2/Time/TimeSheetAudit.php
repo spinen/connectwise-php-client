@@ -4,6 +4,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\Time;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class TimeSheetAudit
+ *
+ * @property integer $id
+ * @property string $message
+ * @property string $oldValue
+ * @property string $newValue
+ * @property string $value
+ */
 class TimeSheetAudit extends Model
 {
     /**

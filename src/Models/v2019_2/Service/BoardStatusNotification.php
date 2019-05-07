@@ -4,6 +4,13 @@ namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class BoardStatusNotification
+ *
+ * @property integer $id
+ * @property string $email
+ * @property integer $workflowStep
+ */
 class BoardStatusNotification extends Model
 {
     /**

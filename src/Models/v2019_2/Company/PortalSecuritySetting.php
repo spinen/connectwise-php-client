@@ -4,6 +4,19 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class PortalSecuritySetting
+ *
+ * @property integer $id
+ * @property string $functionIdentifier
+ * @property string $functionDescription
+ * @property boolean $levelOne
+ * @property boolean $levelTwo
+ * @property boolean $levelThree
+ * @property boolean $levelFour
+ * @property boolean $levelFive
+ * @property boolean $levelSix
+ */
 class PortalSecuritySetting extends Model
 {
     /**

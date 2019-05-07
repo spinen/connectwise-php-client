@@ -4,6 +4,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\Project;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class PhaseStatus
+ *
+ * @property string $type
+ * @property integer $count
+ * @property integer $id
+ * @property string $description
+ * @property string $hyperlink
+ */
 class PhaseStatus extends Model
 {
     /**

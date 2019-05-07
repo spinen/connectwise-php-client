@@ -4,6 +4,18 @@ namespace Spinen\ConnectWise\Models\v2019_2\Time;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class TimeSheet
+ *
+ * @property integer $id
+ * @property integer $year
+ * @property integer $period
+ * @property carbon $dateStart
+ * @property carbon $dateEnd
+ * @property string $status
+ * @property double $hours
+ * @property carbon $deadline
+ */
 class TimeSheet extends Model
 {
     /**

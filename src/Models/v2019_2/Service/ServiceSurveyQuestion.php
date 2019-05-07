@@ -4,6 +4,19 @@ namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ServiceSurveyQuestion
+ *
+ * @property integer $id
+ * @property integer $sequenceNumber
+ * @property string $type
+ * @property string $question
+ * @property array $options
+ * @property boolean $includeFlag
+ * @property boolean $requiredFlag
+ * @property integer $noAnswerPoints
+ * @property integer $surveyId
+ */
 class ServiceSurveyQuestion extends Model
 {
     /**

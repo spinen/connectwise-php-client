@@ -4,6 +4,21 @@ namespace Spinen\ConnectWise\Models\v2019_2\Schedule;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class PortalCalendar
+ *
+ * @property integer $id
+ * @property string $weekStart
+ * @property string $adjust1Start
+ * @property string $adjust1End
+ * @property double $adjust1Hours
+ * @property string $adjust2Start
+ * @property string $adjust2End
+ * @property double $adjust2Hours
+ * @property string $adjust3Start
+ * @property string $adjust3End
+ * @property double $adjust3Hours
+ */
 class PortalCalendar extends Model
 {
     /**

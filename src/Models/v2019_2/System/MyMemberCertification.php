@@ -4,6 +4,16 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class MyMemberCertification
+ *
+ * @property integer $id
+ * @property integer $percentComplete
+ * @property carbon $dateReceived
+ * @property carbon $dateExpires
+ * @property string $certificationNumber
+ * @property string $notes
+ */
 class MyMemberCertification extends Model
 {
     /**

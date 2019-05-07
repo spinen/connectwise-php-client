@@ -4,6 +4,14 @@ namespace Spinen\ConnectWise\Models\v2019_2\Project;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ProjectNote
+ *
+ * @property integer $id
+ * @property integer $projectId
+ * @property string $text
+ * @property boolean $flagged
+ */
 class ProjectNote extends Model
 {
     /**

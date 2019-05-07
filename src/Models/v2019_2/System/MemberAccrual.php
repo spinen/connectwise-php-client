@@ -4,6 +4,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class MemberAccrual
+ *
+ * @property integer $id
+ * @property string $accrualType
+ * @property integer $year
+ * @property double $hours
+ * @property string $reason
+ */
 class MemberAccrual extends Model
 {
     /**

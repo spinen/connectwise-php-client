@@ -4,6 +4,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ReportingService
+ *
+ * @property integer $id
+ * @property string $reportingUserName
+ * @property string $reportingPassword
+ * @property string $reportingDomain
+ * @property string $reportingUrl
+ */
 class ReportingService extends Model
 {
     /**

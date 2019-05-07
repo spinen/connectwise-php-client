@@ -4,6 +4,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class BoardStatus
+ *
+ * @property string $type
+ * @property integer $count
+ * @property integer $id
+ * @property string $description
+ * @property string $hyperlink
+ */
 class BoardStatus extends Model
 {
     /**
@@ -12,17 +21,10 @@ class BoardStatus extends Model
      * @var array
      */
     protected $casts = [
+        'type' => 'string',
+        'count' => 'integer',
         'id' => 'integer',
-        'name' => 'string',
-        'sortOrder' => 'integer',
-        'displayOnBoard' => 'boolean',
-        'inactive' => 'boolean',
-        'closedStatus' => 'boolean',
-        'timeEntryNotAllowed' => 'boolean',
-        'defaultFlag' => 'boolean',
-        'escalationStatus' => 'string',
-        'customerPortalDescription' => 'string',
-        'customerPortalFlag' => 'boolean',
-        'customStatusIndicatorName' => 'string',
+        'description' => 'string',
+        'hyperlink' => 'string',
     ];
 }

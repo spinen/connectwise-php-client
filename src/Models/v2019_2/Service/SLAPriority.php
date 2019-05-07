@@ -4,6 +4,17 @@ namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class SLAPriority
+ *
+ * @property integer $id
+ * @property double $respondHours
+ * @property integer $respondPercent
+ * @property double $planWithin
+ * @property integer $planWithinPercent
+ * @property double $resolutionHours
+ * @property integer $resolutionPercent
+ */
 class SLAPriority extends Model
 {
     /**

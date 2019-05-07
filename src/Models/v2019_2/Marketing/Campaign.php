@@ -4,6 +4,11 @@ namespace Spinen\ConnectWise\Models\v2019_2\Marketing;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class Campaign
+ *
+ * @property integer $count
+ */
 class Campaign extends Model
 {
     /**

@@ -4,6 +4,30 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class PortalConfigurationServiceSetup
+ *
+ * @property integer $id
+ * @property boolean $serviceTypeFlag
+ * @property boolean $serviceSubTypeFlag
+ * @property boolean $serviceSubTypeItemFlag
+ * @property boolean $statusFlag
+ * @property boolean $siteNameFlag
+ * @property boolean $enteredDateFlag
+ * @property boolean $lastUpdateFlag
+ * @property boolean $requiredDateFlag
+ * @property boolean $contactFlag
+ * @property boolean $assignedResourcesFlag
+ * @property boolean $slaInfoFlag
+ * @property boolean $serviceBoardFlag
+ * @property boolean $budgetHoursFlag
+ * @property boolean $actualHoursFlag
+ * @property boolean $approvalStatusFlag
+ * @property boolean $openTasksFlag
+ * @property boolean $closedTasksFlag
+ * @property boolean $enableChatAssistFlag
+ * @property string $displayClosedTicketsOption
+ */
 class PortalConfigurationServiceSetup extends Model
 {
     /**

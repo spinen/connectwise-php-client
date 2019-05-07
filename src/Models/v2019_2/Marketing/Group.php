@@ -4,6 +4,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\Marketing;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class Group
+ *
+ * @property string $type
+ * @property integer $count
+ * @property integer $id
+ * @property string $description
+ * @property string $hyperlink
+ */
 class Group extends Model
 {
     /**

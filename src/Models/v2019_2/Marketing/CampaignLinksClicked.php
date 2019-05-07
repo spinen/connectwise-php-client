@@ -4,6 +4,16 @@ namespace Spinen\ConnectWise\Models\v2019_2\Marketing;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class CampaignLinksClicked
+ *
+ * @property integer $id
+ * @property integer $campaignId
+ * @property integer $contactId
+ * @property carbon $dateClicked
+ * @property string $url
+ * @property string $queryString
+ */
 class CampaignLinksClicked extends Model
 {
     /**

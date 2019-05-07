@@ -4,6 +4,13 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class OsGradeWeight
+ *
+ * @property integer $id
+ * @property double $osGradeWeight
+ * @property string $osName
+ */
 class OsGradeWeight extends Model
 {
     /**

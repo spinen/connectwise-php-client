@@ -4,6 +4,24 @@ namespace Spinen\ConnectWise\Models\v2019_2\Sales;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class Opportunity
+ *
+ * @property integer $id
+ * @property string $name
+ * @property carbon $expectedCloseDate
+ * @property string $notes
+ * @property string $source
+ * @property integer $locationId
+ * @property integer $businessUnitId
+ * @property string $customerPO
+ * @property carbon $pipelineChangeDate
+ * @property carbon $dateBecameLead
+ * @property carbon $closedDate
+ * @property double $totalSalesTax
+ * @property integer $companyLocationId
+ * @property array $customFields
+ */
 class Opportunity extends Model
 {
     /**
@@ -24,6 +42,7 @@ class Opportunity extends Model
         'dateBecameLead' => 'carbon',
         'closedDate' => 'carbon',
         'totalSalesTax' => 'double',
+        'companyLocationId' => 'integer',
         'customFields' => 'array',
     ];
 }

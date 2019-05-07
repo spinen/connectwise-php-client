@@ -4,6 +4,23 @@ namespace Spinen\ConnectWise\Models\v2019_2\Expense;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ExpenseType
+ *
+ * @property integer $id
+ * @property string $name
+ * @property string $amountCaption
+ * @property double $reimbursementRate
+ * @property string $billExpenses
+ * @property string $invoiceMarkupOption
+ * @property double $invoiceMarkupAmount
+ * @property boolean $advancedAmountFlag
+ * @property boolean $mileageFlag
+ * @property boolean $quantityFlag
+ * @property boolean $inactiveFlag
+ * @property double $maxAmount
+ * @property string $integrationXRef
+ */
 class ExpenseType extends Model
 {
     /**

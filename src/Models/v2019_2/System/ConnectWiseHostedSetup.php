@@ -4,6 +4,27 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ConnectWiseHostedSetup
+ *
+ * @property integer $id
+ * @property integer $screenId
+ * @property string $description
+ * @property string $url
+ * @property string $type
+ * @property string $origin
+ * @property integer $podHeight
+ * @property integer $toolbarButtonDialogHeight
+ * @property integer $toolbarButtonDialogWidth
+ * @property string $toolbarButtonText
+ * @property string $toolbarButtonToolTip
+ * @property integer $toolbarButtonIconDocumentId
+ * @property boolean $disabledFlag
+ * @property array $locationIds
+ * @property boolean $locationsEnabledFlag
+ * @property string $createdBy
+ * @property string $dateCreated
+ */
 class ConnectWiseHostedSetup extends Model
 {
     /**
@@ -26,6 +47,7 @@ class ConnectWiseHostedSetup extends Model
         'toolbarButtonIconDocumentId' => 'integer',
         'disabledFlag' => 'boolean',
         'locationIds' => 'array',
+        'locationsEnabledFlag' => 'boolean',
         'createdBy' => 'string',
         'dateCreated' => 'string',
     ];

@@ -4,6 +4,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class Certification
+ *
+ * @property string $type
+ * @property integer $count
+ * @property integer $id
+ * @property string $description
+ * @property string $hyperlink
+ */
 class Certification extends Model
 {
     /**
@@ -12,7 +21,10 @@ class Certification extends Model
      * @var array
      */
     protected $casts = [
+        'type' => 'string',
+        'count' => 'integer',
         'id' => 'integer',
-        'name' => 'string',
+        'description' => 'string',
+        'hyperlink' => 'string',
     ];
 }

@@ -4,6 +4,21 @@ namespace Spinen\ConnectWise\Models\v2019_2\Sales;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class OpportunityForecast
+ *
+ * @property integer $id
+ * @property string $name
+ * @property double $revenue
+ * @property double $cost
+ * @property string $type
+ * @property boolean $includedFlag
+ * @property double $percent
+ * @property double $margin
+ * @property integer $opportunityId
+ * @property string $QuoteNumber
+ * @property string $QuoteName
+ */
 class OpportunityForecast extends Model
 {
     /**

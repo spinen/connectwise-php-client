@@ -4,6 +4,31 @@ namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class AccountingPackage
+ *
+ * @property integer $id
+ * @property string $identifier
+ * @property string $name
+ * @property boolean $directTransferFlag
+ * @property boolean $includeInvoicesFlag
+ * @property string $invoiceFormat
+ * @property boolean $includeExpenseFlag
+ * @property boolean $transferExpenseAsBillFlag
+ * @property string $expenseFormat
+ * @property boolean $suppressMemoFlag
+ * @property boolean $syncPaymentInfoFlag
+ * @property boolean $includeSalesTaxFlag
+ * @property boolean $enableTaxGroupsFlag
+ * @property boolean $zeroDollarTaxAmountsFlag
+ * @property boolean $includeItemsFlag
+ * @property boolean $inventorySOHFlag
+ * @property boolean $sendComponentAmountFlag
+ * @property boolean $sendUomFlag
+ * @property boolean $includeCogsEntriesFlag
+ * @property boolean $includeCogsDropShipFlag
+ * @property boolean $activeFlag
+ */
 class AccountingPackage extends Model
 {
     /**

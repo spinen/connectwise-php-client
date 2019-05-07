@@ -4,6 +4,45 @@ namespace Spinen\ConnectWise\Models\v2019_2\Project;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ProjectPhase
+ *
+ * @property integer $id
+ * @property integer $projectId
+ * @property string $description
+ * @property string $wbsCode
+ * @property string $billTime
+ * @property string $billExpenses
+ * @property string $billProducts
+ * @property boolean $markAsMilestoneFlag
+ * @property string $notes
+ * @property carbon $deadlineDate
+ * @property boolean $billSeparatelyFlag
+ * @property string $billingMethod
+ * @property double $scheduledHours
+ * @property string $scheduledStart
+ * @property string $scheduledEnd
+ * @property double $actualHours
+ * @property string $actualStart
+ * @property string $actualEnd
+ * @property double $budgetHours
+ * @property integer $locationId
+ * @property integer $businessUnitId
+ * @property double $hourlyRate
+ * @property carbon $billingStartDate
+ * @property boolean $billPhaseClosedFlag
+ * @property boolean $billProjectClosedFlag
+ * @property double $downpayment
+ * @property string $poNumber
+ * @property double $poAmount
+ * @property double $estimatedTimeCost
+ * @property double $estimatedExpenseCost
+ * @property double $estimatedProductCost
+ * @property double $estimatedTimeRevenue
+ * @property double $estimatedExpenseRevenue
+ * @property double $estimatedProductRevenue
+ * @property array $customFields
+ */
 class ProjectPhase extends Model
 {
     /**

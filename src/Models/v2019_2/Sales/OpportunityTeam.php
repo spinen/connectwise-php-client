@@ -4,6 +4,16 @@ namespace Spinen\ConnectWise\Models\v2019_2\Sales;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class OpportunityTeam
+ *
+ * @property integer $id
+ * @property string $type
+ * @property integer $commissionPercent
+ * @property boolean $referralFlag
+ * @property integer $opportunityId
+ * @property boolean $responsibleFlag
+ */
 class OpportunityTeam extends Model
 {
     /**

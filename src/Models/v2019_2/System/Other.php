@@ -4,6 +4,22 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class Other
+ *
+ * @property integer $id
+ * @property string $defaultFromAddress
+ * @property string $portalUrlOverride
+ * @property string $siteUrl
+ * @property string $logoPath
+ * @property string $contactSync
+ * @property boolean $useSslFlag
+ * @property boolean $syncLeadsFlag
+ * @property boolean $includePortalLinkFlag
+ * @property boolean $useExpandedFormatTimeFlag
+ * @property boolean $useExpandedFormatActivityFlag
+ * @property boolean $updateMemberTimeZonesFlag
+ */
 class Other extends Model
 {
     /**

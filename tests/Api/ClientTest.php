@@ -7,7 +7,7 @@ use GuzzleHttp\Psr7\Response;
 use InvalidArgumentException;
 use Mockery;
 use Mockery\Mock;
-use Spinen\ConnectWise\Models\v2019_2\System\Info;
+use Spinen\ConnectWise\Models\v2019_3\System\Info;
 use Spinen\ConnectWise\Support\Collection;
 use Spinen\ConnectWise\Support\ModelResolver;
 use Spinen\ConnectWise\TestCase;
@@ -74,7 +74,7 @@ class ClientTest extends TestCase
         $this->resolver->shouldReceive('find')
                        ->once()
                        ->with('uri', Mockery::any())
-                       ->andReturn('v2019_2\System\Info');
+                       ->andReturn('v2019_3\System\Info');
 
         $this->token->shouldReceive('needsRefreshing')
                     ->once()
@@ -120,8 +120,8 @@ class ClientTest extends TestCase
 
         $this->resolver->shouldReceive('find')
                        ->once()
-                       ->with('uri', '2019.2')
-                       ->andReturn('v2019_2\System\Info');
+                       ->with('uri', '2019.3')
+                       ->andReturn('v2019_3\System\Info');
 
         $this->token->shouldReceive('needsRefreshing')
                     ->once()
@@ -165,7 +165,7 @@ class ClientTest extends TestCase
 
         $this->resolver->shouldReceive('find')
                        ->once()
-                       ->with('uri', '2019.2')
+                       ->with('uri', '2019.3')
                        ->andReturnNull();
 
         $this->token->shouldReceive('needsRefreshing')
@@ -300,7 +300,7 @@ class ClientTest extends TestCase
             ],
             'headers' => [
                 'added' => 'header',
-                'Accept' => 'application/vnd.connectwise.com+json; version=2019.2',
+                'Accept' => 'application/vnd.connectwise.com+json; version=2019.3',
             ],
         ];
 
@@ -366,7 +366,7 @@ class ClientTest extends TestCase
                     ->andReturn(false);
 
         $this->assertEquals(
-            ['Accept' => 'application/vnd.connectwise.com+json; version=2019.2'],
+            ['Accept' => 'application/vnd.connectwise.com+json; version=2019.3'],
             $this->client->getHeaders()
         );
 
@@ -379,7 +379,7 @@ class ClientTest extends TestCase
         $this->assertEquals(
             [
                 'added'  => 'header',
-                'Accept' => 'application/vnd.connectwise.com+json; version=2019.2',
+                'Accept' => 'application/vnd.connectwise.com+json; version=2019.3',
             ],
             $this->client->getHeaders()
         );
@@ -393,7 +393,7 @@ class ClientTest extends TestCase
         $this->assertEquals(
             [
                 'set'    => 'headers',
-                'Accept' => 'application/vnd.connectwise.com+json; version=2019.2',
+                'Accept' => 'application/vnd.connectwise.com+json; version=2019.3',
             ],
             $this->client->getHeaders()
         );
@@ -401,7 +401,7 @@ class ClientTest extends TestCase
         $this->client->emptyHeaders();
 
         $this->assertEquals(
-            ['Accept' => 'application/vnd.connectwise.com+json; version=2019.2'],
+            ['Accept' => 'application/vnd.connectwise.com+json; version=2019.3'],
             $this->client->getHeaders()
         );
     }
@@ -523,7 +523,7 @@ class ClientTest extends TestCase
 
         $this->resolver->shouldReceive('find')
                        ->once()
-                       ->with('uri', '2019.2')
+                       ->with('uri', '2019.3')
                        ->andReturn('Model');
 
         $this->token->shouldReceive('needsRefreshing')

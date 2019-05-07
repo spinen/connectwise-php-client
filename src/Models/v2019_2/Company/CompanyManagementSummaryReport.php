@@ -4,6 +4,41 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class CompanyManagementSummaryReport
+ *
+ * @property integer $id
+ * @property string $groupIdentifier
+ * @property string $deviceType
+ * @property integer $snmpMachines
+ * @property integer $totalWorkstations
+ * @property integer $totalServers
+ * @property integer $totalWindowsServers
+ * @property integer $totalWindowsWorkstations
+ * @property integer $totalManagedMachines
+ * @property integer $serversOffline
+ * @property integer $serversDiskSpaceLow
+ * @property integer $failedBackupJobs
+ * @property integer $totalNotifications
+ * @property integer $successfulBackupJobs
+ * @property integer $serverAvailability
+ * @property integer $virusesRemoved
+ * @property integer $spywareItemsRemoved
+ * @property integer $windowsPatchesInstalled
+ * @property integer $diskCleanups
+ * @property integer $diskDefragmentations
+ * @property integer $fullyPatchedMachines
+ * @property integer $missingOneTwoPatchesMachines
+ * @property integer $missingThreeFivePatchesMachines
+ * @property integer $missingMoreFivePatchesMachines
+ * @property integer $missingUnscannedPatchesMachines
+ * @property string $alertsGenerated
+ * @property double $internetConnectivity
+ * @property integer $diskSpaceCleanedMb
+ * @property string $missingSecurityPatches
+ * @property double $cpuUtilization
+ * @property double $memoryUtilization
+ */
 class CompanyManagementSummaryReport extends Model
 {
     /**

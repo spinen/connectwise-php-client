@@ -4,6 +4,13 @@ namespace Spinen\ConnectWise\Models\v2019_2\Sales;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class OpportunityRating
+ *
+ * @property integer $id
+ * @property string $name
+ * @property integer $sortOrder
+ */
 class OpportunityRating extends Model
 {
     /**

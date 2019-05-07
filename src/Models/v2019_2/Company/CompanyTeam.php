@@ -4,6 +4,16 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class CompanyTeam
+ *
+ * @property integer $id
+ * @property integer $locationId
+ * @property integer $businessUnitId
+ * @property boolean $accountManagerFlag
+ * @property boolean $techFlag
+ * @property boolean $salesFlag
+ */
 class CompanyTeam extends Model
 {
     /**

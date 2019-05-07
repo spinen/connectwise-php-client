@@ -4,6 +4,53 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class PortalConfigurationProjectSetup
+ *
+ * @property integer $id
+ * @property boolean $projectNameFlag
+ * @property boolean $projectTypeFlag
+ * @property boolean $statusFlag
+ * @property boolean $projectManagerFlag
+ * @property boolean $billingMethodFlag
+ * @property boolean $contactFlag
+ * @property boolean $estimatedStartFlag
+ * @property boolean $estimatedEndFlag
+ * @property boolean $descriptionFlag
+ * @property boolean $lastUpdatedFlag
+ * @property string $onlyDisplay
+ * @property boolean $timeMaterialBudgetHrsFlag
+ * @property boolean $timeMaterialScheduledStartFlag
+ * @property boolean $timeMaterialScheduledFinishFlag
+ * @property boolean $timeMaterialScheduledHrsFlag
+ * @property boolean $timeMaterialActualStartFlag
+ * @property boolean $timeMaterialActualFinishFlag
+ * @property boolean $timeMaterialActualHrsFlag
+ * @property boolean $timeMaterialBillFlag
+ * @property boolean $timeMaterialStatusFlag
+ * @property boolean $timeMaterialAssignedFlag
+ * @property boolean $fixedFeeBudgetHrsFlag
+ * @property boolean $fixedFeeScheduledStartFlag
+ * @property boolean $fixedFeeScheduledFinishFlag
+ * @property boolean $fixedFeeScheduledHrsFlag
+ * @property boolean $fixedFeeActualStartFlag
+ * @property boolean $fixedFeeActualFinishFlag
+ * @property boolean $fixedFeeActualHrsFlag
+ * @property boolean $fixedFeeBillFlag
+ * @property boolean $fixedFeeStatusFlag
+ * @property boolean $fixedFeeAssignedFlag
+ * @property boolean $projectIssueBudgetHrsFlag
+ * @property boolean $projectIssueScheduledStartFlag
+ * @property boolean $projectIssueScheduledFinishFlag
+ * @property boolean $projectIssueScheduledHrsFlag
+ * @property boolean $projectIssueActualStartFlag
+ * @property boolean $projectIssueActualFinishFlag
+ * @property boolean $projectIssueActualHrsFlag
+ * @property boolean $projectIssueBillFlag
+ * @property boolean $projectIssueStatusFlag
+ * @property boolean $projectIssueAssignedFlag
+ * @property boolean $projectDetailTotalHoursFlag
+ */
 class PortalConfigurationProjectSetup extends Model
 {
     /**

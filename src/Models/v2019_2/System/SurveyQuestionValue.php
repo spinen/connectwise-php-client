@@ -4,6 +4,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class SurveyQuestionValue
+ *
+ * @property integer $id
+ * @property string $value
+ * @property boolean $defaultFlag
+ * @property integer $pointValue
+ * @property boolean $inactiveFlag
+ */
 class SurveyQuestionValue extends Model
 {
     /**

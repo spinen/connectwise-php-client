@@ -4,6 +4,31 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class UserDefinedField
+ *
+ * @property integer $id
+ * @property integer $podId
+ * @property string $caption
+ * @property integer $sequenceNumber
+ * @property string $helpText
+ * @property string $fieldTypeIdentifier
+ * @property integer $numberDecimals
+ * @property string $entryTypeIdentifier
+ * @property boolean $requiredFlag
+ * @property boolean $displayOnScreenFlag
+ * @property boolean $readOnlyFlag
+ * @property boolean $listViewFlag
+ * @property string $buttonUrl
+ * @property array $options
+ * @property array $businessUnitIds
+ * @property array $locationIds
+ * @property boolean $addAllBusinessUnits
+ * @property boolean $removeAllBusinessUnits
+ * @property boolean $addAllLocations
+ * @property boolean $removeAllLocations
+ * @property carbon $dateCreated
+ */
 class UserDefinedField extends Model
 {
     /**

@@ -4,6 +4,12 @@ namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class Agreement
+ *
+ * @property integer $id
+ * @property string $deviceIdentifier
+ */
 class Agreement extends Model
 {
     /**

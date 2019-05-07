@@ -4,6 +4,50 @@ namespace Spinen\ConnectWise\Models\v2019_2\Project;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class Project
+ *
+ * @property integer $id
+ * @property carbon $actualEnd
+ * @property double $actualHours
+ * @property carbon $actualStart
+ * @property string $billExpenses
+ * @property double $billingAmount
+ * @property string $billingAttention
+ * @property string $billingMethod
+ * @property string $billingRateType
+ * @property string $billProducts
+ * @property boolean $billProjectAfterClosedFlag
+ * @property string $billTime
+ * @property boolean $billUnapprovedTimeAndExpense
+ * @property string $budgetAnalysis
+ * @property boolean $budgetFlag
+ * @property double $budgetHours
+ * @property string $customerPO
+ * @property string $description
+ * @property double $downpayment
+ * @property carbon $estimatedEnd
+ * @property double $percentComplete
+ * @property double $estimatedExpenseRevenue
+ * @property double $estimatedHours
+ * @property double $estimatedProductRevenue
+ * @property carbon $estimatedStart
+ * @property double $estimatedTimeRevenue
+ * @property boolean $includeDependenciesFlag
+ * @property boolean $includeEstimatesFlag
+ * @property string $name
+ * @property integer $projectTemplateId
+ * @property boolean $restrictDownPaymentFlag
+ * @property carbon $scheduledEnd
+ * @property double $scheduledHours
+ * @property carbon $scheduledStart
+ * @property boolean $doNotDisplayInPortalFlag
+ * @property carbon $billingStartDate
+ * @property double $estimatedTimeCost
+ * @property double $estimatedExpenseCost
+ * @property double $estimatedProductCost
+ * @property array $customFields
+ */
 class Project extends Model
 {
     /**
@@ -28,7 +72,6 @@ class Project extends Model
         'budgetAnalysis' => 'string',
         'budgetFlag' => 'boolean',
         'budgetHours' => 'double',
-        'businessUnitId' => 'integer',
         'customerPO' => 'string',
         'description' => 'string',
         'downpayment' => 'double',
@@ -41,7 +84,6 @@ class Project extends Model
         'estimatedTimeRevenue' => 'double',
         'includeDependenciesFlag' => 'boolean',
         'includeEstimatesFlag' => 'boolean',
-        'locationId' => 'integer',
         'name' => 'string',
         'projectTemplateId' => 'integer',
         'restrictDownPaymentFlag' => 'boolean',

@@ -4,6 +4,13 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ManagedDevicesIntegrationLogin
+ *
+ * @property integer $id
+ * @property string $username
+ * @property string $password
+ */
 class ManagedDevicesIntegrationLogin extends Model
 {
     /**

@@ -4,6 +4,16 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class Management
+ *
+ * @property integer $id
+ * @property carbon $runTime
+ * @property boolean $scheduleExecutiveSummaryReportFlag
+ * @property integer $executiveSummaryReportScheduleDay
+ * @property integer $executiveSummaryReportScheduleHour
+ * @property integer $executiveSummaryReportScheduleMinute
+ */
 class Management extends Model
 {
     /**

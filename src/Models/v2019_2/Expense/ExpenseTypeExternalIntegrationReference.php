@@ -4,6 +4,13 @@ namespace Spinen\ConnectWise\Models\v2019_2\Expense;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ExpenseTypeExternalIntegrationReference
+ *
+ * @property integer $id
+ * @property string $identifier
+ * @property string $name
+ */
 class ExpenseTypeExternalIntegrationReference extends Model
 {
     /**

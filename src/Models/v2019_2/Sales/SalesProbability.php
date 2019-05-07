@@ -4,6 +4,12 @@ namespace Spinen\ConnectWise\Models\v2019_2\Sales;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class SalesProbability
+ *
+ * @property integer $id
+ * @property integer $probability
+ */
 class SalesProbability extends Model
 {
     /**

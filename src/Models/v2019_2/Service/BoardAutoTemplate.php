@@ -4,6 +4,22 @@ namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class BoardAutoTemplate
+ *
+ * @property integer $id
+ * @property string $summarySetting
+ * @property string $discussionSetting
+ * @property string $internalAnalysisSetting
+ * @property string $resolutionSetting
+ * @property string $tasksSetting
+ * @property string $documentsSetting
+ * @property string $resourcesSetting
+ * @property string $budgetHoursSetting
+ * @property string $financeInformationSetting
+ * @property string $sendNotesAsEmailSetting
+ * @property boolean $autoApplyFlag
+ */
 class BoardAutoTemplate extends Model
 {
     /**

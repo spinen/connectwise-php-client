@@ -4,6 +4,17 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class MemberInfo
+ *
+ * @property integer $id
+ * @property string $identifier
+ * @property string $firstName
+ * @property string $middleInitial
+ * @property string $lastName
+ * @property string $fullName
+ * @property string $defaultEmail
+ */
 class MemberInfo extends Model
 {
     /**

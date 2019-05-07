@@ -4,6 +4,21 @@ namespace Spinen\ConnectWise\Models\v2019_2\Marketing;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class CampaignFormsSubmitted
+ *
+ * @property integer $id
+ * @property integer $campaignId
+ * @property integer $contactId
+ * @property carbon $dateSubmitted
+ * @property string $url
+ * @property string $queryString
+ * @property string $pageType
+ * @property string $pageSubType
+ * @property string $topic
+ * @property string $version
+ * @property string $status
+ */
 class CampaignFormsSubmitted extends Model
 {
     /**

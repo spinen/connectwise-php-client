@@ -102,7 +102,7 @@ class Client
      * @param ModelResolver $resolver
      * @param string $version Version of the models to use with the API responses
      */
-    public function __construct(Token $token, Guzzle $guzzle, ModelResolver $resolver, $version = '2019.2')
+    public function __construct(Token $token, Guzzle $guzzle, ModelResolver $resolver, $version = '2019.3')
     {
         $this->token = $token;
         $this->guzzle = $guzzle;
@@ -406,7 +406,12 @@ class Client
     public function setVersion($version)
     {
         $supported = [
+            '2018.4',
+            '2018.5',
+            '2018.6',
+            '2019.1',
             '2019.2',
+            '2019.3',
         ];
 
         if (!in_array($version, $supported)) {

@@ -4,6 +4,23 @@ namespace Spinen\ConnectWise\Models\v2019_2\Time;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class TimePeriodSetup
+ *
+ * @property integer $id
+ * @property string $periodApplyTo
+ * @property integer $year
+ * @property integer $numberFuturePeriods
+ * @property string $type
+ * @property string $description
+ * @property string $firstPeriodEndDate
+ * @property integer $monthlyPeriodEnds
+ * @property integer $semiMonthlyFirstPeriod
+ * @property integer $semiMonthlySecondPeriod
+ * @property boolean $semiMonthlyLastDayFlag
+ * @property boolean $lastDayFlag
+ * @property integer $daysPastEndDate
+ */
 class TimePeriodSetup extends Model
 {
     /**

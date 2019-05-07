@@ -4,6 +4,19 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class PortalConfigurationInvoiceSetup
+ *
+ * @property integer $id
+ * @property boolean $displayInvPmtFlag
+ * @property boolean $allowInvPmtFlag
+ * @property string $login
+ * @property string $password
+ * @property string $urlOverride
+ * @property array $billingStatusIds
+ * @property boolean $addAllStatuses
+ * @property boolean $removeAllStatuses
+ */
 class PortalConfigurationInvoiceSetup extends Model
 {
     /**

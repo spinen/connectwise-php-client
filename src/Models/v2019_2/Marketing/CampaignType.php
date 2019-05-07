@@ -4,6 +4,13 @@ namespace Spinen\ConnectWise\Models\v2019_2\Marketing;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class CampaignType
+ *
+ * @property integer $id
+ * @property string $name
+ * @property boolean $defaultFlag
+ */
 class CampaignType extends Model
 {
     /**

@@ -4,6 +4,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\Time;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class TimeAccrualDetail
+ *
+ * @property integer $id
+ * @property string $accrualType
+ * @property integer $startYear
+ * @property integer $endYear
+ * @property double $hours
+ */
 class TimeAccrualDetail extends Model
 {
     /**

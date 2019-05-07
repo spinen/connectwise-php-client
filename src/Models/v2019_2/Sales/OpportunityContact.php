@@ -4,6 +4,16 @@ namespace Spinen\ConnectWise\Models\v2019_2\Sales;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class OpportunityContact
+ *
+ * @property integer $id
+ * @property string $notes
+ * @property boolean $referralFlag
+ * @property integer $opportunityId
+ * @property string $phoneNumber
+ * @property string $emailAddress
+ */
 class OpportunityContact extends Model
 {
     /**

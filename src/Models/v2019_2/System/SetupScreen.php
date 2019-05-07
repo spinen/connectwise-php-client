@@ -4,6 +4,17 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class SetupScreen
+ *
+ * @property integer $id
+ * @property string $category
+ * @property string $name
+ * @property string $Description
+ * @property string $moduleDescription
+ * @property string $moduleIdentifier
+ * @property string $moduleName
+ */
 class SetupScreen extends Model
 {
     /**

@@ -4,6 +4,14 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class PortalSecurityLevel
+ *
+ * @property integer $id
+ * @property string $captionIdentifier
+ * @property boolean $isDefaultFlag
+ * @property string $caption
+ */
 class PortalSecurityLevel extends Model
 {
     /**

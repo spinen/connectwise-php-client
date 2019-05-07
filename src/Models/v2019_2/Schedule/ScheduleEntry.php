@@ -4,6 +4,24 @@ namespace Spinen\ConnectWise\Models\v2019_2\Schedule;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ScheduleEntry
+ *
+ * @property integer $id
+ * @property integer $objectId
+ * @property string $name
+ * @property carbon $dateStart
+ * @property carbon $dateEnd
+ * @property boolean $doneFlag
+ * @property boolean $acknowledgedFlag
+ * @property boolean $ownerFlag
+ * @property boolean $meetingFlag
+ * @property boolean $allowScheduleConflictsFlag
+ * @property boolean $addMemberToProjectFlag
+ * @property integer $projectRoleId
+ * @property carbon $closeDate
+ * @property double $hours
+ */
 class ScheduleEntry extends Model
 {
     /**

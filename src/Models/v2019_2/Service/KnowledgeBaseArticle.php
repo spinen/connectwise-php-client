@@ -4,6 +4,20 @@ namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class KnowledgeBaseArticle
+ *
+ * @property integer $id
+ * @property string $title
+ * @property string $issue
+ * @property string $resolution
+ * @property integer $locationId
+ * @property integer $businessUnitId
+ * @property integer $categoryId
+ * @property integer $subCategoryId
+ * @property string $dateCreated
+ * @property string $createdBy
+ */
 class KnowledgeBaseArticle extends Model
 {
     /**

@@ -4,6 +4,17 @@ namespace Spinen\ConnectWise\Models\v2019_2\Project;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ProjectStatus
+ *
+ * @property integer $id
+ * @property string $name
+ * @property boolean $defaultFlag
+ * @property boolean $inactiveFlag
+ * @property boolean $noTimeFlag
+ * @property boolean $closedFlag
+ * @property string $customStatusIndicatorName
+ */
 class ProjectStatus extends Model
 {
     /**

@@ -4,6 +4,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class InvoicePayment
+ *
+ * @property integer $id
+ * @property string $type
+ * @property double $amount
+ * @property carbon $paymentDate
+ * @property string $appliedBy
+ */
 class InvoicePayment extends Model
 {
     /**

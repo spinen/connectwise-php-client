@@ -4,6 +4,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class MemberSkill
+ *
+ * @property integer $id
+ * @property string $skillLevel
+ * @property boolean $certifiedFlag
+ * @property integer $yearsExperience
+ * @property string $notes
+ */
 class MemberSkill extends Model
 {
     /**

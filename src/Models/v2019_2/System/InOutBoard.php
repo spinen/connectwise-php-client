@@ -4,6 +4,13 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class InOutBoard
+ *
+ * @property integer $id
+ * @property string $additionalInfo
+ * @property carbon $dateBack
+ */
 class InOutBoard extends Model
 {
     /**

@@ -4,6 +4,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ContactNote
+ *
+ * @property integer $id
+ * @property integer $contactId
+ * @property string $text
+ * @property boolean $flagged
+ * @property string $enteredBy
+ */
 class ContactNote extends Model
 {
     /**

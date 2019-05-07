@@ -4,6 +4,16 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ContactCommunication
+ *
+ * @property integer $id
+ * @property integer $contactId
+ * @property string $value
+ * @property string $extension
+ * @property boolean $defaultFlag
+ * @property string $communicationType
+ */
 class ContactCommunication extends Model
 {
     /**

@@ -4,6 +4,19 @@ namespace Spinen\ConnectWise\Models\v2019_2\Sales;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class Activity
+ *
+ * @property integer $id
+ * @property string $name
+ * @property string $phoneNumber
+ * @property string $email
+ * @property string $notes
+ * @property carbon $dateStart
+ * @property carbon $dateEnd
+ * @property boolean $notifyFlag
+ * @property array $customFields
+ */
 class Activity extends Model
 {
     /**

@@ -4,6 +4,35 @@ namespace Spinen\ConnectWise\Models\v2019_2\Time;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class TimeEntry
+ *
+ * @property integer $id
+ * @property integer $chargeToId
+ * @property string $chargeToType
+ * @property integer $locationId
+ * @property integer $businessUnitId
+ * @property carbon $timeStart
+ * @property carbon $timeEnd
+ * @property double $hoursDeduct
+ * @property double $actualHours
+ * @property string $billableOption
+ * @property string $notes
+ * @property string $internalNotes
+ * @property boolean $addToDetailDescriptionFlag
+ * @property boolean $addToInternalAnalysisFlag
+ * @property boolean $addToResolutionFlag
+ * @property boolean $emailResourceFlag
+ * @property boolean $emailContactFlag
+ * @property boolean $emailCcFlag
+ * @property string $emailCc
+ * @property double $hoursBilled
+ * @property string $enteredBy
+ * @property carbon $dateEntered
+ * @property double $hourlyRate
+ * @property string $status
+ * @property array $customFields
+ */
 class TimeEntry extends Model
 {
     /**

@@ -4,6 +4,13 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class State
+ *
+ * @property integer $id
+ * @property string $identifier
+ * @property string $name
+ */
 class State extends Model
 {
     /**

@@ -4,6 +4,42 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class PortalConfigurationOpportunitySetup
+ *
+ * @property integer $id
+ * @property array $opportunityStatusRecIDs
+ * @property boolean $addAllOpportunityStatuses
+ * @property boolean $removeAllOpportunityStatuses
+ * @property array $opportunityTypeRecIDs
+ * @property boolean $addAllOpportunityTypes
+ * @property boolean $removeAllOpportunityTypes
+ * @property boolean $restrictViewByOpportunityStatusFlag
+ * @property boolean $restrictViewByOpportunityTypeFlag
+ * @property boolean $acceptanceChangeStatusFlag
+ * @property boolean $acceptanceCreateActivityFlag
+ * @property boolean $acceptanceSendEmailFlag
+ * @property string $acceptanceEmailFromFirstName
+ * @property string $acceptanceEmailFromLastName
+ * @property string $acceptanceEmailSubject
+ * @property string $acceptanceEmailBody
+ * @property string $acceptanceFromEmail
+ * @property boolean $rejectionChangeStatusFlag
+ * @property boolean $rejectionCreateActivityFlag
+ * @property boolean $rejectionSendEmailFlag
+ * @property string $rejectionEmailFromFirstName
+ * @property string $rejectionEmailFromLastName
+ * @property string $rejectionFromEmail
+ * @property string $rejectionEmailSubject
+ * @property string $rejectionEmailBody
+ * @property boolean $confirmationSendEmailFlag
+ * @property boolean $confirmationEmailUseDefaultCompanyEmailAddressFlag
+ * @property string $confirmationEmailFromFirstName
+ * @property string $confirmationEmailFromLastName
+ * @property string $confirmationFromEmail
+ * @property string $confirmationEmailSubject
+ * @property string $confirmationEmailBody
+ */
 class PortalConfigurationOpportunitySetup extends Model
 {
     /**

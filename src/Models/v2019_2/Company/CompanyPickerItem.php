@@ -4,6 +4,12 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class CompanyPickerItem
+ *
+ * @property integer $id
+ * @property boolean $vendorPickerFlag
+ */
 class CompanyPickerItem extends Model
 {
     /**

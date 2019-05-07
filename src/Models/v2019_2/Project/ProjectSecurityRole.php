@@ -4,6 +4,14 @@ namespace Spinen\ConnectWise\Models\v2019_2\Project;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ProjectSecurityRole
+ *
+ * @property integer $id
+ * @property string $name
+ * @property boolean $managerRoleFlag
+ * @property boolean $defaultContactFlag
+ */
 class ProjectSecurityRole extends Model
 {
     /**

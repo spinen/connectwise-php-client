@@ -4,6 +4,22 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class WorkflowAction
+ *
+ * @property integer $id
+ * @property string $emailRecipient
+ * @property string $emailFrom
+ * @property string $subject
+ * @property string $notes
+ * @property integer $daysToExecute
+ * @property integer $invoiceMinDays
+ * @property boolean $detailNotesFlag
+ * @property boolean $internalNotesFlag
+ * @property boolean $auditNotesFlag
+ * @property boolean $updateOwnerFlag
+ * @property array $attachments
+ */
 class WorkflowAction extends Model
 {
     /**

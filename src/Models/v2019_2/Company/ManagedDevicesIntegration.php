@@ -4,6 +4,22 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ManagedDevicesIntegration
+ *
+ * @property integer $id
+ * @property string $name
+ * @property string $solution
+ * @property string $portalUrl
+ * @property string $loginBy
+ * @property string $globalLoginUsername
+ * @property string $globalLoginPassword
+ * @property string $defaultBillingLevel
+ * @property string $managementItSetupType
+ * @property boolean $matchOnSerialNumberFlag
+ * @property boolean $disableNewCrossReferencesFlag
+ * @property boolean $configBillCustomerFlag
+ */
 class ManagedDevicesIntegration extends Model
 {
     /**

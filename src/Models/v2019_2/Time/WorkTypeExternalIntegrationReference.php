@@ -4,6 +4,13 @@ namespace Spinen\ConnectWise\Models\v2019_2\Time;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class WorkTypeExternalIntegrationReference
+ *
+ * @property integer $id
+ * @property string $identifier
+ * @property string $name
+ */
 class WorkTypeExternalIntegrationReference extends Model
 {
     /**

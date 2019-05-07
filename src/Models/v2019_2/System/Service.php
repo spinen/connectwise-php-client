@@ -4,6 +4,24 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class Service
+ *
+ * @property integer $id
+ * @property string $srNotify
+ * @property string $scheduleSpan
+ * @property boolean $hideDelimiterFlag
+ * @property boolean $allowCCFlag
+ * @property boolean $allowTOFlag
+ * @property string $headerColor
+ * @property string $memberColor
+ * @property string $contactColor
+ * @property string $unknownColor
+ * @property boolean $headerColorDisableFlag
+ * @property boolean $memberColorDisableFlag
+ * @property boolean $contactColorDisableFlag
+ * @property boolean $unknownColorDisableFlag
+ */
 class Service extends Model
 {
     /**

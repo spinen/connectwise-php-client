@@ -4,6 +4,13 @@ namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class AgreementSite
+ *
+ * @property integer $id
+ * @property integer $agreementId
+ * @property array $customFields
+ */
 class AgreementSite extends Model
 {
     /**

@@ -4,6 +4,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class Info
+ *
+ * @property string $version
+ * @property boolean $isCloud
+ * @property string $serverTimeZone
+ * @property array $licenseBits
+ * @property string $cloudRegion
+ */
 class Info extends Model
 {
     /**

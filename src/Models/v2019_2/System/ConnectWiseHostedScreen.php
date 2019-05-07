@@ -4,6 +4,13 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ConnectWiseHostedScreen
+ *
+ * @property integer $id
+ * @property string $screenId
+ * @property string $name
+ */
 class ConnectWiseHostedScreen extends Model
 {
     /**

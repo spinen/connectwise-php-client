@@ -4,6 +4,30 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class Crm
+ *
+ * @property integer $id
+ * @property integer $companyListCount
+ * @property boolean $lockProbabilityFlag
+ * @property boolean $companyIdGenerationFlag
+ * @property boolean $excludeSpacesFlag
+ * @property string $field1Caption
+ * @property string $field2Caption
+ * @property string $field3Caption
+ * @property string $field4Caption
+ * @property string $field5Caption
+ * @property string $field6Caption
+ * @property string $field7Caption
+ * @property string $field8Caption
+ * @property string $field9Caption
+ * @property string $field10Caption
+ * @property string $primaryRepCaption
+ * @property string $secondaryRepCaption
+ * @property string $other1Caption
+ * @property string $other2Caption
+ * @property boolean $defaultYear
+ */
 class Crm extends Model
 {
     /**

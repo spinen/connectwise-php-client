@@ -4,6 +4,12 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class TeamRole
+ *
+ * @property integer $id
+ * @property string $name
+ */
 class TeamRole extends Model
 {
     /**

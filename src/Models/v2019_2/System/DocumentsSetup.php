@@ -4,6 +4,16 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class DocumentsSetup
+ *
+ * @property integer $id
+ * @property boolean $uploadAsLinkFlag
+ * @property boolean $isPublicFlag
+ * @property string $docPath
+ * @property string $templatePath
+ * @property string $templateOutputPath
+ */
 class DocumentsSetup extends Model
 {
     /**

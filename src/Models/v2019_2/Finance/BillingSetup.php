@@ -4,6 +4,53 @@ namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class BillingSetup
+ *
+ * @property integer $id
+ * @property string $remitName
+ * @property string $addressOne
+ * @property string $addressTwo
+ * @property string $city
+ * @property string $zip
+ * @property string $phone
+ * @property string $invoiceTitle
+ * @property string $payableName
+ * @property string $topcomment
+ * @property string $invoiceFooter
+ * @property string $quoteFooter
+ * @property boolean $excludeDoNotBillTimeFlag
+ * @property boolean $excludeDoNotBillExpenseFlag
+ * @property boolean $excludeDoNotBillProductFlag
+ * @property string $prefixSuffixFlag
+ * @property string $prefixSuffixText
+ * @property boolean $chargeAdjToFirmFlag
+ * @property boolean $NoWatermarkFlag
+ * @property boolean $displayTaxFlag
+ * @property boolean $allowRestrictedDeptOnRoutingFlag
+ * @property boolean $billTicketSeparatelyFlag
+ * @property boolean $billTicketCompleteFlag
+ * @property boolean $billTicketUnapprovedFlag
+ * @property boolean $billProjectCompleteFlag
+ * @property boolean $billProjectUnapprovedFlag
+ * @property boolean $progressTimeFlag
+ * @property boolean $restrictProjectDownpaymentFlag
+ * @property boolean $billSalesOrderCompleteFlag
+ * @property boolean $billProductAfterShipFlag
+ * @property boolean $restrictDownpaymentFlag
+ * @property boolean $copyNonServiceProductsFlag
+ * @property boolean $copyServiceProductsFlag
+ * @property boolean $copyAgreementProductsFlag
+ * @property boolean $printLogoFlag
+ * @property boolean $readReceiptFlag
+ * @property boolean $deliveryReceiptFlag
+ * @property boolean $disableRoutingEmailFlag
+ * @property string $businessNumber
+ * @property string $customLabel
+ * @property string $customText
+ * @property string $companyCode
+ * @property boolean $excludeAvalaraFlag
+ */
 class BillingSetup extends Model
 {
     /**

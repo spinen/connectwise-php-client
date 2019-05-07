@@ -4,6 +4,11 @@ namespace Spinen\ConnectWise\Models\v2019_2\Time;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ChargeCodeExpenseType
+ *
+ * @property integer $id
+ */
 class ChargeCodeExpenseType extends Model
 {
     /**

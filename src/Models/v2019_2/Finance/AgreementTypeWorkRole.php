@@ -4,6 +4,16 @@ namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class AgreementTypeWorkRole
+ *
+ * @property integer $id
+ * @property carbon $effectiveDate
+ * @property carbon $endingDate
+ * @property double $rate
+ * @property string $rateType
+ * @property double $limitTo
+ */
 class AgreementTypeWorkRole extends Model
 {
     /**
@@ -17,5 +27,6 @@ class AgreementTypeWorkRole extends Model
         'endingDate' => 'carbon',
         'rate' => 'double',
         'rateType' => 'string',
+        'limitTo' => 'double',
     ];
 }

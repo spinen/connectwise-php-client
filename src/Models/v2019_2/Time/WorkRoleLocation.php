@@ -4,6 +4,12 @@ namespace Spinen\ConnectWise\Models\v2019_2\Time;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class WorkRoleLocation
+ *
+ * @property integer $id
+ * @property double $hourlyRate
+ */
 class WorkRoleLocation extends Model
 {
     /**

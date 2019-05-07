@@ -4,6 +4,17 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class Workflow
+ *
+ * @property integer $id
+ * @property string $name
+ * @property boolean $activateFlag
+ * @property integer $batchInterval
+ * @property string $batchFrequencyUnit
+ * @property carbon $batchLastRan
+ * @property string $batchSchedule
+ */
 class Workflow extends Model
 {
     /**

@@ -4,6 +4,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\Expense;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ExpenseEntryAudit
+ *
+ * @property integer $id
+ * @property string $message
+ * @property string $oldValue
+ * @property string $newValue
+ * @property string $value
+ */
 class ExpenseEntryAudit extends Model
 {
     /**

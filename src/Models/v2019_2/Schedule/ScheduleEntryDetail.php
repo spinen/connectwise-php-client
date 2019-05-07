@@ -4,6 +4,14 @@ namespace Spinen\ConnectWise\Models\v2019_2\Schedule;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ScheduleEntryDetail
+ *
+ * @property integer $id
+ * @property carbon $dateStart
+ * @property carbon $dateEnd
+ * @property double $hoursScheduled
+ */
 class ScheduleEntryDetail extends Model
 {
     /**

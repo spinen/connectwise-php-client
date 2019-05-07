@@ -4,6 +4,12 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class LocationWorkRole
+ *
+ * @property integer $id
+ * @property boolean $workRoleInactiveFlag
+ */
 class LocationWorkRole extends Model
 {
     /**

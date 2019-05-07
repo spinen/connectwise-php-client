@@ -4,6 +4,14 @@ namespace Spinen\ConnectWise\Models\v2019_2\Sales;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class OpportunityStage
+ *
+ * @property integer $id
+ * @property string $name
+ * @property string $color
+ * @property integer $sequenceNumber
+ */
 class OpportunityStage extends Model
 {
     /**

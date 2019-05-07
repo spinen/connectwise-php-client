@@ -4,6 +4,11 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class ContactContactTypeAssociation
+ *
+ * @property integer $id
+ */
 class ContactContactTypeAssociation extends Model
 {
     /**

@@ -4,6 +4,13 @@ namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
 use Spinen\ConnectWise\Support\Model;
 
+/**
+ * Class AgreementBoardDefault
+ *
+ * @property integer $id
+ * @property boolean $defaultFlag
+ * @property integer $agreementId
+ */
 class AgreementBoardDefault extends Model
 {
     /**
