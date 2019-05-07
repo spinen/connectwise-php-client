@@ -106,7 +106,7 @@ function processPaths()
             $docs = $actions['get'];
             $class = Str::singular($docs['tags'][0]);
 
-            $GLOBALS['map'] .= "    '${uri}' => '" . $namespace . "\\" . $class . "',\n";
+            $GLOBALS['map'][$uri] = $GLOBALS['version'] . '\\' . $namespace . '\\' . $class;
 
             $attributes = parseResponse(getResponse($docs['responses']), $uri);
 
@@ -173,14 +173,6 @@ foreach (glob(__DIR__ . "/swagger/*") as $version) {
     $GLOBALS['version'] = basename($version);
     $GLOBALS['map'] = null;
 
-    $template = <<<EOF
-<?php
-
-return [
-{{ Map }}];
-
-EOF;
-
     foreach (glob(__DIR__ . "/swagger/" . $GLOBALS['version'] . "/*.json") as $swaggerfile) {
         $GLOBALS['api'] = explode('.', basename($swaggerfile))[0];
         $GLOBALS['swagger'] = readSwagger($swaggerfile);
@@ -188,10 +180,7 @@ EOF;
         processPaths();
     }
 
-    file_put_contents(
-        __DIR__ . '/Generated/' . $GLOBALS['version'] . '/map.php',
-        preg_replace('|{{ Map }}|u', $GLOBALS['map'], $template)
-    );
+    file_put_contents(__DIR__ . '/Generated/' . $GLOBALS['version'] . '/map.json', json_encode($GLOBALS['map']));
 }
 
 
