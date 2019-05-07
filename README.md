@@ -76,6 +76,8 @@ The package uses the auto registration feature
         'integrator' => env('CW_INTEGRATOR'),
         'password' => env('CW_PASSWORD'),
         'url' => env('CW_URL'),
+        // Optional version of the API models to use
+        //'version' => '' // default is the latest supported
     ],
 ```
 
@@ -115,7 +117,7 @@ Psy Shell v0.8.0 (PHP 7.0.14 — cli) by Justin Hileman
 >>> $cw = app('Spinen\ConnectWise\Api\Client');
 => Spinen\ConnectWise\Api\Client {#934}
 >>> $info = $cw->get('system/info');
-=> Spinen\ConnectWise\Models\System\Info {#1008}
+=> Spinen\ConnectWise\Models\v2019_3\System\Info {#1008}
 >>> $info->toArray();
 => [
      "version" => "v2016.6.43325",
@@ -148,7 +150,7 @@ Psy Shell v0.8.0 (PHP 7.0.14 — cli) by Justin Hileman
      deleted_at: null,
    }
 >>> ConnectWise::get('system/info');
-=> Spinen\ConnectWise\Models\System\Info {#1005}
+=> Spinen\ConnectWise\Models\v2019_3\System\Info {#1005}
 >>> ConnectWise::get('system/info')->toArray();
 => [
      "version" => "v2016.6.43325",
@@ -184,7 +186,7 @@ php > $token->setCompanyId('<company_id>')->setMemberId('<member_id>');
 php > $client->setIntegrator('<integrator>')->setPassword('<password>')->setUrl('https://<domain.tld>');
 php > $info = $client->get('system/info');
 php > var_export($info, false);
-Spinen\ConnectWise\Models\System\Info::__set_state(array(
+Spinen\ConnectWise\Models\v2019_3\System\Info::__set_state(array(
    'casts' =>
   array (
     'version' => 'string',
