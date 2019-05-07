@@ -2,8 +2,6 @@
 
 namespace Spinen\ConnectWise\Support;
 
-use Illuminate\Support\Facades\File;
-
 /**
  * Class ModelResolver
  *
@@ -65,7 +63,12 @@ class ModelResolver
     protected function loadVersionIfNeeded($version)
     {
         if (!array_key_exists($version, $this->maps)) {
-            $this->maps[$version] = collect(File::get('../Models/v' .str_replace('.', '_', $version) . '/map.php'));
+            $this->maps[$version] = collect(
+                json_decode(
+                    @file_get_contents(__DIR__ . '/../Models/v' . str_replace('.', '_', $version) . '/map.json'),
+                    true
+                )
+            );
         }
     }
 }
