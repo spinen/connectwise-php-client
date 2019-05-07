@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class PricingDetail
  *
- * @property integer $count
+ * @property integer $id
+ * @property carbon $startDate
+ * @property carbon $endDate
+ * @property boolean $noEndDate
  */
 class PricingDetail extends Model
 {
@@ -17,6 +20,9 @@ class PricingDetail extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'startDate' => 'carbon',
+        'endDate' => 'carbon',
+        'noEndDate' => 'boolean',
     ];
 }

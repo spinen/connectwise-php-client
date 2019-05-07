@@ -7,7 +7,18 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class TicketNote
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $ticketId
+ * @property string $text
+ * @property boolean $detailDescriptionFlag
+ * @property boolean $internalAnalysisFlag
+ * @property boolean $resolutionFlag
+ * @property boolean $customerUpdatedFlag
+ * @property boolean $processNotifications
+ * @property string $dateCreated
+ * @property string $createdBy
+ * @property boolean $internalFlag
+ * @property boolean $externalFlag
  */
 class TicketNote extends Model
 {
@@ -17,6 +28,17 @@ class TicketNote extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'ticketId' => 'integer',
+        'text' => 'string',
+        'detailDescriptionFlag' => 'boolean',
+        'internalAnalysisFlag' => 'boolean',
+        'resolutionFlag' => 'boolean',
+        'customerUpdatedFlag' => 'boolean',
+        'processNotifications' => 'boolean',
+        'dateCreated' => 'string',
+        'createdBy' => 'string',
+        'internalFlag' => 'boolean',
+        'externalFlag' => 'boolean',
     ];
 }

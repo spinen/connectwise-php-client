@@ -7,7 +7,15 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ServiceSurveyQuestion
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $sequenceNumber
+ * @property string $type
+ * @property string $question
+ * @property array $options
+ * @property boolean $includeFlag
+ * @property boolean $requiredFlag
+ * @property integer $noAnswerPoints
+ * @property integer $surveyId
  */
 class ServiceSurveyQuestion extends Model
 {
@@ -17,6 +25,14 @@ class ServiceSurveyQuestion extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'sequenceNumber' => 'integer',
+        'type' => 'string',
+        'question' => 'string',
+        'options' => 'array',
+        'includeFlag' => 'boolean',
+        'requiredFlag' => 'boolean',
+        'noAnswerPoints' => 'integer',
+        'surveyId' => 'integer',
     ];
 }

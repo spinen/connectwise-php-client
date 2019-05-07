@@ -7,7 +7,16 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ProductComponent
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $sequenceNumber
+ * @property double $quantity
+ * @property boolean $hidePriceFlag
+ * @property boolean $hideItemIdentifierFlag
+ * @property boolean $hideDescriptionFlag
+ * @property boolean $hideQuantityFlag
+ * @property boolean $hideExtendedPriceFlag
+ * @property double $price
+ * @property double $cost
  */
 class ProductComponent extends Model
 {
@@ -17,6 +26,15 @@ class ProductComponent extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'sequenceNumber' => 'integer',
+        'quantity' => 'double',
+        'hidePriceFlag' => 'boolean',
+        'hideItemIdentifierFlag' => 'boolean',
+        'hideDescriptionFlag' => 'boolean',
+        'hideQuantityFlag' => 'boolean',
+        'hideExtendedPriceFlag' => 'boolean',
+        'price' => 'double',
+        'cost' => 'double',
     ];
 }

@@ -7,7 +7,15 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class OpportunityStatus
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $wonFlag
+ * @property boolean $lostFlag
+ * @property boolean $closedFlag
+ * @property boolean $inactiveFlag
+ * @property boolean $defaultFlag
+ * @property string $enteredBy
+ * @property carbon $dateEntered
  */
 class OpportunityStatus extends Model
 {
@@ -17,6 +25,14 @@ class OpportunityStatus extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'wonFlag' => 'boolean',
+        'lostFlag' => 'boolean',
+        'closedFlag' => 'boolean',
+        'inactiveFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'enteredBy' => 'string',
+        'dateEntered' => 'carbon',
     ];
 }

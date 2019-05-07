@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ManagedDevicesIntegrationCrossReference
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $vendorType
+ * @property string $vendorLevel
+ * @property boolean $inactiveFlag
  */
 class ManagedDevicesIntegrationCrossReference extends Model
 {
@@ -17,6 +20,9 @@ class ManagedDevicesIntegrationCrossReference extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'vendorType' => 'string',
+        'vendorLevel' => 'string',
+        'inactiveFlag' => 'boolean',
     ];
 }

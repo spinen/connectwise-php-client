@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ScheduleColor
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $startPercent
+ * @property integer $endPercent
+ * @property string $color
  */
 class ScheduleColor extends Model
 {
@@ -17,6 +20,9 @@ class ScheduleColor extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'startPercent' => 'integer',
+        'endPercent' => 'integer',
+        'color' => 'string',
     ];
 }

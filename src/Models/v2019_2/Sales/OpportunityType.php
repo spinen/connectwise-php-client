@@ -7,11 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class OpportunityType
  *
- * @property string $type
- * @property integer $count
  * @property integer $id
  * @property string $description
- * @property string $hyperlink
+ * @property boolean $inactiveFlag
  */
 class OpportunityType extends Model
 {
@@ -21,10 +19,8 @@ class OpportunityType extends Model
      * @var array
      */
     protected $casts = [
-        'type' => 'string',
-        'count' => 'integer',
         'id' => 'integer',
         'description' => 'string',
-        'hyperlink' => 'string',
+        'inactiveFlag' => 'boolean',
     ];
 }

@@ -7,7 +7,12 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class MemberCertification
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $percentComplete
+ * @property carbon $dateReceived
+ * @property carbon $dateExpires
+ * @property string $certificationNumber
+ * @property string $notes
  */
 class MemberCertification extends Model
 {
@@ -17,6 +22,11 @@ class MemberCertification extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'percentComplete' => 'integer',
+        'dateReceived' => 'carbon',
+        'dateExpires' => 'carbon',
+        'certificationNumber' => 'string',
+        'notes' => 'string',
     ];
 }

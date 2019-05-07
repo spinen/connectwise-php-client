@@ -7,7 +7,21 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ScheduleEntry
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $objectId
+ * @property string $name
+ * @property carbon $dateStart
+ * @property carbon $dateEnd
+ * @property boolean $doneFlag
+ * @property boolean $acknowledgedFlag
+ * @property boolean $ownerFlag
+ * @property boolean $meetingFlag
+ * @property boolean $allowScheduleConflictsFlag
+ * @property boolean $addMemberToProjectFlag
+ * @property integer $projectRoleId
+ * @property carbon $acknowledgedDate
+ * @property carbon $closeDate
+ * @property double $hours
  */
 class ScheduleEntry extends Model
 {
@@ -17,6 +31,20 @@ class ScheduleEntry extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'objectId' => 'integer',
+        'name' => 'string',
+        'dateStart' => 'carbon',
+        'dateEnd' => 'carbon',
+        'doneFlag' => 'boolean',
+        'acknowledgedFlag' => 'boolean',
+        'ownerFlag' => 'boolean',
+        'meetingFlag' => 'boolean',
+        'allowScheduleConflictsFlag' => 'boolean',
+        'addMemberToProjectFlag' => 'boolean',
+        'projectRoleId' => 'integer',
+        'acknowledgedDate' => 'carbon',
+        'closeDate' => 'carbon',
+        'hours' => 'double',
     ];
 }

@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ExpenseTypeExternalIntegrationReference
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $identifier
+ * @property string $name
  */
 class ExpenseTypeExternalIntegrationReference extends Model
 {
@@ -17,6 +19,8 @@ class ExpenseTypeExternalIntegrationReference extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'identifier' => 'string',
+        'name' => 'string',
     ];
 }

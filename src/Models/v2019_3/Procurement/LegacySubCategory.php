@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class LegacySubCategory
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $inactiveFlag
  */
 class LegacySubCategory extends Model
 {
@@ -17,6 +19,8 @@ class LegacySubCategory extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'inactiveFlag' => 'boolean',
     ];
 }

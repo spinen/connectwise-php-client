@@ -7,11 +7,13 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class PurchaseOrderStatus
  *
- * @property string $type
- * @property integer $count
  * @property integer $id
- * @property string $description
- * @property string $hyperlink
+ * @property string $name
+ * @property boolean $defaultFlag
+ * @property boolean $closedFlag
+ * @property boolean $inactiveFlag
+ * @property boolean $defaultClosedFlag
+ * @property integer $sortOrder
  */
 class PurchaseOrderStatus extends Model
 {
@@ -21,10 +23,12 @@ class PurchaseOrderStatus extends Model
      * @var array
      */
     protected $casts = [
-        'type' => 'string',
-        'count' => 'integer',
         'id' => 'integer',
-        'description' => 'string',
-        'hyperlink' => 'string',
+        'name' => 'string',
+        'defaultFlag' => 'boolean',
+        'closedFlag' => 'boolean',
+        'inactiveFlag' => 'boolean',
+        'defaultClosedFlag' => 'boolean',
+        'sortOrder' => 'integer',
     ];
 }

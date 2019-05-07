@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class TimePeriod
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $period
+ * @property string $startDate
+ * @property string $endDate
+ * @property string $deadlineDate
  */
 class TimePeriod extends Model
 {
@@ -17,6 +21,10 @@ class TimePeriod extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'period' => 'integer',
+        'startDate' => 'string',
+        'endDate' => 'string',
+        'deadlineDate' => 'string',
     ];
 }

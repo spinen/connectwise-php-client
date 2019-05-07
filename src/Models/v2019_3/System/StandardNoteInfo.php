@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class StandardNoteInfo
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $contents
  */
 class StandardNoteInfo extends Model
 {
@@ -17,6 +19,8 @@ class StandardNoteInfo extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'contents' => 'string',
     ];
 }

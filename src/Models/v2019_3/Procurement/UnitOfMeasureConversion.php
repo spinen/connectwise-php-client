@@ -7,7 +7,8 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class UnitOfMeasureConversion
  *
- * @property integer $count
+ * @property integer $id
+ * @property double $quantity
  */
 class UnitOfMeasureConversion extends Model
 {
@@ -17,6 +18,7 @@ class UnitOfMeasureConversion extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'quantity' => 'double',
     ];
 }

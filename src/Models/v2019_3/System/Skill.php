@@ -7,7 +7,8 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Skill
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
  */
 class Skill extends Model
 {
@@ -17,6 +18,7 @@ class Skill extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
     ];
 }

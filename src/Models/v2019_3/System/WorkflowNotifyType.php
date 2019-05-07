@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class WorkflowNotifyType
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $identifier
+ * @property string $name
+ * @property boolean $isSetupFlag
+ * @property boolean $externalFlag
  */
 class WorkflowNotifyType extends Model
 {
@@ -17,6 +21,10 @@ class WorkflowNotifyType extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'identifier' => 'string',
+        'name' => 'string',
+        'isSetupFlag' => 'boolean',
+        'externalFlag' => 'boolean',
     ];
 }

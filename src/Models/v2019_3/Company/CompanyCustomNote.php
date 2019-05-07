@@ -7,7 +7,8 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class CompanyCustomNote
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $customNote
  */
 class CompanyCustomNote extends Model
 {
@@ -17,6 +18,7 @@ class CompanyCustomNote extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'customNote' => 'string',
     ];
 }

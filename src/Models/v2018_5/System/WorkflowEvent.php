@@ -7,6 +7,13 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class WorkflowEvent
  *
+ * @property integer $id
+ * @property string $name
+ * @property string $eventCondition
+ * @property string $frequencyUnit
+ * @property integer $frequencyOfExecution
+ * @property integer $maxNumberOfExecution
+ * @property string $executionTime
  */
 class WorkflowEvent extends Model
 {
@@ -16,5 +23,12 @@ class WorkflowEvent extends Model
      * @var array
      */
     protected $casts = [
+        'id' => 'integer',
+        'name' => 'string',
+        'eventCondition' => 'string',
+        'frequencyUnit' => 'string',
+        'frequencyOfExecution' => 'integer',
+        'maxNumberOfExecution' => 'integer',
+        'executionTime' => 'string',
     ];
 }

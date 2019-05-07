@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class StatusIndicator
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $identifier
+ * @property string $name
+ * @property string $color
+ * @property string $icon
  */
 class StatusIndicator extends Model
 {
@@ -17,6 +21,10 @@ class StatusIndicator extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'identifier' => 'string',
+        'name' => 'string',
+        'color' => 'string',
+        'icon' => 'string',
     ];
 }

@@ -7,7 +7,12 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class AuditTrail
  *
- * @property integer $count
+ * @property string $text
+ * @property string $enteredDate
+ * @property string $enteredBy
+ * @property string $auditType
+ * @property string $auditSubType
+ * @property string $auditSource
  */
 class AuditTrail extends Model
 {
@@ -17,6 +22,11 @@ class AuditTrail extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'text' => 'string',
+        'enteredDate' => 'string',
+        'enteredBy' => 'string',
+        'auditType' => 'string',
+        'auditSubType' => 'string',
+        'auditSource' => 'string',
     ];
 }

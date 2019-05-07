@@ -7,7 +7,8 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class MinimumStockByWarehouse
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $minimumStock
  */
 class MinimumStockByWarehouse extends Model
 {
@@ -17,6 +18,7 @@ class MinimumStockByWarehouse extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'minimumStock' => 'integer',
     ];
 }

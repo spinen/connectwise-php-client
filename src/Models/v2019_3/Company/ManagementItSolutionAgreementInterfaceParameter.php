@@ -7,7 +7,7 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ManagementItSolutionAgreementInterfaceParameter
  *
- * @property integer $count
+ * @property integer $id
  */
 class ManagementItSolutionAgreementInterfaceParameter extends Model
 {
@@ -17,6 +17,6 @@ class ManagementItSolutionAgreementInterfaceParameter extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
     ];
 }

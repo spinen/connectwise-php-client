@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class BoardInfo
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $projectFlag
+ * @property boolean $inactiveFlag
  */
 class BoardInfo extends Model
 {
@@ -17,6 +20,9 @@ class BoardInfo extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'projectFlag' => 'boolean',
+        'inactiveFlag' => 'boolean',
     ];
 }

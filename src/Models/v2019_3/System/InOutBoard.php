@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class InOutBoard
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $additionalInfo
+ * @property carbon $dateBack
  */
 class InOutBoard extends Model
 {
@@ -17,6 +19,8 @@ class InOutBoard extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'additionalInfo' => 'string',
+        'dateBack' => 'carbon',
     ];
 }

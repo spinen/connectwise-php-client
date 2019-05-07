@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Track
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $inactiveFlag
+ * @property array $notifyActionIds
  */
 class Track extends Model
 {
@@ -17,6 +20,9 @@ class Track extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'inactiveFlag' => 'boolean',
+        'notifyActionIds' => 'array',
     ];
 }

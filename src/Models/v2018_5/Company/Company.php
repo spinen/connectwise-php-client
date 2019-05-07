@@ -7,11 +7,48 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Company
  *
- * @property string $type
- * @property integer $count
  * @property integer $id
- * @property string $description
- * @property string $hyperlink
+ * @property string $identifier
+ * @property string $name
+ * @property string $addressLine1
+ * @property string $addressLine2
+ * @property string $city
+ * @property string $state
+ * @property string $zip
+ * @property string $phoneNumber
+ * @property string $faxNumber
+ * @property string $website
+ * @property integer $territoryId
+ * @property integer $marketId
+ * @property string $accountNumber
+ * @property carbon $dateAcquired
+ * @property double $annualRevenue
+ * @property integer $numberOfEmployees
+ * @property string $leadSource
+ * @property boolean $leadFlag
+ * @property boolean $unsubscribeFlag
+ * @property integer $calendarId
+ * @property string $userDefinedField1
+ * @property string $userDefinedField2
+ * @property string $userDefinedField3
+ * @property string $userDefinedField4
+ * @property string $userDefinedField5
+ * @property string $userDefinedField6
+ * @property string $userDefinedField7
+ * @property string $userDefinedField8
+ * @property string $userDefinedField9
+ * @property string $userDefinedField10
+ * @property string $vendorIdentifier
+ * @property string $taxIdentifier
+ * @property string $invoiceToEmailAddress
+ * @property string $invoiceCCEmailAddress
+ * @property boolean $deletedFlag
+ * @property carbon $dateDeleted
+ * @property string $deletedBy
+ * @property string $facebookUrl
+ * @property string $twitterUrl
+ * @property string $linkedInUrl
+ * @property array $customFields
  */
 class Company extends Model
 {
@@ -21,10 +58,47 @@ class Company extends Model
      * @var array
      */
     protected $casts = [
-        'type' => 'string',
-        'count' => 'integer',
         'id' => 'integer',
-        'description' => 'string',
-        'hyperlink' => 'string',
+        'identifier' => 'string',
+        'name' => 'string',
+        'addressLine1' => 'string',
+        'addressLine2' => 'string',
+        'city' => 'string',
+        'state' => 'string',
+        'zip' => 'string',
+        'phoneNumber' => 'string',
+        'faxNumber' => 'string',
+        'website' => 'string',
+        'territoryId' => 'integer',
+        'marketId' => 'integer',
+        'accountNumber' => 'string',
+        'dateAcquired' => 'carbon',
+        'annualRevenue' => 'double',
+        'numberOfEmployees' => 'integer',
+        'leadSource' => 'string',
+        'leadFlag' => 'boolean',
+        'unsubscribeFlag' => 'boolean',
+        'calendarId' => 'integer',
+        'userDefinedField1' => 'string',
+        'userDefinedField2' => 'string',
+        'userDefinedField3' => 'string',
+        'userDefinedField4' => 'string',
+        'userDefinedField5' => 'string',
+        'userDefinedField6' => 'string',
+        'userDefinedField7' => 'string',
+        'userDefinedField8' => 'string',
+        'userDefinedField9' => 'string',
+        'userDefinedField10' => 'string',
+        'vendorIdentifier' => 'string',
+        'taxIdentifier' => 'string',
+        'invoiceToEmailAddress' => 'string',
+        'invoiceCCEmailAddress' => 'string',
+        'deletedFlag' => 'boolean',
+        'dateDeleted' => 'carbon',
+        'deletedBy' => 'string',
+        'facebookUrl' => 'string',
+        'twitterUrl' => 'string',
+        'linkedInUrl' => 'string',
+        'customFields' => 'array',
     ];
 }

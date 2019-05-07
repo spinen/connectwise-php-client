@@ -7,7 +7,8 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ManagementBackup
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $billingLevel
  */
 class ManagementBackup extends Model
 {
@@ -17,6 +18,7 @@ class ManagementBackup extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'billingLevel' => 'string',
     ];
 }

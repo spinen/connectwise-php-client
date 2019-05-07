@@ -7,7 +7,14 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class RmaStatusEmailTemplate
  *
- * @property integer $count
+ * @property integer $id
+ * @property boolean $useSenderFlag
+ * @property string $firstName
+ * @property string $lastName
+ * @property string $emailAddress
+ * @property string $subject
+ * @property string $body
+ * @property boolean $copySenderFlag
  */
 class RmaStatusEmailTemplate extends Model
 {
@@ -17,6 +24,13 @@ class RmaStatusEmailTemplate extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'useSenderFlag' => 'boolean',
+        'firstName' => 'string',
+        'lastName' => 'string',
+        'emailAddress' => 'string',
+        'subject' => 'string',
+        'body' => 'string',
+        'copySenderFlag' => 'boolean',
     ];
 }

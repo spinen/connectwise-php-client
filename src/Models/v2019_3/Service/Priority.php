@@ -7,7 +7,12 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Priority
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $color
+ * @property integer $sortOrder
+ * @property boolean $defaultFlag
+ * @property string $imageLink
  */
 class Priority extends Model
 {
@@ -17,6 +22,11 @@ class Priority extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'color' => 'string',
+        'sortOrder' => 'integer',
+        'defaultFlag' => 'boolean',
+        'imageLink' => 'string',
     ];
 }

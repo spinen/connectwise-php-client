@@ -7,7 +7,8 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class WorkRoleLocation
  *
- * @property integer $count
+ * @property integer $id
+ * @property double $hourlyRate
  */
 class WorkRoleLocation extends Model
 {
@@ -17,6 +18,7 @@ class WorkRoleLocation extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'hourlyRate' => 'double',
     ];
 }

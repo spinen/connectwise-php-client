@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class AgreementBoardDefault
  *
- * @property integer $count
+ * @property integer $id
+ * @property boolean $defaultFlag
+ * @property integer $agreementId
  */
 class AgreementBoardDefault extends Model
 {
@@ -17,6 +19,8 @@ class AgreementBoardDefault extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'defaultFlag' => 'boolean',
+        'agreementId' => 'integer',
     ];
 }

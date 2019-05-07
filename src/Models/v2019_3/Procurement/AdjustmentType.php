@@ -7,7 +7,12 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class AdjustmentType
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $identifier
+ * @property string $name
+ * @property boolean $auditTrailFlag
+ * @property carbon $dateCreated
+ * @property string $createdBy
  */
 class AdjustmentType extends Model
 {
@@ -17,6 +22,11 @@ class AdjustmentType extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'identifier' => 'string',
+        'name' => 'string',
+        'auditTrailFlag' => 'boolean',
+        'dateCreated' => 'carbon',
+        'createdBy' => 'string',
     ];
 }

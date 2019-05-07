@@ -7,7 +7,14 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class AgreementWorkRole
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $locationId
+ * @property string $rateType
+ * @property double $rate
+ * @property double $limitTo
+ * @property carbon $effectiveDate
+ * @property carbon $endingDate
+ * @property integer $agreementId
  */
 class AgreementWorkRole extends Model
 {
@@ -17,6 +24,13 @@ class AgreementWorkRole extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'locationId' => 'integer',
+        'rateType' => 'string',
+        'rate' => 'double',
+        'limitTo' => 'double',
+        'effectiveDate' => 'carbon',
+        'endingDate' => 'carbon',
+        'agreementId' => 'integer',
     ];
 }

@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Product
  *
- * @property integer $count
+ * @property string $identifier
+ * @property string $password
+ * @property boolean $installedFlag
  */
 class Product extends Model
 {
@@ -17,6 +19,8 @@ class Product extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'identifier' => 'string',
+        'password' => 'string',
+        'installedFlag' => 'boolean',
     ];
 }

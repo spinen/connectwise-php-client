@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class OrderStatusNotification
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $email
+ * @property integer $workflowStep
  */
 class OrderStatusNotification extends Model
 {
@@ -17,6 +19,8 @@ class OrderStatusNotification extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'email' => 'string',
+        'workflowStep' => 'integer',
     ];
 }

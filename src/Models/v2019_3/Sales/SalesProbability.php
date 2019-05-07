@@ -7,7 +7,8 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class SalesProbability
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $probability
  */
 class SalesProbability extends Model
 {
@@ -17,6 +18,7 @@ class SalesProbability extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'probability' => 'integer',
     ];
 }

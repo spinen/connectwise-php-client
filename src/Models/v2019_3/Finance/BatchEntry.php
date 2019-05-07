@@ -7,7 +7,17 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class BatchEntry
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $accountType
+ * @property string $name
+ * @property string $accountNumber
+ * @property double $debit
+ * @property double $credit
+ * @property double $cost
+ * @property string $item
+ * @property string $salesCode
+ * @property string $costOfGoodsSoldAccountNumber
+ * @property string $transfer
  */
 class BatchEntry extends Model
 {
@@ -17,6 +27,16 @@ class BatchEntry extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'accountType' => 'string',
+        'name' => 'string',
+        'accountNumber' => 'string',
+        'debit' => 'double',
+        'credit' => 'double',
+        'cost' => 'double',
+        'item' => 'string',
+        'salesCode' => 'string',
+        'costOfGoodsSoldAccountNumber' => 'string',
+        'transfer' => 'string',
     ];
 }

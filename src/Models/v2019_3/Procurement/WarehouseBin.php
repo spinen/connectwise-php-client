@@ -7,7 +7,17 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class WarehouseBin
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property double $minQuantity
+ * @property double $maxQuantity
+ * @property double $length
+ * @property double $width
+ * @property double $height
+ * @property double $weight
+ * @property boolean $defaultFlag
+ * @property boolean $inactiveFlag
+ * @property integer $quantityOnHand
  */
 class WarehouseBin extends Model
 {
@@ -17,6 +27,16 @@ class WarehouseBin extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'minQuantity' => 'double',
+        'maxQuantity' => 'double',
+        'length' => 'double',
+        'width' => 'double',
+        'height' => 'double',
+        'weight' => 'double',
+        'defaultFlag' => 'boolean',
+        'inactiveFlag' => 'boolean',
+        'quantityOnHand' => 'integer',
     ];
 }

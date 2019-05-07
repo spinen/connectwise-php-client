@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class TimeZoneSetup
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property double $offset
+ * @property boolean $defaultFlag
+ * @property boolean $daylightSavingsFlag
  */
 class TimeZoneSetup extends Model
 {
@@ -17,6 +21,10 @@ class TimeZoneSetup extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'offset' => 'double',
+        'defaultFlag' => 'boolean',
+        'daylightSavingsFlag' => 'boolean',
     ];
 }

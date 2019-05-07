@@ -7,7 +7,13 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class SetupScreen
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $category
+ * @property string $name
+ * @property string $Description
+ * @property string $moduleDescription
+ * @property string $moduleIdentifier
+ * @property string $moduleName
  */
 class SetupScreen extends Model
 {
@@ -17,6 +23,12 @@ class SetupScreen extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'category' => 'string',
+        'name' => 'string',
+        'Description' => 'string',
+        'moduleDescription' => 'string',
+        'moduleIdentifier' => 'string',
+        'moduleName' => 'string',
     ];
 }

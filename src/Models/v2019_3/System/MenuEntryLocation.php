@@ -7,7 +7,7 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class MenuEntryLocation
  *
- * @property integer $count
+ * @property integer $id
  */
 class MenuEntryLocation extends Model
 {
@@ -17,6 +17,6 @@ class MenuEntryLocation extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
     ];
 }

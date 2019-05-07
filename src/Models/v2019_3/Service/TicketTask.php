@@ -7,7 +7,14 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class TicketTask
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $ticketId
+ * @property string $notes
+ * @property boolean $closedFlag
+ * @property integer $priority
+ * @property string $resolution
+ * @property string $childScheduleAction
+ * @property integer $childTicketId
  */
 class TicketTask extends Model
 {
@@ -17,6 +24,13 @@ class TicketTask extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'ticketId' => 'integer',
+        'notes' => 'string',
+        'closedFlag' => 'boolean',
+        'priority' => 'integer',
+        'resolution' => 'string',
+        'childScheduleAction' => 'string',
+        'childTicketId' => 'integer',
     ];
 }

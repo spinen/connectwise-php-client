@@ -7,7 +7,12 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class CampaignLinksClicked
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $campaignId
+ * @property integer $contactId
+ * @property carbon $dateClicked
+ * @property string $url
+ * @property string $queryString
  */
 class CampaignLinksClicked extends Model
 {
@@ -17,6 +22,11 @@ class CampaignLinksClicked extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'campaignId' => 'integer',
+        'contactId' => 'integer',
+        'dateClicked' => 'carbon',
+        'url' => 'string',
+        'queryString' => 'string',
     ];
 }

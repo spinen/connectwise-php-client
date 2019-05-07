@@ -7,7 +7,12 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class MappedType
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $table
+ * @property string $recIdField
+ * @property string $glType
+ * @property integer $sortOrder
  */
 class MappedType extends Model
 {
@@ -17,6 +22,11 @@ class MappedType extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'table' => 'string',
+        'recIdField' => 'string',
+        'glType' => 'string',
+        'sortOrder' => 'integer',
     ];
 }

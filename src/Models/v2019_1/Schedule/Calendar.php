@@ -7,11 +7,22 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Calendar
  *
- * @property string $type
- * @property integer $count
  * @property integer $id
- * @property string $description
- * @property string $hyperlink
+ * @property string $name
+ * @property string $mondayStartTime
+ * @property string $mondayEndTime
+ * @property string $tuesdayStartTime
+ * @property string $tuesdayEndTime
+ * @property string $wednesdayStartTime
+ * @property string $wednesdayEndTime
+ * @property string $thursdayStartTime
+ * @property string $thursdayEndTime
+ * @property string $fridayStartTime
+ * @property string $fridayEndTime
+ * @property string $saturdayStartTime
+ * @property string $saturdayEndTime
+ * @property string $sundayStartTime
+ * @property string $sundayEndTime
  */
 class Calendar extends Model
 {
@@ -21,10 +32,21 @@ class Calendar extends Model
      * @var array
      */
     protected $casts = [
-        'type' => 'string',
-        'count' => 'integer',
         'id' => 'integer',
-        'description' => 'string',
-        'hyperlink' => 'string',
+        'name' => 'string',
+        'mondayStartTime' => 'string',
+        'mondayEndTime' => 'string',
+        'tuesdayStartTime' => 'string',
+        'tuesdayEndTime' => 'string',
+        'wednesdayStartTime' => 'string',
+        'wednesdayEndTime' => 'string',
+        'thursdayStartTime' => 'string',
+        'thursdayEndTime' => 'string',
+        'fridayStartTime' => 'string',
+        'fridayEndTime' => 'string',
+        'saturdayStartTime' => 'string',
+        'saturdayEndTime' => 'string',
+        'sundayStartTime' => 'string',
+        'sundayEndTime' => 'string',
     ];
 }

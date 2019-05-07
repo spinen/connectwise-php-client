@@ -7,7 +7,8 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class TeamMember
  *
- * @property integer $count
+ * @property integer $id
+ * @property boolean $teamLeaderFlag
  */
 class TeamMember extends Model
 {
@@ -17,6 +18,7 @@ class TeamMember extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'teamLeaderFlag' => 'boolean',
     ];
 }

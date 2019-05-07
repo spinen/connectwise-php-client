@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class OsGradeWeight
  *
- * @property integer $count
+ * @property integer $id
+ * @property double $osGradeWeight
+ * @property string $osName
  */
 class OsGradeWeight extends Model
 {
@@ -17,6 +19,8 @@ class OsGradeWeight extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'osGradeWeight' => 'double',
+        'osName' => 'string',
     ];
 }

@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Lab
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $identifier
+ * @property boolean $inactiveFlag
+ * @property boolean $adminLock
  */
 class Lab extends Model
 {
@@ -17,6 +20,9 @@ class Lab extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'identifier' => 'string',
+        'inactiveFlag' => 'boolean',
+        'adminLock' => 'boolean',
     ];
 }

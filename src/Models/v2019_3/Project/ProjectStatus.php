@@ -7,7 +7,13 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ProjectStatus
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $defaultFlag
+ * @property boolean $inactiveFlag
+ * @property boolean $noTimeFlag
+ * @property boolean $closedFlag
+ * @property string $customStatusIndicatorName
  */
 class ProjectStatus extends Model
 {
@@ -17,6 +23,12 @@ class ProjectStatus extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'defaultFlag' => 'boolean',
+        'inactiveFlag' => 'boolean',
+        'noTimeFlag' => 'boolean',
+        'closedFlag' => 'boolean',
+        'customStatusIndicatorName' => 'string',
     ];
 }

@@ -7,7 +7,8 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ManagedDevicesIntegrationNotification
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $logType
  */
 class ManagedDevicesIntegrationNotification extends Model
 {
@@ -17,6 +18,7 @@ class ManagedDevicesIntegrationNotification extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'logType' => 'string',
     ];
 }

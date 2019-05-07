@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class UnitOfMeasure
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $inactiveFlag
+ * @property boolean $defaultFlag
+ * @property string $uomScheduleXref
  */
 class UnitOfMeasure extends Model
 {
@@ -17,6 +21,10 @@ class UnitOfMeasure extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'inactiveFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'uomScheduleXref' => 'string',
     ];
 }

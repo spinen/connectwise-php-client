@@ -7,7 +7,8 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class EmailExclusion
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $description
  */
 class EmailExclusion extends Model
 {
@@ -17,6 +18,7 @@ class EmailExclusion extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'description' => 'string',
     ];
 }

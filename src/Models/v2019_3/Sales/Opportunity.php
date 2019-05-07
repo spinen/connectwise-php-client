@@ -7,7 +7,20 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Opportunity
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property carbon $expectedCloseDate
+ * @property string $notes
+ * @property string $source
+ * @property integer $locationId
+ * @property integer $businessUnitId
+ * @property string $customerPO
+ * @property carbon $pipelineChangeDate
+ * @property carbon $dateBecameLead
+ * @property carbon $closedDate
+ * @property double $totalSalesTax
+ * @property integer $companyLocationId
+ * @property array $customFields
  */
 class Opportunity extends Model
 {
@@ -17,6 +30,19 @@ class Opportunity extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'expectedCloseDate' => 'carbon',
+        'notes' => 'string',
+        'source' => 'string',
+        'locationId' => 'integer',
+        'businessUnitId' => 'integer',
+        'customerPO' => 'string',
+        'pipelineChangeDate' => 'carbon',
+        'dateBecameLead' => 'carbon',
+        'closedDate' => 'carbon',
+        'totalSalesTax' => 'double',
+        'companyLocationId' => 'integer',
+        'customFields' => 'array',
     ];
 }

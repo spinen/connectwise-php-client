@@ -7,7 +7,17 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class SLA
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $basedOn
+ * @property boolean $defaultFlag
+ * @property integer $applicationOrder
+ * @property double $respondHours
+ * @property integer $respondPercent
+ * @property double $planWithin
+ * @property integer $planWithinPercent
+ * @property double $resolutionHours
+ * @property integer $resolutionPercent
  */
 class SLA extends Model
 {
@@ -17,6 +27,16 @@ class SLA extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'basedOn' => 'string',
+        'defaultFlag' => 'boolean',
+        'applicationOrder' => 'integer',
+        'respondHours' => 'double',
+        'respondPercent' => 'integer',
+        'planWithin' => 'double',
+        'planWithinPercent' => 'integer',
+        'resolutionHours' => 'double',
+        'resolutionPercent' => 'integer',
     ];
 }

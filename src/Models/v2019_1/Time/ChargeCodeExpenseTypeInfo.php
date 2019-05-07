@@ -7,7 +7,7 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ChargeCodeExpenseTypeInfo
  *
- * @property integer $count
+ * @property integer $id
  */
 class ChargeCodeExpenseTypeInfo extends Model
 {
@@ -17,6 +17,6 @@ class ChargeCodeExpenseTypeInfo extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
     ];
 }

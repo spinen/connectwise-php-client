@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class DepartmentLocation
  *
- * @property integer $count
+ * @property integer $id
+ * @property boolean $addAllLocations
+ * @property boolean $removeAllLocations
  */
 class DepartmentLocation extends Model
 {
@@ -17,6 +19,8 @@ class DepartmentLocation extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'addAllLocations' => 'boolean',
+        'removeAllLocations' => 'boolean',
     ];
 }

@@ -7,7 +7,12 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Holiday
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $allDayFlag
+ * @property string $date
+ * @property string $timeStart
+ * @property string $timeEnd
  */
 class Holiday extends Model
 {
@@ -17,6 +22,11 @@ class Holiday extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'allDayFlag' => 'boolean',
+        'date' => 'string',
+        'timeStart' => 'string',
+        'timeEnd' => 'string',
     ];
 }

@@ -7,7 +7,15 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class PortalSecuritySetting
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $functionIdentifier
+ * @property string $functionDescription
+ * @property boolean $levelOne
+ * @property boolean $levelTwo
+ * @property boolean $levelThree
+ * @property boolean $levelFour
+ * @property boolean $levelFive
+ * @property boolean $levelSix
  */
 class PortalSecuritySetting extends Model
 {
@@ -17,6 +25,14 @@ class PortalSecuritySetting extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'functionIdentifier' => 'string',
+        'functionDescription' => 'string',
+        'levelOne' => 'boolean',
+        'levelTwo' => 'boolean',
+        'levelThree' => 'boolean',
+        'levelFour' => 'boolean',
+        'levelFive' => 'boolean',
+        'levelSix' => 'boolean',
     ];
 }

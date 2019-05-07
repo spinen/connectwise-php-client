@@ -7,7 +7,8 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class WorkflowTriggerOption
  *
- * @property integer $count
+ * @property string $value
+ * @property string $name
  */
 class WorkflowTriggerOption extends Model
 {
@@ -17,6 +18,7 @@ class WorkflowTriggerOption extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'value' => 'string',
+        'name' => 'string',
     ];
 }

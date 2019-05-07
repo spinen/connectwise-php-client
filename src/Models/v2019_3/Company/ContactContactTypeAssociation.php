@@ -7,7 +7,7 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ContactContactTypeAssociation
  *
- * @property integer $count
+ * @property integer $id
  */
 class ContactContactTypeAssociation extends Model
 {
@@ -17,6 +17,6 @@ class ContactContactTypeAssociation extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
     ];
 }

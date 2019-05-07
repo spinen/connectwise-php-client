@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class RmaStatus
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $defaultFlag
+ * @property integer $sortOrder
+ * @property boolean $closedFlag
  */
 class RmaStatus extends Model
 {
@@ -17,6 +21,10 @@ class RmaStatus extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'defaultFlag' => 'boolean',
+        'sortOrder' => 'integer',
+        'closedFlag' => 'boolean',
     ];
 }

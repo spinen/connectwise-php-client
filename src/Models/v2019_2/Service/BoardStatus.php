@@ -7,11 +7,18 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class BoardStatus
  *
- * @property string $type
- * @property integer $count
  * @property integer $id
- * @property string $description
- * @property string $hyperlink
+ * @property string $name
+ * @property integer $sortOrder
+ * @property boolean $displayOnBoard
+ * @property boolean $inactive
+ * @property boolean $closedStatus
+ * @property boolean $timeEntryNotAllowed
+ * @property boolean $defaultFlag
+ * @property string $escalationStatus
+ * @property string $customerPortalDescription
+ * @property boolean $customerPortalFlag
+ * @property string $customStatusIndicatorName
  */
 class BoardStatus extends Model
 {
@@ -21,10 +28,17 @@ class BoardStatus extends Model
      * @var array
      */
     protected $casts = [
-        'type' => 'string',
-        'count' => 'integer',
         'id' => 'integer',
-        'description' => 'string',
-        'hyperlink' => 'string',
+        'name' => 'string',
+        'sortOrder' => 'integer',
+        'displayOnBoard' => 'boolean',
+        'inactive' => 'boolean',
+        'closedStatus' => 'boolean',
+        'timeEntryNotAllowed' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'escalationStatus' => 'string',
+        'customerPortalDescription' => 'string',
+        'customerPortalFlag' => 'boolean',
+        'customStatusIndicatorName' => 'string',
     ];
 }

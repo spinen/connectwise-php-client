@@ -7,14 +7,7 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ApiMember
  *
- * @property integer $id
- * @property string $identifier
- * @property string $name
- * @property string $emailAddress
- * @property boolean $inactiveFlag
- * @property carbon $inactiveDate
- * @property string $notes
- * @property array $excludedServiceBoardIds
+ * @property integer $count
  */
 class ApiMember extends Model
 {
@@ -24,13 +17,6 @@ class ApiMember extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'identifier' => 'string',
-        'name' => 'string',
-        'emailAddress' => 'string',
-        'inactiveFlag' => 'boolean',
-        'inactiveDate' => 'carbon',
-        'notes' => 'string',
-        'excludedServiceBoardIds' => 'array',
+        'count' => 'integer',
     ];
 }

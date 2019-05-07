@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class OpportunityStage
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $color
+ * @property integer $sequenceNumber
  */
 class OpportunityStage extends Model
 {
@@ -17,6 +20,9 @@ class OpportunityStage extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'color' => 'string',
+        'sequenceNumber' => 'integer',
     ];
 }

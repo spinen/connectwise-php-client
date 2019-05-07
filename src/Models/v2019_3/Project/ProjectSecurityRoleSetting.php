@@ -7,7 +7,13 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ProjectSecurityRoleSetting
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $addLevel
+ * @property string $editLevel
+ * @property string $deleteLevel
+ * @property string $inquireLevel
+ * @property string $moduleIdentifier
+ * @property boolean $myFlag
  */
 class ProjectSecurityRoleSetting extends Model
 {
@@ -17,6 +23,12 @@ class ProjectSecurityRoleSetting extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'addLevel' => 'string',
+        'editLevel' => 'string',
+        'deleteLevel' => 'string',
+        'inquireLevel' => 'string',
+        'moduleIdentifier' => 'string',
+        'myFlag' => 'boolean',
     ];
 }

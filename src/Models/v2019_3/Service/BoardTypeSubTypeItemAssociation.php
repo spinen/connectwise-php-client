@@ -7,7 +7,7 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class BoardTypeSubTypeItemAssociation
  *
- * @property integer $count
+ * @property integer $id
  */
 class BoardTypeSubTypeItemAssociation extends Model
 {
@@ -17,6 +17,6 @@ class BoardTypeSubTypeItemAssociation extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
     ];
 }

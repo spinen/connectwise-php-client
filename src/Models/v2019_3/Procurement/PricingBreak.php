@@ -7,7 +7,13 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class PricingBreak
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $detailId
+ * @property double $amount
+ * @property double $quantityStart
+ * @property double $quantityEnd
+ * @property boolean $unlimited
+ * @property string $priceMethod
  */
 class PricingBreak extends Model
 {
@@ -17,6 +23,12 @@ class PricingBreak extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'detailId' => 'integer',
+        'amount' => 'double',
+        'quantityStart' => 'double',
+        'quantityEnd' => 'double',
+        'unlimited' => 'boolean',
+        'priceMethod' => 'string',
     ];
 }

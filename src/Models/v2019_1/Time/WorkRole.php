@@ -7,11 +7,15 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class WorkRole
  *
- * @property string $type
- * @property integer $count
  * @property integer $id
- * @property string $description
- * @property string $hyperlink
+ * @property string $name
+ * @property double $hourlyRate
+ * @property string $integrationXref
+ * @property boolean $inactiveFlag
+ * @property boolean $addAllLocations
+ * @property boolean $removeAllLocations
+ * @property boolean $addAllAgreementExclusions
+ * @property array $locationIds
  */
 class WorkRole extends Model
 {
@@ -21,10 +25,14 @@ class WorkRole extends Model
      * @var array
      */
     protected $casts = [
-        'type' => 'string',
-        'count' => 'integer',
         'id' => 'integer',
-        'description' => 'string',
-        'hyperlink' => 'string',
+        'name' => 'string',
+        'hourlyRate' => 'double',
+        'integrationXref' => 'string',
+        'inactiveFlag' => 'boolean',
+        'addAllLocations' => 'boolean',
+        'removeAllLocations' => 'boolean',
+        'addAllAgreementExclusions' => 'boolean',
+        'locationIds' => 'array',
     ];
 }

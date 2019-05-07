@@ -7,7 +7,8 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class CompanyPickerItem
  *
- * @property integer $count
+ * @property integer $id
+ * @property boolean $vendorPickerFlag
  */
 class CompanyPickerItem extends Model
 {
@@ -17,6 +18,7 @@ class CompanyPickerItem extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'vendorPickerFlag' => 'boolean',
     ];
 }

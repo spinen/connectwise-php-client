@@ -7,7 +7,14 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class TimeSheet
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $year
+ * @property integer $period
+ * @property carbon $dateStart
+ * @property carbon $dateEnd
+ * @property string $status
+ * @property double $hours
+ * @property carbon $deadline
  */
 class TimeSheet extends Model
 {
@@ -17,6 +24,13 @@ class TimeSheet extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'year' => 'integer',
+        'period' => 'integer',
+        'dateStart' => 'carbon',
+        'dateEnd' => 'carbon',
+        'status' => 'string',
+        'hours' => 'double',
+        'deadline' => 'carbon',
     ];
 }

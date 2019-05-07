@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class PortalConfigurationPaymentProcessor
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $testURL
  */
 class PortalConfigurationPaymentProcessor extends Model
 {
@@ -17,6 +19,8 @@ class PortalConfigurationPaymentProcessor extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'testURL' => 'string',
     ];
 }

@@ -7,7 +7,17 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Country
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $defaultFlag
+ * @property string $cityCaption
+ * @property string $stateCaption
+ * @property string $zipCaption
+ * @property integer $zipMinimumLength
+ * @property string $dialingPrefix
+ * @property string $countryCode
+ * @property string $localizationCaptionOne
+ * @property string $localizationValueOne
  */
 class Country extends Model
 {
@@ -17,6 +27,16 @@ class Country extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'defaultFlag' => 'boolean',
+        'cityCaption' => 'string',
+        'stateCaption' => 'string',
+        'zipCaption' => 'string',
+        'zipMinimumLength' => 'integer',
+        'dialingPrefix' => 'string',
+        'countryCode' => 'string',
+        'localizationCaptionOne' => 'string',
+        'localizationValueOne' => 'string',
     ];
 }

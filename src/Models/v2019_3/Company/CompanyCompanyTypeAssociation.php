@@ -7,7 +7,7 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class CompanyCompanyTypeAssociation
  *
- * @property integer $count
+ * @property integer $id
  */
 class CompanyCompanyTypeAssociation extends Model
 {
@@ -17,6 +17,6 @@ class CompanyCompanyTypeAssociation extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
     ];
 }

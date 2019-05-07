@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class OpportunityRating
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property integer $sortOrder
  */
 class OpportunityRating extends Model
 {
@@ -17,6 +19,8 @@ class OpportunityRating extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'sortOrder' => 'integer',
     ];
 }

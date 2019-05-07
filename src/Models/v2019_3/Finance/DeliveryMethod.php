@@ -7,7 +7,13 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class DeliveryMethod
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $defaultFlag
+ * @property boolean $emailFlag
+ * @property boolean $integrationEmailFlag
+ * @property boolean $integrationPrintFlag
+ * @property boolean $integrationActiveFlag
  */
 class DeliveryMethod extends Model
 {
@@ -17,6 +23,12 @@ class DeliveryMethod extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'defaultFlag' => 'boolean',
+        'emailFlag' => 'boolean',
+        'integrationEmailFlag' => 'boolean',
+        'integrationPrintFlag' => 'boolean',
+        'integrationActiveFlag' => 'boolean',
     ];
 }

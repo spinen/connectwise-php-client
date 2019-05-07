@@ -7,11 +7,22 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class WorkType
  *
- * @property string $type
- * @property integer $count
  * @property integer $id
- * @property string $description
- * @property string $hyperlink
+ * @property string $name
+ * @property string $billTime
+ * @property string $rateType
+ * @property double $rate
+ * @property double $hoursMin
+ * @property double $hoursMax
+ * @property double $roundBillHoursTo
+ * @property string $accrualType
+ * @property boolean $inactiveFlag
+ * @property boolean $overallDefaultFlag
+ * @property boolean $activityDefaultFlag
+ * @property boolean $utilizationFlag
+ * @property double $costMultiplier
+ * @property string $integrationXRef
+ * @property boolean $addAllAgreementExclusions
  */
 class WorkType extends Model
 {
@@ -21,10 +32,21 @@ class WorkType extends Model
      * @var array
      */
     protected $casts = [
-        'type' => 'string',
-        'count' => 'integer',
         'id' => 'integer',
-        'description' => 'string',
-        'hyperlink' => 'string',
+        'name' => 'string',
+        'billTime' => 'string',
+        'rateType' => 'string',
+        'rate' => 'double',
+        'hoursMin' => 'double',
+        'hoursMax' => 'double',
+        'roundBillHoursTo' => 'double',
+        'accrualType' => 'string',
+        'inactiveFlag' => 'boolean',
+        'overallDefaultFlag' => 'boolean',
+        'activityDefaultFlag' => 'boolean',
+        'utilizationFlag' => 'boolean',
+        'costMultiplier' => 'double',
+        'integrationXRef' => 'string',
+        'addAllAgreementExclusions' => 'boolean',
     ];
 }

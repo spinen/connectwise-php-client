@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class CampaignEmailsOpened
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $campaignId
+ * @property integer $contactId
+ * @property carbon $dateOpened
  */
 class CampaignEmailsOpened extends Model
 {
@@ -17,6 +20,9 @@ class CampaignEmailsOpened extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'campaignId' => 'integer',
+        'contactId' => 'integer',
+        'dateOpened' => 'carbon',
     ];
 }

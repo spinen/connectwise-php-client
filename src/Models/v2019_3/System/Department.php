@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Department
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $identifier
+ * @property string $name
  */
 class Department extends Model
 {
@@ -17,6 +19,8 @@ class Department extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'identifier' => 'string',
+        'name' => 'string',
     ];
 }

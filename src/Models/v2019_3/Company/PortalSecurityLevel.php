@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class PortalSecurityLevel
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $captionIdentifier
+ * @property boolean $isDefaultFlag
+ * @property string $caption
  */
 class PortalSecurityLevel extends Model
 {
@@ -17,6 +20,9 @@ class PortalSecurityLevel extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'captionIdentifier' => 'string',
+        'isDefaultFlag' => 'boolean',
+        'caption' => 'string',
     ];
 }

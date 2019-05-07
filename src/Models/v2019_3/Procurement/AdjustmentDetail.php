@@ -7,7 +7,12 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class AdjustmentDetail
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $description
+ * @property double $quantityOnHand
+ * @property double $unitCost
+ * @property integer $quantityAdjusted
+ * @property string $serialNumber
  */
 class AdjustmentDetail extends Model
 {
@@ -17,6 +22,11 @@ class AdjustmentDetail extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'description' => 'string',
+        'quantityOnHand' => 'double',
+        'unitCost' => 'double',
+        'quantityAdjusted' => 'integer',
+        'serialNumber' => 'string',
     ];
 }

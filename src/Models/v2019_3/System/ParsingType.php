@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ParsingType
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $parseRule
+ * @property boolean $defaultFlag
  */
 class ParsingType extends Model
 {
@@ -17,6 +20,9 @@ class ParsingType extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'parseRule' => 'string',
+        'defaultFlag' => 'boolean',
     ];
 }

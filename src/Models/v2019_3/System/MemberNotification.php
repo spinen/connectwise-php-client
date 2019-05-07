@@ -7,7 +7,12 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class MemberNotification
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $message
+ * @property string $notificationTrigger
+ * @property integer $recordId
+ * @property string $recordType
+ * @property boolean $readFlag
  */
 class MemberNotification extends Model
 {
@@ -17,6 +22,11 @@ class MemberNotification extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'message' => 'string',
+        'notificationTrigger' => 'string',
+        'recordId' => 'integer',
+        'recordType' => 'string',
+        'readFlag' => 'boolean',
     ];
 }

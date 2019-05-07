@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class AgreementBatchSetup
  *
- * @property integer $count
+ * @property integer $id
+ * @property carbon $nextRunDate
+ * @property integer $daysInAdvance
  */
 class AgreementBatchSetup extends Model
 {
@@ -17,6 +19,8 @@ class AgreementBatchSetup extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'nextRunDate' => 'carbon',
+        'daysInAdvance' => 'integer',
     ];
 }

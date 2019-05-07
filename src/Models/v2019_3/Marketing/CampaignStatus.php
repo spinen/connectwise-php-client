@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class CampaignStatus
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $defaultFlag
+ * @property boolean $inactiveFlag
  */
 class CampaignStatus extends Model
 {
@@ -17,6 +20,9 @@ class CampaignStatus extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'defaultFlag' => 'boolean',
+        'inactiveFlag' => 'boolean',
     ];
 }

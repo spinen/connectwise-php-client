@@ -7,11 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ProductType
  *
- * @property string $type
- * @property integer $count
  * @property integer $id
- * @property string $description
- * @property string $hyperlink
+ * @property string $name
+ * @property boolean $inactiveFlag
+ * @property string $typeXref
  */
 class ProductType extends Model
 {
@@ -21,10 +20,9 @@ class ProductType extends Model
      * @var array
      */
     protected $casts = [
-        'type' => 'string',
-        'count' => 'integer',
         'id' => 'integer',
-        'description' => 'string',
-        'hyperlink' => 'string',
+        'name' => 'string',
+        'inactiveFlag' => 'boolean',
+        'typeXref' => 'string',
     ];
 }

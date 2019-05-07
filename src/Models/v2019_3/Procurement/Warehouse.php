@@ -7,7 +7,12 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Warehouse
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $locationXref
+ * @property boolean $locationDefaultFlag
+ * @property boolean $overallDefaultFlag
+ * @property boolean $inactiveFlag
  */
 class Warehouse extends Model
 {
@@ -17,6 +22,11 @@ class Warehouse extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'locationXref' => 'string',
+        'locationDefaultFlag' => 'boolean',
+        'overallDefaultFlag' => 'boolean',
+        'inactiveFlag' => 'boolean',
     ];
 }

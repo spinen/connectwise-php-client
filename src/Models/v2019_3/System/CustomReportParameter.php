@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class CustomReportParameter
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $captionName
  */
 class CustomReportParameter extends Model
 {
@@ -17,6 +19,8 @@ class CustomReportParameter extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'captionName' => 'string',
     ];
 }

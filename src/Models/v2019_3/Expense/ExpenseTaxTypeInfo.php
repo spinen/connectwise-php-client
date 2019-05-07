@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ExpenseTaxTypeInfo
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $inactive
  */
 class ExpenseTaxTypeInfo extends Model
 {
@@ -17,6 +19,8 @@ class ExpenseTaxTypeInfo extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'inactive' => 'boolean',
     ];
 }

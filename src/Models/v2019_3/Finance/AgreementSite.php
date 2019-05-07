@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class AgreementSite
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $agreementId
+ * @property array $customFields
  */
 class AgreementSite extends Model
 {
@@ -17,6 +19,8 @@ class AgreementSite extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'agreementId' => 'integer',
+        'customFields' => 'array',
     ];
 }

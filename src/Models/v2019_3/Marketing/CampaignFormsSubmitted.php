@@ -7,7 +7,17 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class CampaignFormsSubmitted
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $campaignId
+ * @property integer $contactId
+ * @property carbon $dateSubmitted
+ * @property string $url
+ * @property string $queryString
+ * @property string $pageType
+ * @property string $pageSubType
+ * @property string $topic
+ * @property string $version
+ * @property string $status
  */
 class CampaignFormsSubmitted extends Model
 {
@@ -17,6 +27,16 @@ class CampaignFormsSubmitted extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'campaignId' => 'integer',
+        'contactId' => 'integer',
+        'dateSubmitted' => 'carbon',
+        'url' => 'string',
+        'queryString' => 'string',
+        'pageType' => 'string',
+        'pageSubType' => 'string',
+        'topic' => 'string',
+        'version' => 'string',
+        'status' => 'string',
     ];
 }

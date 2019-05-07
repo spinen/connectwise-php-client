@@ -7,7 +7,12 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ActivityStatus
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $defaultFlag
+ * @property boolean $inactiveFlag
+ * @property boolean $spawnFollowupFlag
+ * @property boolean $closedFlag
  */
 class ActivityStatus extends Model
 {
@@ -17,6 +22,11 @@ class ActivityStatus extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'defaultFlag' => 'boolean',
+        'inactiveFlag' => 'boolean',
+        'spawnFollowupFlag' => 'boolean',
+        'closedFlag' => 'boolean',
     ];
 }

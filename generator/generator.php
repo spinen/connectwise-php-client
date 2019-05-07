@@ -105,18 +105,21 @@ function processPaths()
         if (array_key_exists('get', $actions)) {
             $docs = $actions['get'];
             $class = Str::singular($docs['tags'][0]);
+            $file = $path . '/' . $namespace . '/' . $class . '.php';
 
-            $GLOBALS['map'][$uri] = $GLOBALS['version'] . '\\' . $namespace . '\\' . $class;
+            if (!file_exists($file)) {
+                $GLOBALS['map'][$uri] = $GLOBALS['version'] . '\\' . $namespace . '\\' . $class;
 
-            $attributes = parseResponse(getResponse($docs['responses']), $uri);
+                $attributes = parseResponse(getResponse($docs['responses']), $uri);
 
-            writeClassFile(
-                $path . '/' . $namespace . '/' . $class . '.php',
-                $namespace,
-                $GLOBALS['version'],
-                $class,
-                $attributes
-            );
+                writeClassFile(
+                    $file,
+                    $namespace,
+                    $GLOBALS['version'],
+                    $class,
+                    $attributes
+                );
+            }
         }
     }
 }

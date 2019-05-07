@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class EPayConfiguration
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $url
+ * @property string $storeIdentifier
+ * @property string $encryptionKey
+ * @property string $initializationVector
  */
 class EPayConfiguration extends Model
 {
@@ -17,6 +21,10 @@ class EPayConfiguration extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'url' => 'string',
+        'storeIdentifier' => 'string',
+        'encryptionKey' => 'string',
+        'initializationVector' => 'string',
     ];
 }

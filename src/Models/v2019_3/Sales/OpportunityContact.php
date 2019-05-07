@@ -7,7 +7,12 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class OpportunityContact
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $notes
+ * @property boolean $referralFlag
+ * @property integer $opportunityId
+ * @property string $phoneNumber
+ * @property string $emailAddress
  */
 class OpportunityContact extends Model
 {
@@ -17,6 +22,11 @@ class OpportunityContact extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'notes' => 'string',
+        'referralFlag' => 'boolean',
+        'opportunityId' => 'integer',
+        'phoneNumber' => 'string',
+        'emailAddress' => 'string',
     ];
 }

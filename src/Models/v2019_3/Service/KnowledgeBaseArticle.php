@@ -7,7 +7,16 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class KnowledgeBaseArticle
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $title
+ * @property string $issue
+ * @property string $resolution
+ * @property integer $locationId
+ * @property integer $businessUnitId
+ * @property integer $categoryId
+ * @property integer $subCategoryId
+ * @property string $dateCreated
+ * @property string $createdBy
  */
 class KnowledgeBaseArticle extends Model
 {
@@ -17,6 +26,15 @@ class KnowledgeBaseArticle extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'title' => 'string',
+        'issue' => 'string',
+        'resolution' => 'string',
+        'locationId' => 'integer',
+        'businessUnitId' => 'integer',
+        'categoryId' => 'integer',
+        'subCategoryId' => 'integer',
+        'dateCreated' => 'string',
+        'createdBy' => 'string',
     ];
 }

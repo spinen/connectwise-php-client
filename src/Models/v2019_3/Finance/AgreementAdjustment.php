@@ -7,7 +7,12 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class AgreementAdjustment
  *
- * @property integer $count
+ * @property integer $id
+ * @property double $amount
+ * @property string $description
+ * @property carbon $effectiveDate
+ * @property integer $agreementId
+ * @property array $customFields
  */
 class AgreementAdjustment extends Model
 {
@@ -17,6 +22,11 @@ class AgreementAdjustment extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'amount' => 'double',
+        'description' => 'string',
+        'effectiveDate' => 'carbon',
+        'agreementId' => 'integer',
+        'customFields' => 'array',
     ];
 }

@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ShipmentMethod
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $defaultFlag
+ * @property string $trackingUrl
+ * @property string $shippingType
  */
 class ShipmentMethod extends Model
 {
@@ -17,6 +21,10 @@ class ShipmentMethod extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'defaultFlag' => 'boolean',
+        'trackingUrl' => 'string',
+        'shippingType' => 'string',
     ];
 }

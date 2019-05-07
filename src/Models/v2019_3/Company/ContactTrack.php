@@ -7,7 +7,14 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ContactTrack
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $trackId
+ * @property string $name
+ * @property string $startDate
+ * @property string $endDate
+ * @property integer $actionTaken
+ * @property integer $actionRemaining
+ * @property string $startedBy
  */
 class ContactTrack extends Model
 {
@@ -17,6 +24,13 @@ class ContactTrack extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'trackId' => 'integer',
+        'name' => 'string',
+        'startDate' => 'string',
+        'endDate' => 'string',
+        'actionTaken' => 'integer',
+        'actionRemaining' => 'integer',
+        'startedBy' => 'string',
     ];
 }

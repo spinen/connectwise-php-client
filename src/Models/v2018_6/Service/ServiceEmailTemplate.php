@@ -7,11 +7,19 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ServiceEmailTemplate
  *
- * @property string $type
- * @property integer $count
  * @property integer $id
- * @property string $description
- * @property string $hyperlink
+ * @property string $type
+ * @property boolean $useSenderFlag
+ * @property string $firstName
+ * @property string $lastName
+ * @property string $emailAddress
+ * @property string $subject
+ * @property string $body
+ * @property boolean $copySenderFlag
+ * @property boolean $tasksFlag
+ * @property boolean $resourceRecordsFlag
+ * @property boolean $externalContactNotifications
+ * @property boolean $internalContactNotifications
  */
 class ServiceEmailTemplate extends Model
 {
@@ -21,10 +29,18 @@ class ServiceEmailTemplate extends Model
      * @var array
      */
     protected $casts = [
-        'type' => 'string',
-        'count' => 'integer',
         'id' => 'integer',
-        'description' => 'string',
-        'hyperlink' => 'string',
+        'type' => 'string',
+        'useSenderFlag' => 'boolean',
+        'firstName' => 'string',
+        'lastName' => 'string',
+        'emailAddress' => 'string',
+        'subject' => 'string',
+        'body' => 'string',
+        'copySenderFlag' => 'boolean',
+        'tasksFlag' => 'boolean',
+        'resourceRecordsFlag' => 'boolean',
+        'externalContactNotifications' => 'boolean',
+        'internalContactNotifications' => 'boolean',
     ];
 }

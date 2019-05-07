@@ -7,7 +7,12 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Classification
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property double $multiplier
+ * @property boolean $defaultFlag
+ * @property boolean $companyFlag
+ * @property boolean $employeeFlag
  */
 class Classification extends Model
 {
@@ -17,6 +22,11 @@ class Classification extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'multiplier' => 'double',
+        'defaultFlag' => 'boolean',
+        'companyFlag' => 'boolean',
+        'employeeFlag' => 'boolean',
     ];
 }

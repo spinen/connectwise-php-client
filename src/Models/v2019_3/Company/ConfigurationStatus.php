@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ConfigurationStatus
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $description
+ * @property boolean $closedFlag
+ * @property boolean $defaultFlag
  */
 class ConfigurationStatus extends Model
 {
@@ -17,6 +20,9 @@ class ConfigurationStatus extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'description' => 'string',
+        'closedFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
     ];
 }

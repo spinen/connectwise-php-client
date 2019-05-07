@@ -7,7 +7,8 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class TaxCodeExpenseTypeExemption
  *
- * @property integer $count
+ * @property integer $id
+ * @property array $taxableLevels
  */
 class TaxCodeExpenseTypeExemption extends Model
 {
@@ -17,6 +18,7 @@ class TaxCodeExpenseTypeExemption extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'taxableLevels' => 'array',
     ];
 }

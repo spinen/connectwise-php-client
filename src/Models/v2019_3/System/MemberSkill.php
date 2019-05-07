@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class MemberSkill
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $skillLevel
+ * @property boolean $certifiedFlag
+ * @property integer $yearsExperience
+ * @property string $notes
  */
 class MemberSkill extends Model
 {
@@ -17,6 +21,10 @@ class MemberSkill extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'skillLevel' => 'string',
+        'certifiedFlag' => 'boolean',
+        'yearsExperience' => 'integer',
+        'notes' => 'string',
     ];
 }

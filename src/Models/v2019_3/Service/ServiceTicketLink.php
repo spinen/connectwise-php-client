@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ServiceTicketLink
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $enabledFlag
+ * @property string $linkText
+ * @property string $url
  */
 class ServiceTicketLink extends Model
 {
@@ -17,6 +21,10 @@ class ServiceTicketLink extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'enabledFlag' => 'boolean',
+        'linkText' => 'string',
+        'url' => 'string',
     ];
 }

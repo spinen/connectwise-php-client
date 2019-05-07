@@ -7,7 +7,15 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ExpenseEntriesInternal
  *
- * @property integer $count
+ * @property integer $id
+ * @property double $amount
+ * @property string $billableOption
+ * @property carbon $date
+ * @property string $notes
+ * @property double $invoiceAmount
+ * @property array $taxes
+ * @property string $status
+ * @property double $billAmount
  */
 class ExpenseEntriesInternal extends Model
 {
@@ -17,6 +25,14 @@ class ExpenseEntriesInternal extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'amount' => 'double',
+        'billableOption' => 'string',
+        'date' => 'carbon',
+        'notes' => 'string',
+        'invoiceAmount' => 'double',
+        'taxes' => 'array',
+        'status' => 'string',
+        'billAmount' => 'double',
     ];
 }

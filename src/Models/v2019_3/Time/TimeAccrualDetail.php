@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class TimeAccrualDetail
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $accrualType
+ * @property integer $startYear
+ * @property integer $endYear
+ * @property double $hours
  */
 class TimeAccrualDetail extends Model
 {
@@ -17,6 +21,10 @@ class TimeAccrualDetail extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'accrualType' => 'string',
+        'startYear' => 'integer',
+        'endYear' => 'integer',
+        'hours' => 'double',
     ];
 }

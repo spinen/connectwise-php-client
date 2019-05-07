@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Session
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $configurationId
+ * @property string $sessionGuid
  */
 class Session extends Model
 {
@@ -17,6 +19,8 @@ class Session extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'configurationId' => 'integer',
+        'sessionGuid' => 'string',
     ];
 }

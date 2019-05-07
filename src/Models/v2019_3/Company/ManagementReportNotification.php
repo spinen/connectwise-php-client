@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ManagementReportNotification
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $email
+ * @property boolean $globalFlag
  */
 class ManagementReportNotification extends Model
 {
@@ -17,6 +19,8 @@ class ManagementReportNotification extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'email' => 'string',
+        'globalFlag' => 'boolean',
     ];
 }

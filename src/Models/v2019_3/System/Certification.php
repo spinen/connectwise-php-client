@@ -7,7 +7,8 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Certification
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
  */
 class Certification extends Model
 {
@@ -17,6 +18,7 @@ class Certification extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
     ];
 }

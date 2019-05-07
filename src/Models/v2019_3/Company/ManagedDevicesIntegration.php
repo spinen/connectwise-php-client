@@ -7,7 +7,18 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ManagedDevicesIntegration
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $solution
+ * @property string $portalUrl
+ * @property string $loginBy
+ * @property string $globalLoginUsername
+ * @property string $globalLoginPassword
+ * @property string $defaultBillingLevel
+ * @property string $managementItSetupType
+ * @property boolean $matchOnSerialNumberFlag
+ * @property boolean $disableNewCrossReferencesFlag
+ * @property boolean $configBillCustomerFlag
  */
 class ManagedDevicesIntegration extends Model
 {
@@ -17,6 +28,17 @@ class ManagedDevicesIntegration extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'solution' => 'string',
+        'portalUrl' => 'string',
+        'loginBy' => 'string',
+        'globalLoginUsername' => 'string',
+        'globalLoginPassword' => 'string',
+        'defaultBillingLevel' => 'string',
+        'managementItSetupType' => 'string',
+        'matchOnSerialNumberFlag' => 'boolean',
+        'disableNewCrossReferencesFlag' => 'boolean',
+        'configBillCustomerFlag' => 'boolean',
     ];
 }

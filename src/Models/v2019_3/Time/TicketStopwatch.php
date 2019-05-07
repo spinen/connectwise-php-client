@@ -7,7 +7,22 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class TicketStopwatch
  *
- * @property integer $count
+ * @property string $billableOption
+ * @property integer $businessUnitId
+ * @property carbon $dateEntered
+ * @property carbon $endTime
+ * @property integer $id
+ * @property string $internalNotes
+ * @property integer $locationId
+ * @property string $notes
+ * @property carbon $startTime
+ * @property string $status
+ * @property integer $totalPauseTime
+ * @property boolean $showNotesInDiscussionFlag
+ * @property boolean $showNotesInInternalFlag
+ * @property boolean $showNotesInResolutionFlag
+ * @property boolean $emailNotesToContactFlag
+ * @property boolean $emailNotesToResourcesFlag
  */
 class TicketStopwatch extends Model
 {
@@ -17,6 +32,21 @@ class TicketStopwatch extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'billableOption' => 'string',
+        'businessUnitId' => 'integer',
+        'dateEntered' => 'carbon',
+        'endTime' => 'carbon',
+        'id' => 'integer',
+        'internalNotes' => 'string',
+        'locationId' => 'integer',
+        'notes' => 'string',
+        'startTime' => 'carbon',
+        'status' => 'string',
+        'totalPauseTime' => 'integer',
+        'showNotesInDiscussionFlag' => 'boolean',
+        'showNotesInInternalFlag' => 'boolean',
+        'showNotesInResolutionFlag' => 'boolean',
+        'emailNotesToContactFlag' => 'boolean',
+        'emailNotesToResourcesFlag' => 'boolean',
     ];
 }

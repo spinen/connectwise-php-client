@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class EmailConnectorParsingRule
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $priority
+ * @property string $searchTerm
  */
 class EmailConnectorParsingRule extends Model
 {
@@ -17,6 +19,8 @@ class EmailConnectorParsingRule extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'priority' => 'integer',
+        'searchTerm' => 'string',
     ];
 }

@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ProjectsTeamMember
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $projectId
+ * @property double $hours
+ * @property carbon $startDate
+ * @property carbon $endDate
  */
 class ProjectsTeamMember extends Model
 {
@@ -17,6 +21,10 @@ class ProjectsTeamMember extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'projectId' => 'integer',
+        'hours' => 'double',
+        'startDate' => 'carbon',
+        'endDate' => 'carbon',
     ];
 }

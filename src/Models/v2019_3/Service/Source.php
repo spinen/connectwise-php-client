@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Source
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $defaultFlag
+ * @property string $enteredBy
+ * @property carbon $dateEntered
  */
 class Source extends Model
 {
@@ -17,6 +21,10 @@ class Source extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'defaultFlag' => 'boolean',
+        'enteredBy' => 'string',
+        'dateEntered' => 'carbon',
     ];
 }

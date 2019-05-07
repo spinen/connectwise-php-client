@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ServiceLocation
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $where
+ * @property boolean $defaultFlag
  */
 class ServiceLocation extends Model
 {
@@ -17,6 +20,9 @@ class ServiceLocation extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'where' => 'string',
+        'defaultFlag' => 'boolean',
     ];
 }

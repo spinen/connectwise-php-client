@@ -7,7 +7,27 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class AccountingPackage
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $identifier
+ * @property string $name
+ * @property boolean $directTransferFlag
+ * @property boolean $includeInvoicesFlag
+ * @property string $invoiceFormat
+ * @property boolean $includeExpenseFlag
+ * @property boolean $transferExpenseAsBillFlag
+ * @property string $expenseFormat
+ * @property boolean $suppressMemoFlag
+ * @property boolean $syncPaymentInfoFlag
+ * @property boolean $includeSalesTaxFlag
+ * @property boolean $enableTaxGroupsFlag
+ * @property boolean $zeroDollarTaxAmountsFlag
+ * @property boolean $includeItemsFlag
+ * @property boolean $inventorySOHFlag
+ * @property boolean $sendComponentAmountFlag
+ * @property boolean $sendUomFlag
+ * @property boolean $includeCogsEntriesFlag
+ * @property boolean $includeCogsDropShipFlag
+ * @property boolean $activeFlag
  */
 class AccountingPackage extends Model
 {
@@ -17,6 +37,26 @@ class AccountingPackage extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'identifier' => 'string',
+        'name' => 'string',
+        'directTransferFlag' => 'boolean',
+        'includeInvoicesFlag' => 'boolean',
+        'invoiceFormat' => 'string',
+        'includeExpenseFlag' => 'boolean',
+        'transferExpenseAsBillFlag' => 'boolean',
+        'expenseFormat' => 'string',
+        'suppressMemoFlag' => 'boolean',
+        'syncPaymentInfoFlag' => 'boolean',
+        'includeSalesTaxFlag' => 'boolean',
+        'enableTaxGroupsFlag' => 'boolean',
+        'zeroDollarTaxAmountsFlag' => 'boolean',
+        'includeItemsFlag' => 'boolean',
+        'inventorySOHFlag' => 'boolean',
+        'sendComponentAmountFlag' => 'boolean',
+        'sendUomFlag' => 'boolean',
+        'includeCogsEntriesFlag' => 'boolean',
+        'includeCogsDropShipFlag' => 'boolean',
+        'activeFlag' => 'boolean',
     ];
 }

@@ -7,6 +7,7 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Report
  *
+ * @property string $name
  */
 class Report extends Model
 {
@@ -16,5 +17,6 @@ class Report extends Model
      * @var array
      */
     protected $casts = [
+        'name' => 'string',
     ];
 }

@@ -7,6 +7,16 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class MenuEntry
  *
+ * @property integer $id
+ * @property string $caption
+ * @property string $link
+ * @property boolean $newWindowFlag
+ * @property array $locationIds
+ * @property string $origin
+ * @property boolean $addAllLocations
+ * @property boolean $removeAllLocations
+ * @property integer $smallMenuIconId
+ * @property integer $largeMenuIconId
  */
 class MenuEntry extends Model
 {
@@ -16,5 +26,15 @@ class MenuEntry extends Model
      * @var array
      */
     protected $casts = [
+        'id' => 'integer',
+        'caption' => 'string',
+        'link' => 'string',
+        'newWindowFlag' => 'boolean',
+        'locationIds' => 'array',
+        'origin' => 'string',
+        'addAllLocations' => 'boolean',
+        'removeAllLocations' => 'boolean',
+        'smallMenuIconId' => 'integer',
+        'largeMenuIconId' => 'integer',
     ];
 }

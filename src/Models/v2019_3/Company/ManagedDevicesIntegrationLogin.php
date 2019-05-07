@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ManagedDevicesIntegrationLogin
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $username
+ * @property string $password
  */
 class ManagedDevicesIntegrationLogin extends Model
 {
@@ -17,6 +19,8 @@ class ManagedDevicesIntegrationLogin extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'username' => 'string',
+        'password' => 'string',
     ];
 }

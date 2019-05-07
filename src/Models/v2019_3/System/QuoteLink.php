@@ -7,8 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class QuoteLink
  *
- * @property boolean $success
- * @property string $message
+ * @property integer $id
+ * @property string $link
+ * @property boolean $allLocationsFlag
+ * @property boolean $newWindowFlag
  */
 class QuoteLink extends Model
 {
@@ -18,7 +20,9 @@ class QuoteLink extends Model
      * @var array
      */
     protected $casts = [
-        'success' => 'boolean',
-        'message' => 'string',
+        'id' => 'integer',
+        'link' => 'string',
+        'allLocationsFlag' => 'boolean',
+        'newWindowFlag' => 'boolean',
     ];
 }

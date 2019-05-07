@@ -7,7 +7,16 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class TicketSync
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $vendorType
+ * @property string $url
+ * @property string $userName
+ * @property string $password
+ * @property string $psg
+ * @property boolean $problemDescriptionFlag
+ * @property boolean $internalAnalysisFlag
+ * @property boolean $resolutionFlag
  */
 class TicketSync extends Model
 {
@@ -17,6 +26,15 @@ class TicketSync extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'vendorType' => 'string',
+        'url' => 'string',
+        'userName' => 'string',
+        'password' => 'string',
+        'psg' => 'string',
+        'problemDescriptionFlag' => 'boolean',
+        'internalAnalysisFlag' => 'boolean',
+        'resolutionFlag' => 'boolean',
     ];
 }

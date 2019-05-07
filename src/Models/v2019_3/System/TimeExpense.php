@@ -7,7 +7,14 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class TimeExpense
  *
- * @property integer $count
+ * @property integer $id
+ * @property boolean $tier1ApprovalFlag
+ * @property boolean $tier2ApprovalFlag
+ * @property boolean $disableTimeEntryFlag
+ * @property boolean $requireTimeNoteFlag
+ * @property boolean $requireExpenseNoteFlag
+ * @property double $roundingFactor
+ * @property integer $invoiceStart
  */
 class TimeExpense extends Model
 {
@@ -17,6 +24,13 @@ class TimeExpense extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'tier1ApprovalFlag' => 'boolean',
+        'tier2ApprovalFlag' => 'boolean',
+        'disableTimeEntryFlag' => 'boolean',
+        'requireTimeNoteFlag' => 'boolean',
+        'requireExpenseNoteFlag' => 'boolean',
+        'roundingFactor' => 'double',
+        'invoiceStart' => 'integer',
     ];
 }

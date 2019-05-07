@@ -7,7 +7,14 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ConfigurationTypeQuestion
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $fieldType
+ * @property string $entryType
+ * @property double $sequenceNumber
+ * @property string $question
+ * @property integer $numberOfDecimals
+ * @property boolean $requiredFlag
+ * @property boolean $inactiveFlag
  */
 class ConfigurationTypeQuestion extends Model
 {
@@ -17,6 +24,13 @@ class ConfigurationTypeQuestion extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'fieldType' => 'string',
+        'entryType' => 'string',
+        'sequenceNumber' => 'double',
+        'question' => 'string',
+        'numberOfDecimals' => 'integer',
+        'requiredFlag' => 'boolean',
+        'inactiveFlag' => 'boolean',
     ];
 }

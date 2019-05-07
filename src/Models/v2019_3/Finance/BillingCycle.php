@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class BillingCycle
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $identifier
+ * @property string $name
+ * @property boolean $defaultFlag
+ * @property string $billingOptions
  */
 class BillingCycle extends Model
 {
@@ -17,6 +21,10 @@ class BillingCycle extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'identifier' => 'string',
+        'name' => 'string',
+        'defaultFlag' => 'boolean',
+        'billingOptions' => 'string',
     ];
 }

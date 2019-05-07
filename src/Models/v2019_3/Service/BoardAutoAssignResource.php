@@ -7,7 +7,7 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class BoardAutoAssignResource
  *
- * @property integer $count
+ * @property integer $id
  */
 class BoardAutoAssignResource extends Model
 {
@@ -17,6 +17,6 @@ class BoardAutoAssignResource extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
     ];
 }

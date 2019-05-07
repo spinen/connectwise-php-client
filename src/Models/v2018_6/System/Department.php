@@ -7,11 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Department
  *
- * @property string $type
- * @property integer $count
  * @property integer $id
- * @property string $description
- * @property string $hyperlink
+ * @property string $identifier
+ * @property string $name
  */
 class Department extends Model
 {
@@ -21,10 +19,8 @@ class Department extends Model
      * @var array
      */
     protected $casts = [
-        'type' => 'string',
-        'count' => 'integer',
         'id' => 'integer',
-        'description' => 'string',
-        'hyperlink' => 'string',
+        'identifier' => 'string',
+        'name' => 'string',
     ];
 }

@@ -7,7 +7,8 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class AutoSyncTime
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $syncTime
  */
 class AutoSyncTime extends Model
 {
@@ -17,6 +18,7 @@ class AutoSyncTime extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'syncTime' => 'string',
     ];
 }

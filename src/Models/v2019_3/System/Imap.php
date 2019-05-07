@@ -7,7 +7,15 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Imap
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $imapName
+ * @property string $processedName
+ * @property string $server
+ * @property string $userName
+ * @property string $password
+ * @property integer $port
+ * @property boolean $sslFlag
  */
 class Imap extends Model
 {
@@ -17,6 +25,14 @@ class Imap extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'imapName' => 'string',
+        'processedName' => 'string',
+        'server' => 'string',
+        'userName' => 'string',
+        'password' => 'string',
+        'port' => 'integer',
+        'sslFlag' => 'boolean',
     ];
 }

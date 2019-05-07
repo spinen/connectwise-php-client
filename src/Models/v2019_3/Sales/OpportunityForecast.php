@@ -7,7 +7,17 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class OpportunityForecast
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property double $revenue
+ * @property double $cost
+ * @property string $type
+ * @property boolean $includedFlag
+ * @property double $percent
+ * @property double $margin
+ * @property integer $opportunityId
+ * @property string $QuoteNumber
+ * @property string $QuoteName
  */
 class OpportunityForecast extends Model
 {
@@ -17,6 +27,16 @@ class OpportunityForecast extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'revenue' => 'double',
+        'cost' => 'double',
+        'type' => 'string',
+        'includedFlag' => 'boolean',
+        'percent' => 'double',
+        'margin' => 'double',
+        'opportunityId' => 'integer',
+        'QuoteNumber' => 'string',
+        'QuoteName' => 'string',
     ];
 }

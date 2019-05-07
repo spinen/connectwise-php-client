@@ -7,7 +7,7 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class AgreementTypeWorkRoleExclusion
  *
- * @property integer $count
+ * @property integer $id
  */
 class AgreementTypeWorkRoleExclusion extends Model
 {
@@ -17,6 +17,6 @@ class AgreementTypeWorkRoleExclusion extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
     ];
 }

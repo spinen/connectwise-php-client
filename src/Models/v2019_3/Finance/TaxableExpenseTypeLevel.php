@@ -7,7 +7,7 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class TaxableExpenseTypeLevel
  *
- * @property integer $count
+ * @property integer $id
  */
 class TaxableExpenseTypeLevel extends Model
 {
@@ -17,6 +17,6 @@ class TaxableExpenseTypeLevel extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
     ];
 }

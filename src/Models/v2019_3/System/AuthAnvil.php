@@ -7,8 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class AuthAnvil
  *
- * @property boolean $success
- * @property string $message
+ * @property integer $id
+ * @property string $serverLocationUrl
+ * @property integer $siteId
  */
 class AuthAnvil extends Model
 {
@@ -18,7 +19,8 @@ class AuthAnvil extends Model
      * @var array
      */
     protected $casts = [
-        'success' => 'boolean',
-        'message' => 'string',
+        'id' => 'integer',
+        'serverLocationUrl' => 'string',
+        'siteId' => 'integer',
     ];
 }

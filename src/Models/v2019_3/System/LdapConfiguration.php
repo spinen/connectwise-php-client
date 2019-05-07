@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class LdapConfiguration
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $server
+ * @property string $domain
  */
 class LdapConfiguration extends Model
 {
@@ -17,6 +20,9 @@ class LdapConfiguration extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'server' => 'string',
+        'domain' => 'string',
     ];
 }

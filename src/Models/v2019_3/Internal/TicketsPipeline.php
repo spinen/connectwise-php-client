@@ -7,7 +7,7 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class TicketsPipeline
  *
- * @property integer $count
+ * @property integer $id
  */
 class TicketsPipeline extends Model
 {
@@ -17,6 +17,6 @@ class TicketsPipeline extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
     ];
 }

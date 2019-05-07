@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class WorkflowActionAutomateParameter
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $value
  */
 class WorkflowActionAutomateParameter extends Model
 {
@@ -17,6 +19,8 @@ class WorkflowActionAutomateParameter extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'value' => 'string',
     ];
 }

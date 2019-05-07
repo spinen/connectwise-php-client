@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ServiceTeam
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $deleteNotifyFlag
  */
 class ServiceTeam extends Model
 {
@@ -17,6 +19,8 @@ class ServiceTeam extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'deleteNotifyFlag' => 'boolean',
     ];
 }

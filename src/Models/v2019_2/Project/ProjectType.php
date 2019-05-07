@@ -7,11 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ProjectType
  *
- * @property string $type
- * @property integer $count
  * @property integer $id
- * @property string $description
- * @property string $hyperlink
+ * @property string $name
+ * @property boolean $defaultFlag
+ * @property boolean $inactiveFlag
+ * @property string $integrationXref
  */
 class ProjectType extends Model
 {
@@ -21,10 +21,10 @@ class ProjectType extends Model
      * @var array
      */
     protected $casts = [
-        'type' => 'string',
-        'count' => 'integer',
         'id' => 'integer',
-        'description' => 'string',
-        'hyperlink' => 'string',
+        'name' => 'string',
+        'defaultFlag' => 'boolean',
+        'inactiveFlag' => 'boolean',
+        'integrationXref' => 'string',
     ];
 }

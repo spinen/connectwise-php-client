@@ -7,7 +7,8 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class CorporateStructureLevel
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
  */
 class CorporateStructureLevel extends Model
 {
@@ -17,6 +18,7 @@ class CorporateStructureLevel extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
     ];
 }

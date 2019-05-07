@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class BillingSetupRouting
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $sequenceNumber
+ * @property string $invoiceRule
+ * @property string $routingRule
  */
 class BillingSetupRouting extends Model
 {
@@ -17,6 +20,9 @@ class BillingSetupRouting extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'sequenceNumber' => 'integer',
+        'invoiceRule' => 'string',
+        'routingRule' => 'string',
     ];
 }

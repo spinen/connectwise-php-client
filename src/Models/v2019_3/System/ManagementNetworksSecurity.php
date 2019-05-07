@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ManagementNetworksSecurity
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $username
+ * @property string $password
+ * @property string $site
  */
 class ManagementNetworksSecurity extends Model
 {
@@ -17,6 +21,10 @@ class ManagementNetworksSecurity extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'username' => 'string',
+        'password' => 'string',
+        'site' => 'string',
     ];
 }

@@ -7,7 +7,14 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class CampaignAudit
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $emailsSent
+ * @property integer $emailsUnsent
+ * @property integer $documentsCreated
+ * @property string $emailSubject
+ * @property integer $campaignId
+ * @property string $createdBy
+ * @property string $dateCreated
  */
 class CampaignAudit extends Model
 {
@@ -17,6 +24,13 @@ class CampaignAudit extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'emailsSent' => 'integer',
+        'emailsUnsent' => 'integer',
+        'documentsCreated' => 'integer',
+        'emailSubject' => 'string',
+        'campaignId' => 'integer',
+        'createdBy' => 'string',
+        'dateCreated' => 'string',
     ];
 }

@@ -7,7 +7,12 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class CompanyType
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $defaultFlag
+ * @property boolean $vendorFlag
+ * @property boolean $serviceAlertFlag
+ * @property string $serviceAlertMessage
  */
 class CompanyType extends Model
 {
@@ -17,6 +22,11 @@ class CompanyType extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'defaultFlag' => 'boolean',
+        'vendorFlag' => 'boolean',
+        'serviceAlertFlag' => 'boolean',
+        'serviceAlertMessage' => 'string',
     ];
 }

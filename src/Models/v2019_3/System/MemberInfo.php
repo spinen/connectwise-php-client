@@ -7,7 +7,15 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class MemberInfo
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $identifier
+ * @property string $firstName
+ * @property string $middleInitial
+ * @property string $lastName
+ * @property string $fullName
+ * @property string $defaultEmail
+ * @property string $licenseClass
+ * @property boolean $inactiveFlag
  */
 class MemberInfo extends Model
 {
@@ -17,6 +25,14 @@ class MemberInfo extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'identifier' => 'string',
+        'firstName' => 'string',
+        'middleInitial' => 'string',
+        'lastName' => 'string',
+        'fullName' => 'string',
+        'defaultEmail' => 'string',
+        'licenseClass' => 'string',
+        'inactiveFlag' => 'boolean',
     ];
 }

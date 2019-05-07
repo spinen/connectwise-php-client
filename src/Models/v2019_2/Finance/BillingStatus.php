@@ -7,13 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class BillingStatus
  *
+ * @property string $type
+ * @property integer $count
  * @property integer $id
- * @property string $name
- * @property integer $sortOrder
- * @property boolean $defaultFlag
- * @property boolean $closedFlag
- * @property boolean $inactiveFlag
- * @property boolean $sentFlag
+ * @property string $description
+ * @property string $hyperlink
  */
 class BillingStatus extends Model
 {
@@ -23,12 +21,10 @@ class BillingStatus extends Model
      * @var array
      */
     protected $casts = [
+        'type' => 'string',
+        'count' => 'integer',
         'id' => 'integer',
-        'name' => 'string',
-        'sortOrder' => 'integer',
-        'defaultFlag' => 'boolean',
-        'closedFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
-        'sentFlag' => 'boolean',
+        'description' => 'string',
+        'hyperlink' => 'string',
     ];
 }

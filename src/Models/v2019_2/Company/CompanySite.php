@@ -7,11 +7,23 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class CompanySite
  *
- * @property string $type
- * @property integer $count
  * @property integer $id
- * @property string $description
- * @property string $hyperlink
+ * @property string $name
+ * @property string $addressLine1
+ * @property string $addressLine2
+ * @property string $city
+ * @property string $state
+ * @property string $zip
+ * @property string $addressFormat
+ * @property string $phoneNumber
+ * @property string $faxNumber
+ * @property integer $taxCodeId
+ * @property double $expenseReimbursement
+ * @property boolean $primaryAddressFlag
+ * @property boolean $defaultShippingFlag
+ * @property boolean $defaultBillingFlag
+ * @property boolean $defaultMailingFlag
+ * @property boolean $inactiveFlag
  */
 class CompanySite extends Model
 {
@@ -21,10 +33,22 @@ class CompanySite extends Model
      * @var array
      */
     protected $casts = [
-        'type' => 'string',
-        'count' => 'integer',
         'id' => 'integer',
-        'description' => 'string',
-        'hyperlink' => 'string',
+        'name' => 'string',
+        'addressLine1' => 'string',
+        'addressLine2' => 'string',
+        'city' => 'string',
+        'state' => 'string',
+        'zip' => 'string',
+        'addressFormat' => 'string',
+        'phoneNumber' => 'string',
+        'faxNumber' => 'string',
+        'taxCodeId' => 'integer',
+        'expenseReimbursement' => 'double',
+        'primaryAddressFlag' => 'boolean',
+        'defaultShippingFlag' => 'boolean',
+        'defaultBillingFlag' => 'boolean',
+        'defaultMailingFlag' => 'boolean',
+        'inactiveFlag' => 'boolean',
     ];
 }

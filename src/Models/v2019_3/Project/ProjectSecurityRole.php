@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ProjectSecurityRole
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $managerRoleFlag
+ * @property boolean $defaultContactFlag
  */
 class ProjectSecurityRole extends Model
 {
@@ -17,6 +20,9 @@ class ProjectSecurityRole extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'managerRoleFlag' => 'boolean',
+        'defaultContactFlag' => 'boolean',
     ];
 }

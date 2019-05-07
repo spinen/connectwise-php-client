@@ -7,7 +7,8 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class WorkflowAttachment
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
  */
 class WorkflowAttachment extends Model
 {
@@ -17,6 +18,7 @@ class WorkflowAttachment extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
     ];
 }

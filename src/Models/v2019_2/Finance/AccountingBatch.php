@@ -7,7 +7,12 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class AccountingBatch
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $batchIdentifier
+ * @property boolean $exportInvoicesFlag
+ * @property boolean $exportExpensesFlag
+ * @property boolean $exportProductsFlag
+ * @property boolean $closedFlag
  */
 class AccountingBatch extends Model
 {
@@ -17,6 +22,11 @@ class AccountingBatch extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'batchIdentifier' => 'string',
+        'exportInvoicesFlag' => 'boolean',
+        'exportExpensesFlag' => 'boolean',
+        'exportProductsFlag' => 'boolean',
+        'closedFlag' => 'boolean',
     ];
 }

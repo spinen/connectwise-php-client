@@ -7,7 +7,19 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class EmailConnector
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $emailNotifyFrom
+ * @property string $bccEmailTo
+ * @property string $emailErrorsTo
+ * @property boolean $setEmailToDefaultContactFlag
+ * @property boolean $noResponseFlag
+ * @property boolean $neverRespondFlag
+ * @property boolean $discardDuplicatesFlag
+ * @property boolean $postRepliesToTicketFlag
+ * @property boolean $createContactFlag
+ * @property string $responseEmailForNew
+ * @property string $responseEmailForExisting
+ * @property boolean $addCcFlag
  */
 class EmailConnector extends Model
 {
@@ -17,6 +29,18 @@ class EmailConnector extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'emailNotifyFrom' => 'string',
+        'bccEmailTo' => 'string',
+        'emailErrorsTo' => 'string',
+        'setEmailToDefaultContactFlag' => 'boolean',
+        'noResponseFlag' => 'boolean',
+        'neverRespondFlag' => 'boolean',
+        'discardDuplicatesFlag' => 'boolean',
+        'postRepliesToTicketFlag' => 'boolean',
+        'createContactFlag' => 'boolean',
+        'responseEmailForNew' => 'string',
+        'responseEmailForExisting' => 'string',
+        'addCcFlag' => 'boolean',
     ];
 }

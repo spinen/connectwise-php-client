@@ -7,7 +7,13 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class SLAPriority
  *
- * @property integer $count
+ * @property integer $id
+ * @property double $respondHours
+ * @property integer $respondPercent
+ * @property double $planWithin
+ * @property integer $planWithinPercent
+ * @property double $resolutionHours
+ * @property integer $resolutionPercent
  */
 class SLAPriority extends Model
 {
@@ -17,6 +23,12 @@ class SLAPriority extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'respondHours' => 'double',
+        'respondPercent' => 'integer',
+        'planWithin' => 'double',
+        'planWithinPercent' => 'integer',
+        'resolutionHours' => 'double',
+        'resolutionPercent' => 'integer',
     ];
 }

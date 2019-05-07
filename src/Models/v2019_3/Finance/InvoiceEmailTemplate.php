@@ -7,7 +7,15 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class InvoiceEmailTemplate
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $useSenderFlag
+ * @property string $firstName
+ * @property string $lastName
+ * @property string $emailAddress
+ * @property string $subject
+ * @property string $body
+ * @property boolean $copySenderFlag
  */
 class InvoiceEmailTemplate extends Model
 {
@@ -17,6 +25,14 @@ class InvoiceEmailTemplate extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'useSenderFlag' => 'boolean',
+        'firstName' => 'string',
+        'lastName' => 'string',
+        'emailAddress' => 'string',
+        'subject' => 'string',
+        'body' => 'string',
+        'copySenderFlag' => 'boolean',
     ];
 }

@@ -7,7 +7,15 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class CallbackEntry
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $description
+ * @property string $url
+ * @property integer $objectId
+ * @property string $type
+ * @property string $level
+ * @property integer $memberId
+ * @property boolean $inactiveFlag
+ * @property boolean $isSoapCallbackFlag
  */
 class CallbackEntry extends Model
 {
@@ -17,6 +25,14 @@ class CallbackEntry extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'description' => 'string',
+        'url' => 'string',
+        'objectId' => 'integer',
+        'type' => 'string',
+        'level' => 'string',
+        'memberId' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'isSoapCallbackFlag' => 'boolean',
     ];
 }

@@ -7,7 +7,8 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class OnHandSerialNumber
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $serial
  */
 class OnHandSerialNumber extends Model
 {
@@ -17,6 +18,7 @@ class OnHandSerialNumber extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'serial' => 'string',
     ];
 }

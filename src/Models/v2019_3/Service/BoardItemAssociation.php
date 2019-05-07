@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class BoardItemAssociation
  *
- * @property integer $count
+ * @property integer $id
+ * @property array $subTypeAssociationIds
+ * @property boolean $addAllSubTypesFlag
+ * @property boolean $removeAllSubTypesFlag
  */
 class BoardItemAssociation extends Model
 {
@@ -17,6 +20,9 @@ class BoardItemAssociation extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'subTypeAssociationIds' => 'array',
+        'addAllSubTypesFlag' => 'boolean',
+        'removeAllSubTypesFlag' => 'boolean',
     ];
 }

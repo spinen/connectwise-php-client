@@ -7,7 +7,12 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class PortalReport
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $url
+ * @property boolean $openSameWindowFlag
+ * @property boolean $customFlag
+ * @property boolean $displayFlag
  */
 class PortalReport extends Model
 {
@@ -17,6 +22,11 @@ class PortalReport extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'url' => 'string',
+        'openSameWindowFlag' => 'boolean',
+        'customFlag' => 'boolean',
+        'displayFlag' => 'boolean',
     ];
 }

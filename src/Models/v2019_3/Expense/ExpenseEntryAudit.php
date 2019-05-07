@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ExpenseEntryAudit
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $message
+ * @property string $oldValue
+ * @property string $newValue
+ * @property string $value
  */
 class ExpenseEntryAudit extends Model
 {
@@ -17,6 +21,10 @@ class ExpenseEntryAudit extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'message' => 'string',
+        'oldValue' => 'string',
+        'newValue' => 'string',
+        'value' => 'string',
     ];
 }

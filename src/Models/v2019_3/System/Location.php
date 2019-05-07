@@ -7,7 +7,23 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Location
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $ownerLevelId
+ * @property string $name
+ * @property string $salesRep
+ * @property string $overrideAddressLine1
+ * @property string $overrideAddressLine2
+ * @property string $overrideCity
+ * @property string $overrideState
+ * @property string $overrideZip
+ * @property string $overridePhoneNumber
+ * @property string $overrideFaxNumber
+ * @property string $owaUrl
+ * @property string $payrollXref
+ * @property boolean $locationFlag
+ * @property boolean $clientFlag
+ * @property array $workRoleIds
+ * @property array $departmentIds
  */
 class Location extends Model
 {
@@ -17,6 +33,22 @@ class Location extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'ownerLevelId' => 'integer',
+        'name' => 'string',
+        'salesRep' => 'string',
+        'overrideAddressLine1' => 'string',
+        'overrideAddressLine2' => 'string',
+        'overrideCity' => 'string',
+        'overrideState' => 'string',
+        'overrideZip' => 'string',
+        'overridePhoneNumber' => 'string',
+        'overrideFaxNumber' => 'string',
+        'owaUrl' => 'string',
+        'payrollXref' => 'string',
+        'locationFlag' => 'boolean',
+        'clientFlag' => 'boolean',
+        'workRoleIds' => 'array',
+        'departmentIds' => 'array',
     ];
 }

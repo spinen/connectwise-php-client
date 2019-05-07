@@ -7,7 +7,14 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class BoardTeam
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property array $members
+ * @property boolean $defaultFlag
+ * @property boolean $notifyOnTicketDelete
+ * @property integer $boardId
+ * @property integer $locationId
+ * @property integer $businessUnitId
  */
 class BoardTeam extends Model
 {
@@ -17,6 +24,13 @@ class BoardTeam extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'members' => 'array',
+        'defaultFlag' => 'boolean',
+        'notifyOnTicketDelete' => 'boolean',
+        'boardId' => 'integer',
+        'locationId' => 'integer',
+        'businessUnitId' => 'integer',
     ];
 }

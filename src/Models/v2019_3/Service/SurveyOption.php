@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class SurveyOption
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $caption
+ * @property integer $points
+ * @property boolean $visibleflag
  */
 class SurveyOption extends Model
 {
@@ -17,6 +20,9 @@ class SurveyOption extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'caption' => 'string',
+        'points' => 'integer',
+        'visibleflag' => 'boolean',
     ];
 }

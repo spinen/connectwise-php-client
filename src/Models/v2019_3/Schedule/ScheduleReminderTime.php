@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ScheduleReminderTime
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $time
+ * @property string $name
+ * @property boolean $defaultFlag
  */
 class ScheduleReminderTime extends Model
 {
@@ -17,6 +20,9 @@ class ScheduleReminderTime extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'time' => 'integer',
+        'name' => 'string',
+        'defaultFlag' => 'boolean',
     ];
 }

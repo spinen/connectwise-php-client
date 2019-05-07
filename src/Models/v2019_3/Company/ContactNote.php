@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ContactNote
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $contactId
+ * @property string $text
+ * @property boolean $flagged
+ * @property string $enteredBy
  */
 class ContactNote extends Model
 {
@@ -17,6 +21,10 @@ class ContactNote extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'contactId' => 'integer',
+        'text' => 'string',
+        'flagged' => 'boolean',
+        'enteredBy' => 'string',
     ];
 }

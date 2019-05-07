@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class AccountingUnpostedInvoiceTaxableLevel
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $taxLevel
+ * @property string $taxCodeXref
+ * @property double $taxAmount
  */
 class AccountingUnpostedInvoiceTaxableLevel extends Model
 {
@@ -17,6 +20,9 @@ class AccountingUnpostedInvoiceTaxableLevel extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'taxLevel' => 'integer',
+        'taxCodeXref' => 'string',
+        'taxAmount' => 'double',
     ];
 }

@@ -7,7 +7,13 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class TrackAction
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $notifyType
+ * @property string $emailRecipient
+ * @property string $emailFrom
+ * @property string $subject
+ * @property string $notes
+ * @property integer $daysToExecute
  */
 class TrackAction extends Model
 {
@@ -17,6 +23,12 @@ class TrackAction extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'notifyType' => 'string',
+        'emailRecipient' => 'string',
+        'emailFrom' => 'string',
+        'subject' => 'string',
+        'notes' => 'string',
+        'daysToExecute' => 'integer',
     ];
 }

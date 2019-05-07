@@ -7,7 +7,12 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Management
  *
- * @property integer $count
+ * @property integer $id
+ * @property carbon $runTime
+ * @property boolean $scheduleExecutiveSummaryReportFlag
+ * @property integer $executiveSummaryReportScheduleDay
+ * @property integer $executiveSummaryReportScheduleHour
+ * @property integer $executiveSummaryReportScheduleMinute
  */
 class Management extends Model
 {
@@ -17,6 +22,11 @@ class Management extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'runTime' => 'carbon',
+        'scheduleExecutiveSummaryReportFlag' => 'boolean',
+        'executiveSummaryReportScheduleDay' => 'integer',
+        'executiveSummaryReportScheduleHour' => 'integer',
+        'executiveSummaryReportScheduleMinute' => 'integer',
     ];
 }

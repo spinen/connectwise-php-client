@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class InvoiceTemplateSetup
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $customFlag
  */
 class InvoiceTemplateSetup extends Model
 {
@@ -17,6 +19,8 @@ class InvoiceTemplateSetup extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'customFlag' => 'boolean',
     ];
 }

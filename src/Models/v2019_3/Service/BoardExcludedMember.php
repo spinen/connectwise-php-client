@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class BoardExcludedMember
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $memberId
+ * @property integer $boardId
  */
 class BoardExcludedMember extends Model
 {
@@ -17,6 +19,8 @@ class BoardExcludedMember extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'memberId' => 'integer',
+        'boardId' => 'integer',
     ];
 }

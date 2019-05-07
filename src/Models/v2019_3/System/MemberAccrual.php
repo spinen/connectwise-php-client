@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class MemberAccrual
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $accrualType
+ * @property integer $year
+ * @property double $hours
+ * @property string $reason
  */
 class MemberAccrual extends Model
 {
@@ -17,6 +21,10 @@ class MemberAccrual extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'accrualType' => 'string',
+        'year' => 'integer',
+        'hours' => 'double',
+        'reason' => 'string',
     ];
 }

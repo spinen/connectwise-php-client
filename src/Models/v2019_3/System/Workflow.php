@@ -7,7 +7,13 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Workflow
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property boolean $activateFlag
+ * @property integer $batchInterval
+ * @property string $batchFrequencyUnit
+ * @property carbon $batchLastRan
+ * @property string $batchSchedule
  */
 class Workflow extends Model
 {
@@ -17,6 +23,12 @@ class Workflow extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'activateFlag' => 'boolean',
+        'batchInterval' => 'integer',
+        'batchFrequencyUnit' => 'string',
+        'batchLastRan' => 'carbon',
+        'batchSchedule' => 'string',
     ];
 }

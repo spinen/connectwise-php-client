@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class TaxIntegrationInfo
  *
- * @property integer $count
+ * @property integer $id
+ * @property boolean $enabledFlag
+ * @property string $taxIntegrationType
  */
 class TaxIntegrationInfo extends Model
 {
@@ -17,6 +19,8 @@ class TaxIntegrationInfo extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'enabledFlag' => 'boolean',
+        'taxIntegrationType' => 'string',
     ];
 }

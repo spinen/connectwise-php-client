@@ -7,7 +7,8 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ReportCardDetail
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $sortOrder
  */
 class ReportCardDetail extends Model
 {
@@ -17,6 +18,7 @@ class ReportCardDetail extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'sortOrder' => 'integer',
     ];
 }

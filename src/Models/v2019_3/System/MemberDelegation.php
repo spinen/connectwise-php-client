@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class MemberDelegation
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $delegationType
+ * @property carbon $dateStart
+ * @property carbon $dateEnd
  */
 class MemberDelegation extends Model
 {
@@ -17,6 +20,9 @@ class MemberDelegation extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'delegationType' => 'string',
+        'dateStart' => 'carbon',
+        'dateEnd' => 'carbon',
     ];
 }

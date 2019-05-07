@@ -7,7 +7,13 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ContactGroup
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $description
+ * @property boolean $unsubscribeFlag
+ * @property string $companyUnsubcribedEmailMessage
+ * @property string $companyGroupUnsubscribedEmailMessage
+ * @property string $contactUnsubscribedEmailMessage
+ * @property string $contactGroupUnsubscribedEmailMessage
  */
 class ContactGroup extends Model
 {
@@ -17,6 +23,12 @@ class ContactGroup extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'description' => 'string',
+        'unsubscribeFlag' => 'boolean',
+        'companyUnsubcribedEmailMessage' => 'string',
+        'companyGroupUnsubscribedEmailMessage' => 'string',
+        'contactUnsubscribedEmailMessage' => 'string',
+        'contactGroupUnsubscribedEmailMessage' => 'string',
     ];
 }

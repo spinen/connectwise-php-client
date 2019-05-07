@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class SystemSetting
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $description
+ * @property string $value
+ * @property string $valueType
  */
 class SystemSetting extends Model
 {
@@ -17,6 +20,9 @@ class SystemSetting extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'description' => 'string',
+        'value' => 'string',
+        'valueType' => 'string',
     ];
 }

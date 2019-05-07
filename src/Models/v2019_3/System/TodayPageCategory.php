@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class TodayPageCategory
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property integer $sortOrder
  */
 class TodayPageCategory extends Model
 {
@@ -17,6 +19,8 @@ class TodayPageCategory extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'sortOrder' => 'integer',
     ];
 }

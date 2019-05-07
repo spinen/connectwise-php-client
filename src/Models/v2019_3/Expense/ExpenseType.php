@@ -7,7 +7,20 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ExpenseType
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $amountCaption
+ * @property double $reimbursementRate
+ * @property string $billExpenses
+ * @property string $invoiceMarkupOption
+ * @property double $invoiceMarkupAmount
+ * @property boolean $advancedAmountFlag
+ * @property boolean $mileageFlag
+ * @property boolean $quantityFlag
+ * @property boolean $inactiveFlag
+ * @property double $maxAmount
+ * @property string $integrationXRef
+ * @property boolean $defaultFlag
  */
 class ExpenseType extends Model
 {
@@ -17,6 +30,19 @@ class ExpenseType extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'amountCaption' => 'string',
+        'reimbursementRate' => 'double',
+        'billExpenses' => 'string',
+        'invoiceMarkupOption' => 'string',
+        'invoiceMarkupAmount' => 'double',
+        'advancedAmountFlag' => 'boolean',
+        'mileageFlag' => 'boolean',
+        'quantityFlag' => 'boolean',
+        'inactiveFlag' => 'boolean',
+        'maxAmount' => 'double',
+        'integrationXRef' => 'string',
+        'defaultFlag' => 'boolean',
     ];
 }

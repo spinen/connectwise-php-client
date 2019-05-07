@@ -7,7 +7,13 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Currency
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $currencyIdentifier
+ * @property string $name
+ * @property string $symbol
+ * @property boolean $displayIdFlag
+ * @property boolean $displaySymbolFlag
+ * @property string $isoCode
  */
 class Currency extends Model
 {
@@ -17,6 +23,12 @@ class Currency extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'currencyIdentifier' => 'string',
+        'name' => 'string',
+        'symbol' => 'string',
+        'displayIdFlag' => 'boolean',
+        'displaySymbolFlag' => 'boolean',
+        'isoCode' => 'string',
     ];
 }

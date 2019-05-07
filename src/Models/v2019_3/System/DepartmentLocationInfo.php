@@ -7,7 +7,7 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class DepartmentLocationInfo
  *
- * @property integer $count
+ * @property integer $id
  */
 class DepartmentLocationInfo extends Model
 {
@@ -17,6 +17,6 @@ class DepartmentLocationInfo extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
     ];
 }

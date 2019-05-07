@@ -7,7 +7,9 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class LocaleInfo
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $localeCode
  */
 class LocaleInfo extends Model
 {
@@ -17,6 +19,8 @@ class LocaleInfo extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'localeCode' => 'string',
     ];
 }

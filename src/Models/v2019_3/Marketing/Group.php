@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class Group
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $publicDescription
+ * @property boolean $publicFlag
+ * @property boolean $inactiveFlag
  */
 class Group extends Model
 {
@@ -17,6 +21,10 @@ class Group extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'publicDescription' => 'string',
+        'publicFlag' => 'boolean',
+        'inactiveFlag' => 'boolean',
     ];
 }

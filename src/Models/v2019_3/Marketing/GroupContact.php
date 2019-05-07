@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class GroupContact
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $groupId
+ * @property string $note
+ * @property boolean $unsubscribeFlag
  */
 class GroupContact extends Model
 {
@@ -17,6 +20,9 @@ class GroupContact extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'groupId' => 'integer',
+        'note' => 'string',
+        'unsubscribeFlag' => 'boolean',
     ];
 }

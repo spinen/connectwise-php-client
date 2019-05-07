@@ -7,7 +7,14 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ActivityType
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property integer $points
+ * @property boolean $defaultFlag
+ * @property boolean $inactiveFlag
+ * @property boolean $emailFlag
+ * @property boolean $memoFlag
+ * @property boolean $historyFlag
  */
 class ActivityType extends Model
 {
@@ -17,6 +24,13 @@ class ActivityType extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'points' => 'integer',
+        'defaultFlag' => 'boolean',
+        'inactiveFlag' => 'boolean',
+        'emailFlag' => 'boolean',
+        'memoFlag' => 'boolean',
+        'historyFlag' => 'boolean',
     ];
 }

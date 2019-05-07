@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ContactType
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $description
+ * @property boolean $defaultFlag
+ * @property boolean $serviceAlertFlag
+ * @property string $serviceAlertMessage
  */
 class ContactType extends Model
 {
@@ -17,6 +21,10 @@ class ContactType extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'description' => 'string',
+        'defaultFlag' => 'boolean',
+        'serviceAlertFlag' => 'boolean',
+        'serviceAlertMessage' => 'string',
     ];
 }

@@ -7,7 +7,14 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ProductPickingShippingDetail
  *
- * @property integer $count
+ * @property integer $id
+ * @property integer $pickedQuantity
+ * @property integer $shippedQuantity
+ * @property string $serialNumber
+ * @property array $serialNumberIds
+ * @property string $trackingNumber
+ * @property integer $lineNumber
+ * @property integer $quantity
  */
 class ProductPickingShippingDetail extends Model
 {
@@ -17,6 +24,13 @@ class ProductPickingShippingDetail extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'pickedQuantity' => 'integer',
+        'shippedQuantity' => 'integer',
+        'serialNumber' => 'string',
+        'serialNumberIds' => 'array',
+        'trackingNumber' => 'string',
+        'lineNumber' => 'integer',
+        'quantity' => 'integer',
     ];
 }

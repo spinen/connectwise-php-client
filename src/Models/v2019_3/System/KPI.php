@@ -7,7 +7,11 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class KPI
  *
- * @property integer $count
+ * @property integer $id
+ * @property string $name
+ * @property string $dateFilter
+ * @property integer $sortOrder
+ * @property boolean $inactiveFlag
  */
 class KPI extends Model
 {
@@ -17,6 +21,10 @@ class KPI extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'name' => 'string',
+        'dateFilter' => 'string',
+        'sortOrder' => 'integer',
+        'inactiveFlag' => 'boolean',
     ];
 }

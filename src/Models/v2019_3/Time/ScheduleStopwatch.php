@@ -7,7 +7,18 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ScheduleStopwatch
  *
- * @property integer $count
+ * @property string $billableOption
+ * @property integer $businessUnitId
+ * @property carbon $dateEntered
+ * @property carbon $endTime
+ * @property integer $id
+ * @property string $internalNotes
+ * @property integer $locationId
+ * @property string $notes
+ * @property integer $scheduleId
+ * @property carbon $startTime
+ * @property string $status
+ * @property integer $totalPauseTime
  */
 class ScheduleStopwatch extends Model
 {
@@ -17,6 +28,17 @@ class ScheduleStopwatch extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'billableOption' => 'string',
+        'businessUnitId' => 'integer',
+        'dateEntered' => 'carbon',
+        'endTime' => 'carbon',
+        'id' => 'integer',
+        'internalNotes' => 'string',
+        'locationId' => 'integer',
+        'notes' => 'string',
+        'scheduleId' => 'integer',
+        'startTime' => 'carbon',
+        'status' => 'string',
+        'totalPauseTime' => 'integer',
     ];
 }

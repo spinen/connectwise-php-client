@@ -7,7 +7,10 @@ use Spinen\ConnectWise\Support\Model;
 /**
  * Class ScheduleEntryDetail
  *
- * @property integer $count
+ * @property integer $id
+ * @property carbon $dateStart
+ * @property carbon $dateEnd
+ * @property double $hoursScheduled
  */
 class ScheduleEntryDetail extends Model
 {
@@ -17,6 +20,9 @@ class ScheduleEntryDetail extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'id' => 'integer',
+        'dateStart' => 'carbon',
+        'dateEnd' => 'carbon',
+        'hoursScheduled' => 'double',
     ];
 }
