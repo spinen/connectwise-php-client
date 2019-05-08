@@ -153,7 +153,7 @@ class Client
     /**
      * Build authorization headers to send CW API
      *
-     * @return array
+     * @return string
      */
     public function buildAuth()
     {
@@ -161,10 +161,7 @@ class Client
             $this->token->refresh($this);
         }
 
-        return [
-            $this->token->getUsername(),
-            $this->token->getPassword(),
-        ];
+        return 'Basic ' . base64_encode($this->token->getUsername() . ':' . $this->token->getPassword());
     }
 
     /**
@@ -182,7 +179,6 @@ class Client
         return array_merge_recursive(
             $options,
             [
-                'auth'    => $this->buildAuth(),
                 'headers' => $this->getHeaders(),
             ]
         );
@@ -233,12 +229,15 @@ class Client
         if ($this->token->isForUser($this->integrator)) {
             return [
                 'x-cw-usertype' => 'integrator',
+                'Authorization' => $this->buildAuth(),
             ];
         }
 
         return array_merge(
             [
-                'Accept' => 'application/vnd.connectwise.com+json; version=' . $this->version,
+                'x-cw-usertype' => 'member',
+                'Accept'        => 'application/vnd.connectwise.com+json; version=' . $this->version,
+                'Authorization' => $this->buildAuth(),
             ],
             $this->headers
         );

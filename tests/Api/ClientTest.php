@@ -248,10 +248,7 @@ class ClientTest extends TestCase
                     ->withNoArgs()
                     ->andReturn($password);
 
-        list($user, $pass) = $this->client->buildAuth();
-
-        $this->assertEquals($integrator, $user);
-        $this->assertEquals($password, $pass);
+        $this->assertEquals('Basic ' . base64_encode($integrator . ':' . $password), $this->client->buildAuth());
     }
 
     /**
@@ -277,10 +274,7 @@ class ClientTest extends TestCase
                     ->withNoArgs()
                     ->andReturn($password);
 
-        list($user, $pass) = $this->client->buildAuth();
-
-        $this->assertEquals($member, $user);
-        $this->assertEquals($password, $pass);
+        $this->assertEquals('Basic ' . base64_encode($member . ':' . $password), $this->client->buildAuth());
     }
 
     /**
@@ -295,22 +289,16 @@ class ClientTest extends TestCase
 
         $options = [
             'extra'   => 'option',
-            'auth'    => [
-                'extra',
-                $username,
-                $password,
-            ],
             'headers' => [
-                'added' => 'header',
-                'Accept' => 'application/vnd.connectwise.com+json; version=2019.3',
+                'added'         => 'header',
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
+                'x-cw-usertype' => 'member',
+                'Authorization' => 'Basic dXNlcm5hbWU6cGFzc3dvcmQ=',
             ],
         ];
 
         $extras = [
             'extra' => 'option',
-            'auth'  => [
-                'extra',
-            ],
         ];
 
         $this->token->shouldReceive('needsRefreshing')
@@ -376,8 +364,24 @@ class ClientTest extends TestCase
     public function it_allows_the_headers_to_be_worked_with()
     {
         $integrator = 'integrator';
+        $password = 'password';
 
         $this->client->setIntegrator($integrator);
+
+        $this->token->shouldReceive('needsRefreshing')
+                    ->times(4)
+                    ->withNoArgs()
+                    ->andReturn(false);
+
+        $this->token->shouldReceive('getUsername')
+                    ->times(4)
+                    ->withNoArgs()
+                    ->andReturn($integrator);
+
+        $this->token->shouldReceive('getPassword')
+                    ->times(4)
+                    ->withNoArgs()
+                    ->andReturn($password);
 
         $this->token->shouldReceive('isForUser')
                     ->times(4)
@@ -385,8 +389,13 @@ class ClientTest extends TestCase
                     ->andReturn(false);
 
         $this->assertEquals(
-            ['Accept' => 'application/vnd.connectwise.com+json; version=2019.3'],
-            $this->client->getHeaders()
+            [
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
+                'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
+                'x-cw-usertype' => 'member',
+            ],
+            $this->client->getHeaders(),
+            'Normal headers'
         );
 
         $this->client->addHeader(
@@ -397,10 +406,13 @@ class ClientTest extends TestCase
 
         $this->assertEquals(
             [
-                'added'  => 'header',
-                'Accept' => 'application/vnd.connectwise.com+json; version=2019.3',
+                'added'         => 'header',
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
+                'x-cw-usertype' => 'member',
+                'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA=='
             ],
-            $this->client->getHeaders()
+            $this->client->getHeaders(),
+            'Added header'
         );
 
         $this->client->setHeaders(
@@ -411,17 +423,25 @@ class ClientTest extends TestCase
 
         $this->assertEquals(
             [
-                'set'    => 'headers',
-                'Accept' => 'application/vnd.connectwise.com+json; version=2019.3',
+                'set'           => 'headers',
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
+                'x-cw-usertype' => 'member',
+                'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA=='
             ],
-            $this->client->getHeaders()
+            $this->client->getHeaders(),
+            'Set header'
         );
 
         $this->client->emptyHeaders();
 
         $this->assertEquals(
-            ['Accept' => 'application/vnd.connectwise.com+json; version=2019.3'],
-            $this->client->getHeaders()
+            [
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
+                'x-cw-usertype' => 'member',
+                'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA=='
+            ],
+            $this->client->getHeaders(),
+            'Empty headers'
         );
     }
 
@@ -431,6 +451,7 @@ class ClientTest extends TestCase
     public function it_gives_specific_headers_for_integrator_token()
     {
         $integrator = 'integrator';
+        $password = 'password';
 
         $this->client->setIntegrator($integrator);
 
@@ -439,13 +460,34 @@ class ClientTest extends TestCase
                     ->with($integrator)
                     ->andReturn(true);
 
+        $this->token->shouldReceive('needsRefreshing')
+                    ->once()
+                    ->withNoArgs()
+                    ->andReturn(false);
+
+        $this->token->shouldReceive('getUsername')
+                    ->once()
+                    ->withNoArgs()
+                    ->andReturn($integrator);
+
+        $this->token->shouldReceive('getPassword')
+                    ->once()
+                    ->withNoArgs()
+                    ->andReturn($password);
+
         $this->client->addHeader(
             [
                 'added' => 'header',
             ]
         );
 
-        $this->assertEquals(['x-cw-usertype' => 'integrator'], $this->client->getHeaders());
+        $this->assertEquals(
+            [
+                'x-cw-usertype' => 'integrator',
+                'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
+            ],
+            $this->client->getHeaders()
+        );
     }
 
     /**
