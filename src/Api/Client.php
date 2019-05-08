@@ -28,6 +28,14 @@ use Spinen\ConnectWise\Support\ModelResolver;
 class Client
 {
     /**
+     * The Client Id
+     *
+     * @var string
+     * @see https://developer.connectwise.com/ClientID
+     */
+    protected $clientId;
+
+    /**
      * @var Guzzle
      */
     protected $guzzle;
@@ -153,7 +161,7 @@ class Client
     /**
      * Build authorization headers to send CW API
      *
-     * @return array
+     * @return string
      */
     public function buildAuth()
     {
@@ -161,10 +169,7 @@ class Client
             $this->token->refresh($this);
         }
 
-        return [
-            $this->token->getUsername(),
-            $this->token->getPassword(),
-        ];
+        return 'Basic ' . base64_encode($this->token->getUsername() . ':' . $this->token->getPassword());
     }
 
     /**
@@ -182,7 +187,6 @@ class Client
         return array_merge_recursive(
             $options,
             [
-                'auth'    => $this->buildAuth(),
                 'headers' => $this->getHeaders(),
             ]
         );
@@ -199,8 +203,6 @@ class Client
     public function buildUri($resource)
     {
         $uri = $this->getUrl() . ltrim($resource, '/');
-
-        var_dump($uri);
 
         if (strlen($uri) > 2000) {
             throw new MalformedRequest(
@@ -224,6 +226,16 @@ class Client
     }
 
     /**
+     * Expose the client id
+     *
+     * @return string
+     */
+    public function getClientId()
+    {
+        return $this->clientId;
+    }
+
+    /**
      * The headers to send
      *
      * When making an integrator call (expired token), then you have to only send the "x-cw-usertype" header.
@@ -232,16 +244,26 @@ class Client
      */
     public function getHeaders()
     {
-        if ($this->token->isForUser($this->integrator)) {
-            return [
-                'x-cw-usertype' => 'integrator',
-            ];
+        $authorization_headers = [
+            'clientId'      => $this->getClientId(),
+            'Authorization' => $this->buildAuth(),
+        ];
+
+        if ($this->token->isForUser($this->getIntegrator())) {
+            return array_merge(
+                [
+                    'x-cw-usertype' => 'integrator',
+                ],
+                $authorization_headers
+            );
         }
 
         return array_merge(
             [
-                'Accept' => 'application/vnd.connectwise.com+json; version=' . $this->version,
+                'x-cw-usertype' => 'member',
+                'Accept'        => 'application/vnd.connectwise.com+json; version=' . $this->getVersion(),
             ],
+            $authorization_headers,
             $this->headers
         );
     }
@@ -277,6 +299,16 @@ class Client
     }
 
     /**
+     * Expose the version
+     *
+     * @return string
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    /**
      * Process the error received from ConnectWise
      *
      * @param RequestException $exception
@@ -304,7 +336,7 @@ class Client
     {
         $response = (array)json_decode($response->getBody(), true);
 
-        if ($model = $this->resolver->find($resource, $this->version)) {
+        if ($model = $this->resolver->find($resource, $this->getVersion())) {
             $model = 'Spinen\ConnectWise\Models\\' . $model;
 
             if ($this->isCollection($response)) {
@@ -346,6 +378,20 @@ class Client
         } catch (RequestException $e) {
             $this->processError($e);
         }
+    }
+
+    /**
+     * Set the Client Id
+     *
+     * @param string $clientId
+     *
+     * @return $this
+     */
+    public function setClientId($clientId)
+    {
+        $this->clientId = $clientId;
+
+        return $this;
     }
 
     /**

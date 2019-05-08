@@ -22,6 +22,10 @@ a member ID of joedoe in connectwise) [NOTE: The "." was removed from joe.doe as
 member ID]. By following this convention, we can infer the member ID from the logged in user's email address in our
 applications. We have included a trait that you can use on the User model that will preform the logic above.
 
+As of 2019.3, they require a `clientId` when connecting to the API, so you will need to register for one here...
+
+[https://developer.connectwise.com/ClientID](https://developer.connectwise.com/ClientID)
+
 ## Models
 
 The responses are cast into models with the properties cast into the types as defined in the Swagger documentation.  You can review the models in the `src/Models` folder.  There is a property named `casts` on each model that instructs the factory on how to cast the properties from the response.  If the `casts` property is empty, then the properties are not defined in the swagger, so an array is returned.
@@ -70,6 +74,7 @@ The package uses the auto registration feature
 
 ```php
     'connectwise' =>  [
+        'client_id' => env('CW_CLIENT_ID'),
         'company_id' => env('CW_COMPANY_ID'),
         // Optional member id to use if there is not a logged in user
         'default_member_id' => env('CW_DEFAULT_MEMBER_ID'),
@@ -84,6 +89,7 @@ The package uses the auto registration feature
 2. Add the appropriate values to your ```.env```...
 
 ```bash
+CW_CLIENT_ID=<the-client-id>
 CW_COMPANY_ID=<company_id>
 CW_DEFAULT_MEMBER_ID=<default_member_id>
 CW_INTEGRATOR=<integrator username>
@@ -185,7 +191,7 @@ Psy Shell v0.8.18 (PHP 7.2.17 — cli) by Justin Hileman
 => GuzzleHttp\Client {#196}
 >>> $resolver = new Spinen\ConnectWise\Support\ModelResolver();
 => Spinen\ConnectWise\Support\ModelResolver {#201}
->>> $client = (new Spinen\ConnectWise\Api\Client($token, $guzzle, $resolver))->setIntegrator('<integrator>')->setPassword('<password>')->setUrl('https://<domain.tld>');
+>>> $client = (new Spinen\ConnectWise\Api\Client($token, $guzzle, $resolver))->setClientId('<the-client-id>')->setIntegrator('<integrator>')->setPassword('<password>')->setUrl('https://<domain.tld>');
 => Spinen\ConnectWise\Api\Client {#231}
 >>> $info = $client->get('system/info');                                                                                                                                                 => Spinen\ConnectWise\Models\v2019_3\System\Info {#237}
 >>> $info->toArray();

@@ -82,7 +82,8 @@ class ServiceProvider extends LaravelServiceProvider
                 return (new Client(
                     $app->make(Token::class), $app->make(Guzzle::class),
                     $app->make(ModelResolver::class)
-                ))->setIntegrator($app->config->get('services.connectwise.integrator'))
+                ))->setClientId($app->config->get('services.connectwise.client_id'))
+                  ->setIntegrator($app->config->get('services.connectwise.integrator'))
                   ->setPassword($app->config->get('services.connectwise.password'))
                   ->setUrl($app->config->get('services.connectwise.url'))
                   ->setVersion($app->config->get('services.connectwise.version'));
