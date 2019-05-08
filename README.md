@@ -11,6 +11,13 @@ We solely use [Laravel](http://www.laravel.com) for our applications, so there a
 can use if you are using this client in a Laravel application. We have tried to make sure that you can use the client
 outside of Laravel, and have some documentation about it below.
 
+## Build Status
+
+| Branch | Status | Coverage | Code Quality |
+| ------ | :----: | :------: | :----------: |
+| Develop | [![Build Status](https://travis-ci.org/spinen/connectwise-php-client.svg?branch=develop)](https://travis-ci.org/spinen/connectwise-php-client) | [![Code Coverage](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/badges/coverage.png?b=develop)](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/?branch=develop) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/?branch=develop) |
+| Master | [![Build Status](https://travis-ci.org/spinen/connectwise-php-client.svg?branch=master)](https://travis-ci.org/spinen/connectwise-php-client) | [![Code Coverage](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/badges/coverage.png?b=develop)](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/?branch=develop) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/?branch=master) |
+
 ## Note about the integration
 We are using the "Member Impersonation" model where you set up an integrator username & password with access to the
 "Member API", which makes all calls to ConnectWise performed under the permission of the user (member id) of the

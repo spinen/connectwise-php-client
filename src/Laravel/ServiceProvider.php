@@ -80,7 +80,8 @@ class ServiceProvider extends LaravelServiceProvider
             Client::class,
             function (Application $app) {
                 return (new Client(
-                    $app->make(Token::class), $app->make(Guzzle::class),
+                    $app->make(Token::class),
+                    $app->make(Guzzle::class),
                     $app->make(ModelResolver::class)
                 ))->setClientId($app->config->get('services.connectwise.client_id'))
                   ->setIntegrator($app->config->get('services.connectwise.integrator'))
