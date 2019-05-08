@@ -5,10 +5,9 @@
 [![Latest Unstable Version](https://poser.pugx.org/spinen/connectwise-php-client/v/unstable)](https://packagist.org/packages/spinen/connectwise-php-client)
 [![License](https://poser.pugx.org/spinen/connectwise-php-client/license)](https://packagist.org/packages/spinen/connectwise-php-client)
 
-PHP client for the RestFull ConnectWise APIs. This package used to be based on the SOAP APIs & had 3 separate
-repositories, but as of this version there is only this one.
+PHP client for the RESTful ConnectWise APIs.
 
-We solely use [Laravel](http://www.laravel.com) for our applications, so there is some Laravel specific files that you
+We solely use [Laravel](http://www.laravel.com) for our applications, so there are some Laravel specific files that you
 can use if you are using this client in a Laravel application. We have tried to make sure that you can use the client
 outside of Laravel, and have some documentation about it below.
 
@@ -20,14 +19,14 @@ outside of Laravel, and have some documentation about it below.
 | Master | [![Build Status](https://travis-ci.org/spinen/connectwise-php-client.svg?branch=master)](https://travis-ci.org/spinen/connectwise-php-client) | [![Code Coverage](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/badges/coverage.png?b=develop)](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/?branch=develop) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/?branch=master) |
 
 ## Note about the integration
-We are using the "Member Impersonation" model where you setup an integrator username & password with access to the
+We are using the "Member Impersonation" model where you set up an integrator username & password with access to the
 "Member API", which makes all calls to ConnectWise performed under the permission of the user (member id) of the
 application.
 
 We make all of our ConnectWise users' member ID equal to their email (i.e. joe.doe@spinen.com has
-a member ID of joedoe in connectwise) [NOTE: The "." was removed from joe.doe as ConnectWise does not allow dots in the
+a member ID of joedoe in connectwise) [NOTE: The "." was removed from joe.doe as ConnectWise does not allow periods in the
 member ID]. By following this convention, we can infer the member ID from the logged in user's email address in our
-applications. We have included a trait that you can use on the User model that will preform the logic above.
+applications. We have included a trait that you can use on the User model that will perform the logic above.
 
 As of 2019.3, they require a `clientId` when connecting to the API, so you will need to register for one here...
 
@@ -43,17 +42,17 @@ Some of the responses have links to the related resource.  If a property has a r
 
 ## Install
 
-Install ConnectWise PHP Client:
+Install the ConnectWise PHP Client:
 
 ```bash
-    $ composer require spinen/connectwise-php-client
+$ composer require spinen/connectwise-php-client
 ```
 
 ## Laravel Configuration and Usage
 
-### For >= Laravel 5.5, you are done with the Install
+### For >= Laravel 5.5, you are done with the installation
 
-The package uses the auto registration feature
+The package uses the [auto registration feature](https://laravel.com/docs/5.8/packages#package-discovery) of Laravel 5.
 
 ### For < Laravel 5.5, you have to register the Service Provider
 
@@ -200,7 +199,7 @@ Psy Shell v0.8.18 (PHP 7.2.17 — cli) by Justin Hileman
 => Spinen\ConnectWise\Support\ModelResolver {#201}
 >>> $client = (new Spinen\ConnectWise\Api\Client($token, $guzzle, $resolver))->setClientId('<the-client-id>')->setIntegrator('<integrator>')->setPassword('<password>')->setUrl('https://<domain.tld>');
 => Spinen\ConnectWise\Api\Client {#231}
->>> $info = $client->get('system/info');                                                                                                                                                 => Spinen\ConnectWise\Models\v2019_3\System\Info {#237}
+>>> $info = $client->get('system/info');                                                                                                                     => Spinen\ConnectWise\Models\v2019_3\System\Info {#237}
 >>> $info->toArray();
 => [
      "version" => "v2018.6.59996",
@@ -221,13 +220,13 @@ Psy Shell v0.8.18 (PHP 7.2.17 — cli) by Justin Hileman
 
 ## Supported API Model Versions
 
-You can specify the version of the model you want in one of the 3 ways...
+You can specify the version of the models you want in 1 of 3 ways...
 
-1. The 4th parameter in teh `Client` construct
+1. The 4th parameter in the `Client` constructor
 2. Calling the `setVersion` method on the `client` object
 3. [Laravel only] Setting the `version` property in the config
 
-The supported versions are
+The supported versions are:
 
 * 2018.4
 * 2018.5
