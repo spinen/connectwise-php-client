@@ -28,6 +28,14 @@ use Spinen\ConnectWise\Support\ModelResolver;
 class Client
 {
     /**
+     * The Client Id
+     *
+     * @var string
+     * @see https://developer.connectwise.com/ClientID
+     */
+    protected $clientId;
+
+    /**
      * @var Guzzle
      */
     protected $guzzle;
@@ -218,6 +226,16 @@ class Client
     }
 
     /**
+     * Expose the client id
+     *
+     * @return string
+     */
+    public function getClientId()
+    {
+        return $this->clientId;
+    }
+
+    /**
      * The headers to send
      *
      * When making an integrator call (expired token), then you have to only send the "x-cw-usertype" header.
@@ -226,19 +244,26 @@ class Client
      */
     public function getHeaders()
     {
+        $authorization_headers = [
+            'clientId'      => $this->getClientId(),
+            'Authorization' => $this->buildAuth(),
+        ];
+
         if ($this->token->isForUser($this->integrator)) {
-            return [
-                'x-cw-usertype' => 'integrator',
-                'Authorization' => $this->buildAuth(),
-            ];
+            return array_merge(
+                [
+                    'x-cw-usertype' => 'integrator',
+                ],
+                $authorization_headers
+            );
         }
 
         return array_merge(
             [
                 'x-cw-usertype' => 'member',
                 'Accept'        => 'application/vnd.connectwise.com+json; version=' . $this->version,
-                'Authorization' => $this->buildAuth(),
             ],
+            $authorization_headers,
             $this->headers
         );
     }
@@ -343,6 +368,20 @@ class Client
         } catch (RequestException $e) {
             $this->processError($e);
         }
+    }
+
+    /**
+     * Set the Client Id
+     *
+     * @param string $clientId
+     *
+     * @return $this
+     */
+    public function setClientId($clientId)
+    {
+        $this->clientId = $clientId;
+
+        return $this;
     }
 
     /**

@@ -45,7 +45,7 @@ class ClientTest extends TestCase
 
         $this->resolver = Mockery::mock(ModelResolver::class);
 
-        $this->client = new Client($this->token, $this->guzzle, $this->resolver);
+        $this->client = (new Client($this->token, $this->guzzle, $this->resolver))->setClientId('some-client-id');
     }
 
     /**
@@ -294,6 +294,7 @@ class ClientTest extends TestCase
                 'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
                 'x-cw-usertype' => 'member',
                 'Authorization' => 'Basic dXNlcm5hbWU6cGFzc3dvcmQ=',
+                'clientId'      => 'some-client-id',
             ],
         ];
 
@@ -393,6 +394,7 @@ class ClientTest extends TestCase
                 'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
                 'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
                 'x-cw-usertype' => 'member',
+                'clientId'      => 'some-client-id',
             ],
             $this->client->getHeaders(),
             'Normal headers'
@@ -409,7 +411,8 @@ class ClientTest extends TestCase
                 'added'         => 'header',
                 'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
                 'x-cw-usertype' => 'member',
-                'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA=='
+                'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
+                'clientId'      => 'some-client-id',
             ],
             $this->client->getHeaders(),
             'Added header'
@@ -426,7 +429,8 @@ class ClientTest extends TestCase
                 'set'           => 'headers',
                 'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
                 'x-cw-usertype' => 'member',
-                'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA=='
+                'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
+                'clientId'      => 'some-client-id',
             ],
             $this->client->getHeaders(),
             'Set header'
@@ -438,7 +442,8 @@ class ClientTest extends TestCase
             [
                 'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
                 'x-cw-usertype' => 'member',
-                'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA=='
+                'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
+                'clientId'      => 'some-client-id',
             ],
             $this->client->getHeaders(),
             'Empty headers'
@@ -485,6 +490,7 @@ class ClientTest extends TestCase
             [
                 'x-cw-usertype' => 'integrator',
                 'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
+                'clientId'      => 'some-client-id',
             ],
             $this->client->getHeaders()
         );
