@@ -249,7 +249,7 @@ class Client
             'Authorization' => $this->buildAuth(),
         ];
 
-        if ($this->token->isForUser($this->integrator)) {
+        if ($this->token->isForUser($this->getIntegrator())) {
             return array_merge(
                 [
                     'x-cw-usertype' => 'integrator',
@@ -261,7 +261,7 @@ class Client
         return array_merge(
             [
                 'x-cw-usertype' => 'member',
-                'Accept'        => 'application/vnd.connectwise.com+json; version=' . $this->version,
+                'Accept'        => 'application/vnd.connectwise.com+json; version=' . $this->getVersion(),
             ],
             $authorization_headers,
             $this->headers
@@ -299,6 +299,16 @@ class Client
     }
 
     /**
+     * Expose the version
+     *
+     * @return string
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    /**
      * Process the error received from ConnectWise
      *
      * @param RequestException $exception
@@ -326,7 +336,7 @@ class Client
     {
         $response = (array)json_decode($response->getBody(), true);
 
-        if ($model = $this->resolver->find($resource, $this->version)) {
+        if ($model = $this->resolver->find($resource, $this->getVersion())) {
             $model = 'Spinen\ConnectWise\Models\\' . $model;
 
             if ($this->isCollection($response)) {
