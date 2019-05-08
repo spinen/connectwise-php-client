@@ -4,9 +4,11 @@ namespace Spinen\ConnectWise\Api;
 
 use GuzzleHttp\Client as Guzzle;
 use GuzzleHttp\Psr7\Response;
+use Illuminate\Support\Str;
 use InvalidArgumentException;
 use Mockery;
 use Mockery\Mock;
+use Spinen\ConnectWise\Exceptions\MalformedRequest;
 use Spinen\ConnectWise\Models\v2019_3\System\Info;
 use Spinen\ConnectWise\Support\Collection;
 use Spinen\ConnectWise\Support\ModelResolver;
@@ -349,6 +351,23 @@ class ClientTest extends TestCase
             'https://host.tld/v4_6_release/apis/3.0/some/resource',
             $this->client->buildUri('/some/resource')
         );
+    }
+
+    /**
+     * @test
+     */
+    public function it_raises_exception_when_query_is_over_2000_characters()
+    {
+        $this->client->setUrl('https://host.tld');
+
+        // Long enough to get 2000 with the rest of the uri
+        $resource = Str::random(2000 - strlen($this->client->buildUri(null)));
+
+        $this->assertEquals(2000, strlen($this->client->buildUri($resource)), 'Top of the limit');
+
+        $this->expectException(MalformedRequest::class);
+
+        $this->client->buildUri($resource . '1');
     }
 
     /**

@@ -8,6 +8,7 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Response;
 use InvalidArgumentException;
+use Spinen\ConnectWise\Exceptions\MalformedRequest;
 use Spinen\ConnectWise\Support\Collection;
 use Spinen\ConnectWise\Support\Model;
 use Spinen\ConnectWise\Support\ModelResolver;
@@ -118,6 +119,7 @@ class Client
      *
      * @return Collection|Model|Response
      * @throws GuzzleException
+     * @throws MalformedRequest
      */
     public function __call($verb, $args)
     {
@@ -192,10 +194,21 @@ class Client
      * @param string $resource
      *
      * @return string
+     * @throws MalformedRequest
      */
     public function buildUri($resource)
     {
-        return $this->getUrl() . ltrim($resource, '/');
+        $uri = $this->getUrl() . ltrim($resource, '/');
+
+        var_dump($uri);
+
+        if (strlen($uri) > 2000) {
+            throw new MalformedRequest(
+                sprintf("The uri is too long. It is %s character(s) over the 2000 limit.", strlen($uri) - 2000)
+            );
+        }
+
+        return $uri;
     }
 
     /**
@@ -322,6 +335,7 @@ class Client
      *
      * @return Collection|Model|Response
      * @throws GuzzleException
+     * @throws MalformedRequest
      */
     protected function request($method, $resource, array $options = [])
     {
