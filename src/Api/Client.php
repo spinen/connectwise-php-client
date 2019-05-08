@@ -200,8 +200,6 @@ class Client
     {
         $uri = $this->getUrl() . ltrim($resource, '/');
 
-        var_dump($uri);
-
         if (strlen($uri) > 2000) {
             throw new MalformedRequest(
                 sprintf("The uri is too long. It is %s character(s) over the 2000 limit.", strlen($uri) - 2000)
