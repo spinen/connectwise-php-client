@@ -191,7 +191,7 @@ Psy Shell v0.8.18 (PHP 7.2.17 — cli) by Justin Hileman
 => GuzzleHttp\Client {#196}
 >>> $resolver = new Spinen\ConnectWise\Support\ModelResolver();
 => Spinen\ConnectWise\Support\ModelResolver {#201}
->>> $client = (new Spinen\ConnectWise\Api\Client($token, $guzzle, $resolver))->setClientId('<the-client-id>')->->setIntegrator('<integrator>')->setPassword('<password>')->setUrl('https://<domain.tld>');
+>>> $client = (new Spinen\ConnectWise\Api\Client($token, $guzzle, $resolver))->setClientId('<the-client-id>')->setIntegrator('<integrator>')->setPassword('<password>')->setUrl('https://<domain.tld>');
 => Spinen\ConnectWise\Api\Client {#231}
 >>> $info = $client->get('system/info');                                                                                                                                                 => Spinen\ConnectWise\Models\v2019_3\System\Info {#237}
 >>> $info->toArray();
