@@ -9,6 +9,16 @@ class Swagger
     /**
      * @var Collection
      */
+    public $map;
+
+    /**
+     * @var Collection
+     */
+    public $models;
+
+    /**
+     * @var Collection
+     */
     public $specs;
 
     /**
@@ -18,6 +28,8 @@ class Swagger
 
     public function __construct($file, $version)
     {
+        $this->map = collect([]);
+        $this->models = collect([]);
         $this->specs = collect(json_decode(file_get_contents($file), true));
         $this->version = $version;
     }
@@ -49,9 +61,6 @@ class {{ Class }} extends Model
 }}
 
 EOF;
-
-        echo "Make model ]" . $class . "[ for title ]" . $this->getTitle() . "[\n";
-
         $casts = null;
         $properties = null;
 
@@ -97,9 +106,23 @@ EOF;
     public function parseDefinitions()
     {
         foreach ($this->specs['definitions'] as $class => $attributes) {
-            $model = $this->convertDefinitionToModel($class, $attributes);
+            $this->models[$class] = $this->convertDefinitionToModel($class, $attributes);
+        };
 
-            var_dump($model);
+        return $this;
+    }
+
+    public function parsePaths()
+    {
+        foreach ($this->specs['paths'] as $path => $actions) {
+            if (array_key_exists('get', $actions) && array_key_exists('schema', $actions['get']['responses'][200])) {
+                $schema = $actions['get']['responses'][200]['schema'];
+
+                // Single item or collection of items
+                $ref = $schema['$ref'] ?? $schema['items']['$ref'];
+
+                $this->map[$path] = $this->getNamespace(collect(explode('/', $ref))->last());
+            }
         };
 
         return $this;
@@ -135,9 +158,9 @@ class Loader
     {
         $this->swaggers->each(
             function (Swagger $swagger) {
-                echo "Make folder for " . $swagger->getTitle() . "\n";
-
                 $swagger->parseDefinitions();
+
+                $swagger->parsePaths();
             }
         );
 
@@ -146,7 +169,33 @@ class Loader
 }
 
 /** @var Loader $loader */
-$loader = (new Loader())->loadVersion('v2019_3')
-                        ->process();
+$loader = new Loader();
+
+foreach (glob(__DIR__ . "/swagger/*") as $version) {
+    $version = basename($version);
+
+    $loader->loadVersion($version)
+           ->process()->swaggers->each(
+            function (Swagger $swagger) use ($version) {
+                $directory = __DIR__ . '/Generated/' . $version . '/' . $swagger->getTitle();
+
+                mkdir($directory, 0755, true);
+
+                $swagger->models->each(
+                    function ($contents, $model) use ($directory) {
+                        file_put_contents($directory . '/' . $model . '.php', $contents);
+                    }
+                );
+            }
+        );
+
+    $loader->swaggers->last(
+        function (Swagger $swagger) use ($version) {
+            $directory = __DIR__ . '/Generated/' . $version;
+
+            file_put_contents($directory . '/map.json', $swagger->map->toJson());
+        }
+    );
+}
 
 
