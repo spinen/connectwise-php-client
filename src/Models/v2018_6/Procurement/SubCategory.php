@@ -5,12 +5,16 @@ namespace Spinen\ConnectWise\Models\v2018_6\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SubCategory
+ * Class SubCategory Version v2018_6
+ * 
+ * Model for SubCategory
  *
  * @property integer $id
  * @property string $name
  * @property boolean $inactiveFlag
  * @property string $integrationXref
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\ProductCategoryReference $category
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
  */
 class SubCategory extends Model
 {
@@ -24,5 +28,7 @@ class SubCategory extends Model
         'name' => 'string',
         'inactiveFlag' => 'boolean',
         'integrationXref' => 'string',
+        'category' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\ProductCategoryReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
     ];
 }

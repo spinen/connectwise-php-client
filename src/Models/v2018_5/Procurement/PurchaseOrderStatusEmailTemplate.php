@@ -5,9 +5,12 @@ namespace Spinen\ConnectWise\Models\v2018_5\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PurchaseOrderStatusEmailTemplate
+ * Class PurchaseOrderStatusEmailTemplate Version v2018_5
+ * 
+ * Model for PurchaseOrderStatusEmailTemplate
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_5\Procurement\PurchaseOrderStatusReference $status
  * @property boolean $useSenderFlag
  * @property string $firstName
  * @property string $lastName
@@ -15,6 +18,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $subject
  * @property string $body
  * @property boolean $copySenderFlag
+ * @property Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata $_info
  */
 class PurchaseOrderStatusEmailTemplate extends Model
 {
@@ -25,6 +29,7 @@ class PurchaseOrderStatusEmailTemplate extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'status' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\PurchaseOrderStatusReference',
         'useSenderFlag' => 'boolean',
         'firstName' => 'string',
         'lastName' => 'string',
@@ -32,5 +37,6 @@ class PurchaseOrderStatusEmailTemplate extends Model
         'subject' => 'string',
         'body' => 'string',
         'copySenderFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata',
     ];
 }

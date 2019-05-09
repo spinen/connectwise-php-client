@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_1\Time;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TimePeriodSetup
+ * Class TimePeriodSetup Version v2019_1
+ * 
+ * Model for TimePeriodSetup
  *
  * @property integer $id
  * @property string $periodApplyTo
@@ -20,6 +22,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $semiMonthlyLastDayFlag
  * @property boolean $lastDayFlag
  * @property integer $daysPastEndDate
+ * @property Spinen\ConnectWise\Models\v2019_1\Time\Metadata $_info
  */
 class TimePeriodSetup extends Model
 {
@@ -42,5 +45,6 @@ class TimePeriodSetup extends Model
         'semiMonthlyLastDayFlag' => 'boolean',
         'lastDayFlag' => 'boolean',
         'daysPastEndDate' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Time\Metadata',
     ];
 }

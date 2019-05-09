@@ -5,11 +5,16 @@ namespace Spinen\ConnectWise\Models\v2018_5\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Crm
+ * Class Crm Version v2018_5
+ * 
+ * Model for Crm
  *
  * @property integer $id
  * @property integer $companyListCount
  * @property boolean $lockProbabilityFlag
+ * @property Spinen\ConnectWise\Models\v2018_5\System\TeamRoleReference $accountManagerRole
+ * @property Spinen\ConnectWise\Models\v2018_5\System\TeamRoleReference $technicalContactRole
+ * @property Spinen\ConnectWise\Models\v2018_5\System\TeamRoleReference $salesRepRole
  * @property boolean $companyIdGenerationFlag
  * @property boolean $excludeSpacesFlag
  * @property string $field1Caption
@@ -27,6 +32,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $other1Caption
  * @property string $other2Caption
  * @property boolean $defaultYear
+ * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
  */
 class Crm extends Model
 {
@@ -39,6 +45,9 @@ class Crm extends Model
         'id' => 'integer',
         'companyListCount' => 'integer',
         'lockProbabilityFlag' => 'boolean',
+        'accountManagerRole' => 'Spinen\ConnectWise\Models\v2018_5\System\TeamRoleReference',
+        'technicalContactRole' => 'Spinen\ConnectWise\Models\v2018_5\System\TeamRoleReference',
+        'salesRepRole' => 'Spinen\ConnectWise\Models\v2018_5\System\TeamRoleReference',
         'companyIdGenerationFlag' => 'boolean',
         'excludeSpacesFlag' => 'boolean',
         'field1Caption' => 'string',
@@ -56,5 +65,6 @@ class Crm extends Model
         'other1Caption' => 'string',
         'other2Caption' => 'string',
         'defaultYear' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
     ];
 }

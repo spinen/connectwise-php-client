@@ -5,12 +5,16 @@ namespace Spinen\ConnectWise\Models\v2019_3\Project;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProjectNote
+ * Class ProjectNote Version v2019_3
+ * 
+ * Model for ProjectNote
  *
  * @property integer $id
  * @property integer $projectId
  * @property string $text
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\NoteTypeReference $type
  * @property boolean $flagged
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\Metadata $_info
  */
 class ProjectNote extends Model
 {
@@ -23,6 +27,8 @@ class ProjectNote extends Model
         'id' => 'integer',
         'projectId' => 'integer',
         'text' => 'string',
+        'type' => 'Spinen\ConnectWise\Models\v2019_3\Project\NoteTypeReference',
         'flagged' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Project\Metadata',
     ];
 }

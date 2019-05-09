@@ -5,19 +5,32 @@ namespace Spinen\ConnectWise\Models\v2019_1\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SLA
+ * Class SLA Version v2019_1
+ * 
+ * Model for SLA
  *
  * @property integer $id
  * @property string $name
  * @property string $basedOn
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\CalendarReference $customCalendar
  * @property boolean $defaultFlag
  * @property integer $applicationOrder
- * @property double $respondHours
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference $hiImpactHiUrgency
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference $hiImpactMedUrgency
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference $hiImpactLowUrgency
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference $medImpactHiUrgency
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference $medImpactMedUrgency
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference $medImpactLowUrgency
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference $lowImpactHiUrgency
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference $lowImpactMedUrgency
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference $lowImpactLowUrgency
+ * @property number $respondHours
  * @property integer $respondPercent
- * @property double $planWithin
+ * @property number $planWithin
  * @property integer $planWithinPercent
- * @property double $resolutionHours
+ * @property number $resolutionHours
  * @property integer $resolutionPercent
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
  */
 class SLA extends Model
 {
@@ -30,13 +43,24 @@ class SLA extends Model
         'id' => 'integer',
         'name' => 'string',
         'basedOn' => 'string',
+        'customCalendar' => 'Spinen\ConnectWise\Models\v2019_1\Service\CalendarReference',
         'defaultFlag' => 'boolean',
         'applicationOrder' => 'integer',
-        'respondHours' => 'double',
+        'hiImpactHiUrgency' => 'Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference',
+        'hiImpactMedUrgency' => 'Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference',
+        'hiImpactLowUrgency' => 'Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference',
+        'medImpactHiUrgency' => 'Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference',
+        'medImpactMedUrgency' => 'Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference',
+        'medImpactLowUrgency' => 'Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference',
+        'lowImpactHiUrgency' => 'Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference',
+        'lowImpactMedUrgency' => 'Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference',
+        'lowImpactLowUrgency' => 'Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference',
+        'respondHours' => 'number',
         'respondPercent' => 'integer',
-        'planWithin' => 'double',
+        'planWithin' => 'number',
         'planWithinPercent' => 'integer',
-        'resolutionHours' => 'double',
+        'resolutionHours' => 'number',
         'resolutionPercent' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
     ];
 }

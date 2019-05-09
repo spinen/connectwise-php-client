@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_1\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Priority
+ * Class Priority Version v2019_1
+ * 
+ * Model for Priority
  *
  * @property integer $id
  * @property string $name
@@ -13,6 +15,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $sortOrder
  * @property boolean $defaultFlag
  * @property string $imageLink
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
  */
 class Priority extends Model
 {
@@ -28,5 +31,6 @@ class Priority extends Model
         'sortOrder' => 'integer',
         'defaultFlag' => 'boolean',
         'imageLink' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
     ];
 }

@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CustomReport
+ * Class CustomReport Version v2019_2
+ * 
+ * Model for CustomReport
  *
  * @property integer $id
  * @property string $reportLink
@@ -81,6 +83,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $invoiceFlag
  * @property integer $invoiceParamId
  * @property string $invoiceOverride
+ * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  */
 class CustomReport extends Model
 {
@@ -164,5 +167,6 @@ class CustomReport extends Model
         'invoiceFlag' => 'boolean',
         'invoiceParamId' => 'integer',
         'invoiceOverride' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
     ];
 }

@@ -5,12 +5,17 @@ namespace Spinen\ConnectWise\Models\v2019_1\Schedule;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ScheduleType
+ * Class ScheduleType Version v2019_1
+ * 
+ * Model for ScheduleType
  *
  * @property integer $id
  * @property string $name
  * @property string $identifier
+ * @property Spinen\ConnectWise\Models\v2019_1\Schedule\ChargeCodeReference $chargeCode
+ * @property Spinen\ConnectWise\Models\v2019_1\Schedule\ServiceLocationReference $where
  * @property boolean $systemFlag
+ * @property Spinen\ConnectWise\Models\v2019_1\Schedule\Metadata $_info
  */
 class ScheduleType extends Model
 {
@@ -23,6 +28,9 @@ class ScheduleType extends Model
         'id' => 'integer',
         'name' => 'string',
         'identifier' => 'string',
+        'chargeCode' => 'Spinen\ConnectWise\Models\v2019_1\Schedule\ChargeCodeReference',
+        'where' => 'Spinen\ConnectWise\Models\v2019_1\Schedule\ServiceLocationReference',
         'systemFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Schedule\Metadata',
     ];
 }

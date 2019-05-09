@@ -5,10 +5,13 @@ namespace Spinen\ConnectWise\Models\v2018_6\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ReportCard
+ * Class ReportCard Version v2018_6
+ * 
+ * Model for ReportCard
  *
  * @property integer $id
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  */
 class ReportCard extends Model
 {
@@ -20,5 +23,6 @@ class ReportCard extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
     ];
 }

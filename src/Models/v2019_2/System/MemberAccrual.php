@@ -5,13 +5,17 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class MemberAccrual
+ * Class MemberAccrual Version v2019_2
+ * 
+ * Model for MemberAccrual
  *
  * @property integer $id
  * @property string $accrualType
  * @property integer $year
- * @property double $hours
+ * @property number $hours
  * @property string $reason
+ * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  */
 class MemberAccrual extends Model
 {
@@ -24,7 +28,9 @@ class MemberAccrual extends Model
         'id' => 'integer',
         'accrualType' => 'string',
         'year' => 'integer',
-        'hours' => 'double',
+        'hours' => 'number',
         'reason' => 'string',
+        'member' => 'Spinen\ConnectWise\Models\v2019_2\System\MemberReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
     ];
 }

@@ -5,11 +5,16 @@ namespace Spinen\ConnectWise\Models\v2019_1\Project;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProjectBoardTeam
+ * Class ProjectBoardTeam Version v2019_1
+ * 
+ * Model for ProjectBoardTeam
  *
  * @property integer $id
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2019_1\Project\SystemLocationReference $location
+ * @property Spinen\ConnectWise\Models\v2019_1\Project\SystemDepartmentReference $department
  * @property boolean $defaultFlag
+ * @property Spinen\ConnectWise\Models\v2019_1\Project\Metadata $_info
  */
 class ProjectBoardTeam extends Model
 {
@@ -21,6 +26,9 @@ class ProjectBoardTeam extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
+        'location' => 'Spinen\ConnectWise\Models\v2019_1\Project\SystemLocationReference',
+        'department' => 'Spinen\ConnectWise\Models\v2019_1\Project\SystemDepartmentReference',
         'defaultFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Project\Metadata',
     ];
 }

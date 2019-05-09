@@ -5,13 +5,21 @@ namespace Spinen\ConnectWise\Models\v2019_2\Schedule;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ScheduleEntry
+ * Class ScheduleEntry Version v2019_2
+ * 
+ * Model for ScheduleEntry
  *
  * @property integer $id
  * @property integer $objectId
  * @property string $name
- * @property carbon $dateStart
- * @property carbon $dateEnd
+ * @property Spinen\ConnectWise\Models\v2019_2\Schedule\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2019_2\Schedule\ServiceLocationReference $where
+ * @property string $dateStart
+ * @property string $dateEnd
+ * @property Spinen\ConnectWise\Models\v2019_2\Schedule\ReminderReference $reminder
+ * @property Spinen\ConnectWise\Models\v2019_2\Schedule\ScheduleStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2019_2\Schedule\ScheduleTypeReference $type
+ * @property Spinen\ConnectWise\Models\v2019_2\Schedule\ScheduleSpanReference $span
  * @property boolean $doneFlag
  * @property boolean $acknowledgedFlag
  * @property boolean $ownerFlag
@@ -19,8 +27,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $allowScheduleConflictsFlag
  * @property boolean $addMemberToProjectFlag
  * @property integer $projectRoleId
- * @property carbon $closeDate
- * @property double $hours
+ * @property Spinen\ConnectWise\Models\v2019_2\Schedule\Guid $mobileGuid
+ * @property string $closeDate
+ * @property number $hours
+ * @property Spinen\ConnectWise\Models\v2019_2\Schedule\Metadata $_info
  */
 class ScheduleEntry extends Model
 {
@@ -33,8 +43,14 @@ class ScheduleEntry extends Model
         'id' => 'integer',
         'objectId' => 'integer',
         'name' => 'string',
-        'dateStart' => 'carbon',
-        'dateEnd' => 'carbon',
+        'member' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\MemberReference',
+        'where' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\ServiceLocationReference',
+        'dateStart' => 'string',
+        'dateEnd' => 'string',
+        'reminder' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\ReminderReference',
+        'status' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\ScheduleStatusReference',
+        'type' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\ScheduleTypeReference',
+        'span' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\ScheduleSpanReference',
         'doneFlag' => 'boolean',
         'acknowledgedFlag' => 'boolean',
         'ownerFlag' => 'boolean',
@@ -42,7 +58,9 @@ class ScheduleEntry extends Model
         'allowScheduleConflictsFlag' => 'boolean',
         'addMemberToProjectFlag' => 'boolean',
         'projectRoleId' => 'integer',
-        'closeDate' => 'carbon',
-        'hours' => 'double',
+        'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\Guid',
+        'closeDate' => 'string',
+        'hours' => 'number',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\Metadata',
     ];
 }

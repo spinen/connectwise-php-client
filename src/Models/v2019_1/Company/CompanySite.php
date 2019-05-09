@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_1\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CompanySite
+ * Class CompanySite Version v2019_1
+ * 
+ * Model for CompanySite
  *
  * @property integer $id
  * @property string $name
@@ -14,16 +16,23 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $city
  * @property string $state
  * @property string $zip
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\CountryReference $country
  * @property string $addressFormat
  * @property string $phoneNumber
  * @property string $faxNumber
  * @property integer $taxCodeId
- * @property double $expenseReimbursement
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\EntityTypeReference $entityType
+ * @property number $expenseReimbursement
  * @property boolean $primaryAddressFlag
  * @property boolean $defaultShippingFlag
  * @property boolean $defaultBillingFlag
  * @property boolean $defaultMailingFlag
  * @property boolean $inactiveFlag
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\Guid $mobileGuid
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\CalendarReference $calendar
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\TimeZoneSetupReference $timeZone
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
  */
 class CompanySite extends Model
 {
@@ -40,15 +49,22 @@ class CompanySite extends Model
         'city' => 'string',
         'state' => 'string',
         'zip' => 'string',
+        'country' => 'Spinen\ConnectWise\Models\v2019_1\Company\CountryReference',
         'addressFormat' => 'string',
         'phoneNumber' => 'string',
         'faxNumber' => 'string',
         'taxCodeId' => 'integer',
-        'expenseReimbursement' => 'double',
+        'entityType' => 'Spinen\ConnectWise\Models\v2019_1\Company\EntityTypeReference',
+        'expenseReimbursement' => 'number',
         'primaryAddressFlag' => 'boolean',
         'defaultShippingFlag' => 'boolean',
         'defaultBillingFlag' => 'boolean',
         'defaultMailingFlag' => 'boolean',
         'inactiveFlag' => 'boolean',
+        'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_1\Company\Guid',
+        'calendar' => 'Spinen\ConnectWise\Models\v2019_1\Company\CalendarReference',
+        'timeZone' => 'Spinen\ConnectWise\Models\v2019_1\Company\TimeZoneSetupReference',
+        'company' => 'Spinen\ConnectWise\Models\v2019_1\Company\CompanyReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
     ];
 }

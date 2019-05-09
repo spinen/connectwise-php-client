@@ -5,9 +5,14 @@ namespace Spinen\ConnectWise\Models\v2019_1\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CompanyTypeAssociation
+ * Class CompanyTypeAssociation Version v2019_1
+ * 
+ * Model for CompanyTypeAssociation
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\CompanyTypeReference $type
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
  */
 class CompanyTypeAssociation extends Model
 {
@@ -18,5 +23,8 @@ class CompanyTypeAssociation extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'type' => 'Spinen\ConnectWise\Models\v2019_1\Company\CompanyTypeReference',
+        'company' => 'Spinen\ConnectWise\Models\v2019_1\Company\CompanyReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
     ];
 }

@@ -5,12 +5,15 @@ namespace Spinen\ConnectWise\Models\v2019_3\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProductType
+ * Class ProductType Version v2019_3
+ * 
+ * Model for ProductType
  *
  * @property integer $id
  * @property string $name
  * @property boolean $inactiveFlag
  * @property string $typeXref
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
  */
 class ProductType extends Model
 {
@@ -24,5 +27,6 @@ class ProductType extends Model
         'name' => 'string',
         'inactiveFlag' => 'boolean',
         'typeXref' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
     ];
 }

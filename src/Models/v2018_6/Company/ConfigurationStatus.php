@@ -5,12 +5,15 @@ namespace Spinen\ConnectWise\Models\v2018_6\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ConfigurationStatus
+ * Class ConfigurationStatus Version v2018_6
+ * 
+ * Model for ConfigurationStatus
  *
  * @property integer $id
  * @property string $description
  * @property boolean $closedFlag
  * @property boolean $defaultFlag
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
  */
 class ConfigurationStatus extends Model
 {
@@ -24,5 +27,6 @@ class ConfigurationStatus extends Model
         'description' => 'string',
         'closedFlag' => 'boolean',
         'defaultFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
     ];
 }

@@ -5,10 +5,14 @@ namespace Spinen\ConnectWise\Models\v2019_3\Internal;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Session
+ * Class Session Version v2019_3
+ * 
+ * Model for Session
  *
  * @property integer $id
  * @property integer $configurationId
+ * @property Spinen\ConnectWise\Models\v2019_3\Internal\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2019_3\Internal\TicketReference $ticket
  * @property string $sessionGuid
  */
 class Session extends Model
@@ -21,6 +25,8 @@ class Session extends Model
     protected $casts = [
         'id' => 'integer',
         'configurationId' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2019_3\Internal\MemberReference',
+        'ticket' => 'Spinen\ConnectWise\Models\v2019_3\Internal\TicketReference',
         'sessionGuid' => 'string',
     ];
 }

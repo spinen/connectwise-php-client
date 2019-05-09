@@ -5,11 +5,17 @@ namespace Spinen\ConnectWise\Models\v2018_6\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class RmaStatusNotification
+ * Class RmaStatusNotification Version v2018_6
+ * 
+ * Model for RmaStatusNotification
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\NotificationRecipientReference $notifyWho
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\RmaStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\MemberReference $member
  * @property string $email
  * @property integer $workflowStep
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
  */
 class RmaStatusNotification extends Model
 {
@@ -20,7 +26,11 @@ class RmaStatusNotification extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'notifyWho' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\NotificationRecipientReference',
+        'status' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\RmaStatusReference',
+        'member' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\MemberReference',
         'email' => 'string',
         'workflowStep' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
     ];
 }

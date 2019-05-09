@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_5\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TimeExpense
+ * Class TimeExpense Version v2018_5
+ * 
+ * Model for TimeExpense
  *
  * @property integer $id
  * @property boolean $tier1ApprovalFlag
@@ -13,8 +15,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $disableTimeEntryFlag
  * @property boolean $requireTimeNoteFlag
  * @property boolean $requireExpenseNoteFlag
- * @property double $roundingFactor
+ * @property number $roundingFactor
  * @property integer $invoiceStart
+ * @property Spinen\ConnectWise\Models\v2018_5\System\CompanyReference $internalCompany
+ * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
  */
 class TimeExpense extends Model
 {
@@ -30,7 +34,9 @@ class TimeExpense extends Model
         'disableTimeEntryFlag' => 'boolean',
         'requireTimeNoteFlag' => 'boolean',
         'requireExpenseNoteFlag' => 'boolean',
-        'roundingFactor' => 'double',
+        'roundingFactor' => 'number',
         'invoiceStart' => 'integer',
+        'internalCompany' => 'Spinen\ConnectWise\Models\v2018_5\System\CompanyReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
     ];
 }

@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class MappedType
+ * Class MappedType Version v2019_3
+ * 
+ * Model for MappedType
  *
  * @property integer $id
  * @property string $name

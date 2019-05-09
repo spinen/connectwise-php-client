@@ -5,14 +5,21 @@ namespace Spinen\ConnectWise\Models\v2019_3\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AdjustmentDetail
+ * Class AdjustmentDetail Version v2019_3
+ * 
+ * Model for AdjustmentDetail
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\CatalogItemReference $catalogItem
  * @property string $description
- * @property double $quantityOnHand
- * @property double $unitCost
+ * @property number $quantityOnHand
+ * @property number $unitCost
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseReference $warehouse
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseBinReference $warehouseBin
  * @property integer $quantityAdjusted
  * @property string $serialNumber
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\AdjustmentReference $adjustment
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
  */
 class AdjustmentDetail extends Model
 {
@@ -23,10 +30,15 @@ class AdjustmentDetail extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'catalogItem' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\CatalogItemReference',
         'description' => 'string',
-        'quantityOnHand' => 'double',
-        'unitCost' => 'double',
+        'quantityOnHand' => 'number',
+        'unitCost' => 'number',
+        'warehouse' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseReference',
+        'warehouseBin' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseBinReference',
         'quantityAdjusted' => 'integer',
         'serialNumber' => 'string',
+        'adjustment' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\AdjustmentReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
     ];
 }

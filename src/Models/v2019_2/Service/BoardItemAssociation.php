@@ -5,12 +5,17 @@ namespace Spinen\ConnectWise\Models\v2019_2\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BoardItemAssociation
+ * Class BoardItemAssociation Version v2019_2
+ * 
+ * Model for BoardItemAssociation
  *
  * @property integer $id
  * @property array $subTypeAssociationIds
  * @property boolean $addAllSubTypesFlag
  * @property boolean $removeAllSubTypesFlag
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceItemReference $item
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\BoardReference $board
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\Metadata $_info
  */
 class BoardItemAssociation extends Model
 {
@@ -24,5 +29,8 @@ class BoardItemAssociation extends Model
         'subTypeAssociationIds' => 'array',
         'addAllSubTypesFlag' => 'boolean',
         'removeAllSubTypesFlag' => 'boolean',
+        'item' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceItemReference',
+        'board' => 'Spinen\ConnectWise\Models\v2019_2\Service\BoardReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Service\Metadata',
     ];
 }

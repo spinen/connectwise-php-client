@@ -5,15 +5,22 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Workflow
+ * Class Workflow Version v2019_2
+ * 
+ * Model for Workflow
  *
  * @property integer $id
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2019_2\System\WorkflowTableTypeReference $tableType
+ * @property Spinen\ConnectWise\Models\v2019_2\System\SystemLocationReference $location
+ * @property Spinen\ConnectWise\Models\v2019_2\System\SystemDepartmentReference $department
  * @property boolean $activateFlag
  * @property integer $batchInterval
  * @property string $batchFrequencyUnit
- * @property carbon $batchLastRan
+ * @property string $batchLastRan
  * @property string $batchSchedule
+ * @property Spinen\ConnectWise\Models\v2019_2\System\BoardReference $board
+ * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  */
 class Workflow extends Model
 {
@@ -25,10 +32,15 @@ class Workflow extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
+        'tableType' => 'Spinen\ConnectWise\Models\v2019_2\System\WorkflowTableTypeReference',
+        'location' => 'Spinen\ConnectWise\Models\v2019_2\System\SystemLocationReference',
+        'department' => 'Spinen\ConnectWise\Models\v2019_2\System\SystemDepartmentReference',
         'activateFlag' => 'boolean',
         'batchInterval' => 'integer',
         'batchFrequencyUnit' => 'string',
-        'batchLastRan' => 'carbon',
+        'batchLastRan' => 'string',
         'batchSchedule' => 'string',
+        'board' => 'Spinen\ConnectWise\Models\v2019_2\System\BoardReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
     ];
 }

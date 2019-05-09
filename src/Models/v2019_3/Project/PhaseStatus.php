@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_3\Project;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PhaseStatus
+ * Class PhaseStatus Version v2019_3
+ * 
+ * Model for PhaseStatus
  *
  * @property integer $id
  * @property string $name
@@ -14,7 +16,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $collapsedFlag
  * @property boolean $closedFlag
  * @property array $boardAssociationIds
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\StatusIndicatorReference $statusIndicator
  * @property string $customStatusIndicatorName
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\Metadata $_info
  */
 class PhaseStatus extends Model
 {
@@ -31,6 +35,8 @@ class PhaseStatus extends Model
         'collapsedFlag' => 'boolean',
         'closedFlag' => 'boolean',
         'boardAssociationIds' => 'array',
+        'statusIndicator' => 'Spinen\ConnectWise\Models\v2019_3\Project\StatusIndicatorReference',
         'customStatusIndicatorName' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Project\Metadata',
     ];
 }

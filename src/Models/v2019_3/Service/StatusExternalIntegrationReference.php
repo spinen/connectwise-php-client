@@ -5,11 +5,14 @@ namespace Spinen\ConnectWise\Models\v2019_3\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class StatusExternalIntegrationReference
+ * Class StatusExternalIntegrationReference Version v2019_3
+ * 
+ * Model for StatusExternalIntegrationReference
  *
  * @property integer $id
  * @property string $identifier
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2019_3\Service\Metadata $_info
  */
 class StatusExternalIntegrationReference extends Model
 {
@@ -22,5 +25,6 @@ class StatusExternalIntegrationReference extends Model
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Service\Metadata',
     ];
 }

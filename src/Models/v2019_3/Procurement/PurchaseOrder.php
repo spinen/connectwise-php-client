@@ -5,44 +5,60 @@ namespace Spinen\ConnectWise\Models\v2019_3\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PurchaseOrder
+ * Class PurchaseOrder Version v2019_3
+ * 
+ * Model for PurchaseOrder
  *
  * @property integer $id
  * @property integer $businessUnitId
  * @property string $cancelReason
  * @property boolean $closedFlag
  * @property string $customerCity
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\CompanyReference $customerCompany
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\ContactReference $customerContact
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\CountryReference $customerCountry
  * @property string $customerExtension
  * @property string $customerName
  * @property string $customerPhone
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\SiteReference $customerSite
  * @property string $customerSiteName
  * @property string $customerState
  * @property string $customerStreetLine1
  * @property string $customerStreetLine2
  * @property string $customerZip
- * @property carbon $dateClosed
+ * @property string $dateClosed
  * @property boolean $dropShipCustomerFlag
  * @property string $enteredBy
- * @property double $freightCost
+ * @property number $freightCost
  * @property string $freightPackingSlip
- * @property double $freightTaxTotal
+ * @property number $freightTaxTotal
  * @property string $internalNotes
  * @property integer $locationId
- * @property carbon $poDate
+ * @property string $poDate
  * @property string $poNumber
- * @property double $salesTax
- * @property carbon $shipmentDate
+ * @property number $salesTax
+ * @property string $shipmentDate
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\ShipmentMethodReference $shipmentMethod
  * @property string $shippingInstructions
- * @property double $subTotal
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\PurchaseOrderStatusReference $status
+ * @property number $subTotal
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\TaxCodeReference $taxCode
  * @property boolean $taxFreightFlag
  * @property boolean $taxPoFlag
- * @property double $total
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\BillingTermsReference $terms
+ * @property number $total
  * @property string $trackingNumber
  * @property boolean $updateShipmentInfo
  * @property boolean $updateVendorOrderNumber
- * @property carbon $vendorInvoiceDate
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\CompanyReference $vendorCompany
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\ContactReference $vendorContact
+ * @property string $vendorInvoiceDate
  * @property string $vendorInvoiceNumber
  * @property string $vendorOrderNumber
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\SiteReference $vendorSite
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseReference $warehouse
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\CurrencyReference $currency
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
  * @property array $customFields
  */
 class PurchaseOrder extends Model
@@ -58,37 +74,51 @@ class PurchaseOrder extends Model
         'cancelReason' => 'string',
         'closedFlag' => 'boolean',
         'customerCity' => 'string',
+        'customerCompany' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\CompanyReference',
+        'customerContact' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\ContactReference',
+        'customerCountry' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\CountryReference',
         'customerExtension' => 'string',
         'customerName' => 'string',
         'customerPhone' => 'string',
+        'customerSite' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\SiteReference',
         'customerSiteName' => 'string',
         'customerState' => 'string',
         'customerStreetLine1' => 'string',
         'customerStreetLine2' => 'string',
         'customerZip' => 'string',
-        'dateClosed' => 'carbon',
+        'dateClosed' => 'string',
         'dropShipCustomerFlag' => 'boolean',
         'enteredBy' => 'string',
-        'freightCost' => 'double',
+        'freightCost' => 'number',
         'freightPackingSlip' => 'string',
-        'freightTaxTotal' => 'double',
+        'freightTaxTotal' => 'number',
         'internalNotes' => 'string',
         'locationId' => 'integer',
-        'poDate' => 'carbon',
+        'poDate' => 'string',
         'poNumber' => 'string',
-        'salesTax' => 'double',
-        'shipmentDate' => 'carbon',
+        'salesTax' => 'number',
+        'shipmentDate' => 'string',
+        'shipmentMethod' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\ShipmentMethodReference',
         'shippingInstructions' => 'string',
-        'subTotal' => 'double',
+        'status' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\PurchaseOrderStatusReference',
+        'subTotal' => 'number',
+        'taxCode' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\TaxCodeReference',
         'taxFreightFlag' => 'boolean',
         'taxPoFlag' => 'boolean',
-        'total' => 'double',
+        'terms' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\BillingTermsReference',
+        'total' => 'number',
         'trackingNumber' => 'string',
         'updateShipmentInfo' => 'boolean',
         'updateVendorOrderNumber' => 'boolean',
-        'vendorInvoiceDate' => 'carbon',
+        'vendorCompany' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\CompanyReference',
+        'vendorContact' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\ContactReference',
+        'vendorInvoiceDate' => 'string',
         'vendorInvoiceNumber' => 'string',
         'vendorOrderNumber' => 'string',
+        'vendorSite' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\SiteReference',
+        'warehouse' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseReference',
+        'currency' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\CurrencyReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
         'customFields' => 'array',
     ];
 }

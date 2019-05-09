@@ -5,12 +5,15 @@ namespace Spinen\ConnectWise\Models\v2018_5\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class LdapConfiguration
+ * Class LdapConfiguration Version v2018_5
+ * 
+ * Model for LdapConfiguration
  *
  * @property integer $id
  * @property string $name
  * @property string $server
  * @property string $domain
+ * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
  */
 class LdapConfiguration extends Model
 {
@@ -24,5 +27,6 @@ class LdapConfiguration extends Model
         'name' => 'string',
         'server' => 'string',
         'domain' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
     ];
 }

@@ -5,14 +5,17 @@ namespace Spinen\ConnectWise\Models\v2018_6\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AdjustmentType
+ * Class AdjustmentType Version v2018_6
+ * 
+ * Model for AdjustmentType
  *
  * @property integer $id
  * @property string $identifier
  * @property string $name
  * @property boolean $auditTrailFlag
- * @property carbon $dateCreated
+ * @property string $dateCreated
  * @property string $createdBy
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
  */
 class AdjustmentType extends Model
 {
@@ -26,7 +29,8 @@ class AdjustmentType extends Model
         'identifier' => 'string',
         'name' => 'string',
         'auditTrailFlag' => 'boolean',
-        'dateCreated' => 'carbon',
+        'dateCreated' => 'string',
         'createdBy' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
     ];
 }

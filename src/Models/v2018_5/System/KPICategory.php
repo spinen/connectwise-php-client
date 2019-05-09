@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_5\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class KPICategory
+ * Class KPICategory Version v2018_5
+ * 
+ * Model for KPICategory
  *
  * @property integer $id
  * @property string $name

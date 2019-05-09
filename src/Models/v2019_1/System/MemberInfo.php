@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_1\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class MemberInfo
+ * Class MemberInfo Version v2019_1
+ * 
+ * Model for MemberInfo
  *
  * @property integer $id
  * @property string $identifier
@@ -14,6 +16,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $lastName
  * @property string $fullName
  * @property string $defaultEmail
+ * @property Spinen\ConnectWise\Models\v2019_1\System\DocumentReference $photo
+ * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  */
 class MemberInfo extends Model
 {
@@ -30,5 +34,7 @@ class MemberInfo extends Model
         'lastName' => 'string',
         'fullName' => 'string',
         'defaultEmail' => 'string',
+        'photo' => 'Spinen\ConnectWise\Models\v2019_1\System\DocumentReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
     ];
 }

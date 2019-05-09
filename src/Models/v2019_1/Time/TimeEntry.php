@@ -5,17 +5,24 @@ namespace Spinen\ConnectWise\Models\v2019_1\Time;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TimeEntry
+ * Class TimeEntry Version v2019_1
+ * 
+ * Model for TimeEntry
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_1\Time\CompanyReference $company
  * @property integer $chargeToId
  * @property string $chargeToType
+ * @property Spinen\ConnectWise\Models\v2019_1\Time\MemberReference $member
  * @property integer $locationId
  * @property integer $businessUnitId
- * @property carbon $timeStart
- * @property carbon $timeEnd
- * @property double $hoursDeduct
- * @property double $actualHours
+ * @property Spinen\ConnectWise\Models\v2019_1\Time\WorkTypeReference $workType
+ * @property Spinen\ConnectWise\Models\v2019_1\Time\WorkRoleReference $workRole
+ * @property Spinen\ConnectWise\Models\v2019_1\Time\AgreementReference $agreement
+ * @property string $timeStart
+ * @property string $timeEnd
+ * @property number $hoursDeduct
+ * @property number $actualHours
  * @property string $billableOption
  * @property string $notes
  * @property string $internalNotes
@@ -26,11 +33,15 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $emailContactFlag
  * @property boolean $emailCcFlag
  * @property string $emailCc
- * @property double $hoursBilled
+ * @property number $hoursBilled
  * @property string $enteredBy
- * @property carbon $dateEntered
- * @property double $hourlyRate
+ * @property string $dateEntered
+ * @property Spinen\ConnectWise\Models\v2019_1\Time\InvoiceReference $invoice
+ * @property Spinen\ConnectWise\Models\v2019_1\Time\Guid $mobileGuid
+ * @property number $hourlyRate
+ * @property Spinen\ConnectWise\Models\v2019_1\Time\TimeSheetReference $timeSheet
  * @property string $status
+ * @property Spinen\ConnectWise\Models\v2019_1\Time\Metadata $_info
  * @property array $customFields
  */
 class TimeEntry extends Model
@@ -42,14 +53,19 @@ class TimeEntry extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'company' => 'Spinen\ConnectWise\Models\v2019_1\Time\CompanyReference',
         'chargeToId' => 'integer',
         'chargeToType' => 'string',
+        'member' => 'Spinen\ConnectWise\Models\v2019_1\Time\MemberReference',
         'locationId' => 'integer',
         'businessUnitId' => 'integer',
-        'timeStart' => 'carbon',
-        'timeEnd' => 'carbon',
-        'hoursDeduct' => 'double',
-        'actualHours' => 'double',
+        'workType' => 'Spinen\ConnectWise\Models\v2019_1\Time\WorkTypeReference',
+        'workRole' => 'Spinen\ConnectWise\Models\v2019_1\Time\WorkRoleReference',
+        'agreement' => 'Spinen\ConnectWise\Models\v2019_1\Time\AgreementReference',
+        'timeStart' => 'string',
+        'timeEnd' => 'string',
+        'hoursDeduct' => 'number',
+        'actualHours' => 'number',
         'billableOption' => 'string',
         'notes' => 'string',
         'internalNotes' => 'string',
@@ -60,11 +76,15 @@ class TimeEntry extends Model
         'emailContactFlag' => 'boolean',
         'emailCcFlag' => 'boolean',
         'emailCc' => 'string',
-        'hoursBilled' => 'double',
+        'hoursBilled' => 'number',
         'enteredBy' => 'string',
-        'dateEntered' => 'carbon',
-        'hourlyRate' => 'double',
+        'dateEntered' => 'string',
+        'invoice' => 'Spinen\ConnectWise\Models\v2019_1\Time\InvoiceReference',
+        'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_1\Time\Guid',
+        'hourlyRate' => 'number',
+        'timeSheet' => 'Spinen\ConnectWise\Models\v2019_1\Time\TimeSheetReference',
         'status' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Time\Metadata',
         'customFields' => 'array',
     ];
 }

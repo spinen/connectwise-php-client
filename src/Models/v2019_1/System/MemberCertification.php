@@ -5,14 +5,20 @@ namespace Spinen\ConnectWise\Models\v2019_1\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class MemberCertification
+ * Class MemberCertification Version v2019_1
+ * 
+ * Model for MemberCertification
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_1\System\CertificationReference $certification
  * @property integer $percentComplete
- * @property carbon $dateReceived
- * @property carbon $dateExpires
+ * @property string $dateReceived
+ * @property string $dateExpires
  * @property string $certificationNumber
  * @property string $notes
+ * @property Spinen\ConnectWise\Models\v2019_1\System\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2019_1\System\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  */
 class MemberCertification extends Model
 {
@@ -23,10 +29,14 @@ class MemberCertification extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'certification' => 'Spinen\ConnectWise\Models\v2019_1\System\CertificationReference',
         'percentComplete' => 'integer',
-        'dateReceived' => 'carbon',
-        'dateExpires' => 'carbon',
+        'dateReceived' => 'string',
+        'dateExpires' => 'string',
         'certificationNumber' => 'string',
         'notes' => 'string',
+        'member' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberReference',
+        'company' => 'Spinen\ConnectWise\Models\v2019_1\System\CompanyReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
     ];
 }

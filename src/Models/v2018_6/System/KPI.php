@@ -5,10 +5,13 @@ namespace Spinen\ConnectWise\Models\v2018_6\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class KPI
+ * Class KPI Version v2018_6
+ * 
+ * Model for KPI
  *
  * @property integer $id
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2018_6\System\KPICategoryReference $category
  * @property string $dateFilter
  * @property integer $sortOrder
  * @property boolean $inactiveFlag
@@ -23,6 +26,7 @@ class KPI extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
+        'category' => 'Spinen\ConnectWise\Models\v2018_6\System\KPICategoryReference',
         'dateFilter' => 'string',
         'sortOrder' => 'integer',
         'inactiveFlag' => 'boolean',

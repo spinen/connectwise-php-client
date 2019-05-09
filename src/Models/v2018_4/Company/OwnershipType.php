@@ -5,10 +5,13 @@ namespace Spinen\ConnectWise\Models\v2018_4\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class OwnershipType
+ * Class OwnershipType Version v2018_4
+ * 
+ * Model for OwnershipType
  *
  * @property integer $id
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2018_4\Company\Metadata $_info
  */
 class OwnershipType extends Model
 {
@@ -20,5 +23,6 @@ class OwnershipType extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Company\Metadata',
     ];
 }

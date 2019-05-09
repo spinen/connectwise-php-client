@@ -5,12 +5,17 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ConfigurationTypeQuestionValue
+ * Class ConfigurationTypeQuestionValue Version v2019_2
+ * 
+ * Model for ConfigurationTypeQuestionValue
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\ConfigurationTypeReference $configurationType
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\ConfigurationTypeQuestionReference $question
  * @property string $value
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\Metadata $_info
  */
 class ConfigurationTypeQuestionValue extends Model
 {
@@ -21,8 +26,11 @@ class ConfigurationTypeQuestionValue extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'configurationType' => 'Spinen\ConnectWise\Models\v2019_2\Company\ConfigurationTypeReference',
+        'question' => 'Spinen\ConnectWise\Models\v2019_2\Company\ConfigurationTypeQuestionReference',
         'value' => 'string',
         'defaultFlag' => 'boolean',
         'inactiveFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Company\Metadata',
     ];
 }

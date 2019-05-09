@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_3\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProcurementSetting
+ * Class ProcurementSetting Version v2019_3
+ * 
+ * Model for ProcurementSetting
  *
  * @property integer $id
  * @property integer $startingPurchaseOrderNum
@@ -23,6 +25,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $useVendorTaxCodeFlag
  * @property integer $numDecimalPlaces
  * @property boolean $disableAutoPickFlag
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
  */
 class ProcurementSetting extends Model
 {
@@ -48,5 +51,6 @@ class ProcurementSetting extends Model
         'useVendorTaxCodeFlag' => 'boolean',
         'numDecimalPlaces' => 'integer',
         'disableAutoPickFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
     ];
 }

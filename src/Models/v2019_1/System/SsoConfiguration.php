@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_1\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SsoConfiguration
+ * Class SsoConfiguration Version v2019_1
+ * 
+ * Model for SsoConfiguration
  *
  * @property integer $id
  * @property string $name
@@ -17,14 +19,15 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $samlCertificateName
  * @property string $samlCertificateIssuedTo
  * @property string $samlCertificateThumbprint
- * @property carbon $samlCertificateValidFrom
- * @property carbon $samlCertificateValidTo
+ * @property string $samlCertificateValidFrom
+ * @property string $samlCertificateValidTo
  * @property array $locationIds
  * @property string $clientId
  * @property string $stsBaseUrl
  * @property string $stsUserAdminUrl
  * @property string $token
  * @property integer $submittedMemberCount
+ * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  */
 class SsoConfiguration extends Model
 {
@@ -44,13 +47,14 @@ class SsoConfiguration extends Model
         'samlCertificateName' => 'string',
         'samlCertificateIssuedTo' => 'string',
         'samlCertificateThumbprint' => 'string',
-        'samlCertificateValidFrom' => 'carbon',
-        'samlCertificateValidTo' => 'carbon',
+        'samlCertificateValidFrom' => 'string',
+        'samlCertificateValidTo' => 'string',
         'locationIds' => 'array',
         'clientId' => 'string',
         'stsBaseUrl' => 'string',
         'stsUserAdminUrl' => 'string',
         'token' => 'string',
         'submittedMemberCount' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
     ];
 }

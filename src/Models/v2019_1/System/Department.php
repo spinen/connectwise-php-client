@@ -5,11 +5,14 @@ namespace Spinen\ConnectWise\Models\v2019_1\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Department
+ * Class Department Version v2019_1
+ * 
+ * Model for Department
  *
  * @property integer $id
  * @property string $identifier
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  */
 class Department extends Model
 {
@@ -22,5 +25,6 @@ class Department extends Model
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
     ];
 }

@@ -5,13 +5,17 @@ namespace Spinen\ConnectWise\Models\v2018_4\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TimeZoneSetup
+ * Class TimeZoneSetup Version v2018_4
+ * 
+ * Model for TimeZoneSetup
  *
  * @property integer $id
  * @property string $name
- * @property double $offset
+ * @property Spinen\ConnectWise\Models\v2018_4\System\TimeZoneReference $timeZone
+ * @property number $offset
  * @property boolean $defaultFlag
  * @property boolean $daylightSavingsFlag
+ * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
  */
 class TimeZoneSetup extends Model
 {
@@ -23,8 +27,10 @@ class TimeZoneSetup extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'offset' => 'double',
+        'timeZone' => 'Spinen\ConnectWise\Models\v2018_4\System\TimeZoneReference',
+        'offset' => 'number',
         'defaultFlag' => 'boolean',
         'daylightSavingsFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
     ];
 }

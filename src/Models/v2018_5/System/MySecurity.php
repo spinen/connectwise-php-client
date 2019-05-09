@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_5\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class MySecurity
+ * Class MySecurity Version v2018_5
+ * 
+ * Model for MySecurity
  *
  * @property integer $id
  * @property string $addLevel
@@ -23,6 +25,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $moduleIdentifier
  * @property string $moduleName
  * @property integer $sortOrder
+ * @property Spinen\ConnectWise\Models\v2018_5\System\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
  */
 class MySecurity extends Model
 {
@@ -48,5 +52,7 @@ class MySecurity extends Model
         'moduleIdentifier' => 'string',
         'moduleName' => 'string',
         'sortOrder' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2018_5\System\MemberReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
     ];
 }

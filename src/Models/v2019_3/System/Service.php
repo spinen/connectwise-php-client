@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_3\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Service
+ * Class Service Version v2019_3
+ * 
+ * Model for Service
  *
  * @property integer $id
  * @property string $srNotify
@@ -17,10 +19,12 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $memberColor
  * @property string $contactColor
  * @property string $unknownColor
+ * @property Spinen\ConnectWise\Models\v2019_3\System\CalendarSetupReference $calendarSetup
  * @property boolean $headerColorDisableFlag
  * @property boolean $memberColorDisableFlag
  * @property boolean $contactColorDisableFlag
  * @property boolean $unknownColorDisableFlag
+ * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
  */
 class Service extends Model
 {
@@ -40,9 +44,11 @@ class Service extends Model
         'memberColor' => 'string',
         'contactColor' => 'string',
         'unknownColor' => 'string',
+        'calendarSetup' => 'Spinen\ConnectWise\Models\v2019_3\System\CalendarSetupReference',
         'headerColorDisableFlag' => 'boolean',
         'memberColorDisableFlag' => 'boolean',
         'contactColorDisableFlag' => 'boolean',
         'unknownColorDisableFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
     ];
 }

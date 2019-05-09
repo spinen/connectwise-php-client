@@ -5,18 +5,23 @@ namespace Spinen\ConnectWise\Models\v2018_4\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CatalogComponent
+ * Class CatalogComponent Version v2018_4
+ * 
+ * Model for CatalogComponent
  *
  * @property integer $id
  * @property integer $sequenceNumber
- * @property double $quantity
+ * @property number $quantity
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\CatalogItemReference $catalogItem
  * @property boolean $hidePriceFlag
  * @property boolean $hideItemIdentifierFlag
  * @property boolean $hideDescriptionFlag
  * @property boolean $hideQuantityFlag
  * @property boolean $hideExtendedPriceFlag
- * @property double $price
- * @property double $cost
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\CatalogItemReference $parentCatalogItem
+ * @property number $price
+ * @property number $cost
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
  */
 class CatalogComponent extends Model
 {
@@ -28,13 +33,16 @@ class CatalogComponent extends Model
     protected $casts = [
         'id' => 'integer',
         'sequenceNumber' => 'integer',
-        'quantity' => 'double',
+        'quantity' => 'number',
+        'catalogItem' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\CatalogItemReference',
         'hidePriceFlag' => 'boolean',
         'hideItemIdentifierFlag' => 'boolean',
         'hideDescriptionFlag' => 'boolean',
         'hideQuantityFlag' => 'boolean',
         'hideExtendedPriceFlag' => 'boolean',
-        'price' => 'double',
-        'cost' => 'double',
+        'parentCatalogItem' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\CatalogItemReference',
+        'price' => 'number',
+        'cost' => 'number',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
     ];
 }

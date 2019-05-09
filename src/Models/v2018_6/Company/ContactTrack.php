@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_6\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ContactTrack
+ * Class ContactTrack Version v2018_6
+ * 
+ * Model for ContactTrack
  *
  * @property integer $id
  * @property integer $trackId
@@ -15,6 +17,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $actionTaken
  * @property integer $actionRemaining
  * @property string $startedBy
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\ContactReference $contact
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
  */
 class ContactTrack extends Model
 {
@@ -32,5 +37,8 @@ class ContactTrack extends Model
         'actionTaken' => 'integer',
         'actionRemaining' => 'integer',
         'startedBy' => 'string',
+        'company' => 'Spinen\ConnectWise\Models\v2018_6\Company\CompanyReference',
+        'contact' => 'Spinen\ConnectWise\Models\v2018_6\Company\ContactReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
     ];
 }

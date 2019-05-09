@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Currency
+ * Class Currency Version v2018_5
+ * 
+ * Model for Currency
  *
  * @property integer $id
  * @property string $currencyIdentifier
@@ -14,6 +16,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $displayIdFlag
  * @property boolean $displaySymbolFlag
  * @property string $isoCode
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
  */
 class Currency extends Model
 {
@@ -30,5 +33,6 @@ class Currency extends Model
         'displayIdFlag' => 'boolean',
         'displaySymbolFlag' => 'boolean',
         'isoCode' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
     ];
 }

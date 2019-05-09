@@ -5,14 +5,19 @@ namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AgreementTypeWorkRole
+ * Class AgreementTypeWorkRole Version v2019_3
+ * 
+ * Model for AgreementTypeWorkRole
  *
  * @property integer $id
- * @property carbon $effectiveDate
- * @property carbon $endingDate
- * @property double $rate
+ * @property Spinen\ConnectWise\Models\v2019_3\Finance\AgreementTypeReference $type
+ * @property Spinen\ConnectWise\Models\v2019_3\Finance\WorkRoleReference $workRole
+ * @property string $effectiveDate
+ * @property string $endingDate
+ * @property number $rate
  * @property string $rateType
- * @property double $limitTo
+ * @property number $limitTo
+ * @property Spinen\ConnectWise\Models\v2019_3\Finance\Metadata $_info
  */
 class AgreementTypeWorkRole extends Model
 {
@@ -23,10 +28,13 @@ class AgreementTypeWorkRole extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'effectiveDate' => 'carbon',
-        'endingDate' => 'carbon',
-        'rate' => 'double',
+        'type' => 'Spinen\ConnectWise\Models\v2019_3\Finance\AgreementTypeReference',
+        'workRole' => 'Spinen\ConnectWise\Models\v2019_3\Finance\WorkRoleReference',
+        'effectiveDate' => 'string',
+        'endingDate' => 'string',
+        'rate' => 'number',
         'rateType' => 'string',
-        'limitTo' => 'double',
+        'limitTo' => 'number',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Finance\Metadata',
     ];
 }

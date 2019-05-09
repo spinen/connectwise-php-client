@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_1\Sales;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ActivityType
+ * Class ActivityType Version v2019_1
+ * 
+ * Model for ActivityType
  *
  * @property integer $id
  * @property string $name
@@ -14,6 +16,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $inactiveFlag
  * @property boolean $emailFlag
  * @property boolean $memoFlag
+ * @property Spinen\ConnectWise\Models\v2019_1\Sales\Metadata $_info
  */
 class ActivityType extends Model
 {
@@ -30,5 +33,6 @@ class ActivityType extends Model
         'inactiveFlag' => 'boolean',
         'emailFlag' => 'boolean',
         'memoFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Sales\Metadata',
     ];
 }

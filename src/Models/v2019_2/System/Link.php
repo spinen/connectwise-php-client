@@ -5,13 +5,16 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Link
+ * Class Link Version v2019_2
+ * 
+ * Model for Link
  *
  * @property integer $id
  * @property string $name
  * @property integer $tableReferenceId
  * @property string $url
  * @property string $screenLink
+ * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  */
 class Link extends Model
 {
@@ -26,5 +29,6 @@ class Link extends Model
         'tableReferenceId' => 'integer',
         'url' => 'string',
         'screenLink' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
     ];
 }

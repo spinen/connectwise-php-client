@@ -5,21 +5,34 @@ namespace Spinen\ConnectWise\Models\v2019_3\Expense;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ExpenseEntry
+ * Class ExpenseEntry Version v2019_3
+ * 
+ * Model for ExpenseEntry
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_3\Expense\ExpenseReportReference $expenseReport
+ * @property Spinen\ConnectWise\Models\v2019_3\Expense\CompanyReference $company
  * @property integer $chargeToId
  * @property string $chargeToType
- * @property double $amount
+ * @property Spinen\ConnectWise\Models\v2019_3\Expense\ExpenseTypeReference $type
+ * @property Spinen\ConnectWise\Models\v2019_3\Expense\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2019_3\Expense\PaymentMethodReference $paymentMethod
+ * @property Spinen\ConnectWise\Models\v2019_3\Expense\ClassificationReference $classification
+ * @property number $amount
  * @property string $billableOption
- * @property carbon $date
+ * @property string $date
  * @property integer $locationId
  * @property integer $businessUnitId
  * @property string $notes
- * @property double $invoiceAmount
+ * @property Spinen\ConnectWise\Models\v2019_3\Expense\AgreementReference $agreement
+ * @property number $invoiceAmount
+ * @property Spinen\ConnectWise\Models\v2019_3\Expense\Guid $mobileGuid
  * @property array $taxes
+ * @property Spinen\ConnectWise\Models\v2019_3\Expense\InvoiceReference $invoice
+ * @property Spinen\ConnectWise\Models\v2019_3\Expense\CurrencyReference $currency
  * @property string $status
- * @property double $billAmount
+ * @property number $billAmount
+ * @property Spinen\ConnectWise\Models\v2019_3\Expense\Metadata $_info
  * @property array $customFields
  */
 class ExpenseEntry extends Model
@@ -31,18 +44,29 @@ class ExpenseEntry extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'expenseReport' => 'Spinen\ConnectWise\Models\v2019_3\Expense\ExpenseReportReference',
+        'company' => 'Spinen\ConnectWise\Models\v2019_3\Expense\CompanyReference',
         'chargeToId' => 'integer',
         'chargeToType' => 'string',
-        'amount' => 'double',
+        'type' => 'Spinen\ConnectWise\Models\v2019_3\Expense\ExpenseTypeReference',
+        'member' => 'Spinen\ConnectWise\Models\v2019_3\Expense\MemberReference',
+        'paymentMethod' => 'Spinen\ConnectWise\Models\v2019_3\Expense\PaymentMethodReference',
+        'classification' => 'Spinen\ConnectWise\Models\v2019_3\Expense\ClassificationReference',
+        'amount' => 'number',
         'billableOption' => 'string',
-        'date' => 'carbon',
+        'date' => 'string',
         'locationId' => 'integer',
         'businessUnitId' => 'integer',
         'notes' => 'string',
-        'invoiceAmount' => 'double',
+        'agreement' => 'Spinen\ConnectWise\Models\v2019_3\Expense\AgreementReference',
+        'invoiceAmount' => 'number',
+        'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_3\Expense\Guid',
         'taxes' => 'array',
+        'invoice' => 'Spinen\ConnectWise\Models\v2019_3\Expense\InvoiceReference',
+        'currency' => 'Spinen\ConnectWise\Models\v2019_3\Expense\CurrencyReference',
         'status' => 'string',
-        'billAmount' => 'double',
+        'billAmount' => 'number',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Expense\Metadata',
         'customFields' => 'array',
     ];
 }

@@ -5,13 +5,17 @@ namespace Spinen\ConnectWise\Models\v2018_4\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class RmaStatus
+ * Class RmaStatus Version v2018_4
+ * 
+ * Model for RmaStatus
  *
  * @property integer $id
  * @property string $name
  * @property boolean $defaultFlag
  * @property integer $sortOrder
  * @property boolean $closedFlag
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\RmaStatusEmailTemplateReference $emailTemplate
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
  */
 class RmaStatus extends Model
 {
@@ -26,5 +30,7 @@ class RmaStatus extends Model
         'defaultFlag' => 'boolean',
         'sortOrder' => 'integer',
         'closedFlag' => 'boolean',
+        'emailTemplate' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\RmaStatusEmailTemplateReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
     ];
 }

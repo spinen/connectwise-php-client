@@ -5,12 +5,15 @@ namespace Spinen\ConnectWise\Models\v2018_5\Project;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProjectSecurityRole
+ * Class ProjectSecurityRole Version v2018_5
+ * 
+ * Model for ProjectSecurityRole
  *
  * @property integer $id
  * @property string $name
  * @property boolean $managerRoleFlag
  * @property boolean $defaultContactFlag
+ * @property Spinen\ConnectWise\Models\v2018_5\Project\Metadata $_info
  */
 class ProjectSecurityRole extends Model
 {
@@ -24,5 +27,6 @@ class ProjectSecurityRole extends Model
         'name' => 'string',
         'managerRoleFlag' => 'boolean',
         'defaultContactFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Project\Metadata',
     ];
 }

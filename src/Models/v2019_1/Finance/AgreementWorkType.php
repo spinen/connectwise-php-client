@@ -5,22 +5,28 @@ namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AgreementWorkType
+ * Class AgreementWorkType Version v2019_1
+ * 
+ * Model for AgreementWorkType
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\WorkTypeReference $workType
  * @property integer $locationId
  * @property string $rateType
  * @property string $billTime
- * @property double $rate
- * @property double $hoursMax
- * @property double $hoursMin
- * @property double $roundBillHours
- * @property double $overageRate
+ * @property number $rate
+ * @property number $hoursMax
+ * @property number $hoursMin
+ * @property number $roundBillHours
+ * @property number $overageRate
  * @property string $overageRateType
- * @property double $agreementLimit
- * @property carbon $effectiveDate
- * @property carbon $endingDate
+ * @property number $agreementLimit
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\SiteReference $site
+ * @property string $effectiveDate
+ * @property string $endingDate
  * @property integer $agreementId
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
  */
 class AgreementWorkType extends Model
 {
@@ -31,18 +37,22 @@ class AgreementWorkType extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'workType' => 'Spinen\ConnectWise\Models\v2019_1\Finance\WorkTypeReference',
         'locationId' => 'integer',
         'rateType' => 'string',
         'billTime' => 'string',
-        'rate' => 'double',
-        'hoursMax' => 'double',
-        'hoursMin' => 'double',
-        'roundBillHours' => 'double',
-        'overageRate' => 'double',
+        'rate' => 'number',
+        'hoursMax' => 'number',
+        'hoursMin' => 'number',
+        'roundBillHours' => 'number',
+        'overageRate' => 'number',
         'overageRateType' => 'string',
-        'agreementLimit' => 'double',
-        'effectiveDate' => 'carbon',
-        'endingDate' => 'carbon',
+        'agreementLimit' => 'number',
+        'site' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SiteReference',
+        'effectiveDate' => 'string',
+        'endingDate' => 'string',
         'agreementId' => 'integer',
+        'company' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CompanyReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
     ];
 }

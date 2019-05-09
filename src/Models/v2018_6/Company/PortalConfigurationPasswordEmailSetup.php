@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_6\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PortalConfigurationPasswordEmailSetup
+ * Class PortalConfigurationPasswordEmailSetup Version v2018_6
+ * 
+ * Model for PortalConfigurationPasswordEmailSetup
  *
  * @property integer $id
  * @property boolean $validPasswordEmailUseCustomEmailFlag
@@ -20,6 +22,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $invalidPasswordEmailFromEmail
  * @property string $invalidPasswordEmailSubject
  * @property string $invalidPasswordEmailBody
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
  */
 class PortalConfigurationPasswordEmailSetup extends Model
 {
@@ -42,5 +45,6 @@ class PortalConfigurationPasswordEmailSetup extends Model
         'invalidPasswordEmailFromEmail' => 'string',
         'invalidPasswordEmailSubject' => 'string',
         'invalidPasswordEmailBody' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
     ];
 }

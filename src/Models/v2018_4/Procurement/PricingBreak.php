@@ -5,15 +5,18 @@ namespace Spinen\ConnectWise\Models\v2018_4\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PricingBreak
+ * Class PricingBreak Version v2018_4
+ * 
+ * Model for PricingBreak
  *
  * @property integer $id
  * @property integer $detailId
- * @property double $amount
- * @property double $quantityStart
- * @property double $quantityEnd
+ * @property number $amount
+ * @property number $quantityStart
+ * @property number $quantityEnd
  * @property boolean $unlimited
  * @property string $priceMethod
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
  */
 class PricingBreak extends Model
 {
@@ -25,10 +28,11 @@ class PricingBreak extends Model
     protected $casts = [
         'id' => 'integer',
         'detailId' => 'integer',
-        'amount' => 'double',
-        'quantityStart' => 'double',
-        'quantityEnd' => 'double',
+        'amount' => 'number',
+        'quantityStart' => 'number',
+        'quantityEnd' => 'number',
         'unlimited' => 'boolean',
         'priceMethod' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
     ];
 }

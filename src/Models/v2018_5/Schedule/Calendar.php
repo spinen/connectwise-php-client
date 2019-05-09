@@ -5,10 +5,13 @@ namespace Spinen\ConnectWise\Models\v2018_5\Schedule;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Calendar
+ * Class Calendar Version v2018_5
+ * 
+ * Model for Calendar
  *
  * @property integer $id
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2018_5\Schedule\HolidayListReference $holidayList
  * @property string $mondayStartTime
  * @property string $mondayEndTime
  * @property string $tuesdayStartTime
@@ -23,6 +26,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $saturdayEndTime
  * @property string $sundayStartTime
  * @property string $sundayEndTime
+ * @property Spinen\ConnectWise\Models\v2018_5\Schedule\Metadata $_info
  */
 class Calendar extends Model
 {
@@ -34,6 +38,7 @@ class Calendar extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
+        'holidayList' => 'Spinen\ConnectWise\Models\v2018_5\Schedule\HolidayListReference',
         'mondayStartTime' => 'string',
         'mondayEndTime' => 'string',
         'tuesdayStartTime' => 'string',
@@ -48,5 +53,6 @@ class Calendar extends Model
         'saturdayEndTime' => 'string',
         'sundayStartTime' => 'string',
         'sundayEndTime' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Schedule\Metadata',
     ];
 }

@@ -5,17 +5,27 @@ namespace Spinen\ConnectWise\Models\v2019_1\Sales;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Order
+ * Class Order Version v2019_1
+ * 
+ * Model for Order
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_1\Sales\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2019_1\Sales\ContactReference $contact
  * @property string $phone
  * @property string $phoneExt
  * @property string $email
- * @property carbon $orderDate
- * @property carbon $dueDate
+ * @property Spinen\ConnectWise\Models\v2019_1\Sales\SiteReference $site
+ * @property Spinen\ConnectWise\Models\v2019_1\Sales\OrderStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2019_1\Sales\OpportunityReference $opportunity
+ * @property string $orderDate
+ * @property string $dueDate
+ * @property Spinen\ConnectWise\Models\v2019_1\Sales\BillingTermsReference $billingTerms
+ * @property Spinen\ConnectWise\Models\v2019_1\Sales\TaxCodeReference $taxCode
  * @property string $poNumber
  * @property integer $locationId
  * @property integer $businessUnitId
+ * @property Spinen\ConnectWise\Models\v2019_1\Sales\MemberReference $salesRep
  * @property string $notes
  * @property boolean $billClosedFlag
  * @property boolean $billShippedFlag
@@ -23,12 +33,20 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $description
  * @property boolean $topCommentFlag
  * @property boolean $bottomCommentFlag
+ * @property Spinen\ConnectWise\Models\v2019_1\Sales\CompanyReference $shipToCompany
+ * @property Spinen\ConnectWise\Models\v2019_1\Sales\ContactReference $shipToContact
+ * @property Spinen\ConnectWise\Models\v2019_1\Sales\SiteReference $shipToSite
+ * @property Spinen\ConnectWise\Models\v2019_1\Sales\CompanyReference $billToCompany
+ * @property Spinen\ConnectWise\Models\v2019_1\Sales\ContactReference $billToContact
+ * @property Spinen\ConnectWise\Models\v2019_1\Sales\SiteReference $billToSite
  * @property array $productIds
  * @property array $documentIds
  * @property array $invoiceIds
  * @property array $configIds
- * @property double $total
- * @property double $taxTotal
+ * @property number $total
+ * @property number $taxTotal
+ * @property Spinen\ConnectWise\Models\v2019_1\Sales\CurrencyReference $currency
+ * @property Spinen\ConnectWise\Models\v2019_1\Sales\Metadata $_info
  * @property array $customFields
  */
 class Order extends Model
@@ -40,14 +58,22 @@ class Order extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'company' => 'Spinen\ConnectWise\Models\v2019_1\Sales\CompanyReference',
+        'contact' => 'Spinen\ConnectWise\Models\v2019_1\Sales\ContactReference',
         'phone' => 'string',
         'phoneExt' => 'string',
         'email' => 'string',
-        'orderDate' => 'carbon',
-        'dueDate' => 'carbon',
+        'site' => 'Spinen\ConnectWise\Models\v2019_1\Sales\SiteReference',
+        'status' => 'Spinen\ConnectWise\Models\v2019_1\Sales\OrderStatusReference',
+        'opportunity' => 'Spinen\ConnectWise\Models\v2019_1\Sales\OpportunityReference',
+        'orderDate' => 'string',
+        'dueDate' => 'string',
+        'billingTerms' => 'Spinen\ConnectWise\Models\v2019_1\Sales\BillingTermsReference',
+        'taxCode' => 'Spinen\ConnectWise\Models\v2019_1\Sales\TaxCodeReference',
         'poNumber' => 'string',
         'locationId' => 'integer',
         'businessUnitId' => 'integer',
+        'salesRep' => 'Spinen\ConnectWise\Models\v2019_1\Sales\MemberReference',
         'notes' => 'string',
         'billClosedFlag' => 'boolean',
         'billShippedFlag' => 'boolean',
@@ -55,12 +81,20 @@ class Order extends Model
         'description' => 'string',
         'topCommentFlag' => 'boolean',
         'bottomCommentFlag' => 'boolean',
+        'shipToCompany' => 'Spinen\ConnectWise\Models\v2019_1\Sales\CompanyReference',
+        'shipToContact' => 'Spinen\ConnectWise\Models\v2019_1\Sales\ContactReference',
+        'shipToSite' => 'Spinen\ConnectWise\Models\v2019_1\Sales\SiteReference',
+        'billToCompany' => 'Spinen\ConnectWise\Models\v2019_1\Sales\CompanyReference',
+        'billToContact' => 'Spinen\ConnectWise\Models\v2019_1\Sales\ContactReference',
+        'billToSite' => 'Spinen\ConnectWise\Models\v2019_1\Sales\SiteReference',
         'productIds' => 'array',
         'documentIds' => 'array',
         'invoiceIds' => 'array',
         'configIds' => 'array',
-        'total' => 'double',
-        'taxTotal' => 'double',
+        'total' => 'number',
+        'taxTotal' => 'number',
+        'currency' => 'Spinen\ConnectWise\Models\v2019_1\Sales\CurrencyReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Sales\Metadata',
         'customFields' => 'array',
     ];
 }

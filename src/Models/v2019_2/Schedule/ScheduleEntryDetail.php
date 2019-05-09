@@ -5,12 +5,16 @@ namespace Spinen\ConnectWise\Models\v2019_2\Schedule;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ScheduleEntryDetail
+ * Class ScheduleEntryDetail Version v2019_2
+ * 
+ * Model for ScheduleEntryDetail
  *
  * @property integer $id
- * @property carbon $dateStart
- * @property carbon $dateEnd
- * @property double $hoursScheduled
+ * @property Spinen\ConnectWise\Models\v2019_2\Schedule\ScheduleEntryReference $scheduleEntry
+ * @property string $dateStart
+ * @property string $dateEnd
+ * @property number $hoursScheduled
+ * @property Spinen\ConnectWise\Models\v2019_2\Schedule\Metadata $_info
  */
 class ScheduleEntryDetail extends Model
 {
@@ -21,8 +25,10 @@ class ScheduleEntryDetail extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'dateStart' => 'carbon',
-        'dateEnd' => 'carbon',
-        'hoursScheduled' => 'double',
+        'scheduleEntry' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\ScheduleEntryReference',
+        'dateStart' => 'string',
+        'dateEnd' => 'string',
+        'hoursScheduled' => 'number',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\Metadata',
     ];
 }

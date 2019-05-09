@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_3\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CompanyType
+ * Class CompanyType Version v2019_3
+ * 
+ * Model for CompanyType
  *
  * @property integer $id
  * @property string $name
@@ -13,6 +15,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $vendorFlag
  * @property boolean $serviceAlertFlag
  * @property string $serviceAlertMessage
+ * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
  */
 class CompanyType extends Model
 {
@@ -28,5 +31,6 @@ class CompanyType extends Model
         'vendorFlag' => 'boolean',
         'serviceAlertFlag' => 'boolean',
         'serviceAlertMessage' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
     ];
 }

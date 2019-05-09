@@ -5,10 +5,15 @@ namespace Spinen\ConnectWise\Models\v2018_5\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CompanyCustomNote
+ * Class CompanyCustomNote Version v2018_5
+ * 
+ * Model for CompanyCustomNote
  *
  * @property integer $id
  * @property string $customNote
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\CompanyStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
  */
 class CompanyCustomNote extends Model
 {
@@ -20,5 +25,8 @@ class CompanyCustomNote extends Model
     protected $casts = [
         'id' => 'integer',
         'customNote' => 'string',
+        'status' => 'Spinen\ConnectWise\Models\v2018_5\Company\CompanyStatusReference',
+        'company' => 'Spinen\ConnectWise\Models\v2018_5\Company\CompanyReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
     ];
 }

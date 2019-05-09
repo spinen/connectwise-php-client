@@ -5,21 +5,25 @@ namespace Spinen\ConnectWise\Models\v2018_4\Expense;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ExpenseType
+ * Class ExpenseType Version v2018_4
+ * 
+ * Model for ExpenseType
  *
  * @property integer $id
  * @property string $name
  * @property string $amountCaption
- * @property double $reimbursementRate
+ * @property number $reimbursementRate
  * @property string $billExpenses
  * @property string $invoiceMarkupOption
- * @property double $invoiceMarkupAmount
+ * @property number $invoiceMarkupAmount
  * @property boolean $advancedAmountFlag
  * @property boolean $mileageFlag
  * @property boolean $quantityFlag
  * @property boolean $inactiveFlag
- * @property double $maxAmount
+ * @property number $maxAmount
+ * @property Spinen\ConnectWise\Models\v2018_4\Expense\ExternalExpenseTypeIntegrationReference $externalIntegrationXRef
  * @property string $integrationXRef
+ * @property Spinen\ConnectWise\Models\v2018_4\Expense\Metadata $_info
  */
 class ExpenseType extends Model
 {
@@ -32,15 +36,17 @@ class ExpenseType extends Model
         'id' => 'integer',
         'name' => 'string',
         'amountCaption' => 'string',
-        'reimbursementRate' => 'double',
+        'reimbursementRate' => 'number',
         'billExpenses' => 'string',
         'invoiceMarkupOption' => 'string',
-        'invoiceMarkupAmount' => 'double',
+        'invoiceMarkupAmount' => 'number',
         'advancedAmountFlag' => 'boolean',
         'mileageFlag' => 'boolean',
         'quantityFlag' => 'boolean',
         'inactiveFlag' => 'boolean',
-        'maxAmount' => 'double',
+        'maxAmount' => 'number',
+        'externalIntegrationXRef' => 'Spinen\ConnectWise\Models\v2018_4\Expense\ExternalExpenseTypeIntegrationReference',
         'integrationXRef' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Expense\Metadata',
     ];
 }

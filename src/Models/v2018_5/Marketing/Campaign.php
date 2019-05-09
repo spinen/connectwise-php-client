@@ -5,28 +5,36 @@ namespace Spinen\ConnectWise\Models\v2018_5\Marketing;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Campaign
+ * Class Campaign Version v2018_5
+ * 
+ * Model for Campaign
  *
  * @property integer $id
  * @property string $name
- * @property carbon $startDate
- * @property carbon $endDate
+ * @property Spinen\ConnectWise\Models\v2018_5\Marketing\CampaignTypeReference $type
+ * @property Spinen\ConnectWise\Models\v2018_5\Marketing\CampaignSubTypeReference $subType
+ * @property Spinen\ConnectWise\Models\v2018_5\Marketing\CampaignStatusReference $status
+ * @property string $startDate
+ * @property string $endDate
  * @property integer $locationId
+ * @property Spinen\ConnectWise\Models\v2018_5\Marketing\MemberReference $member
  * @property boolean $inactive
  * @property integer $inactiveDaysAfterEnd
  * @property string $notes
+ * @property Spinen\ConnectWise\Models\v2018_5\Marketing\GroupReference $defaultGroup
  * @property integer $marketingManagerDefaultTrackId
  * @property integer $opportunityDefaultTrackId
  * @property integer $impressions
- * @property double $budgetRevenue
- * @property double $budgetCost
- * @property double $actualCost
- * @property double $budgetGrossMargin
- * @property double $budgetROI
- * @property double $actualRevenue
- * @property double $actualGrossMargin
- * @property double $actualROI
+ * @property number $budgetRevenue
+ * @property number $budgetCost
+ * @property number $actualCost
+ * @property number $budgetGrossMargin
+ * @property number $budgetROI
+ * @property number $actualRevenue
+ * @property number $actualGrossMargin
+ * @property number $actualROI
  * @property integer $emailsSent
+ * @property Spinen\ConnectWise\Models\v2018_5\Marketing\Metadata $_info
  */
 class Campaign extends Model
 {
@@ -38,23 +46,29 @@ class Campaign extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'startDate' => 'carbon',
-        'endDate' => 'carbon',
+        'type' => 'Spinen\ConnectWise\Models\v2018_5\Marketing\CampaignTypeReference',
+        'subType' => 'Spinen\ConnectWise\Models\v2018_5\Marketing\CampaignSubTypeReference',
+        'status' => 'Spinen\ConnectWise\Models\v2018_5\Marketing\CampaignStatusReference',
+        'startDate' => 'string',
+        'endDate' => 'string',
         'locationId' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2018_5\Marketing\MemberReference',
         'inactive' => 'boolean',
         'inactiveDaysAfterEnd' => 'integer',
         'notes' => 'string',
+        'defaultGroup' => 'Spinen\ConnectWise\Models\v2018_5\Marketing\GroupReference',
         'marketingManagerDefaultTrackId' => 'integer',
         'opportunityDefaultTrackId' => 'integer',
         'impressions' => 'integer',
-        'budgetRevenue' => 'double',
-        'budgetCost' => 'double',
-        'actualCost' => 'double',
-        'budgetGrossMargin' => 'double',
-        'budgetROI' => 'double',
-        'actualRevenue' => 'double',
-        'actualGrossMargin' => 'double',
-        'actualROI' => 'double',
+        'budgetRevenue' => 'number',
+        'budgetCost' => 'number',
+        'actualCost' => 'number',
+        'budgetGrossMargin' => 'number',
+        'budgetROI' => 'number',
+        'actualRevenue' => 'number',
+        'actualGrossMargin' => 'number',
+        'actualROI' => 'number',
         'emailsSent' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Marketing\Metadata',
     ];
 }

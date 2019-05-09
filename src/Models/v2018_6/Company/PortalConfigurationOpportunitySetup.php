@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_6\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PortalConfigurationOpportunitySetup
+ * Class PortalConfigurationOpportunitySetup Version v2018_6
+ * 
+ * Model for PortalConfigurationOpportunitySetup
  *
  * @property integer $id
  * @property array $opportunityStatusRecIDs
@@ -18,20 +20,26 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $restrictViewByOpportunityTypeFlag
  * @property boolean $acceptanceChangeStatusFlag
  * @property boolean $acceptanceCreateActivityFlag
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\OpportunityStatusReference $acceptanceOpportunityStatus
  * @property boolean $acceptanceSendEmailFlag
  * @property string $acceptanceEmailFromFirstName
  * @property string $acceptanceEmailFromLastName
  * @property string $acceptanceEmailSubject
  * @property string $acceptanceEmailBody
  * @property string $acceptanceFromEmail
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\ActivityTypeReference $acceptanceEmailActivityType
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\MemberReference $acceptanceEmailAssignedByMember
  * @property boolean $rejectionChangeStatusFlag
  * @property boolean $rejectionCreateActivityFlag
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\OpportunityStatusReference $rejectionOpportunityStatus
  * @property boolean $rejectionSendEmailFlag
  * @property string $rejectionEmailFromFirstName
  * @property string $rejectionEmailFromLastName
  * @property string $rejectionFromEmail
  * @property string $rejectionEmailSubject
  * @property string $rejectionEmailBody
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\ActivityTypeReference $rejectionEmailActivityType
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\MemberReference $rejectionEmailAssignedByMember
  * @property boolean $confirmationSendEmailFlag
  * @property boolean $confirmationEmailUseDefaultCompanyEmailAddressFlag
  * @property string $confirmationEmailFromFirstName
@@ -39,6 +47,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $confirmationFromEmail
  * @property string $confirmationEmailSubject
  * @property string $confirmationEmailBody
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
  */
 class PortalConfigurationOpportunitySetup extends Model
 {
@@ -59,20 +68,26 @@ class PortalConfigurationOpportunitySetup extends Model
         'restrictViewByOpportunityTypeFlag' => 'boolean',
         'acceptanceChangeStatusFlag' => 'boolean',
         'acceptanceCreateActivityFlag' => 'boolean',
+        'acceptanceOpportunityStatus' => 'Spinen\ConnectWise\Models\v2018_6\Company\OpportunityStatusReference',
         'acceptanceSendEmailFlag' => 'boolean',
         'acceptanceEmailFromFirstName' => 'string',
         'acceptanceEmailFromLastName' => 'string',
         'acceptanceEmailSubject' => 'string',
         'acceptanceEmailBody' => 'string',
         'acceptanceFromEmail' => 'string',
+        'acceptanceEmailActivityType' => 'Spinen\ConnectWise\Models\v2018_6\Company\ActivityTypeReference',
+        'acceptanceEmailAssignedByMember' => 'Spinen\ConnectWise\Models\v2018_6\Company\MemberReference',
         'rejectionChangeStatusFlag' => 'boolean',
         'rejectionCreateActivityFlag' => 'boolean',
+        'rejectionOpportunityStatus' => 'Spinen\ConnectWise\Models\v2018_6\Company\OpportunityStatusReference',
         'rejectionSendEmailFlag' => 'boolean',
         'rejectionEmailFromFirstName' => 'string',
         'rejectionEmailFromLastName' => 'string',
         'rejectionFromEmail' => 'string',
         'rejectionEmailSubject' => 'string',
         'rejectionEmailBody' => 'string',
+        'rejectionEmailActivityType' => 'Spinen\ConnectWise\Models\v2018_6\Company\ActivityTypeReference',
+        'rejectionEmailAssignedByMember' => 'Spinen\ConnectWise\Models\v2018_6\Company\MemberReference',
         'confirmationSendEmailFlag' => 'boolean',
         'confirmationEmailUseDefaultCompanyEmailAddressFlag' => 'boolean',
         'confirmationEmailFromFirstName' => 'string',
@@ -80,5 +95,6 @@ class PortalConfigurationOpportunitySetup extends Model
         'confirmationFromEmail' => 'string',
         'confirmationEmailSubject' => 'string',
         'confirmationEmailBody' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
     ];
 }

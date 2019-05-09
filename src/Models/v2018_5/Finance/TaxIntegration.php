@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TaxIntegration
+ * Class TaxIntegration Version v2018_5
+ * 
+ * Model for TaxIntegration
  *
  * @property string $taxIntegrationType
  * @property integer $id
@@ -23,6 +25,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $freightTaxCode
  * @property boolean $accountingIntegrationFlag
  * @property boolean $taxLineFlag
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
  */
 class TaxIntegration extends Model
 {
@@ -48,5 +51,6 @@ class TaxIntegration extends Model
         'freightTaxCode' => 'string',
         'accountingIntegrationFlag' => 'boolean',
         'taxLineFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
     ];
 }

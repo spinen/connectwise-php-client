@@ -5,11 +5,15 @@ namespace Spinen\ConnectWise\Models\v2018_4\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CustomReportParameter
+ * Class CustomReportParameter Version v2018_4
+ * 
+ * Model for CustomReportParameter
  *
  * @property integer $id
  * @property string $name
  * @property string $captionName
+ * @property Spinen\ConnectWise\Models\v2018_4\System\CustomReportReference $customReport
+ * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
  */
 class CustomReportParameter extends Model
 {
@@ -22,5 +26,7 @@ class CustomReportParameter extends Model
         'id' => 'integer',
         'name' => 'string',
         'captionName' => 'string',
+        'customReport' => 'Spinen\ConnectWise\Models\v2018_4\System\CustomReportReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
     ];
 }

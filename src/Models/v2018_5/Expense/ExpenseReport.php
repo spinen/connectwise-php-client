@@ -5,16 +5,20 @@ namespace Spinen\ConnectWise\Models\v2018_5\Expense;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ExpenseReport
+ * Class ExpenseReport Version v2018_5
+ * 
+ * Model for ExpenseReport
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_5\Expense\MemberReference $member
  * @property integer $year
  * @property integer $period
- * @property carbon $dateStart
- * @property carbon $dateEnd
+ * @property string $dateStart
+ * @property string $dateEnd
  * @property string $status
- * @property double $total
- * @property carbon $dueDate
+ * @property number $total
+ * @property string $dueDate
+ * @property Spinen\ConnectWise\Models\v2018_5\Expense\Metadata $_info
  */
 class ExpenseReport extends Model
 {
@@ -25,12 +29,14 @@ class ExpenseReport extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2018_5\Expense\MemberReference',
         'year' => 'integer',
         'period' => 'integer',
-        'dateStart' => 'carbon',
-        'dateEnd' => 'carbon',
+        'dateStart' => 'string',
+        'dateEnd' => 'string',
         'status' => 'string',
-        'total' => 'double',
-        'dueDate' => 'carbon',
+        'total' => 'number',
+        'dueDate' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Expense\Metadata',
     ];
 }

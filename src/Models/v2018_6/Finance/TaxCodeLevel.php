@@ -5,13 +5,15 @@ namespace Spinen\ConnectWise\Models\v2018_6\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TaxCodeLevel
+ * Class TaxCodeLevel Version v2018_6
+ * 
+ * Model for TaxCodeLevel
  *
  * @property integer $id
  * @property integer $taxLevel
- * @property double $taxRate
+ * @property number $taxRate
  * @property string $rateType
- * @property double $taxableMax
+ * @property number $taxableMax
  * @property string $caption
  * @property string $taxCodeXref
  * @property string $agencyXref
@@ -19,8 +21,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $taxExpensesFlag
  * @property boolean $taxProductsFlag
  * @property boolean $singleUnitFlag
- * @property double $singleUnitMinimum
- * @property double $singleUnitMaximum
+ * @property number $singleUnitMinimum
+ * @property number $singleUnitMaximum
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\Metadata $_info
  */
 class TaxCodeLevel extends Model
 {
@@ -32,9 +35,9 @@ class TaxCodeLevel extends Model
     protected $casts = [
         'id' => 'integer',
         'taxLevel' => 'integer',
-        'taxRate' => 'double',
+        'taxRate' => 'number',
         'rateType' => 'string',
-        'taxableMax' => 'double',
+        'taxableMax' => 'number',
         'caption' => 'string',
         'taxCodeXref' => 'string',
         'agencyXref' => 'string',
@@ -42,7 +45,8 @@ class TaxCodeLevel extends Model
         'taxExpensesFlag' => 'boolean',
         'taxProductsFlag' => 'boolean',
         'singleUnitFlag' => 'boolean',
-        'singleUnitMinimum' => 'double',
-        'singleUnitMaximum' => 'double',
+        'singleUnitMinimum' => 'number',
+        'singleUnitMaximum' => 'number',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
     ];
 }

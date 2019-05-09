@@ -5,13 +5,18 @@ namespace Spinen\ConnectWise\Models\v2018_6\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class MemberSkill
+ * Class MemberSkill Version v2018_6
+ * 
+ * Model for MemberSkill
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_6\System\SkillReference $skill
  * @property string $skillLevel
  * @property boolean $certifiedFlag
  * @property integer $yearsExperience
  * @property string $notes
+ * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  */
 class MemberSkill extends Model
 {
@@ -22,9 +27,12 @@ class MemberSkill extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'skill' => 'Spinen\ConnectWise\Models\v2018_6\System\SkillReference',
         'skillLevel' => 'string',
         'certifiedFlag' => 'boolean',
         'yearsExperience' => 'integer',
         'notes' => 'string',
+        'member' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
     ];
 }

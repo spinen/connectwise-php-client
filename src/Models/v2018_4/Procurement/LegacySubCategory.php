@@ -5,11 +5,14 @@ namespace Spinen\ConnectWise\Models\v2018_4\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class LegacySubCategory
+ * Class LegacySubCategory Version v2018_4
+ * 
+ * Model for LegacySubCategory
  *
  * @property integer $id
  * @property string $name
  * @property boolean $inactiveFlag
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
  */
 class LegacySubCategory extends Model
 {
@@ -22,5 +25,6 @@ class LegacySubCategory extends Model
         'id' => 'integer',
         'name' => 'string',
         'inactiveFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
     ];
 }

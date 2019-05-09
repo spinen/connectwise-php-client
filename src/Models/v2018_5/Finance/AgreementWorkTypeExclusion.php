@@ -5,10 +5,14 @@ namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AgreementWorkTypeExclusion
+ * Class AgreementWorkTypeExclusion Version v2018_5
+ * 
+ * Model for AgreementWorkTypeExclusion
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\WorkTypeReference $workType
  * @property integer $agreementId
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
  */
 class AgreementWorkTypeExclusion extends Model
 {
@@ -19,6 +23,8 @@ class AgreementWorkTypeExclusion extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'workType' => 'Spinen\ConnectWise\Models\v2018_5\Finance\WorkTypeReference',
         'agreementId' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
     ];
 }

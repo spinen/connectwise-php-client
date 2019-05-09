@@ -5,11 +5,14 @@ namespace Spinen\ConnectWise\Models\v2019_1\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BoardExcludedMember
+ * Class BoardExcludedMember Version v2019_1
+ * 
+ * Model for BoardExcludedMember
  *
  * @property integer $id
  * @property integer $memberId
  * @property integer $boardId
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
  */
 class BoardExcludedMember extends Model
 {
@@ -22,5 +25,6 @@ class BoardExcludedMember extends Model
         'id' => 'integer',
         'memberId' => 'integer',
         'boardId' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
     ];
 }

@@ -5,10 +5,14 @@ namespace Spinen\ConnectWise\Models\v2018_6\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BoardStatus
+ * Class BoardStatus Version v2018_6
+ * 
+ * Model for BoardStatus
  *
  * @property integer $id
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\BoardReference $board
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\ExternalIntegrationStatusReference $externalIntegrationXref
  * @property integer $sortOrder
  * @property boolean $displayOnBoard
  * @property boolean $inactive
@@ -18,7 +22,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $escalationStatus
  * @property string $customerPortalDescription
  * @property boolean $customerPortalFlag
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\ServiceEmailTemplateReference $emailTemplate
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\StatusIndicatorReference $statusIndicator
  * @property string $customStatusIndicatorName
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\Metadata $_info
  */
 class BoardStatus extends Model
 {
@@ -30,6 +37,8 @@ class BoardStatus extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
+        'board' => 'Spinen\ConnectWise\Models\v2018_6\Service\BoardReference',
+        'externalIntegrationXref' => 'Spinen\ConnectWise\Models\v2018_6\Service\ExternalIntegrationStatusReference',
         'sortOrder' => 'integer',
         'displayOnBoard' => 'boolean',
         'inactive' => 'boolean',
@@ -39,6 +48,9 @@ class BoardStatus extends Model
         'escalationStatus' => 'string',
         'customerPortalDescription' => 'string',
         'customerPortalFlag' => 'boolean',
+        'emailTemplate' => 'Spinen\ConnectWise\Models\v2018_6\Service\ServiceEmailTemplateReference',
+        'statusIndicator' => 'Spinen\ConnectWise\Models\v2018_6\Service\StatusIndicatorReference',
         'customStatusIndicatorName' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Service\Metadata',
     ];
 }

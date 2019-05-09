@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_6\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CompanyStatus
+ * Class CompanyStatus Version v2018_6
+ * 
+ * Model for CompanyStatus
  *
  * @property integer $id
  * @property string $name
@@ -16,6 +18,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $notificationMessage
  * @property boolean $customNoteFlag
  * @property boolean $cancelOpenTracksFlag
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\TrackReference $track
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
  */
 class CompanyStatus extends Model
 {
@@ -34,5 +38,7 @@ class CompanyStatus extends Model
         'notificationMessage' => 'string',
         'customNoteFlag' => 'boolean',
         'cancelOpenTracksFlag' => 'boolean',
+        'track' => 'Spinen\ConnectWise\Models\v2018_6\Company\TrackReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
     ];
 }

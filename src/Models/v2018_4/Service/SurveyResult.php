@@ -5,16 +5,21 @@ namespace Spinen\ConnectWise\Models\v2018_4\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SurveyResult
+ * Class SurveyResult Version v2018_4
+ * 
+ * Model for SurveyResult
  *
  * @property integer $id
  * @property integer $ticketId
  * @property string $emailAddress
  * @property string $footerResponse
  * @property boolean $contactMeFlag
+ * @property Spinen\ConnectWise\Models\v2018_4\Service\ContactReference $contact
  * @property array $results
  * @property integer $totalPoints
+ * @property Spinen\ConnectWise\Models\v2018_4\Service\CompanyReference $company
  * @property integer $surveyId
+ * @property Spinen\ConnectWise\Models\v2018_4\Service\Metadata $_info
  */
 class SurveyResult extends Model
 {
@@ -29,8 +34,11 @@ class SurveyResult extends Model
         'emailAddress' => 'string',
         'footerResponse' => 'string',
         'contactMeFlag' => 'boolean',
+        'contact' => 'Spinen\ConnectWise\Models\v2018_4\Service\ContactReference',
         'results' => 'array',
         'totalPoints' => 'integer',
+        'company' => 'Spinen\ConnectWise\Models\v2018_4\Service\CompanyReference',
         'surveyId' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Service\Metadata',
     ];
 }

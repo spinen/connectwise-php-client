@@ -5,11 +5,16 @@ namespace Spinen\ConnectWise\Models\v2018_6\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class InOutBoard
+ * Class InOutBoard Version v2018_6
+ * 
+ * Model for InOutBoard
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2018_6\System\InOutTypeReference $inOutType
  * @property string $additionalInfo
- * @property carbon $dateBack
+ * @property string $dateBack
+ * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  */
 class InOutBoard extends Model
 {
@@ -20,7 +25,10 @@ class InOutBoard extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        'inOutType' => 'Spinen\ConnectWise\Models\v2018_6\System\InOutTypeReference',
         'additionalInfo' => 'string',
-        'dateBack' => 'carbon',
+        'dateBack' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
     ];
 }

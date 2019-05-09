@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AgreementType
+ * Class AgreementType Version v2019_1
+ * 
+ * Model for AgreementType
  *
  * @property integer $id
  * @property string $name
@@ -14,10 +16,13 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $inactiveFlag
  * @property boolean $prePaymentFlag
  * @property string $invoicePreSuffix
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\SystemLocationReference $location
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\SystemDepartmentReference $department
  * @property boolean $restrictLocationFlag
  * @property boolean $restrictDepartmentFlag
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\SLAReference $sla
  * @property string $applicationUnits
- * @property double $applicationLimit
+ * @property number $applicationLimit
  * @property string $applicationCycle
  * @property boolean $applicationUnlimitedFlag
  * @property boolean $oneTimeFlag
@@ -33,16 +38,22 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $chargeToFirmFlag
  * @property string $employeeCompRate
  * @property string $employeeCompNotExceed
- * @property double $compHourlyRate
- * @property double $compLimitAmount
+ * @property number $compHourlyRate
+ * @property number $compLimitAmount
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\BillingCycleReference $billingCycle
  * @property boolean $billOneTimeFlag
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\BillingTermsReference $billingTerms
  * @property string $invoicingCycle
- * @property double $billAmount
+ * @property number $billAmount
  * @property boolean $taxableFlag
  * @property boolean $restrictDownPaymentFlag
  * @property string $invoiceDescription
  * @property boolean $topCommentFlag
  * @property boolean $bottomCommentFlag
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\WorkRoleReference $workRole
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\WorkTypeReference $workType
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\ProjectTypeReference $projectType
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference $invoiceTemplate
  * @property string $billTime
  * @property string $billExpenses
  * @property string $billProducts
@@ -59,7 +70,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $removeAllWorkTypeExclusions
  * @property string $integrationXRef
  * @property boolean $prorateFlag
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\EmailTemplateReference $emailTemplate
  * @property boolean $autoInvoiceFlag
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
  */
 class AgreementType extends Model
 {
@@ -76,10 +89,13 @@ class AgreementType extends Model
         'inactiveFlag' => 'boolean',
         'prePaymentFlag' => 'boolean',
         'invoicePreSuffix' => 'string',
+        'location' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SystemLocationReference',
+        'department' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SystemDepartmentReference',
         'restrictLocationFlag' => 'boolean',
         'restrictDepartmentFlag' => 'boolean',
+        'sla' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SLAReference',
         'applicationUnits' => 'string',
-        'applicationLimit' => 'double',
+        'applicationLimit' => 'number',
         'applicationCycle' => 'string',
         'applicationUnlimitedFlag' => 'boolean',
         'oneTimeFlag' => 'boolean',
@@ -95,16 +111,22 @@ class AgreementType extends Model
         'chargeToFirmFlag' => 'boolean',
         'employeeCompRate' => 'string',
         'employeeCompNotExceed' => 'string',
-        'compHourlyRate' => 'double',
-        'compLimitAmount' => 'double',
+        'compHourlyRate' => 'number',
+        'compLimitAmount' => 'number',
+        'billingCycle' => 'Spinen\ConnectWise\Models\v2019_1\Finance\BillingCycleReference',
         'billOneTimeFlag' => 'boolean',
+        'billingTerms' => 'Spinen\ConnectWise\Models\v2019_1\Finance\BillingTermsReference',
         'invoicingCycle' => 'string',
-        'billAmount' => 'double',
+        'billAmount' => 'number',
         'taxableFlag' => 'boolean',
         'restrictDownPaymentFlag' => 'boolean',
         'invoiceDescription' => 'string',
         'topCommentFlag' => 'boolean',
         'bottomCommentFlag' => 'boolean',
+        'workRole' => 'Spinen\ConnectWise\Models\v2019_1\Finance\WorkRoleReference',
+        'workType' => 'Spinen\ConnectWise\Models\v2019_1\Finance\WorkTypeReference',
+        'projectType' => 'Spinen\ConnectWise\Models\v2019_1\Finance\ProjectTypeReference',
+        'invoiceTemplate' => 'Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference',
         'billTime' => 'string',
         'billExpenses' => 'string',
         'billProducts' => 'string',
@@ -121,6 +143,8 @@ class AgreementType extends Model
         'removeAllWorkTypeExclusions' => 'boolean',
         'integrationXRef' => 'string',
         'prorateFlag' => 'boolean',
+        'emailTemplate' => 'Spinen\ConnectWise\Models\v2019_1\Finance\EmailTemplateReference',
         'autoInvoiceFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
     ];
 }

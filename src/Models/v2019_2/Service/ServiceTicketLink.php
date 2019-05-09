@@ -5,13 +5,16 @@ namespace Spinen\ConnectWise\Models\v2019_2\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ServiceTicketLink
+ * Class ServiceTicketLink Version v2019_2
+ * 
+ * Model for ServiceTicketLink
  *
  * @property integer $id
  * @property string $name
  * @property boolean $enabledFlag
  * @property string $linkText
  * @property string $url
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\Metadata $_info
  */
 class ServiceTicketLink extends Model
 {
@@ -26,5 +29,6 @@ class ServiceTicketLink extends Model
         'enabledFlag' => 'boolean',
         'linkText' => 'string',
         'url' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Service\Metadata',
     ];
 }

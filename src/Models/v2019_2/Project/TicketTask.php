@@ -5,16 +5,21 @@ namespace Spinen\ConnectWise\Models\v2019_2\Project;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TicketTask
+ * Class TicketTask Version v2019_2
+ * 
+ * Model for TicketTask
  *
  * @property integer $id
  * @property integer $ticketId
  * @property string $notes
  * @property boolean $closedFlag
  * @property integer $priority
+ * @property Spinen\ConnectWise\Models\v2019_2\Project\ScheduleEntryReference $schedule
+ * @property Spinen\ConnectWise\Models\v2019_2\Project\ServiceCodeReference $code
  * @property string $resolution
  * @property string $childScheduleAction
  * @property integer $childTicketId
+ * @property Spinen\ConnectWise\Models\v2019_2\Project\Metadata $_info
  */
 class TicketTask extends Model
 {
@@ -29,8 +34,11 @@ class TicketTask extends Model
         'notes' => 'string',
         'closedFlag' => 'boolean',
         'priority' => 'integer',
+        'schedule' => 'Spinen\ConnectWise\Models\v2019_2\Project\ScheduleEntryReference',
+        'code' => 'Spinen\ConnectWise\Models\v2019_2\Project\ServiceCodeReference',
         'resolution' => 'string',
         'childScheduleAction' => 'string',
         'childTicketId' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Project\Metadata',
     ];
 }

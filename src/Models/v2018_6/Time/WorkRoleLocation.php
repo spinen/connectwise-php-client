@@ -5,10 +5,15 @@ namespace Spinen\ConnectWise\Models\v2018_6\Time;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class WorkRoleLocation
+ * Class WorkRoleLocation Version v2018_6
+ * 
+ * Model for WorkRoleLocation
  *
  * @property integer $id
- * @property double $hourlyRate
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\SystemLocationReference $location
+ * @property number $hourlyRate
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\WorkRoleReference $workRole
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\Metadata $_info
  */
 class WorkRoleLocation extends Model
 {
@@ -19,6 +24,9 @@ class WorkRoleLocation extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'hourlyRate' => 'double',
+        'location' => 'Spinen\ConnectWise\Models\v2018_6\Time\SystemLocationReference',
+        'hourlyRate' => 'number',
+        'workRole' => 'Spinen\ConnectWise\Models\v2018_6\Time\WorkRoleReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Time\Metadata',
     ];
 }

@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AccountingBatch
+ * Class AccountingBatch Version v2019_3
+ * 
+ * Model for AccountingBatch
  *
  * @property integer $id
  * @property string $batchIdentifier
@@ -13,6 +15,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $exportExpensesFlag
  * @property boolean $exportProductsFlag
  * @property boolean $closedFlag
+ * @property Spinen\ConnectWise\Models\v2019_3\Finance\Metadata $_info
  */
 class AccountingBatch extends Model
 {
@@ -28,5 +31,6 @@ class AccountingBatch extends Model
         'exportExpensesFlag' => 'boolean',
         'exportProductsFlag' => 'boolean',
         'closedFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Finance\Metadata',
     ];
 }

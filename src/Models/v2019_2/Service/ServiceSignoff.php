@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_2\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ServiceSignoff
+ * Class ServiceSignoff Version v2019_2
+ * 
+ * Model for ServiceSignoff
  *
  * @property integer $id
  * @property string $name
@@ -63,6 +65,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $billingMethodsText
  * @property boolean $creditCardFieldsFlag
  * @property boolean $defaultFFFlag
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\Metadata $_info
  */
 class ServiceSignoff extends Model
 {
@@ -128,5 +131,6 @@ class ServiceSignoff extends Model
         'billingMethodsText' => 'string',
         'creditCardFieldsFlag' => 'boolean',
         'defaultFFFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Service\Metadata',
     ];
 }

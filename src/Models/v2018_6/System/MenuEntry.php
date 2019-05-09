@@ -5,9 +5,12 @@ namespace Spinen\ConnectWise\Models\v2018_6\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class MenuEntry
+ * Class MenuEntry Version v2018_6
+ * 
+ * Model for MenuEntry
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_6\System\MenuLocationReference $menuLocation
  * @property string $caption
  * @property string $link
  * @property boolean $newWindowFlag
@@ -17,6 +20,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $removeAllLocations
  * @property integer $smallMenuIconId
  * @property integer $largeMenuIconId
+ * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  */
 class MenuEntry extends Model
 {
@@ -27,6 +31,7 @@ class MenuEntry extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'menuLocation' => 'Spinen\ConnectWise\Models\v2018_6\System\MenuLocationReference',
         'caption' => 'string',
         'link' => 'string',
         'newWindowFlag' => 'boolean',
@@ -36,5 +41,6 @@ class MenuEntry extends Model
         'removeAllLocations' => 'boolean',
         'smallMenuIconId' => 'integer',
         'largeMenuIconId' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
     ];
 }

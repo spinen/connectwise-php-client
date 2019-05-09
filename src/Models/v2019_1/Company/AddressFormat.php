@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_1\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AddressFormat
+ * Class AddressFormat Version v2019_1
+ * 
+ * Model for AddressFormat
  *
  * @property integer $id
  * @property string $name
@@ -14,6 +16,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property array $countryIds
  * @property boolean $addAllCountries
  * @property boolean $removeAllCountries
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
  */
 class AddressFormat extends Model
 {
@@ -30,5 +33,6 @@ class AddressFormat extends Model
         'countryIds' => 'array',
         'addAllCountries' => 'boolean',
         'removeAllCountries' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
     ];
 }

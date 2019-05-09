@@ -5,10 +5,13 @@ namespace Spinen\ConnectWise\Models\v2018_5\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class InOutType
+ * Class InOutType Version v2018_5
+ * 
+ * Model for InOutType
  *
  * @property integer $id
  * @property string $description
+ * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
  */
 class InOutType extends Model
 {
@@ -20,5 +23,6 @@ class InOutType extends Model
     protected $casts = [
         'id' => 'integer',
         'description' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
     ];
 }

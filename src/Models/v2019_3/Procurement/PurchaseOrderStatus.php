@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_3\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PurchaseOrderStatus
+ * Class PurchaseOrderStatus Version v2019_3
+ * 
+ * Model for PurchaseOrderStatus
  *
  * @property integer $id
  * @property string $name
@@ -14,6 +16,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $inactiveFlag
  * @property boolean $defaultClosedFlag
  * @property integer $sortOrder
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\PurchaseOrderStatusEmailTemplateReference $emailTemplate
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
  */
 class PurchaseOrderStatus extends Model
 {
@@ -30,5 +34,7 @@ class PurchaseOrderStatus extends Model
         'inactiveFlag' => 'boolean',
         'defaultClosedFlag' => 'boolean',
         'sortOrder' => 'integer',
+        'emailTemplate' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\PurchaseOrderStatusEmailTemplateReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
     ];
 }

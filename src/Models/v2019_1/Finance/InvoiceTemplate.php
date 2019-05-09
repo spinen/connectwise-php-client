@@ -5,14 +5,16 @@ namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class InvoiceTemplate
+ * Class InvoiceTemplate Version v2019_1
+ * 
+ * Model for InvoiceTemplate
  *
  * @property integer $id
  * @property string $name
- * @property double $marginLeft
- * @property double $marginRight
- * @property double $marginTop
- * @property double $marginBottom
+ * @property number $marginLeft
+ * @property number $marginRight
+ * @property number $marginTop
+ * @property number $marginBottom
  * @property boolean $logoVisibleFlag
  * @property string $headerLogoPosition
  * @property boolean $remitToVisibleFlag
@@ -68,6 +70,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $projectHeaderBillingMethodCaption
  * @property boolean $projectHeaderBillingTypeVisibleFlag
  * @property string $projectHeaderBillingTypeCaption
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
  */
 class InvoiceTemplate extends Model
 {
@@ -79,10 +82,10 @@ class InvoiceTemplate extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'marginLeft' => 'double',
-        'marginRight' => 'double',
-        'marginTop' => 'double',
-        'marginBottom' => 'double',
+        'marginLeft' => 'number',
+        'marginRight' => 'number',
+        'marginTop' => 'number',
+        'marginBottom' => 'number',
         'logoVisibleFlag' => 'boolean',
         'headerLogoPosition' => 'string',
         'remitToVisibleFlag' => 'boolean',
@@ -138,5 +141,6 @@ class InvoiceTemplate extends Model
         'projectHeaderBillingMethodCaption' => 'string',
         'projectHeaderBillingTypeVisibleFlag' => 'boolean',
         'projectHeaderBillingTypeCaption' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
     ];
 }

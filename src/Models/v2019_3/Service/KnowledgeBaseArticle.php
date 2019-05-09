@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_3\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class KnowledgeBaseArticle
+ * Class KnowledgeBaseArticle Version v2019_3
+ * 
+ * Model for KnowledgeBaseArticle
  *
  * @property integer $id
  * @property string $title
@@ -13,10 +15,12 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $resolution
  * @property integer $locationId
  * @property integer $businessUnitId
+ * @property Spinen\ConnectWise\Models\v2019_3\Service\BoardReference $board
  * @property integer $categoryId
  * @property integer $subCategoryId
  * @property string $dateCreated
  * @property string $createdBy
+ * @property Spinen\ConnectWise\Models\v2019_3\Service\Metadata $_info
  */
 class KnowledgeBaseArticle extends Model
 {
@@ -32,9 +36,11 @@ class KnowledgeBaseArticle extends Model
         'resolution' => 'string',
         'locationId' => 'integer',
         'businessUnitId' => 'integer',
+        'board' => 'Spinen\ConnectWise\Models\v2019_3\Service\BoardReference',
         'categoryId' => 'integer',
         'subCategoryId' => 'integer',
         'dateCreated' => 'string',
         'createdBy' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Service\Metadata',
     ];
 }

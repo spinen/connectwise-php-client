@@ -5,10 +5,14 @@ namespace Spinen\ConnectWise\Models\v2018_6\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AutoSyncTime
+ * Class AutoSyncTime Version v2018_6
+ * 
+ * Model for AutoSyncTime
  *
  * @property integer $id
  * @property string $syncTime
+ * @property Spinen\ConnectWise\Models\v2018_6\System\TimeZoneSetupReference $timeZone
+ * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  */
 class AutoSyncTime extends Model
 {
@@ -20,5 +24,7 @@ class AutoSyncTime extends Model
     protected $casts = [
         'id' => 'integer',
         'syncTime' => 'string',
+        'timeZone' => 'Spinen\ConnectWise\Models\v2018_6\System\TimeZoneSetupReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
     ];
 }

@@ -5,11 +5,14 @@ namespace Spinen\ConnectWise\Models\v2018_5\Internal;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Product
+ * Class Product Version v2018_5
+ * 
+ * Model for Product
  *
  * @property string $identifier
  * @property string $password
  * @property boolean $installedFlag
+ * @property Spinen\ConnectWise\Models\v2018_5\Internal\Metadata $_info
  */
 class Product extends Model
 {
@@ -22,5 +25,6 @@ class Product extends Model
         'identifier' => 'string',
         'password' => 'string',
         'installedFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Internal\Metadata',
     ];
 }

@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AccountingPackage
+ * Class AccountingPackage Version v2018_5
+ * 
+ * Model for AccountingPackage
  *
  * @property integer $id
  * @property string $identifier
@@ -28,6 +30,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $includeCogsEntriesFlag
  * @property boolean $includeCogsDropShipFlag
  * @property boolean $activeFlag
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
  */
 class AccountingPackage extends Model
 {
@@ -58,5 +61,6 @@ class AccountingPackage extends Model
         'includeCogsEntriesFlag' => 'boolean',
         'includeCogsDropShipFlag' => 'boolean',
         'activeFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
     ];
 }

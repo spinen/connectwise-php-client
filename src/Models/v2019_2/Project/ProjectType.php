@@ -5,13 +5,16 @@ namespace Spinen\ConnectWise\Models\v2019_2\Project;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProjectType
+ * Class ProjectType Version v2019_2
+ * 
+ * Model for ProjectType
  *
  * @property integer $id
  * @property string $name
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
  * @property string $integrationXref
+ * @property Spinen\ConnectWise\Models\v2019_2\Project\Metadata $_info
  */
 class ProjectType extends Model
 {
@@ -26,5 +29,6 @@ class ProjectType extends Model
         'defaultFlag' => 'boolean',
         'inactiveFlag' => 'boolean',
         'integrationXref' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Project\Metadata',
     ];
 }

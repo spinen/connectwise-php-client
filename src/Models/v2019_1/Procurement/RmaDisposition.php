@@ -5,11 +5,14 @@ namespace Spinen\ConnectWise\Models\v2019_1\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class RmaDisposition
+ * Class RmaDisposition Version v2019_1
+ * 
+ * Model for RmaDisposition
  *
  * @property integer $id
  * @property string $name
  * @property boolean $defaultFlag
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\Metadata $_info
  */
 class RmaDisposition extends Model
 {
@@ -22,5 +25,6 @@ class RmaDisposition extends Model
         'id' => 'integer',
         'name' => 'string',
         'defaultFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\Metadata',
     ];
 }

@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_6\Project;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TicketNote
+ * Class TicketNote Version v2018_6
+ * 
+ * Model for TicketNote
  *
  * @property integer $id
  * @property integer $ticketId
@@ -13,10 +15,13 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $detailDescriptionFlag
  * @property boolean $internalAnalysisFlag
  * @property boolean $resolutionFlag
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\ContactReference $contact
  * @property boolean $customerUpdatedFlag
  * @property boolean $processNotifications
  * @property boolean $internalFlag
  * @property boolean $externalFlag
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\Metadata $_info
  */
 class TicketNote extends Model
 {
@@ -32,9 +37,12 @@ class TicketNote extends Model
         'detailDescriptionFlag' => 'boolean',
         'internalAnalysisFlag' => 'boolean',
         'resolutionFlag' => 'boolean',
+        'member' => 'Spinen\ConnectWise\Models\v2018_6\Project\MemberReference',
+        'contact' => 'Spinen\ConnectWise\Models\v2018_6\Project\ContactReference',
         'customerUpdatedFlag' => 'boolean',
         'processNotifications' => 'boolean',
         'internalFlag' => 'boolean',
         'externalFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Project\Metadata',
     ];
 }

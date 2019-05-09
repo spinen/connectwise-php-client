@@ -5,13 +5,16 @@ namespace Spinen\ConnectWise\Models\v2018_5\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class UnitOfMeasure
+ * Class UnitOfMeasure Version v2018_5
+ * 
+ * Model for UnitOfMeasure
  *
  * @property integer $id
  * @property string $name
  * @property boolean $inactiveFlag
  * @property boolean $defaultFlag
  * @property string $uomScheduleXref
+ * @property Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata $_info
  */
 class UnitOfMeasure extends Model
 {
@@ -26,5 +29,6 @@ class UnitOfMeasure extends Model
         'inactiveFlag' => 'boolean',
         'defaultFlag' => 'boolean',
         'uomScheduleXref' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata',
     ];
 }

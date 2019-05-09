@@ -5,10 +5,14 @@ namespace Spinen\ConnectWise\Models\v2018_6\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ServiceEmailTemplate
+ * Class ServiceEmailTemplate Version v2018_6
+ * 
+ * Model for ServiceEmailTemplate
  *
  * @property integer $id
  * @property string $type
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\ServiceSurveyReference $serviceSurvey
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\BoardReference $serviceBoard
  * @property boolean $useSenderFlag
  * @property string $firstName
  * @property string $lastName
@@ -20,6 +24,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $resourceRecordsFlag
  * @property boolean $externalContactNotifications
  * @property boolean $internalContactNotifications
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\ServiceStatusReference $serviceStatus
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\Metadata $_info
  */
 class ServiceEmailTemplate extends Model
 {
@@ -31,6 +37,8 @@ class ServiceEmailTemplate extends Model
     protected $casts = [
         'id' => 'integer',
         'type' => 'string',
+        'serviceSurvey' => 'Spinen\ConnectWise\Models\v2018_6\Service\ServiceSurveyReference',
+        'serviceBoard' => 'Spinen\ConnectWise\Models\v2018_6\Service\BoardReference',
         'useSenderFlag' => 'boolean',
         'firstName' => 'string',
         'lastName' => 'string',
@@ -42,5 +50,7 @@ class ServiceEmailTemplate extends Model
         'resourceRecordsFlag' => 'boolean',
         'externalContactNotifications' => 'boolean',
         'internalContactNotifications' => 'boolean',
+        'serviceStatus' => 'Spinen\ConnectWise\Models\v2018_6\Service\ServiceStatusReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Service\Metadata',
     ];
 }

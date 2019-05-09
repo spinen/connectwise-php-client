@@ -5,10 +5,14 @@ namespace Spinen\ConnectWise\Models\v2019_3\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class MinimumStockByWarehouse
+ * Class MinimumStockByWarehouse Version v2019_3
+ * 
+ * Model for MinimumStockByWarehouse
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseReference $warehouse
  * @property integer $minimumStock
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
  */
 class MinimumStockByWarehouse extends Model
 {
@@ -19,6 +23,8 @@ class MinimumStockByWarehouse extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'warehouse' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseReference',
         'minimumStock' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
     ];
 }

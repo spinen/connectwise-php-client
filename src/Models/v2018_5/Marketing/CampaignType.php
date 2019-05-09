@@ -5,11 +5,14 @@ namespace Spinen\ConnectWise\Models\v2018_5\Marketing;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CampaignType
+ * Class CampaignType Version v2018_5
+ * 
+ * Model for CampaignType
  *
  * @property integer $id
  * @property string $name
  * @property boolean $defaultFlag
+ * @property Spinen\ConnectWise\Models\v2018_5\Marketing\Metadata $_info
  */
 class CampaignType extends Model
 {
@@ -22,5 +25,6 @@ class CampaignType extends Model
         'id' => 'integer',
         'name' => 'string',
         'defaultFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Marketing\Metadata',
     ];
 }

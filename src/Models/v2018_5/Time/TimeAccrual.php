@@ -5,25 +5,29 @@ namespace Spinen\ConnectWise\Models\v2018_5\Time;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TimeAccrual
+ * Class TimeAccrual Version v2018_5
+ * 
+ * Model for TimeAccrual
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_5\Time\SystemLocationReference $location
  * @property boolean $vacationFlag
  * @property string $vacationAvailableType
  * @property boolean $vacationCarryoverAllowedFlag
- * @property double $vacationCarryoverLimit
+ * @property number $vacationCarryoverLimit
  * @property boolean $sickFlag
  * @property string $sickAvailableType
  * @property boolean $sickCarryoverAllowedFlag
- * @property double $sickCarryoverLimit
+ * @property number $sickCarryoverLimit
  * @property boolean $ptoFlag
  * @property string $ptoAvailableType
  * @property boolean $ptoCarryoverAllowedFlag
- * @property double $ptoCarryoverLimit
+ * @property number $ptoCarryoverLimit
  * @property boolean $holidayFlag
  * @property string $holidayAvailableType
  * @property boolean $holidayCarryoverAllowedFlag
- * @property double $holidayCarryoverLimit
+ * @property number $holidayCarryoverLimit
+ * @property Spinen\ConnectWise\Models\v2018_5\Time\Metadata $_info
  */
 class TimeAccrual extends Model
 {
@@ -34,21 +38,23 @@ class TimeAccrual extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'location' => 'Spinen\ConnectWise\Models\v2018_5\Time\SystemLocationReference',
         'vacationFlag' => 'boolean',
         'vacationAvailableType' => 'string',
         'vacationCarryoverAllowedFlag' => 'boolean',
-        'vacationCarryoverLimit' => 'double',
+        'vacationCarryoverLimit' => 'number',
         'sickFlag' => 'boolean',
         'sickAvailableType' => 'string',
         'sickCarryoverAllowedFlag' => 'boolean',
-        'sickCarryoverLimit' => 'double',
+        'sickCarryoverLimit' => 'number',
         'ptoFlag' => 'boolean',
         'ptoAvailableType' => 'string',
         'ptoCarryoverAllowedFlag' => 'boolean',
-        'ptoCarryoverLimit' => 'double',
+        'ptoCarryoverLimit' => 'number',
         'holidayFlag' => 'boolean',
         'holidayAvailableType' => 'string',
         'holidayCarryoverAllowedFlag' => 'boolean',
-        'holidayCarryoverLimit' => 'double',
+        'holidayCarryoverLimit' => 'number',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Time\Metadata',
     ];
 }

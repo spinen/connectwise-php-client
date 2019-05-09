@@ -5,13 +5,17 @@ namespace Spinen\ConnectWise\Models\v2018_4\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Eula
+ * Class Eula Version v2018_4
+ * 
+ * Model for Eula
  *
  * @property integer $id
  * @property string $eulaKey
  * @property string $eulaServiceLink
  * @property string $eulaUiLink
- * @property carbon $signedDate
+ * @property Spinen\ConnectWise\Models\v2018_4\System\MemberReference $signedMember
+ * @property string $signedDate
+ * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
  */
 class Eula extends Model
 {
@@ -25,6 +29,8 @@ class Eula extends Model
         'eulaKey' => 'string',
         'eulaServiceLink' => 'string',
         'eulaUiLink' => 'string',
-        'signedDate' => 'carbon',
+        'signedMember' => 'Spinen\ConnectWise\Models\v2018_4\System\MemberReference',
+        'signedDate' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
     ];
 }

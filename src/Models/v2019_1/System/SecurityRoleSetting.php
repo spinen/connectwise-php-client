@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_1\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SecurityRoleSetting
+ * Class SecurityRoleSetting Version v2019_1
+ * 
+ * Model for SecurityRoleSetting
  *
  * @property integer $id
  * @property string $addLevel
@@ -23,6 +25,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $moduleIdentifier
  * @property string $moduleName
  * @property integer $sortOrder
+ * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  */
 class SecurityRoleSetting extends Model
 {
@@ -48,5 +51,6 @@ class SecurityRoleSetting extends Model
         'moduleIdentifier' => 'string',
         'moduleName' => 'string',
         'sortOrder' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
     ];
 }

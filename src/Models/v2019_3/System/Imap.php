@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_3\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Imap
+ * Class Imap Version v2019_3
+ * 
+ * Model for Imap
  *
  * @property integer $id
  * @property string $name
@@ -16,6 +18,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $password
  * @property integer $port
  * @property boolean $sslFlag
+ * @property Spinen\ConnectWise\Models\v2019_3\System\EmailConnectorReference $emailConnector
+ * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
  */
 class Imap extends Model
 {
@@ -34,5 +38,7 @@ class Imap extends Model
         'password' => 'string',
         'port' => 'integer',
         'sslFlag' => 'boolean',
+        'emailConnector' => 'Spinen\ConnectWise\Models\v2019_3\System\EmailConnectorReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
     ];
 }

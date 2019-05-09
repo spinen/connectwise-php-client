@@ -5,11 +5,14 @@ namespace Spinen\ConnectWise\Models\v2018_4\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Manufacturer
+ * Class Manufacturer Version v2018_4
+ * 
+ * Model for Manufacturer
  *
  * @property integer $id
  * @property string $name
  * @property boolean $inactiveFlag
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
  */
 class Manufacturer extends Model
 {
@@ -22,5 +25,6 @@ class Manufacturer extends Model
         'id' => 'integer',
         'name' => 'string',
         'inactiveFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
     ];
 }

@@ -5,10 +5,14 @@ namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class GLAccount
+ * Class GLAccount Version v2019_2
+ * 
+ * Model for GLAccount
  *
  * @property integer $id
  * @property string $glType
+ * @property Spinen\ConnectWise\Models\v2019_2\Finance\MappedTypeReference $mappedType
+ * @property Spinen\ConnectWise\Models\v2019_2\Finance\MappedRecordReference $mappedRecord
  * @property string $segment1
  * @property string $segment2
  * @property string $segment3
@@ -32,6 +36,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $productId
  * @property string $inventory
  * @property string $salesCode
+ * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
  */
 class GLAccount extends Model
 {
@@ -43,6 +48,8 @@ class GLAccount extends Model
     protected $casts = [
         'id' => 'integer',
         'glType' => 'string',
+        'mappedType' => 'Spinen\ConnectWise\Models\v2019_2\Finance\MappedTypeReference',
+        'mappedRecord' => 'Spinen\ConnectWise\Models\v2019_2\Finance\MappedRecordReference',
         'segment1' => 'string',
         'segment2' => 'string',
         'segment3' => 'string',
@@ -66,5 +73,6 @@ class GLAccount extends Model
         'productId' => 'string',
         'inventory' => 'string',
         'salesCode' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
     ];
 }

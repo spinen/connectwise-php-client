@@ -5,12 +5,15 @@ namespace Spinen\ConnectWise\Models\v2019_1\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SystemSetting
+ * Class SystemSetting Version v2019_1
+ * 
+ * Model for SystemSetting
  *
  * @property integer $id
  * @property string $description
  * @property string $value
  * @property string $valueType
+ * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  */
 class SystemSetting extends Model
 {
@@ -24,5 +27,6 @@ class SystemSetting extends Model
         'description' => 'string',
         'value' => 'string',
         'valueType' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
     ];
 }

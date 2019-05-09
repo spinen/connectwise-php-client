@@ -5,16 +5,20 @@ namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AgreementWorkRole
+ * Class AgreementWorkRole Version v2019_1
+ * 
+ * Model for AgreementWorkRole
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\WorkRoleReference $workRole
  * @property integer $locationId
  * @property string $rateType
- * @property double $rate
- * @property double $limitTo
- * @property carbon $effectiveDate
- * @property carbon $endingDate
+ * @property number $rate
+ * @property number $limitTo
+ * @property string $effectiveDate
+ * @property string $endingDate
  * @property integer $agreementId
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
  */
 class AgreementWorkRole extends Model
 {
@@ -25,12 +29,14 @@ class AgreementWorkRole extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'workRole' => 'Spinen\ConnectWise\Models\v2019_1\Finance\WorkRoleReference',
         'locationId' => 'integer',
         'rateType' => 'string',
-        'rate' => 'double',
-        'limitTo' => 'double',
-        'effectiveDate' => 'carbon',
-        'endingDate' => 'carbon',
+        'rate' => 'number',
+        'limitTo' => 'number',
+        'effectiveDate' => 'string',
+        'endingDate' => 'string',
         'agreementId' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
     ];
 }

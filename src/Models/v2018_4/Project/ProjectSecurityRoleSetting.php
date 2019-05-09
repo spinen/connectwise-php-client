@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_4\Project;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProjectSecurityRoleSetting
+ * Class ProjectSecurityRoleSetting Version v2018_4
+ * 
+ * Model for ProjectSecurityRoleSetting
  *
  * @property integer $id
  * @property string $addLevel
@@ -14,6 +16,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $inquireLevel
  * @property string $moduleIdentifier
  * @property boolean $myFlag
+ * @property Spinen\ConnectWise\Models\v2018_4\Project\Metadata $_info
  */
 class ProjectSecurityRoleSetting extends Model
 {
@@ -30,5 +33,6 @@ class ProjectSecurityRoleSetting extends Model
         'inquireLevel' => 'string',
         'moduleIdentifier' => 'string',
         'myFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Project\Metadata',
     ];
 }

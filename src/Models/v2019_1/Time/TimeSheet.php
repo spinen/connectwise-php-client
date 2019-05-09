@@ -5,16 +5,20 @@ namespace Spinen\ConnectWise\Models\v2019_1\Time;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TimeSheet
+ * Class TimeSheet Version v2019_1
+ * 
+ * Model for TimeSheet
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_1\Time\MemberReference $member
  * @property integer $year
  * @property integer $period
- * @property carbon $dateStart
- * @property carbon $dateEnd
+ * @property string $dateStart
+ * @property string $dateEnd
  * @property string $status
- * @property double $hours
- * @property carbon $deadline
+ * @property number $hours
+ * @property string $deadline
+ * @property Spinen\ConnectWise\Models\v2019_1\Time\Metadata $_info
  */
 class TimeSheet extends Model
 {
@@ -25,12 +29,14 @@ class TimeSheet extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2019_1\Time\MemberReference',
         'year' => 'integer',
         'period' => 'integer',
-        'dateStart' => 'carbon',
-        'dateEnd' => 'carbon',
+        'dateStart' => 'string',
+        'dateEnd' => 'string',
         'status' => 'string',
-        'hours' => 'double',
-        'deadline' => 'carbon',
+        'hours' => 'number',
+        'deadline' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Time\Metadata',
     ];
 }

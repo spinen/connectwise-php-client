@@ -5,12 +5,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Track
+ * Class Track Version v2019_2
+ * 
+ * Model for Track
  *
  * @property integer $id
  * @property string $name
  * @property boolean $inactiveFlag
  * @property array $notifyActionIds
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\Metadata $_info
  */
 class Track extends Model
 {
@@ -24,5 +27,6 @@ class Track extends Model
         'name' => 'string',
         'inactiveFlag' => 'boolean',
         'notifyActionIds' => 'array',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Company\Metadata',
     ];
 }

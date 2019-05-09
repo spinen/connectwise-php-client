@@ -5,12 +5,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ParsingType
+ * Class ParsingType Version v2019_2
+ * 
+ * Model for ParsingType
  *
  * @property integer $id
  * @property string $name
  * @property string $parseRule
  * @property boolean $defaultFlag
+ * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  */
 class ParsingType extends Model
 {
@@ -24,5 +27,6 @@ class ParsingType extends Model
         'name' => 'string',
         'parseRule' => 'string',
         'defaultFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
     ];
 }

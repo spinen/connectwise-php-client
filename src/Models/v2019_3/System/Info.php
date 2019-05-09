@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_3\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Info
+ * Class Info Version v2019_3
+ * 
+ * Model for Info
  *
  * @property string $version
  * @property boolean $isCloud

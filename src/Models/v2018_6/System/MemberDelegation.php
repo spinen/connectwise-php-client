@@ -5,12 +5,17 @@ namespace Spinen\ConnectWise\Models\v2018_6\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class MemberDelegation
+ * Class MemberDelegation Version v2018_6
+ * 
+ * Model for MemberDelegation
  *
  * @property integer $id
  * @property string $delegationType
- * @property carbon $dateStart
- * @property carbon $dateEnd
+ * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $delegatedTo
+ * @property string $dateStart
+ * @property string $dateEnd
+ * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  */
 class MemberDelegation extends Model
 {
@@ -22,7 +27,10 @@ class MemberDelegation extends Model
     protected $casts = [
         'id' => 'integer',
         'delegationType' => 'string',
-        'dateStart' => 'carbon',
-        'dateEnd' => 'carbon',
+        'delegatedTo' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        'dateStart' => 'string',
+        'dateEnd' => 'string',
+        'member' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
     ];
 }

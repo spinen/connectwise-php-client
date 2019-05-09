@@ -5,12 +5,18 @@ namespace Spinen\ConnectWise\Models\v2018_4\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PricingDetail
+ * Class PricingDetail Version v2018_4
+ * 
+ * Model for PricingDetail
  *
  * @property integer $id
- * @property carbon $startDate
- * @property carbon $endDate
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\CatalogItemReference $product
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\ProductCategoryReference $category
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\ProductSubCategoryReference $subCategory
+ * @property string $startDate
+ * @property string $endDate
  * @property boolean $noEndDate
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
  */
 class PricingDetail extends Model
 {
@@ -21,8 +27,12 @@ class PricingDetail extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'startDate' => 'carbon',
-        'endDate' => 'carbon',
+        'product' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\CatalogItemReference',
+        'category' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\ProductCategoryReference',
+        'subCategory' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\ProductSubCategoryReference',
+        'startDate' => 'string',
+        'endDate' => 'string',
         'noEndDate' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
     ];
 }

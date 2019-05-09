@@ -5,10 +5,16 @@ namespace Spinen\ConnectWise\Models\v2018_5\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ManagedDevicesIntegrationNotification
+ * Class ManagedDevicesIntegrationNotification Version v2018_5
+ * 
+ * Model for ManagedDevicesIntegrationNotification
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\ManagedDevicesIntegrationReference $managedDevicesIntegration
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\NotificationRecipientReference $notifyWho
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\MemberReference $member
  * @property string $logType
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
  */
 class ManagedDevicesIntegrationNotification extends Model
 {
@@ -19,6 +25,10 @@ class ManagedDevicesIntegrationNotification extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'managedDevicesIntegration' => 'Spinen\ConnectWise\Models\v2018_5\Company\ManagedDevicesIntegrationReference',
+        'notifyWho' => 'Spinen\ConnectWise\Models\v2018_5\Company\NotificationRecipientReference',
+        'member' => 'Spinen\ConnectWise\Models\v2018_5\Company\MemberReference',
         'logType' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
     ];
 }

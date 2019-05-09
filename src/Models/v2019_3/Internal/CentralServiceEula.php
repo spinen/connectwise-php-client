@@ -5,14 +5,18 @@ namespace Spinen\ConnectWise\Models\v2019_3\Internal;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CentralServiceEula
+ * Class CentralServiceEula Version v2019_3
+ * 
+ * Model for CentralServiceEula
  *
  * @property integer $id
  * @property string $eulaKey
  * @property boolean $acceptedFlag
  * @property string $eulaServiceLink
  * @property string $eulaUiLink
- * @property carbon $signedDate
+ * @property Spinen\ConnectWise\Models\v2019_3\Internal\MemberReference $signedMember
+ * @property string $signedDate
+ * @property Spinen\ConnectWise\Models\v2019_3\Internal\Metadata $_info
  */
 class CentralServiceEula extends Model
 {
@@ -27,6 +31,8 @@ class CentralServiceEula extends Model
         'acceptedFlag' => 'boolean',
         'eulaServiceLink' => 'string',
         'eulaUiLink' => 'string',
-        'signedDate' => 'carbon',
+        'signedMember' => 'Spinen\ConnectWise\Models\v2019_3\Internal\MemberReference',
+        'signedDate' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Internal\Metadata',
     ];
 }

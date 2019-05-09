@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class EntityType
+ * Class EntityType Version v2019_2
+ * 
+ * Model for EntityType
  *
  * @property integer $id
  * @property string $name

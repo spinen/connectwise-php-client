@@ -5,12 +5,15 @@ namespace Spinen\ConnectWise\Models\v2019_3\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Severity
+ * Class Severity Version v2019_3
+ * 
+ * Model for Severity
  *
  * @property integer $id
  * @property string $name
  * @property string $description
  * @property boolean $defaultFlag
+ * @property Spinen\ConnectWise\Models\v2019_3\Service\Metadata $_info
  */
 class Severity extends Model
 {
@@ -24,5 +27,6 @@ class Severity extends Model
         'name' => 'string',
         'description' => 'string',
         'defaultFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Service\Metadata',
     ];
 }

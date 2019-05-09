@@ -5,27 +5,35 @@ namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Agreement
+ * Class Agreement Version v2018_5
+ * 
+ * Model for Agreement
  *
  * @property integer $id
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\AgreementTypeReference $type
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\ContactReference $contact
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference $subContractCompany
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\ContactReference $subContractContact
  * @property integer $parentAgreementId
  * @property string $customerPO
  * @property integer $locationId
  * @property integer $businessUnitId
  * @property boolean $restrictLocationFlag
  * @property boolean $restrictDepartmentFlag
- * @property carbon $startDate
- * @property carbon $endDate
+ * @property string $startDate
+ * @property string $endDate
  * @property boolean $noEndingDateFlag
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\OpportunityReference $opportunity
  * @property boolean $cancelledFlag
- * @property carbon $dateCancelled
+ * @property string $dateCancelled
  * @property string $reasonCancelled
  * @property integer $slaId
  * @property string $workOrder
  * @property string $internalNotes
  * @property string $applicationUnits
- * @property double $applicationLimit
+ * @property number $applicationLimit
  * @property string $applicationCycle
  * @property boolean $applicationUnlimitedFlag
  * @property boolean $oneTimeFlag
@@ -41,22 +49,26 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $chargeToFirm
  * @property string $employeeCompRate
  * @property string $employeeCompNotExceed
- * @property double $compHourlyRate
- * @property double $compLimitAmount
+ * @property number $compHourlyRate
+ * @property number $compLimitAmount
  * @property integer $billCycleId
  * @property boolean $billOneTimeFlag
  * @property integer $billTermsId
  * @property string $invoicingCycle
- * @property double $billAmount
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference $billToCompany
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\SiteReference $billToSite
+ * @property number $billAmount
  * @property boolean $taxable
- * @property double $prorateFirstBill
- * @property carbon $billStartDate
+ * @property number $prorateFirstBill
+ * @property string $billStartDate
  * @property integer $taxCodeId
  * @property boolean $restrictDownPayment
  * @property boolean $prorateFlag
  * @property string $invoiceDescription
  * @property boolean $topComment
  * @property boolean $bottomComment
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\WorkRoleReference $workRole
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\WorkTypeReference $workType
  * @property integer $projectTypeId
  * @property integer $invoiceTemplateSetupId
  * @property string $billTime
@@ -65,7 +77,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $billableTimeInvoice
  * @property boolean $billableExpenseInvoice
  * @property boolean $billableProductInvoice
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\CurrencyReference $currency
  * @property string $periodType
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
  * @property array $customFields
  */
 class Agreement extends Model
@@ -78,23 +92,29 @@ class Agreement extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
+        'type' => 'Spinen\ConnectWise\Models\v2018_5\Finance\AgreementTypeReference',
+        'company' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference',
+        'contact' => 'Spinen\ConnectWise\Models\v2018_5\Finance\ContactReference',
+        'subContractCompany' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference',
+        'subContractContact' => 'Spinen\ConnectWise\Models\v2018_5\Finance\ContactReference',
         'parentAgreementId' => 'integer',
         'customerPO' => 'string',
         'locationId' => 'integer',
         'businessUnitId' => 'integer',
         'restrictLocationFlag' => 'boolean',
         'restrictDepartmentFlag' => 'boolean',
-        'startDate' => 'carbon',
-        'endDate' => 'carbon',
+        'startDate' => 'string',
+        'endDate' => 'string',
         'noEndingDateFlag' => 'boolean',
+        'opportunity' => 'Spinen\ConnectWise\Models\v2018_5\Finance\OpportunityReference',
         'cancelledFlag' => 'boolean',
-        'dateCancelled' => 'carbon',
+        'dateCancelled' => 'string',
         'reasonCancelled' => 'string',
         'slaId' => 'integer',
         'workOrder' => 'string',
         'internalNotes' => 'string',
         'applicationUnits' => 'string',
-        'applicationLimit' => 'double',
+        'applicationLimit' => 'number',
         'applicationCycle' => 'string',
         'applicationUnlimitedFlag' => 'boolean',
         'oneTimeFlag' => 'boolean',
@@ -110,22 +130,26 @@ class Agreement extends Model
         'chargeToFirm' => 'boolean',
         'employeeCompRate' => 'string',
         'employeeCompNotExceed' => 'string',
-        'compHourlyRate' => 'double',
-        'compLimitAmount' => 'double',
+        'compHourlyRate' => 'number',
+        'compLimitAmount' => 'number',
         'billCycleId' => 'integer',
         'billOneTimeFlag' => 'boolean',
         'billTermsId' => 'integer',
         'invoicingCycle' => 'string',
-        'billAmount' => 'double',
+        'billToCompany' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference',
+        'billToSite' => 'Spinen\ConnectWise\Models\v2018_5\Finance\SiteReference',
+        'billAmount' => 'number',
         'taxable' => 'boolean',
-        'prorateFirstBill' => 'double',
-        'billStartDate' => 'carbon',
+        'prorateFirstBill' => 'number',
+        'billStartDate' => 'string',
         'taxCodeId' => 'integer',
         'restrictDownPayment' => 'boolean',
         'prorateFlag' => 'boolean',
         'invoiceDescription' => 'string',
         'topComment' => 'boolean',
         'bottomComment' => 'boolean',
+        'workRole' => 'Spinen\ConnectWise\Models\v2018_5\Finance\WorkRoleReference',
+        'workType' => 'Spinen\ConnectWise\Models\v2018_5\Finance\WorkTypeReference',
         'projectTypeId' => 'integer',
         'invoiceTemplateSetupId' => 'integer',
         'billTime' => 'string',
@@ -134,7 +158,9 @@ class Agreement extends Model
         'billableTimeInvoice' => 'boolean',
         'billableExpenseInvoice' => 'boolean',
         'billableProductInvoice' => 'boolean',
+        'currency' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CurrencyReference',
         'periodType' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
         'customFields' => 'array',
     ];
 }

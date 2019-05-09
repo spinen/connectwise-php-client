@@ -5,11 +5,14 @@ namespace Spinen\ConnectWise\Models\v2018_5\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ContactType
+ * Class ContactType Version v2018_5
+ * 
+ * Model for ContactType
  *
  * @property integer $id
  * @property string $description
  * @property boolean $defaultFlag
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
  */
 class ContactType extends Model
 {
@@ -22,5 +25,6 @@ class ContactType extends Model
         'id' => 'integer',
         'description' => 'string',
         'defaultFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
     ];
 }

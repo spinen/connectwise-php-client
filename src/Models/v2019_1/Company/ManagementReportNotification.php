@@ -5,11 +5,17 @@ namespace Spinen\ConnectWise\Models\v2019_1\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ManagementReportNotification
+ * Class ManagementReportNotification Version v2019_1
+ * 
+ * Model for ManagementReportNotification
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\NotificationRecipientReference $notifyWho
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\MemberReference $member
  * @property string $email
  * @property boolean $globalFlag
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
  */
 class ManagementReportNotification extends Model
 {
@@ -20,7 +26,11 @@ class ManagementReportNotification extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'notifyWho' => 'Spinen\ConnectWise\Models\v2019_1\Company\NotificationRecipientReference',
+        'member' => 'Spinen\ConnectWise\Models\v2019_1\Company\MemberReference',
         'email' => 'string',
         'globalFlag' => 'boolean',
+        'company' => 'Spinen\ConnectWise\Models\v2019_1\Company\CompanyReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
     ];
 }

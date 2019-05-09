@@ -5,9 +5,15 @@ namespace Spinen\ConnectWise\Models\v2018_4\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TicketPipeline
+ * Class TicketPipeline Version v2018_4
+ * 
+ * Model for TicketPipeline
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_4\Service\TicketReference $ticket
+ * @property Spinen\ConnectWise\Models\v2018_4\Service\BoardReference $board
+ * @property Spinen\ConnectWise\Models\v2018_4\Service\ServiceStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2018_4\Service\Metadata $_info
  */
 class TicketPipeline extends Model
 {
@@ -18,5 +24,9 @@ class TicketPipeline extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'ticket' => 'Spinen\ConnectWise\Models\v2018_4\Service\TicketReference',
+        'board' => 'Spinen\ConnectWise\Models\v2018_4\Service\BoardReference',
+        'status' => 'Spinen\ConnectWise\Models\v2018_4\Service\ServiceStatusReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Service\Metadata',
     ];
 }

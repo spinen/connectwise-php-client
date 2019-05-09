@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_2\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Category
+ * Class Category Version v2019_2
+ * 
+ * Model for Category
  *
  * @property integer $id
  * @property string $name
@@ -15,6 +17,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property array $locationIds
  * @property boolean $addAllLocations
  * @property boolean $removeAllLocations
+ * @property Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata $_info
  */
 class Category extends Model
 {
@@ -32,5 +35,6 @@ class Category extends Model
         'locationIds' => 'array',
         'addAllLocations' => 'boolean',
         'removeAllLocations' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata',
     ];
 }

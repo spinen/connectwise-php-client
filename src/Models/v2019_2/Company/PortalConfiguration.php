@@ -5,11 +5,14 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PortalConfiguration
+ * Class PortalConfiguration Version v2019_2
+ * 
+ * Model for PortalConfiguration
  *
  * @property integer $id
  * @property string $name
  * @property boolean $defaultFlag
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\CompanyReference $company
  * @property string $loginBackgroundColor
  * @property string $portalBackgroundColor
  * @property string $menuColor
@@ -24,6 +27,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property array $locationIds
  * @property boolean $portalImageCopySuccessFlag
  * @property boolean $displayVendorFlag
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\Metadata $_info
  */
 class PortalConfiguration extends Model
 {
@@ -36,6 +40,7 @@ class PortalConfiguration extends Model
         'id' => 'integer',
         'name' => 'string',
         'defaultFlag' => 'boolean',
+        'company' => 'Spinen\ConnectWise\Models\v2019_2\Company\CompanyReference',
         'loginBackgroundColor' => 'string',
         'portalBackgroundColor' => 'string',
         'menuColor' => 'string',
@@ -50,5 +55,6 @@ class PortalConfiguration extends Model
         'locationIds' => 'array',
         'portalImageCopySuccessFlag' => 'boolean',
         'displayVendorFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Company\Metadata',
     ];
 }

@@ -5,10 +5,14 @@ namespace Spinen\ConnectWise\Models\v2018_5\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Skill
+ * Class Skill Version v2018_5
+ * 
+ * Model for Skill
  *
  * @property integer $id
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2018_5\System\SkillCategoryReference $category
+ * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
  */
 class Skill extends Model
 {
@@ -20,5 +24,7 @@ class Skill extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
+        'category' => 'Spinen\ConnectWise\Models\v2018_5\System\SkillCategoryReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
     ];
 }

@@ -5,13 +5,16 @@ namespace Spinen\ConnectWise\Models\v2018_6\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ShipmentMethod
+ * Class ShipmentMethod Version v2018_6
+ * 
+ * Model for ShipmentMethod
  *
  * @property integer $id
  * @property string $name
  * @property boolean $defaultFlag
  * @property string $trackingUrl
  * @property string $shippingType
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
  */
 class ShipmentMethod extends Model
 {
@@ -26,5 +29,6 @@ class ShipmentMethod extends Model
         'defaultFlag' => 'boolean',
         'trackingUrl' => 'string',
         'shippingType' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
     ];
 }

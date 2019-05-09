@@ -5,12 +5,15 @@ namespace Spinen\ConnectWise\Models\v2018_4\Schedule;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ScheduleStatus
+ * Class ScheduleStatus Version v2018_4
+ * 
+ * Model for ScheduleStatus
  *
  * @property integer $id
  * @property string $name
  * @property boolean $defaultFlag
  * @property boolean $showAsTentativeFlag
+ * @property Spinen\ConnectWise\Models\v2018_4\Schedule\Metadata $_info
  */
 class ScheduleStatus extends Model
 {
@@ -24,5 +27,6 @@ class ScheduleStatus extends Model
         'name' => 'string',
         'defaultFlag' => 'boolean',
         'showAsTentativeFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Schedule\Metadata',
     ];
 }

@@ -5,11 +5,15 @@ namespace Spinen\ConnectWise\Models\v2018_5\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BoardItem
+ * Class BoardItem Version v2018_5
+ * 
+ * Model for BoardItem
  *
  * @property integer $id
  * @property string $name
  * @property boolean $inactiveFlag
+ * @property Spinen\ConnectWise\Models\v2018_5\Service\BoardReference $board
+ * @property Spinen\ConnectWise\Models\v2018_5\Service\Metadata $_info
  */
 class BoardItem extends Model
 {
@@ -22,5 +26,7 @@ class BoardItem extends Model
         'id' => 'integer',
         'name' => 'string',
         'inactiveFlag' => 'boolean',
+        'board' => 'Spinen\ConnectWise\Models\v2018_5\Service\BoardReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Service\Metadata',
     ];
 }

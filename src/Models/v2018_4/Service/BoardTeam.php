@@ -5,16 +5,20 @@ namespace Spinen\ConnectWise\Models\v2018_4\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BoardTeam
+ * Class BoardTeam Version v2018_4
+ * 
+ * Model for BoardTeam
  *
  * @property integer $id
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2018_4\Service\MemberReference $teamLeader
  * @property array $members
  * @property boolean $defaultFlag
  * @property boolean $notifyOnTicketDelete
  * @property integer $boardId
  * @property integer $locationId
  * @property integer $businessUnitId
+ * @property Spinen\ConnectWise\Models\v2018_4\Service\Metadata $_info
  */
 class BoardTeam extends Model
 {
@@ -26,11 +30,13 @@ class BoardTeam extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
+        'teamLeader' => 'Spinen\ConnectWise\Models\v2018_4\Service\MemberReference',
         'members' => 'array',
         'defaultFlag' => 'boolean',
         'notifyOnTicketDelete' => 'boolean',
         'boardId' => 'integer',
         'locationId' => 'integer',
         'businessUnitId' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Service\Metadata',
     ];
 }

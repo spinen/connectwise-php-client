@@ -5,11 +5,15 @@ namespace Spinen\ConnectWise\Models\v2019_1\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class State
+ * Class State Version v2019_1
+ * 
+ * Model for State
  *
  * @property integer $id
  * @property string $identifier
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\CountryReference $country
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
  */
 class State extends Model
 {
@@ -22,5 +26,7 @@ class State extends Model
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',
+        'country' => 'Spinen\ConnectWise\Models\v2019_1\Company\CountryReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
     ];
 }

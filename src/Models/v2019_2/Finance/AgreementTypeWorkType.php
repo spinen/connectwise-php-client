@@ -5,20 +5,25 @@ namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AgreementTypeWorkType
+ * Class AgreementTypeWorkType Version v2019_2
+ * 
+ * Model for AgreementTypeWorkType
  *
  * @property integer $id
- * @property carbon $effectiveDate
- * @property carbon $endingDate
- * @property double $rate
+ * @property Spinen\ConnectWise\Models\v2019_2\Finance\AgreementTypeReference $type
+ * @property Spinen\ConnectWise\Models\v2019_2\Finance\WorkTypeReference $workType
+ * @property string $effectiveDate
+ * @property string $endingDate
+ * @property number $rate
  * @property string $rateType
  * @property string $billTime
- * @property double $hoursMin
- * @property double $hoursMax
- * @property double $roundBillHours
- * @property double $overageRate
+ * @property number $hoursMin
+ * @property number $hoursMax
+ * @property number $roundBillHours
+ * @property number $overageRate
  * @property string $overageRateType
- * @property double $limitTo
+ * @property number $limitTo
+ * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
  */
 class AgreementTypeWorkType extends Model
 {
@@ -29,16 +34,19 @@ class AgreementTypeWorkType extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'effectiveDate' => 'carbon',
-        'endingDate' => 'carbon',
-        'rate' => 'double',
+        'type' => 'Spinen\ConnectWise\Models\v2019_2\Finance\AgreementTypeReference',
+        'workType' => 'Spinen\ConnectWise\Models\v2019_2\Finance\WorkTypeReference',
+        'effectiveDate' => 'string',
+        'endingDate' => 'string',
+        'rate' => 'number',
         'rateType' => 'string',
         'billTime' => 'string',
-        'hoursMin' => 'double',
-        'hoursMax' => 'double',
-        'roundBillHours' => 'double',
-        'overageRate' => 'double',
+        'hoursMin' => 'number',
+        'hoursMax' => 'number',
+        'roundBillHours' => 'number',
+        'overageRate' => 'number',
         'overageRateType' => 'string',
-        'limitTo' => 'double',
+        'limitTo' => 'number',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
     ];
 }

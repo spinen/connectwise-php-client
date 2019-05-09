@@ -5,12 +5,15 @@ namespace Spinen\ConnectWise\Models\v2019_1\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SurveyOption
+ * Class SurveyOption Version v2019_1
+ * 
+ * Model for SurveyOption
  *
  * @property integer $id
  * @property string $caption
  * @property integer $points
  * @property boolean $visibleflag
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
  */
 class SurveyOption extends Model
 {
@@ -24,5 +27,6 @@ class SurveyOption extends Model
         'caption' => 'string',
         'points' => 'integer',
         'visibleflag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
     ];
 }

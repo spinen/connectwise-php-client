@@ -5,17 +5,20 @@ namespace Spinen\ConnectWise\Models\v2019_1\Time;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class WorkRole
+ * Class WorkRole Version v2019_1
+ * 
+ * Model for WorkRole
  *
  * @property integer $id
  * @property string $name
- * @property double $hourlyRate
+ * @property number $hourlyRate
  * @property string $integrationXref
  * @property boolean $inactiveFlag
  * @property boolean $addAllLocations
  * @property boolean $removeAllLocations
  * @property boolean $addAllAgreementExclusions
  * @property array $locationIds
+ * @property Spinen\ConnectWise\Models\v2019_1\Time\Metadata $_info
  */
 class WorkRole extends Model
 {
@@ -27,12 +30,13 @@ class WorkRole extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'hourlyRate' => 'double',
+        'hourlyRate' => 'number',
         'integrationXref' => 'string',
         'inactiveFlag' => 'boolean',
         'addAllLocations' => 'boolean',
         'removeAllLocations' => 'boolean',
         'addAllAgreementExclusions' => 'boolean',
         'locationIds' => 'array',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Time\Metadata',
     ];
 }

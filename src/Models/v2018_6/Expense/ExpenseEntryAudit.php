@@ -5,13 +5,19 @@ namespace Spinen\ConnectWise\Models\v2018_6\Expense;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ExpenseEntryAudit
+ * Class ExpenseEntryAudit Version v2018_6
+ * 
+ * Model for ExpenseEntryAudit
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_6\Expense\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2018_6\Expense\AuditSource $source
+ * @property Spinen\ConnectWise\Models\v2018_6\Expense\AuditType $type
  * @property string $message
  * @property string $oldValue
  * @property string $newValue
  * @property string $value
+ * @property Spinen\ConnectWise\Models\v2018_6\Expense\Metadata $_info
  */
 class ExpenseEntryAudit extends Model
 {
@@ -22,9 +28,13 @@ class ExpenseEntryAudit extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2018_6\Expense\MemberReference',
+        'source' => 'Spinen\ConnectWise\Models\v2018_6\Expense\AuditSource',
+        'type' => 'Spinen\ConnectWise\Models\v2018_6\Expense\AuditType',
         'message' => 'string',
         'oldValue' => 'string',
         'newValue' => 'string',
         'value' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Expense\Metadata',
     ];
 }

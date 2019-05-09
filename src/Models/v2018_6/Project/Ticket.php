@@ -5,24 +5,43 @@ namespace Spinen\ConnectWise\Models\v2018_6\Project;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Ticket
+ * Class Ticket Version v2018_6
+ * 
+ * Model for Ticket
  *
  * @property integer $id
  * @property string $summary
  * @property boolean $isIssueFlag
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\BoardReference $board
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\ServiceStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\ProjectReference $project
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\ProjectPhaseReference $phase
  * @property string $wbsCode
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\SiteReference $site
  * @property string $siteName
  * @property string $addressLine1
  * @property string $addressLine2
  * @property string $city
  * @property string $stateIdentifier
  * @property string $zip
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\CountryReference $country
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\ContactReference $contact
  * @property string $contactName
  * @property string $contactPhoneNumber
  * @property string $contactPhoneExtension
  * @property string $contactEmailAddress
- * @property carbon $requiredDate
- * @property double $budgetHours
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\ServiceTypeReference $type
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\ServiceSubTypeReference $subType
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\ServiceItemReference $item
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\MemberReference $owner
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\PriorityReference $priority
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\ServiceLocationReference $serviceLocation
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\ServiceSourceReference $source
+ * @property string $requiredDate
+ * @property number $budgetHours
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\OpportunityReference $opportunity
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\AgreementReference $agreement
  * @property integer $knowledgeBaseCategoryId
  * @property integer $knowledgeBaseSubCategoryId
  * @property integer $knowledgeBaseLinkId
@@ -36,10 +55,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $closedDate
  * @property string $closedBy
  * @property boolean $closedFlag
- * @property double $actualHours
+ * @property number $actualHours
  * @property boolean $approved
  * @property string $subBillingMethod
- * @property double $subBillingAmount
+ * @property number $subBillingAmount
  * @property string $subDateAccepted
  * @property string $resources
  * @property string $billTime
@@ -50,8 +69,13 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $predecessorClosedFlag
  * @property integer $lagDays
  * @property boolean $lagNonworkingDaysFlag
- * @property carbon $estimatedStartDate
+ * @property string $estimatedStartDate
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\SystemLocationReference $location
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\SystemDepartmentReference $department
  * @property integer $duration
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\Guid $mobileGuid
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\CurrencyReference $currency
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\Metadata $_info
  * @property string $initialDescription
  * @property string $initialInternalAnalysis
  * @property string $initialResolution
@@ -71,19 +95,36 @@ class Ticket extends Model
         'id' => 'integer',
         'summary' => 'string',
         'isIssueFlag' => 'boolean',
+        'board' => 'Spinen\ConnectWise\Models\v2018_6\Project\BoardReference',
+        'status' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceStatusReference',
+        'project' => 'Spinen\ConnectWise\Models\v2018_6\Project\ProjectReference',
+        'phase' => 'Spinen\ConnectWise\Models\v2018_6\Project\ProjectPhaseReference',
         'wbsCode' => 'string',
+        'company' => 'Spinen\ConnectWise\Models\v2018_6\Project\CompanyReference',
+        'site' => 'Spinen\ConnectWise\Models\v2018_6\Project\SiteReference',
         'siteName' => 'string',
         'addressLine1' => 'string',
         'addressLine2' => 'string',
         'city' => 'string',
         'stateIdentifier' => 'string',
         'zip' => 'string',
+        'country' => 'Spinen\ConnectWise\Models\v2018_6\Project\CountryReference',
+        'contact' => 'Spinen\ConnectWise\Models\v2018_6\Project\ContactReference',
         'contactName' => 'string',
         'contactPhoneNumber' => 'string',
         'contactPhoneExtension' => 'string',
         'contactEmailAddress' => 'string',
-        'requiredDate' => 'carbon',
-        'budgetHours' => 'double',
+        'type' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceTypeReference',
+        'subType' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceSubTypeReference',
+        'item' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceItemReference',
+        'owner' => 'Spinen\ConnectWise\Models\v2018_6\Project\MemberReference',
+        'priority' => 'Spinen\ConnectWise\Models\v2018_6\Project\PriorityReference',
+        'serviceLocation' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceLocationReference',
+        'source' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceSourceReference',
+        'requiredDate' => 'string',
+        'budgetHours' => 'number',
+        'opportunity' => 'Spinen\ConnectWise\Models\v2018_6\Project\OpportunityReference',
+        'agreement' => 'Spinen\ConnectWise\Models\v2018_6\Project\AgreementReference',
         'knowledgeBaseCategoryId' => 'integer',
         'knowledgeBaseSubCategoryId' => 'integer',
         'knowledgeBaseLinkId' => 'integer',
@@ -97,10 +138,10 @@ class Ticket extends Model
         'closedDate' => 'string',
         'closedBy' => 'string',
         'closedFlag' => 'boolean',
-        'actualHours' => 'double',
+        'actualHours' => 'number',
         'approved' => 'boolean',
         'subBillingMethod' => 'string',
-        'subBillingAmount' => 'double',
+        'subBillingAmount' => 'number',
         'subDateAccepted' => 'string',
         'resources' => 'string',
         'billTime' => 'string',
@@ -111,8 +152,13 @@ class Ticket extends Model
         'predecessorClosedFlag' => 'boolean',
         'lagDays' => 'integer',
         'lagNonworkingDaysFlag' => 'boolean',
-        'estimatedStartDate' => 'carbon',
+        'estimatedStartDate' => 'string',
+        'location' => 'Spinen\ConnectWise\Models\v2018_6\Project\SystemLocationReference',
+        'department' => 'Spinen\ConnectWise\Models\v2018_6\Project\SystemDepartmentReference',
         'duration' => 'integer',
+        'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_6\Project\Guid',
+        'currency' => 'Spinen\ConnectWise\Models\v2018_6\Project\CurrencyReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Project\Metadata',
         'initialDescription' => 'string',
         'initialInternalAnalysis' => 'string',
         'initialResolution' => 'string',

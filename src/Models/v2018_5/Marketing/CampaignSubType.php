@@ -5,10 +5,14 @@ namespace Spinen\ConnectWise\Models\v2018_5\Marketing;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CampaignSubType
+ * Class CampaignSubType Version v2018_5
+ * 
+ * Model for CampaignSubType
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_5\Marketing\CampaignTypeReference $type
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2018_5\Marketing\Metadata $_info
  */
 class CampaignSubType extends Model
 {
@@ -19,6 +23,8 @@ class CampaignSubType extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'type' => 'Spinen\ConnectWise\Models\v2018_5\Marketing\CampaignTypeReference',
         'name' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Marketing\Metadata',
     ];
 }

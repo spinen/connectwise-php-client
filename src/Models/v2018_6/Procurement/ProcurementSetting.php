@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_6\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProcurementSetting
+ * Class ProcurementSetting Version v2018_6
+ * 
+ * Model for ProcurementSetting
  *
  * @property integer $id
  * @property integer $startingPurchaseOrderNum
@@ -22,6 +24,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $taxFreightFlag
  * @property boolean $useVendorTaxCodeFlag
  * @property integer $numDecimalPlaces
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
  */
 class ProcurementSetting extends Model
 {
@@ -46,5 +49,6 @@ class ProcurementSetting extends Model
         'taxFreightFlag' => 'boolean',
         'useVendorTaxCodeFlag' => 'boolean',
         'numDecimalPlaces' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
     ];
 }

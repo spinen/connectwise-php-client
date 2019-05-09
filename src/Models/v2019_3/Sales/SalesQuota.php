@@ -5,34 +5,43 @@ namespace Spinen\ConnectWise\Models\v2019_3\Sales;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SalesQuota
+ * Class SalesQuota Version v2019_3
+ * 
+ * Model for SalesQuota
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_3\Sales\MemberReference $member
  * @property integer $forecastYear
- * @property double $januaryRevenue
- * @property double $januaryMargin
- * @property double $februaryRevenue
- * @property double $februaryMargin
- * @property double $marchRevenue
- * @property double $marchMargin
- * @property double $aprilRevenue
- * @property double $aprilMargin
- * @property double $mayRevenue
- * @property double $mayMargin
- * @property double $juneRevenue
- * @property double $juneMargin
- * @property double $julyRevenue
- * @property double $julyMargin
- * @property double $augustRevenue
- * @property double $augustMargin
- * @property double $septemberRevenue
- * @property double $septemberMargin
- * @property double $octoberRevenue
- * @property double $octoberMargin
- * @property double $novemberRevenue
- * @property double $novemberMargin
- * @property double $decemberRevenue
- * @property double $decemberMargin
+ * @property Spinen\ConnectWise\Models\v2019_3\Sales\SystemLocationReference $location
+ * @property Spinen\ConnectWise\Models\v2019_3\Sales\SystemDepartmentReference $department
+ * @property Spinen\ConnectWise\Models\v2019_3\Sales\ProductCategoryReference $category
+ * @property Spinen\ConnectWise\Models\v2019_3\Sales\ProductSubCategoryReference $subCategory
+ * @property number $januaryRevenue
+ * @property number $januaryMargin
+ * @property number $februaryRevenue
+ * @property number $februaryMargin
+ * @property number $marchRevenue
+ * @property number $marchMargin
+ * @property number $aprilRevenue
+ * @property number $aprilMargin
+ * @property number $mayRevenue
+ * @property number $mayMargin
+ * @property number $juneRevenue
+ * @property number $juneMargin
+ * @property number $julyRevenue
+ * @property number $julyMargin
+ * @property number $augustRevenue
+ * @property number $augustMargin
+ * @property number $septemberRevenue
+ * @property number $septemberMargin
+ * @property number $octoberRevenue
+ * @property number $octoberMargin
+ * @property number $novemberRevenue
+ * @property number $novemberMargin
+ * @property number $decemberRevenue
+ * @property number $decemberMargin
+ * @property Spinen\ConnectWise\Models\v2019_3\Sales\CurrencyReference $currency
+ * @property Spinen\ConnectWise\Models\v2019_3\Sales\Metadata $_info
  */
 class SalesQuota extends Model
 {
@@ -43,30 +52,37 @@ class SalesQuota extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2019_3\Sales\MemberReference',
         'forecastYear' => 'integer',
-        'januaryRevenue' => 'double',
-        'januaryMargin' => 'double',
-        'februaryRevenue' => 'double',
-        'februaryMargin' => 'double',
-        'marchRevenue' => 'double',
-        'marchMargin' => 'double',
-        'aprilRevenue' => 'double',
-        'aprilMargin' => 'double',
-        'mayRevenue' => 'double',
-        'mayMargin' => 'double',
-        'juneRevenue' => 'double',
-        'juneMargin' => 'double',
-        'julyRevenue' => 'double',
-        'julyMargin' => 'double',
-        'augustRevenue' => 'double',
-        'augustMargin' => 'double',
-        'septemberRevenue' => 'double',
-        'septemberMargin' => 'double',
-        'octoberRevenue' => 'double',
-        'octoberMargin' => 'double',
-        'novemberRevenue' => 'double',
-        'novemberMargin' => 'double',
-        'decemberRevenue' => 'double',
-        'decemberMargin' => 'double',
+        'location' => 'Spinen\ConnectWise\Models\v2019_3\Sales\SystemLocationReference',
+        'department' => 'Spinen\ConnectWise\Models\v2019_3\Sales\SystemDepartmentReference',
+        'category' => 'Spinen\ConnectWise\Models\v2019_3\Sales\ProductCategoryReference',
+        'subCategory' => 'Spinen\ConnectWise\Models\v2019_3\Sales\ProductSubCategoryReference',
+        'januaryRevenue' => 'number',
+        'januaryMargin' => 'number',
+        'februaryRevenue' => 'number',
+        'februaryMargin' => 'number',
+        'marchRevenue' => 'number',
+        'marchMargin' => 'number',
+        'aprilRevenue' => 'number',
+        'aprilMargin' => 'number',
+        'mayRevenue' => 'number',
+        'mayMargin' => 'number',
+        'juneRevenue' => 'number',
+        'juneMargin' => 'number',
+        'julyRevenue' => 'number',
+        'julyMargin' => 'number',
+        'augustRevenue' => 'number',
+        'augustMargin' => 'number',
+        'septemberRevenue' => 'number',
+        'septemberMargin' => 'number',
+        'octoberRevenue' => 'number',
+        'octoberMargin' => 'number',
+        'novemberRevenue' => 'number',
+        'novemberMargin' => 'number',
+        'decemberRevenue' => 'number',
+        'decemberMargin' => 'number',
+        'currency' => 'Spinen\ConnectWise\Models\v2019_3\Sales\CurrencyReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Sales\Metadata',
     ];
 }

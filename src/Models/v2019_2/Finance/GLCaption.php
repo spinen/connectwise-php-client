@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class GLCaption
+ * Class GLCaption Version v2019_2
+ * 
+ * Model for GLCaption
  *
  * @property integer $id
  * @property string $segment1
@@ -28,6 +30,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $cogs8
  * @property string $cogs9
  * @property string $cogs10
+ * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
  */
 class GLCaption extends Model
 {
@@ -58,5 +61,6 @@ class GLCaption extends Model
         'cogs8' => 'string',
         'cogs9' => 'string',
         'cogs10' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
     ];
 }

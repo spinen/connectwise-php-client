@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_3\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class IntegratorLogin
+ * Class IntegratorLogin Version v2019_3
+ * 
+ * Model for IntegratorLogin
  *
  * @property integer $id
  * @property string $username
@@ -13,11 +15,14 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $canAccessAllRecordsFlag
  * @property boolean $canAccessAllApisFlag
  * @property boolean $inactiveFlag
- * @property carbon $dateInactivated
+ * @property string $dateInactivated
+ * @property Spinen\ConnectWise\Models\v2019_3\System\MemberReference $inactivatedBy
  * @property boolean $serviceTicketApiFlag
+ * @property Spinen\ConnectWise\Models\v2019_3\System\BoardReference $board
  * @property string $serviceBoardCallbackUrl
  * @property boolean $serviceBoardLegacyCallbackFlag
  * @property boolean $timeEntryApiFlag
+ * @property Spinen\ConnectWise\Models\v2019_3\System\MemberReference $member
  * @property string $timeEntryCallbackUrl
  * @property boolean $timeEntryLegacyCallbackFlag
  * @property boolean $managedServicesApiFlag
@@ -64,6 +69,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $agreementCallbackUrl
  * @property boolean $agreementCallbackLegacyFlag
  * @property boolean $documentApiFlag
+ * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
  */
 class IntegratorLogin extends Model
 {
@@ -79,11 +85,14 @@ class IntegratorLogin extends Model
         'canAccessAllRecordsFlag' => 'boolean',
         'canAccessAllApisFlag' => 'boolean',
         'inactiveFlag' => 'boolean',
-        'dateInactivated' => 'carbon',
+        'dateInactivated' => 'string',
+        'inactivatedBy' => 'Spinen\ConnectWise\Models\v2019_3\System\MemberReference',
         'serviceTicketApiFlag' => 'boolean',
+        'board' => 'Spinen\ConnectWise\Models\v2019_3\System\BoardReference',
         'serviceBoardCallbackUrl' => 'string',
         'serviceBoardLegacyCallbackFlag' => 'boolean',
         'timeEntryApiFlag' => 'boolean',
+        'member' => 'Spinen\ConnectWise\Models\v2019_3\System\MemberReference',
         'timeEntryCallbackUrl' => 'string',
         'timeEntryLegacyCallbackFlag' => 'boolean',
         'managedServicesApiFlag' => 'boolean',
@@ -130,5 +139,6 @@ class IntegratorLogin extends Model
         'agreementCallbackUrl' => 'string',
         'agreementCallbackLegacyFlag' => 'boolean',
         'documentApiFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
     ];
 }

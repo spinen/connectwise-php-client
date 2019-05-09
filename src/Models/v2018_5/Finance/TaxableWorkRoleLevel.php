@@ -5,9 +5,13 @@ namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TaxableWorkRoleLevel
+ * Class TaxableWorkRoleLevel Version v2018_5
+ * 
+ * Model for TaxableWorkRoleLevel
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\TaxCodeLevelReference $taxCodeLevel
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
  */
 class TaxableWorkRoleLevel extends Model
 {
@@ -18,5 +22,7 @@ class TaxableWorkRoleLevel extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'taxCodeLevel' => 'Spinen\ConnectWise\Models\v2018_5\Finance\TaxCodeLevelReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
     ];
 }

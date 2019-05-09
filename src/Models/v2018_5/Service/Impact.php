@@ -5,12 +5,15 @@ namespace Spinen\ConnectWise\Models\v2018_5\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Impact
+ * Class Impact Version v2018_5
+ * 
+ * Model for Impact
  *
  * @property integer $id
  * @property string $name
  * @property string $description
  * @property boolean $defaultFlag
+ * @property Spinen\ConnectWise\Models\v2018_5\Service\Metadata $_info
  */
 class Impact extends Model
 {
@@ -24,5 +27,6 @@ class Impact extends Model
         'name' => 'string',
         'description' => 'string',
         'defaultFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Service\Metadata',
     ];
 }

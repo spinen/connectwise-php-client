@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_6\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BoardType
+ * Class BoardType Version v2018_6
+ * 
+ * Model for BoardType
  *
  * @property integer $id
  * @property string $name
@@ -14,6 +16,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $inactiveFlag
  * @property boolean $requestForChangeFlag
  * @property string $integrationXref
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\BoardReference $board
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\SystemLocationReference $location
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\SystemDepartmentReference $department
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\Metadata $_info
  */
 class BoardType extends Model
 {
@@ -30,5 +36,9 @@ class BoardType extends Model
         'inactiveFlag' => 'boolean',
         'requestForChangeFlag' => 'boolean',
         'integrationXref' => 'string',
+        'board' => 'Spinen\ConnectWise\Models\v2018_6\Service\BoardReference',
+        'location' => 'Spinen\ConnectWise\Models\v2018_6\Service\SystemLocationReference',
+        'department' => 'Spinen\ConnectWise\Models\v2018_6\Service\SystemDepartmentReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Service\Metadata',
     ];
 }

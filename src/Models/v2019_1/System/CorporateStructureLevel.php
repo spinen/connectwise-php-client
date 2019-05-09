@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_1\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CorporateStructureLevel
+ * Class CorporateStructureLevel Version v2019_1
+ * 
+ * Model for CorporateStructureLevel
  *
  * @property integer $id
  * @property string $name

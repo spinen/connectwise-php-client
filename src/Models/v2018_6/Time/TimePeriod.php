@@ -5,13 +5,17 @@ namespace Spinen\ConnectWise\Models\v2018_6\Time;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TimePeriod
+ * Class TimePeriod Version v2018_6
+ * 
+ * Model for TimePeriod
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\TimePeriodSetupReference $timePeriodSetup
  * @property integer $period
  * @property string $startDate
  * @property string $endDate
  * @property string $deadlineDate
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\Metadata $_info
  */
 class TimePeriod extends Model
 {
@@ -22,9 +26,11 @@ class TimePeriod extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'timePeriodSetup' => 'Spinen\ConnectWise\Models\v2018_6\Time\TimePeriodSetupReference',
         'period' => 'integer',
         'startDate' => 'string',
         'endDate' => 'string',
         'deadlineDate' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Time\Metadata',
     ];
 }

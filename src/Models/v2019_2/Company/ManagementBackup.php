@@ -5,10 +5,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ManagementBackup
+ * Class ManagementBackup Version v2019_2
+ * 
+ * Model for ManagementBackup
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\AgreementTypeReference $type
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\CatalogItemReference $item
  * @property string $billingLevel
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\Metadata $_info
  */
 class ManagementBackup extends Model
 {
@@ -19,6 +24,9 @@ class ManagementBackup extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'type' => 'Spinen\ConnectWise\Models\v2019_2\Company\AgreementTypeReference',
+        'item' => 'Spinen\ConnectWise\Models\v2019_2\Company\CatalogItemReference',
         'billingLevel' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Company\Metadata',
     ];
 }

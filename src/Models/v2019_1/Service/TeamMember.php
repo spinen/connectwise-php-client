@@ -5,10 +5,16 @@ namespace Spinen\ConnectWise\Models\v2019_1\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TeamMember
+ * Class TeamMember Version v2019_1
+ * 
+ * Model for TeamMember
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\BoardReference $board
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\ServiceTeamReference $team
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\MemberReference $member
  * @property boolean $teamLeaderFlag
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
  */
 class TeamMember extends Model
 {
@@ -19,6 +25,10 @@ class TeamMember extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'board' => 'Spinen\ConnectWise\Models\v2019_1\Service\BoardReference',
+        'team' => 'Spinen\ConnectWise\Models\v2019_1\Service\ServiceTeamReference',
+        'member' => 'Spinen\ConnectWise\Models\v2019_1\Service\MemberReference',
         'teamLeaderFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
     ];
 }

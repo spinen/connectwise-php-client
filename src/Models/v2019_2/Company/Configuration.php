@@ -5,19 +5,27 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Configuration
+ * Class Configuration Version v2019_2
+ * 
+ * Model for Configuration
  *
  * @property integer $id
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\ConfigurationTypeReference $type
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\ConfigurationStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\ContactReference $contact
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\SiteReference $site
  * @property integer $locationId
  * @property integer $businessUnitId
  * @property string $deviceIdentifier
  * @property string $serialNumber
  * @property string $modelNumber
  * @property string $tagNumber
- * @property carbon $purchaseDate
- * @property carbon $installationDate
- * @property carbon $warrantyExpirationDate
+ * @property string $purchaseDate
+ * @property string $installationDate
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\MemberReference $installedBy
+ * @property string $warrantyExpirationDate
  * @property string $vendorNotes
  * @property string $notes
  * @property string $macAddress
@@ -27,9 +35,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $backupIncomplete
  * @property integer $backupFailed
  * @property integer $backupRestores
- * @property carbon $lastBackupDate
+ * @property string $lastBackupDate
  * @property string $backupServerName
- * @property double $backupBillableSpaceGb
+ * @property number $backupBillableSpaceGb
  * @property string $backupProtectedDeviceList
  * @property integer $backupYear
  * @property integer $backupMonth
@@ -41,10 +49,15 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $ram
  * @property string $localHardDrives
  * @property integer $parentConfigurationId
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\CompanyReference $vendor
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\ManufacturerReference $manufacturer
  * @property array $questions
  * @property boolean $activeFlag
  * @property string $managementLink
  * @property string $remoteLink
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\SLAReference $sla
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\Guid $mobileGuid
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\Metadata $_info
  * @property boolean $displayVendorFlag
  * @property integer $companyLocationId
  * @property array $customFields
@@ -59,15 +72,21 @@ class Configuration extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
+        'type' => 'Spinen\ConnectWise\Models\v2019_2\Company\ConfigurationTypeReference',
+        'status' => 'Spinen\ConnectWise\Models\v2019_2\Company\ConfigurationStatusReference',
+        'company' => 'Spinen\ConnectWise\Models\v2019_2\Company\CompanyReference',
+        'contact' => 'Spinen\ConnectWise\Models\v2019_2\Company\ContactReference',
+        'site' => 'Spinen\ConnectWise\Models\v2019_2\Company\SiteReference',
         'locationId' => 'integer',
         'businessUnitId' => 'integer',
         'deviceIdentifier' => 'string',
         'serialNumber' => 'string',
         'modelNumber' => 'string',
         'tagNumber' => 'string',
-        'purchaseDate' => 'carbon',
-        'installationDate' => 'carbon',
-        'warrantyExpirationDate' => 'carbon',
+        'purchaseDate' => 'string',
+        'installationDate' => 'string',
+        'installedBy' => 'Spinen\ConnectWise\Models\v2019_2\Company\MemberReference',
+        'warrantyExpirationDate' => 'string',
         'vendorNotes' => 'string',
         'notes' => 'string',
         'macAddress' => 'string',
@@ -77,9 +96,9 @@ class Configuration extends Model
         'backupIncomplete' => 'integer',
         'backupFailed' => 'integer',
         'backupRestores' => 'integer',
-        'lastBackupDate' => 'carbon',
+        'lastBackupDate' => 'string',
         'backupServerName' => 'string',
-        'backupBillableSpaceGb' => 'double',
+        'backupBillableSpaceGb' => 'number',
         'backupProtectedDeviceList' => 'string',
         'backupYear' => 'integer',
         'backupMonth' => 'integer',
@@ -91,10 +110,15 @@ class Configuration extends Model
         'ram' => 'string',
         'localHardDrives' => 'string',
         'parentConfigurationId' => 'integer',
+        'vendor' => 'Spinen\ConnectWise\Models\v2019_2\Company\CompanyReference',
+        'manufacturer' => 'Spinen\ConnectWise\Models\v2019_2\Company\ManufacturerReference',
         'questions' => 'array',
         'activeFlag' => 'boolean',
         'managementLink' => 'string',
         'remoteLink' => 'string',
+        'sla' => 'Spinen\ConnectWise\Models\v2019_2\Company\SLAReference',
+        'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_2\Company\Guid',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Company\Metadata',
         'displayVendorFlag' => 'boolean',
         'companyLocationId' => 'integer',
         'customFields' => 'array',

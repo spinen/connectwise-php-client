@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_5\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Report
+ * Class Report Version v2018_5
+ * 
+ * Model for Report
  *
  * @property string $name
  */

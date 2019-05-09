@@ -5,24 +5,44 @@ namespace Spinen\ConnectWise\Models\v2019_1\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Ticket
+ * Class Ticket Version v2019_1
+ * 
+ * Model for Ticket
  *
  * @property integer $id
  * @property string $summary
  * @property string $recordType
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\BoardReference $board
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\ServiceStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\ProjectReference $project
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\ProjectPhaseReference $phase
  * @property string $wbsCode
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\SiteReference $site
  * @property string $siteName
  * @property string $addressLine1
  * @property string $addressLine2
  * @property string $city
  * @property string $stateIdentifier
  * @property string $zip
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\CountryReference $country
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\ContactReference $contact
  * @property string $contactName
  * @property string $contactPhoneNumber
  * @property string $contactPhoneExtension
  * @property string $contactEmailAddress
- * @property carbon $requiredDate
- * @property double $budgetHours
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\ServiceTypeReference $type
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\ServiceSubTypeReference $subType
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\ServiceItemReference $item
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\ServiceTeamReference $team
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\MemberReference $owner
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference $priority
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\ServiceLocationReference $serviceLocation
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\ServiceSourceReference $source
+ * @property string $requiredDate
+ * @property number $budgetHours
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\OpportunityReference $opportunity
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\AgreementReference $agreement
  * @property string $severity
  * @property string $impact
  * @property string $externalXRef
@@ -46,19 +66,19 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $closedFlag
  * @property string $dateEntered
  * @property string $enteredBy
- * @property double $actualHours
+ * @property number $actualHours
  * @property boolean $approved
- * @property double $estimatedExpenseCost
- * @property double $estimatedExpenseRevenue
- * @property double $estimatedProductCost
- * @property double $estimatedProductRevenue
- * @property double $estimatedTimeCost
- * @property double $estimatedTimeRevenue
+ * @property number $estimatedExpenseCost
+ * @property number $estimatedExpenseRevenue
+ * @property number $estimatedProductCost
+ * @property number $estimatedProductRevenue
+ * @property number $estimatedTimeCost
+ * @property number $estimatedTimeRevenue
  * @property string $billingMethod
- * @property double $billingAmount
- * @property double $hourlyRate
+ * @property number $billingAmount
+ * @property number $hourlyRate
  * @property string $subBillingMethod
- * @property double $subBillingAmount
+ * @property number $subBillingAmount
  * @property string $subDateAccepted
  * @property string $dateResolved
  * @property string $dateResplan
@@ -81,10 +101,15 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $predecessorClosedFlag
  * @property integer $lagDays
  * @property boolean $lagNonworkingDaysFlag
- * @property carbon $estimatedStartDate
+ * @property string $estimatedStartDate
  * @property integer $duration
  * @property integer $locationId
  * @property integer $businessUnitId
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\Guid $mobileGuid
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\SLAReference $sla
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\CurrencyReference $currency
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\TicketReference $mergedParentTicket
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
  */
 class Ticket extends Model
 {
@@ -97,19 +122,37 @@ class Ticket extends Model
         'id' => 'integer',
         'summary' => 'string',
         'recordType' => 'string',
+        'board' => 'Spinen\ConnectWise\Models\v2019_1\Service\BoardReference',
+        'status' => 'Spinen\ConnectWise\Models\v2019_1\Service\ServiceStatusReference',
+        'project' => 'Spinen\ConnectWise\Models\v2019_1\Service\ProjectReference',
+        'phase' => 'Spinen\ConnectWise\Models\v2019_1\Service\ProjectPhaseReference',
         'wbsCode' => 'string',
+        'company' => 'Spinen\ConnectWise\Models\v2019_1\Service\CompanyReference',
+        'site' => 'Spinen\ConnectWise\Models\v2019_1\Service\SiteReference',
         'siteName' => 'string',
         'addressLine1' => 'string',
         'addressLine2' => 'string',
         'city' => 'string',
         'stateIdentifier' => 'string',
         'zip' => 'string',
+        'country' => 'Spinen\ConnectWise\Models\v2019_1\Service\CountryReference',
+        'contact' => 'Spinen\ConnectWise\Models\v2019_1\Service\ContactReference',
         'contactName' => 'string',
         'contactPhoneNumber' => 'string',
         'contactPhoneExtension' => 'string',
         'contactEmailAddress' => 'string',
-        'requiredDate' => 'carbon',
-        'budgetHours' => 'double',
+        'type' => 'Spinen\ConnectWise\Models\v2019_1\Service\ServiceTypeReference',
+        'subType' => 'Spinen\ConnectWise\Models\v2019_1\Service\ServiceSubTypeReference',
+        'item' => 'Spinen\ConnectWise\Models\v2019_1\Service\ServiceItemReference',
+        'team' => 'Spinen\ConnectWise\Models\v2019_1\Service\ServiceTeamReference',
+        'owner' => 'Spinen\ConnectWise\Models\v2019_1\Service\MemberReference',
+        'priority' => 'Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference',
+        'serviceLocation' => 'Spinen\ConnectWise\Models\v2019_1\Service\ServiceLocationReference',
+        'source' => 'Spinen\ConnectWise\Models\v2019_1\Service\ServiceSourceReference',
+        'requiredDate' => 'string',
+        'budgetHours' => 'number',
+        'opportunity' => 'Spinen\ConnectWise\Models\v2019_1\Service\OpportunityReference',
+        'agreement' => 'Spinen\ConnectWise\Models\v2019_1\Service\AgreementReference',
         'severity' => 'string',
         'impact' => 'string',
         'externalXRef' => 'string',
@@ -133,19 +176,19 @@ class Ticket extends Model
         'closedFlag' => 'boolean',
         'dateEntered' => 'string',
         'enteredBy' => 'string',
-        'actualHours' => 'double',
+        'actualHours' => 'number',
         'approved' => 'boolean',
-        'estimatedExpenseCost' => 'double',
-        'estimatedExpenseRevenue' => 'double',
-        'estimatedProductCost' => 'double',
-        'estimatedProductRevenue' => 'double',
-        'estimatedTimeCost' => 'double',
-        'estimatedTimeRevenue' => 'double',
+        'estimatedExpenseCost' => 'number',
+        'estimatedExpenseRevenue' => 'number',
+        'estimatedProductCost' => 'number',
+        'estimatedProductRevenue' => 'number',
+        'estimatedTimeCost' => 'number',
+        'estimatedTimeRevenue' => 'number',
         'billingMethod' => 'string',
-        'billingAmount' => 'double',
-        'hourlyRate' => 'double',
+        'billingAmount' => 'number',
+        'hourlyRate' => 'number',
         'subBillingMethod' => 'string',
-        'subBillingAmount' => 'double',
+        'subBillingAmount' => 'number',
         'subDateAccepted' => 'string',
         'dateResolved' => 'string',
         'dateResplan' => 'string',
@@ -168,9 +211,14 @@ class Ticket extends Model
         'predecessorClosedFlag' => 'boolean',
         'lagDays' => 'integer',
         'lagNonworkingDaysFlag' => 'boolean',
-        'estimatedStartDate' => 'carbon',
+        'estimatedStartDate' => 'string',
         'duration' => 'integer',
         'locationId' => 'integer',
         'businessUnitId' => 'integer',
+        'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_1\Service\Guid',
+        'sla' => 'Spinen\ConnectWise\Models\v2019_1\Service\SLAReference',
+        'currency' => 'Spinen\ConnectWise\Models\v2019_1\Service\CurrencyReference',
+        'mergedParentTicket' => 'Spinen\ConnectWise\Models\v2019_1\Service\TicketReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
     ];
 }

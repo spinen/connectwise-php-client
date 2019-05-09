@@ -5,11 +5,14 @@ namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class InvoiceTemplateSetup
+ * Class InvoiceTemplateSetup Version v2018_5
+ * 
+ * Model for InvoiceTemplateSetup
  *
  * @property integer $id
  * @property string $name
  * @property boolean $customFlag
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
  */
 class InvoiceTemplateSetup extends Model
 {
@@ -22,5 +25,6 @@ class InvoiceTemplateSetup extends Model
         'id' => 'integer',
         'name' => 'string',
         'customFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
     ];
 }

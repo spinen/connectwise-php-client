@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_4\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PortalConfigurationServiceSetup
+ * Class PortalConfigurationServiceSetup Version v2018_4
+ * 
+ * Model for PortalConfigurationServiceSetup
  *
  * @property integer $id
  * @property boolean $serviceTypeFlag
@@ -27,6 +29,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $closedTasksFlag
  * @property boolean $enableChatAssistFlag
  * @property string $displayClosedTicketsOption
+ * @property Spinen\ConnectWise\Models\v2018_4\Company\ServiceSignoffReference $timeMaterialsTicketTemplate
+ * @property Spinen\ConnectWise\Models\v2018_4\Company\ServiceSignoffReference $fixedFeeTicketTemplate
+ * @property Spinen\ConnectWise\Models\v2018_4\Company\Metadata $_info
  */
 class PortalConfigurationServiceSetup extends Model
 {
@@ -56,5 +61,8 @@ class PortalConfigurationServiceSetup extends Model
         'closedTasksFlag' => 'boolean',
         'enableChatAssistFlag' => 'boolean',
         'displayClosedTicketsOption' => 'string',
+        'timeMaterialsTicketTemplate' => 'Spinen\ConnectWise\Models\v2018_4\Company\ServiceSignoffReference',
+        'fixedFeeTicketTemplate' => 'Spinen\ConnectWise\Models\v2018_4\Company\ServiceSignoffReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Company\Metadata',
     ];
 }

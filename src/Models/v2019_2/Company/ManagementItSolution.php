@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_2\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ManagementItSolution
+ * Class ManagementItSolution Version v2019_2
+ * 
+ * Model for ManagementItSolution
  *
  * @property integer $id
  * @property string $name
@@ -28,6 +30,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $levelApiPassword
  * @property string $levelVarDomain
  * @property boolean $noDisplayFlag
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\Metadata $_info
  */
 class ManagementItSolution extends Model
 {
@@ -58,5 +61,6 @@ class ManagementItSolution extends Model
         'levelApiPassword' => 'string',
         'levelVarDomain' => 'string',
         'noDisplayFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Company\Metadata',
     ];
 }

@@ -5,13 +5,18 @@ namespace Spinen\ConnectWise\Models\v2018_6\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BillingStatus
+ * Class BillingStatus Version v2018_6
+ * 
+ * Model for BillingStatus
  *
- * @property string $type
- * @property integer $count
  * @property integer $id
- * @property string $description
- * @property string $hyperlink
+ * @property string $name
+ * @property integer $sortOrder
+ * @property boolean $defaultFlag
+ * @property boolean $closedFlag
+ * @property boolean $inactiveFlag
+ * @property boolean $sentFlag
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\Metadata $_info
  */
 class BillingStatus extends Model
 {
@@ -21,10 +26,13 @@ class BillingStatus extends Model
      * @var array
      */
     protected $casts = [
-        'type' => 'string',
-        'count' => 'integer',
         'id' => 'integer',
-        'description' => 'string',
-        'hyperlink' => 'string',
+        'name' => 'string',
+        'sortOrder' => 'integer',
+        'defaultFlag' => 'boolean',
+        'closedFlag' => 'boolean',
+        'inactiveFlag' => 'boolean',
+        'sentFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
     ];
 }

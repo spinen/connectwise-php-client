@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_3\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PortalConfigurationPaymentProcessor
+ * Class PortalConfigurationPaymentProcessor Version v2019_3
+ * 
+ * Model for PortalConfigurationPaymentProcessor
  *
  * @property integer $id
  * @property string $name

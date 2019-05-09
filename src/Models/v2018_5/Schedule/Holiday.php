@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_5\Schedule;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Holiday
+ * Class Holiday Version v2018_5
+ * 
+ * Model for Holiday
  *
  * @property integer $id
  * @property string $name
@@ -13,6 +15,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $date
  * @property string $timeStart
  * @property string $timeEnd
+ * @property Spinen\ConnectWise\Models\v2018_5\Schedule\HolidayListReference $holidayList
+ * @property Spinen\ConnectWise\Models\v2018_5\Schedule\Metadata $_info
  */
 class Holiday extends Model
 {
@@ -28,5 +32,7 @@ class Holiday extends Model
         'date' => 'string',
         'timeStart' => 'string',
         'timeEnd' => 'string',
+        'holidayList' => 'Spinen\ConnectWise\Models\v2018_5\Schedule\HolidayListReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Schedule\Metadata',
     ];
 }

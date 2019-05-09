@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_5\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class WorkflowEvent
+ * Class WorkflowEvent Version v2018_5
+ * 
+ * Model for WorkflowEvent
  *
  * @property integer $id
  * @property string $name
@@ -14,6 +16,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $frequencyOfExecution
  * @property integer $maxNumberOfExecution
  * @property string $executionTime
+ * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
  */
 class WorkflowEvent extends Model
 {
@@ -30,5 +33,6 @@ class WorkflowEvent extends Model
         'frequencyOfExecution' => 'integer',
         'maxNumberOfExecution' => 'integer',
         'executionTime' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
     ];
 }

@@ -5,14 +5,18 @@ namespace Spinen\ConnectWise\Models\v2018_5\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class WorkflowTrigger
+ * Class WorkflowTrigger Version v2018_5
+ * 
+ * Model for WorkflowTrigger
  *
  * @property integer $id
  * @property string $name
  * @property string $description
  * @property boolean $hasOptionsFlag
  * @property boolean $hasOperatorFlag
+ * @property Spinen\ConnectWise\Models\v2018_5\System\UserDefinedFieldReference $customField
  * @property string $expectedType
+ * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
  */
 class WorkflowTrigger extends Model
 {
@@ -27,6 +31,8 @@ class WorkflowTrigger extends Model
         'description' => 'string',
         'hasOptionsFlag' => 'boolean',
         'hasOperatorFlag' => 'boolean',
+        'customField' => 'Spinen\ConnectWise\Models\v2018_5\System\UserDefinedFieldReference',
         'expectedType' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
     ];
 }

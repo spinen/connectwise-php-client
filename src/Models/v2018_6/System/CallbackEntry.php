@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_6\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CallbackEntry
+ * Class CallbackEntry Version v2018_6
+ * 
+ * Model for CallbackEntry
  *
  * @property integer $id
  * @property string $description
@@ -16,6 +18,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $memberId
  * @property string $payloadVersion
  * @property boolean $inactiveFlag
+ * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  */
 class CallbackEntry extends Model
 {
@@ -34,5 +37,6 @@ class CallbackEntry extends Model
         'memberId' => 'integer',
         'payloadVersion' => 'string',
         'inactiveFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
     ];
 }

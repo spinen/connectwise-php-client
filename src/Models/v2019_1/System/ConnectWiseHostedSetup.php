@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_1\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ConnectWiseHostedSetup
+ * Class ConnectWiseHostedSetup Version v2019_1
+ * 
+ * Model for ConnectWiseHostedSetup
  *
  * @property integer $id
  * @property integer $screenId
@@ -24,6 +26,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $locationsEnabledFlag
  * @property string $createdBy
  * @property string $dateCreated
+ * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  */
 class ConnectWiseHostedSetup extends Model
 {
@@ -50,5 +53,6 @@ class ConnectWiseHostedSetup extends Model
         'locationsEnabledFlag' => 'boolean',
         'createdBy' => 'string',
         'dateCreated' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
     ];
 }

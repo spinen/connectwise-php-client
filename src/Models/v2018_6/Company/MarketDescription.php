@@ -5,10 +5,13 @@ namespace Spinen\ConnectWise\Models\v2018_6\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class MarketDescription
+ * Class MarketDescription Version v2018_6
+ * 
+ * Model for MarketDescription
  *
  * @property integer $id
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
  */
 class MarketDescription extends Model
 {
@@ -20,5 +23,6 @@ class MarketDescription extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
     ];
 }

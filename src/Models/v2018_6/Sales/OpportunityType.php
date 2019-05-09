@@ -5,11 +5,14 @@ namespace Spinen\ConnectWise\Models\v2018_6\Sales;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class OpportunityType
+ * Class OpportunityType Version v2018_6
+ * 
+ * Model for OpportunityType
  *
  * @property integer $id
  * @property string $description
  * @property boolean $inactiveFlag
+ * @property Spinen\ConnectWise\Models\v2018_6\Sales\Metadata $_info
  */
 class OpportunityType extends Model
 {
@@ -22,5 +25,6 @@ class OpportunityType extends Model
         'id' => 'integer',
         'description' => 'string',
         'inactiveFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Sales\Metadata',
     ];
 }

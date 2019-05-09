@@ -5,11 +5,16 @@ namespace Spinen\ConnectWise\Models\v2018_5\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ManagedDevicesIntegrationLogin
+ * Class ManagedDevicesIntegrationLogin Version v2018_5
+ * 
+ * Model for ManagedDevicesIntegrationLogin
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\ManagedDevicesIntegrationReference $managedDevicesIntegration
  * @property string $username
  * @property string $password
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
  */
 class ManagedDevicesIntegrationLogin extends Model
 {
@@ -20,7 +25,10 @@ class ManagedDevicesIntegrationLogin extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'managedDevicesIntegration' => 'Spinen\ConnectWise\Models\v2018_5\Company\ManagedDevicesIntegrationReference',
         'username' => 'string',
         'password' => 'string',
+        'member' => 'Spinen\ConnectWise\Models\v2018_5\Company\MemberReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
     ];
 }

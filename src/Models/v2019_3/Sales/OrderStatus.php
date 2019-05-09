@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_3\Sales;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class OrderStatus
+ * Class OrderStatus Version v2019_3
+ * 
+ * Model for OrderStatus
  *
  * @property integer $id
  * @property string $name
@@ -13,6 +15,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $inactiveFlag
  * @property integer $sortOrder
  * @property boolean $closedFlag
+ * @property Spinen\ConnectWise\Models\v2019_3\Sales\OrderStatusEmailTemplateReference $emailTemplate
+ * @property Spinen\ConnectWise\Models\v2019_3\Sales\Metadata $_info
  */
 class OrderStatus extends Model
 {
@@ -28,5 +32,7 @@ class OrderStatus extends Model
         'inactiveFlag' => 'boolean',
         'sortOrder' => 'integer',
         'closedFlag' => 'boolean',
+        'emailTemplate' => 'Spinen\ConnectWise\Models\v2019_3\Sales\OrderStatusEmailTemplateReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Sales\Metadata',
     ];
 }

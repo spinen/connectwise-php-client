@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_6\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class EmailToken
+ * Class EmailToken Version v2018_6
+ * 
+ * Model for EmailToken
  *
  * @property integer $id
  * @property string $token

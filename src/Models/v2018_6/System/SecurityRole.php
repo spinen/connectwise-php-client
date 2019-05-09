@@ -5,12 +5,15 @@ namespace Spinen\ConnectWise\Models\v2018_6\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SecurityRole
+ * Class SecurityRole Version v2018_6
+ * 
+ * Model for SecurityRole
  *
  * @property integer $id
  * @property string $name
  * @property boolean $adminFlag
  * @property boolean $inactiveFlag
+ * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  */
 class SecurityRole extends Model
 {
@@ -24,5 +27,6 @@ class SecurityRole extends Model
         'name' => 'string',
         'adminFlag' => 'boolean',
         'inactiveFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
     ];
 }

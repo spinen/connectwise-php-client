@@ -5,13 +5,17 @@ namespace Spinen\ConnectWise\Models\v2018_6\Time;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TimeAccrualDetail
+ * Class TimeAccrualDetail Version v2018_6
+ * 
+ * Model for TimeAccrualDetail
  *
  * @property integer $id
  * @property string $accrualType
  * @property integer $startYear
  * @property integer $endYear
- * @property double $hours
+ * @property number $hours
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\TimeAccrualReference $timeAccrual
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\Metadata $_info
  */
 class TimeAccrualDetail extends Model
 {
@@ -25,6 +29,8 @@ class TimeAccrualDetail extends Model
         'accrualType' => 'string',
         'startYear' => 'integer',
         'endYear' => 'integer',
-        'hours' => 'double',
+        'hours' => 'number',
+        'timeAccrual' => 'Spinen\ConnectWise\Models\v2018_6\Time\TimeAccrualReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Time\Metadata',
     ];
 }

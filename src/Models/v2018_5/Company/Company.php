@@ -5,25 +5,35 @@ namespace Spinen\ConnectWise\Models\v2018_5\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Company
+ * Class Company Version v2018_5
+ * 
+ * Model for Company
  *
  * @property integer $id
  * @property string $identifier
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\CompanyStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\CompanyTypeReference $type
  * @property string $addressLine1
  * @property string $addressLine2
  * @property string $city
  * @property string $state
  * @property string $zip
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\CountryReference $country
  * @property string $phoneNumber
  * @property string $faxNumber
  * @property string $website
  * @property integer $territoryId
  * @property integer $marketId
  * @property string $accountNumber
- * @property carbon $dateAcquired
- * @property double $annualRevenue
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\ContactReference $defaultContact
+ * @property string $dateAcquired
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\SicCodeReference $sicCode
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\CompanyReference $parentCompany
+ * @property number $annualRevenue
  * @property integer $numberOfEmployees
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\OwnershipTypeReference $ownershipType
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\TimeZoneSetupReference $timeZone
  * @property string $leadSource
  * @property boolean $leadFlag
  * @property boolean $unsubscribeFlag
@@ -40,14 +50,27 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $userDefinedField10
  * @property string $vendorIdentifier
  * @property string $taxIdentifier
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\TaxCodeReference $taxCode
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\BillingTermsReference $billingTerms
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\InvoiceTemplateReference $invoiceTemplate
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\PricingScheduleReference $pricingSchedule
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\EntityTypeReference $companyEntityType
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\CompanyReference $billToCompany
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\SiteReference $billingSite
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\ContactReference $billingContact
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\BillingDeliveryReference $invoiceDeliveryMethod
  * @property string $invoiceToEmailAddress
  * @property string $invoiceCCEmailAddress
  * @property boolean $deletedFlag
- * @property carbon $dateDeleted
+ * @property string $dateDeleted
  * @property string $deletedBy
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Guid $mobileGuid
  * @property string $facebookUrl
  * @property string $twitterUrl
  * @property string $linkedInUrl
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\CurrencyReference $currency
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\MemberReference $territoryManager
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
  * @property array $customFields
  */
 class Company extends Model
@@ -61,20 +84,28 @@ class Company extends Model
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',
+        'status' => 'Spinen\ConnectWise\Models\v2018_5\Company\CompanyStatusReference',
+        'type' => 'Spinen\ConnectWise\Models\v2018_5\Company\CompanyTypeReference',
         'addressLine1' => 'string',
         'addressLine2' => 'string',
         'city' => 'string',
         'state' => 'string',
         'zip' => 'string',
+        'country' => 'Spinen\ConnectWise\Models\v2018_5\Company\CountryReference',
         'phoneNumber' => 'string',
         'faxNumber' => 'string',
         'website' => 'string',
         'territoryId' => 'integer',
         'marketId' => 'integer',
         'accountNumber' => 'string',
-        'dateAcquired' => 'carbon',
-        'annualRevenue' => 'double',
+        'defaultContact' => 'Spinen\ConnectWise\Models\v2018_5\Company\ContactReference',
+        'dateAcquired' => 'string',
+        'sicCode' => 'Spinen\ConnectWise\Models\v2018_5\Company\SicCodeReference',
+        'parentCompany' => 'Spinen\ConnectWise\Models\v2018_5\Company\CompanyReference',
+        'annualRevenue' => 'number',
         'numberOfEmployees' => 'integer',
+        'ownershipType' => 'Spinen\ConnectWise\Models\v2018_5\Company\OwnershipTypeReference',
+        'timeZone' => 'Spinen\ConnectWise\Models\v2018_5\Company\TimeZoneSetupReference',
         'leadSource' => 'string',
         'leadFlag' => 'boolean',
         'unsubscribeFlag' => 'boolean',
@@ -91,14 +122,27 @@ class Company extends Model
         'userDefinedField10' => 'string',
         'vendorIdentifier' => 'string',
         'taxIdentifier' => 'string',
+        'taxCode' => 'Spinen\ConnectWise\Models\v2018_5\Company\TaxCodeReference',
+        'billingTerms' => 'Spinen\ConnectWise\Models\v2018_5\Company\BillingTermsReference',
+        'invoiceTemplate' => 'Spinen\ConnectWise\Models\v2018_5\Company\InvoiceTemplateReference',
+        'pricingSchedule' => 'Spinen\ConnectWise\Models\v2018_5\Company\PricingScheduleReference',
+        'companyEntityType' => 'Spinen\ConnectWise\Models\v2018_5\Company\EntityTypeReference',
+        'billToCompany' => 'Spinen\ConnectWise\Models\v2018_5\Company\CompanyReference',
+        'billingSite' => 'Spinen\ConnectWise\Models\v2018_5\Company\SiteReference',
+        'billingContact' => 'Spinen\ConnectWise\Models\v2018_5\Company\ContactReference',
+        'invoiceDeliveryMethod' => 'Spinen\ConnectWise\Models\v2018_5\Company\BillingDeliveryReference',
         'invoiceToEmailAddress' => 'string',
         'invoiceCCEmailAddress' => 'string',
         'deletedFlag' => 'boolean',
-        'dateDeleted' => 'carbon',
+        'dateDeleted' => 'string',
         'deletedBy' => 'string',
+        'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_5\Company\Guid',
         'facebookUrl' => 'string',
         'twitterUrl' => 'string',
         'linkedInUrl' => 'string',
+        'currency' => 'Spinen\ConnectWise\Models\v2018_5\Company\CurrencyReference',
+        'territoryManager' => 'Spinen\ConnectWise\Models\v2018_5\Company\MemberReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
         'customFields' => 'array',
     ];
 }

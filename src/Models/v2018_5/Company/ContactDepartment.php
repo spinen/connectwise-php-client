@@ -5,10 +5,13 @@ namespace Spinen\ConnectWise\Models\v2018_5\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ContactDepartment
+ * Class ContactDepartment Version v2018_5
+ * 
+ * Model for ContactDepartment
  *
  * @property integer $id
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
  */
 class ContactDepartment extends Model
 {
@@ -20,5 +23,6 @@ class ContactDepartment extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
     ];
 }

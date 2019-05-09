@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_4\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TaxCodeXRef
+ * Class TaxCodeXRef Version v2018_4
+ * 
+ * Model for TaxCodeXRef
  *
  * @property integer $id
  * @property string $description
@@ -16,6 +18,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $levelFour
  * @property string $levelFive
  * @property string $levelSix
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference $taxCode
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\Metadata $_info
  */
 class TaxCodeXRef extends Model
 {
@@ -34,5 +38,7 @@ class TaxCodeXRef extends Model
         'levelFour' => 'string',
         'levelFive' => 'string',
         'levelSix' => 'string',
+        'taxCode' => 'Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Finance\Metadata',
     ];
 }

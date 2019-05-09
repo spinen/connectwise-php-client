@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_5\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class NotificationRecipient
+ * Class NotificationRecipient Version v2018_5
+ * 
+ * Model for NotificationRecipient
  *
  * @property integer $id
  * @property string $identifier
@@ -22,6 +24,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $projectFlag
  * @property boolean $procurementFlag
  * @property boolean $knowledgeBaseFlag
+ * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
  */
 class NotificationRecipient extends Model
 {
@@ -46,5 +49,6 @@ class NotificationRecipient extends Model
         'projectFlag' => 'boolean',
         'procurementFlag' => 'boolean',
         'knowledgeBaseFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
     ];
 }

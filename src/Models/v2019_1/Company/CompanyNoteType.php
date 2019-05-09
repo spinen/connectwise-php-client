@@ -5,13 +5,16 @@ namespace Spinen\ConnectWise\Models\v2019_1\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CompanyNoteType
+ * Class CompanyNoteType Version v2019_1
+ * 
+ * Model for CompanyNoteType
  *
  * @property integer $id
  * @property string $identifier
  * @property string $name
  * @property boolean $defaultFlag
  * @property boolean $importFlag
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
  */
 class CompanyNoteType extends Model
 {
@@ -26,5 +29,6 @@ class CompanyNoteType extends Model
         'name' => 'string',
         'defaultFlag' => 'boolean',
         'importFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
     ];
 }

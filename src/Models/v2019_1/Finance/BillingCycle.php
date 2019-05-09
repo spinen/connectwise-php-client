@@ -5,13 +5,16 @@ namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BillingCycle
+ * Class BillingCycle Version v2019_1
+ * 
+ * Model for BillingCycle
  *
  * @property integer $id
  * @property string $identifier
  * @property string $name
  * @property boolean $defaultFlag
  * @property string $billingOptions
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
  */
 class BillingCycle extends Model
 {
@@ -26,5 +29,6 @@ class BillingCycle extends Model
         'name' => 'string',
         'defaultFlag' => 'boolean',
         'billingOptions' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
     ];
 }

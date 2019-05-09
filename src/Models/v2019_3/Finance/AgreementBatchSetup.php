@@ -5,11 +5,14 @@ namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AgreementBatchSetup
+ * Class AgreementBatchSetup Version v2019_3
+ * 
+ * Model for AgreementBatchSetup
  *
  * @property integer $id
- * @property carbon $nextRunDate
+ * @property string $nextRunDate
  * @property integer $daysInAdvance
+ * @property Spinen\ConnectWise\Models\v2019_3\Finance\Metadata $_info
  */
 class AgreementBatchSetup extends Model
 {
@@ -20,7 +23,8 @@ class AgreementBatchSetup extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'nextRunDate' => 'carbon',
+        'nextRunDate' => 'string',
         'daysInAdvance' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Finance\Metadata',
     ];
 }

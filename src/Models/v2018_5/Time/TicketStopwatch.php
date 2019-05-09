@@ -5,19 +5,30 @@ namespace Spinen\ConnectWise\Models\v2018_5\Time;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TicketStopwatch
+ * Class TicketStopwatch Version v2018_5
+ * 
+ * Model for TicketStopwatch
  *
+ * @property Spinen\ConnectWise\Models\v2018_5\Time\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_5\Time\AgreementReference $agreement
  * @property string $billableOption
  * @property integer $businessUnitId
- * @property carbon $dateEntered
- * @property carbon $endTime
+ * @property string $dateEntered
+ * @property string $endTime
  * @property integer $id
  * @property string $internalNotes
  * @property integer $locationId
+ * @property Spinen\ConnectWise\Models\v2018_5\Time\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2018_5\Time\Guid $mobileGuid
  * @property string $notes
- * @property carbon $startTime
+ * @property Spinen\ConnectWise\Models\v2018_5\Time\ServiceStatusReference $serviceStatus
+ * @property string $startTime
  * @property string $status
+ * @property Spinen\ConnectWise\Models\v2018_5\Time\TicketReference $ticket
+ * @property Spinen\ConnectWise\Models\v2018_5\Time\Guid $ticketMobileGuid
  * @property integer $totalPauseTime
+ * @property Spinen\ConnectWise\Models\v2018_5\Time\WorkRoleReference $workRole
+ * @property Spinen\ConnectWise\Models\v2018_5\Time\WorkTypeReference $workType
  * @property boolean $showNotesInDiscussionFlag
  * @property boolean $showNotesInInternalFlag
  * @property boolean $showNotesInResolutionFlag
@@ -32,17 +43,26 @@ class TicketStopwatch extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Time\Metadata',
+        'agreement' => 'Spinen\ConnectWise\Models\v2018_5\Time\AgreementReference',
         'billableOption' => 'string',
         'businessUnitId' => 'integer',
-        'dateEntered' => 'carbon',
-        'endTime' => 'carbon',
+        'dateEntered' => 'string',
+        'endTime' => 'string',
         'id' => 'integer',
         'internalNotes' => 'string',
         'locationId' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2018_5\Time\MemberReference',
+        'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_5\Time\Guid',
         'notes' => 'string',
-        'startTime' => 'carbon',
+        'serviceStatus' => 'Spinen\ConnectWise\Models\v2018_5\Time\ServiceStatusReference',
+        'startTime' => 'string',
         'status' => 'string',
+        'ticket' => 'Spinen\ConnectWise\Models\v2018_5\Time\TicketReference',
+        'ticketMobileGuid' => 'Spinen\ConnectWise\Models\v2018_5\Time\Guid',
         'totalPauseTime' => 'integer',
+        'workRole' => 'Spinen\ConnectWise\Models\v2018_5\Time\WorkRoleReference',
+        'workType' => 'Spinen\ConnectWise\Models\v2018_5\Time\WorkTypeReference',
         'showNotesInDiscussionFlag' => 'boolean',
         'showNotesInInternalFlag' => 'boolean',
         'showNotesInResolutionFlag' => 'boolean',

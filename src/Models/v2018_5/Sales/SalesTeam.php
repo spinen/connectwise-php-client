@@ -5,12 +5,16 @@ namespace Spinen\ConnectWise\Models\v2018_5\Sales;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SalesTeam
+ * Class SalesTeam Version v2018_5
+ * 
+ * Model for SalesTeam
  *
  * @property integer $id
  * @property string $salesTeamIdentifier
  * @property string $salesTeamDescription
+ * @property Spinen\ConnectWise\Models\v2018_5\Sales\SystemLocationReference $salesTeamLocation
  * @property boolean $inactiveFlag
+ * @property Spinen\ConnectWise\Models\v2018_5\Sales\Metadata $_info
  */
 class SalesTeam extends Model
 {
@@ -23,6 +27,8 @@ class SalesTeam extends Model
         'id' => 'integer',
         'salesTeamIdentifier' => 'string',
         'salesTeamDescription' => 'string',
+        'salesTeamLocation' => 'Spinen\ConnectWise\Models\v2018_5\Sales\SystemLocationReference',
         'inactiveFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Sales\Metadata',
     ];
 }

@@ -5,18 +5,25 @@ namespace Spinen\ConnectWise\Models\v2019_2\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProductComponent
+ * Class ProductComponent Version v2019_2
+ * 
+ * Model for ProductComponent
  *
  * @property integer $id
  * @property integer $sequenceNumber
- * @property double $quantity
+ * @property number $quantity
+ * @property Spinen\ConnectWise\Models\v2019_2\Procurement\CatalogItemReference $catalogItem
  * @property boolean $hidePriceFlag
  * @property boolean $hideItemIdentifierFlag
  * @property boolean $hideDescriptionFlag
  * @property boolean $hideQuantityFlag
  * @property boolean $hideExtendedPriceFlag
- * @property double $price
- * @property double $cost
+ * @property Spinen\ConnectWise\Models\v2019_2\Procurement\CompanyReference $vendor
+ * @property Spinen\ConnectWise\Models\v2019_2\Procurement\ProductItemReference $parentProductItem
+ * @property Spinen\ConnectWise\Models\v2019_2\Procurement\ProductItemReference $productItem
+ * @property number $price
+ * @property number $cost
+ * @property Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata $_info
  */
 class ProductComponent extends Model
 {
@@ -28,13 +35,18 @@ class ProductComponent extends Model
     protected $casts = [
         'id' => 'integer',
         'sequenceNumber' => 'integer',
-        'quantity' => 'double',
+        'quantity' => 'number',
+        'catalogItem' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\CatalogItemReference',
         'hidePriceFlag' => 'boolean',
         'hideItemIdentifierFlag' => 'boolean',
         'hideDescriptionFlag' => 'boolean',
         'hideQuantityFlag' => 'boolean',
         'hideExtendedPriceFlag' => 'boolean',
-        'price' => 'double',
-        'cost' => 'double',
+        'vendor' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\CompanyReference',
+        'parentProductItem' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\ProductItemReference',
+        'productItem' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\ProductItemReference',
+        'price' => 'number',
+        'cost' => 'number',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata',
     ];
 }

@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_4\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ServiceSurveyQuestion
+ * Class ServiceSurveyQuestion Version v2018_4
+ * 
+ * Model for ServiceSurveyQuestion
  *
  * @property integer $id
  * @property integer $sequenceNumber
@@ -16,6 +18,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $requiredFlag
  * @property integer $noAnswerPoints
  * @property integer $surveyId
+ * @property Spinen\ConnectWise\Models\v2018_4\Service\Metadata $_info
  */
 class ServiceSurveyQuestion extends Model
 {
@@ -34,5 +37,6 @@ class ServiceSurveyQuestion extends Model
         'requiredFlag' => 'boolean',
         'noAnswerPoints' => 'integer',
         'surveyId' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Service\Metadata',
     ];
 }

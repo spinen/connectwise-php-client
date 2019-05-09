@@ -5,13 +5,16 @@ namespace Spinen\ConnectWise\Models\v2019_1\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Source
+ * Class Source Version v2019_1
+ * 
+ * Model for Source
  *
  * @property integer $id
  * @property string $name
  * @property boolean $defaultFlag
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
  * @property string $enteredBy
- * @property carbon $dateEntered
+ * @property string $dateEntered
  */
 class Source extends Model
 {
@@ -24,7 +27,8 @@ class Source extends Model
         'id' => 'integer',
         'name' => 'string',
         'defaultFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
         'enteredBy' => 'string',
-        'dateEntered' => 'carbon',
+        'dateEntered' => 'string',
     ];
 }

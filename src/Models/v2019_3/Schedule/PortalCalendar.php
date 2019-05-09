@@ -5,19 +5,22 @@ namespace Spinen\ConnectWise\Models\v2019_3\Schedule;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PortalCalendar
+ * Class PortalCalendar Version v2019_3
+ * 
+ * Model for PortalCalendar
  *
  * @property integer $id
  * @property string $weekStart
  * @property string $adjust1Start
  * @property string $adjust1End
- * @property double $adjust1Hours
+ * @property number $adjust1Hours
  * @property string $adjust2Start
  * @property string $adjust2End
- * @property double $adjust2Hours
+ * @property number $adjust2Hours
  * @property string $adjust3Start
  * @property string $adjust3End
- * @property double $adjust3Hours
+ * @property number $adjust3Hours
+ * @property Spinen\ConnectWise\Models\v2019_3\Schedule\Metadata $_info
  */
 class PortalCalendar extends Model
 {
@@ -31,12 +34,13 @@ class PortalCalendar extends Model
         'weekStart' => 'string',
         'adjust1Start' => 'string',
         'adjust1End' => 'string',
-        'adjust1Hours' => 'double',
+        'adjust1Hours' => 'number',
         'adjust2Start' => 'string',
         'adjust2End' => 'string',
-        'adjust2Hours' => 'double',
+        'adjust2Hours' => 'number',
         'adjust3Start' => 'string',
         'adjust3End' => 'string',
-        'adjust3Hours' => 'double',
+        'adjust3Hours' => 'number',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\Metadata',
     ];
 }

@@ -5,12 +5,15 @@ namespace Spinen\ConnectWise\Models\v2019_1\Schedule;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ScheduleColor
+ * Class ScheduleColor Version v2019_1
+ * 
+ * Model for ScheduleColor
  *
  * @property integer $id
  * @property integer $startPercent
  * @property integer $endPercent
  * @property string $color
+ * @property Spinen\ConnectWise\Models\v2019_1\Schedule\Metadata $_info
  */
 class ScheduleColor extends Model
 {
@@ -24,5 +27,6 @@ class ScheduleColor extends Model
         'startPercent' => 'integer',
         'endPercent' => 'integer',
         'color' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Schedule\Metadata',
     ];
 }

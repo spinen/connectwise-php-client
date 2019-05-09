@@ -5,9 +5,12 @@ namespace Spinen\ConnectWise\Models\v2018_5\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PortalConfigurationProjectSetup
+ * Class PortalConfigurationProjectSetup Version v2018_5
+ * 
+ * Model for PortalConfigurationProjectSetup
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\PortalConfigurationReference $portalConfig
  * @property boolean $projectNameFlag
  * @property boolean $projectTypeFlag
  * @property boolean $statusFlag
@@ -50,6 +53,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $projectIssueStatusFlag
  * @property boolean $projectIssueAssignedFlag
  * @property boolean $projectDetailTotalHoursFlag
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
  */
 class PortalConfigurationProjectSetup extends Model
 {
@@ -60,6 +64,7 @@ class PortalConfigurationProjectSetup extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'portalConfig' => 'Spinen\ConnectWise\Models\v2018_5\Company\PortalConfigurationReference',
         'projectNameFlag' => 'boolean',
         'projectTypeFlag' => 'boolean',
         'statusFlag' => 'boolean',
@@ -102,5 +107,6 @@ class PortalConfigurationProjectSetup extends Model
         'projectIssueStatusFlag' => 'boolean',
         'projectIssueAssignedFlag' => 'boolean',
         'projectDetailTotalHoursFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
     ];
 }

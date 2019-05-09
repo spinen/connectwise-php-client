@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_1\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Code
+ * Class Code Version v2019_1
+ * 
+ * Model for Code
  *
  * @property integer $id
  * @property string $name
@@ -13,6 +15,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $boardId
  * @property integer $locationId
  * @property integer $businessUnitId
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
  */
 class Code extends Model
 {
@@ -28,5 +31,6 @@ class Code extends Model
         'boardId' => 'integer',
         'locationId' => 'integer',
         'businessUnitId' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
     ];
 }

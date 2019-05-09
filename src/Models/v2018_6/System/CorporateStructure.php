@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_6\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CorporateStructure
+ * Class CorporateStructure Version v2018_6
+ * 
+ * Model for CorporateStructure
  *
  * @property integer $id
  * @property string $levelCount
@@ -17,6 +19,14 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $fiscalYearStart
  * @property string $locationCaption
  * @property string $groupCaption
+ * @property Spinen\ConnectWise\Models\v2018_6\System\CurrencyReference $baseCurrency
+ * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $president
+ * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $chiefOperatingOfficer
+ * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $controller
+ * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $dispatcher
+ * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $serviceManager
+ * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $dutyManager
+ * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  */
 class CorporateStructure extends Model
 {
@@ -36,5 +46,13 @@ class CorporateStructure extends Model
         'fiscalYearStart' => 'string',
         'locationCaption' => 'string',
         'groupCaption' => 'string',
+        'baseCurrency' => 'Spinen\ConnectWise\Models\v2018_6\System\CurrencyReference',
+        'president' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        'chiefOperatingOfficer' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        'controller' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        'dispatcher' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        'serviceManager' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        'dutyManager' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
     ];
 }

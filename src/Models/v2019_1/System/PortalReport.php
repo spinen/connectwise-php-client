@@ -5,14 +5,18 @@ namespace Spinen\ConnectWise\Models\v2019_1\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PortalReport
+ * Class PortalReport Version v2019_1
+ * 
+ * Model for PortalReport
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_1\System\PortalConfigurationReference $portalConfiguration
  * @property string $name
  * @property string $url
  * @property boolean $openSameWindowFlag
  * @property boolean $customFlag
  * @property boolean $displayFlag
+ * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  */
 class PortalReport extends Model
 {
@@ -23,10 +27,12 @@ class PortalReport extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'portalConfiguration' => 'Spinen\ConnectWise\Models\v2019_1\System\PortalConfigurationReference',
         'name' => 'string',
         'url' => 'string',
         'openSameWindowFlag' => 'boolean',
         'customFlag' => 'boolean',
         'displayFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
     ];
 }

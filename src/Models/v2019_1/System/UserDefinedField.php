@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_1\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class UserDefinedField
+ * Class UserDefinedField Version v2019_1
+ * 
+ * Model for UserDefinedField
  *
  * @property integer $id
  * @property integer $podId
@@ -27,7 +29,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $removeAllBusinessUnits
  * @property boolean $addAllLocations
  * @property boolean $removeAllLocations
- * @property carbon $dateCreated
+ * @property string $dateCreated
+ * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  */
 class UserDefinedField extends Model
 {
@@ -57,6 +60,7 @@ class UserDefinedField extends Model
         'removeAllBusinessUnits' => 'boolean',
         'addAllLocations' => 'boolean',
         'removeAllLocations' => 'boolean',
-        'dateCreated' => 'carbon',
+        'dateCreated' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
     ];
 }

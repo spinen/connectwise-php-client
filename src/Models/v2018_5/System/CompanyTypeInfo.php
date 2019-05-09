@@ -5,10 +5,13 @@ namespace Spinen\ConnectWise\Models\v2018_5\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CompanyTypeInfo
+ * Class CompanyTypeInfo Version v2018_5
+ * 
+ * Model for CompanyTypeInfo
  *
  * @property integer $id
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
  */
 class CompanyTypeInfo extends Model
 {
@@ -20,5 +23,6 @@ class CompanyTypeInfo extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
     ];
 }

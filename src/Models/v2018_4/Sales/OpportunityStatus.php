@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_4\Sales;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class OpportunityStatus
+ * Class OpportunityStatus Version v2018_4
+ * 
+ * Model for OpportunityStatus
  *
  * @property integer $id
  * @property string $name
@@ -14,8 +16,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $closedFlag
  * @property boolean $inactiveFlag
  * @property boolean $defaultFlag
+ * @property Spinen\ConnectWise\Models\v2018_4\Sales\Metadata $_info
  * @property string $enteredBy
- * @property carbon $dateEntered
+ * @property string $dateEntered
  */
 class OpportunityStatus extends Model
 {
@@ -32,7 +35,8 @@ class OpportunityStatus extends Model
         'closedFlag' => 'boolean',
         'inactiveFlag' => 'boolean',
         'defaultFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Sales\Metadata',
         'enteredBy' => 'string',
-        'dateEntered' => 'carbon',
+        'dateEntered' => 'string',
     ];
 }

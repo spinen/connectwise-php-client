@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_6\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ConnectWiseHostedSetup
+ * Class ConnectWiseHostedSetup Version v2018_6
+ * 
+ * Model for ConnectWiseHostedSetup
  *
  * @property integer $id
  * @property integer $screenId
@@ -23,6 +25,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property array $locationIds
  * @property string $createdBy
  * @property string $dateCreated
+ * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  */
 class ConnectWiseHostedSetup extends Model
 {
@@ -48,5 +51,6 @@ class ConnectWiseHostedSetup extends Model
         'locationIds' => 'array',
         'createdBy' => 'string',
         'dateCreated' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
     ];
 }

@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_4\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class WorkflowActionAutomateParameter
+ * Class WorkflowActionAutomateParameter Version v2018_4
+ * 
+ * Model for WorkflowActionAutomateParameter
  *
  * @property integer $id
  * @property string $name

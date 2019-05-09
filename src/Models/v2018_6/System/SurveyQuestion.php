@@ -5,16 +5,20 @@ namespace Spinen\ConnectWise\Models\v2018_6\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SurveyQuestion
+ * Class SurveyQuestion Version v2018_6
+ * 
+ * Model for SurveyQuestion
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_6\System\SurveyReference $survey
  * @property string $fieldType
  * @property string $entryType
- * @property double $sequenceNumber
+ * @property number $sequenceNumber
  * @property string $question
  * @property integer $numberOfDecimals
  * @property boolean $requiredFlag
  * @property boolean $inactiveFlag
+ * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  */
 class SurveyQuestion extends Model
 {
@@ -25,12 +29,14 @@ class SurveyQuestion extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'survey' => 'Spinen\ConnectWise\Models\v2018_6\System\SurveyReference',
         'fieldType' => 'string',
         'entryType' => 'string',
-        'sequenceNumber' => 'double',
+        'sequenceNumber' => 'number',
         'question' => 'string',
         'numberOfDecimals' => 'integer',
         'requiredFlag' => 'boolean',
         'inactiveFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
     ];
 }

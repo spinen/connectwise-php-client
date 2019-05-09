@@ -5,17 +5,24 @@ namespace Spinen\ConnectWise\Models\v2018_5\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Contact
+ * Class Contact Version v2018_5
+ * 
+ * Model for Contact
  *
  * @property integer $id
  * @property string $firstName
  * @property string $lastName
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\ContactTypeReference $type
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\SiteReference $site
  * @property string $addressLine1
  * @property string $addressLine2
  * @property string $city
  * @property string $state
  * @property string $zip
  * @property string $country
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\RelationshipReference $relationship
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\ContactDepartmentReference $department
  * @property boolean $inactiveFlag
  * @property integer $defaultMergeContactId
  * @property string $securityIdentifier
@@ -32,15 +39,17 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $disablePortalLoginFlag
  * @property boolean $unsubscribeFlag
  * @property string $gender
- * @property carbon $birthDay
- * @property carbon $anniversary
+ * @property string $birthDay
+ * @property string $anniversary
  * @property string $presence
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Guid $mobileGuid
  * @property string $facebookUrl
  * @property string $twitterUrl
  * @property string $linkedInUrl
  * @property boolean $defaultBillingFlag
  * @property boolean $defaultFlag
  * @property array $communicationItems
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
  * @property array $customFields
  */
 class Contact extends Model
@@ -54,12 +63,17 @@ class Contact extends Model
         'id' => 'integer',
         'firstName' => 'string',
         'lastName' => 'string',
+        'type' => 'Spinen\ConnectWise\Models\v2018_5\Company\ContactTypeReference',
+        'company' => 'Spinen\ConnectWise\Models\v2018_5\Company\CompanyReference',
+        'site' => 'Spinen\ConnectWise\Models\v2018_5\Company\SiteReference',
         'addressLine1' => 'string',
         'addressLine2' => 'string',
         'city' => 'string',
         'state' => 'string',
         'zip' => 'string',
         'country' => 'string',
+        'relationship' => 'Spinen\ConnectWise\Models\v2018_5\Company\RelationshipReference',
+        'department' => 'Spinen\ConnectWise\Models\v2018_5\Company\ContactDepartmentReference',
         'inactiveFlag' => 'boolean',
         'defaultMergeContactId' => 'integer',
         'securityIdentifier' => 'string',
@@ -76,15 +90,17 @@ class Contact extends Model
         'disablePortalLoginFlag' => 'boolean',
         'unsubscribeFlag' => 'boolean',
         'gender' => 'string',
-        'birthDay' => 'carbon',
-        'anniversary' => 'carbon',
+        'birthDay' => 'string',
+        'anniversary' => 'string',
         'presence' => 'string',
+        'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_5\Company\Guid',
         'facebookUrl' => 'string',
         'twitterUrl' => 'string',
         'linkedInUrl' => 'string',
         'defaultBillingFlag' => 'boolean',
         'defaultFlag' => 'boolean',
         'communicationItems' => 'array',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
         'customFields' => 'array',
     ];
 }

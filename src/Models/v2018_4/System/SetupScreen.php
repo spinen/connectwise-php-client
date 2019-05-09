@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_4\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SetupScreen
+ * Class SetupScreen Version v2018_4
+ * 
+ * Model for SetupScreen
  *
  * @property integer $id
  * @property string $category
@@ -14,6 +16,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $moduleDescription
  * @property string $moduleIdentifier
  * @property string $moduleName
+ * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
  */
 class SetupScreen extends Model
 {
@@ -30,5 +33,6 @@ class SetupScreen extends Model
         'moduleDescription' => 'string',
         'moduleIdentifier' => 'string',
         'moduleName' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
     ];
 }

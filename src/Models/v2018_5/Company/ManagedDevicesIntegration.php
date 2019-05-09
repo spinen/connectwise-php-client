@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_5\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ManagedDevicesIntegration
+ * Class ManagedDevicesIntegration Version v2018_5
+ * 
+ * Model for ManagedDevicesIntegration
  *
  * @property integer $id
  * @property string $name
@@ -16,9 +18,13 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $globalLoginPassword
  * @property string $defaultBillingLevel
  * @property string $managementItSetupType
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\SystemLocationReference $defaultLocation
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\SystemDepartmentReference $defaultDepartment
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\IntegratorLoginReference $integratorLogin
  * @property boolean $matchOnSerialNumberFlag
  * @property boolean $disableNewCrossReferencesFlag
  * @property boolean $configBillCustomerFlag
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
  */
 class ManagedDevicesIntegration extends Model
 {
@@ -37,8 +43,12 @@ class ManagedDevicesIntegration extends Model
         'globalLoginPassword' => 'string',
         'defaultBillingLevel' => 'string',
         'managementItSetupType' => 'string',
+        'defaultLocation' => 'Spinen\ConnectWise\Models\v2018_5\Company\SystemLocationReference',
+        'defaultDepartment' => 'Spinen\ConnectWise\Models\v2018_5\Company\SystemDepartmentReference',
+        'integratorLogin' => 'Spinen\ConnectWise\Models\v2018_5\Company\IntegratorLoginReference',
         'matchOnSerialNumberFlag' => 'boolean',
         'disableNewCrossReferencesFlag' => 'boolean',
         'configBillCustomerFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
     ];
 }

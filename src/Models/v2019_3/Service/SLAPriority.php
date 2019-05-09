@@ -5,15 +5,20 @@ namespace Spinen\ConnectWise\Models\v2019_3\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SLAPriority
+ * Class SLAPriority Version v2019_3
+ * 
+ * Model for SLAPriority
  *
  * @property integer $id
- * @property double $respondHours
+ * @property Spinen\ConnectWise\Models\v2019_3\Service\PriorityReference $priority
+ * @property number $respondHours
  * @property integer $respondPercent
- * @property double $planWithin
+ * @property number $planWithin
  * @property integer $planWithinPercent
- * @property double $resolutionHours
+ * @property number $resolutionHours
  * @property integer $resolutionPercent
+ * @property Spinen\ConnectWise\Models\v2019_3\Service\SLAReference $sla
+ * @property Spinen\ConnectWise\Models\v2019_3\Service\Metadata $_info
  */
 class SLAPriority extends Model
 {
@@ -24,11 +29,14 @@ class SLAPriority extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'respondHours' => 'double',
+        'priority' => 'Spinen\ConnectWise\Models\v2019_3\Service\PriorityReference',
+        'respondHours' => 'number',
         'respondPercent' => 'integer',
-        'planWithin' => 'double',
+        'planWithin' => 'number',
         'planWithinPercent' => 'integer',
-        'resolutionHours' => 'double',
+        'resolutionHours' => 'number',
         'resolutionPercent' => 'integer',
+        'sla' => 'Spinen\ConnectWise\Models\v2019_3\Service\SLAReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Service\Metadata',
     ];
 }

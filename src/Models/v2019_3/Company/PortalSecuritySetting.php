@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_3\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PortalSecuritySetting
+ * Class PortalSecuritySetting Version v2019_3
+ * 
+ * Model for PortalSecuritySetting
  *
  * @property integer $id
  * @property string $functionIdentifier
@@ -16,6 +18,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $levelFour
  * @property boolean $levelFive
  * @property boolean $levelSix
+ * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
  */
 class PortalSecuritySetting extends Model
 {
@@ -34,5 +37,6 @@ class PortalSecuritySetting extends Model
         'levelFour' => 'boolean',
         'levelFive' => 'boolean',
         'levelSix' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
     ];
 }

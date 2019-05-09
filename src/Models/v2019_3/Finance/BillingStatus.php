@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BillingStatus
+ * Class BillingStatus Version v2019_3
+ * 
+ * Model for BillingStatus
  *
  * @property integer $id
  * @property string $name
@@ -14,6 +16,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $closedFlag
  * @property boolean $inactiveFlag
  * @property boolean $sentFlag
+ * @property Spinen\ConnectWise\Models\v2019_3\Finance\Metadata $_info
  */
 class BillingStatus extends Model
 {
@@ -30,5 +33,6 @@ class BillingStatus extends Model
         'closedFlag' => 'boolean',
         'inactiveFlag' => 'boolean',
         'sentFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Finance\Metadata',
     ];
 }

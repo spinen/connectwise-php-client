@@ -5,11 +5,14 @@ namespace Spinen\ConnectWise\Models\v2019_1\System;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class WorkflowTableType
+ * Class WorkflowTableType Version v2019_1
+ * 
+ * Model for WorkflowTableType
  *
  * @property integer $id
  * @property string $identifier
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  */
 class WorkflowTableType extends Model
 {
@@ -22,5 +25,6 @@ class WorkflowTableType extends Model
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
     ];
 }

@@ -5,42 +5,57 @@ namespace Spinen\ConnectWise\Models\v2019_2\Project;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProjectPhase
+ * Class ProjectPhase Version v2019_2
+ * 
+ * Model for ProjectPhase
  *
  * @property integer $id
  * @property integer $projectId
  * @property string $description
+ * @property Spinen\ConnectWise\Models\v2019_2\Project\ProjectBoardReference $board
+ * @property Spinen\ConnectWise\Models\v2019_2\Project\PhaseStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2019_2\Project\AgreementReference $agreement
+ * @property Spinen\ConnectWise\Models\v2019_2\Project\OpportunityReference $opportunity
+ * @property Spinen\ConnectWise\Models\v2019_2\Project\ProjectPhaseReference $parentPhase
  * @property string $wbsCode
  * @property string $billTime
  * @property string $billExpenses
  * @property string $billProducts
  * @property boolean $markAsMilestoneFlag
  * @property string $notes
- * @property carbon $deadlineDate
+ * @property string $deadlineDate
  * @property boolean $billSeparatelyFlag
  * @property string $billingMethod
- * @property double $scheduledHours
+ * @property number $scheduledHours
  * @property string $scheduledStart
  * @property string $scheduledEnd
- * @property double $actualHours
+ * @property number $actualHours
  * @property string $actualStart
  * @property string $actualEnd
- * @property double $budgetHours
+ * @property number $budgetHours
  * @property integer $locationId
  * @property integer $businessUnitId
- * @property double $hourlyRate
- * @property carbon $billingStartDate
+ * @property number $hourlyRate
+ * @property string $billingStartDate
  * @property boolean $billPhaseClosedFlag
  * @property boolean $billProjectClosedFlag
- * @property double $downpayment
+ * @property number $downpayment
  * @property string $poNumber
- * @property double $poAmount
- * @property double $estimatedTimeCost
- * @property double $estimatedExpenseCost
- * @property double $estimatedProductCost
- * @property double $estimatedTimeRevenue
- * @property double $estimatedExpenseRevenue
- * @property double $estimatedProductRevenue
+ * @property number $poAmount
+ * @property number $estimatedTimeCost
+ * @property number $estimatedExpenseCost
+ * @property number $estimatedProductCost
+ * @property number $estimatedTimeRevenue
+ * @property number $estimatedExpenseRevenue
+ * @property number $estimatedProductRevenue
+ * @property Spinen\ConnectWise\Models\v2019_2\Project\CurrencyReference $currency
+ * @property Spinen\ConnectWise\Models\v2019_2\Project\CompanyReference $billToCompany
+ * @property Spinen\ConnectWise\Models\v2019_2\Project\ContactReference $billToContact
+ * @property Spinen\ConnectWise\Models\v2019_2\Project\SiteReference $billToSite
+ * @property Spinen\ConnectWise\Models\v2019_2\Project\CompanyReference $shipToCompany
+ * @property Spinen\ConnectWise\Models\v2019_2\Project\ContactReference $shipToContact
+ * @property Spinen\ConnectWise\Models\v2019_2\Project\SiteReference $shipToSite
+ * @property Spinen\ConnectWise\Models\v2019_2\Project\Metadata $_info
  * @property array $customFields
  */
 class ProjectPhase extends Model
@@ -54,37 +69,50 @@ class ProjectPhase extends Model
         'id' => 'integer',
         'projectId' => 'integer',
         'description' => 'string',
+        'board' => 'Spinen\ConnectWise\Models\v2019_2\Project\ProjectBoardReference',
+        'status' => 'Spinen\ConnectWise\Models\v2019_2\Project\PhaseStatusReference',
+        'agreement' => 'Spinen\ConnectWise\Models\v2019_2\Project\AgreementReference',
+        'opportunity' => 'Spinen\ConnectWise\Models\v2019_2\Project\OpportunityReference',
+        'parentPhase' => 'Spinen\ConnectWise\Models\v2019_2\Project\ProjectPhaseReference',
         'wbsCode' => 'string',
         'billTime' => 'string',
         'billExpenses' => 'string',
         'billProducts' => 'string',
         'markAsMilestoneFlag' => 'boolean',
         'notes' => 'string',
-        'deadlineDate' => 'carbon',
+        'deadlineDate' => 'string',
         'billSeparatelyFlag' => 'boolean',
         'billingMethod' => 'string',
-        'scheduledHours' => 'double',
+        'scheduledHours' => 'number',
         'scheduledStart' => 'string',
         'scheduledEnd' => 'string',
-        'actualHours' => 'double',
+        'actualHours' => 'number',
         'actualStart' => 'string',
         'actualEnd' => 'string',
-        'budgetHours' => 'double',
+        'budgetHours' => 'number',
         'locationId' => 'integer',
         'businessUnitId' => 'integer',
-        'hourlyRate' => 'double',
-        'billingStartDate' => 'carbon',
+        'hourlyRate' => 'number',
+        'billingStartDate' => 'string',
         'billPhaseClosedFlag' => 'boolean',
         'billProjectClosedFlag' => 'boolean',
-        'downpayment' => 'double',
+        'downpayment' => 'number',
         'poNumber' => 'string',
-        'poAmount' => 'double',
-        'estimatedTimeCost' => 'double',
-        'estimatedExpenseCost' => 'double',
-        'estimatedProductCost' => 'double',
-        'estimatedTimeRevenue' => 'double',
-        'estimatedExpenseRevenue' => 'double',
-        'estimatedProductRevenue' => 'double',
+        'poAmount' => 'number',
+        'estimatedTimeCost' => 'number',
+        'estimatedExpenseCost' => 'number',
+        'estimatedProductCost' => 'number',
+        'estimatedTimeRevenue' => 'number',
+        'estimatedExpenseRevenue' => 'number',
+        'estimatedProductRevenue' => 'number',
+        'currency' => 'Spinen\ConnectWise\Models\v2019_2\Project\CurrencyReference',
+        'billToCompany' => 'Spinen\ConnectWise\Models\v2019_2\Project\CompanyReference',
+        'billToContact' => 'Spinen\ConnectWise\Models\v2019_2\Project\ContactReference',
+        'billToSite' => 'Spinen\ConnectWise\Models\v2019_2\Project\SiteReference',
+        'shipToCompany' => 'Spinen\ConnectWise\Models\v2019_2\Project\CompanyReference',
+        'shipToContact' => 'Spinen\ConnectWise\Models\v2019_2\Project\ContactReference',
+        'shipToSite' => 'Spinen\ConnectWise\Models\v2019_2\Project\SiteReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Project\Metadata',
         'customFields' => 'array',
     ];
 }

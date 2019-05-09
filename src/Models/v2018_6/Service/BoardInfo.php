@@ -5,12 +5,17 @@ namespace Spinen\ConnectWise\Models\v2018_6\Service;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BoardInfo
+ * Class BoardInfo Version v2018_6
+ * 
+ * Model for BoardInfo
  *
  * @property integer $id
  * @property string $name
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\SystemLocationReference $location
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\SystemDepartmentReference $department
  * @property boolean $projectFlag
  * @property boolean $inactiveFlag
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\Metadata $_info
  */
 class BoardInfo extends Model
 {
@@ -22,7 +27,10 @@ class BoardInfo extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
+        'location' => 'Spinen\ConnectWise\Models\v2018_6\Service\SystemLocationReference',
+        'department' => 'Spinen\ConnectWise\Models\v2018_6\Service\SystemDepartmentReference',
         'projectFlag' => 'boolean',
         'inactiveFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Service\Metadata',
     ];
 }

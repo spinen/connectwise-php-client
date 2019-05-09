@@ -5,9 +5,12 @@ namespace Spinen\ConnectWise\Models\v2018_4\Procurement;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class RmaStatusEmailTemplate
+ * Class RmaStatusEmailTemplate Version v2018_4
+ * 
+ * Model for RmaStatusEmailTemplate
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\RmaStatusReference $status
  * @property boolean $useSenderFlag
  * @property string $firstName
  * @property string $lastName
@@ -15,6 +18,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $subject
  * @property string $body
  * @property boolean $copySenderFlag
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
  */
 class RmaStatusEmailTemplate extends Model
 {
@@ -25,6 +29,7 @@ class RmaStatusEmailTemplate extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'status' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\RmaStatusReference',
         'useSenderFlag' => 'boolean',
         'firstName' => 'string',
         'lastName' => 'string',
@@ -32,5 +37,6 @@ class RmaStatusEmailTemplate extends Model
         'subject' => 'string',
         'body' => 'string',
         'copySenderFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
     ];
 }

@@ -5,10 +5,13 @@ namespace Spinen\ConnectWise\Models\v2018_5\Sales;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SalesProbability
+ * Class SalesProbability Version v2018_5
+ * 
+ * Model for SalesProbability
  *
  * @property integer $id
  * @property integer $probability
+ * @property Spinen\ConnectWise\Models\v2018_5\Sales\Metadata $_info
  */
 class SalesProbability extends Model
 {
@@ -20,5 +23,6 @@ class SalesProbability extends Model
     protected $casts = [
         'id' => 'integer',
         'probability' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Sales\Metadata',
     ];
 }

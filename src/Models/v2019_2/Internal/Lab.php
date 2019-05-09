@@ -5,12 +5,15 @@ namespace Spinen\ConnectWise\Models\v2019_2\Internal;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Lab
+ * Class Lab Version v2019_2
+ * 
+ * Model for Lab
  *
  * @property integer $id
  * @property string $identifier
  * @property boolean $inactiveFlag
  * @property boolean $adminLock
+ * @property Spinen\ConnectWise\Models\v2019_2\Internal\Metadata $_info
  */
 class Lab extends Model
 {
@@ -24,5 +27,6 @@ class Lab extends Model
         'identifier' => 'string',
         'inactiveFlag' => 'boolean',
         'adminLock' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Internal\Metadata',
     ];
 }

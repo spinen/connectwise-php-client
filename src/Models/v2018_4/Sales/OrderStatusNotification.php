@@ -5,11 +5,17 @@ namespace Spinen\ConnectWise\Models\v2018_4\Sales;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class OrderStatusNotification
+ * Class OrderStatusNotification Version v2018_4
+ * 
+ * Model for OrderStatusNotification
  *
  * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_4\Sales\NotificationRecipientReference $notifyWho
+ * @property Spinen\ConnectWise\Models\v2018_4\Sales\OrderStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2018_4\Sales\MemberReference $member
  * @property string $email
  * @property integer $workflowStep
+ * @property Spinen\ConnectWise\Models\v2018_4\Sales\Metadata $_info
  */
 class OrderStatusNotification extends Model
 {
@@ -20,7 +26,11 @@ class OrderStatusNotification extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'notifyWho' => 'Spinen\ConnectWise\Models\v2018_4\Sales\NotificationRecipientReference',
+        'status' => 'Spinen\ConnectWise\Models\v2018_4\Sales\OrderStatusReference',
+        'member' => 'Spinen\ConnectWise\Models\v2018_4\Sales\MemberReference',
         'email' => 'string',
         'workflowStep' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Sales\Metadata',
     ];
 }

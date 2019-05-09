@@ -5,7 +5,9 @@ namespace Spinen\ConnectWise\Models\v2018_5\Company;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CompanySite
+ * Class CompanySite Version v2018_5
+ * 
+ * Model for CompanySite
  *
  * @property integer $id
  * @property string $name
@@ -14,16 +16,22 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $city
  * @property string $state
  * @property string $zip
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\CountryReference $country
  * @property string $addressFormat
  * @property string $phoneNumber
  * @property string $faxNumber
  * @property integer $taxCodeId
- * @property double $expenseReimbursement
+ * @property number $expenseReimbursement
  * @property boolean $primaryAddressFlag
  * @property boolean $defaultShippingFlag
  * @property boolean $defaultBillingFlag
  * @property boolean $defaultMailingFlag
  * @property boolean $inactiveFlag
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Guid $mobileGuid
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\CalendarReference $calendar
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\TimeZoneSetupReference $timeZone
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
  */
 class CompanySite extends Model
 {
@@ -40,15 +48,21 @@ class CompanySite extends Model
         'city' => 'string',
         'state' => 'string',
         'zip' => 'string',
+        'country' => 'Spinen\ConnectWise\Models\v2018_5\Company\CountryReference',
         'addressFormat' => 'string',
         'phoneNumber' => 'string',
         'faxNumber' => 'string',
         'taxCodeId' => 'integer',
-        'expenseReimbursement' => 'double',
+        'expenseReimbursement' => 'number',
         'primaryAddressFlag' => 'boolean',
         'defaultShippingFlag' => 'boolean',
         'defaultBillingFlag' => 'boolean',
         'defaultMailingFlag' => 'boolean',
         'inactiveFlag' => 'boolean',
+        'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_5\Company\Guid',
+        'calendar' => 'Spinen\ConnectWise\Models\v2018_5\Company\CalendarReference',
+        'timeZone' => 'Spinen\ConnectWise\Models\v2018_5\Company\TimeZoneSetupReference',
+        'company' => 'Spinen\ConnectWise\Models\v2018_5\Company\CompanyReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
     ];
 }
