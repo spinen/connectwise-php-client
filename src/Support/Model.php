@@ -412,7 +412,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     }
 
     /**
-     * Return the model as an array
+     * Return the model as JSON
      *
      * @param int $options
      *
