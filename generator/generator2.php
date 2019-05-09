@@ -58,7 +58,7 @@ class {{ Class }} extends Model
      */
     protected \$casts = [{{ Casts }}
     ];
-}}
+}
 
 EOF;
         $casts = null;
