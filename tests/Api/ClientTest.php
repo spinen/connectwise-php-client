@@ -613,4 +613,24 @@ class ClientTest extends TestCase
                     ->with(Mockery::any())
                     ->andReturn(false);
     }
+
+    /**
+     * @test
+     */
+    public function it_returns_supported_version_numbers()
+    {
+        $this->client->setVersion('2019.3');
+        $this->assertEquals('2019.3', $this->client->getVersion());
+    }
+
+    /**
+     * @test
+     */
+    public function it_throws_an_exception_on_non_supported_versions()
+    {
+        $this->expectException(InvalidArgumentException::class);
+
+        $this->client->setVersion('2012.2');
+        $this->assertNotEquals('2012.2', $this->client->getVersion());
+    }
 }
