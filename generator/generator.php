@@ -71,7 +71,16 @@ EOF;
             });
 
         $casts = $property_type->map(function ($type, $property) {
-            return "        '${property}' => '${type}'";
+            $primitives = [
+                'array',
+                'boolean',
+                'float',
+                'integer',
+                'object',
+                'string',
+            ];
+
+            return "        '${property}' => " . ((in_array($type, $primitives)) ? "'${type}'" : "${type}::class");
         })
                                ->values()
                                ->sort()
@@ -129,7 +138,7 @@ EOF;
     {
         // Cast to another model
         if (array_key_exists('$ref', $attributes)) {
-            return $this->getNamespace(collect(explode('/', $attributes['$ref']))->last());
+            return collect(explode('/', $attributes['$ref']))->last();
         }
 
         $format = $attributes['format'] ?? null;
