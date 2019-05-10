@@ -41,6 +41,7 @@ class Swagger
 
 namespace {{ Namespace }};
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -84,7 +85,7 @@ EOF;
         })
                                ->values()
                                ->sort()
-                               ->implode(",\n") . ',';
+                               ->implode(",\n");
 
         $properties = $property_type->map(function ($type, $property) {
             return " * @property ${type} $${property}";
@@ -154,7 +155,7 @@ EOF;
         }
 
         if (in_array($format, ['date', 'date-time'])) {
-            return 'Carbon\Carbon';
+            return 'Carbon';
         }
 
         // NOTE: Would be nice to parse the 'items' key to get the types of the properties
