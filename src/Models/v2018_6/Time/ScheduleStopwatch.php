@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ScheduleStopwatch
  *
  * @property AgreementReference $agreement
- * @property Carbon\Carbon $dateEntered
- * @property Carbon\Carbon $endTime
- * @property Carbon\Carbon $startTime
+ * @property Carbon $dateEntered
+ * @property Carbon $endTime
+ * @property Carbon $startTime
  * @property Guid $mobileGuid
  * @property Guid $scheduleMobileGuid
  * @property MemberReference $member
@@ -41,8 +42,8 @@ class ScheduleStopwatch extends Model
         'agreement' => AgreementReference::class,
         'billableOption' => 'string',
         'businessUnitId' => 'integer',
-        'dateEntered' => Carbon\Carbon::class,
-        'endTime' => Carbon\Carbon::class,
+        'dateEntered' => Carbon::class,
+        'endTime' => Carbon::class,
         'id' => 'integer',
         'internalNotes' => 'string',
         'locationId' => 'integer',
@@ -51,10 +52,10 @@ class ScheduleStopwatch extends Model
         'notes' => 'string',
         'scheduleId' => 'integer',
         'scheduleMobileGuid' => Guid::class,
-        'startTime' => Carbon\Carbon::class,
+        'startTime' => Carbon::class,
         'status' => 'string',
         'totalPauseTime' => 'integer',
         'workRole' => WorkRoleReference::class,
-        'workType' => WorkTypeReference::class,
+        'workType' => WorkTypeReference::class
     ];
 }

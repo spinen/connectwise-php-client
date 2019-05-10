@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for UnpostedInvoice
  *
  * @property BillingTermsReference $billingTerms
- * @property Carbon\Carbon $dateClosed
- * @property Carbon\Carbon $dueDate
- * @property Carbon\Carbon $invoiceDate
+ * @property Carbon $dateClosed
+ * @property Carbon $dueDate
+ * @property Carbon $invoiceDate
  * @property CompanyReference $billToCompany
  * @property CompanyReference $company
  * @property CompanyReference $shipToCompany
@@ -86,13 +87,13 @@ class UnpostedInvoice extends Model
         'countyTaxXref' => 'string',
         'createdBy' => 'string',
         'currency' => CurrencyReference::class,
-        'dateClosed' => Carbon\Carbon::class,
+        'dateClosed' => Carbon::class,
         'departmentId' => 'integer',
         'description' => 'string',
-        'dueDate' => Carbon\Carbon::class,
+        'dueDate' => Carbon::class,
         'dueDays' => 'string',
         'id' => 'integer',
-        'invoiceDate' => Carbon\Carbon::class,
+        'invoiceDate' => Carbon::class,
         'invoiceNumber' => 'string',
         'invoiceTaxableFlag' => 'boolean',
         'invoiceType' => 'string',
@@ -109,6 +110,6 @@ class UnpostedInvoice extends Model
         'stateTaxXref' => 'string',
         'subTotal' => 'float',
         'taxCode' => TaxCodeReference::class,
-        'total' => 'float',
+        'total' => 'float'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class ReportingService extends Model
         'reportingDomain' => 'string',
         'reportingPassword' => 'string',
         'reportingUrl' => 'string',
-        'reportingUserName' => 'string',
+        'reportingUserName' => 'string'
     ];
 }

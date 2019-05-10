@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -35,6 +36,6 @@ class PricingSchedule extends Model
         'inactiveFlag' => 'boolean',
         'name' => 'string',
         'removeAllCompaniesFlag' => 'boolean',
-        'setAllCompaniesFlag' => 'boolean',
+        'setAllCompaniesFlag' => 'boolean'
     ];
 }

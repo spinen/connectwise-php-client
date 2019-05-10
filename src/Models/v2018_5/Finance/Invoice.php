@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,8 +12,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property BillingStatusReference $status
  * @property BillingTermsReference $billingTerms
- * @property Carbon\Carbon $date
- * @property Carbon\Carbon $dueDate
+ * @property Carbon $date
+ * @property Carbon $dueDate
  * @property CompanyReference $billToCompany
  * @property CompanyReference $company
  * @property CompanyReference $shipToCompany
@@ -86,11 +87,11 @@ class Invoice extends Model
         'currency' => CurrencyReference::class,
         'customFields' => 'array',
         'customerPO' => 'string',
-        'date' => Carbon\Carbon::class,
+        'date' => Carbon::class,
         'departmentId' => 'integer',
         'downpaymentApplied' => 'float',
         'downpaymentPreviouslyTaxedFlag' => 'boolean',
-        'dueDate' => Carbon\Carbon::class,
+        'dueDate' => Carbon::class,
         'emailTemplateId' => 'integer',
         'expenseTotal' => 'float',
         'id' => 'integer',
@@ -117,6 +118,6 @@ class Invoice extends Model
         'territoryId' => 'integer',
         'topComment' => 'string',
         'total' => 'float',
-        'type' => 'string',
+        'type' => 'string'
     ];
 }

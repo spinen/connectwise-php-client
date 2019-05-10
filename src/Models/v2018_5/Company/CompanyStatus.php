@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -39,6 +40,6 @@ class CompanyStatus extends Model
         'name' => 'string',
         'notificationMessage' => 'string',
         'notifyFlag' => 'boolean',
-        'track' => TrackReference::class,
+        'track' => TrackReference::class
     ];
 }

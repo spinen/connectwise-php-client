@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Management
  *
- * @property Carbon\Carbon $runTime
+ * @property Carbon $runTime
  * @property ConfigurationStatusReference $addedConfigurationStatus
  * @property ConfigurationStatusReference $deletedConfigurationStatus
  * @property IntegratorLoginReference $integratorLogin
@@ -36,7 +37,7 @@ class Management extends Model
         'executiveSummaryReportScheduleMinute' => 'integer',
         'id' => 'integer',
         'integratorLogin' => IntegratorLoginReference::class,
-        'runTime' => Carbon\Carbon::class,
-        'scheduleExecutiveSummaryReportFlag' => 'boolean',
+        'runTime' => Carbon::class,
+        'scheduleExecutiveSummaryReportFlag' => 'boolean'
     ];
 }

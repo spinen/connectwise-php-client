@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class MemberReference extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'identifier' => 'string',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

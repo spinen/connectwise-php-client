@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ExportAccountingBatchRequest
  *
- * @property Carbon\Carbon $thruDate
+ * @property Carbon $thruDate
  * @property array $excludedExpenseIds
  * @property array $excludedInvoiceIds
  * @property array $excludedProductIds
@@ -45,6 +46,6 @@ class ExportAccountingBatchRequest extends Model
         'includedProductIds' => 'array',
         'locationId' => 'integer',
         'summarizeInvoices' => 'string',
-        'thruDate' => Carbon\Carbon::class,
+        'thruDate' => Carbon::class
     ];
 }

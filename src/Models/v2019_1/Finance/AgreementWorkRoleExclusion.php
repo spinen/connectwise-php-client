@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class AgreementWorkRoleExclusion extends Model
         '_info' => Metadata::class,
         'agreementId' => 'integer',
         'id' => 'integer',
-        'workRole' => WorkRoleReference::class,
+        'workRole' => WorkRoleReference::class
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -107,6 +108,6 @@ class PortalConfigurationProjectSetup extends Model
         'timeMaterialScheduledFinishFlag' => 'boolean',
         'timeMaterialScheduledHrsFlag' => 'boolean',
         'timeMaterialScheduledStartFlag' => 'boolean',
-        'timeMaterialStatusFlag' => 'boolean',
+        'timeMaterialStatusFlag' => 'boolean'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -43,6 +44,6 @@ class DocumentInfo extends Model
         'serverFileName' => 'string',
         'size' => 'integer',
         'title' => 'string',
-        'urlFlag' => 'boolean',
+        'urlFlag' => 'boolean'
     ];
 }

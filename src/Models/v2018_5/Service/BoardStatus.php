@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -51,6 +52,6 @@ class BoardStatus extends Model
         'name' => 'string',
         'sortOrder' => 'integer',
         'statusIndicator' => StatusIndicatorReference::class,
-        'timeEntryNotAllowed' => 'boolean',
+        'timeEntryNotAllowed' => 'boolean'
     ];
 }

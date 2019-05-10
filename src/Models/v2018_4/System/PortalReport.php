@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -33,6 +34,6 @@ class PortalReport extends Model
         'name' => 'string',
         'openSameWindowFlag' => 'boolean',
         'portalConfiguration' => PortalConfigurationReference::class,
-        'url' => 'string',
+        'url' => 'string'
     ];
 }

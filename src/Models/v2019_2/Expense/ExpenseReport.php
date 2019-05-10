@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Expense;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ExpenseReport
  *
- * @property Carbon\Carbon $dateEnd
- * @property Carbon\Carbon $dateStart
- * @property Carbon\Carbon $dueDate
+ * @property Carbon $dateEnd
+ * @property Carbon $dateStart
+ * @property Carbon $dueDate
  * @property MemberReference $member
  * @property Metadata $_info
  * @property float $total
@@ -29,14 +30,14 @@ class ExpenseReport extends Model
      */
     protected $casts = [
         '_info' => Metadata::class,
-        'dateEnd' => Carbon\Carbon::class,
-        'dateStart' => Carbon\Carbon::class,
-        'dueDate' => Carbon\Carbon::class,
+        'dateEnd' => Carbon::class,
+        'dateStart' => Carbon::class,
+        'dueDate' => Carbon::class,
         'id' => 'integer',
         'member' => MemberReference::class,
         'period' => 'integer',
         'status' => 'string',
         'total' => 'float',
-        'year' => 'integer',
+        'year' => 'integer'
     ];
 }

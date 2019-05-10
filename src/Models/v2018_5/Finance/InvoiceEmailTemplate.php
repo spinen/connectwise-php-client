@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -41,6 +42,6 @@ class InvoiceEmailTemplate extends Model
         'name' => 'string',
         'serviceSurvey' => ServiceSurveyReference::class,
         'subject' => 'string',
-        'useSenderFlag' => 'boolean',
+        'useSenderFlag' => 'boolean'
     ];
 }

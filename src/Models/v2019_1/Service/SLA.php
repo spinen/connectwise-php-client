@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -61,6 +62,6 @@ class SLA extends Model
         'resolutionHours' => 'float',
         'resolutionPercent' => 'integer',
         'respondHours' => 'float',
-        'respondPercent' => 'integer',
+        'respondPercent' => 'integer'
     ];
 }

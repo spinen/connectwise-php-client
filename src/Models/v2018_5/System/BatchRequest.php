@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -23,6 +24,6 @@ class BatchRequest extends Model
     protected $casts = [
         'headers' => Metadata::class,
         'id' => 'string',
-        'requests' => 'array',
+        'requests' => 'array'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -45,6 +46,6 @@ class Country extends Model
         'name' => 'string',
         'stateCaption' => 'string',
         'zipCaption' => 'string',
-        'zipMinimumLength' => 'integer',
+        'zipMinimumLength' => 'integer'
     ];
 }

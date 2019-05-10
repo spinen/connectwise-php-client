@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Project;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProjectTeamMember
  *
- * @property Carbon\Carbon $endDate
- * @property Carbon\Carbon $startDate
+ * @property Carbon $endDate
+ * @property Carbon $startDate
  * @property MemberReference $member
  * @property Metadata $_info
  * @property ProjectRoleReference $projectRole
@@ -28,13 +29,13 @@ class ProjectTeamMember extends Model
      */
     protected $casts = [
         '_info' => Metadata::class,
-        'endDate' => Carbon\Carbon::class,
+        'endDate' => Carbon::class,
         'hours' => 'float',
         'id' => 'integer',
         'member' => MemberReference::class,
         'projectId' => 'integer',
         'projectRole' => ProjectRoleReference::class,
-        'startDate' => Carbon\Carbon::class,
-        'workRole' => WorkRoleReference::class,
+        'startDate' => Carbon::class,
+        'workRole' => WorkRoleReference::class
     ];
 }

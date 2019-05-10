@@ -19,7 +19,7 @@
         "ext-json": "*",
         "guzzlehttp/guzzle": "^6.2",
         "illuminate/support": "~5.3",
-        "nesbot/carbon": "~1.20"
+        "nesbot/carbon": "~1.20|^2.0"
     },
     "require-dev": {
         "mockery/mockery": "^1",

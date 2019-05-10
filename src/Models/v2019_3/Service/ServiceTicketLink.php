@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class ServiceTicketLink extends Model
         'id' => 'integer',
         'linkText' => 'string',
         'name' => 'string',
-        'url' => 'string',
+        'url' => 'string'
     ];
 }

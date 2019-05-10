@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class UnitOfMeasure extends Model
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'name' => 'string',
-        'uomScheduleXref' => 'string',
+        'uomScheduleXref' => 'string'
     ];
 }

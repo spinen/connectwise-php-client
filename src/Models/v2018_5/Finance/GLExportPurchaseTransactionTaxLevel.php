@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -21,6 +22,6 @@ class GLExportPurchaseTransactionTaxLevel extends Model
      */
     protected $casts = [
         'taxCodeXref' => 'string',
-        'taxLevel' => 'integer',
+        'taxLevel' => 'integer'
     ];
 }

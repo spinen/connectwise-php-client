@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -35,6 +36,6 @@ class Category extends Model
         'locationIds' => 'array',
         'name' => 'string',
         'priceLevelXref' => 'string',
-        'removeAllLocations' => 'boolean',
+        'removeAllLocations' => 'boolean'
     ];
 }

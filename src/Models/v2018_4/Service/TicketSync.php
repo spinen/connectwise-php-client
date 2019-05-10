@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -43,6 +44,6 @@ class TicketSync extends Model
         'resolutionFlag' => 'boolean',
         'url' => 'string',
         'userName' => 'string',
-        'vendorType' => 'string',
+        'vendorType' => 'string'
     ];
 }

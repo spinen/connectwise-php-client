@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Schedule;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -31,6 +32,6 @@ class ScheduleType extends Model
         'identifier' => 'string',
         'name' => 'string',
         'systemFlag' => 'boolean',
-        'where' => ServiceLocationReference::class,
+        'where' => ServiceLocationReference::class
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Marketing;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class CampaignType extends Model
         '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
         'id' => 'integer',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

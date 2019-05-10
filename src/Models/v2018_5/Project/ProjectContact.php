@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Project;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class ProjectContact extends Model
         '_info' => Metadata::class,
         'contact' => ContactReference::class,
         'id' => 'integer',
-        'projectId' => 'integer',
+        'projectId' => 'integer'
     ];
 }

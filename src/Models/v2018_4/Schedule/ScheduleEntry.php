@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Schedule;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ScheduleEntry
  *
- * @property Carbon\Carbon $closeDate
- * @property Carbon\Carbon $dateEnd
- * @property Carbon\Carbon $dateStart
+ * @property Carbon $closeDate
+ * @property Carbon $dateEnd
+ * @property Carbon $dateStart
  * @property Guid $mobileGuid
  * @property MemberReference $member
  * @property Metadata $_info
@@ -44,9 +45,9 @@ class ScheduleEntry extends Model
         'acknowledgedFlag' => 'boolean',
         'addMemberToProjectFlag' => 'boolean',
         'allowScheduleConflictsFlag' => 'boolean',
-        'closeDate' => Carbon\Carbon::class,
-        'dateEnd' => Carbon\Carbon::class,
-        'dateStart' => Carbon\Carbon::class,
+        'closeDate' => Carbon::class,
+        'dateEnd' => Carbon::class,
+        'dateStart' => Carbon::class,
         'doneFlag' => 'boolean',
         'hours' => 'float',
         'id' => 'integer',
@@ -61,6 +62,6 @@ class ScheduleEntry extends Model
         'span' => ScheduleSpanReference::class,
         'status' => ScheduleStatusReference::class,
         'type' => ScheduleTypeReference::class,
-        'where' => ServiceLocationReference::class,
+        'where' => ServiceLocationReference::class
     ];
 }

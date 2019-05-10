@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class AuthAnvil extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'serverLocationUrl' => 'string',
-        'siteId' => 'integer',
+        'siteId' => 'integer'
     ];
 }

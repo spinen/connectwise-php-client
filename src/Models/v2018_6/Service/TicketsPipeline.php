@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -27,6 +28,6 @@ class TicketsPipeline extends Model
         'board' => BoardReference::class,
         'id' => 'integer',
         'status' => ServiceStatusReference::class,
-        'ticket' => TicketReference::class,
+        'ticket' => TicketReference::class
     ];
 }

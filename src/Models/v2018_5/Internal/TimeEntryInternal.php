@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Internal;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for TimeEntryInternal
  *
  * @property AgreementReference $agreement
- * @property Carbon\Carbon $timeEnd
- * @property Carbon\Carbon $timeStart
+ * @property Carbon $timeEnd
+ * @property Carbon $timeStart
  * @property ChargeToReference $chargeTo
  * @property CompanyReference $company
  * @property Guid $mobileGuid
@@ -75,10 +76,10 @@ class TimeEntryInternal extends Model
         'mobileGuid' => Guid::class,
         'notes' => 'string',
         'status' => 'string',
-        'timeEnd' => Carbon\Carbon::class,
+        'timeEnd' => Carbon::class,
         'timeSheet' => TimeSheetReference::class,
-        'timeStart' => Carbon\Carbon::class,
+        'timeStart' => Carbon::class,
         'workRole' => WorkRoleReference::class,
-        'workType' => WorkTypeReference::class,
+        'workType' => WorkTypeReference::class
     ];
 }

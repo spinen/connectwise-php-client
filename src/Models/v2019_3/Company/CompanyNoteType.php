@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class CompanyNoteType extends Model
         'id' => 'integer',
         'identifier' => 'string',
         'importFlag' => 'boolean',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

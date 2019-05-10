@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -31,6 +32,6 @@ class Priority extends Model
         'id' => 'integer',
         'imageLink' => 'string',
         'name' => 'string',
-        'sortOrder' => 'integer',
+        'sortOrder' => 'integer'
     ];
 }

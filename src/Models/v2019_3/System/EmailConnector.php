@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -69,6 +70,6 @@ class EmailConnector extends Model
         'sourceOverride' => ServiceSourceReference::class,
         'statusOverride' => ServiceStatusReference::class,
         'subTypeOverride' => ServiceSubTypeReference::class,
-        'typeOverride' => ServiceTypeReference::class,
+        'typeOverride' => ServiceTypeReference::class
     ];
 }

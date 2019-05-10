@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SsoConfiguration
  *
- * @property Carbon\Carbon $samlCertificateValidFrom
- * @property Carbon\Carbon $samlCertificateValidTo
+ * @property Carbon $samlCertificateValidFrom
+ * @property Carbon $samlCertificateValidTo
  * @property Metadata $_info
  * @property array $locationIds
  * @property boolean $inactiveFlag
@@ -40,11 +41,11 @@ class SsoConfiguration extends Model
         'samlCertificateIssuedTo' => 'string',
         'samlCertificateName' => 'string',
         'samlCertificateThumbprint' => 'string',
-        'samlCertificateValidFrom' => Carbon\Carbon::class,
-        'samlCertificateValidTo' => Carbon\Carbon::class,
+        'samlCertificateValidFrom' => Carbon::class,
+        'samlCertificateValidTo' => Carbon::class,
         'samlEntityId' => 'string',
         'samlIdpCertificate' => 'string',
         'samlSignInUrl' => 'string',
-        'ssoType' => 'string',
+        'ssoType' => 'string'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -21,6 +22,6 @@ class MemberDeactivationMyCompanyControllerRole extends Model
      */
     protected $casts = [
         'count' => 'integer',
-        'reAssignToMember' => MemberReference::class,
+        'reAssignToMember' => MemberReference::class
     ];
 }

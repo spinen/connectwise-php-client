@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -41,6 +42,6 @@ class MenuEntry extends Model
         'newWindowFlag' => 'boolean',
         'origin' => 'string',
         'removeAllLocations' => 'boolean',
-        'smallMenuIconId' => 'integer',
+        'smallMenuIconId' => 'integer'
     ];
 }

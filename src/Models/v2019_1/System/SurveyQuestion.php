@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -37,6 +38,6 @@ class SurveyQuestion extends Model
         'question' => 'string',
         'requiredFlag' => 'boolean',
         'sequenceNumber' => 'float',
-        'survey' => SurveyReference::class,
+        'survey' => SurveyReference::class
     ];
 }

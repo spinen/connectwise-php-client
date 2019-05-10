@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -39,6 +40,6 @@ class AdjustmentDetail extends Model
         'serialNumber' => 'string',
         'unitCost' => 'float',
         'warehouse' => WarehouseReference::class,
-        'warehouseBin' => WarehouseBinReference::class,
+        'warehouseBin' => WarehouseBinReference::class
     ];
 }

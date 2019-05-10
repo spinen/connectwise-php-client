@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -37,6 +38,6 @@ class ConfigurationTypeQuestion extends Model
         'numberOfDecimals' => 'integer',
         'question' => 'string',
         'requiredFlag' => 'boolean',
-        'sequenceNumber' => 'float',
+        'sequenceNumber' => 'float'
     ];
 }

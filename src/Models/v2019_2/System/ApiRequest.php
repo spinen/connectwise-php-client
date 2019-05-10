@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -31,6 +32,6 @@ class ApiRequest extends Model
         'GrandParentId' => 'integer',
         'Id' => 'integer',
         'Page' => PageValues::class,
-        'ParentId' => 'integer',
+        'ParentId' => 'integer'
     ];
 }

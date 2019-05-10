@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class ContactType extends Model
         'description' => 'string',
         'id' => 'integer',
         'serviceAlertFlag' => 'boolean',
-        'serviceAlertMessage' => 'string',
+        'serviceAlertMessage' => 'string'
     ];
 }

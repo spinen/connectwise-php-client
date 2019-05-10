@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Eula
  *
- * @property Carbon\Carbon $signedDate
+ * @property Carbon $signedDate
  * @property MemberReference $signedMember
  * @property Metadata $_info
  * @property integer $id
@@ -30,7 +31,7 @@ class Eula extends Model
         'eulaServiceLink' => 'string',
         'eulaUiLink' => 'string',
         'id' => 'integer',
-        'signedDate' => Carbon\Carbon::class,
-        'signedMember' => MemberReference::class,
+        'signedDate' => Carbon::class,
+        'signedMember' => MemberReference::class
     ];
 }

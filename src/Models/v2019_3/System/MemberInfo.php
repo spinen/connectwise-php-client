@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -39,6 +40,6 @@ class MemberInfo extends Model
         'lastName' => 'string',
         'licenseClass' => 'string',
         'middleInitial' => 'string',
-        'photo' => DocumentReference::class,
+        'photo' => DocumentReference::class
     ];
 }

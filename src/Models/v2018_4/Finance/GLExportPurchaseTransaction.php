@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for GLExportPurchaseTransaction
  *
  * @property BillingTermsReference $billingTerms
- * @property Carbon\Carbon $documentDate
- * @property Carbon\Carbon $purchaseDate
- * @property Carbon\Carbon $vendorInvoiceDate
+ * @property Carbon $documentDate
+ * @property Carbon $purchaseDate
+ * @property Carbon $vendorInvoiceDate
  * @property CompanyReference $company
  * @property CompanyReference $shipToCompany
  * @property CompanyTypeReference $companyType
@@ -71,7 +72,7 @@ class GLExportPurchaseTransaction extends Model
         'countyTaxXref' => 'string',
         'currency' => CurrencyReference::class,
         'description' => 'string',
-        'documentDate' => Carbon\Carbon::class,
+        'documentDate' => Carbon::class,
         'documentNumber' => 'string',
         'dropshipFlag' => 'boolean',
         'dueDays' => 'integer',
@@ -81,7 +82,7 @@ class GLExportPurchaseTransaction extends Model
         'memo' => 'string',
         'packingSlip' => 'string',
         'purchaseClass' => 'string',
-        'purchaseDate' => Carbon\Carbon::class,
+        'purchaseDate' => Carbon::class,
         'purchaseDetail' => 'array',
         'purchaseDetailTax' => 'array',
         'purchaseHeaderFreightTaxableFlag' => 'boolean',
@@ -101,8 +102,8 @@ class GLExportPurchaseTransaction extends Model
         'total' => 'float',
         'useAvalaraTaxFlag' => 'boolean',
         'vendorAccountNumber' => 'string',
-        'vendorInvoiceDate' => Carbon\Carbon::class,
+        'vendorInvoiceDate' => Carbon::class,
         'vendorInvoiceNumber' => 'string',
-        'vendorNumber' => 'string',
+        'vendorNumber' => 'string'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -47,6 +48,6 @@ class TaxCodeLevel extends Model
         'taxProductsFlag' => 'boolean',
         'taxRate' => 'float',
         'taxServicesFlag' => 'boolean',
-        'taxableMax' => 'float',
+        'taxableMax' => 'float'
     ];
 }

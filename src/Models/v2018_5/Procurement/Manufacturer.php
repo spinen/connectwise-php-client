@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class Manufacturer extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

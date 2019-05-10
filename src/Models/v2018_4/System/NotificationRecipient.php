@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -49,6 +50,6 @@ class NotificationRecipient extends Model
         'projectFlag' => 'boolean',
         'salesFlag' => 'boolean',
         'serviceFlag' => 'boolean',
-        'trackFlag' => 'boolean',
+        'trackFlag' => 'boolean'
     ];
 }

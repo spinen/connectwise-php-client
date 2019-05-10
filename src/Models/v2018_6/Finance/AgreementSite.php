@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class AgreementSite extends Model
         'company' => CompanyReference::class,
         'customFields' => 'array',
         'id' => 'integer',
-        'site' => SiteReference::class,
+        'site' => SiteReference::class
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Expense;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -31,6 +32,6 @@ class Classification extends Model
         'employeeFlag' => 'boolean',
         'id' => 'integer',
         'multiplier' => 'float',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Internal;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -21,6 +22,6 @@ class AuditTrailObjects extends Model
      */
     protected $casts = [
         'ids' => 'array',
-        'type' => 'string',
+        'type' => 'string'
     ];
 }

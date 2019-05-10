@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -31,6 +32,6 @@ class PurchaseOrderStatusNotification extends Model
         'member' => MemberReference::class,
         'notifyWho' => NotificationRecipientReference::class,
         'status' => PurchaseOrderStatusReference::class,
-        'workflowStep' => 'integer',
+        'workflowStep' => 'integer'
     ];
 }

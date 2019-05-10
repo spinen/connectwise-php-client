@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -31,6 +32,6 @@ class ContactNote extends Model
         'flagged' => 'boolean',
         'id' => 'integer',
         'text' => 'string',
-        'type' => NoteTypeReference::class,
+        'type' => NoteTypeReference::class
     ];
 }

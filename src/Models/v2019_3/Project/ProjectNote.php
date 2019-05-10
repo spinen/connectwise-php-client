@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Project;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class ProjectNote extends Model
         'id' => 'integer',
         'projectId' => 'integer',
         'text' => 'string',
-        'type' => NoteTypeReference::class,
+        'type' => NoteTypeReference::class
     ];
 }

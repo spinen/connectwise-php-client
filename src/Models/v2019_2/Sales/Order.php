@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for Order
  *
  * @property BillingTermsReference $billingTerms
- * @property Carbon\Carbon $dueDate
- * @property Carbon\Carbon $orderDate
+ * @property Carbon $dueDate
+ * @property Carbon $orderDate
  * @property CompanyReference $billToCompany
  * @property CompanyReference $company
  * @property CompanyReference $shipToCompany
@@ -75,14 +76,14 @@ class Order extends Model
         'customFields' => 'array',
         'description' => 'string',
         'documentIds' => 'array',
-        'dueDate' => Carbon\Carbon::class,
+        'dueDate' => Carbon::class,
         'email' => 'string',
         'id' => 'integer',
         'invoiceIds' => 'array',
         'locationId' => 'integer',
         'notes' => 'string',
         'opportunity' => OpportunityReference::class,
-        'orderDate' => Carbon\Carbon::class,
+        'orderDate' => Carbon::class,
         'phone' => 'string',
         'phoneExt' => 'string',
         'poNumber' => 'string',
@@ -97,6 +98,6 @@ class Order extends Model
         'taxCode' => TaxCodeReference::class,
         'taxTotal' => 'float',
         'topCommentFlag' => 'boolean',
-        'total' => 'float',
+        'total' => 'float'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -43,6 +44,6 @@ class CatalogComponent extends Model
         'parentCatalogItem' => CatalogItemReference::class,
         'price' => 'float',
         'quantity' => 'float',
-        'sequenceNumber' => 'integer',
+        'sequenceNumber' => 'integer'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class KnowledgeBaseCategory extends Model
         'department' => SystemDepartmentReference::class,
         'id' => 'integer',
         'location' => SystemLocationReference::class,
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

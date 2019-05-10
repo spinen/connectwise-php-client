@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Internal;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -31,6 +32,6 @@ class CloudBusMessage extends Model
         'payload' => 'string',
         'source' => 'string',
         'timestamp' => 'integer',
-        'version' => 'string',
+        'version' => 'string'
     ];
 }

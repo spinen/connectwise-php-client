@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class Certification extends Model
         '_info' => Metadata::class,
         'company' => CompanyReference::class,
         'id' => 'integer',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class BoardAutoAssignResource extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'member' => MemberReference::class,
-        'notifyWho' => NotificationRecipientReference::class,
+        'notifyWho' => NotificationRecipientReference::class
     ];
 }

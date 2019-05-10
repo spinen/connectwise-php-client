@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for TimeEntry
  *
  * @property AgreementReference $agreement
- * @property Carbon\Carbon $dateEntered
- * @property Carbon\Carbon $timeEnd
- * @property Carbon\Carbon $timeStart
+ * @property Carbon $dateEntered
+ * @property Carbon $timeEnd
+ * @property Carbon $timeStart
  * @property CompanyReference $company
  * @property Guid $mobileGuid
  * @property InvoiceReference $invoice
@@ -64,7 +65,7 @@ class TimeEntry extends Model
         'chargeToType' => 'string',
         'company' => CompanyReference::class,
         'customFields' => 'array',
-        'dateEntered' => Carbon\Carbon::class,
+        'dateEntered' => Carbon::class,
         'emailCc' => 'string',
         'emailCcFlag' => 'boolean',
         'emailContactFlag' => 'boolean',
@@ -81,10 +82,10 @@ class TimeEntry extends Model
         'mobileGuid' => Guid::class,
         'notes' => 'string',
         'status' => 'string',
-        'timeEnd' => Carbon\Carbon::class,
+        'timeEnd' => Carbon::class,
         'timeSheet' => TimeSheetReference::class,
-        'timeStart' => Carbon\Carbon::class,
+        'timeStart' => Carbon::class,
         'workRole' => WorkRoleReference::class,
-        'workType' => WorkTypeReference::class,
+        'workType' => WorkTypeReference::class
     ];
 }

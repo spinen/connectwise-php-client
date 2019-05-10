@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -87,6 +88,6 @@ class WorkflowAction extends Model
         'specificMemberFrom' => MemberReference::class,
         'specificMemberTo' => MemberReference::class,
         'subject' => 'string',
-        'updateOwnerFlag' => 'boolean',
+        'updateOwnerFlag' => 'boolean'
     ];
 }

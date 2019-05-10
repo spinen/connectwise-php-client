@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ApiMember
  *
- * @property Carbon\Carbon $inactiveDate
+ * @property Carbon $inactiveDate
  * @property Metadata $_info
  * @property SecurityRoleReference $securityRole
  * @property StructureReference $structureLevel
@@ -36,13 +37,13 @@ class ApiMember extends Model
         'emailAddress' => 'string',
         'id' => 'integer',
         'identifier' => 'string',
-        'inactiveDate' => Carbon\Carbon::class,
+        'inactiveDate' => Carbon::class,
         'inactiveFlag' => 'boolean',
         'name' => 'string',
         'salesDefaultLocation' => SystemLocationReference::class,
         'securityLocation' => SystemLocationReference::class,
         'securityRole' => SecurityRoleReference::class,
         'structureLevel' => StructureReference::class,
-        'timeZone' => TimeZoneSetupReference::class,
+        'timeZone' => TimeZoneSetupReference::class
     ];
 }

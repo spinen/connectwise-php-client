@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -53,6 +54,6 @@ class CorporateStructure extends Model
         'levelCount' => 'string',
         'locationCaption' => 'string',
         'president' => MemberReference::class,
-        'serviceManager' => MemberReference::class,
+        'serviceManager' => MemberReference::class
     ];
 }

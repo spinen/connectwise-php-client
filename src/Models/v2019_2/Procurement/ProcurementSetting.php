@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -51,6 +52,6 @@ class ProcurementSetting extends Model
         'startingPurchaseOrderNum' => 'integer',
         'taxFreightFlag' => 'boolean',
         'taxPurchaseOrderFlag' => 'boolean',
-        'useVendorTaxCodeFlag' => 'boolean',
+        'useVendorTaxCodeFlag' => 'boolean'
     ];
 }

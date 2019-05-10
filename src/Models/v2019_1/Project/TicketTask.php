@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Project;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -39,6 +40,6 @@ class TicketTask extends Model
         'priority' => 'integer',
         'resolution' => 'string',
         'schedule' => ScheduleEntryReference::class,
-        'ticketId' => 'integer',
+        'ticketId' => 'integer'
     ];
 }

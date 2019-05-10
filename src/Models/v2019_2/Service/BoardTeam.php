@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -37,6 +38,6 @@ class BoardTeam extends Model
         'members' => 'array',
         'name' => 'string',
         'notifyOnTicketDelete' => 'boolean',
-        'teamLeader' => MemberReference::class,
+        'teamLeader' => MemberReference::class
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AgreementWorkType
  *
- * @property Carbon\Carbon $effectiveDate
- * @property Carbon\Carbon $endingDate
+ * @property Carbon $effectiveDate
+ * @property Carbon $endingDate
  * @property CompanyReference $company
  * @property Metadata $_info
  * @property SiteReference $site
@@ -41,8 +42,8 @@ class AgreementWorkType extends Model
         'agreementLimit' => 'float',
         'billTime' => 'string',
         'company' => CompanyReference::class,
-        'effectiveDate' => Carbon\Carbon::class,
-        'endingDate' => Carbon\Carbon::class,
+        'effectiveDate' => Carbon::class,
+        'endingDate' => Carbon::class,
         'hoursMax' => 'float',
         'hoursMin' => 'float',
         'id' => 'integer',
@@ -53,6 +54,6 @@ class AgreementWorkType extends Model
         'rateType' => 'string',
         'roundBillHours' => 'float',
         'site' => SiteReference::class,
-        'workType' => WorkTypeReference::class,
+        'workType' => WorkTypeReference::class
     ];
 }

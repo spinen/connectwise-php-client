@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Addition
  *
- * @property Carbon\Carbon $cancelledDate
- * @property Carbon\Carbon $effectiveDate
+ * @property Carbon $cancelledDate
+ * @property Carbon $effectiveDate
  * @property IvItemReference $product
  * @property Metadata $_info
  * @property OpportunityReference $opportunity
@@ -52,10 +53,10 @@ class Addition extends Model
         'agreementId' => 'integer',
         'billCustomer' => 'string',
         'billedQuantity' => 'float',
-        'cancelledDate' => Carbon\Carbon::class,
+        'cancelledDate' => Carbon::class,
         'customFields' => 'array',
         'description' => 'string',
-        'effectiveDate' => Carbon\Carbon::class,
+        'effectiveDate' => Carbon::class,
         'extCost' => 'float',
         'extPrice' => 'float',
         'extendedProrateCost' => 'float',
@@ -77,6 +78,6 @@ class Addition extends Model
         'taxableFlag' => 'boolean',
         'unitCost' => 'float',
         'unitPrice' => 'float',
-        'uom' => 'string',
+        'uom' => 'string'
     ];
 }

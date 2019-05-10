@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Internal;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -27,6 +28,6 @@ class IntegrationRequest extends Model
         'disabledFlag' => 'boolean',
         'helpUrl' => 'string',
         'token' => 'string',
-        'url' => 'string',
+        'url' => 'string'
     ];
 }

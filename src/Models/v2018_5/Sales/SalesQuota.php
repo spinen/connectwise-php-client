@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -83,6 +84,6 @@ class SalesQuota extends Model
         'octoberRevenue' => 'float',
         'septemberMargin' => 'float',
         'septemberRevenue' => 'float',
-        'subCategory' => ProductSubCategoryReference::class,
+        'subCategory' => ProductSubCategoryReference::class
     ];
 }

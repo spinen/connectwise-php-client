@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Project;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -43,6 +44,6 @@ class TicketNote extends Model
         'processNotifications' => 'boolean',
         'resolutionFlag' => 'boolean',
         'text' => 'string',
-        'ticketId' => 'integer',
+        'ticketId' => 'integer'
     ];
 }

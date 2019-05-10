@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Expense;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -35,6 +36,6 @@ class ExpenseReportAudit extends Model
         'oldValue' => 'string',
         'source' => AuditSource::class,
         'type' => AuditType::class,
-        'value' => 'string',
+        'value' => 'string'
     ];
 }

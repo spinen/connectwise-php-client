@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Schedule;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -53,6 +54,6 @@ class Calendar extends Model
         'tuesdayEndTime' => 'string',
         'tuesdayStartTime' => 'string',
         'wednesdayEndTime' => 'string',
-        'wednesdayStartTime' => 'string',
+        'wednesdayStartTime' => 'string'
     ];
 }

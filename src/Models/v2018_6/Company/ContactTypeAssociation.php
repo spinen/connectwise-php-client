@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class ContactTypeAssociation extends Model
         '_info' => Metadata::class,
         'contact' => ContactReference::class,
         'id' => 'integer',
-        'type' => ContactTypeReference::class,
+        'type' => ContactTypeReference::class
     ];
 }

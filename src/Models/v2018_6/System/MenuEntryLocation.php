@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class MenuEntryLocation extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'location' => SystemLocationReference::class,
-        'menuEntry' => SystemMenuEntryReference::class,
+        'menuEntry' => SystemMenuEntryReference::class
     ];
 }

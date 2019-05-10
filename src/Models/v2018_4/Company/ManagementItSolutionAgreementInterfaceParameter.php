@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -31,6 +32,6 @@ class ManagementItSolutionAgreementInterfaceParameter extends Model
         'managedDevicesIntegration' => ManagedDevicesIntegrationReference::class,
         'serverProduct' => IvItemReference::class,
         'spamStatsProduct' => IvItemReference::class,
-        'workstationProduct' => IvItemReference::class,
+        'workstationProduct' => IvItemReference::class
     ];
 }

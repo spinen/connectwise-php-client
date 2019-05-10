@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -27,6 +28,6 @@ class CurrencyReference extends Model
         'id' => 'integer',
         'isoCode' => 'string',
         'name' => 'string',
-        'symbol' => 'string',
+        'symbol' => 'string'
     ];
 }

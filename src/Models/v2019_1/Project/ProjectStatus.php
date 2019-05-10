@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Project;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -35,6 +36,6 @@ class ProjectStatus extends Model
         'inactiveFlag' => 'boolean',
         'name' => 'string',
         'noTimeFlag' => 'boolean',
-        'statusIndicator' => StatusIndicatorReference::class,
+        'statusIndicator' => StatusIndicatorReference::class
     ];
 }

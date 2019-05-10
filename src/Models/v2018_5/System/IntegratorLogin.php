@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for IntegratorLogin
  *
  * @property BoardReference $board
- * @property Carbon\Carbon $dateInactivated
+ * @property Carbon $dateInactivated
  * @property MemberReference $inactivatedBy
  * @property MemberReference $member
  * @property Metadata $_info
@@ -100,7 +101,7 @@ class IntegratorLogin extends Model
         'contactApiFlag' => 'boolean',
         'contactCallbackUrl' => 'string',
         'contactLegacyCallbackFlag' => 'boolean',
-        'dateInactivated' => Carbon\Carbon::class,
+        'dateInactivated' => Carbon::class,
         'documentApiFlag' => 'boolean',
         'id' => 'integer',
         'inactivatedBy' => MemberReference::class,
@@ -139,6 +140,6 @@ class IntegratorLogin extends Model
         'timeEntryApiFlag' => 'boolean',
         'timeEntryCallbackUrl' => 'string',
         'timeEntryLegacyCallbackFlag' => 'boolean',
-        'username' => 'string',
+        'username' => 'string'
     ];
 }

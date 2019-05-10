@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Marketing;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,8 +13,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property CampaignStatusReference $status
  * @property CampaignSubTypeReference $subType
  * @property CampaignTypeReference $type
- * @property Carbon\Carbon $endDate
- * @property Carbon\Carbon $startDate
+ * @property Carbon $endDate
+ * @property Carbon $startDate
  * @property GroupReference $defaultGroup
  * @property MemberReference $member
  * @property Metadata $_info
@@ -55,7 +56,7 @@ class Campaign extends Model
         'budgetRevenue' => 'float',
         'defaultGroup' => GroupReference::class,
         'emailsSent' => 'integer',
-        'endDate' => Carbon\Carbon::class,
+        'endDate' => Carbon::class,
         'id' => 'integer',
         'impressions' => 'integer',
         'inactive' => 'boolean',
@@ -66,9 +67,9 @@ class Campaign extends Model
         'name' => 'string',
         'notes' => 'string',
         'opportunityDefaultTrackId' => 'integer',
-        'startDate' => Carbon\Carbon::class,
+        'startDate' => Carbon::class,
         'status' => CampaignStatusReference::class,
         'subType' => CampaignSubTypeReference::class,
-        'type' => CampaignTypeReference::class,
+        'type' => CampaignTypeReference::class
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -35,6 +36,6 @@ class CallbackEntry extends Model
         'memberId' => 'integer',
         'objectId' => 'integer',
         'type' => 'string',
-        'url' => 'string',
+        'url' => 'string'
     ];
 }

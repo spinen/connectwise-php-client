@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class ManagementNetworkSecurity extends Model
         'name' => 'string',
         'password' => 'string',
         'site' => 'string',
-        'username' => 'string',
+        'username' => 'string'
     ];
 }

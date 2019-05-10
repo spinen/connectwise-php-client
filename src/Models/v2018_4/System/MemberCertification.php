@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MemberCertification
  *
- * @property Carbon\Carbon $dateExpires
- * @property Carbon\Carbon $dateReceived
+ * @property Carbon $dateExpires
+ * @property Carbon $dateReceived
  * @property CertificationReference $certification
  * @property CompanyReference $company
  * @property MemberReference $member
@@ -32,11 +33,11 @@ class MemberCertification extends Model
         'certification' => CertificationReference::class,
         'certificationNumber' => 'string',
         'company' => CompanyReference::class,
-        'dateExpires' => Carbon\Carbon::class,
-        'dateReceived' => Carbon\Carbon::class,
+        'dateExpires' => Carbon::class,
+        'dateReceived' => Carbon::class,
         'id' => 'integer',
         'member' => MemberReference::class,
         'notes' => 'string',
-        'percentComplete' => 'integer',
+        'percentComplete' => 'integer'
     ];
 }

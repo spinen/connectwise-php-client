@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class ChargeCodeExpenseType extends Model
         '_info' => Metadata::class,
         'chargeCode' => ChargeCodeReference::class,
         'id' => 'integer',
-        'type' => ExpenseTypeReference::class,
+        'type' => ExpenseTypeReference::class
     ];
 }

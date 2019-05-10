@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -27,6 +28,6 @@ class CompanyTeam extends Model
         'id' => 'integer',
         'name' => 'string',
         'reAssignToContact' => ContactReference::class,
-        'reAssignToMember' => MemberReference::class,
+        'reAssignToMember' => MemberReference::class
     ];
 }

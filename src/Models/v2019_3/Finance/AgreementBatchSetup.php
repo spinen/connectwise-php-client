@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AgreementBatchSetup
  *
- * @property Carbon\Carbon $nextRunDate
+ * @property Carbon $nextRunDate
  * @property Metadata $_info
  * @property integer $daysInAdvance
  * @property integer $id
@@ -25,6 +26,6 @@ class AgreementBatchSetup extends Model
         '_info' => Metadata::class,
         'daysInAdvance' => 'integer',
         'id' => 'integer',
-        'nextRunDate' => Carbon\Carbon::class,
+        'nextRunDate' => Carbon::class
     ];
 }

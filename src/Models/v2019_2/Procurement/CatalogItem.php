@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -87,6 +88,6 @@ class CatalogItem extends Model
         'type' => ProductTypeReference::class,
         'unitOfMeasure' => UnitOfMeasureReference::class,
         'vendor' => CompanyReference::class,
-        'vendorSku' => 'string',
+        'vendorSku' => 'string'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -51,6 +52,6 @@ class ServiceEmailTemplate extends Model
         'subject' => 'string',
         'tasksFlag' => 'boolean',
         'type' => 'string',
-        'useSenderFlag' => 'boolean',
+        'useSenderFlag' => 'boolean'
     ];
 }

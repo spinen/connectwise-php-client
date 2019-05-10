@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Internal;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -19,6 +20,6 @@ class UploadToMarketplaceRequest extends Model
      * @var array
      */
     protected $casts = [
-,
+
     ];
 }

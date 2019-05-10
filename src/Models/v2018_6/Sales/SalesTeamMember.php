@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class SalesTeamMember extends Model
         'department' => SystemDepartmentReference::class,
         'id' => 'integer',
         'location' => SystemLocationReference::class,
-        'member' => MemberReference::class,
+        'member' => MemberReference::class
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ApiMember
  *
  * @property BoardReference $serviceDefaultBoard
- * @property Carbon\Carbon $inactiveDate
+ * @property Carbon $inactiveDate
  * @property Metadata $_info
  * @property SecurityRoleReference $securityRole
  * @property StructureReference $structureLevel
@@ -42,7 +43,7 @@ class ApiMember extends Model
         'excludedServiceBoardIds' => 'array',
         'id' => 'integer',
         'identifier' => 'string',
-        'inactiveDate' => Carbon\Carbon::class,
+        'inactiveDate' => Carbon::class,
         'inactiveFlag' => 'boolean',
         'name' => 'string',
         'notes' => 'string',
@@ -51,6 +52,6 @@ class ApiMember extends Model
         'securityRole' => SecurityRoleReference::class,
         'serviceDefaultBoard' => BoardReference::class,
         'structureLevel' => StructureReference::class,
-        'timeZone' => TimeZoneSetupReference::class,
+        'timeZone' => TimeZoneSetupReference::class
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -27,6 +28,6 @@ class Usage extends Model
         'description' => 'string',
         'hyperlink' => 'string',
         'id' => 'integer',
-        'type' => 'string',
+        'type' => 'string'
     ];
 }

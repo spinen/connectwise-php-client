@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -31,6 +32,6 @@ class Code extends Model
         'description' => 'string',
         'id' => 'integer',
         'locationId' => 'integer',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

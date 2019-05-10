@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class BillingTerm extends Model
         'dueDays' => 'integer',
         'id' => 'integer',
         'name' => 'string',
-        'termsXref' => 'string',
+        'termsXref' => 'string'
     ];
 }

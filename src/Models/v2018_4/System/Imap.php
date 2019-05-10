@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -39,6 +40,6 @@ class Imap extends Model
         'processedName' => 'string',
         'server' => 'string',
         'sslFlag' => 'boolean',
-        'userName' => 'string',
+        'userName' => 'string'
     ];
 }

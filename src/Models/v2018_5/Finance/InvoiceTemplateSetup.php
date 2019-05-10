@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class InvoiceTemplateSetup extends Model
         '_info' => Metadata::class,
         'customFlag' => 'boolean',
         'id' => 'integer',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

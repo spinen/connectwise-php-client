@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Expense;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -23,6 +24,6 @@ class PatchOperation extends Model
     protected $casts = [
         'op' => 'string',
         'path' => 'string',
-        'value' => 'string',
+        'value' => 'string'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -37,6 +38,6 @@ class WorkRoleExemption extends Model
         'levelThreeFlag' => 'boolean',
         'levelTwoFlag' => 'boolean',
         'taxCode' => TaxCodeReference::class,
-        'workRole' => WorkRoleReference::class,
+        'workRole' => WorkRoleReference::class
     ];
 }

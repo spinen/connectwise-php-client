@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class LocationInfo extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'location_flag' => 'boolean',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

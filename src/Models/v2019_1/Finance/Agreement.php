@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,10 +14,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property AgreementTypeReference $type
  * @property BillingCycleReference $billingCycle
  * @property BillingTermsReference $billingTerms
- * @property Carbon\Carbon $billStartDate
- * @property Carbon\Carbon $dateCancelled
- * @property Carbon\Carbon $endDate
- * @property Carbon\Carbon $startDate
+ * @property Carbon $billStartDate
+ * @property Carbon $dateCancelled
+ * @property Carbon $endDate
+ * @property Carbon $startDate
  * @property CompanyReference $billToCompany
  * @property CompanyReference $company
  * @property CompanyReference $subContractCompany
@@ -105,7 +106,7 @@ class Agreement extends Model
         'billExpenses' => 'string',
         'billOneTimeFlag' => 'boolean',
         'billProducts' => 'string',
-        'billStartDate' => Carbon\Carbon::class,
+        'billStartDate' => Carbon::class,
         'billTime' => 'string',
         'billToCompany' => CompanyReference::class,
         'billToContact' => ContactReference::class,
@@ -130,11 +131,11 @@ class Agreement extends Model
         'currency' => CurrencyReference::class,
         'customFields' => 'array',
         'customerPO' => 'string',
-        'dateCancelled' => Carbon\Carbon::class,
+        'dateCancelled' => Carbon::class,
         'department' => SystemDepartmentReference::class,
         'employeeCompNotExceed' => 'string',
         'employeeCompRate' => 'string',
-        'endDate' => Carbon\Carbon::class,
+        'endDate' => Carbon::class,
         'expireWhenZero' => 'boolean',
         'expiredDays' => 'integer',
         'id' => 'integer',
@@ -160,7 +161,7 @@ class Agreement extends Model
         'restrictLocationFlag' => 'boolean',
         'site' => SiteReference::class,
         'sla' => SLAReference::class,
-        'startDate' => Carbon\Carbon::class,
+        'startDate' => Carbon::class,
         'subContractCompany' => CompanyReference::class,
         'subContractContact' => ContactReference::class,
         'taxCode' => TaxCodeReference::class,
@@ -169,6 +170,6 @@ class Agreement extends Model
         'type' => AgreementTypeReference::class,
         'workOrder' => 'string',
         'workRole' => WorkRoleReference::class,
-        'workType' => WorkTypeReference::class,
+        'workType' => WorkTypeReference::class
     ];
 }

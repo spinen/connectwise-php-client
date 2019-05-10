@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -45,6 +46,6 @@ class ChargeCode extends Model
         'name' => 'string',
         'timeEntryFlag' => 'boolean',
         'workRole' => WorkRoleReference::class,
-        'workType' => WorkTypeReference::class,
+        'workType' => WorkTypeReference::class
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -47,6 +48,6 @@ class OpportunityToProjectConversion extends Model
         'manager' => MemberReference::class,
         'name' => 'string',
         'projectId' => 'integer',
-        'status' => ProjectStatusReference::class,
+        'status' => ProjectStatusReference::class
     ];
 }

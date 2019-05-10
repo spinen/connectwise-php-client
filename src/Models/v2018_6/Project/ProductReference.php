@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Project;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -23,6 +24,6 @@ class ProductReference extends Model
     protected $casts = [
         '_info' => Metadata::class,
         'description' => 'string',
-        'id' => 'integer',
+        'id' => 'integer'
     ];
 }

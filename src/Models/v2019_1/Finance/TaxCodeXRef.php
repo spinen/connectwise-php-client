@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -41,6 +42,6 @@ class TaxCodeXRef extends Model
         'levelThree' => 'string',
         'levelTwo' => 'string',
         'taxCode' => TaxCodeReference::class,
-        'taxableLevels' => 'array',
+        'taxableLevels' => 'array'
     ];
 }

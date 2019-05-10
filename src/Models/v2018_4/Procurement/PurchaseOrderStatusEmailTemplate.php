@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -37,6 +38,6 @@ class PurchaseOrderStatusEmailTemplate extends Model
         'lastName' => 'string',
         'status' => PurchaseOrderStatusReference::class,
         'subject' => 'string',
-        'useSenderFlag' => 'boolean',
+        'useSenderFlag' => 'boolean'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -27,6 +28,6 @@ class WorkRoleLocation extends Model
         'hourlyRate' => 'float',
         'id' => 'integer',
         'location' => SystemLocationReference::class,
-        'workRole' => WorkRoleReference::class,
+        'workRole' => WorkRoleReference::class
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class BillingSetupRouting extends Model
         'invoiceRule' => 'string',
         'member' => MemberReference::class,
         'routingRule' => 'string',
-        'sequenceNumber' => 'integer',
+        'sequenceNumber' => 'integer'
     ];
 }

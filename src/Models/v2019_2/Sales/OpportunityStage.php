@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class OpportunityStage extends Model
         'id' => 'integer',
         'name' => 'string',
         'probability' => OpportunityProbabilityReference::class,
-        'sequenceNumber' => 'integer',
+        'sequenceNumber' => 'integer'
     ];
 }

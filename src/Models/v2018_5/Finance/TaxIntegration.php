@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -51,6 +52,6 @@ class TaxIntegration extends Model
         'serviceUrl' => 'string',
         'taxIntegrationType' => 'string',
         'taxLineFlag' => 'boolean',
-        'timeTaxCode' => 'string',
+        'timeTaxCode' => 'string'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -31,6 +32,6 @@ class TimePeriod extends Model
         'id' => 'integer',
         'period' => 'integer',
         'startDate' => 'string',
-        'timePeriodSetup' => TimePeriodSetupReference::class,
+        'timePeriodSetup' => TimePeriodSetupReference::class
     ];
 }

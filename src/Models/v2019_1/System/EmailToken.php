@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -51,6 +52,6 @@ class EmailToken extends Model
         'serviceFlag' => 'boolean',
         'token' => 'string',
         'tracksFlag' => 'boolean',
-        'workflowFlag' => 'boolean',
+        'workflowFlag' => 'boolean'
     ];
 }

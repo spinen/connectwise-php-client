@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Schedule;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -23,6 +24,6 @@ class Error extends Model
     protected $casts = [
         'code' => 'string',
         'errors' => 'array',
-        'message' => 'string',
+        'message' => 'string'
     ];
 }

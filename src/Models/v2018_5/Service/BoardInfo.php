@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -31,6 +32,6 @@ class BoardInfo extends Model
         'inactiveFlag' => 'boolean',
         'location' => SystemLocationReference::class,
         'name' => 'string',
-        'projectFlag' => 'boolean',
+        'projectFlag' => 'boolean'
     ];
 }

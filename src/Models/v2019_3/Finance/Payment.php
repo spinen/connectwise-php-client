@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Payment
  *
- * @property Carbon\Carbon $paymentDate
+ * @property Carbon $paymentDate
  * @property InvoiceReference $credit
  * @property InvoiceReference $invoice
  * @property Metadata $_info
@@ -32,7 +33,7 @@ class Payment extends Model
         'credit' => InvoiceReference::class,
         'id' => 'integer',
         'invoice' => InvoiceReference::class,
-        'paymentDate' => Carbon\Carbon::class,
-        'type' => 'string',
+        'paymentDate' => Carbon::class,
+        'type' => 'string'
     ];
 }

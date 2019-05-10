@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -21,6 +22,6 @@ class SuccessResponse extends Model
      */
     protected $casts = [
         'message' => 'string',
-        'success' => 'boolean',
+        'success' => 'boolean'
     ];
 }

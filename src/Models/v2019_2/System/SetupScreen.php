@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -33,6 +34,6 @@ class SetupScreen extends Model
         'moduleDescription' => 'string',
         'moduleIdentifier' => 'string',
         'moduleName' => 'string',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

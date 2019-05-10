@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -101,6 +102,6 @@ class CompanyMerge extends Model
         'userDefinedField7' => 'string',
         'userDefinedField8' => 'string',
         'userDefinedField9' => 'string',
-        'website' => 'string',
+        'website' => 'string'
     ];
 }

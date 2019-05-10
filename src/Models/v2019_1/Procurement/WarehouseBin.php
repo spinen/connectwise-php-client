@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -53,6 +54,6 @@ class WarehouseBin extends Model
         'transferBin' => WarehouseBinReference::class,
         'warehouse' => WarehouseReference::class,
         'weight' => 'float',
-        'width' => 'float',
+        'width' => 'float'
     ];
 }

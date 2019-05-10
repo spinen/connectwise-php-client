@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -23,6 +24,6 @@ class TicketReference extends Model
     protected $casts = [
         '_info' => Metadata::class,
         'id' => 'integer',
-        'summary' => 'string',
+        'summary' => 'string'
     ];
 }

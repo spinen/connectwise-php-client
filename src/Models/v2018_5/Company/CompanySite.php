@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -63,6 +64,6 @@ class CompanySite extends Model
         'state' => 'string',
         'taxCodeId' => 'integer',
         'timeZone' => TimeZoneSetupReference::class,
-        'zip' => 'string',
+        'zip' => 'string'
     ];
 }

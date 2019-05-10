@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Marketing;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for FormSubmitted
  *
- * @property Carbon\Carbon $dateSubmitted
+ * @property Carbon $dateSubmitted
  * @property integer $campaignId
  * @property integer $contactId
  * @property integer $id
@@ -31,7 +32,7 @@ class FormSubmitted extends Model
     protected $casts = [
         'campaignId' => 'integer',
         'contactId' => 'integer',
-        'dateSubmitted' => Carbon\Carbon::class,
+        'dateSubmitted' => Carbon::class,
         'id' => 'integer',
         'pageSubType' => 'string',
         'pageType' => 'string',
@@ -39,6 +40,6 @@ class FormSubmitted extends Model
         'status' => 'string',
         'topic' => 'string',
         'url' => 'string',
-        'version' => 'string',
+        'version' => 'string'
     ];
 }

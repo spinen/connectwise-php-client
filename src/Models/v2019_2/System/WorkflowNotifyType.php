@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class WorkflowNotifyType extends Model
         'id' => 'integer',
         'identifier' => 'string',
         'isSetupFlag' => 'boolean',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

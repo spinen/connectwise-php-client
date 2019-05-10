@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -39,6 +40,6 @@ class CompanyTeam extends Model
         'member' => MemberReference::class,
         'salesFlag' => 'boolean',
         'teamRole' => TeamRoleReference::class,
-        'techFlag' => 'boolean',
+        'techFlag' => 'boolean'
     ];
 }

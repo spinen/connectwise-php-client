@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Project;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -33,6 +34,6 @@ class ProjectSecurityRoleSetting extends Model
         'id' => 'integer',
         'inquireLevel' => 'string',
         'moduleIdentifier' => 'string',
-        'myFlag' => 'boolean',
+        'myFlag' => 'boolean'
     ];
 }

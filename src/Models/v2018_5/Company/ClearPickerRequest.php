@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -21,6 +22,6 @@ class ClearPickerRequest extends Model
      */
     protected $casts = [
         'member' => MemberReference::class,
-        'type' => 'string',
+        'type' => 'string'
     ];
 }

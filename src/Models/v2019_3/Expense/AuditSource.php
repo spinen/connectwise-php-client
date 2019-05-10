@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Expense;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -19,6 +20,6 @@ class AuditSource extends Model
      * @var array
      */
     protected $casts = [
-,
+
     ];
 }

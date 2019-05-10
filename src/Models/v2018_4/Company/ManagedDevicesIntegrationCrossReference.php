@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -35,6 +36,6 @@ class ManagedDevicesIntegrationCrossReference extends Model
         'managedDevicesIntegration' => ManagedDevicesIntegrationReference::class,
         'product' => IvItemReference::class,
         'vendorLevel' => 'string',
-        'vendorType' => 'string',
+        'vendorType' => 'string'
     ];
 }

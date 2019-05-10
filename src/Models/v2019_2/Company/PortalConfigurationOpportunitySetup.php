@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -95,6 +96,6 @@ class PortalConfigurationOpportunitySetup extends Model
         'removeAllOpportunityStatuses' => 'boolean',
         'removeAllOpportunityTypes' => 'boolean',
         'restrictViewByOpportunityStatusFlag' => 'boolean',
-        'restrictViewByOpportunityTypeFlag' => 'boolean',
+        'restrictViewByOpportunityTypeFlag' => 'boolean'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -33,6 +34,6 @@ class BillingStatus extends Model
         'inactiveFlag' => 'boolean',
         'name' => 'string',
         'sentFlag' => 'boolean',
-        'sortOrder' => 'integer',
+        'sortOrder' => 'integer'
     ];
 }

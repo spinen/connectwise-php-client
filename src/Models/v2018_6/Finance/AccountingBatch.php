@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -31,6 +32,6 @@ class AccountingBatch extends Model
         'exportExpensesFlag' => 'boolean',
         'exportInvoicesFlag' => 'boolean',
         'exportProductsFlag' => 'boolean',
-        'id' => 'integer',
+        'id' => 'integer'
     ];
 }

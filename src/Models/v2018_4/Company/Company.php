@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,8 +12,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property BillingDeliveryReference $invoiceDeliveryMethod
  * @property BillingTermsReference $billingTerms
- * @property Carbon\Carbon $dateAcquired
- * @property Carbon\Carbon $dateDeleted
+ * @property Carbon $dateAcquired
+ * @property Carbon $dateDeleted
  * @property CompanyReference $billToCompany
  * @property CompanyReference $parentCompany
  * @property CompanyStatusReference $status
@@ -96,8 +97,8 @@ class Company extends Model
         'country' => CountryReference::class,
         'currency' => CurrencyReference::class,
         'customFields' => 'array',
-        'dateAcquired' => Carbon\Carbon::class,
-        'dateDeleted' => Carbon\Carbon::class,
+        'dateAcquired' => Carbon::class,
+        'dateDeleted' => Carbon::class,
         'defaultContact' => ContactReference::class,
         'deletedBy' => 'string',
         'deletedFlag' => 'boolean',
@@ -143,6 +144,6 @@ class Company extends Model
         'userDefinedField9' => 'string',
         'vendorIdentifier' => 'string',
         'website' => 'string',
-        'zip' => 'string',
+        'zip' => 'string'
     ];
 }

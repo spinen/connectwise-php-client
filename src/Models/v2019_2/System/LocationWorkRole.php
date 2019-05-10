@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -27,6 +28,6 @@ class LocationWorkRole extends Model
         'id' => 'integer',
         'location' => SystemLocationReference::class,
         'workRole' => WorkRoleReference::class,
-        'workRoleInactiveFlag' => 'boolean',
+        'workRoleInactiveFlag' => 'boolean'
     ];
 }

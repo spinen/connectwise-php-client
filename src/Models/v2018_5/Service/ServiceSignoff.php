@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -131,6 +132,6 @@ class ServiceSignoff extends Model
         'timeStartEndFlag' => 'boolean',
         'timeTaxFlag' => 'boolean',
         'timeWorkTypeFlag' => 'boolean',
-        'visibleLogoFlag' => 'boolean',
+        'visibleLogoFlag' => 'boolean'
     ];
 }

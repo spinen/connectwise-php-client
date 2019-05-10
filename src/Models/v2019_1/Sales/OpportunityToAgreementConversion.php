@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -49,6 +50,6 @@ class OpportunityToAgreementConversion extends Model
         'name' => 'string',
         'noEndingDateFlag' => 'boolean',
         'startDate' => 'string',
-        'type' => AgreementTypeReference::class,
+        'type' => AgreementTypeReference::class
     ];
 }

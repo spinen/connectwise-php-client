@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -37,6 +38,6 @@ class ExpenseTypeExemption extends Model
         'levelSixFlag' => 'boolean',
         'levelThreeFlag' => 'boolean',
         'levelTwoFlag' => 'boolean',
-        'taxCode' => TaxCodeReference::class,
+        'taxCode' => TaxCodeReference::class
     ];
 }

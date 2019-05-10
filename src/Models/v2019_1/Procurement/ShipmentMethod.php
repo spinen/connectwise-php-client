@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class ShipmentMethod extends Model
         'id' => 'integer',
         'name' => 'string',
         'shippingType' => 'string',
-        'trackingUrl' => 'string',
+        'trackingUrl' => 'string'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -23,6 +24,6 @@ class IvItemReference extends Model
     protected $casts = [
         '_info' => Metadata::class,
         'id' => 'integer',
-        'identifier' => 'string',
+        'identifier' => 'string'
     ];
 }

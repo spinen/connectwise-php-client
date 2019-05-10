@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -27,6 +28,6 @@ class UnpostedProcurementTaxableLevel extends Model
         'id' => 'integer',
         'taxAmount' => 'float',
         'taxCodeXref' => 'string',
-        'taxLevel' => 'integer',
+        'taxLevel' => 'integer'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class BoardTypeSubTypeItemAssociation extends Model
         'id' => 'integer',
         'item' => ServiceItemReference::class,
         'subType' => ServiceSubTypeReference::class,
-        'type' => ServiceTypeReference::class,
+        'type' => ServiceTypeReference::class
     ];
 }

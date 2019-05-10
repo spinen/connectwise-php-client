@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Schedule;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -27,6 +28,6 @@ class ScheduleReminderTime extends Model
         'defaultFlag' => 'boolean',
         'id' => 'integer',
         'name' => 'string',
-        'time' => 'integer',
+        'time' => 'integer'
     ];
 }

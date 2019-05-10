@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -37,6 +38,6 @@ class PortalSecuritySetting extends Model
         'levelOne' => 'boolean',
         'levelSix' => 'boolean',
         'levelThree' => 'boolean',
-        'levelTwo' => 'boolean',
+        'levelTwo' => 'boolean'
     ];
 }

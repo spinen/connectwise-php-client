@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -35,6 +36,6 @@ class ActivityType extends Model
         'inactiveFlag' => 'boolean',
         'memoFlag' => 'boolean',
         'name' => 'string',
-        'points' => 'integer',
+        'points' => 'integer'
     ];
 }

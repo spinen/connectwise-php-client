@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -39,6 +40,6 @@ class ContactTrack extends Model
         'name' => 'string',
         'startDate' => 'string',
         'startedBy' => 'string',
-        'trackId' => 'integer',
+        'trackId' => 'integer'
     ];
 }

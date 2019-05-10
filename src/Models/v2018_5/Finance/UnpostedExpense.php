@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for UnpostedExpense
  *
  * @property AgreementReference $agreement
- * @property Carbon\Carbon $dateClosed
- * @property Carbon\Carbon $dateExpense
+ * @property Carbon $dateClosed
+ * @property Carbon $dateExpense
  * @property ChargeCodeReference $chargeCode
  * @property CompanyReference $company
  * @property CurrencyReference $currency
@@ -91,8 +92,8 @@ class UnpostedExpense extends Model
         'countyTaxXref' => 'string',
         'creditAccount' => 'string',
         'currency' => CurrencyReference::class,
-        'dateClosed' => Carbon\Carbon::class,
-        'dateExpense' => Carbon\Carbon::class,
+        'dateClosed' => Carbon::class,
+        'dateExpense' => Carbon::class,
         'departmentId' => 'integer',
         'expenseDetailId' => 'integer',
         'expenseType' => ExpenseTypeReference::class,
@@ -115,6 +116,6 @@ class UnpostedExpense extends Model
         'stateTaxXref' => 'string',
         'taxCode' => TaxCodeReference::class,
         'ticket' => TicketReference::class,
-        'total' => 'float',
+        'total' => 'float'
     ];
 }

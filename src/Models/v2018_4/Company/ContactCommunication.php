@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -35,6 +36,6 @@ class ContactCommunication extends Model
         'id' => 'integer',
         'mobileGuid' => Guid::class,
         'type' => CommunicationTypeReference::class,
-        'value' => 'string',
+        'value' => 'string'
     ];
 }

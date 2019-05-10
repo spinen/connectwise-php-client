@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Schedule;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ScheduleDetail
  *
- * @property Carbon\Carbon $dateEnd
- * @property Carbon\Carbon $dateStart
+ * @property Carbon $dateEnd
+ * @property Carbon $dateStart
  * @property MemberReference $member
  * @property Metadata $_info
  * @property ScheduleEntryReference $scheduleEntry
@@ -25,10 +26,10 @@ class ScheduleDetail extends Model
      */
     protected $casts = [
         '_info' => Metadata::class,
-        'dateEnd' => Carbon\Carbon::class,
-        'dateStart' => Carbon\Carbon::class,
+        'dateEnd' => Carbon::class,
+        'dateStart' => Carbon::class,
         'id' => 'integer',
         'member' => MemberReference::class,
-        'scheduleEntry' => ScheduleEntryReference::class,
+        'scheduleEntry' => ScheduleEntryReference::class
     ];
 }

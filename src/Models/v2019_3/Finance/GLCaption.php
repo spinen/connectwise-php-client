@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -61,6 +62,6 @@ class GLCaption extends Model
         'segment6' => 'string',
         'segment7' => 'string',
         'segment8' => 'string',
-        'segment9' => 'string',
+        'segment9' => 'string'
     ];
 }

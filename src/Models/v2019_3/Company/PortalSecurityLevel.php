@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -27,6 +28,6 @@ class PortalSecurityLevel extends Model
         'caption' => 'string',
         'captionIdentifier' => 'string',
         'id' => 'integer',
-        'isDefaultFlag' => 'boolean',
+        'isDefaultFlag' => 'boolean'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Marketing;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -35,6 +36,6 @@ class CampaignAudit extends Model
         'emailsSent' => 'integer',
         'emailsUnsent' => 'integer',
         'group' => GroupReference::class,
-        'id' => 'integer',
+        'id' => 'integer'
     ];
 }

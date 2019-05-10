@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -27,6 +28,6 @@ class SecurityRole extends Model
         'adminFlag' => 'boolean',
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

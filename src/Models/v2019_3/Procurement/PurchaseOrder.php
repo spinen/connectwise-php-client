@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,10 +11,10 @@ use Spinen\ConnectWise\Support\Model;
  * Model for PurchaseOrder
  *
  * @property BillingTermsReference $terms
- * @property Carbon\Carbon $dateClosed
- * @property Carbon\Carbon $poDate
- * @property Carbon\Carbon $shipmentDate
- * @property Carbon\Carbon $vendorInvoiceDate
+ * @property Carbon $dateClosed
+ * @property Carbon $poDate
+ * @property Carbon $shipmentDate
+ * @property Carbon $vendorInvoiceDate
  * @property CompanyReference $customerCompany
  * @property CompanyReference $vendorCompany
  * @property ContactReference $customerContact
@@ -88,7 +89,7 @@ class PurchaseOrder extends Model
         'customerStreetLine1' => 'string',
         'customerStreetLine2' => 'string',
         'customerZip' => 'string',
-        'dateClosed' => Carbon\Carbon::class,
+        'dateClosed' => Carbon::class,
         'dropShipCustomerFlag' => 'boolean',
         'enteredBy' => 'string',
         'freightCost' => 'float',
@@ -97,10 +98,10 @@ class PurchaseOrder extends Model
         'id' => 'integer',
         'internalNotes' => 'string',
         'locationId' => 'integer',
-        'poDate' => Carbon\Carbon::class,
+        'poDate' => Carbon::class,
         'poNumber' => 'string',
         'salesTax' => 'float',
-        'shipmentDate' => Carbon\Carbon::class,
+        'shipmentDate' => Carbon::class,
         'shipmentMethod' => ShipmentMethodReference::class,
         'shippingInstructions' => 'string',
         'status' => PurchaseOrderStatusReference::class,
@@ -115,10 +116,10 @@ class PurchaseOrder extends Model
         'updateVendorOrderNumber' => 'boolean',
         'vendorCompany' => CompanyReference::class,
         'vendorContact' => ContactReference::class,
-        'vendorInvoiceDate' => Carbon\Carbon::class,
+        'vendorInvoiceDate' => Carbon::class,
         'vendorInvoiceNumber' => 'string',
         'vendorOrderNumber' => 'string',
         'vendorSite' => SiteReference::class,
-        'warehouse' => WarehouseReference::class,
+        'warehouse' => WarehouseReference::class
     ];
 }

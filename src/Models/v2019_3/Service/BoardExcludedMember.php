@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class BoardExcludedMember extends Model
         '_info' => Metadata::class,
         'boardId' => 'integer',
         'id' => 'integer',
-        'memberId' => 'integer',
+        'memberId' => 'integer'
     ];
 }

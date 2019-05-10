@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -51,6 +52,6 @@ class ConnectWiseHostedSetup extends Model
         'toolbarButtonText' => 'string',
         'toolbarButtonToolTip' => 'string',
         'type' => 'string',
-        'url' => 'string',
+        'url' => 'string'
     ];
 }

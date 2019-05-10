@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -21,6 +22,6 @@ class TimePeriodSetupReference extends Model
      */
     protected $casts = [
         '_info' => Metadata::class,
-        'id' => 'integer',
+        'id' => 'integer'
     ];
 }

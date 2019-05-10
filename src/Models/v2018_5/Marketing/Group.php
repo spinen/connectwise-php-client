@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Marketing;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class Group extends Model
         'inactiveFlag' => 'boolean',
         'name' => 'string',
         'publicDescription' => 'string',
-        'publicFlag' => 'boolean',
+        'publicFlag' => 'boolean'
     ];
 }

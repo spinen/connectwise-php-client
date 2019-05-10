@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -19,6 +20,6 @@ class LdapConfigurationTestLink extends Model
      * @var array
      */
     protected $casts = [
-        'Server' => 'string',
+        'Server' => 'string'
     ];
 }

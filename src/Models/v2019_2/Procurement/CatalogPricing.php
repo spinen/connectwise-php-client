@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CatalogPricing
  *
- * @property Carbon\Carbon $date
+ * @property Carbon $date
  * @property CatalogItemReference $catalogItem
  * @property CompanyReference $company
  * @property SystemLocationReference $location
@@ -26,9 +27,9 @@ class CatalogPricing extends Model
     protected $casts = [
         'catalogItem' => CatalogItemReference::class,
         'company' => CompanyReference::class,
-        'date' => Carbon\Carbon::class,
+        'date' => Carbon::class,
         'location' => SystemLocationReference::class,
         'price' => 'float',
-        'quantity' => 'integer',
+        'quantity' => 'integer'
     ];
 }

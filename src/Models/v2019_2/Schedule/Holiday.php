@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Schedule;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -33,6 +34,6 @@ class Holiday extends Model
         'id' => 'integer',
         'name' => 'string',
         'timeEnd' => 'string',
-        'timeStart' => 'string',
+        'timeStart' => 'string'
     ];
 }

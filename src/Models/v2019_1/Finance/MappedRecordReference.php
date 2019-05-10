@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -21,6 +22,6 @@ class MappedRecordReference extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

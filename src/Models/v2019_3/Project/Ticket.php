@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Project;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,8 +12,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property AgreementReference $agreement
  * @property BoardReference $board
- * @property Carbon\Carbon $estimatedStartDate
- * @property Carbon\Carbon $requiredDate
+ * @property Carbon $estimatedStartDate
+ * @property Carbon $requiredDate
  * @property CompanyReference $company
  * @property ContactReference $contact
  * @property CountryReference $country
@@ -125,7 +126,7 @@ class Ticket extends Model
         'customerUpdatedFlag' => 'boolean',
         'department' => SystemDepartmentReference::class,
         'duration' => 'integer',
-        'estimatedStartDate' => Carbon\Carbon::class,
+        'estimatedStartDate' => Carbon::class,
         'id' => 'integer',
         'initialDescription' => 'string',
         'initialInternalAnalysis' => 'string',
@@ -149,7 +150,7 @@ class Ticket extends Model
         'priority' => PriorityReference::class,
         'processNotifications' => 'boolean',
         'project' => ProjectReference::class,
-        'requiredDate' => Carbon\Carbon::class,
+        'requiredDate' => Carbon::class,
         'resources' => 'string',
         'serviceLocation' => ServiceLocationReference::class,
         'site' => SiteReference::class,
@@ -165,6 +166,6 @@ class Ticket extends Model
         'summary' => 'string',
         'type' => ServiceTypeReference::class,
         'wbsCode' => 'string',
-        'zip' => 'string',
+        'zip' => 'string'
     ];
 }

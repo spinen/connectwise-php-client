@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class TeamMember extends Model
         'id' => 'integer',
         'member' => MemberReference::class,
         'team' => ServiceTeamReference::class,
-        'teamLeaderFlag' => 'boolean',
+        'teamLeaderFlag' => 'boolean'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -37,6 +38,6 @@ class ContactGroup extends Model
         'description' => 'string',
         'group' => GroupReference::class,
         'id' => 'integer',
-        'unsubscribeFlag' => 'boolean',
+        'unsubscribeFlag' => 'boolean'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -63,6 +64,6 @@ class PortalConfigurationServiceSetup extends Model
         'siteNameFlag' => 'boolean',
         'slaInfoFlag' => 'boolean',
         'statusFlag' => 'boolean',
-        'timeMaterialsTicketTemplate' => ServiceSignoffReference::class,
+        'timeMaterialsTicketTemplate' => ServiceSignoffReference::class
     ];
 }

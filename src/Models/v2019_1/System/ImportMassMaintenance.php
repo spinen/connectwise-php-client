@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class ImportMassMaintenance extends Model
         'deletedCompanyCount' => 'integer',
         'deletedContactCount' => 'integer',
         'message' => 'string',
-        'success' => 'boolean',
+        'success' => 'boolean'
     ];
 }

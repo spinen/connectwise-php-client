@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -39,6 +40,6 @@ class GLExportAdjustmentTransactionDetail extends Model
         'memo' => 'string',
         'productAccountNumber' => 'string',
         'quantity' => 'integer',
-        'total' => 'float',
+        'total' => 'float'
     ];
 }

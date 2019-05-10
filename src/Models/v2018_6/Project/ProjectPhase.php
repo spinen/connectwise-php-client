@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Project;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ProjectPhase
  *
  * @property AgreementReference $agreement
- * @property Carbon\Carbon $billingStartDate
- * @property Carbon\Carbon $deadlineDate
+ * @property Carbon $billingStartDate
+ * @property Carbon $deadlineDate
  * @property CompanyReference $billToCompany
  * @property CompanyReference $shipToCompany
  * @property ContactReference $billToContact
@@ -81,13 +82,13 @@ class ProjectPhase extends Model
         'billToContact' => ContactReference::class,
         'billToSite' => SiteReference::class,
         'billingMethod' => 'string',
-        'billingStartDate' => Carbon\Carbon::class,
+        'billingStartDate' => Carbon::class,
         'board' => ProjectBoardReference::class,
         'budgetHours' => 'float',
         'businessUnitId' => 'integer',
         'currency' => CurrencyReference::class,
         'customFields' => 'array',
-        'deadlineDate' => Carbon\Carbon::class,
+        'deadlineDate' => Carbon::class,
         'description' => 'string',
         'downpayment' => 'float',
         'estimatedExpenseCost' => 'float',
@@ -113,6 +114,6 @@ class ProjectPhase extends Model
         'shipToContact' => ContactReference::class,
         'shipToSite' => SiteReference::class,
         'status' => PhaseStatusReference::class,
-        'wbsCode' => 'string',
+        'wbsCode' => 'string'
     ];
 }

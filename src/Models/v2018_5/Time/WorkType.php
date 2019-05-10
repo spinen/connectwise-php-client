@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -53,6 +54,6 @@ class WorkType extends Model
         'rate' => 'float',
         'rateType' => 'string',
         'roundBillHoursTo' => 'float',
-        'utilizationFlag' => 'boolean',
+        'utilizationFlag' => 'boolean'
     ];
 }

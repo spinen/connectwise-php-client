@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,10 +10,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PurchaseOrderLineItem
  *
- * @property Carbon\Carbon $dateCanceled
- * @property Carbon\Carbon $dateCanceledUtc
- * @property Carbon\Carbon $expectedShipDate
- * @property Carbon\Carbon $shipDate
+ * @property Carbon $dateCanceled
+ * @property Carbon $dateCanceledUtc
+ * @property Carbon $expectedShipDate
+ * @property Carbon $shipDate
  * @property IvItemReference $product
  * @property Metadata $_info
  * @property ShipmentMethodReference $shipmentMethod
@@ -55,11 +56,11 @@ class PurchaseOrderLineItem extends Model
         'canceledReason' => 'string',
         'closedFlag' => 'boolean',
         'customFields' => 'array',
-        'dateCanceled' => Carbon\Carbon::class,
-        'dateCanceledUtc' => Carbon\Carbon::class,
+        'dateCanceled' => Carbon::class,
+        'dateCanceledUtc' => Carbon::class,
         'description' => 'string',
         'displayInternalNotesFlag' => 'boolean',
-        'expectedShipDate' => Carbon\Carbon::class,
+        'expectedShipDate' => Carbon::class,
         'id' => 'integer',
         'internalNotes' => 'string',
         'lineNumber' => 'integer',
@@ -69,7 +70,7 @@ class PurchaseOrderLineItem extends Model
         'quantity' => 'float',
         'receivedQuantity' => 'integer',
         'serialNumbers' => 'string',
-        'shipDate' => Carbon\Carbon::class,
+        'shipDate' => Carbon::class,
         'shipmentMethod' => ShipmentMethodReference::class,
         'tax' => 'float',
         'trackingNumber' => 'string',
@@ -77,6 +78,6 @@ class PurchaseOrderLineItem extends Model
         'unitOfMeasure' => UnitOfMeasureReference::class,
         'vendorOrderNumber' => 'string',
         'warehouse' => WarehouseReference::class,
-        'warehouseBin' => WarehouseBinReference::class,
+        'warehouseBin' => WarehouseBinReference::class
     ];
 }

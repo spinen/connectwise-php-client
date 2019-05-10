@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -43,6 +44,6 @@ class Warehouse extends Model
         'manager' => MemberReference::class,
         'name' => 'string',
         'overallDefaultFlag' => 'boolean',
-        'site' => SiteReference::class,
+        'site' => SiteReference::class
     ];
 }

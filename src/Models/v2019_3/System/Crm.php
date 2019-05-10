@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -65,6 +66,6 @@ class Crm extends Model
         'primaryRepCaption' => 'string',
         'salesRepRole' => TeamRoleReference::class,
         'secondaryRepCaption' => 'string',
-        'technicalContactRole' => TeamRoleReference::class,
+        'technicalContactRole' => TeamRoleReference::class
     ];
 }

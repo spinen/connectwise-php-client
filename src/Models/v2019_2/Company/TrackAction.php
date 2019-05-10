@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -59,6 +60,6 @@ class TrackAction extends Model
         'specificMemberFrom' => MemberReference::class,
         'specificMemberTo' => MemberReference::class,
         'subject' => 'string',
-        'track' => TrackReference::class,
+        'track' => TrackReference::class
     ];
 }

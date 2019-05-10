@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,13 +12,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property AgreementReference $agreement
  * @property BillingTermsReference $billingTerms
- * @property Carbon\Carbon $actualEnd
- * @property Carbon\Carbon $actualStart
- * @property Carbon\Carbon $billingStartDate
- * @property Carbon\Carbon $estimatedEnd
- * @property Carbon\Carbon $estimatedStart
- * @property Carbon\Carbon $scheduledEnd
- * @property Carbon\Carbon $scheduledStart
+ * @property Carbon $actualEnd
+ * @property Carbon $actualStart
+ * @property Carbon $billingStartDate
+ * @property Carbon $estimatedEnd
+ * @property Carbon $estimatedStart
+ * @property Carbon $scheduledEnd
+ * @property Carbon $scheduledStart
  * @property CompanyReference $billToCompany
  * @property CompanyReference $company
  * @property CompanyReference $shipToCompany
@@ -83,9 +84,9 @@ class Project extends Model
      */
     protected $casts = [
         '_info' => Metadata::class,
-        'actualEnd' => Carbon\Carbon::class,
+        'actualEnd' => Carbon::class,
         'actualHours' => 'float',
-        'actualStart' => Carbon\Carbon::class,
+        'actualStart' => Carbon::class,
         'agreement' => AgreementReference::class,
         'billExpenses' => 'string',
         'billProducts' => 'string',
@@ -99,7 +100,7 @@ class Project extends Model
         'billingAttention' => 'string',
         'billingMethod' => 'string',
         'billingRateType' => 'string',
-        'billingStartDate' => Carbon\Carbon::class,
+        'billingStartDate' => Carbon::class,
         'billingTerms' => BillingTermsReference::class,
         'board' => ProjectBoardReference::class,
         'budgetAnalysis' => 'string',
@@ -115,13 +116,13 @@ class Project extends Model
         'description' => 'string',
         'doNotDisplayInPortalFlag' => 'boolean',
         'downpayment' => 'float',
-        'estimatedEnd' => Carbon\Carbon::class,
+        'estimatedEnd' => Carbon::class,
         'estimatedExpenseCost' => 'float',
         'estimatedExpenseRevenue' => 'float',
         'estimatedHours' => 'float',
         'estimatedProductCost' => 'float',
         'estimatedProductRevenue' => 'float',
-        'estimatedStart' => Carbon\Carbon::class,
+        'estimatedStart' => Carbon::class,
         'estimatedTimeCost' => 'float',
         'estimatedTimeRevenue' => 'float',
         'expenseApprover' => MemberReference::class,
@@ -135,9 +136,9 @@ class Project extends Model
         'percentComplete' => 'float',
         'projectTemplateId' => 'integer',
         'restrictDownPaymentFlag' => 'boolean',
-        'scheduledEnd' => Carbon\Carbon::class,
+        'scheduledEnd' => Carbon::class,
         'scheduledHours' => 'float',
-        'scheduledStart' => Carbon\Carbon::class,
+        'scheduledStart' => Carbon::class,
         'shipToCompany' => CompanyReference::class,
         'shipToContact' => ContactReference::class,
         'shipToSite' => SiteReference::class,
@@ -145,6 +146,6 @@ class Project extends Model
         'status' => ProjectStatusReference::class,
         'taxCode' => TaxCodeReference::class,
         'timeApprover' => MemberReference::class,
-        'type' => ProjectTypeReference::class,
+        'type' => ProjectTypeReference::class
     ];
 }

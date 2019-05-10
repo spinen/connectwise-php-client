@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -23,6 +24,6 @@ class ProductDemand extends Model
     protected $casts = [
         'cost' => 'float',
         'productRecId' => 'integer',
-        'quantity' => 'integer',
+        'quantity' => 'integer'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -33,6 +34,6 @@ class OpportunityToServiceTicketConversion extends Model
         'includeNoteIds' => 'array',
         'includeProductIds' => 'array',
         'summary' => 'string',
-        'ticketId' => 'integer',
+        'ticketId' => 'integer'
     ];
 }

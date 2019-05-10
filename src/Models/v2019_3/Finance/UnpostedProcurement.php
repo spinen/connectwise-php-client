@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for UnpostedProcurement
  *
  * @property BillingTermsReference $billingTerms
- * @property Carbon\Carbon $dateClosed
- * @property Carbon\Carbon $purchaseDate
- * @property Carbon\Carbon $vendorInvoiceDate
+ * @property Carbon $dateClosed
+ * @property Carbon $purchaseDate
+ * @property Carbon $vendorInvoiceDate
  * @property CompanyReference $customer
  * @property CompanyReference $vendor
  * @property CurrencyReference $currency
@@ -79,7 +80,7 @@ class UnpostedProcurement extends Model
         'countyTaxXref' => 'string',
         'currency' => CurrencyReference::class,
         'customer' => CompanyReference::class,
-        'dateClosed' => Carbon\Carbon::class,
+        'dateClosed' => Carbon::class,
         'departmentId' => 'integer',
         'description' => 'string',
         'freightCost' => 'float',
@@ -91,7 +92,7 @@ class UnpostedProcurement extends Model
         'levelSixTaxXref' => 'string',
         'locationId' => 'integer',
         'procurementType' => 'string',
-        'purchaseDate' => Carbon\Carbon::class,
+        'purchaseDate' => Carbon::class,
         'purchaseOrder' => PurchaseOrderReference::class,
         'purchaseOrderTaxableFlag' => 'boolean',
         'stateTaxAmount' => 'float',
@@ -104,7 +105,7 @@ class UnpostedProcurement extends Model
         'trackingNumber' => 'string',
         'vendor' => CompanyReference::class,
         'vendorAccountNumber' => 'string',
-        'vendorInvoiceDate' => Carbon\Carbon::class,
-        'vendorInvoiceNumber' => 'string',
+        'vendorInvoiceDate' => Carbon::class,
+        'vendorInvoiceNumber' => 'string'
     ];
 }

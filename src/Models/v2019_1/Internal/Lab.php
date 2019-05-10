@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Internal;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -27,6 +28,6 @@ class Lab extends Model
         'adminLock' => 'boolean',
         'id' => 'integer',
         'identifier' => 'string',
-        'inactiveFlag' => 'boolean',
+        'inactiveFlag' => 'boolean'
     ];
 }

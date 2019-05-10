@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -31,6 +32,6 @@ class ServiceTeam extends Model
         'id' => 'integer',
         'leader' => MemberReference::class,
         'location' => SystemLocationReference::class,
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

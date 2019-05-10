@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Marketing;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for LinkClicked
  *
- * @property Carbon\Carbon $dateClicked
+ * @property Carbon $dateClicked
  * @property integer $campaignId
  * @property integer $contactId
  * @property integer $id
@@ -26,9 +27,9 @@ class LinkClicked extends Model
     protected $casts = [
         'campaignId' => 'integer',
         'contactId' => 'integer',
-        'dateClicked' => Carbon\Carbon::class,
+        'dateClicked' => Carbon::class,
         'id' => 'integer',
         'queryString' => 'string',
-        'url' => 'string',
+        'url' => 'string'
     ];
 }

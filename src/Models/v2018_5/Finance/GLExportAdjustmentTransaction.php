@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportAdjustmentTransaction
  *
- * @property Carbon\Carbon $documentDate
+ * @property Carbon $documentDate
  * @property array $adjustmentDetail
  * @property string $accountNumber
  * @property string $adjustmentDescription
@@ -30,11 +31,11 @@ class GLExportAdjustmentTransaction extends Model
         'accountNumber' => 'string',
         'adjustmentDescription' => 'string',
         'adjustmentDetail' => 'array',
-        'documentDate' => Carbon\Carbon::class,
+        'documentDate' => Carbon::class,
         'documentType' => 'string',
         'glClass' => 'string',
         'glTypeID' => 'string',
         'id' => 'string',
-        'memo' => 'string',
+        'memo' => 'string'
     ];
 }

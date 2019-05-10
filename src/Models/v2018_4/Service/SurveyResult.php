@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -39,6 +40,6 @@ class SurveyResult extends Model
         'results' => 'array',
         'surveyId' => 'integer',
         'ticketId' => 'integer',
-        'totalPoints' => 'integer',
+        'totalPoints' => 'integer'
     ];
 }

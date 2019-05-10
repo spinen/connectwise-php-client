@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -41,6 +42,6 @@ class GLExportExpenseBill extends Model
         'member' => MemberReference::class,
         'memo' => 'string',
         'total' => 'float',
-        'vendorNumber' => 'string',
+        'vendorNumber' => 'string'
     ];
 }

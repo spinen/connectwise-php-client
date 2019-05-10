@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -31,6 +32,6 @@ class DocumentSetup extends Model
         'isPublicFlag' => 'boolean',
         'templateOutputPath' => 'string',
         'templatePath' => 'string',
-        'uploadAsLinkFlag' => 'boolean',
+        'uploadAsLinkFlag' => 'boolean'
     ];
 }

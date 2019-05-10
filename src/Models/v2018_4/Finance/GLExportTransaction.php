@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for GLExportTransaction
  *
  * @property BillingTermsReference $billingTerms
- * @property Carbon\Carbon $documentDate
- * @property Carbon\Carbon $dueDate
+ * @property Carbon $documentDate
+ * @property Carbon $dueDate
  * @property CompanyReference $company
  * @property CompanyReference $shipToCompany
  * @property CompanyTypeReference $companyType
@@ -92,10 +93,10 @@ class GLExportTransaction extends Model
         'currency' => CurrencyReference::class,
         'description' => 'string',
         'detail' => 'array',
-        'documentDate' => Carbon\Carbon::class,
+        'documentDate' => Carbon::class,
         'documentNumber' => 'string',
         'documentType' => 'string',
-        'dueDate' => Carbon\Carbon::class,
+        'dueDate' => Carbon::class,
         'dueDays' => 'integer',
         'emailDeliveryFlag' => 'boolean',
         'glClass' => 'string',
@@ -135,6 +136,6 @@ class GLExportTransaction extends Model
         'taxableAmount5' => 'float',
         'taxableTotal' => 'float',
         'total' => 'float',
-        'useAvalaraFlag' => 'boolean',
+        'useAvalaraFlag' => 'boolean'
     ];
 }

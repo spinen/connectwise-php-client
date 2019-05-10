@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Schedule;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -27,6 +28,6 @@ class ScheduleColor extends Model
         'color' => 'string',
         'endPercent' => 'integer',
         'id' => 'integer',
-        'startPercent' => 'integer',
+        'startPercent' => 'integer'
     ];
 }

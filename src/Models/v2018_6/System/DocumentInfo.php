@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -41,6 +42,6 @@ class DocumentInfo extends Model
         'readOnlyFlag' => 'boolean',
         'serverFileName' => 'string',
         'size' => 'integer',
-        'title' => 'string',
+        'title' => 'string'
     ];
 }

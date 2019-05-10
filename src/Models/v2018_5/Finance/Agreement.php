@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,10 +11,10 @@ use Spinen\ConnectWise\Support\Model;
  * Model for Agreement
  *
  * @property AgreementTypeReference $type
- * @property Carbon\Carbon $billStartDate
- * @property Carbon\Carbon $dateCancelled
- * @property Carbon\Carbon $endDate
- * @property Carbon\Carbon $startDate
+ * @property Carbon $billStartDate
+ * @property Carbon $dateCancelled
+ * @property Carbon $endDate
+ * @property Carbon $startDate
  * @property CompanyReference $billToCompany
  * @property CompanyReference $company
  * @property CompanyReference $subContractCompany
@@ -101,7 +102,7 @@ class Agreement extends Model
         'billExpenses' => 'string',
         'billOneTimeFlag' => 'boolean',
         'billProducts' => 'string',
-        'billStartDate' => Carbon\Carbon::class,
+        'billStartDate' => Carbon::class,
         'billTermsId' => 'integer',
         'billTime' => 'string',
         'billToCompany' => CompanyReference::class,
@@ -125,10 +126,10 @@ class Agreement extends Model
         'currency' => CurrencyReference::class,
         'customFields' => 'array',
         'customerPO' => 'string',
-        'dateCancelled' => Carbon\Carbon::class,
+        'dateCancelled' => Carbon::class,
         'employeeCompNotExceed' => 'string',
         'employeeCompRate' => 'string',
-        'endDate' => Carbon\Carbon::class,
+        'endDate' => Carbon::class,
         'expireWhenZero' => 'boolean',
         'expiredDays' => 'integer',
         'id' => 'integer',
@@ -152,7 +153,7 @@ class Agreement extends Model
         'restrictDownPayment' => 'boolean',
         'restrictLocationFlag' => 'boolean',
         'slaId' => 'integer',
-        'startDate' => Carbon\Carbon::class,
+        'startDate' => Carbon::class,
         'subContractCompany' => CompanyReference::class,
         'subContractContact' => ContactReference::class,
         'taxCodeId' => 'integer',
@@ -161,6 +162,6 @@ class Agreement extends Model
         'type' => AgreementTypeReference::class,
         'workOrder' => 'string',
         'workRole' => WorkRoleReference::class,
-        'workType' => WorkTypeReference::class,
+        'workType' => WorkTypeReference::class
     ];
 }

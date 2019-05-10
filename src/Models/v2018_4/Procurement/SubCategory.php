@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class SubCategory extends Model
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'integrationXref' => 'string',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

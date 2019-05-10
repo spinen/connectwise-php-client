@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -141,6 +142,6 @@ class InvoiceTemplate extends Model
         'serviceHeaderSummaryCaption' => 'string',
         'serviceHeaderSummaryVisibleFlag' => 'boolean',
         'serviceHeaderTicketNumberCaption' => 'string',
-        'serviceHeaderTicketNumberVisibleFlag' => 'boolean',
+        'serviceHeaderTicketNumberVisibleFlag' => 'boolean'
     ];
 }

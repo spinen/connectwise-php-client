@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ProductItem
  *
  * @property AgreementReference $agreement
- * @property Carbon\Carbon $cancelledDate
- * @property Carbon\Carbon $purchaseDate
+ * @property Carbon $cancelledDate
+ * @property Carbon $purchaseDate
  * @property CatalogItemReference $catalogItem
  * @property CompanyReference $company
  * @property CompanyReference $vendor
@@ -70,7 +71,7 @@ class ProductItem extends Model
         'businessUnitId' => 'integer',
         'bypassForecastUpdate' => 'boolean',
         'cancelledBy' => 'integer',
-        'cancelledDate' => Carbon\Carbon::class,
+        'cancelledDate' => Carbon::class,
         'cancelledFlag' => 'boolean',
         'cancelledReason' => 'string',
         'catalogItem' => CatalogItemReference::class,
@@ -95,7 +96,7 @@ class ProductItem extends Model
         'price' => 'float',
         'priceMethod' => 'string',
         'productSuppliedFlag' => 'boolean',
-        'purchaseDate' => Carbon\Carbon::class,
+        'purchaseDate' => Carbon::class,
         'quantity' => 'float',
         'quantityCancelled' => 'float',
         'recurring' => ProductRecurring::class,
@@ -109,6 +110,6 @@ class ProductItem extends Model
         'vendor' => CompanyReference::class,
         'vendorSku' => 'string',
         'warehouse' => 'string',
-        'warehouseBin' => 'string',
+        'warehouseBin' => 'string'
     ];
 }

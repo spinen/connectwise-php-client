@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -31,6 +32,6 @@ class TimeAccrualDetail extends Model
         'hours' => 'float',
         'id' => 'integer',
         'startYear' => 'integer',
-        'timeAccrual' => TimeAccrualReference::class,
+        'timeAccrual' => TimeAccrualReference::class
     ];
 }

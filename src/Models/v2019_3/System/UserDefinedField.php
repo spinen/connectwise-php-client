@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for UserDefinedField
  *
- * @property Carbon\Carbon $dateCreated
+ * @property Carbon $dateCreated
  * @property Metadata $_info
  * @property array $businessUnitIds
  * @property array $locationIds
@@ -46,7 +47,7 @@ class UserDefinedField extends Model
         'businessUnitIds' => 'array',
         'buttonUrl' => 'string',
         'caption' => 'string',
-        'dateCreated' => Carbon\Carbon::class,
+        'dateCreated' => Carbon::class,
         'displayOnScreenFlag' => 'boolean',
         'entryTypeIdentifier' => 'string',
         'fieldTypeIdentifier' => 'string',
@@ -61,6 +62,6 @@ class UserDefinedField extends Model
         'removeAllBusinessUnits' => 'boolean',
         'removeAllLocations' => 'boolean',
         'requiredFlag' => 'boolean',
-        'sequenceNumber' => 'integer',
+        'sequenceNumber' => 'integer'
     ];
 }

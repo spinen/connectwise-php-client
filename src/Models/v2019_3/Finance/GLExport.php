@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -35,6 +36,6 @@ class GLExport extends Model
         'inventoryTransfers' => 'array',
         'purchaseTransactions' => 'array',
         'transactions' => 'array',
-        'vendors' => 'array',
+        'vendors' => 'array'
     ];
 }

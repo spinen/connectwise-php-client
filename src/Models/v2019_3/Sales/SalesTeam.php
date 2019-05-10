@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class SalesTeam extends Model
         'inactiveFlag' => 'boolean',
         'salesTeamDescription' => 'string',
         'salesTeamIdentifier' => 'string',
-        'salesTeamLocation' => SystemLocationReference::class,
+        'salesTeamLocation' => SystemLocationReference::class
     ];
 }

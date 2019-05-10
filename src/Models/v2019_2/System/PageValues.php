@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -23,6 +24,6 @@ class PageValues extends Model
     protected $casts = [
         'page' => 'integer',
         'pageId' => 'integer',
-        'pageSize' => 'integer',
+        'pageSize' => 'integer'
     ];
 }

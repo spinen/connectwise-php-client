@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -87,6 +88,6 @@ class CompanyManagementSummary extends Model
         'totalWindowsWorkstations' => 'integer',
         'totalWorkstations' => 'integer',
         'virusesRemoved' => 'integer',
-        'windowsPatchesInstalled' => 'integer',
+        'windowsPatchesInstalled' => 'integer'
     ];
 }

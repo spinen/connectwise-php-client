@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportPurchaseTransactionDetailTax
  *
- * @property Carbon\Carbon $documentDate
+ * @property Carbon $documentDate
  * @property CurrencyReference $currency
  * @property IvItemReference $item
  * @property ProductSubCategoryReference $subCategory
@@ -66,7 +67,7 @@ class GLExportPurchaseTransactionDetailTax extends Model
         'cost' => 'float',
         'costAccountNumber' => 'string',
         'currency' => CurrencyReference::class,
-        'documentDate' => Carbon\Carbon::class,
+        'documentDate' => Carbon::class,
         'dropShippedFlag' => 'boolean',
         'glClass' => 'string',
         'glItemId' => 'string',
@@ -103,6 +104,6 @@ class GLExportPurchaseTransactionDetailTax extends Model
         'vendorAccountNumber' => 'string',
         'vendorNumber' => 'string',
         'warehouseBin' => WarehouseBinReference::class,
-        'warehouseSite' => SiteReference::class,
+        'warehouseSite' => SiteReference::class
     ];
 }

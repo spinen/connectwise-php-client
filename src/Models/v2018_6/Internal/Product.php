@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Internal;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class Product extends Model
         '_info' => Metadata::class,
         'identifier' => 'string',
         'installedFlag' => 'boolean',
-        'password' => 'string',
+        'password' => 'string'
     ];
 }

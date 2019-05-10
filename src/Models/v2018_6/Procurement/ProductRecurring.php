@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProductRecurring
  *
- * @property Carbon\Carbon $endDate
- * @property Carbon\Carbon $startDate
+ * @property Carbon $endDate
+ * @property Carbon $startDate
  * @property float $recurringCost
  * @property float $recurringRevenue
  * @property integer $billCycleId
@@ -28,9 +29,9 @@ class ProductRecurring extends Model
         'billCycleId' => 'integer',
         'cycleType' => 'string',
         'cycles' => 'integer',
-        'endDate' => Carbon\Carbon::class,
+        'endDate' => Carbon::class,
         'recurringCost' => 'float',
         'recurringRevenue' => 'float',
-        'startDate' => Carbon\Carbon::class,
+        'startDate' => Carbon::class
     ];
 }

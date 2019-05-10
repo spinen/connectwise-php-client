@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Expense;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -47,6 +48,6 @@ class ExpenseType extends Model
         'mileageFlag' => 'boolean',
         'name' => 'string',
         'quantityFlag' => 'boolean',
-        'reimbursementRate' => 'float',
+        'reimbursementRate' => 'float'
     ];
 }

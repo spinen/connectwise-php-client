@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Internal;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ExpenseEntryInternal
  *
  * @property AgreementReference $agreement
- * @property Carbon\Carbon $date
+ * @property Carbon $date
  * @property ChargeToReference $chargeTo
  * @property ClassificationReference $classification
  * @property CompanyReference $company
@@ -50,7 +51,7 @@ class ExpenseEntryInternal extends Model
         'classification' => ClassificationReference::class,
         'company' => CompanyReference::class,
         'currency' => CurrencyReference::class,
-        'date' => Carbon\Carbon::class,
+        'date' => Carbon::class,
         'department' => SystemDepartmentReference::class,
         'expenseReport' => ExpenseReportReference::class,
         'id' => 'integer',
@@ -63,6 +64,6 @@ class ExpenseEntryInternal extends Model
         'paymentMethod' => PaymentMethodReference::class,
         'status' => 'string',
         'taxes' => 'array',
-        'type' => ExpenseTypeReference::class,
+        'type' => ExpenseTypeReference::class
     ];
 }

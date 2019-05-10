@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -45,6 +46,6 @@ class Forecast extends Model
         'recurring' => ProductRecurring::class,
         'revenue' => 'float',
         'status' => OpportunityStatusReference::class,
-        'type' => 'string',
+        'type' => 'string'
     ];
 }

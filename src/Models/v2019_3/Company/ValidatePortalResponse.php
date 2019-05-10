@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -21,6 +22,6 @@ class ValidatePortalResponse extends Model
      */
     protected $casts = [
         'contactId' => 'integer',
-        'success' => 'boolean',
+        'success' => 'boolean'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +12,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property BoardReference $serviceDefaultBoard
  * @property CalendarReference $calendar
- * @property Carbon\Carbon $hireDate
- * @property Carbon\Carbon $inactiveDate
- * @property Carbon\Carbon $timeSheetStartDate
+ * @property Carbon $hireDate
+ * @property Carbon $inactiveDate
+ * @property Carbon $timeSheetStartDate
  * @property CountryReference $country
  * @property DocumentReference $photo
  * @property LdapConfigurationReference $ldapConfiguration
@@ -156,7 +157,7 @@ class Member extends Model
         'expenseApprover' => MemberReference::class,
         'firstName' => 'string',
         'hideMemberInDispatchPortalFlag' => 'boolean',
-        'hireDate' => Carbon\Carbon::class,
+        'hireDate' => Carbon::class,
         'homeEmail' => 'string',
         'homeExtension' => 'string',
         'homePhone' => 'string',
@@ -164,7 +165,7 @@ class Member extends Model
         'hourlyRate' => 'float',
         'id' => 'integer',
         'identifier' => 'string',
-        'inactiveDate' => Carbon\Carbon::class,
+        'inactiveDate' => Carbon::class,
         'inactiveFlag' => 'boolean',
         'includeInUtilizationReportingFlag' => 'boolean',
         'invoiceScreenDefaultTabFormat' => 'string',
@@ -224,7 +225,7 @@ class Member extends Model
         'structureLevel' => StructureReference::class,
         'timeApprover' => MemberReference::class,
         'timeReminderEmailFlag' => 'boolean',
-        'timeSheetStartDate' => Carbon\Carbon::class,
+        'timeSheetStartDate' => Carbon::class,
         'timeZone' => TimeZoneSetupReference::class,
         'timebasedOneTimePasswordActivated' => 'boolean',
         'title' => 'string',
@@ -233,6 +234,6 @@ class Member extends Model
         'warehouse' => WarehouseReference::class,
         'warehouseBin' => WarehouseBinReference::class,
         'workRole' => WorkRoleReference::class,
-        'workType' => WorkTypeReference::class,
+        'workType' => WorkTypeReference::class
     ];
 }

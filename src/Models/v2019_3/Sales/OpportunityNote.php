@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -33,6 +34,6 @@ class OpportunityNote extends Model
         'mobileGuid' => Guid::class,
         'opportunityId' => 'integer',
         'text' => 'string',
-        'type' => NoteTypeReference::class,
+        'type' => NoteTypeReference::class
     ];
 }

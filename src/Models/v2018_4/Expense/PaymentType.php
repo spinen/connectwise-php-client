@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Expense;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class PaymentType extends Model
         'companyFlag' => 'boolean',
         'defaultFlag' => 'boolean',
         'id' => 'integer',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

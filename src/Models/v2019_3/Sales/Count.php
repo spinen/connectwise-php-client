@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -19,6 +20,6 @@ class Count extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        'count' => 'integer'
     ];
 }

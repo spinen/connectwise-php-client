@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,10 +12,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property BillingTermsReference $billingTerms
  * @property CampaignReference $campaign
- * @property Carbon\Carbon $closedDate
- * @property Carbon\Carbon $dateBecameLead
- * @property Carbon\Carbon $expectedCloseDate
- * @property Carbon\Carbon $pipelineChangeDate
+ * @property Carbon $closedDate
+ * @property Carbon $dateBecameLead
+ * @property Carbon $expectedCloseDate
+ * @property Carbon $pipelineChangeDate
  * @property CompanyReference $billToCompany
  * @property CompanyReference $company
  * @property CompanyReference $shipToCompany
@@ -62,19 +63,19 @@ class Opportunity extends Model
         'businessUnitId' => 'integer',
         'campaign' => CampaignReference::class,
         'closedBy' => MemberReference::class,
-        'closedDate' => Carbon\Carbon::class,
+        'closedDate' => Carbon::class,
         'company' => CompanyReference::class,
         'contact' => ContactReference::class,
         'currency' => CurrencyReference::class,
         'customFields' => 'array',
         'customerPO' => 'string',
-        'dateBecameLead' => Carbon\Carbon::class,
-        'expectedCloseDate' => Carbon\Carbon::class,
+        'dateBecameLead' => Carbon::class,
+        'expectedCloseDate' => Carbon::class,
         'id' => 'integer',
         'locationId' => 'integer',
         'name' => 'string',
         'notes' => 'string',
-        'pipelineChangeDate' => Carbon\Carbon::class,
+        'pipelineChangeDate' => Carbon::class,
         'primarySalesRep' => MemberReference::class,
         'priority' => OpportunityPriorityReference::class,
         'probability' => OpportunityProbabilityReference::class,
@@ -89,6 +90,6 @@ class Opportunity extends Model
         'status' => OpportunityStatusReference::class,
         'taxCode' => TaxCodeReference::class,
         'totalSalesTax' => 'float',
-        'type' => OpportunityTypeReference::class,
+        'type' => OpportunityTypeReference::class
     ];
 }

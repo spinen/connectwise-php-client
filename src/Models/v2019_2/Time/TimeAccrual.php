@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -55,6 +56,6 @@ class TimeAccrual extends Model
         'vacationAvailableType' => 'string',
         'vacationCarryoverAllowedFlag' => 'boolean',
         'vacationCarryoverLimit' => 'float',
-        'vacationFlag' => 'boolean',
+        'vacationFlag' => 'boolean'
     ];
 }

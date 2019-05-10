@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -37,6 +38,6 @@ class WorkRole extends Model
         'integrationXref' => 'string',
         'locationIds' => 'array',
         'name' => 'string',
-        'removeAllLocations' => 'boolean',
+        'removeAllLocations' => 'boolean'
     ];
 }

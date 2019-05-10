@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Contact
  *
- * @property Carbon\Carbon $anniversary
- * @property Carbon\Carbon $birthDay
+ * @property Carbon $anniversary
+ * @property Carbon $birthDay
  * @property CompanyReference $company
  * @property ContactDepartmentReference $department
  * @property ContactReference $assistantContact
@@ -63,9 +64,9 @@ class Contact extends Model
         '_info' => Metadata::class,
         'addressLine1' => 'string',
         'addressLine2' => 'string',
-        'anniversary' => Carbon\Carbon::class,
+        'anniversary' => Carbon::class,
         'assistantContact' => ContactReference::class,
-        'birthDay' => Carbon\Carbon::class,
+        'birthDay' => Carbon::class,
         'childrenFlag' => 'boolean',
         'city' => 'string',
         'communicationItems' => 'array',
@@ -101,6 +102,6 @@ class Contact extends Model
         'twitterUrl' => 'string',
         'typeIds' => 'array',
         'unsubscribeFlag' => 'boolean',
-        'zip' => 'string',
+        'zip' => 'string'
     ];
 }

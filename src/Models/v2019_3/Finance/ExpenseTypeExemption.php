@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class ExpenseTypeExemption extends Model
         '_info' => Metadata::class,
         'expenseType' => ExpenseTypeReference::class,
         'id' => 'integer',
-        'taxableLevels' => 'array',
+        'taxableLevels' => 'array'
     ];
 }

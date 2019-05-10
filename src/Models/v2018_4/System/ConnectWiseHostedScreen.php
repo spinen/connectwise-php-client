@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -23,6 +24,6 @@ class ConnectWiseHostedScreen extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'screenId' => 'string',
+        'screenId' => 'string'
     ];
 }

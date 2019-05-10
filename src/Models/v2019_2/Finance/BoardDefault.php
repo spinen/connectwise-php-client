@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class BoardDefault extends Model
         'board' => BoardReference::class,
         'defaultFlag' => 'boolean',
         'id' => 'integer',
-        'serviceType' => ServiceTypeReference::class,
+        'serviceType' => ServiceTypeReference::class
     ];
 }

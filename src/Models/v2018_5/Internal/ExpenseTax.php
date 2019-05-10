@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Internal;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -23,6 +24,6 @@ class ExpenseTax extends Model
     protected $casts = [
         'amount' => 'float',
         'id' => 'integer',
-        'type' => ExpenseTaxTypeReference::class,
+        'type' => ExpenseTaxTypeReference::class
     ];
 }

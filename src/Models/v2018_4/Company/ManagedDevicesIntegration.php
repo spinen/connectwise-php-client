@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -49,6 +50,6 @@ class ManagedDevicesIntegration extends Model
         'matchOnSerialNumberFlag' => 'boolean',
         'name' => 'string',
         'portalUrl' => 'string',
-        'solution' => 'string',
+        'solution' => 'string'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class LocationDepartment extends Model
         '_info' => Metadata::class,
         'department' => SystemDepartmentReference::class,
         'id' => 'integer',
-        'location' => SystemLocationReference::class,
+        'location' => SystemLocationReference::class
     ];
 }

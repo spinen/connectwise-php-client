@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -33,6 +34,6 @@ class BoardSubType extends Model
         'inactiveFlag' => 'boolean',
         'name' => 'string',
         'removeAllTypesFlag' => 'boolean',
-        'typeAssociationIds' => 'array',
+        'typeAssociationIds' => 'array'
     ];
 }

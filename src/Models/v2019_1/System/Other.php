@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -53,6 +54,6 @@ class Other extends Model
         'updateMemberTimeZonesFlag' => 'boolean',
         'useExpandedFormatActivityFlag' => 'boolean',
         'useExpandedFormatTimeFlag' => 'boolean',
-        'useSslFlag' => 'boolean',
+        'useSslFlag' => 'boolean'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -47,6 +48,6 @@ class ProductComponent extends Model
         'productItem' => ProductItemReference::class,
         'quantity' => 'float',
         'sequenceNumber' => 'integer',
-        'vendor' => CompanyReference::class,
+        'vendor' => CompanyReference::class
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MemberDelegation
  *
- * @property Carbon\Carbon $dateEnd
- * @property Carbon\Carbon $dateStart
+ * @property Carbon $dateEnd
+ * @property Carbon $dateStart
  * @property MemberReference $delegatedTo
  * @property MemberReference $member
  * @property Metadata $_info
@@ -26,11 +27,11 @@ class MemberDelegation extends Model
      */
     protected $casts = [
         '_info' => Metadata::class,
-        'dateEnd' => Carbon\Carbon::class,
-        'dateStart' => Carbon\Carbon::class,
+        'dateEnd' => Carbon::class,
+        'dateStart' => Carbon::class,
         'delegatedTo' => MemberReference::class,
         'delegationType' => 'string',
         'id' => 'integer',
-        'member' => MemberReference::class,
+        'member' => MemberReference::class
     ];
 }

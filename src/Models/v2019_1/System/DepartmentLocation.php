@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -39,6 +40,6 @@ class DepartmentLocation extends Model
         'ldapConfig' => LdapConfigurationReference::class,
         'location' => SystemLocationReference::class,
         'removeAllLocations' => 'boolean',
-        'serviceManager' => MemberReference::class,
+        'serviceManager' => MemberReference::class
     ];
 }

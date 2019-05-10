@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class Link extends Model
         'name' => 'string',
         'screenLink' => 'string',
         'tableReferenceId' => 'integer',
-        'url' => 'string',
+        'url' => 'string'
     ];
 }

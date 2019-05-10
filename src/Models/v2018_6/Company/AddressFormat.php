@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -33,6 +34,6 @@ class AddressFormat extends Model
         'format' => 'string',
         'id' => 'integer',
         'name' => 'string',
-        'removeAllCountries' => 'boolean',
+        'removeAllCountries' => 'boolean'
     ];
 }

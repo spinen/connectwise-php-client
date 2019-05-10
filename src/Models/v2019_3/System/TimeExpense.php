@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -37,6 +38,6 @@ class TimeExpense extends Model
         'requireTimeNoteFlag' => 'boolean',
         'roundingFactor' => 'float',
         'tier1ApprovalFlag' => 'boolean',
-        'tier2ApprovalFlag' => 'boolean',
+        'tier2ApprovalFlag' => 'boolean'
     ];
 }

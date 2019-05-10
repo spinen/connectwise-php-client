@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -27,6 +28,6 @@ class Severity extends Model
         'defaultFlag' => 'boolean',
         'description' => 'string',
         'id' => 'integer',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -33,6 +34,6 @@ class PricingBreak extends Model
         'priceMethod' => 'string',
         'quantityEnd' => 'float',
         'quantityStart' => 'float',
-        'unlimited' => 'boolean',
+        'unlimited' => 'boolean'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Expense;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ExpenseEntry
  *
  * @property AgreementReference $agreement
- * @property Carbon\Carbon $date
+ * @property Carbon $date
  * @property ClassificationReference $classification
  * @property CompanyReference $company
  * @property CurrencyReference $currency
@@ -55,7 +56,7 @@ class ExpenseEntry extends Model
         'company' => CompanyReference::class,
         'currency' => CurrencyReference::class,
         'customFields' => 'array',
-        'date' => Carbon\Carbon::class,
+        'date' => Carbon::class,
         'expenseReport' => ExpenseReportReference::class,
         'id' => 'integer',
         'invoice' => InvoiceReference::class,
@@ -67,6 +68,6 @@ class ExpenseEntry extends Model
         'paymentMethod' => PaymentMethodReference::class,
         'status' => 'string',
         'taxes' => 'array',
-        'type' => ExpenseTypeReference::class,
+        'type' => ExpenseTypeReference::class
     ];
 }

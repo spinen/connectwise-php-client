@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class CustomFieldValue extends Model
         'id' => 'integer',
         'numberOfDecimals' => 'integer',
         'type' => 'string',
-        'value' => 'string',
+        'value' => 'string'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportExpense
  *
- * @property Carbon\Carbon $documentDate
- * @property Carbon\Carbon $periodEndDate
- * @property Carbon\Carbon $periodStartDate
+ * @property Carbon $documentDate
+ * @property Carbon $periodEndDate
+ * @property Carbon $periodStartDate
  * @property CompanyReference $company
  * @property CurrencyReference $currency
  * @property GLExportExpenseOffset $offset
@@ -45,7 +46,7 @@ class GLExportExpense extends Model
         'companyAccountNumber' => 'string',
         'currency' => CurrencyReference::class,
         'description' => 'string',
-        'documentDate' => Carbon\Carbon::class,
+        'documentDate' => Carbon::class,
         'documentType' => 'string',
         'glClass' => 'string',
         'glTypeId' => 'string',
@@ -53,10 +54,10 @@ class GLExportExpense extends Model
         'member' => MemberReference::class,
         'memo' => 'string',
         'offset' => GLExportExpenseOffset::class,
-        'periodEndDate' => Carbon\Carbon::class,
-        'periodStartDate' => Carbon\Carbon::class,
+        'periodEndDate' => Carbon::class,
+        'periodStartDate' => Carbon::class,
         'project' => ProjectReference::class,
         'total' => 'float',
-        'vendorNumber' => 'string',
+        'vendorNumber' => 'string'
     ];
 }

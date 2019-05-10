@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportInventoryTransfer
  *
- * @property Carbon\Carbon $documentDate
+ * @property Carbon $documentDate
  * @property CurrencyReference $currency
  * @property GLExportInventoryTransferOffset $offset
  * @property IvItemReference $item
@@ -67,7 +68,7 @@ class GLExportInventoryTransfer extends Model
         'costAcccountNumber' => 'string',
         'currency' => CurrencyReference::class,
         'description' => 'string',
-        'documentDate' => Carbon\Carbon::class,
+        'documentDate' => Carbon::class,
         'documentType' => 'string',
         'glClass' => 'string',
         'glItemId' => 'string',
@@ -101,6 +102,6 @@ class GLExportInventoryTransfer extends Model
         'transferToLocationXref' => 'string',
         'unitOfMeasure' => UnitOfMeasureReference::class,
         'uomScheduleXref' => 'string',
-        'warehouse' => WarehouseReference::class,
+        'warehouse' => WarehouseReference::class
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -27,6 +28,6 @@ class ResultInfo extends Model
         'error' => ErrorResponseMessage::class,
         'originalIndex' => 'integer',
         'statusCode' => 'integer',
-        'success' => 'boolean',
+        'success' => 'boolean'
     ];
 }

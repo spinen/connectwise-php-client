@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TaxCode
  *
- * @property Carbon\Carbon $cancelDate
- * @property Carbon\Carbon $effectiveDate
+ * @property Carbon $cancelDate
+ * @property Carbon $effectiveDate
  * @property CountryReference $country
  * @property Metadata $_info
  * @property array $expenseTypeIds
@@ -115,12 +116,12 @@ class TaxCode extends Model
         'addAllProductTypes' => 'boolean',
         'addAllWorkRoles' => 'boolean',
         'canadaCalculateGSTFlag' => 'boolean',
-        'cancelDate' => Carbon\Carbon::class,
+        'cancelDate' => Carbon::class,
         'country' => CountryReference::class,
         'defaultFlag' => 'boolean',
         'description' => 'string',
         'displayOnInvoiceFlag' => 'boolean',
-        'effectiveDate' => Carbon\Carbon::class,
+        'effectiveDate' => Carbon::class,
         'expenseTypeIds' => 'array',
         'id' => 'integer',
         'identifier' => 'string',
@@ -201,6 +202,6 @@ class TaxCode extends Model
         'removeAllExpenseTypes' => 'boolean',
         'removeAllProductTypes' => 'boolean',
         'removeAllWorkRoles' => 'boolean',
-        'workRoleIds' => 'array',
+        'workRoleIds' => 'array'
     ];
 }

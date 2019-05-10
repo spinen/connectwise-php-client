@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class GLExportCustomerTaxLevel extends Model
         'agencyXref' => 'string',
         'taxCodeXref' => 'string',
         'taxLevel' => 'integer',
-        'taxRate' => 'float',
+        'taxRate' => 'float'
     ];
 }

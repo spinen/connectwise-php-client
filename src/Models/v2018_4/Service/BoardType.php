@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -39,6 +40,6 @@ class BoardType extends Model
         'integrationXref' => 'string',
         'location' => SystemLocationReference::class,
         'name' => 'string',
-        'requestForChangeFlag' => 'boolean',
+        'requestForChangeFlag' => 'boolean'
     ];
 }

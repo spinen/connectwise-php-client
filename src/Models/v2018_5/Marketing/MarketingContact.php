@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Marketing;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -27,6 +28,6 @@ class MarketingContact extends Model
         'groupId' => 'integer',
         'id' => 'integer',
         'note' => 'string',
-        'unsubscribeFlag' => 'boolean',
+        'unsubscribeFlag' => 'boolean'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -55,6 +56,6 @@ class PortalConfiguration extends Model
         'portalBackgroundColor' => 'string',
         'portalImageCopySuccessFlag' => 'boolean',
         'url' => 'string',
-        'welcomeText' => 'string',
+        'welcomeText' => 'string'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -37,6 +38,6 @@ class SLAPriority extends Model
         'resolutionPercent' => 'integer',
         'respondHours' => 'float',
         'respondPercent' => 'integer',
-        'sla' => SLAReference::class,
+        'sla' => SLAReference::class
     ];
 }

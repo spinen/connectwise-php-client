@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,8 +13,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property AgreementReference $agreement
  * @property AgreementTypeReference $agreementType
  * @property BoardReference $serviceBoard
- * @property Carbon\Carbon $dateEnd
- * @property Carbon\Carbon $dateStart
+ * @property Carbon $dateEnd
+ * @property Carbon $dateStart
  * @property CompanyReference $company
  * @property IvItemReference $item
  * @property MemberReference $member
@@ -56,8 +57,8 @@ class Commission extends Model
         'commissionBasis' => 'string',
         'commissionPercent' => 'float',
         'company' => CompanyReference::class,
-        'dateEnd' => Carbon\Carbon::class,
-        'dateStart' => Carbon\Carbon::class,
+        'dateEnd' => Carbon::class,
+        'dateStart' => Carbon::class,
         'department' => SystemDepartmentReference::class,
         'id' => 'integer',
         'invoiceOption' => 'string',
@@ -77,6 +78,6 @@ class Commission extends Model
         'servicesFlag' => 'boolean',
         'site' => SiteReference::class,
         'territory' => SystemLocationReference::class,
-        'ticket' => TicketReference::class,
+        'ticket' => TicketReference::class
     ];
 }

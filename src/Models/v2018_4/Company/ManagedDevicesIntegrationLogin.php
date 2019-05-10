@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -29,6 +30,6 @@ class ManagedDevicesIntegrationLogin extends Model
         'managedDevicesIntegration' => ManagedDevicesIntegrationReference::class,
         'member' => MemberReference::class,
         'password' => 'string',
-        'username' => 'string',
+        'username' => 'string'
     ];
 }

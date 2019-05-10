@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -63,6 +64,6 @@ class MemberDeactivation extends Model
         'serviceStatusWorkflow' => 'array',
         'serviceTeam' => MemberDeactivationServiceTeam::class,
         'ticketTemplate' => MemberDeactivationServiceTemplate::class,
-        'workflowEmail' => MemberDeactivationWorkflow::class,
+        'workflowEmail' => MemberDeactivationWorkflow::class
     ];
 }

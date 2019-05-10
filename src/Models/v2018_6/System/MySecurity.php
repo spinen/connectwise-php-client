@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -53,6 +54,6 @@ class MySecurity extends Model
         'myAllFlag' => 'boolean',
         'reportFlag' => 'boolean',
         'restrictFlag' => 'boolean',
-        'sortOrder' => 'integer',
+        'sortOrder' => 'integer'
     ];
 }

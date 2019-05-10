@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class ContactType extends Model
         '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
         'description' => 'string',
-        'id' => 'integer',
+        'id' => 'integer'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,10 +10,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Configuration
  *
- * @property Carbon\Carbon $installationDate
- * @property Carbon\Carbon $lastBackupDate
- * @property Carbon\Carbon $purchaseDate
- * @property Carbon\Carbon $warrantyExpirationDate
+ * @property Carbon $installationDate
+ * @property Carbon $lastBackupDate
+ * @property Carbon $purchaseDate
+ * @property Carbon $warrantyExpirationDate
  * @property CompanyReference $company
  * @property CompanyReference $vendor
  * @property ConfigurationStatusReference $status
@@ -92,10 +93,10 @@ class Configuration extends Model
         'deviceIdentifier' => 'string',
         'displayVendorFlag' => 'boolean',
         'id' => 'integer',
-        'installationDate' => Carbon\Carbon::class,
+        'installationDate' => Carbon::class,
         'installedBy' => MemberReference::class,
         'ipAddress' => 'string',
-        'lastBackupDate' => Carbon\Carbon::class,
+        'lastBackupDate' => Carbon::class,
         'lastLoginName' => 'string',
         'localHardDrives' => 'string',
         'locationId' => 'integer',
@@ -109,7 +110,7 @@ class Configuration extends Model
         'osInfo' => 'string',
         'osType' => 'string',
         'parentConfigurationId' => 'integer',
-        'purchaseDate' => Carbon\Carbon::class,
+        'purchaseDate' => Carbon::class,
         'questions' => 'array',
         'ram' => 'string',
         'remoteLink' => 'string',
@@ -121,6 +122,6 @@ class Configuration extends Model
         'type' => ConfigurationTypeReference::class,
         'vendor' => CompanyReference::class,
         'vendorNotes' => 'string',
-        'warrantyExpirationDate' => Carbon\Carbon::class,
+        'warrantyExpirationDate' => Carbon::class
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Project;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -27,6 +28,6 @@ class ProjectSecurityRole extends Model
         'defaultContactFlag' => 'boolean',
         'id' => 'integer',
         'managerRoleFlag' => 'boolean',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

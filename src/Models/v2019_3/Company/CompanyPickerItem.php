@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -37,6 +38,6 @@ class CompanyPickerItem extends Model
         'companyType' => CompanyTypeReference::class,
         'id' => 'integer',
         'member' => MemberReference::class,
-        'vendorPickerFlag' => 'boolean',
+        'vendorPickerFlag' => 'boolean'
     ];
 }

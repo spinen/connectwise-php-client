@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -167,6 +168,6 @@ class CustomReport extends Model
         'workRoleParamId' => 'integer',
         'workTypeFlag' => 'boolean',
         'workTypeOverride' => 'string',
-        'workTypeParamId' => 'integer',
+        'workTypeParamId' => 'integer'
     ];
 }

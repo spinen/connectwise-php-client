@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -9,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Adjustment
  *
- * @property Carbon\Carbon $effectiveDate
+ * @property Carbon $effectiveDate
  * @property Metadata $_info
  * @property array $customFields
  * @property float $amount
@@ -30,7 +31,7 @@ class Adjustment extends Model
         'amount' => 'float',
         'customFields' => 'array',
         'description' => 'string',
-        'effectiveDate' => Carbon\Carbon::class,
-        'id' => 'integer',
+        'effectiveDate' => Carbon::class,
+        'id' => 'integer'
     ];
 }

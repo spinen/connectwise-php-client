@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -45,6 +46,6 @@ class TimePeriodSetup extends Model
         'semiMonthlyLastDayFlag' => 'boolean',
         'semiMonthlySecondPeriod' => 'integer',
         'type' => 'string',
-        'year' => 'integer',
+        'year' => 'integer'
     ];
 }

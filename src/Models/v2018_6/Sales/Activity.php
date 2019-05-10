@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,8 +14,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property ActivityTypeReference $type
  * @property AgreementReference $agreement
  * @property CampaignReference $campaign
- * @property Carbon\Carbon $dateEnd
- * @property Carbon\Carbon $dateStart
+ * @property Carbon $dateEnd
+ * @property Carbon $dateStart
  * @property CompanyReference $company
  * @property ContactReference $contact
  * @property CurrencyReference $currency
@@ -52,8 +53,8 @@ class Activity extends Model
         'contact' => ContactReference::class,
         'currency' => CurrencyReference::class,
         'customFields' => 'array',
-        'dateEnd' => Carbon\Carbon::class,
-        'dateStart' => Carbon\Carbon::class,
+        'dateEnd' => Carbon::class,
+        'dateStart' => Carbon::class,
         'email' => 'string',
         'id' => 'integer',
         'mobileGuid' => Guid::class,
@@ -67,6 +68,6 @@ class Activity extends Model
         'status' => ActivityStatusReference::class,
         'ticket' => TicketReference::class,
         'type' => ActivityTypeReference::class,
-        'where' => ServiceLocationReference::class,
+        'where' => ServiceLocationReference::class
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Schedule;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -41,6 +42,6 @@ class PortalCalendar extends Model
         'adjust3Hours' => 'float',
         'adjust3Start' => 'string',
         'id' => 'integer',
-        'weekStart' => 'string',
+        'weekStart' => 'string'
     ];
 }

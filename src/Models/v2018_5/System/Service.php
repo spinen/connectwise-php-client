@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -49,6 +50,6 @@ class Service extends Model
         'scheduleSpan' => 'string',
         'srNotify' => 'string',
         'unknownColor' => 'string',
-        'unknownColorDisableFlag' => 'boolean',
+        'unknownColorDisableFlag' => 'boolean'
     ];
 }

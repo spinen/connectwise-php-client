@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -37,6 +38,6 @@ class RmaStatusEmailTemplate extends Model
         'lastName' => 'string',
         'status' => RmaStatusReference::class,
         'subject' => 'string',
-        'useSenderFlag' => 'boolean',
+        'useSenderFlag' => 'boolean'
     ];
 }

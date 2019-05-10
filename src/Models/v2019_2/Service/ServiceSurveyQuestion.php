@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -37,6 +38,6 @@ class ServiceSurveyQuestion extends Model
         'requiredFlag' => 'boolean',
         'sequenceNumber' => 'integer',
         'surveyId' => 'integer',
-        'type' => 'string',
+        'type' => 'string'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,6 +26,6 @@ class LegacySubCategory extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -43,6 +44,6 @@ class PortalConfigurationInvoiceSetup extends Model
         'paymentProcessor' => PortalConfigurationPaymentProcessorReference::class,
         'portalConfiguration' => PortalConfigurationReference::class,
         'removeAllStatuses' => 'boolean',
-        'urlOverride' => 'string',
+        'urlOverride' => 'string'
     ];
 }

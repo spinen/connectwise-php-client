@@ -2,6 +2,7 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -27,6 +28,6 @@ class ProductDetach extends Model
         'removeFromOpportunity' => 'boolean',
         'removeFromProject' => 'boolean',
         'removeFromSalesOrder' => 'boolean',
-        'removeFromTicket' => 'boolean',
+        'removeFromTicket' => 'boolean'
     ];
 }
