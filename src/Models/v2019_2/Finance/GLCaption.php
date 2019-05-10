@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class GLCaption Version v2019_2
- * 
+ *
  * Model for GLCaption
  *
  * @property integer $id

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class PaymentMethodReference Version v2018_4
- * 
+ *
  * Model for PaymentMethodReference
  *
  * @property integer $id

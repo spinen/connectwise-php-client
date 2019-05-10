@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class RmaStatusEmailTemplateReference Version v2019_2
- * 
+ *
  * Model for RmaStatusEmailTemplateReference
  *
  * @property integer $id

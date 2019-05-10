@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class UnpostedExpense Version v2018_4
- * 
+ *
  * Model for UnpostedExpense
  *
  * @property integer $id

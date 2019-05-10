@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ServiceTemplate Version v2018_6
- * 
+ *
  * Model for ServiceTemplate
  *
  * @property integer $id

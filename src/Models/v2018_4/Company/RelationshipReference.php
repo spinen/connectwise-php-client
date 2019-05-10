@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class RelationshipReference Version v2018_4
- * 
+ *
  * Model for RelationshipReference
  *
  * @property integer $id

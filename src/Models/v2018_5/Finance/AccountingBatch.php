@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class AccountingBatch Version v2018_5
- * 
+ *
  * Model for AccountingBatch
  *
  * @property integer $id

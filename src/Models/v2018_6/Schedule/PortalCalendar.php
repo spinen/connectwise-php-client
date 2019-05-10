@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class PortalCalendar Version v2018_6
- * 
+ *
  * Model for PortalCalendar
  *
  * @property integer $id

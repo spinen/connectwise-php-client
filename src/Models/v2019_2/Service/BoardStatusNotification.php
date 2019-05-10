@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class BoardStatusNotification Version v2019_2
- * 
+ *
  * Model for BoardStatusNotification
  *
  * @property integer $id

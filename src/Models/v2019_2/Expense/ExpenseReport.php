@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ExpenseReport Version v2019_2
- * 
+ *
  * Model for ExpenseReport
  *
  * @property integer $id

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class RmaStatusNotification Version v2018_4
- * 
+ *
  * Model for RmaStatusNotification
  *
  * @property integer $id

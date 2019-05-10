@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class GLExportCustomerTaxLevel Version v2019_3
- * 
+ *
  * Model for GLExportCustomerTaxLevel
  *
  * @property float $taxRate

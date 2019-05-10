@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class GLExport Version v2019_3
- * 
+ *
  * Model for GLExport
  *
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\GLExportSettings $exportSettings

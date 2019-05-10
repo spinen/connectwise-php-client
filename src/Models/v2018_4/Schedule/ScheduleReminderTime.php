@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ScheduleReminderTime Version v2018_4
- * 
+ *
  * Model for ScheduleReminderTime
  *
  * @property integer $id

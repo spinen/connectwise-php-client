@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class MemberDeactivationSalesTeam Version v2019_1
- * 
+ *
  * A list of Sales Teams to which the member is assigned
  *
  * @property integer $count

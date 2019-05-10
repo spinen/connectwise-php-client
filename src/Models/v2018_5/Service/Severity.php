@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Severity Version v2018_5
- * 
+ *
  * Model for Severity
  *
  * @property integer $id

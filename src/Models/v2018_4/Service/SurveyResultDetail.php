@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class SurveyResultDetail Version v2018_4
- * 
+ *
  * Model for SurveyResultDetail
  *
  * @property integer $questionId

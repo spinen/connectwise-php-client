@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class SsoConfiguration Version v2019_1
- * 
+ *
  * Model for SsoConfiguration
  *
  * @property integer $id

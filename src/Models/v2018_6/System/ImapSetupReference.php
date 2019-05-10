@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ImapSetupReference Version v2018_6
- * 
+ *
  * Model for ImapSetupReference
  *
  * @property integer $id

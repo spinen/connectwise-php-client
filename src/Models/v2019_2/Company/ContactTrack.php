@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ContactTrack Version v2019_2
- * 
+ *
  * Model for ContactTrack
  *
  * @property integer $id

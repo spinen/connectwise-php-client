@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CallbackEntry Version v2019_3
- * 
+ *
  * Model for CallbackEntry
  *
  * @property integer $id

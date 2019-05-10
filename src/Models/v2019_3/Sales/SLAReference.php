@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class SLAReference Version v2019_3
- * 
+ *
  * Model for SLAReference
  *
  * @property integer $id

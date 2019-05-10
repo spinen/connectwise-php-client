@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Count Version v2018_6
- * 
+ *
  * Model for Count
  *
  * @property integer $count

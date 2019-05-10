@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class BillingSetup Version v2019_1
- * 
+ *
  * Model for BillingSetup
  *
  * @property integer $id

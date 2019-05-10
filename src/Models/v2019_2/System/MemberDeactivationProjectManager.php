@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class MemberDeactivationProjectManager Version v2019_2
- * 
+ *
  * A list of Projects that the member is the project manager
  *
  * @property integer $count

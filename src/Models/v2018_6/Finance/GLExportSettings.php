@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class GLExportSettings Version v2018_6
- * 
+ *
  * Mapped to GlPreferences Class
  *
  */

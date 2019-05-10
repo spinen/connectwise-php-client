@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class EmailToken Version v2018_6
- * 
+ *
  * Model for EmailToken
  *
  * @property integer $id

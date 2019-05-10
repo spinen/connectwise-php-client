@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ActivityStopwatch Version v2018_5
- * 
+ *
  * Model for ActivityStopwatch
  *
  * @property Spinen\ConnectWise\Models\v2018_5\Time\Metadata $_info

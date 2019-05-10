@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class BillingSetupRouting Version v2019_1
- * 
+ *
  * Model for BillingSetupRouting
  *
  * @property integer $id

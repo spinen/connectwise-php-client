@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class InOutType Version v2019_1
- * 
+ *
  * Model for InOutType
  *
  * @property integer $id

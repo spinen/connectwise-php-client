@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class DepartmentMananager Version v2018_5
- * 
+ *
  * Model for DepartmentMananager
  *
  * @property integer $count

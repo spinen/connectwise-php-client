@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CampaignAudit Version v2019_2
- * 
+ *
  * Model for CampaignAudit
  *
  * @property integer $id

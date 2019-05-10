@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ScheduleEntryDetail Version v2019_1
- * 
+ *
  * Model for ScheduleEntryDetail
  *
  * @property integer $id

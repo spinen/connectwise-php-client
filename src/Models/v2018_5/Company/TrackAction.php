@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class TrackAction Version v2018_5
- * 
+ *
  * Model for TrackAction
  *
  * @property integer $id

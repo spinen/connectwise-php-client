@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class GLExportPurchaseTransactionTaxLevel Version v2018_5
- * 
+ *
  * Model for GLExportPurchaseTransactionTaxLevel
  *
  * @property string $taxCodeXref

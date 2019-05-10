@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class AutoSyncTime Version v2018_5
- * 
+ *
  * Model for AutoSyncTime
  *
  * @property integer $id

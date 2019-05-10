@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class MarketDescription Version v2019_1
- * 
+ *
  * Model for MarketDescription
  *
  * @property integer $id

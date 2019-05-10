@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class GLExportTransactionDetailTaxLevel Version v2019_3
- * 
+ *
  * Model for GLExportTransactionDetailTaxLevel
  *
  * @property boolean $taxableFlag

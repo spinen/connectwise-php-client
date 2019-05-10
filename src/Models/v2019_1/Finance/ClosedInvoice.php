@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ClosedInvoice Version v2019_1
- * 
+ *
  * Model for ClosedInvoice
  *
  * @property integer $id

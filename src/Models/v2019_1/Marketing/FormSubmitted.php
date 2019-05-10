@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class FormSubmitted Version v2019_1
- * 
+ *
  * Model for FormSubmitted
  *
  * @property integer $id

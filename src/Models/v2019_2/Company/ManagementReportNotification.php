@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ManagementReportNotification Version v2019_2
- * 
+ *
  * Model for ManagementReportNotification
  *
  * @property integer $id

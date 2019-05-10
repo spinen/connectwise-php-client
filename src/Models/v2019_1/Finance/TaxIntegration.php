@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class TaxIntegration Version v2019_1
- * 
+ *
  * Model for TaxIntegration
  *
  * @property string $taxIntegrationType

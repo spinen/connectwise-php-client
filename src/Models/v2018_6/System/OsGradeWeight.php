@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class OsGradeWeight Version v2018_6
- * 
+ *
  * Model for OsGradeWeight
  *
  * @property integer $id

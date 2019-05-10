@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class GroupReference Version v2019_3
- * 
+ *
  * Model for GroupReference
  *
  * @property integer $id

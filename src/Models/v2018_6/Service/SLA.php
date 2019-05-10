@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class SLA Version v2018_6
- * 
+ *
  * Model for SLA
  *
  * @property integer $id

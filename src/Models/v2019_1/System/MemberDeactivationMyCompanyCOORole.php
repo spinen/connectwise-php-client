@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class MemberDeactivationMyCompanyCOORole Version v2019_1
- * 
+ *
  * Model for MemberDeactivationMyCompanyCOORole
  *
  * @property integer $count

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class UploadToMarketplaceRequest Version v2019_1
- * 
+ *
  * Model for UploadToMarketplaceRequest
  *
  */

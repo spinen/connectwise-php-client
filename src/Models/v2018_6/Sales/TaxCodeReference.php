@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class TaxCodeReference Version v2018_6
- * 
+ *
  * Model for TaxCodeReference
  *
  * @property integer $id

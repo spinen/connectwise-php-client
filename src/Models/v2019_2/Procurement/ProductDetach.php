@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ProductDetach Version v2019_2
- * 
+ *
  * Model for ProductDetach
  *
  * @property boolean $removeFromTicket

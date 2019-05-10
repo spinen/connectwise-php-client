@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Token Version v2019_2
- * 
+ *
  * Model for Token
  *
  * @property string $publicKey

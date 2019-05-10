@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class EmailExclusion Version v2019_2
- * 
+ *
  * Model for EmailExclusion
  *
  * @property integer $id

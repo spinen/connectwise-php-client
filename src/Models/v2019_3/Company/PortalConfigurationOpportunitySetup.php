@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class PortalConfigurationOpportunitySetup Version v2019_3
- * 
+ *
  * Model for PortalConfigurationOpportunitySetup
  *
  * @property integer $id

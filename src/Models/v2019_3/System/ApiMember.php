@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ApiMember Version v2019_3
- * 
+ *
  * Model for ApiMember
  *
  * @property integer $id

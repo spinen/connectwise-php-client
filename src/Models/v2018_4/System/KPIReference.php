@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class KPIReference Version v2018_4
- * 
+ *
  * Model for KPIReference
  *
  * @property integer $id

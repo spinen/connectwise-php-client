@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class SicCodeReference Version v2019_1
- * 
+ *
  * Model for SicCodeReference
  *
  * @property integer $id

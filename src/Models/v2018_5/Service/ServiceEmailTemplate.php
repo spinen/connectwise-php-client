@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ServiceEmailTemplate Version v2018_5
- * 
+ *
  * Model for ServiceEmailTemplate
  *
  * @property integer $id

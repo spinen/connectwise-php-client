@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class PhaseStatus Version v2018_6
- * 
+ *
  * Model for PhaseStatus
  *
  * @property integer $id

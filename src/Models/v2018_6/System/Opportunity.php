@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Opportunity Version v2018_6
- * 
+ *
  * A list of the member's currently assigned Opportunities
  *
  * @property integer $count

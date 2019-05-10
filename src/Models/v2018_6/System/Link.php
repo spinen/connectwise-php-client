@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Link Version v2018_6
- * 
+ *
  * Model for Link
  *
  * @property integer $id

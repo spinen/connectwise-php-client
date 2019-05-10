@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ScheduleStatus Version v2019_2
- * 
+ *
  * Model for ScheduleStatus
  *
  * @property integer $id

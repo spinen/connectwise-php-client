@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CompanyNoteType Version v2019_2
- * 
+ *
  * Model for CompanyNoteType
  *
  * @property integer $id

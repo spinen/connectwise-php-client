@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Currency Version v2019_2
- * 
+ *
  * Model for Currency
  *
  * @property integer $id

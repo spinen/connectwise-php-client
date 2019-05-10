@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class OpportunitySalesRoleReference Version v2018_5
- * 
+ *
  * Model for OpportunitySalesRoleReference
  *
  * @property integer $id

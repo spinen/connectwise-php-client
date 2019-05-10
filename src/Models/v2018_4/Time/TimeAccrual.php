@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class TimeAccrual Version v2018_4
- * 
+ *
  * Model for TimeAccrual
  *
  * @property integer $id

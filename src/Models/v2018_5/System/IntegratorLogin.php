@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class IntegratorLogin Version v2018_5
- * 
+ *
  * Model for IntegratorLogin
  *
  * @property integer $id

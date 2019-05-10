@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Metadata Version v2019_3
- * 
+ *
  * Metadata of the entity
  *
  */

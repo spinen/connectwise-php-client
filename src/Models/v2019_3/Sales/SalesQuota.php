@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class SalesQuota Version v2019_3
- * 
+ *
  * Model for SalesQuota
  *
  * @property integer $id

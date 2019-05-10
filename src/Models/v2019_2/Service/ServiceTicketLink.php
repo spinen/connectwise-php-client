@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ServiceTicketLink Version v2019_2
- * 
+ *
  * Model for ServiceTicketLink
  *
  * @property integer $id

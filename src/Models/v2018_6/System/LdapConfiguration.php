@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class LdapConfiguration Version v2018_6
- * 
+ *
  * Model for LdapConfiguration
  *
  * @property integer $id

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class TicketTask Version v2019_3
- * 
+ *
  * Model for TicketTask
  *
  * @property integer $id

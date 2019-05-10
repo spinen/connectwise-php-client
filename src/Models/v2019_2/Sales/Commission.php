@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Commission Version v2019_2
- * 
+ *
  * Model for Commission
  *
  * @property integer $id

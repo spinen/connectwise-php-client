@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class LinkClicked Version v2018_6
- * 
+ *
  * Model for LinkClicked
  *
  * @property integer $id

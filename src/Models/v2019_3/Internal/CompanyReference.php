@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CompanyReference Version v2019_3
- * 
+ *
  * Company or chargeToType is required
  *
  * @property integer $id

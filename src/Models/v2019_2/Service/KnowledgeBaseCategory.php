@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class KnowledgeBaseCategory Version v2019_2
- * 
+ *
  * Model for KnowledgeBaseCategory
  *
  * @property integer $id

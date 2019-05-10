@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ServiceTeam Version v2018_6
- * 
+ *
  * Model for ServiceTeam
  *
  * @property integer $count

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Report Version v2018_4
- * 
+ *
  * Model for Report
  *
  * @property string $name

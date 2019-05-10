@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class WorkRoleReference Version v2019_1
- * 
+ *
  * Model for WorkRoleReference
  *
  * @property integer $id

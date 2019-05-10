@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class AdjustmentDetail Version v2019_2
- * 
+ *
  * Model for AdjustmentDetail
  *
  * @property integer $id

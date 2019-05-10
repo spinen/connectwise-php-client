@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class OwnershipType Version v2019_2
- * 
+ *
  * Model for OwnershipType
  *
  * @property integer $id

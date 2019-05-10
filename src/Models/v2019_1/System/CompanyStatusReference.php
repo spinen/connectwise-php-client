@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CompanyStatusReference Version v2019_1
- * 
+ *
  * Required when notifyType is set to: "Change Company Status"
  *
  * @property integer $id

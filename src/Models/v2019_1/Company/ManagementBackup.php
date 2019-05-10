@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ManagementBackup Version v2019_1
- * 
+ *
  * Model for ManagementBackup
  *
  * @property integer $id

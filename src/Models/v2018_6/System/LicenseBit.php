@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class LicenseBit Version v2018_6
- * 
+ *
  * Model for LicenseBit
  *
  * @property string $name

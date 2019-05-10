@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class GLAccount Version v2019_2
- * 
+ *
  * Model for GLAccount
  *
  * @property integer $id

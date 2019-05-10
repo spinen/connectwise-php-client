@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class NotificationRecipient Version v2018_4
- * 
+ *
  * Model for NotificationRecipient
  *
  * @property integer $id

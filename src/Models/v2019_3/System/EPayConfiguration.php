@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class EPayConfiguration Version v2019_3
- * 
+ *
  * Model for EPayConfiguration
  *
  * @property integer $id

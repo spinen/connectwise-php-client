@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class FilterValues Version v2018_6
- * 
+ *
  * Model for FilterValues
  *
  * @property string $conditions

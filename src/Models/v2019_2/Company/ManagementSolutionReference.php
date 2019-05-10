@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ManagementSolutionReference Version v2019_2
- * 
+ *
  * Model for ManagementSolutionReference
  *
  * @property integer $id

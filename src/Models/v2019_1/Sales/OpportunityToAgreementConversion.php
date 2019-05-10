@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class OpportunityToAgreementConversion Version v2019_1
- * 
+ *
  * Model for OpportunityToAgreementConversion
  *
  * @property integer $agreementId

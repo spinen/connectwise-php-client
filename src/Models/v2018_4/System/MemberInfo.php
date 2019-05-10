@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class MemberInfo Version v2018_4
- * 
+ *
  * Model for MemberInfo
  *
  * @property integer $id

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class WorkflowActionAutomateParameter Version v2019_1
- * 
+ *
  * Model for WorkflowActionAutomateParameter
  *
  * @property integer $id

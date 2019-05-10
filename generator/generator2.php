@@ -45,7 +45,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class {{ Class }} Version {{ Version }}
- * 
+ *
  * {{ Description }}
  *{{ Properties }}
  */
@@ -215,19 +215,15 @@ foreach (glob(__DIR__ . "/swagger/*") as $version) {
     $version = basename($version);
 
     $loader->loadVersion($version)
-           ->process()->swaggers->each(
-            function (Swagger $swagger) use ($version) {
+           ->process()->swaggers->each(function (Swagger $swagger) use ($version) {
                 $directory = __DIR__ . '/Generated/' . $version . '/' . $swagger->getTitle();
 
                 mkdir($directory, 0755, true);
 
-                $swagger->models->each(
-                    function ($contents, $model) use ($directory) {
+                $swagger->models->each(function ($contents, $model) use ($directory) {
                         file_put_contents($directory . '/' . $model . '.php', $contents);
-                    }
-                );
-            }
-        );
+                });
+            });
 
     $loader->swaggers->last(
         function (Swagger $swagger) use ($version) {

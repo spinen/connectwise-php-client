@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CalendarReference Version v2018_5
- * 
+ *
  * Model for CalendarReference
  *
  * @property integer $id

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Guid Version v2019_3
- * 
+ *
  * Model for Guid
  *
  */

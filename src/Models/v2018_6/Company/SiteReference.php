@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class SiteReference Version v2018_6
- * 
+ *
  * Model for SiteReference
  *
  * @property integer $id

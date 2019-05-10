@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class PageValues Version v2019_2
- * 
+ *
  * Model for PageValues
  *
  * @property integer $page

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CustomFieldValue Version v2019_2
- * 
+ *
  * Model for CustomFieldValue
  *
  * @property integer $id

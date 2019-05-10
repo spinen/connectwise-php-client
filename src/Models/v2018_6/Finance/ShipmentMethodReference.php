@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ShipmentMethodReference Version v2018_6
- * 
+ *
  * Model for ShipmentMethodReference
  *
  * @property integer $id

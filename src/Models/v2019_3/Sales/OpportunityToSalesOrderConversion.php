@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class OpportunityToSalesOrderConversion Version v2019_3
- * 
+ *
  * Model for OpportunityToSalesOrderConversion
  *
  * @property integer $salesOrderId

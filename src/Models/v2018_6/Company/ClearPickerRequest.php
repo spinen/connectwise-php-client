@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ClearPickerRequest Version v2018_6
- * 
+ *
  * Model for ClearPickerRequest
  *
  * @property Spinen\ConnectWise\Models\v2018_6\Company\MemberReference $member

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ReminderReference Version v2019_3
- * 
+ *
  * Model for ReminderReference
  *
  * @property integer $id

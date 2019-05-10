@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class AutomateScriptReference Version v2019_1
- * 
+ *
  * Required when notifyType is set to: "Run Connectwise Automate Script"
  *
  * @property integer $id

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Task Version v2019_3
- * 
+ *
  * Model for Task
  *
  * @property integer $id

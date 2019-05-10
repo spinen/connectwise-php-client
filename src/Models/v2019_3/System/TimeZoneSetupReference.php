@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class TimeZoneSetupReference Version v2019_3
- * 
+ *
  * Model for TimeZoneSetupReference
  *
  * @property integer $id

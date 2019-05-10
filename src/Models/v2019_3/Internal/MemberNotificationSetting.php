@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class MemberNotificationSetting Version v2019_3
- * 
+ *
  * Model for MemberNotificationSetting
  *
  * @property integer $id

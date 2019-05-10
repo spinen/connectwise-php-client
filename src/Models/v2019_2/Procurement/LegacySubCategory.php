@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class LegacySubCategory Version v2019_2
- * 
+ *
  * Model for LegacySubCategory
  *
  * @property integer $id

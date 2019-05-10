@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class MemberDeactivationStatusWorkflow Version v2019_1
- * 
+ *
  * Model for MemberDeactivationStatusWorkflow
  *
  * @property integer $count

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Crm Version v2019_2
- * 
+ *
  * Model for Crm
  *
  * @property integer $id

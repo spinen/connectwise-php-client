@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class AgreementTypeWorkType Version v2019_3
- * 
+ *
  * Model for AgreementTypeWorkType
  *
  * @property integer $id

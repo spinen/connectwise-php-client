@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class BoardAutoTemplate Version v2019_2
- * 
+ *
  * Model for BoardAutoTemplate
  *
  * @property integer $id

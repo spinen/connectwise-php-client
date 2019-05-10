@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ClassificationReference Version v2019_1
- * 
+ *
  * Model for ClassificationReference
  *
  * @property integer $id

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ChargeToReference Version v2019_1
- * 
+ *
  * Model for ChargeToReference
  *
  * @property integer $id

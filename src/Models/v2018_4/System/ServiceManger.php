@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ServiceManger Version v2018_4
- * 
+ *
  * Model for ServiceManger
  *
  * @property integer $count

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class KnowledgebaseArticle Version v2018_6
- * 
+ *
  * A list of knowledge base articles that the member is the approver
  *
  * @property integer $count

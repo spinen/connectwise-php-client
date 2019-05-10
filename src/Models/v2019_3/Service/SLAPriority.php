@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class SLAPriority Version v2019_3
- * 
+ *
  * Model for SLAPriority
  *
  * @property integer $id

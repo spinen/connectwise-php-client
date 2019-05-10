@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class AuditTrailEntry Version v2019_3
- * 
+ *
  * Model for AuditTrailEntry
  *
  * @property string $text

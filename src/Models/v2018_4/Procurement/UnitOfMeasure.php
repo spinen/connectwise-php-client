@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class UnitOfMeasure Version v2018_4
- * 
+ *
  * Model for UnitOfMeasure
  *
  * @property integer $id

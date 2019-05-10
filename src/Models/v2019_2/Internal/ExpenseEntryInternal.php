@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ExpenseEntryInternal Version v2019_2
- * 
+ *
  * Model for ExpenseEntryInternal
  *
  * @property integer $id

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class TicketStopwatch Version v2018_6
- * 
+ *
  * Model for TicketStopwatch
  *
  * @property Spinen\ConnectWise\Models\v2018_6\Time\Metadata $_info

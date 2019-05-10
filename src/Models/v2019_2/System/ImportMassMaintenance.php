@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ImportMassMaintenance Version v2019_2
- * 
+ *
  * Model for ImportMassMaintenance
  *
  * @property integer $deletedContactCount

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ChargeCodeExpenseType Version v2019_1
- * 
+ *
  * Model for ChargeCodeExpenseType
  *
  * @property integer $id

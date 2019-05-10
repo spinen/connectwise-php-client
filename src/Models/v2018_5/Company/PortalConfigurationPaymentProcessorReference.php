@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class PortalConfigurationPaymentProcessorReference Version v2018_5
- * 
+ *
  * Model for PortalConfigurationPaymentProcessorReference
  *
  * @property integer $id

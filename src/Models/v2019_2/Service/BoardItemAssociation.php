@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class BoardItemAssociation Version v2019_2
- * 
+ *
  * Model for BoardItemAssociation
  *
  * @property integer $id

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class TodayPageCategory Version v2019_3
- * 
+ *
  * Model for TodayPageCategory
  *
  * @property integer $id

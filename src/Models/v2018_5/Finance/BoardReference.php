@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class BoardReference Version v2018_5
- * 
+ *
  * Model for BoardReference
  *
  * @property integer $id

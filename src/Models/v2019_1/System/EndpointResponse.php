@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class EndpointResponse Version v2019_1
- * 
+ *
  * Model for EndpointResponse
  *
  * @property string $id

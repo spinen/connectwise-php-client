@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class PriorityReference Version v2019_1
- * 
+ *
  * Model for PriorityReference
  *
  * @property integer $id

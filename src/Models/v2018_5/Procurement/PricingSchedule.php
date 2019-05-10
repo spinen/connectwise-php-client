@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class PricingSchedule Version v2018_5
- * 
+ *
  * Model for PricingSchedule
  *
  * @property integer $id

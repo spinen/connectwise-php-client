@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class TaxCodeReference Version v2019_1
- * 
+ *
  * New companies will be created with the default tax code unless otherwise specified.
  *
  * @property integer $id

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class EntityTypeReference Version v2019_2
- * 
+ *
  * Model for EntityTypeReference
  *
  * @property integer $id

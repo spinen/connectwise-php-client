@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ManagedDevicesIntegrationCrossReference Version v2019_3
- * 
+ *
  * Model for ManagedDevicesIntegrationCrossReference
  *
  * @property integer $id

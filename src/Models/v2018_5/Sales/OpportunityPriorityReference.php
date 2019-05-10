@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class OpportunityPriorityReference Version v2018_5
- * 
+ *
  * Model for OpportunityPriorityReference
  *
  * @property integer $id

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CalendarReference Version v2019_2
- * 
+ *
  * Required if clientFlag is set to true
  *
  * @property integer $id

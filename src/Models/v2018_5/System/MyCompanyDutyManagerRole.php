@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class MyCompanyDutyManagerRole Version v2018_5
- * 
+ *
  * Model for MyCompanyDutyManagerRole
  *
  * @property integer $count

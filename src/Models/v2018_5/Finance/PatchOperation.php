@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class PatchOperation Version v2018_5
- * 
+ *
  * Model for PatchOperation
  *
  * @property string $op

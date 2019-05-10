@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CentralServiceEula Version v2018_6
- * 
+ *
  * Model for CentralServiceEula
  *
  * @property integer $id

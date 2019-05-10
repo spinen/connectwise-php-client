@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class MinimumStockByWarehouse Version v2019_1
- * 
+ *
  * Model for MinimumStockByWarehouse
  *
  * @property integer $id

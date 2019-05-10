@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class PortalConfigurationPasswordEmailSetup Version v2019_2
- * 
+ *
  * Model for PortalConfigurationPasswordEmailSetup
  *
  * @property integer $id

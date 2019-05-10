@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class GLExportCustomer Version v2019_2
- * 
+ *
  * Model for GLExportCustomer
  *
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference $company

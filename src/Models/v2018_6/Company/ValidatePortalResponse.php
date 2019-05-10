@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ValidatePortalResponse Version v2018_6
- * 
+ *
  * Model for ValidatePortalResponse
  *
  * @property boolean $success

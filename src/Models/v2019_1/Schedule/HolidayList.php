@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class HolidayList Version v2019_1
- * 
+ *
  * Model for HolidayList
  *
  * @property integer $id

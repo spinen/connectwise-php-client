@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class WorkRoleExemption Version v2019_3
- * 
+ *
  * Model for WorkRoleExemption
  *
  * @property integer $id

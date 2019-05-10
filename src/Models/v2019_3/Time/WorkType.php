@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class WorkType Version v2019_3
- * 
+ *
  * Model for WorkType
  *
  * @property integer $id

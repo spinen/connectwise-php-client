@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class LdapConfigurationTestLink Version v2019_2
- * 
+ *
  * Model for LdapConfigurationTestLink
  *
  * @property string $Server

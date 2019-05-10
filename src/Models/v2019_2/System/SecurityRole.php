@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class SecurityRole Version v2019_2
- * 
+ *
  * Model for SecurityRole
  *
  * @property integer $id

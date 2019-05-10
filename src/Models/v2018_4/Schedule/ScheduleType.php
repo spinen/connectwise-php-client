@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ScheduleType Version v2018_4
- * 
+ *
  * Model for ScheduleType
  *
  * @property integer $id

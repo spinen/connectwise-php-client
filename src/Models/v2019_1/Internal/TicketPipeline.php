@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class TicketPipeline Version v2019_1
- * 
+ *
  * Model for TicketPipeline
  *
  * @property integer $id

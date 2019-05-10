@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class PricingBreak Version v2018_6
- * 
+ *
  * Model for PricingBreak
  *
  * @property integer $id

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class UserDefinedFieldOption Version v2019_3
- * 
+ *
  * Model for UserDefinedFieldOption
  *
  * @property integer $id

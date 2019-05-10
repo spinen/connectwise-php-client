@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ProcurementSetting Version v2019_3
- * 
+ *
  * Model for ProcurementSetting
  *
  * @property integer $id

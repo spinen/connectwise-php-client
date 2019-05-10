@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class PurchasingDemand Version v2019_2
- * 
+ *
  * Model for PurchasingDemand
  *
  * @property Spinen\ConnectWise\Models\v2019_2\Procurement\WarehouseReference $warehouse

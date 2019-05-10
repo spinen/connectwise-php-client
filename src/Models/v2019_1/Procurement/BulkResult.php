@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class BulkResult Version v2019_1
- * 
+ *
  * Model for BulkResult
  *
  * @property array $payload

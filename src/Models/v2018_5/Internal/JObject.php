@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class JObject Version v2018_5
- * 
+ *
  * Model for JObject
  *
  */

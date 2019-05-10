@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ServiceTemplateReference Version v2018_5
- * 
+ *
  * Required when notifyType is set to: "Create a Service Ticket"
  *
  * @property integer $id

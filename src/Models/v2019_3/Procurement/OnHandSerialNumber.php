@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class OnHandSerialNumber Version v2019_3
- * 
+ *
  * Model for OnHandSerialNumber
  *
  * @property integer $id

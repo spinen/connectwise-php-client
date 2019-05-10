@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class MemberDeactivationSalesActivity Version v2019_3
- * 
+ *
  * The List of Activities Assigned to the Member
  *
  * @property integer $count

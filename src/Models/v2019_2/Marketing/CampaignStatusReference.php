@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CampaignStatusReference Version v2019_2
- * 
+ *
  * Model for CampaignStatusReference
  *
  * @property integer $id

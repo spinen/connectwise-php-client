@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class UnpostedInvoiceTaxableLevel Version v2019_3
- * 
+ *
  * Model for UnpostedInvoiceTaxableLevel
  *
  * @property integer $id

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class BatchEntry Version v2019_3
- * 
+ *
  * Model for BatchEntry
  *
  * @property integer $id

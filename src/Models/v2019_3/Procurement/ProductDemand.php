@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ProductDemand Version v2019_3
- * 
+ *
  * Model for ProductDemand
  *
  * @property integer $productRecId

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class JArray Version v2019_2
- * 
+ *
  * Model for JArray
  *
  */

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class SetupScreen Version v2019_2
- * 
+ *
  * Model for SetupScreen
  *
  * @property integer $id

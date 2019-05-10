@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ExpenseTypeExemption Version v2019_2
- * 
+ *
  * Model for ExpenseTypeExemption
  *
  * @property integer $id

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class OpportunityStatusReference Version v2018_5
- * 
+ *
  * Required when acceptanceChangeStatusFlag is true
  *
  * @property integer $id

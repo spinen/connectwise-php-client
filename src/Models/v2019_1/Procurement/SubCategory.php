@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class SubCategory Version v2019_1
- * 
+ *
  * Model for SubCategory
  *
  * @property integer $id

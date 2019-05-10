@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ProductItemReference Version v2019_3
- * 
+ *
  * Model for ProductItemReference
  *
  * @property integer $id

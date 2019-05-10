@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ManagedDevicesIntegrationReference Version v2018_6
- * 
+ *
  * Model for ManagedDevicesIntegrationReference
  *
  * @property integer $id

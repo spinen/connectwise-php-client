@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class StatusWorkflow Version v2018_4
- * 
+ *
  * Model for StatusWorkflow
  *
  * @property integer $count

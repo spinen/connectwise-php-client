@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class SystemDepartmentReference Version v2019_3
- * 
+ *
  * Model for SystemDepartmentReference
  *
  * @property integer $id

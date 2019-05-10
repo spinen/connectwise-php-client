@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class DispatchMember Version v2018_4
- * 
+ *
  * Model for DispatchMember
  *
  * @property integer $count

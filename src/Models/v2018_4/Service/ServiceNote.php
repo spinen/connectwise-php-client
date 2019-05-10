@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ServiceNote Version v2018_4
- * 
+ *
  * Model for ServiceNote
  *
  * @property integer $id

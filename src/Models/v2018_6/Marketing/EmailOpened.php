@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class EmailOpened Version v2018_6
- * 
+ *
  * Model for EmailOpened
  *
  * @property integer $id

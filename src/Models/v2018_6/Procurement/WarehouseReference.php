@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class WarehouseReference Version v2018_6
- * 
+ *
  * Model for WarehouseReference
  *
  * @property integer $id

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class GLExportPurchaseTransactionDetail Version v2019_3
- * 
+ *
  * Model for GLExportPurchaseTransactionDetail
  *
  * @property integer $id

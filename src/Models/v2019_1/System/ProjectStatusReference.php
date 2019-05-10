@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ProjectStatusReference Version v2019_1
- * 
+ *
  * Required when notifyType is set to: "Change Project Status"
  *
  * @property integer $id

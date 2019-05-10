@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class StructureReference Version v2018_5
- * 
+ *
  * Model for StructureReference
  *
  * @property integer $id

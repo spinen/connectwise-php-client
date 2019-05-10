@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class DeliveryMethod Version v2019_1
- * 
+ *
  * Model for DeliveryMethod
  *
  * @property integer $id

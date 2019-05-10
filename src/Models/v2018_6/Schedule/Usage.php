@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Usage Version v2018_6
- * 
+ *
  * Model for Usage
  *
  * @property string $type

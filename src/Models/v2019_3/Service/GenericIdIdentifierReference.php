@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class GenericIdIdentifierReference Version v2019_3
- * 
+ *
  * Model for GenericIdIdentifierReference
  *
  * @property integer $id

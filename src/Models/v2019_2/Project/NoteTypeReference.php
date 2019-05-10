@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class NoteTypeReference Version v2019_2
- * 
+ *
  * Model for NoteTypeReference
  *
  * @property integer $id

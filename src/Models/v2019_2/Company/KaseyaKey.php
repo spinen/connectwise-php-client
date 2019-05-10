@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class KaseyaKey Version v2019_2
- * 
+ *
  * Model for KaseyaKey
  *
  * @property string $Key

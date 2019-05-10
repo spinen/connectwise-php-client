@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ExternalExpenseTypeIntegrationReference Version v2019_3
- * 
+ *
  * Model for ExternalExpenseTypeIntegrationReference
  *
  * @property integer $id

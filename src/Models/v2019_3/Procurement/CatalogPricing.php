@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CatalogPricing Version v2019_3
- * 
+ *
  * Model for CatalogPricing
  *
  * @property Spinen\ConnectWise\Models\v2019_3\Procurement\CatalogItemReference $catalogItem

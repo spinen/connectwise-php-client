@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ReportingService Version v2019_1
- * 
+ *
  * Model for ReportingService
  *
  * @property integer $id

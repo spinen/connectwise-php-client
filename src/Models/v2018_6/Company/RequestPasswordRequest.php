@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class RequestPasswordRequest Version v2018_6
- * 
+ *
  * Model for RequestPasswordRequest
  *
  * @property string $email

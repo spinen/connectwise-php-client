@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ReportDataResponse Version v2019_1
- * 
+ *
  * Model for ReportDataResponse
  *
  * @property array $column_definitions

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class MemberDeactivation Version v2018_5
- * 
+ *
  * Model for MemberDeactivation
  *
  * @property Spinen\ConnectWise\Models\v2018_5\System\SalesActivity $activity

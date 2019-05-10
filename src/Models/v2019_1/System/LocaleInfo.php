@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class LocaleInfo Version v2019_1
- * 
+ *
  * Model for LocaleInfo
  *
  * @property integer $id

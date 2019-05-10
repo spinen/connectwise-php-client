@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class DocumentReference Version v2019_3
- * 
+ *
  * Model for DocumentReference
  *
  * @property integer $id

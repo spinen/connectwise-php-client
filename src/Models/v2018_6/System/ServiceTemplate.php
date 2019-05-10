@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ServiceTemplate Version v2018_6
- * 
+ *
  * The Service (Ticket) Templates on which the Member is the assignedTo resource
  *
  * @property integer $count

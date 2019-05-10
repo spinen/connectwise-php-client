@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CompanyTeam Version v2018_4
- * 
+ *
  * A list of customers for which the member holds a team role
  *
  * @property integer $count

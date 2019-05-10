@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class InvoiceTemplateSetup Version v2018_4
- * 
+ *
  * Model for InvoiceTemplateSetup
  *
  * @property integer $id

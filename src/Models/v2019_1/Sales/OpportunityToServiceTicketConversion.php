@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class OpportunityToServiceTicketConversion Version v2019_1
- * 
+ *
  * Model for OpportunityToServiceTicketConversion
  *
  * @property integer $ticketId

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class GroupReference Version v2019_2
- * 
+ *
  * Required when notifyType is set to: "Add to Group"
  *
  * @property integer $id

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class IdCollection Version v2019_2
- * 
+ *
  * Model for IdCollection
  *
  * @property array $ids

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class WorkflowNotifyType Version v2018_6
- * 
+ *
  * Model for WorkflowNotifyType
  *
  * @property integer $id

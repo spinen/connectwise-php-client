@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class TimeEntryAudit Version v2018_6
- * 
+ *
  * Model for TimeEntryAudit
  *
  * @property integer $id

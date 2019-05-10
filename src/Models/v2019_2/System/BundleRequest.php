@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class BundleRequest Version v2019_2
- * 
+ *
  * Model for BundleRequest
  *
  * @property integer $SequenceNumber

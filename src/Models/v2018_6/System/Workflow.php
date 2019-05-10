@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Workflow Version v2018_6
- * 
+ *
  * Model for Workflow
  *
  * @property integer $id

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CalendarReference Version v2019_2
- * 
+ *
  * customCalendar is a required reference if basedOn SLA Hours Type is Custom
  *
  * @property integer $id

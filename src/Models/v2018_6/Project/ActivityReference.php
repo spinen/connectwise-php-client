@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ActivityReference Version v2018_6
- * 
+ *
  * Model for ActivityReference
  *
  * @property integer $id

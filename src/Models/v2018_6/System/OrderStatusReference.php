@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class OrderStatusReference Version v2018_6
- * 
+ *
  * Required when notifyType is set to: "Change Sales Order Status"
  *
  * @property integer $id

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CountryReference Version v2019_2
- * 
+ *
  * At least one address field is required -- addressLine1, addressLine2, city, state, zip and/or country
  *
  * @property integer $id

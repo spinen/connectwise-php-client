@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ProjectManager Version v2018_5
- * 
+ *
  * A list of Projects that the member is the project manager
  *
  * @property integer $count

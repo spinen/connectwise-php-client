@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Eula Version v2019_3
- * 
+ *
  * Model for Eula
  *
  * @property integer $id

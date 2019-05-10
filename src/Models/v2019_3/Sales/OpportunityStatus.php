@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class OpportunityStatus Version v2019_3
- * 
+ *
  * Model for OpportunityStatus
  *
  * @property integer $id

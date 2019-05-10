@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ActivityTypeReference Version v2019_3
- * 
+ *
  * Required when acceptanceCreateActivityFlag is true
  *
  * @property integer $id

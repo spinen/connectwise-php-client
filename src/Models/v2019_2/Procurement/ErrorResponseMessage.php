@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ErrorResponseMessage Version v2019_2
- * 
+ *
  * Model for ErrorResponseMessage
  *
  * @property string $code

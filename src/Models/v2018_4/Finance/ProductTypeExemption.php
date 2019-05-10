@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ProductTypeExemption Version v2018_4
- * 
+ *
  * Model for ProductTypeExemption
  *
  * @property integer $id

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class MemberReference Version v2018_6
- * 
+ *
  * Service Status Notification member must be entered if the notify type is "Specific Member"
  *
  * @property integer $id

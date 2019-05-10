@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class BatchRequest Version v2019_1
- * 
+ *
  * Model for BatchRequest
  *
  * @property string $id

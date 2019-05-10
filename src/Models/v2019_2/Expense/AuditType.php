@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class AuditType Version v2019_2
- * 
+ *
  * Model for AuditType
  *
  */

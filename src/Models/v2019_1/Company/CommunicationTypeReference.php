@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CommunicationTypeReference Version v2019_1
- * 
+ *
  * Model for CommunicationTypeReference
  *
  * @property integer $id

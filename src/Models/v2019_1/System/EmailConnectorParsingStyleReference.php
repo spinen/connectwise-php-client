@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class EmailConnectorParsingStyleReference Version v2019_1
- * 
+ *
  * Model for EmailConnectorParsingStyleReference
  *
  * @property integer $id

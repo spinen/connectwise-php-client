@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ScheduleSpanReference Version v2019_3
- * 
+ *
  * Model for ScheduleSpanReference
  *
  * @property integer $id

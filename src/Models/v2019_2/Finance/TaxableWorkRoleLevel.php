@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class TaxableWorkRoleLevel Version v2019_2
- * 
+ *
  * Model for TaxableWorkRoleLevel
  *
  * @property integer $id

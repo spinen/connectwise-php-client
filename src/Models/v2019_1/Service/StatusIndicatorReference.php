@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class StatusIndicatorReference Version v2019_1
- * 
+ *
  * Model for StatusIndicatorReference
  *
  * @property integer $id

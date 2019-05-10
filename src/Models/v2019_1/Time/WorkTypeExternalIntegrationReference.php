@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class WorkTypeExternalIntegrationReference Version v2019_1
- * 
+ *
  * Model for WorkTypeExternalIntegrationReference
  *
  * @property integer $id

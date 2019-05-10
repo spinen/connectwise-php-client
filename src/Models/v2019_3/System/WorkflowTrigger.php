@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class WorkflowTrigger Version v2019_3
- * 
+ *
  * Model for WorkflowTrigger
  *
  * @property integer $id

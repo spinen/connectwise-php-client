@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Impact Version v2019_3
- * 
+ *
  * Model for Impact
  *
  * @property integer $id

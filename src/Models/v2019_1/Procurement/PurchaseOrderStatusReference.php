@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class PurchaseOrderStatusReference Version v2019_1
- * 
+ *
  * Model for PurchaseOrderStatusReference
  *
  * @property integer $id

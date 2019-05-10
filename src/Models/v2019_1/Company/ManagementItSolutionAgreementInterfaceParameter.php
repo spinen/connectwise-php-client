@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ManagementItSolutionAgreementInterfaceParameter Version v2019_1
- * 
+ *
  * Model for ManagementItSolutionAgreementInterfaceParameter
  *
  * @property integer $id

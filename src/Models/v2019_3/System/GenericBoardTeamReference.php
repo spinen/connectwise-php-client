@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class GenericBoardTeamReference Version v2019_3
- * 
+ *
  * Model for GenericBoardTeamReference
  *
  * @property integer $id

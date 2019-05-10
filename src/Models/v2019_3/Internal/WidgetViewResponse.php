@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class WidgetViewResponse Version v2019_3
- * 
+ *
  * Model for WidgetViewResponse
  *
  * @property Spinen\ConnectWise\Models\v2019_3\Internal\JObject $widget_data

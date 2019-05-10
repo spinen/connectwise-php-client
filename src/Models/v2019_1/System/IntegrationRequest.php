@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class IntegrationRequest Version v2019_1
- * 
+ *
  * Model for IntegrationRequest
  *
  * @property string $url

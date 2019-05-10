@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class WorkflowTableTypeReference Version v2018_4
- * 
+ *
  * Model for WorkflowTableTypeReference
  *
  * @property integer $id

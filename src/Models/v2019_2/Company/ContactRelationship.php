@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ContactRelationship Version v2019_2
- * 
+ *
  * Model for ContactRelationship
  *
  * @property integer $id

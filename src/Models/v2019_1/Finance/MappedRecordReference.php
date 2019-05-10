@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class MappedRecordReference Version v2019_1
- * 
+ *
  * Model for MappedRecordReference
  *
  * @property integer $id

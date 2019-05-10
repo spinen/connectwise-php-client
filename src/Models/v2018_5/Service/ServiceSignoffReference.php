@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ServiceSignoffReference Version v2018_5
- * 
+ *
  * Model for ServiceSignoffReference
  *
  * @property integer $id

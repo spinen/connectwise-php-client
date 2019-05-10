@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class OrderStatusEmailTemplate Version v2019_1
- * 
+ *
  * Model for OrderStatusEmailTemplate
  *
  * @property integer $id

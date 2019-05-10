@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class MemberDeactivationWorkflow Version v2019_2
- * 
+ *
  * The Workflows to which the member is assigned
  *
  * @property integer $count

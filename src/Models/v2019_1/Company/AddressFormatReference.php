@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class AddressFormatReference Version v2019_1
- * 
+ *
  * Model for AddressFormatReference
  *
  * @property integer $id

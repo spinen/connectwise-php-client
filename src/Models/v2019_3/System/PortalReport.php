@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class PortalReport Version v2019_3
- * 
+ *
  * Model for PortalReport
  *
  * @property integer $id

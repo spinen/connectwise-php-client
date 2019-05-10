@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class StateReference Version v2018_6
- * 
+ *
  * Model for StateReference
  *
  * @property integer $id

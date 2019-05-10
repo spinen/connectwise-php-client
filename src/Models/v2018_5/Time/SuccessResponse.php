@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class SuccessResponse Version v2018_5
- * 
+ *
  * Model for SuccessResponse
  *
  * @property boolean $success

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ResultInfo Version v2019_3
- * 
+ *
  * Model for ResultInfo
  *
  * @property boolean $success

@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ActivityStatusReference Version v2019_2
- * 
+ *
  * Required when notifyType is set to: "Create Activity"
  *
  * @property integer $id

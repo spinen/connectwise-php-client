@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class TaxableProductTypeLevel Version v2019_3
- * 
+ *
  * Model for TaxableProductTypeLevel
  *
  * @property integer $id

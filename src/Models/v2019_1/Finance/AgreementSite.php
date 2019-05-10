@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class AgreementSite Version v2019_1
- * 
+ *
  * Model for AgreementSite
  *
  * @property integer $id

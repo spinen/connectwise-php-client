@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CloudBusMessage Version v2019_2
- * 
+ *
  * Model for CloudBusMessage
  *
  * @property integer $id

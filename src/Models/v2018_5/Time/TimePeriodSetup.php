@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class TimePeriodSetup Version v2018_5
- * 
+ *
  * Model for TimePeriodSetup
  *
  * @property integer $id

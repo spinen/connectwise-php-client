@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class MemberSsoToken Version v2019_1
- * 
+ *
  * Model for MemberSsoToken
  *
  * @property string $token

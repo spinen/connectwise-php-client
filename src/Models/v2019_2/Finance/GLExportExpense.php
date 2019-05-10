@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class GLExportExpense Version v2019_2
- * 
+ *
  * Model for GLExportExpense
  *
  * @property integer $id

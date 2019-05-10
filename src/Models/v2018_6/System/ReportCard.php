@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ReportCard Version v2018_6
- * 
+ *
  * Model for ReportCard
  *
  * @property integer $id

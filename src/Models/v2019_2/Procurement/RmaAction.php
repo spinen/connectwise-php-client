@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class RmaAction Version v2019_2
- * 
+ *
  * Model for RmaAction
  *
  * @property integer $id

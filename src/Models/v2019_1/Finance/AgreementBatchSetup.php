@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class AgreementBatchSetup Version v2019_1
- * 
+ *
  * Model for AgreementBatchSetup
  *
  * @property integer $id

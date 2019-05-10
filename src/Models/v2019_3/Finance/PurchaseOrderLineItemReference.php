@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class PurchaseOrderLineItemReference Version v2019_3
- * 
+ *
  * Model for PurchaseOrderLineItemReference
  *
  * @property integer $id

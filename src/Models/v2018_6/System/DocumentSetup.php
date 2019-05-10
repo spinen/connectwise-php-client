@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class DocumentSetup Version v2018_6
- * 
+ *
  * Model for DocumentSetup
  *
  * @property integer $id

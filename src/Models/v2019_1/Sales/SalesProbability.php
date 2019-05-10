@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class SalesProbability Version v2019_1
- * 
+ *
  * Model for SalesProbability
  *
  * @property integer $id

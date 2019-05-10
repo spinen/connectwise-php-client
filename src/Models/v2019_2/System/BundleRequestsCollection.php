@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class BundleRequestsCollection Version v2019_2
- * 
+ *
  * Model for BundleRequestsCollection
  *
  * @property array $Requests

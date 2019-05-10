@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CountryReference Version v2018_5
- * 
+ *
  * Model for CountryReference
  *
  * @property integer $id

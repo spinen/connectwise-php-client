@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ParsingVariable Version v2019_3
- * 
+ *
  * Model for ParsingVariable
  *
  * @property integer $id

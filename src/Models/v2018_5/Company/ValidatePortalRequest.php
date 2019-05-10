@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ValidatePortalRequest Version v2018_5
- * 
+ *
  * Model for ValidatePortalRequest
  *
  * @property string $email

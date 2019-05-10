@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class IRestIdentifiedItem Version v2019_3
- * 
+ *
  * Model for IRestIdentifiedItem
  *
  */

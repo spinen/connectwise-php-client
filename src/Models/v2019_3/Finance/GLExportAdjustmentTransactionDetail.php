@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class GLExportAdjustmentTransactionDetail Version v2019_3
- * 
+ *
  * Model for GLExportAdjustmentTransactionDetail
  *
  * @property string $glClass

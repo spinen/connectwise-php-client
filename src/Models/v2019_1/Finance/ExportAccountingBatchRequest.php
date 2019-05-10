@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ExportAccountingBatchRequest Version v2019_1
- * 
+ *
  * Model for ExportAccountingBatchRequest
  *
  * @property string $batchIdentifier

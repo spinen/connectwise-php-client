@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class QuoteLink Version v2019_3
- * 
+ *
  * Model for QuoteLink
  *
  * @property integer $id

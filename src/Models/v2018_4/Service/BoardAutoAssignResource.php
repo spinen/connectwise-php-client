@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class BoardAutoAssignResource Version v2018_4
- * 
+ *
  * Model for BoardAutoAssignResource
  *
  * @property integer $id

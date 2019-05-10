@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CompanyMerge Version v2019_1
- * 
+ *
  * Model for CompanyMerge
  *
  * @property integer $toCompanyId

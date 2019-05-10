@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class AuditTrailObjects Version v2018_5
- * 
+ *
  * A list of AuditTrailObject to which the text will be applied. List Cannot Be Empty.
  *
  * @property string $type

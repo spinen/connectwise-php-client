@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class MemberTypeReference Version v2018_5
- * 
+ *
  * Model for MemberTypeReference
  *
  * @property integer $id

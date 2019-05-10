@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class UserDefinedFieldReference Version v2018_5
- * 
+ *
  * If your trigger is for custom fields, this will populate with the custom field associated with the option
  *
  * @property integer $id

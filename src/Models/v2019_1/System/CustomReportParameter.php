@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CustomReportParameter Version v2019_1
- * 
+ *
  * Model for CustomReportParameter
  *
  * @property integer $id

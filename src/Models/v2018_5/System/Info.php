@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Info Version v2018_5
- * 
+ *
  * Model for Info
  *
  * @property string $version

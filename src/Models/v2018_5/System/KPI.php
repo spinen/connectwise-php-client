@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class KPI Version v2018_5
- * 
+ *
  * Model for KPI
  *
  * @property integer $id

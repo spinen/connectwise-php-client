@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class SystemLocationReference Version v2018_4
- * 
+ *
  * Model for SystemLocationReference
  *
  * @property integer $id

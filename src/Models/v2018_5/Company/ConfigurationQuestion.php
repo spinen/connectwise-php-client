@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ConfigurationQuestion Version v2018_5
- * 
+ *
  * Model for ConfigurationQuestion
  *
  * @property integer $answerId

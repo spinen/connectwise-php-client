@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ActivityStatus Version v2019_3
- * 
+ *
  * Model for ActivityStatus
  *
  * @property integer $id

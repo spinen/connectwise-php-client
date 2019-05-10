@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class BundleResultsCollection Version v2019_3
- * 
+ *
  * Model for BundleResultsCollection
  *
  * @property array $Results

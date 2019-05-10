@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class MappedTypeReference Version v2019_1
- * 
+ *
  * Model for MappedTypeReference
  *
  * @property integer $id

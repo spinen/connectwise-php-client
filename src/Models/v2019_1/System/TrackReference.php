@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class TrackReference Version v2019_1
- * 
+ *
  * Required when notifyType is set to: "Attach Track"
  *
  * @property integer $id

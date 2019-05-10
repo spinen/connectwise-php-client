@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Forecast Version v2018_4
- * 
+ *
  * Model for Forecast
  *
  * @property integer $id

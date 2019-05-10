@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class DutyManager Version v2018_5
- * 
+ *
  * Model for DutyManager
  *
  * @property integer $count

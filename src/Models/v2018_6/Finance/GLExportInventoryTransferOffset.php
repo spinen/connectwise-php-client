@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class GLExportInventoryTransferOffset Version v2018_6
- * 
+ *
  * Model for GLExportInventoryTransferOffset
  *
  * @property integer $id

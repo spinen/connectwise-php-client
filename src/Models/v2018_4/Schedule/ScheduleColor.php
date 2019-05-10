@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ScheduleColor Version v2018_4
- * 
+ *
  * Model for ScheduleColor
  *
  * @property integer $id

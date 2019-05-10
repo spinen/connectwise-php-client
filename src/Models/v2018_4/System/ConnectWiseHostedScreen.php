@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ConnectWiseHostedScreen Version v2018_4
- * 
+ *
  * Model for ConnectWiseHostedScreen
  *
  * @property integer $id

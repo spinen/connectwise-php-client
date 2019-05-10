@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class BillingTermsReference Version v2019_2
- * 
+ *
  * Model for BillingTermsReference
  *
  * @property integer $id

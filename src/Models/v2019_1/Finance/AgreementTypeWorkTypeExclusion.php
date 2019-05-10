@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class AgreementTypeWorkTypeExclusion Version v2019_1
- * 
+ *
  * Model for AgreementTypeWorkTypeExclusion
  *
  * @property integer $id

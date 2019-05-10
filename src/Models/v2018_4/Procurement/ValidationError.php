@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ValidationError Version v2018_4
- * 
+ *
  * Model for ValidationError
  *
  * @property string $code

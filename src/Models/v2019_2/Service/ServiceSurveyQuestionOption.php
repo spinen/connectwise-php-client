@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ServiceSurveyQuestionOption Version v2019_2
- * 
+ *
  * Model for ServiceSurveyQuestionOption
  *
  * @property boolean $includeFlag

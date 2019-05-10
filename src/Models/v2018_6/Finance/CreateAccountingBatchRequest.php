@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class CreateAccountingBatchRequest Version v2018_6
- * 
+ *
  * Model for CreateAccountingBatchRequest
  *
  * @property integer $id

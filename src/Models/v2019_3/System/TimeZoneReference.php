@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class TimeZoneReference Version v2019_3
- * 
+ *
  * The system level time zone to which this setup is associated
  *
  * @property integer $id

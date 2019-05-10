@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class DepartmentLocationInfo Version v2018_6
- * 
+ *
  * Model for DepartmentLocationInfo
  *
  * @property integer $id

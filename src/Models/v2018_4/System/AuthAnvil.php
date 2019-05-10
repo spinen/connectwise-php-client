@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class AuthAnvil Version v2018_4
- * 
+ *
  * Model for AuthAnvil
  *
  * @property integer $id

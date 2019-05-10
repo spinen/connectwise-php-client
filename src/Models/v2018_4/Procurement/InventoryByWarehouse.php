@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class InventoryByWarehouse Version v2018_4
- * 
+ *
  * Model for InventoryByWarehouse
  *
  * @property integer $id

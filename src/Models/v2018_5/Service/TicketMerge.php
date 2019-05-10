@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class TicketMerge Version v2018_5
- * 
+ *
  * Model for TicketMerge
  *
  * @property array $mergeTicketIds

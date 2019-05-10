@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class MenuEntryLocation Version v2019_2
- * 
+ *
  * Model for MenuEntryLocation
  *
  * @property integer $id

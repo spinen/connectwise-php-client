@@ -6,7 +6,7 @@ use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Project Version v2019_3
- * 
+ *
  * Model for Project
  *
  * @property integer $id
