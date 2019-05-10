@@ -2,12 +2,13 @@
 
 namespace Spinen\ConnectWise\Api;
 
-use Exception;
 use GuzzleHttp\Client as Guzzle;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Response;
 use InvalidArgumentException;
+use Spinen\ConnectWise\Exceptions\MalformedRequest;
 use Spinen\ConnectWise\Support\Collection;
 use Spinen\ConnectWise\Support\Model;
 use Spinen\ConnectWise\Support\ModelResolver;
@@ -26,6 +27,14 @@ use Spinen\ConnectWise\Support\ModelResolver;
  */
 class Client
 {
+    /**
+     * The Client Id
+     *
+     * @var string
+     * @see https://developer.connectwise.com/ClientID
+     */
+    protected $clientId;
+
     /**
      * @var Guzzle
      */
@@ -88,26 +97,37 @@ class Client
     ];
 
     /**
+     * Version of the API being requested
+     *
+     * @var string
+     */
+    protected $version;
+
+    /**
      * Client constructor.
      *
-     * @param Token         $token
-     * @param Guzzle        $guzzle
+     * @param Token $token
+     * @param Guzzle $guzzle
      * @param ModelResolver $resolver
+     * @param string $version Version of the models to use with the API responses
      */
-    public function __construct(Token $token, Guzzle $guzzle, ModelResolver $resolver)
+    public function __construct(Token $token, Guzzle $guzzle, ModelResolver $resolver, $version = null)
     {
         $this->token = $token;
         $this->guzzle = $guzzle;
         $this->resolver = $resolver;
+        $this->setVersion($version ?? '2019.3');
     }
 
     /**
      * Magic method to allow short cut to the request types
      *
      * @param string $verb
-     * @param array  $args
+     * @param array $args
      *
-     * @return array
+     * @return Collection|Model|Response
+     * @throws GuzzleException
+     * @throws MalformedRequest
      */
     public function __call($verb, $args)
     {
@@ -141,7 +161,7 @@ class Client
     /**
      * Build authorization headers to send CW API
      *
-     * @return array
+     * @return string
      */
     public function buildAuth()
     {
@@ -149,10 +169,7 @@ class Client
             $this->token->refresh($this);
         }
 
-        return [
-            $this->token->getUsername(),
-            $this->token->getPassword(),
-        ];
+        return 'Basic ' . base64_encode($this->token->getUsername() . ':' . $this->token->getPassword());
     }
 
     /**
@@ -167,10 +184,12 @@ class Client
      */
     public function buildOptions(array $options = [])
     {
-        return array_merge_recursive($options, [
-            'auth'    => $this->buildAuth(),
-            'headers' => $this->getHeaders(),
-        ]);
+        return array_merge_recursive(
+            $options,
+            [
+                'headers' => $this->getHeaders(),
+            ]
+        );
     }
 
     /**
@@ -179,10 +198,19 @@ class Client
      * @param string $resource
      *
      * @return string
+     * @throws MalformedRequest
      */
     public function buildUri($resource)
     {
-        return $this->getUrl() . ltrim($resource, '/');
+        $uri = $this->getUrl() . ltrim($resource, '/');
+
+        if (strlen($uri) > 2000) {
+            throw new MalformedRequest(
+                sprintf("The uri is too long. It is %s character(s) over the 2000 limit.", strlen($uri) - 2000)
+            );
+        }
+
+        return $uri;
     }
 
     /**
@@ -198,6 +226,16 @@ class Client
     }
 
     /**
+     * Expose the client id
+     *
+     * @return string
+     */
+    public function getClientId()
+    {
+        return $this->clientId;
+    }
+
+    /**
      * The headers to send
      *
      * When making an integrator call (expired token), then you have to only send the "x-cw-usertype" header.
@@ -206,13 +244,28 @@ class Client
      */
     public function getHeaders()
     {
-        if ($this->token->isForUser($this->integrator)) {
-            return [
-                'x-cw-usertype' => 'integrator',
-            ];
+        $authorization_headers = [
+            'clientId'      => $this->getClientId(),
+            'Authorization' => $this->buildAuth(),
+        ];
+
+        if ($this->token->isForUser($this->getIntegrator())) {
+            return array_merge(
+                [
+                    'x-cw-usertype' => 'integrator',
+                ],
+                $authorization_headers
+            );
         }
 
-        return $this->headers;
+        return array_merge(
+            [
+                'x-cw-usertype' => 'member',
+                'Accept'        => 'application/vnd.connectwise.com+json; version=' . $this->getVersion(),
+            ],
+            $authorization_headers,
+            $this->headers
+        );
     }
 
     /**
@@ -246,6 +299,16 @@ class Client
     }
 
     /**
+     * Expose the version
+     *
+     * @return string
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    /**
      * Process the error received from ConnectWise
      *
      * @param RequestException $exception
@@ -273,15 +336,16 @@ class Client
     {
         $response = (array)json_decode($response->getBody(), true);
 
-        if ($model = $this->resolver->find($resource)) {
-            $model = 'Spinen\ConnectWise\Models\\' . $model;
-
+        if ($model = $this->resolver->find($resource, $this->getVersion())) {
             if ($this->isCollection($response)) {
-                $response = array_map(function ($item) use ($model) {
-                    $item = new $model($item, $this);
+                $response = array_map(
+                    function ($item) use ($model) {
+                        $item = new $model($item, $this);
 
-                    return $item;
-                }, $response);
+                        return $item;
+                    },
+                    $response
+                );
 
                 return new Collection($response);
             }
@@ -295,11 +359,13 @@ class Client
     /**
      * Make call to the resource
      *
-     * @param string     $method
-     * @param string     $resource
+     * @param string $method
+     * @param string $resource
      * @param array|null $options
      *
-     * @return array
+     * @return Collection|Model|Response
+     * @throws GuzzleException
+     * @throws MalformedRequest
      */
     protected function request($method, $resource, array $options = [])
     {
@@ -310,6 +376,20 @@ class Client
         } catch (RequestException $e) {
             $this->processError($e);
         }
+    }
+
+    /**
+     * Set the Client Id
+     *
+     * @param string $clientId
+     *
+     * @return $this
+     */
+    public function setClientId($clientId)
+    {
+        $this->clientId = $clientId;
+
+        return $this;
     }
 
     /**
@@ -370,6 +450,33 @@ class Client
         }
 
         $this->url = rtrim($url, '/');
+
+        return $this;
+    }
+
+    /**
+     * Set the version of the API response models
+     *
+     * @param string $version
+     *
+     * @return $this
+     */
+    public function setVersion($version)
+    {
+        $supported = [
+            '2018.4',
+            '2018.5',
+            '2018.6',
+            '2019.1',
+            '2019.2',
+            '2019.3',
+        ];
+
+        if (!in_array($version, $supported)) {
+            throw new InvalidArgumentException(sprintf("The Version provided[%] is not supported.", $version));
+        }
+
+        $this->version = $version;
 
         return $this;
     }

@@ -6,6 +6,7 @@ use ArrayAccess;
 use Carbon\Carbon;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
+use Illuminate\Support\Str;
 use InvalidArgumentException;
 use JsonSerializable;
 use Spinen\ConnectWise\Api\Client;
@@ -82,9 +83,9 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
         // Look to see if the property has a relationship to call
         if ($this->client && is_array($this->{$method}) && array_key_exists('_info', $this->{$method})) {
             foreach ($this->{$method}['_info'] as $k => $v) {
-                if (starts_with($v, $this->client->getUrl())) {
+                if (Str::startsWith($v, $this->client->getUrl())) {
                     // Cache so that other request will not trigger additional calls
-                    $this->{$method} = $this->client->get(str_replace_first($this->client->getUrl(), '', $v));
+                    $this->{$method} = $this->client->get(Str::replaceFirst($this->client->getUrl(), '', $v));
 
                     return $this->{$method};
                 }
@@ -153,14 +154,12 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
             return $value;
         }
 
-        $class = 'Spinen\ConnectWise\\' . studly_case($cast);
-
-        if (class_exists($class)) {
-            return new $class($value);
+        if (Carbon::class === $cast) {
+            return Carbon::parse($value);
         }
 
-        if (strcasecmp('carbon', $cast) == 0) {
-            return Carbon::parse($value);
+        if (class_exists($cast)) {
+            return new $cast($value);
         }
 
         if (strcasecmp('json', $cast) == 0) {
@@ -171,21 +170,21 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
             return new Collection((array)$value);
         }
 
-        if (in_array($cast, ["bool", "boolean"])) {
+        if (in_array($cast, ['bool', 'boolean'])) {
             return filter_var($value, FILTER_VALIDATE_BOOLEAN);
         }
 
         $cast_types = [
-            "array",
-            "bool",
-            "boolean",
-            "double",
-            "float",
-            "int",
-            "integer",
-            "null",
-            "object",
-            "string",
+            'array',
+            'bool',
+            'boolean',
+            'double',
+            'float',
+            'int',
+            'integer',
+            'null',
+            'object',
+            'string',
         ];
 
         if (!in_array($cast, $cast_types)) {
@@ -301,7 +300,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     protected function getterMethodName($attribute)
     {
-        return 'get' . studly_case($attribute) . 'Attribute';
+        return 'get' . Str::studly($attribute) . 'Attribute';
     }
 
     /**
@@ -343,8 +342,6 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      *
      * @param string $attribute
      * @param mixed  $value
-     *
-     * @return mixed
      */
     public function offsetSet($attribute, $value)
     {
@@ -398,7 +395,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     protected function setterMethodName($attribute)
     {
-        return 'set' . studly_case($attribute) . 'Attribute';
+        return 'set' . Str::studly($attribute) . 'Attribute';
     }
 
     /**
@@ -413,7 +410,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     }
 
     /**
-     * Return the model as an array
+     * Return the model as JSON
      *
      * @param int $options
      *

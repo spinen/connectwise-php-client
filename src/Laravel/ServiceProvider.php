@@ -79,17 +79,15 @@ class ServiceProvider extends LaravelServiceProvider
         $this->app->singleton(
             Client::class,
             function (Application $app) {
-                $client = new Client(
+                return (new Client(
                     $app->make(Token::class),
                     $app->make(Guzzle::class),
                     $app->make(ModelResolver::class)
-                );
-
-                $client->setIntegrator($app->config->get('services.connectwise.integrator'))
-                       ->setPassword($app->config->get('services.connectwise.password'))
-                       ->setUrl($app->config->get('services.connectwise.url'));
-
-                return $client;
+                ))->setClientId($app->config->get('services.connectwise.client_id'))
+                  ->setIntegrator($app->config->get('services.connectwise.integrator'))
+                  ->setPassword($app->config->get('services.connectwise.password'))
+                  ->setUrl($app->config->get('services.connectwise.url'))
+                  ->setVersion($app->config->get('services.connectwise.version'));
             }
         );
     }
@@ -118,12 +116,8 @@ class ServiceProvider extends LaravelServiceProvider
         $this->app->singleton(
             Token::class,
             function (Application $app) {
-                $token = new Token();
-
-                $token->setCompanyId($app->config->get('services.connectwise.company_id'))
-                      ->setMemberId($this->determineMemberId());
-
-                return $token;
+                return (new Token())->setCompanyId($app->config->get('services.connectwise.company_id'))
+                                    ->setMemberId($this->determineMemberId());
             }
         );
     }

@@ -5,22 +5,32 @@
 [![Latest Unstable Version](https://poser.pugx.org/spinen/connectwise-php-client/v/unstable)](https://packagist.org/packages/spinen/connectwise-php-client)
 [![License](https://poser.pugx.org/spinen/connectwise-php-client/license)](https://packagist.org/packages/spinen/connectwise-php-client)
 
-PHP client for the RestFull ConnectWise APIs. This package used to be based on the SOAP APIs & had 3 separate
-repositories, but as of this version there is only this one.
+PHP client for the RESTful ConnectWise APIs.
 
-We solely use [Laravel](http://www.laravel.com) for our applications, so there is some Laravel specific files that you
+We solely use [Laravel](http://www.laravel.com) for our applications, so there are some Laravel specific files that you
 can use if you are using this client in a Laravel application. We have tried to make sure that you can use the client
 outside of Laravel, and have some documentation about it below.
 
+## Build Status
+
+| Branch | Status | Coverage | Code Quality |
+| ------ | :----: | :------: | :----------: |
+| Develop | [![Build Status](https://travis-ci.org/spinen/connectwise-php-client.svg?branch=develop)](https://travis-ci.org/spinen/connectwise-php-client) | [![Code Coverage](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/badges/coverage.png?b=develop)](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/?branch=develop) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/?branch=develop) |
+| Master | [![Build Status](https://travis-ci.org/spinen/connectwise-php-client.svg?branch=master)](https://travis-ci.org/spinen/connectwise-php-client) | [![Code Coverage](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/?branch=master) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/?branch=master) |
+
 ## Note about the integration
-We are using the "Member Impersonation" model where you setup an integrator username & password with access to the
+We are using the "Member Impersonation" model where you set up an integrator username & password with access to the
 "Member API", which makes all calls to ConnectWise performed under the permission of the user (member id) of the
 application.
 
 We make all of our ConnectWise users' member ID equal to their email (i.e. joe.doe@spinen.com has
-a member ID of joedoe in connectwise) [NOTE: The "." was removed from joe.doe as ConnectWise does not allow dots in the
+a member ID of joedoe in connectwise) [NOTE: The "." was removed from joe.doe as ConnectWise does not allow periods in the
 member ID]. By following this convention, we can infer the member ID from the logged in user's email address in our
-applications. We have included a trait that you can use on the User model that will preform the logic above.
+applications. We have included a trait that you can use on the User model that will perform the logic above.
+
+As of 2019.3, they require a `clientId` when connecting to the API, so you will need to register for one here...
+
+[https://developer.connectwise.com/ClientID](https://developer.connectwise.com/ClientID)
 
 ## Models
 
@@ -32,17 +42,17 @@ Some of the responses have links to the related resource.  If a property has a r
 
 ## Install
 
-Install ConnectWise PHP Client:
+Install the ConnectWise PHP Client:
 
 ```bash
-    $ composer require spinen/connectwise-php-client
+$ composer require spinen/connectwise-php-client
 ```
 
 ## Laravel Configuration and Usage
 
-### For >= Laravel 5.5, you are done with the Install
+### For >= Laravel 5.5, you are done with the installation
 
-The package uses the auto registration feature
+The package uses the [auto registration feature](https://laravel.com/docs/5.8/packages#package-discovery) of Laravel 5.
 
 ### For < Laravel 5.5, you have to register the Service Provider
 
@@ -70,18 +80,22 @@ The package uses the auto registration feature
 
 ```php
     'connectwise' =>  [
+        'client_id' => env('CW_CLIENT_ID'),
         'company_id' => env('CW_COMPANY_ID'),
         // Optional member id to use if there is not a logged in user
         'default_member_id' => env('CW_DEFAULT_MEMBER_ID'),
         'integrator' => env('CW_INTEGRATOR'),
         'password' => env('CW_PASSWORD'),
         'url' => env('CW_URL'),
+        // Optional version of the API models to use
+        //'version' => '' // default is the latest supported
     ],
 ```
 
 2. Add the appropriate values to your ```.env```...
 
 ```bash
+CW_CLIENT_ID=<the-client-id>
 CW_COMPANY_ID=<company_id>
 CW_DEFAULT_MEMBER_ID=<default_member_id>
 CW_INTEGRATOR=<integrator username>
@@ -115,7 +129,7 @@ Psy Shell v0.8.0 (PHP 7.0.14 — cli) by Justin Hileman
 >>> $cw = app('Spinen\ConnectWise\Api\Client');
 => Spinen\ConnectWise\Api\Client {#934}
 >>> $info = $cw->get('system/info');
-=> Spinen\ConnectWise\Models\System\Info {#1008}
+=> Spinen\ConnectWise\Models\v2019_3\System\Info {#1008}
 >>> $info->toArray();
 => [
      "version" => "v2016.6.43325",
@@ -148,15 +162,19 @@ Psy Shell v0.8.0 (PHP 7.0.14 — cli) by Justin Hileman
      deleted_at: null,
    }
 >>> ConnectWise::get('system/info');
-=> Spinen\ConnectWise\Models\System\Info {#1005}
+=> Spinen\ConnectWise\Models\v2019_3\System\Info {#1005}
 >>> ConnectWise::get('system/info')->toArray();
 => [
-     "version" => "v2016.6.43325",
-     "isCloud" => false,
-     "serverTimeZone" => "Eastern Standard Time",
-   ]
+        "version" => "v2018.6.59996",
+        "isCloud" => false,
+        "serverTimeZone" => "Eastern Standard Time",
+        "licenseBits" => [
+          // ... All of the properties
+        ],
+        "cloudRegion" => "NA",
+      ]
 >>> ConnectWise::get('system/info')->toJson();
-=> "{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"}"
+=> "{"version":"v2018.6.59996",...}"
 >>> ConnectWise::get('system/info')->isCloud;
 => false
 >>> ConnectWise::get('system/info')['isCloud'];
@@ -169,46 +187,52 @@ Psy Shell v0.8.0 (PHP 7.0.14 — cli) by Justin Hileman
 To use the client outside of Laravel, you just need to new-up the objects...
 
 ```
-$ php -a
-Interactive shell
+$ psysh
+Psy Shell v0.8.18 (PHP 7.2.17 — cli) by Justin Hileman
 
-php > // Autoload classes
-php > require 'vendor/autoload.php';
-php > // New-up objects
-php > $token = new Spinen\ConnectWise\Api\Token();
-php > $guzzle = new GuzzleHttp\Client();
-php > $resolver = new Spinen\ConnectWise\Support\ModelResolver();
-php > $client = new Spinen\ConnectWise\Api\Client($token, $guzzle, $resolver);
-php > // Now set your configs
-php > $token->setCompanyId('<company_id>')->setMemberId('<member_id>');
-php > $client->setIntegrator('<integrator>')->setPassword('<password>')->setUrl('https://<domain.tld>');
-php > $info = $client->get('system/info');
-php > var_export($info, false);
-Spinen\ConnectWise\Models\System\Info::__set_state(array(
-   'casts' =>
-  array (
-    'version' => 'string',
-    'isCloud' => 'boolean',
-    'serverTimeZone' => 'string',
-  ),
-   'attributes' =>
-  array (
-    'version' => 'v2016.6.43325',
-    'isCloud' => false,
-    'serverTimeZone' => 'Eastern Standard Time',
-  ),
-))
-php > var_export($info->toArray(), false);
-array (
-  'version' => 'v2016.6.43325',
-  'isCloud' => false,
-  'serverTimeZone' => 'Eastern Standard Time',
-)
-php > var_export($info->tojson(), false);
-'{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"}'
-php > var_export($info->isCloud, false);
-false
-php > var_export($info['isCloud'], false);
-false
-php >
+>>> // New-up objects
+>>> $token = (new Spinen\ConnectWise\Api\Token())->setCompanyId('<company_id>')->setMemberId('<member_id>');
+=> Spinen\ConnectWise\Api\Token {#208}
+>>> $guzzle = new GuzzleHttp\Client();
+=> GuzzleHttp\Client {#196}
+>>> $resolver = new Spinen\ConnectWise\Support\ModelResolver();
+=> Spinen\ConnectWise\Support\ModelResolver {#201}
+>>> $client = (new Spinen\ConnectWise\Api\Client($token, $guzzle, $resolver))->setClientId('<the-client-id>')->setIntegrator('<integrator>')->setPassword('<password>')->setUrl('https://<domain.tld>');
+=> Spinen\ConnectWise\Api\Client {#231}
+>>> $info = $client->get('system/info');                                                                                                                     => Spinen\ConnectWise\Models\v2019_3\System\Info {#237}
+>>> $info->toArray();
+=> [
+     "version" => "v2018.6.59996",
+     "isCloud" => false,
+     "serverTimeZone" => "Eastern Standard Time",
+     "licenseBits" => [
+       // ... All of the properties
+     ],
+     "cloudRegion" => "NA",
+   ]
+>>> // Set client to use different version
+>>> $client->setVersion('2019.1')
+=> Spinen\ConnectWise\Api\Client {#231}
+>>> $info = $client->get('system/info');
+>>> /// NOTE: the version in the namespace
+=> Spinen\ConnectWise\Models\v2019_1\System\Info {#235}
 ```
+
+## Supported API Model Versions
+
+You can specify the version of the models you want in 1 of 3 ways...
+
+1. The 4th parameter in the `Client` constructor
+2. Calling the `setVersion` method on the `client` object
+3. [Laravel only] Setting the `version` property in the config
+
+The supported versions are:
+
+* 2018.4
+* 2018.5
+* 2018.6
+* 2019.1
+* 2019.2
+* 2019.3 `(default)`
+
+You can see the differences of the models by looking at the `casts` property on the individual `models` in `src/Models/<version>` directory.

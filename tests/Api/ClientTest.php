@@ -4,10 +4,12 @@ namespace Spinen\ConnectWise\Api;
 
 use GuzzleHttp\Client as Guzzle;
 use GuzzleHttp\Psr7\Response;
+use Illuminate\Support\Str;
 use InvalidArgumentException;
 use Mockery;
 use Mockery\Mock;
-use Spinen\ConnectWise\Models\System\Info;
+use Spinen\ConnectWise\Exceptions\MalformedRequest;
+use Spinen\ConnectWise\Models\v2019_3\System\Info;
 use Spinen\ConnectWise\Support\Collection;
 use Spinen\ConnectWise\Support\ModelResolver;
 use Spinen\ConnectWise\TestCase;
@@ -43,7 +45,7 @@ class ClientTest extends TestCase
 
         $this->resolver = Mockery::mock(ModelResolver::class);
 
-        $this->client = new Client($this->token, $this->guzzle, $this->resolver);
+        $this->client = (new Client($this->token, $this->guzzle, $this->resolver))->setClientId('some-client-id');
     }
 
     /**
@@ -73,8 +75,8 @@ class ClientTest extends TestCase
 
         $this->resolver->shouldReceive('find')
                        ->once()
-                       ->with('uri')
-                       ->andReturn('System\Info');
+                       ->with('uri', Mockery::any())
+                       ->andReturn('Spinen\ConnectWise\Models\v2019_3\System\Info');
 
         $this->token->shouldReceive('needsRefreshing')
                     ->once()
@@ -109,7 +111,9 @@ class ClientTest extends TestCase
         $response->shouldReceive('getBody')
                  ->once()
                  ->withNoArgs()
-                 ->andReturn('[{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"},{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"}]');
+                 ->andReturn(
+                     '[{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"},{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"}]'
+                 );
 
         $this->guzzle->shouldReceive('request')
                      ->once()
@@ -118,8 +122,8 @@ class ClientTest extends TestCase
 
         $this->resolver->shouldReceive('find')
                        ->once()
-                       ->with('uri')
-                       ->andReturn('System\Info');
+                       ->with('uri', '2019.3')
+                       ->andReturn('Spinen\ConnectWise\Models\v2019_3\System\Info');
 
         $this->token->shouldReceive('needsRefreshing')
                     ->once()
@@ -163,7 +167,7 @@ class ClientTest extends TestCase
 
         $this->resolver->shouldReceive('find')
                        ->once()
-                       ->with('uri')
+                       ->with('uri', '2019.3')
                        ->andReturnNull();
 
         $this->token->shouldReceive('needsRefreshing')
@@ -244,10 +248,7 @@ class ClientTest extends TestCase
                     ->withNoArgs()
                     ->andReturn($password);
 
-        list($user, $pass) = $this->client->buildAuth();
-
-        $this->assertEquals($integrator, $user);
-        $this->assertEquals($password, $pass);
+        $this->assertEquals('Basic ' . base64_encode($integrator . ':' . $password), $this->client->buildAuth());
     }
 
     /**
@@ -273,10 +274,7 @@ class ClientTest extends TestCase
                     ->withNoArgs()
                     ->andReturn($password);
 
-        list($user, $pass) = $this->client->buildAuth();
-
-        $this->assertEquals($member, $user);
-        $this->assertEquals($password, $pass);
+        $this->assertEquals('Basic ' . base64_encode($member . ':' . $password), $this->client->buildAuth());
     }
 
     /**
@@ -291,21 +289,17 @@ class ClientTest extends TestCase
 
         $options = [
             'extra'   => 'option',
-            'auth'    => [
-                'extra',
-                $username,
-                $password,
-            ],
             'headers' => [
-                'added' => 'header',
+                'added'         => 'header',
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
+                'x-cw-usertype' => 'member',
+                'Authorization' => 'Basic dXNlcm5hbWU6cGFzc3dvcmQ=',
+                'clientId'      => 'some-client-id',
             ],
         ];
 
         $extras = [
             'extra' => 'option',
-            'auth'  => [
-                'extra',
-            ],
         ];
 
         $this->token->shouldReceive('needsRefreshing')
@@ -342,8 +336,27 @@ class ClientTest extends TestCase
     {
         $this->client->setUrl('https://host.tld');
 
-        $this->assertEquals('https://host.tld/v4_6_release/apis/3.0/some/resource',
-            $this->client->buildUri('/some/resource'));
+        $this->assertEquals(
+            'https://host.tld/v4_6_release/apis/3.0/some/resource',
+            $this->client->buildUri('/some/resource')
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function it_raises_exception_when_query_is_over_2000_characters()
+    {
+        $this->client->setUrl('https://host.tld');
+
+        // Long enough to get 2000 with the rest of the uri
+        $resource = Str::random(2000 - strlen($this->client->buildUri(null)));
+
+        $this->assertEquals(2000, strlen($this->client->buildUri($resource)), 'Top of the limit');
+
+        $this->expectException(MalformedRequest::class);
+
+        $this->client->buildUri($resource . '1');
     }
 
     /**
@@ -352,31 +365,89 @@ class ClientTest extends TestCase
     public function it_allows_the_headers_to_be_worked_with()
     {
         $integrator = 'integrator';
+        $password = 'password';
 
         $this->client->setIntegrator($integrator);
+
+        $this->token->shouldReceive('needsRefreshing')
+                    ->times(4)
+                    ->withNoArgs()
+                    ->andReturn(false);
+
+        $this->token->shouldReceive('getUsername')
+                    ->times(4)
+                    ->withNoArgs()
+                    ->andReturn($integrator);
+
+        $this->token->shouldReceive('getPassword')
+                    ->times(4)
+                    ->withNoArgs()
+                    ->andReturn($password);
 
         $this->token->shouldReceive('isForUser')
                     ->times(4)
                     ->with($integrator)
                     ->andReturn(false);
 
-        $this->assertEquals([], $this->client->getHeaders());
+        $this->assertEquals(
+            [
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
+                'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
+                'x-cw-usertype' => 'member',
+                'clientId'      => 'some-client-id',
+            ],
+            $this->client->getHeaders(),
+            'Normal headers'
+        );
 
-        $this->client->addHeader([
-            'added' => 'header',
-        ]);
+        $this->client->addHeader(
+            [
+                'added' => 'header',
+            ]
+        );
 
-        $this->assertEquals(['added' => 'header'], $this->client->getHeaders());
+        $this->assertEquals(
+            [
+                'added'         => 'header',
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
+                'x-cw-usertype' => 'member',
+                'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
+                'clientId'      => 'some-client-id',
+            ],
+            $this->client->getHeaders(),
+            'Added header'
+        );
 
-        $this->client->setHeaders([
-            'set' => 'headers',
-        ]);
+        $this->client->setHeaders(
+            [
+                'set' => 'headers',
+            ]
+        );
 
-        $this->assertEquals(['set' => 'headers'], $this->client->getHeaders());
+        $this->assertEquals(
+            [
+                'set'           => 'headers',
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
+                'x-cw-usertype' => 'member',
+                'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
+                'clientId'      => 'some-client-id',
+            ],
+            $this->client->getHeaders(),
+            'Set header'
+        );
 
         $this->client->emptyHeaders();
 
-        $this->assertEquals([], $this->client->getHeaders());
+        $this->assertEquals(
+            [
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
+                'x-cw-usertype' => 'member',
+                'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
+                'clientId'      => 'some-client-id',
+            ],
+            $this->client->getHeaders(),
+            'Empty headers'
+        );
     }
 
     /**
@@ -385,6 +456,7 @@ class ClientTest extends TestCase
     public function it_gives_specific_headers_for_integrator_token()
     {
         $integrator = 'integrator';
+        $password = 'password';
 
         $this->client->setIntegrator($integrator);
 
@@ -393,11 +465,35 @@ class ClientTest extends TestCase
                     ->with($integrator)
                     ->andReturn(true);
 
-        $this->client->addHeader([
-            'added' => 'header',
-        ]);
+        $this->token->shouldReceive('needsRefreshing')
+                    ->once()
+                    ->withNoArgs()
+                    ->andReturn(false);
 
-        $this->assertEquals(['x-cw-usertype' => 'integrator'], $this->client->getHeaders());
+        $this->token->shouldReceive('getUsername')
+                    ->once()
+                    ->withNoArgs()
+                    ->andReturn($integrator);
+
+        $this->token->shouldReceive('getPassword')
+                    ->once()
+                    ->withNoArgs()
+                    ->andReturn($password);
+
+        $this->client->addHeader(
+            [
+                'added' => 'header',
+            ]
+        );
+
+        $this->assertEquals(
+            [
+                'x-cw-usertype' => 'integrator',
+                'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
+                'clientId'      => 'some-client-id',
+            ],
+            $this->client->getHeaders()
+        );
     }
 
     /**
@@ -494,7 +590,7 @@ class ClientTest extends TestCase
 
         $this->resolver->shouldReceive('find')
                        ->once()
-                       ->with('uri')
+                       ->with('uri', '2019.3')
                        ->andReturn('Model');
 
         $this->token->shouldReceive('needsRefreshing')
@@ -516,5 +612,25 @@ class ClientTest extends TestCase
                     ->once()
                     ->with(Mockery::any())
                     ->andReturn(false);
+    }
+
+    /**
+     * @test
+     */
+    public function it_returns_supported_version_numbers()
+    {
+        $this->client->setVersion('2019.3');
+        $this->assertEquals('2019.3', $this->client->getVersion());
+    }
+
+    /**
+     * @test
+     */
+    public function it_throws_an_exception_on_non_supported_versions()
+    {
+        $this->expectException(InvalidArgumentException::class);
+
+        $this->client->setVersion('2012.2');
+        $this->assertNotEquals('2012.2', $this->client->getVersion());
     }
 }
