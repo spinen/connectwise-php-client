@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProductComponent
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\CatalogItemReference $catalogItem
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\CompanyReference $vendor
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\ProductItemReference $parentProductItem
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\ProductItemReference $productItem
+ * @property CatalogItemReference $catalogItem
+ * @property CompanyReference $vendor
+ * @property Metadata $_info
+ * @property ProductItemReference $parentProductItem
+ * @property ProductItemReference $productItem
  * @property boolean $hideDescriptionFlag
  * @property boolean $hideItemIdentifierFlag
  * @property boolean $hidePriceFlag
@@ -32,19 +32,19 @@ class ProductComponent extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
-        'catalogItem' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\CatalogItemReference',
+        '_info' => Metadata::class,
+        'catalogItem' => CatalogItemReference::class,
         'cost' => 'float',
         'hideDescriptionFlag' => 'boolean',
         'hideItemIdentifierFlag' => 'boolean',
         'hidePriceFlag' => 'boolean',
         'hideQuantityFlag' => 'boolean',
         'id' => 'integer',
-        'parentProductItem' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\ProductItemReference',
+        'parentProductItem' => ProductItemReference::class,
         'price' => 'float',
-        'productItem' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\ProductItemReference',
+        'productItem' => ProductItemReference::class,
         'quantity' => 'float',
         'sequenceNumber' => 'integer',
-        'vendor' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\CompanyReference',
+        'vendor' => CompanyReference::class,
     ];
 }

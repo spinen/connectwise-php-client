@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Group
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Marketing\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $inactiveFlag
  * @property boolean $publicFlag
  * @property integer $id
@@ -24,7 +24,7 @@ class Group extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Marketing\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'name' => 'string',

@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PhaseStatus
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Project\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\Project\StatusIndicatorReference $statusIndicator
+ * @property Metadata $_info
+ * @property StatusIndicatorReference $statusIndicator
  * @property array $boardAssociationIds
  * @property boolean $closedFlag
  * @property boolean $collapsedFlag
@@ -28,7 +28,7 @@ class PhaseStatus extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Project\Metadata',
+        '_info' => Metadata::class,
         'boardAssociationIds' => 'array',
         'closedFlag' => 'boolean',
         'collapsedFlag' => 'boolean',
@@ -37,6 +37,6 @@ class PhaseStatus extends Model
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'name' => 'string',
-        'statusIndicator' => 'Spinen\ConnectWise\Models\v2019_1\Project\StatusIndicatorReference',
+        'statusIndicator' => StatusIndicatorReference::class,
     ];
 }

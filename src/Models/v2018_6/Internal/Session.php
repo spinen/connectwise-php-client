@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Session
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Internal\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_6\Internal\TicketReference $ticket
+ * @property MemberReference $member
+ * @property TicketReference $ticket
  * @property integer $configurationId
  * @property integer $id
  * @property string $sessionGuid
@@ -25,8 +25,8 @@ class Session extends Model
     protected $casts = [
         'configurationId' => 'integer',
         'id' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2018_6\Internal\MemberReference',
+        'member' => MemberReference::class,
         'sessionGuid' => 'string',
-        'ticket' => 'Spinen\ConnectWise\Models\v2018_6\Internal\TicketReference',
+        'ticket' => TicketReference::class,
     ];
 }

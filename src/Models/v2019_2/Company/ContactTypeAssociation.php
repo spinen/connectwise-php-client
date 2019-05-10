@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ContactTypeAssociation
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Company\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2019_2\Company\ContactTypeReference $type
- * @property Spinen\ConnectWise\Models\v2019_2\Company\Metadata $_info
+ * @property ContactReference $contact
+ * @property ContactTypeReference $type
+ * @property Metadata $_info
  * @property integer $id
  */
 class ContactTypeAssociation extends Model
@@ -22,9 +22,9 @@ class ContactTypeAssociation extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Company\Metadata',
-        'contact' => 'Spinen\ConnectWise\Models\v2019_2\Company\ContactReference',
+        '_info' => Metadata::class,
+        'contact' => ContactReference::class,
         'id' => 'integer',
-        'type' => 'Spinen\ConnectWise\Models\v2019_2\Company\ContactTypeReference',
+        'type' => ContactTypeReference::class,
     ];
 }

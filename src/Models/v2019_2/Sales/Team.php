@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Team
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\SalesTeamReference $salesTeam
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property SalesTeamReference $salesTeam
  * @property boolean $referralFlag
  * @property boolean $responsibleFlag
  * @property integer $commissionPercent
@@ -27,14 +27,14 @@ class Team extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Sales\Metadata',
+        '_info' => Metadata::class,
         'commissionPercent' => 'integer',
         'id' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2019_2\Sales\MemberReference',
+        'member' => MemberReference::class,
         'opportunityId' => 'integer',
         'referralFlag' => 'boolean',
         'responsibleFlag' => 'boolean',
-        'salesTeam' => 'Spinen\ConnectWise\Models\v2019_2\Sales\SalesTeamReference',
+        'salesTeam' => SalesTeamReference::class,
         'type' => 'string',
     ];
 }

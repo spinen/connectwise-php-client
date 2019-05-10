@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CustomReportParameter
  *
- * @property Spinen\ConnectWise\Models\v2018_4\System\CustomReportReference $customReport
- * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
+ * @property CustomReportReference $customReport
+ * @property Metadata $_info
  * @property integer $id
  * @property string $captionName
  * @property string $name
@@ -23,9 +23,9 @@ class CustomReportParameter extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
+        '_info' => Metadata::class,
         'captionName' => 'string',
-        'customReport' => 'Spinen\ConnectWise\Models\v2018_4\System\CustomReportReference',
+        'customReport' => CustomReportReference::class,
         'id' => 'integer',
         'name' => 'string',
     ];

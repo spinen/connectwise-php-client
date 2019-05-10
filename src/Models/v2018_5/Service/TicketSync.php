@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TicketSync
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Service\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_5\Service\IntegratorLoginReference $integratorLogin
- * @property Spinen\ConnectWise\Models\v2018_5\Service\Metadata $_info
+ * @property CompanyReference $company
+ * @property IntegratorLoginReference $integratorLogin
+ * @property Metadata $_info
  * @property boolean $internalAnalysisFlag
  * @property boolean $problemDescriptionFlag
  * @property boolean $resolutionFlag
@@ -31,10 +31,10 @@ class TicketSync extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Service\Metadata',
-        'company' => 'Spinen\ConnectWise\Models\v2018_5\Service\CompanyReference',
+        '_info' => Metadata::class,
+        'company' => CompanyReference::class,
         'id' => 'integer',
-        'integratorLogin' => 'Spinen\ConnectWise\Models\v2018_5\Service\IntegratorLoginReference',
+        'integratorLogin' => IntegratorLoginReference::class,
         'internalAnalysisFlag' => 'boolean',
         'name' => 'string',
         'password' => 'string',

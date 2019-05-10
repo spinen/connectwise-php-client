@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OpportunityContact
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\OpportunitySalesRoleReference $role
+ * @property CompanyReference $company
+ * @property ContactReference $contact
+ * @property Metadata $_info
+ * @property OpportunitySalesRoleReference $role
  * @property boolean $referralFlag
  * @property integer $id
  * @property integer $opportunityId
@@ -28,15 +28,15 @@ class OpportunityContact extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Sales\Metadata',
-        'company' => 'Spinen\ConnectWise\Models\v2018_6\Sales\CompanyReference',
-        'contact' => 'Spinen\ConnectWise\Models\v2018_6\Sales\ContactReference',
+        '_info' => Metadata::class,
+        'company' => CompanyReference::class,
+        'contact' => ContactReference::class,
         'emailAddress' => 'string',
         'id' => 'integer',
         'notes' => 'string',
         'opportunityId' => 'integer',
         'phoneNumber' => 'string',
         'referralFlag' => 'boolean',
-        'role' => 'Spinen\ConnectWise\Models\v2018_6\Sales\OpportunitySalesRoleReference',
+        'role' => OpportunitySalesRoleReference::class,
     ];
 }

@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BillingStatus
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $closedFlag
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
@@ -26,7 +26,7 @@ class BillingStatus extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
+        '_info' => Metadata::class,
         'closedFlag' => 'boolean',
         'defaultFlag' => 'boolean',
         'id' => 'integer',

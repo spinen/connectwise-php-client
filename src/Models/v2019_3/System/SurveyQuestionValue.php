@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SurveyQuestionValue
  *
- * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_3\System\SurveyQuestionReference $question
- * @property Spinen\ConnectWise\Models\v2019_3\System\SurveyReference $survey
+ * @property Metadata $_info
+ * @property SurveyQuestionReference $question
+ * @property SurveyReference $survey
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
  * @property integer $id
@@ -26,13 +26,13 @@ class SurveyQuestionValue extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'pointValue' => 'integer',
-        'question' => 'Spinen\ConnectWise\Models\v2019_3\System\SurveyQuestionReference',
-        'survey' => 'Spinen\ConnectWise\Models\v2019_3\System\SurveyReference',
+        'question' => SurveyQuestionReference::class,
+        'survey' => SurveyReference::class,
         'value' => 'string',
     ];
 }

@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TaxIntegrationInfo
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $enabledFlag
  * @property integer $id
  * @property string $taxIntegrationType
@@ -22,7 +22,7 @@ class TaxIntegrationInfo extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Finance\Metadata',
+        '_info' => Metadata::class,
         'enabledFlag' => 'boolean',
         'id' => 'integer',
         'taxIntegrationType' => 'string',

@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TaxCodeLevelReference
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property string $name
  */
@@ -21,7 +21,7 @@ class TaxCodeLevelReference extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Finance\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'name' => 'string',
     ];

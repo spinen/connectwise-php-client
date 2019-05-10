@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BillingTermsReference
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property string $name
  */
@@ -21,7 +21,7 @@ class BillingTermsReference extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'name' => 'string',
     ];

@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ReportingService
  *
- * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property string $reportingDomain
  * @property string $reportingPassword
@@ -24,7 +24,7 @@ class ReportingService extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'reportingDomain' => 'string',
         'reportingPassword' => 'string',

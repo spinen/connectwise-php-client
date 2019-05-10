@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MemberNotificationSetting
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Internal\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property string $notificationTrigger
  * @property string $notificationType
@@ -22,7 +22,7 @@ class MemberNotificationSetting extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Internal\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'notificationTrigger' => 'string',
         'notificationType' => 'string',

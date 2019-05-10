@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProductTypeExemption
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\ProductTypeReference $productType
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference $taxCode
+ * @property Metadata $_info
+ * @property ProductTypeReference $productType
+ * @property TaxCodeReference $taxCode
  * @property boolean $levelFiveFlag
  * @property boolean $levelFourFlag
  * @property boolean $levelOneFlag
@@ -28,7 +28,7 @@ class ProductTypeExemption extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Finance\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'levelFiveFlag' => 'boolean',
         'levelFourFlag' => 'boolean',
@@ -36,7 +36,7 @@ class ProductTypeExemption extends Model
         'levelSixFlag' => 'boolean',
         'levelThreeFlag' => 'boolean',
         'levelTwoFlag' => 'boolean',
-        'productType' => 'Spinen\ConnectWise\Models\v2018_4\Finance\ProductTypeReference',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference',
+        'productType' => ProductTypeReference::class,
+        'taxCode' => TaxCodeReference::class,
     ];
 }

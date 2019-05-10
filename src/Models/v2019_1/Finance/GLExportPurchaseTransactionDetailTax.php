@@ -10,14 +10,14 @@ use Spinen\ConnectWise\Support\Model;
  * Model for GLExportPurchaseTransactionDetailTax
  *
  * @property Carbon\Carbon $documentDate
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\IvItemReference $item
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\ProductSubCategoryReference $subCategory
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\ShipmentMethodReference $shipmentMethod
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\SiteReference $warehouseSite
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\TaxCodeReference $taxCode
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\UnitOfMeasureReference $unitOfMeasure
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\WarehouseBinReference $warehouseBin
+ * @property CurrencyReference $currency
+ * @property IvItemReference $item
+ * @property ProductSubCategoryReference $subCategory
+ * @property ShipmentMethodReference $shipmentMethod
+ * @property SiteReference $warehouseSite
+ * @property TaxCodeReference $taxCode
+ * @property UnitOfMeasureReference $unitOfMeasure
+ * @property WarehouseBinReference $warehouseBin
  * @property boolean $dropShippedFlag
  * @property boolean $serializedFlag
  * @property boolean $taxableFlag
@@ -65,8 +65,8 @@ class GLExportPurchaseTransactionDetailTax extends Model
         'cogsXref' => 'string',
         'cost' => 'float',
         'costAccountNumber' => 'string',
-        'currency' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CurrencyReference',
-        'documentDate' => 'Carbon\Carbon',
+        'currency' => CurrencyReference::class,
+        'documentDate' => Carbon\Carbon::class,
         'dropShippedFlag' => 'boolean',
         'glClass' => 'string',
         'glItemId' => 'string',
@@ -74,7 +74,7 @@ class GLExportPurchaseTransactionDetailTax extends Model
         'id' => 'integer',
         'inventoryAccountNumber' => 'string',
         'inventoryXref' => 'string',
-        'item' => 'Spinen\ConnectWise\Models\v2019_1\Finance\IvItemReference',
+        'item' => IvItemReference::class,
         'itemCost' => 'float',
         'itemDescription' => 'string',
         'itemPrice' => 'float',
@@ -89,20 +89,20 @@ class GLExportPurchaseTransactionDetailTax extends Model
         'salesDescription' => 'string',
         'serialNumbers' => 'string',
         'serializedFlag' => 'boolean',
-        'shipmentMethod' => 'Spinen\ConnectWise\Models\v2019_1\Finance\ShipmentMethodReference',
-        'subCategory' => 'Spinen\ConnectWise\Models\v2019_1\Finance\ProductSubCategoryReference',
+        'shipmentMethod' => ShipmentMethodReference::class,
+        'subCategory' => ProductSubCategoryReference::class,
         'taxAgencyXref' => 'string',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2019_1\Finance\TaxCodeReference',
+        'taxCode' => TaxCodeReference::class,
         'taxNote' => 'string',
         'taxRate' => 'float',
         'taxRatePercent' => 'float',
         'taxableFlag' => 'boolean',
         'total' => 'float',
-        'unitOfMeasure' => 'Spinen\ConnectWise\Models\v2019_1\Finance\UnitOfMeasureReference',
+        'unitOfMeasure' => UnitOfMeasureReference::class,
         'uomScheduleXref' => 'string',
         'vendorAccountNumber' => 'string',
         'vendorNumber' => 'string',
-        'warehouseBin' => 'Spinen\ConnectWise\Models\v2019_1\Finance\WarehouseBinReference',
-        'warehouseSite' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SiteReference',
+        'warehouseBin' => WarehouseBinReference::class,
+        'warehouseSite' => SiteReference::class,
     ];
 }

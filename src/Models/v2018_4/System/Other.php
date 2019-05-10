@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Other
  *
- * @property Spinen\ConnectWise\Models\v2018_4\System\AddressFormatReference $defaultAddressFormat
- * @property Spinen\ConnectWise\Models\v2018_4\System\CalendarReference $defaultCalendar
- * @property Spinen\ConnectWise\Models\v2018_4\System\LdapConfigurationReference $defaultLdap
- * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\System\TimeZoneSetupReference $serverTimeZone
+ * @property AddressFormatReference $defaultAddressFormat
+ * @property CalendarReference $defaultCalendar
+ * @property LdapConfigurationReference $defaultLdap
+ * @property Metadata $_info
+ * @property TimeZoneSetupReference $serverTimeZone
  * @property boolean $includePortalLinkFlag
  * @property boolean $syncLeadsFlag
  * @property boolean $updateMemberTimeZonesFlag
@@ -35,17 +35,17 @@ class Other extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
+        '_info' => Metadata::class,
         'contactSync' => 'string',
-        'defaultAddressFormat' => 'Spinen\ConnectWise\Models\v2018_4\System\AddressFormatReference',
-        'defaultCalendar' => 'Spinen\ConnectWise\Models\v2018_4\System\CalendarReference',
+        'defaultAddressFormat' => AddressFormatReference::class,
+        'defaultCalendar' => CalendarReference::class,
         'defaultFromAddress' => 'string',
-        'defaultLdap' => 'Spinen\ConnectWise\Models\v2018_4\System\LdapConfigurationReference',
+        'defaultLdap' => LdapConfigurationReference::class,
         'id' => 'integer',
         'includePortalLinkFlag' => 'boolean',
         'logoPath' => 'string',
         'portalUrlOverride' => 'string',
-        'serverTimeZone' => 'Spinen\ConnectWise\Models\v2018_4\System\TimeZoneSetupReference',
+        'serverTimeZone' => TimeZoneSetupReference::class,
         'siteUrl' => 'string',
         'syncLeadsFlag' => 'boolean',
         'updateMemberTimeZonesFlag' => 'boolean',

@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TimeZoneSetup
  *
- * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\System\TimeZoneReference $timeZone
+ * @property Metadata $_info
+ * @property TimeZoneReference $timeZone
  * @property boolean $daylightSavingsFlag
  * @property boolean $defaultFlag
  * @property float $offset
@@ -25,12 +25,12 @@ class TimeZoneSetup extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
+        '_info' => Metadata::class,
         'daylightSavingsFlag' => 'boolean',
         'defaultFlag' => 'boolean',
         'id' => 'integer',
         'name' => 'string',
         'offset' => 'float',
-        'timeZone' => 'Spinen\ConnectWise\Models\v2019_1\System\TimeZoneReference',
+        'timeZone' => TimeZoneReference::class,
     ];
 }

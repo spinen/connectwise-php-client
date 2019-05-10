@@ -11,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Carbon\Carbon $samlCertificateValidFrom
  * @property Carbon\Carbon $samlCertificateValidTo
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
+ * @property Metadata $_info
  * @property array $locationIds
  * @property boolean $allMembersSubmitted
  * @property boolean $inactiveFlag
@@ -38,7 +38,7 @@ class SsoConfiguration extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        '_info' => Metadata::class,
         'allMembersSubmitted' => 'boolean',
         'clientId' => 'string',
         'id' => 'integer',
@@ -48,8 +48,8 @@ class SsoConfiguration extends Model
         'samlCertificateIssuedTo' => 'string',
         'samlCertificateName' => 'string',
         'samlCertificateThumbprint' => 'string',
-        'samlCertificateValidFrom' => 'Carbon\Carbon',
-        'samlCertificateValidTo' => 'Carbon\Carbon',
+        'samlCertificateValidFrom' => Carbon\Carbon::class,
+        'samlCertificateValidTo' => Carbon\Carbon::class,
         'samlEntityId' => 'string',
         'samlIdpCertificate' => 'string',
         'samlSignInUrl' => 'string',

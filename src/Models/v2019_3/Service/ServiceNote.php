@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ServiceNote
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Service\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2019_3\Service\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2019_3\Service\Metadata $_info
+ * @property ContactReference $contact
+ * @property MemberReference $member
+ * @property Metadata $_info
  * @property boolean $customerUpdatedFlag
  * @property boolean $detailDescriptionFlag
  * @property boolean $externalFlag
@@ -33,8 +33,8 @@ class ServiceNote extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Service\Metadata',
-        'contact' => 'Spinen\ConnectWise\Models\v2019_3\Service\ContactReference',
+        '_info' => Metadata::class,
+        'contact' => ContactReference::class,
         'createdBy' => 'string',
         'customerUpdatedFlag' => 'boolean',
         'dateCreated' => 'string',
@@ -43,7 +43,7 @@ class ServiceNote extends Model
         'id' => 'integer',
         'internalAnalysisFlag' => 'boolean',
         'internalFlag' => 'boolean',
-        'member' => 'Spinen\ConnectWise\Models\v2019_3\Service\MemberReference',
+        'member' => MemberReference::class,
         'processNotifications' => 'boolean',
         'resolutionFlag' => 'boolean',
         'text' => 'string',

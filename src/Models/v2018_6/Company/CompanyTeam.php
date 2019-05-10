@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CompanyTeam
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Company\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_6\Company\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2018_6\Company\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_6\Company\TeamRoleReference $teamRole
+ * @property CompanyReference $company
+ * @property ContactReference $contact
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property TeamRoleReference $teamRole
  * @property boolean $accountManagerFlag
  * @property boolean $salesFlag
  * @property boolean $techFlag
@@ -29,16 +29,16 @@ class CompanyTeam extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
+        '_info' => Metadata::class,
         'accountManagerFlag' => 'boolean',
         'businessUnitId' => 'integer',
-        'company' => 'Spinen\ConnectWise\Models\v2018_6\Company\CompanyReference',
-        'contact' => 'Spinen\ConnectWise\Models\v2018_6\Company\ContactReference',
+        'company' => CompanyReference::class,
+        'contact' => ContactReference::class,
         'id' => 'integer',
         'locationId' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2018_6\Company\MemberReference',
+        'member' => MemberReference::class,
         'salesFlag' => 'boolean',
-        'teamRole' => 'Spinen\ConnectWise\Models\v2018_6\Company\TeamRoleReference',
+        'teamRole' => TeamRoleReference::class,
         'techFlag' => 'boolean',
     ];
 }

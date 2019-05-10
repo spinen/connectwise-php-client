@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BoardStatus
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Service\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2018_6\Service\ExternalIntegrationStatusReference $externalIntegrationXref
- * @property Spinen\ConnectWise\Models\v2018_6\Service\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_6\Service\ServiceEmailTemplateReference $emailTemplate
- * @property Spinen\ConnectWise\Models\v2018_6\Service\StatusIndicatorReference $statusIndicator
+ * @property BoardReference $board
+ * @property ExternalIntegrationStatusReference $externalIntegrationXref
+ * @property Metadata $_info
+ * @property ServiceEmailTemplateReference $emailTemplate
+ * @property StatusIndicatorReference $statusIndicator
  * @property boolean $closedStatus
  * @property boolean $customerPortalFlag
  * @property boolean $defaultFlag
@@ -35,22 +35,22 @@ class BoardStatus extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Service\Metadata',
-        'board' => 'Spinen\ConnectWise\Models\v2018_6\Service\BoardReference',
+        '_info' => Metadata::class,
+        'board' => BoardReference::class,
         'closedStatus' => 'boolean',
         'customStatusIndicatorName' => 'string',
         'customerPortalDescription' => 'string',
         'customerPortalFlag' => 'boolean',
         'defaultFlag' => 'boolean',
         'displayOnBoard' => 'boolean',
-        'emailTemplate' => 'Spinen\ConnectWise\Models\v2018_6\Service\ServiceEmailTemplateReference',
+        'emailTemplate' => ServiceEmailTemplateReference::class,
         'escalationStatus' => 'string',
-        'externalIntegrationXref' => 'Spinen\ConnectWise\Models\v2018_6\Service\ExternalIntegrationStatusReference',
+        'externalIntegrationXref' => ExternalIntegrationStatusReference::class,
         'id' => 'integer',
         'inactive' => 'boolean',
         'name' => 'string',
         'sortOrder' => 'integer',
-        'statusIndicator' => 'Spinen\ConnectWise\Models\v2018_6\Service\StatusIndicatorReference',
+        'statusIndicator' => StatusIndicatorReference::class,
         'timeEntryNotAllowed' => 'boolean',
     ];
 }

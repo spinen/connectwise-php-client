@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SecurityRoleSetting
  *
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $customFlag
  * @property boolean $myAllFlag
  * @property boolean $reportFlag
@@ -35,7 +35,7 @@ class SecurityRoleSetting extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        '_info' => Metadata::class,
         'addLevel' => 'string',
         'customFlag' => 'boolean',
         'deleteLevel' => 'string',

@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProjectBoardTeam
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Project\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\Project\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2018_4\Project\SystemLocationReference $location
+ * @property Metadata $_info
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
  * @property boolean $defaultFlag
  * @property integer $id
  * @property string $name
@@ -24,11 +24,11 @@ class ProjectBoardTeam extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Project\Metadata',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
-        'department' => 'Spinen\ConnectWise\Models\v2018_4\Project\SystemDepartmentReference',
+        'department' => SystemDepartmentReference::class,
         'id' => 'integer',
-        'location' => 'Spinen\ConnectWise\Models\v2018_4\Project\SystemLocationReference',
+        'location' => SystemLocationReference::class,
         'name' => 'string',
     ];
 }

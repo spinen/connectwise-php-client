@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ContactTrack
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Company\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_1\Company\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
+ * @property CompanyReference $company
+ * @property ContactReference $contact
+ * @property Metadata $_info
  * @property integer $actionRemaining
  * @property integer $actionTaken
  * @property integer $id
@@ -29,11 +29,11 @@ class ContactTrack extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
+        '_info' => Metadata::class,
         'actionRemaining' => 'integer',
         'actionTaken' => 'integer',
-        'company' => 'Spinen\ConnectWise\Models\v2019_1\Company\CompanyReference',
-        'contact' => 'Spinen\ConnectWise\Models\v2019_1\Company\ContactReference',
+        'company' => CompanyReference::class,
+        'contact' => ContactReference::class,
         'endDate' => 'string',
         'id' => 'integer',
         'name' => 'string',

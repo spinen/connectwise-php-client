@@ -30,7 +30,7 @@ class GLExportAdjustmentTransaction extends Model
         'accountNumber' => 'string',
         'adjustmentDescription' => 'string',
         'adjustmentDetail' => 'array',
-        'documentDate' => 'Carbon\Carbon',
+        'documentDate' => Carbon\Carbon::class,
         'documentType' => 'string',
         'glClass' => 'string',
         'glTypeID' => 'string',

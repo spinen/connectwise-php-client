@@ -9,18 +9,18 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TicketStopwatch
  *
+ * @property AgreementReference $agreement
  * @property Carbon\Carbon $dateEntered
  * @property Carbon\Carbon $endTime
  * @property Carbon\Carbon $startTime
- * @property Spinen\ConnectWise\Models\v2018_6\Time\AgreementReference $agreement
- * @property Spinen\ConnectWise\Models\v2018_6\Time\Guid $mobileGuid
- * @property Spinen\ConnectWise\Models\v2018_6\Time\Guid $ticketMobileGuid
- * @property Spinen\ConnectWise\Models\v2018_6\Time\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_6\Time\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_6\Time\ServiceStatusReference $serviceStatus
- * @property Spinen\ConnectWise\Models\v2018_6\Time\TicketReference $ticket
- * @property Spinen\ConnectWise\Models\v2018_6\Time\WorkRoleReference $workRole
- * @property Spinen\ConnectWise\Models\v2018_6\Time\WorkTypeReference $workType
+ * @property Guid $mobileGuid
+ * @property Guid $ticketMobileGuid
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property ServiceStatusReference $serviceStatus
+ * @property TicketReference $ticket
+ * @property WorkRoleReference $workRole
+ * @property WorkTypeReference $workType
  * @property boolean $emailNotesToContactFlag
  * @property boolean $emailNotesToResourcesFlag
  * @property boolean $showNotesInDiscussionFlag
@@ -43,30 +43,30 @@ class TicketStopwatch extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Time\Metadata',
-        'agreement' => 'Spinen\ConnectWise\Models\v2018_6\Time\AgreementReference',
+        '_info' => Metadata::class,
+        'agreement' => AgreementReference::class,
         'billableOption' => 'string',
         'businessUnitId' => 'integer',
-        'dateEntered' => 'Carbon\Carbon',
+        'dateEntered' => Carbon\Carbon::class,
         'emailNotesToContactFlag' => 'boolean',
         'emailNotesToResourcesFlag' => 'boolean',
-        'endTime' => 'Carbon\Carbon',
+        'endTime' => Carbon\Carbon::class,
         'id' => 'integer',
         'internalNotes' => 'string',
         'locationId' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2018_6\Time\MemberReference',
-        'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_6\Time\Guid',
+        'member' => MemberReference::class,
+        'mobileGuid' => Guid::class,
         'notes' => 'string',
-        'serviceStatus' => 'Spinen\ConnectWise\Models\v2018_6\Time\ServiceStatusReference',
+        'serviceStatus' => ServiceStatusReference::class,
         'showNotesInDiscussionFlag' => 'boolean',
         'showNotesInInternalFlag' => 'boolean',
         'showNotesInResolutionFlag' => 'boolean',
-        'startTime' => 'Carbon\Carbon',
+        'startTime' => Carbon\Carbon::class,
         'status' => 'string',
-        'ticket' => 'Spinen\ConnectWise\Models\v2018_6\Time\TicketReference',
-        'ticketMobileGuid' => 'Spinen\ConnectWise\Models\v2018_6\Time\Guid',
+        'ticket' => TicketReference::class,
+        'ticketMobileGuid' => Guid::class,
         'totalPauseTime' => 'integer',
-        'workRole' => 'Spinen\ConnectWise\Models\v2018_6\Time\WorkRoleReference',
-        'workType' => 'Spinen\ConnectWise\Models\v2018_6\Time\WorkTypeReference',
+        'workRole' => WorkRoleReference::class,
+        'workType' => WorkTypeReference::class,
     ];
 }

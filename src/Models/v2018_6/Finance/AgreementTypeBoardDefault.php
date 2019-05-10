@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AgreementTypeBoardDefault
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\AgreementTypeReference $type
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\ServiceTypeReference $serviceType
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\SystemLocationReference $location
+ * @property AgreementTypeReference $type
+ * @property BoardReference $board
+ * @property Metadata $_info
+ * @property ServiceTypeReference $serviceType
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
  * @property boolean $defaultFlag
  * @property integer $id
  */
@@ -26,13 +26,13 @@ class AgreementTypeBoardDefault extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
-        'board' => 'Spinen\ConnectWise\Models\v2018_6\Finance\BoardReference',
+        '_info' => Metadata::class,
+        'board' => BoardReference::class,
         'defaultFlag' => 'boolean',
-        'department' => 'Spinen\ConnectWise\Models\v2018_6\Finance\SystemDepartmentReference',
+        'department' => SystemDepartmentReference::class,
         'id' => 'integer',
-        'location' => 'Spinen\ConnectWise\Models\v2018_6\Finance\SystemLocationReference',
-        'serviceType' => 'Spinen\ConnectWise\Models\v2018_6\Finance\ServiceTypeReference',
-        'type' => 'Spinen\ConnectWise\Models\v2018_6\Finance\AgreementTypeReference',
+        'location' => SystemLocationReference::class,
+        'serviceType' => ServiceTypeReference::class,
+        'type' => AgreementTypeReference::class,
     ];
 }

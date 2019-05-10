@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for KnowledgeBaseSettings
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Service\MemberReference $defaultApprover
- * @property Spinen\ConnectWise\Models\v2019_3\Service\Metadata $_info
+ * @property MemberReference $defaultApprover
+ * @property Metadata $_info
  * @property boolean $requireApproval
  * @property integer $id
  */
@@ -22,8 +22,8 @@ class KnowledgeBaseSettings extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Service\Metadata',
-        'defaultApprover' => 'Spinen\ConnectWise\Models\v2019_3\Service\MemberReference',
+        '_info' => Metadata::class,
+        'defaultApprover' => MemberReference::class,
         'id' => 'integer',
         'requireApproval' => 'boolean',
     ];

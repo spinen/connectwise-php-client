@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ConnectWiseHostedSetup
  *
- * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
+ * @property Metadata $_info
  * @property array $locationIds
  * @property boolean $disabledFlag
  * @property integer $id
@@ -35,7 +35,7 @@ class ConnectWiseHostedSetup extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
+        '_info' => Metadata::class,
         'createdBy' => 'string',
         'dateCreated' => 'string',
         'description' => 'string',

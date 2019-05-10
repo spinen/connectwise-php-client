@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Location
  *
- * @property Spinen\ConnectWise\Models\v2018_6\System\CalendarReference $calendar
- * @property Spinen\ConnectWise\Models\v2018_6\System\CorporateStructureLevelReference $structureLevel
- * @property Spinen\ConnectWise\Models\v2018_6\System\CountryReference $overrideCountry
- * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $manager
- * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference $reportsTo
- * @property Spinen\ConnectWise\Models\v2018_6\System\TimeZoneSetupReference $timeZoneSetup
+ * @property CalendarReference $calendar
+ * @property CorporateStructureLevelReference $structureLevel
+ * @property CountryReference $overrideCountry
+ * @property MemberReference $manager
+ * @property Metadata $_info
+ * @property SystemLocationReference $reportsTo
+ * @property TimeZoneSetupReference $timeZoneSetup
  * @property array $departmentIds
  * @property array $workRoleIds
  * @property boolean $clientFlag
@@ -42,18 +42,18 @@ class Location extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
-        'calendar' => 'Spinen\ConnectWise\Models\v2018_6\System\CalendarReference',
+        '_info' => Metadata::class,
+        'calendar' => CalendarReference::class,
         'clientFlag' => 'boolean',
         'departmentIds' => 'array',
         'id' => 'integer',
         'locationFlag' => 'boolean',
-        'manager' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        'manager' => MemberReference::class,
         'name' => 'string',
         'overrideAddressLine1' => 'string',
         'overrideAddressLine2' => 'string',
         'overrideCity' => 'string',
-        'overrideCountry' => 'Spinen\ConnectWise\Models\v2018_6\System\CountryReference',
+        'overrideCountry' => CountryReference::class,
         'overrideFaxNumber' => 'string',
         'overridePhoneNumber' => 'string',
         'overrideState' => 'string',
@@ -61,10 +61,10 @@ class Location extends Model
         'owaUrl' => 'string',
         'ownerLevelId' => 'integer',
         'payrollXref' => 'string',
-        'reportsTo' => 'Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference',
+        'reportsTo' => SystemLocationReference::class,
         'salesRep' => 'string',
-        'structureLevel' => 'Spinen\ConnectWise\Models\v2018_6\System\CorporateStructureLevelReference',
-        'timeZoneSetup' => 'Spinen\ConnectWise\Models\v2018_6\System\TimeZoneSetupReference',
+        'structureLevel' => CorporateStructureLevelReference::class,
+        'timeZoneSetup' => TimeZoneSetupReference::class,
         'workRoleIds' => 'array',
     ];
 }

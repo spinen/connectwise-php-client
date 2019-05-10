@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MenuEntry
  *
- * @property Spinen\ConnectWise\Models\v2018_4\System\MenuLocationReference $menuLocation
- * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
+ * @property MenuLocationReference $menuLocation
+ * @property Metadata $_info
  * @property array $locationIds
  * @property boolean $addAllLocations
  * @property boolean $newWindowFlag
@@ -30,14 +30,14 @@ class MenuEntry extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
+        '_info' => Metadata::class,
         'addAllLocations' => 'boolean',
         'caption' => 'string',
         'id' => 'integer',
         'largeMenuIconId' => 'integer',
         'link' => 'string',
         'locationIds' => 'array',
-        'menuLocation' => 'Spinen\ConnectWise\Models\v2018_4\System\MenuLocationReference',
+        'menuLocation' => MenuLocationReference::class,
         'newWindowFlag' => 'boolean',
         'origin' => 'string',
         'removeAllLocations' => 'boolean',

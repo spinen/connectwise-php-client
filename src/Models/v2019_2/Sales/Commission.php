@@ -9,26 +9,26 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Commission
  *
+ * @property AgreementReference $agreement
+ * @property AgreementTypeReference $agreementType
+ * @property BoardReference $serviceBoard
  * @property Carbon\Carbon $dateEnd
  * @property Carbon\Carbon $dateStart
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\AgreementReference $agreement
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\AgreementTypeReference $agreementType
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\BoardReference $serviceBoard
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\IvItemReference $item
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\ProductCategoryReference $productCategory
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\ProductSubCategoryReference $productSubCategory
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\ProjectBoardReference $projectBoard
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\ProjectReference $project
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\ProjectTypeReference $projectType
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\ServiceTypeReference $serviceType
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\SiteReference $site
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\SystemLocationReference $territory
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\TicketReference $ticket
+ * @property CompanyReference $company
+ * @property IvItemReference $item
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property ProductCategoryReference $productCategory
+ * @property ProductSubCategoryReference $productSubCategory
+ * @property ProjectBoardReference $projectBoard
+ * @property ProjectReference $project
+ * @property ProjectTypeReference $projectType
+ * @property ServiceTypeReference $serviceType
+ * @property SiteReference $site
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
+ * @property SystemLocationReference $territory
+ * @property TicketReference $ticket
  * @property boolean $agreementsFlag
  * @property boolean $myOpportunitiesFlag
  * @property boolean $productsFlag
@@ -48,35 +48,35 @@ class Commission extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Sales\Metadata',
-        'agreement' => 'Spinen\ConnectWise\Models\v2019_2\Sales\AgreementReference',
-        'agreementType' => 'Spinen\ConnectWise\Models\v2019_2\Sales\AgreementTypeReference',
+        '_info' => Metadata::class,
+        'agreement' => AgreementReference::class,
+        'agreementType' => AgreementTypeReference::class,
         'agreementsFlag' => 'boolean',
         'billingMethod' => 'string',
         'commissionBasis' => 'string',
         'commissionPercent' => 'float',
-        'company' => 'Spinen\ConnectWise\Models\v2019_2\Sales\CompanyReference',
-        'dateEnd' => 'Carbon\Carbon',
-        'dateStart' => 'Carbon\Carbon',
-        'department' => 'Spinen\ConnectWise\Models\v2019_2\Sales\SystemDepartmentReference',
+        'company' => CompanyReference::class,
+        'dateEnd' => Carbon\Carbon::class,
+        'dateStart' => Carbon\Carbon::class,
+        'department' => SystemDepartmentReference::class,
         'id' => 'integer',
         'invoiceOption' => 'string',
-        'item' => 'Spinen\ConnectWise\Models\v2019_2\Sales\IvItemReference',
-        'location' => 'Spinen\ConnectWise\Models\v2019_2\Sales\SystemLocationReference',
-        'member' => 'Spinen\ConnectWise\Models\v2019_2\Sales\MemberReference',
+        'item' => IvItemReference::class,
+        'location' => SystemLocationReference::class,
+        'member' => MemberReference::class,
         'myOpportunitiesFlag' => 'boolean',
         'numberOfMonths' => 'integer',
-        'productCategory' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ProductCategoryReference',
-        'productSubCategory' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ProductSubCategoryReference',
+        'productCategory' => ProductCategoryReference::class,
+        'productSubCategory' => ProductSubCategoryReference::class,
         'productsFlag' => 'boolean',
-        'project' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ProjectReference',
-        'projectBoard' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ProjectBoardReference',
-        'projectType' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ProjectTypeReference',
-        'serviceBoard' => 'Spinen\ConnectWise\Models\v2019_2\Sales\BoardReference',
-        'serviceType' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ServiceTypeReference',
+        'project' => ProjectReference::class,
+        'projectBoard' => ProjectBoardReference::class,
+        'projectType' => ProjectTypeReference::class,
+        'serviceBoard' => BoardReference::class,
+        'serviceType' => ServiceTypeReference::class,
         'servicesFlag' => 'boolean',
-        'site' => 'Spinen\ConnectWise\Models\v2019_2\Sales\SiteReference',
-        'territory' => 'Spinen\ConnectWise\Models\v2019_2\Sales\SystemLocationReference',
-        'ticket' => 'Spinen\ConnectWise\Models\v2019_2\Sales\TicketReference',
+        'site' => SiteReference::class,
+        'territory' => SystemLocationReference::class,
+        'ticket' => TicketReference::class,
     ];
 }

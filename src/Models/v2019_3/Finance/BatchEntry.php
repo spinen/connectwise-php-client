@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BatchEntry
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\AdjustmentDetailReference $adjustmentDetail
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\ExpenseDetailReference $expense
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\InvoiceReference $invoice
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\PurchaseOrderLineItemReference $lineItem
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\PurchaseOrderReference $purchaseOrder
+ * @property AdjustmentDetailReference $adjustmentDetail
+ * @property ExpenseDetailReference $expense
+ * @property InvoiceReference $invoice
+ * @property Metadata $_info
+ * @property PurchaseOrderLineItemReference $lineItem
+ * @property PurchaseOrderReference $purchaseOrder
  * @property float $cost
  * @property float $credit
  * @property float $debit
@@ -35,21 +35,21 @@ class BatchEntry extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Finance\Metadata',
+        '_info' => Metadata::class,
         'accountNumber' => 'string',
         'accountType' => 'string',
-        'adjustmentDetail' => 'Spinen\ConnectWise\Models\v2019_3\Finance\AdjustmentDetailReference',
+        'adjustmentDetail' => AdjustmentDetailReference::class,
         'cost' => 'float',
         'costOfGoodsSoldAccountNumber' => 'string',
         'credit' => 'float',
         'debit' => 'float',
-        'expense' => 'Spinen\ConnectWise\Models\v2019_3\Finance\ExpenseDetailReference',
+        'expense' => ExpenseDetailReference::class,
         'id' => 'integer',
-        'invoice' => 'Spinen\ConnectWise\Models\v2019_3\Finance\InvoiceReference',
+        'invoice' => InvoiceReference::class,
         'item' => 'string',
-        'lineItem' => 'Spinen\ConnectWise\Models\v2019_3\Finance\PurchaseOrderLineItemReference',
+        'lineItem' => PurchaseOrderLineItemReference::class,
         'name' => 'string',
-        'purchaseOrder' => 'Spinen\ConnectWise\Models\v2019_3\Finance\PurchaseOrderReference',
+        'purchaseOrder' => PurchaseOrderReference::class,
         'salesCode' => 'string',
         'transfer' => 'string',
     ];

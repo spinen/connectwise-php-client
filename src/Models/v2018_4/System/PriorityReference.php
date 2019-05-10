@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PriorityReference
  *
- * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property integer $sort
  * @property string $name
@@ -22,7 +22,7 @@ class PriorityReference extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'name' => 'string',
         'sort' => 'integer',

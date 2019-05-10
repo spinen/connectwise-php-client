@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CatalogItem
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\BillingCycleReference $recurringBillCycle
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\CompanyReference $vendor
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\EntityTypeReference $entityType
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\ManufacturerReference $manufacturer
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\ProductCategoryReference $category
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\ProductSubCategoryReference $subcategory
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\ProductTypeReference $type
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\SLAReference $sla
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\UnitOfMeasureReference $unitOfMeasure
+ * @property BillingCycleReference $recurringBillCycle
+ * @property CompanyReference $vendor
+ * @property EntityTypeReference $entityType
+ * @property ManufacturerReference $manufacturer
+ * @property Metadata $_info
+ * @property ProductCategoryReference $category
+ * @property ProductSubCategoryReference $subcategory
+ * @property ProductTypeReference $type
+ * @property SLAReference $sla
+ * @property UnitOfMeasureReference $unitOfMeasure
  * @property array $customFields
  * @property boolean $calculatedCostFlag
  * @property boolean $calculatedPriceFlag
@@ -59,24 +59,24 @@ class CatalogItem extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
+        '_info' => Metadata::class,
         'calculatedCost' => 'float',
         'calculatedCostFlag' => 'boolean',
         'calculatedPrice' => 'float',
         'calculatedPriceFlag' => 'boolean',
-        'category' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\ProductCategoryReference',
+        'category' => ProductCategoryReference::class,
         'cost' => 'float',
         'customFields' => 'array',
         'customerDescription' => 'string',
         'dateEntered' => 'string',
         'description' => 'string',
         'dropShipFlag' => 'boolean',
-        'entityType' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\EntityTypeReference',
+        'entityType' => EntityTypeReference::class,
         'id' => 'integer',
         'identifier' => 'string',
         'inactiveFlag' => 'boolean',
         'integrationXRef' => 'string',
-        'manufacturer' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\ManufacturerReference',
+        'manufacturer' => ManufacturerReference::class,
         'manufacturerPartNumber' => 'string',
         'minStockLevel' => 'integer',
         'notes' => 'string',
@@ -84,7 +84,7 @@ class CatalogItem extends Model
         'price' => 'float',
         'priceAttribute' => 'string',
         'productClass' => 'string',
-        'recurringBillCycle' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\BillingCycleReference',
+        'recurringBillCycle' => BillingCycleReference::class,
         'recurringCost' => 'float',
         'recurringCycleType' => 'string',
         'recurringFlag' => 'boolean',
@@ -92,13 +92,13 @@ class CatalogItem extends Model
         'recurringRevenue' => 'float',
         'serializedCostFlag' => 'boolean',
         'serializedFlag' => 'boolean',
-        'sla' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\SLAReference',
+        'sla' => SLAReference::class,
         'specialOrderFlag' => 'boolean',
-        'subcategory' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\ProductSubCategoryReference',
+        'subcategory' => ProductSubCategoryReference::class,
         'taxableFlag' => 'boolean',
-        'type' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\ProductTypeReference',
-        'unitOfMeasure' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\UnitOfMeasureReference',
-        'vendor' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\CompanyReference',
+        'type' => ProductTypeReference::class,
+        'unitOfMeasure' => UnitOfMeasureReference::class,
+        'vendor' => CompanyReference::class,
         'vendorSku' => 'string',
     ];
 }

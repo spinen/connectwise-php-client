@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ConfigurationTypeQuestion
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Company\ConfigurationTypeReference $configurationType
- * @property Spinen\ConnectWise\Models\v2018_4\Company\Metadata $_info
+ * @property ConfigurationTypeReference $configurationType
+ * @property Metadata $_info
  * @property boolean $inactiveFlag
  * @property boolean $requiredFlag
  * @property float $sequenceNumber
@@ -28,8 +28,8 @@ class ConfigurationTypeQuestion extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Company\Metadata',
-        'configurationType' => 'Spinen\ConnectWise\Models\v2018_4\Company\ConfigurationTypeReference',
+        '_info' => Metadata::class,
+        'configurationType' => ConfigurationTypeReference::class,
         'entryType' => 'string',
         'fieldType' => 'string',
         'id' => 'integer',

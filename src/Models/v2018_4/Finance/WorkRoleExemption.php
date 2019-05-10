@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for WorkRoleExemption
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference $taxCode
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\WorkRoleReference $workRole
+ * @property Metadata $_info
+ * @property TaxCodeReference $taxCode
+ * @property WorkRoleReference $workRole
  * @property boolean $levelFiveFlag
  * @property boolean $levelFourFlag
  * @property boolean $levelOneFlag
@@ -28,7 +28,7 @@ class WorkRoleExemption extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Finance\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'levelFiveFlag' => 'boolean',
         'levelFourFlag' => 'boolean',
@@ -36,7 +36,7 @@ class WorkRoleExemption extends Model
         'levelSixFlag' => 'boolean',
         'levelThreeFlag' => 'boolean',
         'levelTwoFlag' => 'boolean',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference',
-        'workRole' => 'Spinen\ConnectWise\Models\v2018_4\Finance\WorkRoleReference',
+        'taxCode' => TaxCodeReference::class,
+        'workRole' => WorkRoleReference::class,
     ];
 }

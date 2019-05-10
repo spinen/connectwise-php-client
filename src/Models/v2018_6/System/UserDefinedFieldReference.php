@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * If your trigger is for custom fields, this will populate with the custom field associated with the option
  *
- * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property string $name
  */
@@ -21,7 +21,7 @@ class UserDefinedFieldReference extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'name' => 'string',
     ];

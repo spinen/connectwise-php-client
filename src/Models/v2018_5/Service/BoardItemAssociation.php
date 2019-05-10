@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BoardItemAssociation
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Service\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2018_5\Service\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_5\Service\ServiceItemReference $item
+ * @property BoardReference $board
+ * @property Metadata $_info
+ * @property ServiceItemReference $item
  * @property array $subTypeAssociationIds
  * @property boolean $addAllSubTypesFlag
  * @property boolean $removeAllSubTypesFlag
@@ -25,11 +25,11 @@ class BoardItemAssociation extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Service\Metadata',
+        '_info' => Metadata::class,
         'addAllSubTypesFlag' => 'boolean',
-        'board' => 'Spinen\ConnectWise\Models\v2018_5\Service\BoardReference',
+        'board' => BoardReference::class,
         'id' => 'integer',
-        'item' => 'Spinen\ConnectWise\Models\v2018_5\Service\ServiceItemReference',
+        'item' => ServiceItemReference::class,
         'removeAllSubTypesFlag' => 'boolean',
         'subTypeAssociationIds' => 'array',
     ];

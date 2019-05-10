@@ -10,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for Source
  *
  * @property Carbon\Carbon $dateEntered
- * @property Spinen\ConnectWise\Models\v2018_6\Service\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $defaultFlag
  * @property integer $id
  * @property string $enteredBy
@@ -24,8 +24,8 @@ class Source extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Service\Metadata',
-        'dateEntered' => 'Carbon\Carbon',
+        '_info' => Metadata::class,
+        'dateEntered' => Carbon\Carbon::class,
         'defaultFlag' => 'boolean',
         'enteredBy' => 'string',
         'id' => 'integer',

@@ -31,7 +31,7 @@ class FormSubmitted extends Model
     protected $casts = [
         'campaignId' => 'integer',
         'contactId' => 'integer',
-        'dateSubmitted' => 'Carbon\Carbon',
+        'dateSubmitted' => Carbon\Carbon::class,
         'id' => 'integer',
         'pageSubType' => 'string',
         'pageType' => 'string',

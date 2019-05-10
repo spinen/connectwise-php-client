@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for KnowledgeBaseCategory
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Service\MemberReference $approver
- * @property Spinen\ConnectWise\Models\v2019_3\Service\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_3\Service\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2019_3\Service\SystemLocationReference $location
+ * @property MemberReference $approver
+ * @property Metadata $_info
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
  * @property integer $id
  * @property string $name
  */
@@ -24,11 +24,11 @@ class KnowledgeBaseCategory extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Service\Metadata',
-        'approver' => 'Spinen\ConnectWise\Models\v2019_3\Service\MemberReference',
-        'department' => 'Spinen\ConnectWise\Models\v2019_3\Service\SystemDepartmentReference',
+        '_info' => Metadata::class,
+        'approver' => MemberReference::class,
+        'department' => SystemDepartmentReference::class,
         'id' => 'integer',
-        'location' => 'Spinen\ConnectWise\Models\v2019_3\Service\SystemLocationReference',
+        'location' => SystemLocationReference::class,
         'name' => 'string',
     ];
 }

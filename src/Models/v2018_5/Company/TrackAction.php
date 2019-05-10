@@ -9,19 +9,19 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TrackAction
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Company\ActivityStatusReference $activityStatus
- * @property Spinen\ConnectWise\Models\v2018_5\Company\ActivityTypeReference $activityType
- * @property Spinen\ConnectWise\Models\v2018_5\Company\CompanyStatusReference $companyStatus
- * @property Spinen\ConnectWise\Models\v2018_5\Company\ContactReference $bccContact
- * @property Spinen\ConnectWise\Models\v2018_5\Company\ContactReference $ccContact
- * @property Spinen\ConnectWise\Models\v2018_5\Company\GroupReference $group
- * @property Spinen\ConnectWise\Models\v2018_5\Company\MemberReference $specificMemberFrom
- * @property Spinen\ConnectWise\Models\v2018_5\Company\MemberReference $specificMemberTo
- * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_5\Company\NotificationRecipientReference $notifyFrom
- * @property Spinen\ConnectWise\Models\v2018_5\Company\NotificationRecipientReference $notifyWho
- * @property Spinen\ConnectWise\Models\v2018_5\Company\ServiceTemplateReference $serviceTemplate
- * @property Spinen\ConnectWise\Models\v2018_5\Company\TrackReference $track
+ * @property ActivityStatusReference $activityStatus
+ * @property ActivityTypeReference $activityType
+ * @property CompanyStatusReference $companyStatus
+ * @property ContactReference $bccContact
+ * @property ContactReference $ccContact
+ * @property GroupReference $group
+ * @property MemberReference $specificMemberFrom
+ * @property MemberReference $specificMemberTo
+ * @property Metadata $_info
+ * @property NotificationRecipientReference $notifyFrom
+ * @property NotificationRecipientReference $notifyWho
+ * @property ServiceTemplateReference $serviceTemplate
+ * @property TrackReference $track
  * @property integer $daysToExecute
  * @property integer $id
  * @property string $emailFrom
@@ -38,25 +38,25 @@ class TrackAction extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
-        'activityStatus' => 'Spinen\ConnectWise\Models\v2018_5\Company\ActivityStatusReference',
-        'activityType' => 'Spinen\ConnectWise\Models\v2018_5\Company\ActivityTypeReference',
-        'bccContact' => 'Spinen\ConnectWise\Models\v2018_5\Company\ContactReference',
-        'ccContact' => 'Spinen\ConnectWise\Models\v2018_5\Company\ContactReference',
-        'companyStatus' => 'Spinen\ConnectWise\Models\v2018_5\Company\CompanyStatusReference',
+        '_info' => Metadata::class,
+        'activityStatus' => ActivityStatusReference::class,
+        'activityType' => ActivityTypeReference::class,
+        'bccContact' => ContactReference::class,
+        'ccContact' => ContactReference::class,
+        'companyStatus' => CompanyStatusReference::class,
         'daysToExecute' => 'integer',
         'emailFrom' => 'string',
         'emailRecipient' => 'string',
-        'group' => 'Spinen\ConnectWise\Models\v2018_5\Company\GroupReference',
+        'group' => GroupReference::class,
         'id' => 'integer',
         'notes' => 'string',
-        'notifyFrom' => 'Spinen\ConnectWise\Models\v2018_5\Company\NotificationRecipientReference',
+        'notifyFrom' => NotificationRecipientReference::class,
         'notifyType' => 'string',
-        'notifyWho' => 'Spinen\ConnectWise\Models\v2018_5\Company\NotificationRecipientReference',
-        'serviceTemplate' => 'Spinen\ConnectWise\Models\v2018_5\Company\ServiceTemplateReference',
-        'specificMemberFrom' => 'Spinen\ConnectWise\Models\v2018_5\Company\MemberReference',
-        'specificMemberTo' => 'Spinen\ConnectWise\Models\v2018_5\Company\MemberReference',
+        'notifyWho' => NotificationRecipientReference::class,
+        'serviceTemplate' => ServiceTemplateReference::class,
+        'specificMemberFrom' => MemberReference::class,
+        'specificMemberTo' => MemberReference::class,
         'subject' => 'string',
-        'track' => 'Spinen\ConnectWise\Models\v2018_5\Company\TrackReference',
+        'track' => TrackReference::class,
     ];
 }

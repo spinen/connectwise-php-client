@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BoardStatusNotification
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Service\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2019_2\Service\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_2\Service\NotificationRecipientReference $notifyWho
- * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceStatusReference $status
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property NotificationRecipientReference $notifyWho
+ * @property ServiceStatusReference $status
  * @property integer $id
  * @property integer $workflowStep
  * @property string $email
@@ -25,12 +25,12 @@ class BoardStatusNotification extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Service\Metadata',
+        '_info' => Metadata::class,
         'email' => 'string',
         'id' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2019_2\Service\MemberReference',
-        'notifyWho' => 'Spinen\ConnectWise\Models\v2019_2\Service\NotificationRecipientReference',
-        'status' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceStatusReference',
+        'member' => MemberReference::class,
+        'notifyWho' => NotificationRecipientReference::class,
+        'status' => ServiceStatusReference::class,
         'workflowStep' => 'integer',
     ];
 }

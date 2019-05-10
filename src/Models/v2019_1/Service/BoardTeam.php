@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BoardTeam
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Service\MemberReference $teamLeader
- * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
+ * @property MemberReference $teamLeader
+ * @property Metadata $_info
  * @property array $members
  * @property boolean $defaultFlag
  * @property boolean $notifyOnTicketDelete
@@ -28,7 +28,7 @@ class BoardTeam extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
+        '_info' => Metadata::class,
         'boardId' => 'integer',
         'businessUnitId' => 'integer',
         'defaultFlag' => 'boolean',
@@ -37,6 +37,6 @@ class BoardTeam extends Model
         'members' => 'array',
         'name' => 'string',
         'notifyOnTicketDelete' => 'boolean',
-        'teamLeader' => 'Spinen\ConnectWise\Models\v2019_1\Service\MemberReference',
+        'teamLeader' => MemberReference::class,
     ];
 }

@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Required when notifyType is set to: "Create Activity", "Send Email", "Add Follower", "Assign Resource", "Close Survey"
  *
- * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property string $identifier
  * @property string $name
@@ -22,7 +22,7 @@ class NotificationRecipientReference extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',

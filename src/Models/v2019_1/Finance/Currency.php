@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Currency
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $displayIdFlag
  * @property boolean $displaySymbolFlag
  * @property integer $id
@@ -26,7 +26,7 @@ class Currency extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
+        '_info' => Metadata::class,
         'currencyIdentifier' => 'string',
         'displayIdFlag' => 'boolean',
         'displaySymbolFlag' => 'boolean',

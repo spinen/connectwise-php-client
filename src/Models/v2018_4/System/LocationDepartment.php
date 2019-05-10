@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for LocationDepartment
  *
- * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\System\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2018_4\System\SystemLocationReference $location
+ * @property Metadata $_info
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
  * @property integer $id
  */
 class LocationDepartment extends Model
@@ -22,9 +22,9 @@ class LocationDepartment extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
-        'department' => 'Spinen\ConnectWise\Models\v2018_4\System\SystemDepartmentReference',
+        '_info' => Metadata::class,
+        'department' => SystemDepartmentReference::class,
         'id' => 'integer',
-        'location' => 'Spinen\ConnectWise\Models\v2018_4\System\SystemLocationReference',
+        'location' => SystemLocationReference::class,
     ];
 }

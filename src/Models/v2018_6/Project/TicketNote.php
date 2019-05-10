@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TicketNote
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Project\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2018_6\Project\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_6\Project\Metadata $_info
+ * @property ContactReference $contact
+ * @property MemberReference $member
+ * @property Metadata $_info
  * @property boolean $customerUpdatedFlag
  * @property boolean $detailDescriptionFlag
  * @property boolean $externalFlag
@@ -31,15 +31,15 @@ class TicketNote extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Project\Metadata',
-        'contact' => 'Spinen\ConnectWise\Models\v2018_6\Project\ContactReference',
+        '_info' => Metadata::class,
+        'contact' => ContactReference::class,
         'customerUpdatedFlag' => 'boolean',
         'detailDescriptionFlag' => 'boolean',
         'externalFlag' => 'boolean',
         'id' => 'integer',
         'internalAnalysisFlag' => 'boolean',
         'internalFlag' => 'boolean',
-        'member' => 'Spinen\ConnectWise\Models\v2018_6\Project\MemberReference',
+        'member' => MemberReference::class,
         'processNotifications' => 'boolean',
         'resolutionFlag' => 'boolean',
         'text' => 'string',

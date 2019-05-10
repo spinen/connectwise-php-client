@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TaxCodeXRef
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\TaxCodeReference $taxCode
+ * @property Metadata $_info
+ * @property TaxCodeReference $taxCode
  * @property array $taxableLevels
  * @property boolean $defaultFlag
  * @property integer $id
@@ -30,7 +30,7 @@ class TaxCodeXRef extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
         'description' => 'string',
         'id' => 'integer',
@@ -40,7 +40,7 @@ class TaxCodeXRef extends Model
         'levelSix' => 'string',
         'levelThree' => 'string',
         'levelTwo' => 'string',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2019_1\Finance\TaxCodeReference',
+        'taxCode' => TaxCodeReference::class,
         'taxableLevels' => 'array',
     ];
 }

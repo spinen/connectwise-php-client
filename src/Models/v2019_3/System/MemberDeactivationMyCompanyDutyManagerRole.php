@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MemberDeactivationMyCompanyDutyManagerRole
  *
- * @property Spinen\ConnectWise\Models\v2019_3\System\MemberReference $reAssignToMember
+ * @property MemberReference $reAssignToMember
  * @property integer $count
  */
 class MemberDeactivationMyCompanyDutyManagerRole extends Model
@@ -21,6 +21,6 @@ class MemberDeactivationMyCompanyDutyManagerRole extends Model
      */
     protected $casts = [
         'count' => 'integer',
-        'reAssignToMember' => 'Spinen\ConnectWise\Models\v2019_3\System\MemberReference',
+        'reAssignToMember' => MemberReference::class,
     ];
 }

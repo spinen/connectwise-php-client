@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for UnpostedExpenseTaxableLevel
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\Metadata $_info
+ * @property Metadata $_info
  * @property float $taxAmount
  * @property integer $id
  * @property integer $taxLevel
@@ -23,7 +23,7 @@ class UnpostedExpenseTaxableLevel extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Finance\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'taxAmount' => 'float',
         'taxCodeXref' => 'string',

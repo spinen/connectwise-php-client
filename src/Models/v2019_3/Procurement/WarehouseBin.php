@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for WarehouseBin
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\MemberReference $manager
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseBinReference $overflowBin
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseBinReference $transferBin
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseReference $warehouse
+ * @property MemberReference $manager
+ * @property Metadata $_info
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
+ * @property WarehouseBinReference $overflowBin
+ * @property WarehouseBinReference $transferBin
+ * @property WarehouseReference $warehouse
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
  * @property float $height
@@ -36,22 +36,22 @@ class WarehouseBin extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
-        'department' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\SystemDepartmentReference',
+        'department' => SystemDepartmentReference::class,
         'height' => 'float',
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'length' => 'float',
-        'location' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\SystemLocationReference',
-        'manager' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\MemberReference',
+        'location' => SystemLocationReference::class,
+        'manager' => MemberReference::class,
         'maxQuantity' => 'float',
         'minQuantity' => 'float',
         'name' => 'string',
-        'overflowBin' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseBinReference',
+        'overflowBin' => WarehouseBinReference::class,
         'quantityOnHand' => 'integer',
-        'transferBin' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseBinReference',
-        'warehouse' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseReference',
+        'transferBin' => WarehouseBinReference::class,
+        'warehouse' => WarehouseReference::class,
         'weight' => 'float',
         'width' => 'float',
     ];

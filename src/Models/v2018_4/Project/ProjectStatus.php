@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProjectStatus
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Project\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $closedFlag
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
@@ -25,7 +25,7 @@ class ProjectStatus extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Project\Metadata',
+        '_info' => Metadata::class,
         'closedFlag' => 'boolean',
         'defaultFlag' => 'boolean',
         'id' => 'integer',

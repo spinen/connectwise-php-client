@@ -9,33 +9,33 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Opportunity
  *
+ * @property BillingTermsReference $billingTerms
+ * @property CampaignReference $campaign
  * @property Carbon\Carbon $closedDate
  * @property Carbon\Carbon $dateBecameLead
  * @property Carbon\Carbon $expectedCloseDate
  * @property Carbon\Carbon $pipelineChangeDate
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\BillingTermsReference $billingTerms
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\CampaignReference $campaign
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\CompanyReference $billToCompany
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\CompanyReference $shipToCompany
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\ContactReference $billToContact
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\ContactReference $shipToContact
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\MemberReference $closedBy
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\MemberReference $primarySalesRep
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\MemberReference $secondarySalesRep
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\OpportunityPriorityReference $priority
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\OpportunityProbabilityReference $probability
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\OpportunityRatingReference $rating
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\OpportunityStageReference $stage
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\OpportunityStatusReference $status
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\OpportunityTypeReference $type
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\SiteReference $billToSite
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\SiteReference $shipToSite
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\SiteReference $site
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\TaxCodeReference $taxCode
+ * @property CompanyReference $billToCompany
+ * @property CompanyReference $company
+ * @property CompanyReference $shipToCompany
+ * @property ContactReference $billToContact
+ * @property ContactReference $contact
+ * @property ContactReference $shipToContact
+ * @property CurrencyReference $currency
+ * @property MemberReference $closedBy
+ * @property MemberReference $primarySalesRep
+ * @property MemberReference $secondarySalesRep
+ * @property Metadata $_info
+ * @property OpportunityPriorityReference $priority
+ * @property OpportunityProbabilityReference $probability
+ * @property OpportunityRatingReference $rating
+ * @property OpportunityStageReference $stage
+ * @property OpportunityStatusReference $status
+ * @property OpportunityTypeReference $type
+ * @property SiteReference $billToSite
+ * @property SiteReference $shipToSite
+ * @property SiteReference $site
+ * @property TaxCodeReference $taxCode
  * @property array $customFields
  * @property float $totalSalesTax
  * @property integer $businessUnitId
@@ -54,41 +54,41 @@ class Opportunity extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Sales\Metadata',
-        'billToCompany' => 'Spinen\ConnectWise\Models\v2018_6\Sales\CompanyReference',
-        'billToContact' => 'Spinen\ConnectWise\Models\v2018_6\Sales\ContactReference',
-        'billToSite' => 'Spinen\ConnectWise\Models\v2018_6\Sales\SiteReference',
-        'billingTerms' => 'Spinen\ConnectWise\Models\v2018_6\Sales\BillingTermsReference',
+        '_info' => Metadata::class,
+        'billToCompany' => CompanyReference::class,
+        'billToContact' => ContactReference::class,
+        'billToSite' => SiteReference::class,
+        'billingTerms' => BillingTermsReference::class,
         'businessUnitId' => 'integer',
-        'campaign' => 'Spinen\ConnectWise\Models\v2018_6\Sales\CampaignReference',
-        'closedBy' => 'Spinen\ConnectWise\Models\v2018_6\Sales\MemberReference',
-        'closedDate' => 'Carbon\Carbon',
-        'company' => 'Spinen\ConnectWise\Models\v2018_6\Sales\CompanyReference',
-        'contact' => 'Spinen\ConnectWise\Models\v2018_6\Sales\ContactReference',
-        'currency' => 'Spinen\ConnectWise\Models\v2018_6\Sales\CurrencyReference',
+        'campaign' => CampaignReference::class,
+        'closedBy' => MemberReference::class,
+        'closedDate' => Carbon\Carbon::class,
+        'company' => CompanyReference::class,
+        'contact' => ContactReference::class,
+        'currency' => CurrencyReference::class,
         'customFields' => 'array',
         'customerPO' => 'string',
-        'dateBecameLead' => 'Carbon\Carbon',
-        'expectedCloseDate' => 'Carbon\Carbon',
+        'dateBecameLead' => Carbon\Carbon::class,
+        'expectedCloseDate' => Carbon\Carbon::class,
         'id' => 'integer',
         'locationId' => 'integer',
         'name' => 'string',
         'notes' => 'string',
-        'pipelineChangeDate' => 'Carbon\Carbon',
-        'primarySalesRep' => 'Spinen\ConnectWise\Models\v2018_6\Sales\MemberReference',
-        'priority' => 'Spinen\ConnectWise\Models\v2018_6\Sales\OpportunityPriorityReference',
-        'probability' => 'Spinen\ConnectWise\Models\v2018_6\Sales\OpportunityProbabilityReference',
-        'rating' => 'Spinen\ConnectWise\Models\v2018_6\Sales\OpportunityRatingReference',
-        'secondarySalesRep' => 'Spinen\ConnectWise\Models\v2018_6\Sales\MemberReference',
-        'shipToCompany' => 'Spinen\ConnectWise\Models\v2018_6\Sales\CompanyReference',
-        'shipToContact' => 'Spinen\ConnectWise\Models\v2018_6\Sales\ContactReference',
-        'shipToSite' => 'Spinen\ConnectWise\Models\v2018_6\Sales\SiteReference',
-        'site' => 'Spinen\ConnectWise\Models\v2018_6\Sales\SiteReference',
+        'pipelineChangeDate' => Carbon\Carbon::class,
+        'primarySalesRep' => MemberReference::class,
+        'priority' => OpportunityPriorityReference::class,
+        'probability' => OpportunityProbabilityReference::class,
+        'rating' => OpportunityRatingReference::class,
+        'secondarySalesRep' => MemberReference::class,
+        'shipToCompany' => CompanyReference::class,
+        'shipToContact' => ContactReference::class,
+        'shipToSite' => SiteReference::class,
+        'site' => SiteReference::class,
         'source' => 'string',
-        'stage' => 'Spinen\ConnectWise\Models\v2018_6\Sales\OpportunityStageReference',
-        'status' => 'Spinen\ConnectWise\Models\v2018_6\Sales\OpportunityStatusReference',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2018_6\Sales\TaxCodeReference',
+        'stage' => OpportunityStageReference::class,
+        'status' => OpportunityStatusReference::class,
+        'taxCode' => TaxCodeReference::class,
         'totalSalesTax' => 'float',
-        'type' => 'Spinen\ConnectWise\Models\v2018_6\Sales\OpportunityTypeReference',
+        'type' => OpportunityTypeReference::class,
     ];
 }

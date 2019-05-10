@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ApiRequest
  *
- * @property Spinen\ConnectWise\Models\v2019_3\System\FilterValues $Filters
- * @property Spinen\ConnectWise\Models\v2019_3\System\IRestIdentifiedItem $Entity
- * @property Spinen\ConnectWise\Models\v2019_3\System\PageValues $Page
+ * @property FilterValues $Filters
+ * @property IRestIdentifiedItem $Entity
+ * @property PageValues $Page
  * @property integer $GrandParentId
  * @property integer $Id
  * @property integer $ParentId
@@ -25,12 +25,12 @@ class ApiRequest extends Model
      * @var array
      */
     protected $casts = [
-        'Entity' => 'Spinen\ConnectWise\Models\v2019_3\System\IRestIdentifiedItem',
-        'Filters' => 'Spinen\ConnectWise\Models\v2019_3\System\FilterValues',
+        'Entity' => IRestIdentifiedItem::class,
+        'Filters' => FilterValues::class,
         'Format' => 'string',
         'GrandParentId' => 'integer',
         'Id' => 'integer',
-        'Page' => 'Spinen\ConnectWise\Models\v2019_3\System\PageValues',
+        'Page' => PageValues::class,
         'ParentId' => 'integer',
     ];
 }

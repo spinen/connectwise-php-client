@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ScheduleStopwatch
  *
+ * @property AgreementReference $agreement
  * @property Carbon\Carbon $dateEntered
  * @property Carbon\Carbon $endTime
  * @property Carbon\Carbon $startTime
- * @property Spinen\ConnectWise\Models\v2019_3\Time\AgreementReference $agreement
- * @property Spinen\ConnectWise\Models\v2019_3\Time\Guid $mobileGuid
- * @property Spinen\ConnectWise\Models\v2019_3\Time\Guid $scheduleMobileGuid
- * @property Spinen\ConnectWise\Models\v2019_3\Time\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2019_3\Time\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_3\Time\WorkRoleReference $workRole
- * @property Spinen\ConnectWise\Models\v2019_3\Time\WorkTypeReference $workType
+ * @property Guid $mobileGuid
+ * @property Guid $scheduleMobileGuid
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property WorkRoleReference $workRole
+ * @property WorkTypeReference $workType
  * @property integer $businessUnitId
  * @property integer $id
  * @property integer $locationId
@@ -37,24 +37,24 @@ class ScheduleStopwatch extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Time\Metadata',
-        'agreement' => 'Spinen\ConnectWise\Models\v2019_3\Time\AgreementReference',
+        '_info' => Metadata::class,
+        'agreement' => AgreementReference::class,
         'billableOption' => 'string',
         'businessUnitId' => 'integer',
-        'dateEntered' => 'Carbon\Carbon',
-        'endTime' => 'Carbon\Carbon',
+        'dateEntered' => Carbon\Carbon::class,
+        'endTime' => Carbon\Carbon::class,
         'id' => 'integer',
         'internalNotes' => 'string',
         'locationId' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2019_3\Time\MemberReference',
-        'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_3\Time\Guid',
+        'member' => MemberReference::class,
+        'mobileGuid' => Guid::class,
         'notes' => 'string',
         'scheduleId' => 'integer',
-        'scheduleMobileGuid' => 'Spinen\ConnectWise\Models\v2019_3\Time\Guid',
-        'startTime' => 'Carbon\Carbon',
+        'scheduleMobileGuid' => Guid::class,
+        'startTime' => Carbon\Carbon::class,
         'status' => 'string',
         'totalPauseTime' => 'integer',
-        'workRole' => 'Spinen\ConnectWise\Models\v2019_3\Time\WorkRoleReference',
-        'workType' => 'Spinen\ConnectWise\Models\v2019_3\Time\WorkTypeReference',
+        'workRole' => WorkRoleReference::class,
+        'workType' => WorkTypeReference::class,
     ];
 }

@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TicketsPipeline
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Internal\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2019_1\Internal\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\Internal\ServiceStatusReference $status
- * @property Spinen\ConnectWise\Models\v2019_1\Internal\TicketReference $ticket
+ * @property BoardReference $board
+ * @property Metadata $_info
+ * @property ServiceStatusReference $status
+ * @property TicketReference $ticket
  * @property integer $id
  */
 class TicketsPipeline extends Model
@@ -23,10 +23,10 @@ class TicketsPipeline extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Internal\Metadata',
-        'board' => 'Spinen\ConnectWise\Models\v2019_1\Internal\BoardReference',
+        '_info' => Metadata::class,
+        'board' => BoardReference::class,
         'id' => 'integer',
-        'status' => 'Spinen\ConnectWise\Models\v2019_1\Internal\ServiceStatusReference',
-        'ticket' => 'Spinen\ConnectWise\Models\v2019_1\Internal\TicketReference',
+        'status' => ServiceStatusReference::class,
+        'ticket' => TicketReference::class,
     ];
 }

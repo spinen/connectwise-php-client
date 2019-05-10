@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for WorkflowEvent
  *
- * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
+ * @property Metadata $_info
  * @property integer $frequencyOfExecution
  * @property integer $id
  * @property integer $maxNumberOfExecution
@@ -26,7 +26,7 @@ class WorkflowEvent extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
+        '_info' => Metadata::class,
         'eventCondition' => 'string',
         'executionTime' => 'string',
         'frequencyOfExecution' => 'integer',

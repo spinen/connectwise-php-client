@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ManagementItSolution
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $globalLoginFlag
  * @property boolean $noDisplayFlag
  * @property boolean $overrideLoginLocationFlag
@@ -40,7 +40,7 @@ class ManagementItSolution extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
+        '_info' => Metadata::class,
         'continuumApiPassword' => 'string',
         'continuumApiUsername' => 'string',
         'globalLoginFlag' => 'boolean',

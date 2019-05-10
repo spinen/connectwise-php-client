@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProcurementSetting
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $autoApprovePurchaseOrderFlag
  * @property boolean $autoClosePurchaseOrderFlag
  * @property boolean $autoClosePurchaseOrderItemFlag
@@ -34,7 +34,7 @@ class ProcurementSetting extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata',
+        '_info' => Metadata::class,
         'autoApprovePurchaseOrderFlag' => 'boolean',
         'autoClosePurchaseOrderFlag' => 'boolean',
         'autoClosePurchaseOrderItemFlag' => 'boolean',

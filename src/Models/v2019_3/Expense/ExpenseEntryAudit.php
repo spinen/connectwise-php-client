@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ExpenseEntryAudit
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Expense\AuditSource $source
- * @property Spinen\ConnectWise\Models\v2019_3\Expense\AuditType $type
- * @property Spinen\ConnectWise\Models\v2019_3\Expense\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2019_3\Expense\Metadata $_info
+ * @property AuditSource $source
+ * @property AuditType $type
+ * @property MemberReference $member
+ * @property Metadata $_info
  * @property integer $id
  * @property string $message
  * @property string $newValue
@@ -27,14 +27,14 @@ class ExpenseEntryAudit extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Expense\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2019_3\Expense\MemberReference',
+        'member' => MemberReference::class,
         'message' => 'string',
         'newValue' => 'string',
         'oldValue' => 'string',
-        'source' => 'Spinen\ConnectWise\Models\v2019_3\Expense\AuditSource',
-        'type' => 'Spinen\ConnectWise\Models\v2019_3\Expense\AuditType',
+        'source' => AuditSource::class,
+        'type' => AuditType::class,
         'value' => 'string',
     ];
 }

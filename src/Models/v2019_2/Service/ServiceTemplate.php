@@ -9,23 +9,23 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ServiceTemplate
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Service\AgreementReference $agreement
- * @property Spinen\ConnectWise\Models\v2019_2\Service\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2019_2\Service\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_2\Service\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2019_2\Service\MemberReference $assignedBy
- * @property Spinen\ConnectWise\Models\v2019_2\Service\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_2\Service\PriorityReference $priority
- * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceItemReference $item
- * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceLocationReference $serviceLocation
- * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceSourceReference $source
- * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceStatusReference $status
- * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceSubTypeReference $subtype
- * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceTeamReference $team
- * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceTypeReference $type
- * @property Spinen\ConnectWise\Models\v2019_2\Service\SiteReference $site
- * @property Spinen\ConnectWise\Models\v2019_2\Service\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2019_2\Service\SystemLocationReference $location
+ * @property AgreementReference $agreement
+ * @property BoardReference $board
+ * @property CompanyReference $company
+ * @property ContactReference $contact
+ * @property MemberReference $assignedBy
+ * @property Metadata $_info
+ * @property PriorityReference $priority
+ * @property ServiceItemReference $item
+ * @property ServiceLocationReference $serviceLocation
+ * @property ServiceSourceReference $source
+ * @property ServiceStatusReference $status
+ * @property ServiceSubTypeReference $subtype
+ * @property ServiceTeamReference $team
+ * @property ServiceTypeReference $type
+ * @property SiteReference $site
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
  * @property boolean $BillComplete_Flag
  * @property boolean $assignedNotifyFlag
  * @property boolean $attachScheduleToNewServiceFlag
@@ -67,19 +67,19 @@ class ServiceTemplate extends Model
      */
     protected $casts = [
         'BillComplete_Flag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Service\Metadata',
-        'agreement' => 'Spinen\ConnectWise\Models\v2019_2\Service\AgreementReference',
-        'assignedBy' => 'Spinen\ConnectWise\Models\v2019_2\Service\MemberReference',
+        '_info' => Metadata::class,
+        'agreement' => AgreementReference::class,
+        'assignedBy' => MemberReference::class,
         'assignedNotifyFlag' => 'boolean',
         'attachScheduleToNewServiceFlag' => 'boolean',
         'billServiceSeparatelyFlag' => 'boolean',
         'billUnapprovedTimeAndExpensesFlag' => 'boolean',
         'billingAmount' => 'float',
         'billingMethod' => 'string',
-        'board' => 'Spinen\ConnectWise\Models\v2019_2\Service\BoardReference',
-        'company' => 'Spinen\ConnectWise\Models\v2019_2\Service\CompanyReference',
-        'contact' => 'Spinen\ConnectWise\Models\v2019_2\Service\ContactReference',
-        'department' => 'Spinen\ConnectWise\Models\v2019_2\Service\SystemDepartmentReference',
+        'board' => BoardReference::class,
+        'company' => CompanyReference::class,
+        'contact' => ContactReference::class,
+        'department' => SystemDepartmentReference::class,
         'emailCC' => 'string',
         'emailCCFlag' => 'boolean',
         'emailContactFlag' => 'boolean',
@@ -90,11 +90,11 @@ class ServiceTemplate extends Model
         'id' => 'integer',
         'impact' => 'string',
         'internalAnalysis' => 'string',
-        'item' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceItemReference',
-        'location' => 'Spinen\ConnectWise\Models\v2019_2\Service\SystemLocationReference',
+        'item' => ServiceItemReference::class,
+        'location' => SystemLocationReference::class,
         'name' => 'string',
         'overrideFlag' => 'boolean',
-        'priority' => 'Spinen\ConnectWise\Models\v2019_2\Service\PriorityReference',
+        'priority' => PriorityReference::class,
         'problem' => 'string',
         'productInvoiceFlag' => 'boolean',
         'purchaseOrderNumber' => 'string',
@@ -102,17 +102,17 @@ class ServiceTemplate extends Model
         'restrictDownpaymentFlag' => 'boolean',
         'scheduleDaysBefore' => 'integer',
         'serviceDaysBefore' => 'integer',
-        'serviceLocation' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceLocationReference',
+        'serviceLocation' => ServiceLocationReference::class,
         'severity' => 'string',
-        'site' => 'Spinen\ConnectWise\Models\v2019_2\Service\SiteReference',
-        'source' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceSourceReference',
-        'status' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceStatusReference',
-        'subtype' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceSubTypeReference',
+        'site' => SiteReference::class,
+        'source' => ServiceSourceReference::class,
+        'status' => ServiceStatusReference::class,
+        'subtype' => ServiceSubTypeReference::class,
         'summary' => 'string',
-        'team' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceTeamReference',
+        'team' => ServiceTeamReference::class,
         'templateFlag' => 'boolean',
         'timeBillableFlag' => 'boolean',
         'timeInvoiceFlag' => 'boolean',
-        'type' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceTypeReference',
+        'type' => ServiceTypeReference::class,
     ];
 }

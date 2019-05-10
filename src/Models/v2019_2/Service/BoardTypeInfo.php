@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BoardTypeInfo
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Service\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2019_2\Service\Metadata $_info
+ * @property BoardReference $board
+ * @property Metadata $_info
  * @property integer $id
  * @property string $name
  */
@@ -22,8 +22,8 @@ class BoardTypeInfo extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Service\Metadata',
-        'board' => 'Spinen\ConnectWise\Models\v2019_2\Service\BoardReference',
+        '_info' => Metadata::class,
+        'board' => BoardReference::class,
         'id' => 'integer',
         'name' => 'string',
     ];

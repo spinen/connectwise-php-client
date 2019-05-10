@@ -26,7 +26,7 @@ class LinkClicked extends Model
     protected $casts = [
         'campaignId' => 'integer',
         'contactId' => 'integer',
-        'dateClicked' => 'Carbon\Carbon',
+        'dateClicked' => Carbon\Carbon::class,
         'id' => 'integer',
         'queryString' => 'string',
         'url' => 'string',

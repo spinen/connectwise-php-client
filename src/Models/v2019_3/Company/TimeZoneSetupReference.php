@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * The specified system time zone for the Company
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property string $name
  */
@@ -21,7 +21,7 @@ class TimeZoneSetupReference extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'name' => 'string',
     ];

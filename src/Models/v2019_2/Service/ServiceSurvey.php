@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ServiceSurvey
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Service\GenericIdIdentifierReference $notifyWho
- * @property Spinen\ConnectWise\Models\v2019_2\Service\MemberReference $notifyMember
- * @property Spinen\ConnectWise\Models\v2019_2\Service\Metadata $_info
+ * @property GenericIdIdentifierReference $notifyWho
+ * @property MemberReference $notifyMember
+ * @property Metadata $_info
  * @property boolean $footerTextVisibleFlag
  * @property boolean $headerIncludeLogoFlag
  * @property boolean $headerTextVisibleFlag
@@ -31,7 +31,7 @@ class ServiceSurvey extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Service\Metadata',
+        '_info' => Metadata::class,
         'footerText' => 'string',
         'footerTextVisibleFlag' => 'boolean',
         'headerIncludeLogoFlag' => 'boolean',
@@ -40,8 +40,8 @@ class ServiceSurvey extends Model
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'name' => 'string',
-        'notifyMember' => 'Spinen\ConnectWise\Models\v2019_2\Service\MemberReference',
-        'notifyWho' => 'Spinen\ConnectWise\Models\v2019_2\Service\GenericIdIdentifierReference',
+        'notifyMember' => MemberReference::class,
+        'notifyWho' => GenericIdIdentifierReference::class,
         'notifyWhoVisibleFlag' => 'boolean',
         'thankYouText' => 'string',
     ];

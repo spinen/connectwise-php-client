@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ConvertToProject
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Service\ProjectPhaseReference $phase
- * @property Spinen\ConnectWise\Models\v2019_3\Service\ProjectReference $project
+ * @property ProjectPhaseReference $phase
+ * @property ProjectReference $project
  * @property integer $id
  * @property string $recordType
  * @property string $wbsCode
@@ -24,8 +24,8 @@ class ConvertToProject extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'phase' => 'Spinen\ConnectWise\Models\v2019_3\Service\ProjectPhaseReference',
-        'project' => 'Spinen\ConnectWise\Models\v2019_3\Service\ProjectReference',
+        'phase' => ProjectPhaseReference::class,
+        'project' => ProjectReference::class,
         'recordType' => 'string',
         'wbsCode' => 'string',
     ];

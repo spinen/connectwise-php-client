@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MemberSkill
  *
- * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_6\System\SkillReference $skill
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property SkillReference $skill
  * @property boolean $certifiedFlag
  * @property integer $id
  * @property integer $yearsExperience
@@ -26,12 +26,12 @@ class MemberSkill extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
+        '_info' => Metadata::class,
         'certifiedFlag' => 'boolean',
         'id' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        'member' => MemberReference::class,
         'notes' => 'string',
-        'skill' => 'Spinen\ConnectWise\Models\v2018_6\System\SkillReference',
+        'skill' => SkillReference::class,
         'skillLevel' => 'string',
         'yearsExperience' => 'integer',
     ];

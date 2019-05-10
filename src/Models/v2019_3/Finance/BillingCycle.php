@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BillingCycle
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $defaultFlag
  * @property integer $id
  * @property string $billingOptions
@@ -24,7 +24,7 @@ class BillingCycle extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Finance\Metadata',
+        '_info' => Metadata::class,
         'billingOptions' => 'string',
         'defaultFlag' => 'boolean',
         'id' => 'integer',

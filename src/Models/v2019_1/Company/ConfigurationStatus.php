@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ConfigurationStatus
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $closedFlag
  * @property boolean $defaultFlag
  * @property integer $id
@@ -23,7 +23,7 @@ class ConfigurationStatus extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
+        '_info' => Metadata::class,
         'closedFlag' => 'boolean',
         'defaultFlag' => 'boolean',
         'description' => 'string',

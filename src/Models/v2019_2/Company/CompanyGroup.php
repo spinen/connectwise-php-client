@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CompanyGroup
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Company\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_2\Company\GroupReference $group
- * @property Spinen\ConnectWise\Models\v2019_2\Company\Metadata $_info
+ * @property CompanyReference $company
+ * @property GroupReference $group
+ * @property Metadata $_info
  * @property array $contactIds
  * @property boolean $allContactsFlag
  * @property boolean $defaultContactFlag
@@ -27,12 +27,12 @@ class CompanyGroup extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Company\Metadata',
+        '_info' => Metadata::class,
         'allContactsFlag' => 'boolean',
-        'company' => 'Spinen\ConnectWise\Models\v2019_2\Company\CompanyReference',
+        'company' => CompanyReference::class,
         'contactIds' => 'array',
         'defaultContactFlag' => 'boolean',
-        'group' => 'Spinen\ConnectWise\Models\v2019_2\Company\GroupReference',
+        'group' => GroupReference::class,
         'id' => 'integer',
         'removeAllContactsFlag' => 'boolean',
         'unsubscribeFlag' => 'boolean',

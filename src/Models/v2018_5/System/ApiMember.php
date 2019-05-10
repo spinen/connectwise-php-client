@@ -10,13 +10,13 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ApiMember
  *
  * @property Carbon\Carbon $inactiveDate
- * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_5\System\SecurityRoleReference $securityRole
- * @property Spinen\ConnectWise\Models\v2018_5\System\StructureReference $structureLevel
- * @property Spinen\ConnectWise\Models\v2018_5\System\SystemLocationReference $defaultLocation
- * @property Spinen\ConnectWise\Models\v2018_5\System\SystemLocationReference $salesDefaultLocation
- * @property Spinen\ConnectWise\Models\v2018_5\System\SystemLocationReference $securityLocation
- * @property Spinen\ConnectWise\Models\v2018_5\System\TimeZoneSetupReference $timeZone
+ * @property Metadata $_info
+ * @property SecurityRoleReference $securityRole
+ * @property StructureReference $structureLevel
+ * @property SystemLocationReference $defaultLocation
+ * @property SystemLocationReference $salesDefaultLocation
+ * @property SystemLocationReference $securityLocation
+ * @property TimeZoneSetupReference $timeZone
  * @property boolean $inactiveFlag
  * @property integer $id
  * @property string $emailAddress
@@ -31,18 +31,18 @@ class ApiMember extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
-        'defaultLocation' => 'Spinen\ConnectWise\Models\v2018_5\System\SystemLocationReference',
+        '_info' => Metadata::class,
+        'defaultLocation' => SystemLocationReference::class,
         'emailAddress' => 'string',
         'id' => 'integer',
         'identifier' => 'string',
-        'inactiveDate' => 'Carbon\Carbon',
+        'inactiveDate' => Carbon\Carbon::class,
         'inactiveFlag' => 'boolean',
         'name' => 'string',
-        'salesDefaultLocation' => 'Spinen\ConnectWise\Models\v2018_5\System\SystemLocationReference',
-        'securityLocation' => 'Spinen\ConnectWise\Models\v2018_5\System\SystemLocationReference',
-        'securityRole' => 'Spinen\ConnectWise\Models\v2018_5\System\SecurityRoleReference',
-        'structureLevel' => 'Spinen\ConnectWise\Models\v2018_5\System\StructureReference',
-        'timeZone' => 'Spinen\ConnectWise\Models\v2018_5\System\TimeZoneSetupReference',
+        'salesDefaultLocation' => SystemLocationReference::class,
+        'securityLocation' => SystemLocationReference::class,
+        'securityRole' => SecurityRoleReference::class,
+        'structureLevel' => StructureReference::class,
+        'timeZone' => TimeZoneSetupReference::class,
     ];
 }

@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SetupScreen
  *
- * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property string $Description
  * @property string $category
@@ -27,7 +27,7 @@ class SetupScreen extends Model
      */
     protected $casts = [
         'Description' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
+        '_info' => Metadata::class,
         'category' => 'string',
         'id' => 'integer',
         'moduleDescription' => 'string',

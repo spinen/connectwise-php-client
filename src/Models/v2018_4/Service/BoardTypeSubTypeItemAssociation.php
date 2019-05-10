@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BoardTypeSubTypeItemAssociation
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Service\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2018_4\Service\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\Service\ServiceItemReference $item
- * @property Spinen\ConnectWise\Models\v2018_4\Service\ServiceSubTypeReference $subType
- * @property Spinen\ConnectWise\Models\v2018_4\Service\ServiceTypeReference $type
+ * @property BoardReference $board
+ * @property Metadata $_info
+ * @property ServiceItemReference $item
+ * @property ServiceSubTypeReference $subType
+ * @property ServiceTypeReference $type
  * @property integer $id
  */
 class BoardTypeSubTypeItemAssociation extends Model
@@ -24,11 +24,11 @@ class BoardTypeSubTypeItemAssociation extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Service\Metadata',
-        'board' => 'Spinen\ConnectWise\Models\v2018_4\Service\BoardReference',
+        '_info' => Metadata::class,
+        'board' => BoardReference::class,
         'id' => 'integer',
-        'item' => 'Spinen\ConnectWise\Models\v2018_4\Service\ServiceItemReference',
-        'subType' => 'Spinen\ConnectWise\Models\v2018_4\Service\ServiceSubTypeReference',
-        'type' => 'Spinen\ConnectWise\Models\v2018_4\Service\ServiceTypeReference',
+        'item' => ServiceItemReference::class,
+        'subType' => ServiceSubTypeReference::class,
+        'type' => ServiceTypeReference::class,
     ];
 }

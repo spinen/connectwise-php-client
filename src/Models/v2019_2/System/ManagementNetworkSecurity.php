@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ManagementNetworkSecurity
  *
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property string $name
  * @property string $password
@@ -24,7 +24,7 @@ class ManagementNetworkSecurity extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'name' => 'string',
         'password' => 'string',

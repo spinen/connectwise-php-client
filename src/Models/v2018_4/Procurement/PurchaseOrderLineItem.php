@@ -13,12 +13,12 @@ use Spinen\ConnectWise\Support\Model;
  * @property Carbon\Carbon $dateCanceledUtc
  * @property Carbon\Carbon $expectedShipDate
  * @property Carbon\Carbon $shipDate
- * @property Spinen\ConnectWise\Models\v2018_4\Procurement\IvItemReference $product
- * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\Procurement\ShipmentMethodReference $shipmentMethod
- * @property Spinen\ConnectWise\Models\v2018_4\Procurement\UnitOfMeasureReference $unitOfMeasure
- * @property Spinen\ConnectWise\Models\v2018_4\Procurement\WarehouseBinReference $warehouseBin
- * @property Spinen\ConnectWise\Models\v2018_4\Procurement\WarehouseReference $warehouse
+ * @property IvItemReference $product
+ * @property Metadata $_info
+ * @property ShipmentMethodReference $shipmentMethod
+ * @property UnitOfMeasureReference $unitOfMeasure
+ * @property WarehouseBinReference $warehouseBin
+ * @property WarehouseReference $warehouse
  * @property array $customFields
  * @property boolean $backorderedFlag
  * @property boolean $canceledFlag
@@ -48,35 +48,35 @@ class PurchaseOrderLineItem extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
+        '_info' => Metadata::class,
         'backorderedFlag' => 'boolean',
         'canceledBy' => 'string',
         'canceledFlag' => 'boolean',
         'canceledReason' => 'string',
         'closedFlag' => 'boolean',
         'customFields' => 'array',
-        'dateCanceled' => 'Carbon\Carbon',
-        'dateCanceledUtc' => 'Carbon\Carbon',
+        'dateCanceled' => Carbon\Carbon::class,
+        'dateCanceledUtc' => Carbon\Carbon::class,
         'description' => 'string',
         'displayInternalNotesFlag' => 'boolean',
-        'expectedShipDate' => 'Carbon\Carbon',
+        'expectedShipDate' => Carbon\Carbon::class,
         'id' => 'integer',
         'internalNotes' => 'string',
         'lineNumber' => 'integer',
         'packingSlip' => 'string',
-        'product' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\IvItemReference',
+        'product' => IvItemReference::class,
         'purchaseOrderId' => 'integer',
         'quantity' => 'float',
         'receivedQuantity' => 'integer',
         'serialNumbers' => 'string',
-        'shipDate' => 'Carbon\Carbon',
-        'shipmentMethod' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\ShipmentMethodReference',
+        'shipDate' => Carbon\Carbon::class,
+        'shipmentMethod' => ShipmentMethodReference::class,
         'tax' => 'float',
         'trackingNumber' => 'string',
         'unitCost' => 'float',
-        'unitOfMeasure' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\UnitOfMeasureReference',
+        'unitOfMeasure' => UnitOfMeasureReference::class,
         'vendorOrderNumber' => 'string',
-        'warehouse' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\WarehouseReference',
-        'warehouseBin' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\WarehouseBinReference',
+        'warehouse' => WarehouseReference::class,
+        'warehouseBin' => WarehouseBinReference::class,
     ];
 }

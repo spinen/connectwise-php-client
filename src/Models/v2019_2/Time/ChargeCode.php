@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ChargeCode
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Time\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_2\Time\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_2\Time\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2019_2\Time\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2019_2\Time\WorkRoleReference $workRole
- * @property Spinen\ConnectWise\Models\v2019_2\Time\WorkTypeReference $workType
+ * @property CompanyReference $company
+ * @property Metadata $_info
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
+ * @property WorkRoleReference $workRole
+ * @property WorkTypeReference $workType
  * @property array $expenseTypeIds
  * @property boolean $allowAllExpenseTypeFlag
  * @property boolean $expenseEntryFlag
@@ -32,19 +32,19 @@ class ChargeCode extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Time\Metadata',
+        '_info' => Metadata::class,
         'allowAllExpenseTypeFlag' => 'boolean',
         'billTime' => 'string',
-        'company' => 'Spinen\ConnectWise\Models\v2019_2\Time\CompanyReference',
-        'department' => 'Spinen\ConnectWise\Models\v2019_2\Time\SystemDepartmentReference',
+        'company' => CompanyReference::class,
+        'department' => SystemDepartmentReference::class,
         'expenseEntryFlag' => 'boolean',
         'expenseTypeIds' => 'array',
         'id' => 'integer',
         'integrationXref' => 'string',
-        'location' => 'Spinen\ConnectWise\Models\v2019_2\Time\SystemLocationReference',
+        'location' => SystemLocationReference::class,
         'name' => 'string',
         'timeEntryFlag' => 'boolean',
-        'workRole' => 'Spinen\ConnectWise\Models\v2019_2\Time\WorkRoleReference',
-        'workType' => 'Spinen\ConnectWise\Models\v2019_2\Time\WorkTypeReference',
+        'workRole' => WorkRoleReference::class,
+        'workType' => WorkTypeReference::class,
     ];
 }

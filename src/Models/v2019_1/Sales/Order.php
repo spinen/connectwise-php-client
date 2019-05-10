@@ -9,24 +9,24 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Order
  *
+ * @property BillingTermsReference $billingTerms
  * @property Carbon\Carbon $dueDate
  * @property Carbon\Carbon $orderDate
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\BillingTermsReference $billingTerms
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\CompanyReference $billToCompany
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\CompanyReference $shipToCompany
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\ContactReference $billToContact
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\ContactReference $shipToContact
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\MemberReference $salesRep
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\OpportunityReference $opportunity
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\OrderStatusReference $status
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\SiteReference $billToSite
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\SiteReference $shipToSite
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\SiteReference $site
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\TaxCodeReference $taxCode
+ * @property CompanyReference $billToCompany
+ * @property CompanyReference $company
+ * @property CompanyReference $shipToCompany
+ * @property ContactReference $billToContact
+ * @property ContactReference $contact
+ * @property ContactReference $shipToContact
+ * @property CurrencyReference $currency
+ * @property MemberReference $salesRep
+ * @property Metadata $_info
+ * @property OpportunityReference $opportunity
+ * @property OrderStatusReference $status
+ * @property SiteReference $billToSite
+ * @property SiteReference $shipToSite
+ * @property SiteReference $site
+ * @property TaxCodeReference $taxCode
  * @property array $configIds
  * @property array $customFields
  * @property array $documentIds
@@ -57,42 +57,42 @@ class Order extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Sales\Metadata',
+        '_info' => Metadata::class,
         'billClosedFlag' => 'boolean',
         'billShippedFlag' => 'boolean',
-        'billToCompany' => 'Spinen\ConnectWise\Models\v2019_1\Sales\CompanyReference',
-        'billToContact' => 'Spinen\ConnectWise\Models\v2019_1\Sales\ContactReference',
-        'billToSite' => 'Spinen\ConnectWise\Models\v2019_1\Sales\SiteReference',
-        'billingTerms' => 'Spinen\ConnectWise\Models\v2019_1\Sales\BillingTermsReference',
+        'billToCompany' => CompanyReference::class,
+        'billToContact' => ContactReference::class,
+        'billToSite' => SiteReference::class,
+        'billingTerms' => BillingTermsReference::class,
         'bottomCommentFlag' => 'boolean',
         'businessUnitId' => 'integer',
-        'company' => 'Spinen\ConnectWise\Models\v2019_1\Sales\CompanyReference',
+        'company' => CompanyReference::class,
         'configIds' => 'array',
-        'contact' => 'Spinen\ConnectWise\Models\v2019_1\Sales\ContactReference',
-        'currency' => 'Spinen\ConnectWise\Models\v2019_1\Sales\CurrencyReference',
+        'contact' => ContactReference::class,
+        'currency' => CurrencyReference::class,
         'customFields' => 'array',
         'description' => 'string',
         'documentIds' => 'array',
-        'dueDate' => 'Carbon\Carbon',
+        'dueDate' => Carbon\Carbon::class,
         'email' => 'string',
         'id' => 'integer',
         'invoiceIds' => 'array',
         'locationId' => 'integer',
         'notes' => 'string',
-        'opportunity' => 'Spinen\ConnectWise\Models\v2019_1\Sales\OpportunityReference',
-        'orderDate' => 'Carbon\Carbon',
+        'opportunity' => OpportunityReference::class,
+        'orderDate' => Carbon\Carbon::class,
         'phone' => 'string',
         'phoneExt' => 'string',
         'poNumber' => 'string',
         'productIds' => 'array',
         'restrictDownpaymentFlag' => 'boolean',
-        'salesRep' => 'Spinen\ConnectWise\Models\v2019_1\Sales\MemberReference',
-        'shipToCompany' => 'Spinen\ConnectWise\Models\v2019_1\Sales\CompanyReference',
-        'shipToContact' => 'Spinen\ConnectWise\Models\v2019_1\Sales\ContactReference',
-        'shipToSite' => 'Spinen\ConnectWise\Models\v2019_1\Sales\SiteReference',
-        'site' => 'Spinen\ConnectWise\Models\v2019_1\Sales\SiteReference',
-        'status' => 'Spinen\ConnectWise\Models\v2019_1\Sales\OrderStatusReference',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2019_1\Sales\TaxCodeReference',
+        'salesRep' => MemberReference::class,
+        'shipToCompany' => CompanyReference::class,
+        'shipToContact' => ContactReference::class,
+        'shipToSite' => SiteReference::class,
+        'site' => SiteReference::class,
+        'status' => OrderStatusReference::class,
+        'taxCode' => TaxCodeReference::class,
         'taxTotal' => 'float',
         'topCommentFlag' => 'boolean',
         'total' => 'float',

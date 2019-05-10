@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ManagedDevicesIntegrationCrossReference
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Company\AgreementTypeReference $agreementType
- * @property Spinen\ConnectWise\Models\v2019_3\Company\ConfigurationTypeReference $configurationType
- * @property Spinen\ConnectWise\Models\v2019_3\Company\IvItemReference $product
- * @property Spinen\ConnectWise\Models\v2019_3\Company\ManagedDevicesIntegrationReference $managedDevicesIntegration
- * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
+ * @property AgreementTypeReference $agreementType
+ * @property ConfigurationTypeReference $configurationType
+ * @property IvItemReference $product
+ * @property ManagedDevicesIntegrationReference $managedDevicesIntegration
+ * @property Metadata $_info
  * @property boolean $inactiveFlag
  * @property integer $id
  * @property string $vendorLevel
@@ -27,13 +27,13 @@ class ManagedDevicesIntegrationCrossReference extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
-        'agreementType' => 'Spinen\ConnectWise\Models\v2019_3\Company\AgreementTypeReference',
-        'configurationType' => 'Spinen\ConnectWise\Models\v2019_3\Company\ConfigurationTypeReference',
+        '_info' => Metadata::class,
+        'agreementType' => AgreementTypeReference::class,
+        'configurationType' => ConfigurationTypeReference::class,
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
-        'managedDevicesIntegration' => 'Spinen\ConnectWise\Models\v2019_3\Company\ManagedDevicesIntegrationReference',
-        'product' => 'Spinen\ConnectWise\Models\v2019_3\Company\IvItemReference',
+        'managedDevicesIntegration' => ManagedDevicesIntegrationReference::class,
+        'product' => IvItemReference::class,
         'vendorLevel' => 'string',
         'vendorType' => 'string',
     ];

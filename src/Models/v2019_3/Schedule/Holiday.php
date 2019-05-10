@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Holiday
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Schedule\HolidayListReference $holidayList
- * @property Spinen\ConnectWise\Models\v2019_3\Schedule\Metadata $_info
+ * @property HolidayListReference $holidayList
+ * @property Metadata $_info
  * @property boolean $allDayFlag
  * @property integer $id
  * @property string $date
@@ -26,10 +26,10 @@ class Holiday extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\Metadata',
+        '_info' => Metadata::class,
         'allDayFlag' => 'boolean',
         'date' => 'string',
-        'holidayList' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\HolidayListReference',
+        'holidayList' => HolidayListReference::class,
         'id' => 'integer',
         'name' => 'string',
         'timeEnd' => 'string',

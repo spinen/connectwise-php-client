@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TicketReference
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property string $summary
  */
@@ -21,7 +21,7 @@ class TicketReference extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'summary' => 'string',
     ];

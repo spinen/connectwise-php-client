@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SLAPriority
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Service\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference $priority
- * @property Spinen\ConnectWise\Models\v2018_5\Service\SLAReference $sla
+ * @property Metadata $_info
+ * @property PriorityReference $priority
+ * @property SLAReference $sla
  * @property float $planWithin
  * @property float $resolutionHours
  * @property float $respondHours
@@ -28,15 +28,15 @@ class SLAPriority extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Service\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'planWithin' => 'float',
         'planWithinPercent' => 'integer',
-        'priority' => 'Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference',
+        'priority' => PriorityReference::class,
         'resolutionHours' => 'float',
         'resolutionPercent' => 'integer',
         'respondHours' => 'float',
         'respondPercent' => 'integer',
-        'sla' => 'Spinen\ConnectWise\Models\v2018_5\Service\SLAReference',
+        'sla' => SLAReference::class,
     ];
 }

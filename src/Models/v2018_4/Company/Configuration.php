@@ -13,17 +13,17 @@ use Spinen\ConnectWise\Support\Model;
  * @property Carbon\Carbon $lastBackupDate
  * @property Carbon\Carbon $purchaseDate
  * @property Carbon\Carbon $warrantyExpirationDate
- * @property Spinen\ConnectWise\Models\v2018_4\Company\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_4\Company\CompanyReference $vendor
- * @property Spinen\ConnectWise\Models\v2018_4\Company\ConfigurationStatusReference $status
- * @property Spinen\ConnectWise\Models\v2018_4\Company\ConfigurationTypeReference $type
- * @property Spinen\ConnectWise\Models\v2018_4\Company\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2018_4\Company\Guid $mobileGuid
- * @property Spinen\ConnectWise\Models\v2018_4\Company\ManufacturerReference $manufacturer
- * @property Spinen\ConnectWise\Models\v2018_4\Company\MemberReference $installedBy
- * @property Spinen\ConnectWise\Models\v2018_4\Company\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\Company\SLAReference $sla
- * @property Spinen\ConnectWise\Models\v2018_4\Company\SiteReference $site
+ * @property CompanyReference $company
+ * @property CompanyReference $vendor
+ * @property ConfigurationStatusReference $status
+ * @property ConfigurationTypeReference $type
+ * @property ContactReference $contact
+ * @property Guid $mobileGuid
+ * @property ManufacturerReference $manufacturer
+ * @property MemberReference $installedBy
+ * @property Metadata $_info
+ * @property SLAReference $sla
+ * @property SiteReference $site
  * @property array $customFields
  * @property array $questions
  * @property boolean $activeFlag
@@ -69,7 +69,7 @@ class Configuration extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Company\Metadata',
+        '_info' => Metadata::class,
         'activeFlag' => 'boolean',
         'backupBillableSpaceGb' => 'float',
         'backupFailed' => 'integer',
@@ -82,43 +82,43 @@ class Configuration extends Model
         'backupYear' => 'integer',
         'billFlag' => 'boolean',
         'businessUnitId' => 'integer',
-        'company' => 'Spinen\ConnectWise\Models\v2018_4\Company\CompanyReference',
-        'contact' => 'Spinen\ConnectWise\Models\v2018_4\Company\ContactReference',
+        'company' => CompanyReference::class,
+        'contact' => ContactReference::class,
         'cpuSpeed' => 'string',
         'customFields' => 'array',
         'defaultGateway' => 'string',
         'deviceIdentifier' => 'string',
         'displayVendorFlag' => 'boolean',
         'id' => 'integer',
-        'installationDate' => 'Carbon\Carbon',
-        'installedBy' => 'Spinen\ConnectWise\Models\v2018_4\Company\MemberReference',
+        'installationDate' => Carbon\Carbon::class,
+        'installedBy' => MemberReference::class,
         'ipAddress' => 'string',
-        'lastBackupDate' => 'Carbon\Carbon',
+        'lastBackupDate' => Carbon\Carbon::class,
         'lastLoginName' => 'string',
         'localHardDrives' => 'string',
         'locationId' => 'integer',
         'macAddress' => 'string',
         'managementLink' => 'string',
-        'manufacturer' => 'Spinen\ConnectWise\Models\v2018_4\Company\ManufacturerReference',
-        'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_4\Company\Guid',
+        'manufacturer' => ManufacturerReference::class,
+        'mobileGuid' => Guid::class,
         'modelNumber' => 'string',
         'name' => 'string',
         'notes' => 'string',
         'osInfo' => 'string',
         'osType' => 'string',
         'parentConfigurationId' => 'integer',
-        'purchaseDate' => 'Carbon\Carbon',
+        'purchaseDate' => Carbon\Carbon::class,
         'questions' => 'array',
         'ram' => 'string',
         'remoteLink' => 'string',
         'serialNumber' => 'string',
-        'site' => 'Spinen\ConnectWise\Models\v2018_4\Company\SiteReference',
-        'sla' => 'Spinen\ConnectWise\Models\v2018_4\Company\SLAReference',
-        'status' => 'Spinen\ConnectWise\Models\v2018_4\Company\ConfigurationStatusReference',
+        'site' => SiteReference::class,
+        'sla' => SLAReference::class,
+        'status' => ConfigurationStatusReference::class,
         'tagNumber' => 'string',
-        'type' => 'Spinen\ConnectWise\Models\v2018_4\Company\ConfigurationTypeReference',
-        'vendor' => 'Spinen\ConnectWise\Models\v2018_4\Company\CompanyReference',
+        'type' => ConfigurationTypeReference::class,
+        'vendor' => CompanyReference::class,
         'vendorNotes' => 'string',
-        'warrantyExpirationDate' => 'Carbon\Carbon',
+        'warrantyExpirationDate' => Carbon\Carbon::class,
     ];
 }

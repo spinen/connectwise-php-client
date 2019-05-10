@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PortalConfigurationServiceSetup
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Company\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\Company\ServiceSignoffReference $fixedFeeTicketTemplate
- * @property Spinen\ConnectWise\Models\v2018_4\Company\ServiceSignoffReference $timeMaterialsTicketTemplate
+ * @property Metadata $_info
+ * @property ServiceSignoffReference $fixedFeeTicketTemplate
+ * @property ServiceSignoffReference $timeMaterialsTicketTemplate
  * @property boolean $actualHoursFlag
  * @property boolean $approvalStatusFlag
  * @property boolean $assignedResourcesFlag
@@ -41,7 +41,7 @@ class PortalConfigurationServiceSetup extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Company\Metadata',
+        '_info' => Metadata::class,
         'actualHoursFlag' => 'boolean',
         'approvalStatusFlag' => 'boolean',
         'assignedResourcesFlag' => 'boolean',
@@ -51,7 +51,7 @@ class PortalConfigurationServiceSetup extends Model
         'displayClosedTicketsOption' => 'string',
         'enableChatAssistFlag' => 'boolean',
         'enteredDateFlag' => 'boolean',
-        'fixedFeeTicketTemplate' => 'Spinen\ConnectWise\Models\v2018_4\Company\ServiceSignoffReference',
+        'fixedFeeTicketTemplate' => ServiceSignoffReference::class,
         'id' => 'integer',
         'lastUpdateFlag' => 'boolean',
         'openTasksFlag' => 'boolean',
@@ -63,6 +63,6 @@ class PortalConfigurationServiceSetup extends Model
         'siteNameFlag' => 'boolean',
         'slaInfoFlag' => 'boolean',
         'statusFlag' => 'boolean',
-        'timeMaterialsTicketTemplate' => 'Spinen\ConnectWise\Models\v2018_4\Company\ServiceSignoffReference',
+        'timeMaterialsTicketTemplate' => ServiceSignoffReference::class,
     ];
 }

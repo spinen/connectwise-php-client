@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TicketTask
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Project\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\Project\ScheduleEntryReference $schedule
- * @property Spinen\ConnectWise\Models\v2019_1\Project\ServiceCodeReference $code
+ * @property Metadata $_info
+ * @property ScheduleEntryReference $schedule
+ * @property ServiceCodeReference $code
  * @property boolean $closedFlag
  * @property integer $childTicketId
  * @property integer $id
@@ -29,16 +29,16 @@ class TicketTask extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Project\Metadata',
+        '_info' => Metadata::class,
         'childScheduleAction' => 'string',
         'childTicketId' => 'integer',
         'closedFlag' => 'boolean',
-        'code' => 'Spinen\ConnectWise\Models\v2019_1\Project\ServiceCodeReference',
+        'code' => ServiceCodeReference::class,
         'id' => 'integer',
         'notes' => 'string',
         'priority' => 'integer',
         'resolution' => 'string',
-        'schedule' => 'Spinen\ConnectWise\Models\v2019_1\Project\ScheduleEntryReference',
+        'schedule' => ScheduleEntryReference::class,
         'ticketId' => 'integer',
     ];
 }

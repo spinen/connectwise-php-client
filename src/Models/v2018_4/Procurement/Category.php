@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Category
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
+ * @property Metadata $_info
  * @property array $locationIds
  * @property boolean $addAllLocations
  * @property boolean $inactiveFlag
@@ -27,7 +27,7 @@ class Category extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
+        '_info' => Metadata::class,
         'addAllLocations' => 'boolean',
         'id' => 'integer',
         'inactiveFlag' => 'boolean',

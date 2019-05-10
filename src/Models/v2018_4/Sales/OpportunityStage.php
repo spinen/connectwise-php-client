@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OpportunityStage
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\OpportunityProbabilityReference $probability
+ * @property Metadata $_info
+ * @property OpportunityProbabilityReference $probability
  * @property integer $id
  * @property integer $sequenceNumber
  * @property string $color
@@ -24,11 +24,11 @@ class OpportunityStage extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Sales\Metadata',
+        '_info' => Metadata::class,
         'color' => 'string',
         'id' => 'integer',
         'name' => 'string',
-        'probability' => 'Spinen\ConnectWise\Models\v2018_4\Sales\OpportunityProbabilityReference',
+        'probability' => OpportunityProbabilityReference::class,
         'sequenceNumber' => 'integer',
     ];
 }

@@ -9,39 +9,39 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Member
  *
+ * @property BoardReference $serviceDefaultBoard
+ * @property CalendarReference $calendar
  * @property Carbon\Carbon $hireDate
  * @property Carbon\Carbon $inactiveDate
  * @property Carbon\Carbon $timeSheetStartDate
- * @property Spinen\ConnectWise\Models\v2018_6\System\BoardReference $serviceDefaultBoard
- * @property Spinen\ConnectWise\Models\v2018_6\System\CalendarReference $calendar
- * @property Spinen\ConnectWise\Models\v2018_6\System\CountryReference $country
- * @property Spinen\ConnectWise\Models\v2018_6\System\DocumentReference $photo
- * @property Spinen\ConnectWise\Models\v2018_6\System\LdapConfigurationReference $ldapConfiguration
- * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $expenseApprover
- * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $reportsTo
- * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $timeApprover
- * @property Spinen\ConnectWise\Models\v2018_6\System\MemberTypeReference $type
- * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_6\System\ProjectBoardReference $projectDefaultBoard
- * @property Spinen\ConnectWise\Models\v2018_6\System\ReportCardReference $reportCard
- * @property Spinen\ConnectWise\Models\v2018_6\System\SecurityRoleReference $securityRole
- * @property Spinen\ConnectWise\Models\v2018_6\System\ServiceLocationReference $serviceLocation
- * @property Spinen\ConnectWise\Models\v2018_6\System\StructureReference $structureLevel
- * @property Spinen\ConnectWise\Models\v2018_6\System\SystemDepartmentReference $defaultDepartment
- * @property Spinen\ConnectWise\Models\v2018_6\System\SystemDepartmentReference $projectDefaultDepartment
- * @property Spinen\ConnectWise\Models\v2018_6\System\SystemDepartmentReference $scheduleDefaultDepartment
- * @property Spinen\ConnectWise\Models\v2018_6\System\SystemDepartmentReference $serviceDefaultDepartment
- * @property Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference $defaultLocation
- * @property Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference $projectDefaultLocation
- * @property Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference $salesDefaultLocation
- * @property Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference $scheduleDefaultLocation
- * @property Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference $securityLocation
- * @property Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference $serviceDefaultLocation
- * @property Spinen\ConnectWise\Models\v2018_6\System\TimeZoneSetupReference $timeZone
- * @property Spinen\ConnectWise\Models\v2018_6\System\WarehouseBinReference $warehouseBin
- * @property Spinen\ConnectWise\Models\v2018_6\System\WarehouseReference $warehouse
- * @property Spinen\ConnectWise\Models\v2018_6\System\WorkRoleReference $workRole
- * @property Spinen\ConnectWise\Models\v2018_6\System\WorkTypeReference $workType
+ * @property CountryReference $country
+ * @property DocumentReference $photo
+ * @property LdapConfigurationReference $ldapConfiguration
+ * @property MemberReference $expenseApprover
+ * @property MemberReference $reportsTo
+ * @property MemberReference $timeApprover
+ * @property MemberTypeReference $type
+ * @property Metadata $_info
+ * @property ProjectBoardReference $projectDefaultBoard
+ * @property ReportCardReference $reportCard
+ * @property SecurityRoleReference $securityRole
+ * @property ServiceLocationReference $serviceLocation
+ * @property StructureReference $structureLevel
+ * @property SystemDepartmentReference $defaultDepartment
+ * @property SystemDepartmentReference $projectDefaultDepartment
+ * @property SystemDepartmentReference $scheduleDefaultDepartment
+ * @property SystemDepartmentReference $serviceDefaultDepartment
+ * @property SystemLocationReference $defaultLocation
+ * @property SystemLocationReference $projectDefaultLocation
+ * @property SystemLocationReference $salesDefaultLocation
+ * @property SystemLocationReference $scheduleDefaultLocation
+ * @property SystemLocationReference $securityLocation
+ * @property SystemLocationReference $serviceDefaultLocation
+ * @property TimeZoneSetupReference $timeZone
+ * @property WarehouseBinReference $warehouseBin
+ * @property WarehouseReference $warehouse
+ * @property WorkRoleReference $workRole
+ * @property WorkTypeReference $workType
  * @property array $excludedProjectBoardIds
  * @property array $excludedServiceBoardIds
  * @property array $serviceBoardTeamIds
@@ -124,22 +124,22 @@ class Member extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
+        '_info' => Metadata::class,
         'adminFlag' => 'boolean',
         'agreementInvoicingDisplayOptions' => 'string',
         'allowExpensesEnteredAgainstCompaniesFlag' => 'boolean',
         'allowInCellEntryOnTimeSheet' => 'boolean',
         'authenticationServiceType' => 'string',
         'billableForecast' => 'float',
-        'calendar' => 'Spinen\ConnectWise\Models\v2018_6\System\CalendarReference',
+        'calendar' => CalendarReference::class,
         'calendarSyncIntegrationFlag' => 'boolean',
         'companyActivityTabFormat' => 'string',
-        'country' => 'Spinen\ConnectWise\Models\v2018_6\System\CountryReference',
+        'country' => CountryReference::class,
         'dailyCapacity' => 'float',
         'daysTolerance' => 'integer',
-        'defaultDepartment' => 'Spinen\ConnectWise\Models\v2018_6\System\SystemDepartmentReference',
+        'defaultDepartment' => SystemDepartmentReference::class,
         'defaultEmail' => 'string',
-        'defaultLocation' => 'Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference',
+        'defaultLocation' => SystemLocationReference::class,
         'defaultPhone' => 'string',
         'disableOnlineFlag' => 'boolean',
         'employeeIdentifer' => 'string',
@@ -149,10 +149,10 @@ class Member extends Model
         'enterTimeAgainstCompanyFlag' => 'boolean',
         'excludedProjectBoardIds' => 'array',
         'excludedServiceBoardIds' => 'array',
-        'expenseApprover' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        'expenseApprover' => MemberReference::class,
         'firstName' => 'string',
         'hideMemberInDispatchPortalFlag' => 'boolean',
-        'hireDate' => 'Carbon\Carbon',
+        'hireDate' => Carbon\Carbon::class,
         'homeEmail' => 'string',
         'homeExtension' => 'string',
         'homePhone' => 'string',
@@ -160,7 +160,7 @@ class Member extends Model
         'hourlyRate' => 'float',
         'id' => 'integer',
         'identifier' => 'string',
-        'inactiveDate' => 'Carbon\Carbon',
+        'inactiveDate' => Carbon\Carbon::class,
         'inactiveFlag' => 'boolean',
         'includeInUtilizationReportingFlag' => 'boolean',
         'invoiceScreenDefaultTabFormat' => 'string',
@@ -168,7 +168,7 @@ class Member extends Model
         'invoicingDisplayOptions' => 'string',
         'lastLogin' => 'string',
         'lastName' => 'string',
-        'ldapConfiguration' => 'Spinen\ConnectWise\Models\v2018_6\System\LdapConfigurationReference',
+        'ldapConfiguration' => LdapConfigurationReference::class,
         'ldapUserName' => 'string',
         'licenseClass' => 'string',
         'mapiName' => 'string',
@@ -182,17 +182,17 @@ class Member extends Model
         'officeExtension' => 'string',
         'officePhone' => 'string',
         'password' => 'string',
-        'photo' => 'Spinen\ConnectWise\Models\v2018_6\System\DocumentReference',
-        'projectDefaultBoard' => 'Spinen\ConnectWise\Models\v2018_6\System\ProjectBoardReference',
-        'projectDefaultDepartment' => 'Spinen\ConnectWise\Models\v2018_6\System\SystemDepartmentReference',
-        'projectDefaultLocation' => 'Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference',
+        'photo' => DocumentReference::class,
+        'projectDefaultBoard' => ProjectBoardReference::class,
+        'projectDefaultDepartment' => SystemDepartmentReference::class,
+        'projectDefaultLocation' => SystemLocationReference::class,
         'remotePackage' => 'string',
         'remotePackageAccount' => 'string',
         'remotePackagePassword' => 'string',
         'remotePackagePlatform' => 'string',
         'remotePackageUserName' => 'string',
-        'reportCard' => 'Spinen\ConnectWise\Models\v2018_6\System\ReportCardReference',
-        'reportsTo' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        'reportCard' => ReportCardReference::class,
+        'reportsTo' => MemberReference::class,
         'requireExpenseEntryFlag' => 'boolean',
         'requireStartAndEndTimeOnTimeEntryFlag' => 'boolean',
         'requireTimeSheetEntryFlag' => 'boolean',
@@ -206,29 +206,29 @@ class Member extends Model
         'restrictScheduleFlag' => 'boolean',
         'restrictServiceDefaultDepartmentFlag' => 'boolean',
         'restrictServiceDefaultLocationFlag' => 'boolean',
-        'salesDefaultLocation' => 'Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference',
+        'salesDefaultLocation' => SystemLocationReference::class,
         'scheduleCapacity' => 'float',
-        'scheduleDefaultDepartment' => 'Spinen\ConnectWise\Models\v2018_6\System\SystemDepartmentReference',
-        'scheduleDefaultLocation' => 'Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference',
-        'securityLocation' => 'Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference',
-        'securityRole' => 'Spinen\ConnectWise\Models\v2018_6\System\SecurityRoleReference',
+        'scheduleDefaultDepartment' => SystemDepartmentReference::class,
+        'scheduleDefaultLocation' => SystemLocationReference::class,
+        'securityLocation' => SystemLocationReference::class,
+        'securityRole' => SecurityRoleReference::class,
         'serviceBoardTeamIds' => 'array',
-        'serviceDefaultBoard' => 'Spinen\ConnectWise\Models\v2018_6\System\BoardReference',
-        'serviceDefaultDepartment' => 'Spinen\ConnectWise\Models\v2018_6\System\SystemDepartmentReference',
-        'serviceDefaultLocation' => 'Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference',
-        'serviceLocation' => 'Spinen\ConnectWise\Models\v2018_6\System\ServiceLocationReference',
-        'structureLevel' => 'Spinen\ConnectWise\Models\v2018_6\System\StructureReference',
-        'timeApprover' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        'serviceDefaultBoard' => BoardReference::class,
+        'serviceDefaultDepartment' => SystemDepartmentReference::class,
+        'serviceDefaultLocation' => SystemLocationReference::class,
+        'serviceLocation' => ServiceLocationReference::class,
+        'structureLevel' => StructureReference::class,
+        'timeApprover' => MemberReference::class,
         'timeReminderEmailFlag' => 'boolean',
-        'timeSheetStartDate' => 'Carbon\Carbon',
-        'timeZone' => 'Spinen\ConnectWise\Models\v2018_6\System\TimeZoneSetupReference',
+        'timeSheetStartDate' => Carbon\Carbon::class,
+        'timeZone' => TimeZoneSetupReference::class,
         'timebasedOneTimePasswordActivated' => 'boolean',
         'title' => 'string',
-        'type' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberTypeReference',
+        'type' => MemberTypeReference::class,
         'vendorNumber' => 'string',
-        'warehouse' => 'Spinen\ConnectWise\Models\v2018_6\System\WarehouseReference',
-        'warehouseBin' => 'Spinen\ConnectWise\Models\v2018_6\System\WarehouseBinReference',
-        'workRole' => 'Spinen\ConnectWise\Models\v2018_6\System\WorkRoleReference',
-        'workType' => 'Spinen\ConnectWise\Models\v2018_6\System\WorkTypeReference',
+        'warehouse' => WarehouseReference::class,
+        'warehouseBin' => WarehouseBinReference::class,
+        'workRole' => WorkRoleReference::class,
+        'workType' => WorkTypeReference::class,
     ];
 }

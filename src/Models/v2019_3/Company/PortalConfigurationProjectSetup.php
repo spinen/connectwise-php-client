@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PortalConfigurationProjectSetup
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_3\Company\PortalConfigurationReference $portalConfig
+ * @property Metadata $_info
+ * @property PortalConfigurationReference $portalConfig
  * @property boolean $billingMethodFlag
  * @property boolean $contactFlag
  * @property boolean $descriptionFlag
@@ -63,7 +63,7 @@ class PortalConfigurationProjectSetup extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
+        '_info' => Metadata::class,
         'billingMethodFlag' => 'boolean',
         'contactFlag' => 'boolean',
         'descriptionFlag' => 'boolean',
@@ -82,7 +82,7 @@ class PortalConfigurationProjectSetup extends Model
         'id' => 'integer',
         'lastUpdatedFlag' => 'boolean',
         'onlyDisplay' => 'string',
-        'portalConfig' => 'Spinen\ConnectWise\Models\v2019_3\Company\PortalConfigurationReference',
+        'portalConfig' => PortalConfigurationReference::class,
         'projectDetailTotalHoursFlag' => 'boolean',
         'projectIssueActualFinishFlag' => 'boolean',
         'projectIssueActualHrsFlag' => 'boolean',

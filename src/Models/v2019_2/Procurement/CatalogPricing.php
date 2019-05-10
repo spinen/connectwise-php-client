@@ -10,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for CatalogPricing
  *
  * @property Carbon\Carbon $date
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\CatalogItemReference $catalogItem
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\SystemLocationReference $location
+ * @property CatalogItemReference $catalogItem
+ * @property CompanyReference $company
+ * @property SystemLocationReference $location
  * @property float $price
  * @property integer $quantity
  */
@@ -24,10 +24,10 @@ class CatalogPricing extends Model
      * @var array
      */
     protected $casts = [
-        'catalogItem' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\CatalogItemReference',
-        'company' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\CompanyReference',
-        'date' => 'Carbon\Carbon',
-        'location' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\SystemLocationReference',
+        'catalogItem' => CatalogItemReference::class,
+        'company' => CompanyReference::class,
+        'date' => Carbon\Carbon::class,
+        'location' => SystemLocationReference::class,
         'price' => 'float',
         'quantity' => 'integer',
     ];

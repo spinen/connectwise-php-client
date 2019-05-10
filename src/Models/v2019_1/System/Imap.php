@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Imap
  *
- * @property Spinen\ConnectWise\Models\v2019_1\System\EmailConnectorReference $emailConnector
- * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
+ * @property EmailConnectorReference $emailConnector
+ * @property Metadata $_info
  * @property boolean $sslFlag
  * @property integer $id
  * @property integer $port
@@ -29,8 +29,8 @@ class Imap extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
-        'emailConnector' => 'Spinen\ConnectWise\Models\v2019_1\System\EmailConnectorReference',
+        '_info' => Metadata::class,
+        'emailConnector' => EmailConnectorReference::class,
         'id' => 'integer',
         'imapName' => 'string',
         'name' => 'string',

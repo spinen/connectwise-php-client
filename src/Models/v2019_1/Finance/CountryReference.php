@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CountryReference
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property string $identifier
  * @property string $name
@@ -22,7 +22,7 @@ class CountryReference extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',

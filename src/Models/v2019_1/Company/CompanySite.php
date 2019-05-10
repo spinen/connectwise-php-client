@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CompanySite
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Company\CalendarReference $calendar
- * @property Spinen\ConnectWise\Models\v2019_1\Company\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_1\Company\CountryReference $country
- * @property Spinen\ConnectWise\Models\v2019_1\Company\EntityTypeReference $entityType
- * @property Spinen\ConnectWise\Models\v2019_1\Company\Guid $mobileGuid
- * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\Company\TimeZoneSetupReference $timeZone
+ * @property CalendarReference $calendar
+ * @property CompanyReference $company
+ * @property CountryReference $country
+ * @property EntityTypeReference $entityType
+ * @property Guid $mobileGuid
+ * @property Metadata $_info
+ * @property TimeZoneSetupReference $timeZone
  * @property boolean $defaultBillingFlag
  * @property boolean $defaultMailingFlag
  * @property boolean $defaultShippingFlag
@@ -42,29 +42,29 @@ class CompanySite extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
+        '_info' => Metadata::class,
         'addressFormat' => 'string',
         'addressLine1' => 'string',
         'addressLine2' => 'string',
-        'calendar' => 'Spinen\ConnectWise\Models\v2019_1\Company\CalendarReference',
+        'calendar' => CalendarReference::class,
         'city' => 'string',
-        'company' => 'Spinen\ConnectWise\Models\v2019_1\Company\CompanyReference',
-        'country' => 'Spinen\ConnectWise\Models\v2019_1\Company\CountryReference',
+        'company' => CompanyReference::class,
+        'country' => CountryReference::class,
         'defaultBillingFlag' => 'boolean',
         'defaultMailingFlag' => 'boolean',
         'defaultShippingFlag' => 'boolean',
-        'entityType' => 'Spinen\ConnectWise\Models\v2019_1\Company\EntityTypeReference',
+        'entityType' => EntityTypeReference::class,
         'expenseReimbursement' => 'float',
         'faxNumber' => 'string',
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
-        'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_1\Company\Guid',
+        'mobileGuid' => Guid::class,
         'name' => 'string',
         'phoneNumber' => 'string',
         'primaryAddressFlag' => 'boolean',
         'state' => 'string',
         'taxCodeId' => 'integer',
-        'timeZone' => 'Spinen\ConnectWise\Models\v2019_1\Company\TimeZoneSetupReference',
+        'timeZone' => TimeZoneSetupReference::class,
         'zip' => 'string',
     ];
 }

@@ -24,7 +24,7 @@ class EmailOpened extends Model
     protected $casts = [
         'campaignId' => 'integer',
         'contactId' => 'integer',
-        'dateOpened' => 'Carbon\Carbon',
+        'dateOpened' => Carbon\Carbon::class,
         'id' => 'integer',
     ];
 }

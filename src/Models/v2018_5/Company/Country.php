@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Country
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Company\AddressFormatReference $addressFormat
- * @property Spinen\ConnectWise\Models\v2018_5\Company\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
+ * @property AddressFormatReference $addressFormat
+ * @property CurrencyReference $currency
+ * @property Metadata $_info
  * @property boolean $defaultFlag
  * @property integer $id
  * @property integer $zipMinimumLength
@@ -32,11 +32,11 @@ class Country extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
-        'addressFormat' => 'Spinen\ConnectWise\Models\v2018_5\Company\AddressFormatReference',
+        '_info' => Metadata::class,
+        'addressFormat' => AddressFormatReference::class,
         'cityCaption' => 'string',
         'countryCode' => 'string',
-        'currency' => 'Spinen\ConnectWise\Models\v2018_5\Company\CurrencyReference',
+        'currency' => CurrencyReference::class,
         'defaultFlag' => 'boolean',
         'dialingPrefix' => 'string',
         'id' => 'integer',

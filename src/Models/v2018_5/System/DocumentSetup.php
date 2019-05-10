@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for DocumentSetup
  *
- * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $isPublicFlag
  * @property boolean $uploadAsLinkFlag
  * @property integer $id
@@ -25,7 +25,7 @@ class DocumentSetup extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
+        '_info' => Metadata::class,
         'docPath' => 'string',
         'id' => 'integer',
         'isPublicFlag' => 'boolean',

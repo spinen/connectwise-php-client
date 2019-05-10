@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for WorkRole
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Time\Metadata $_info
+ * @property Metadata $_info
  * @property array $locationIds
  * @property boolean $addAllAgreementExclusions
  * @property boolean $addAllLocations
@@ -28,7 +28,7 @@ class WorkRole extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Time\Metadata',
+        '_info' => Metadata::class,
         'addAllAgreementExclusions' => 'boolean',
         'addAllLocations' => 'boolean',
         'hourlyRate' => 'float',

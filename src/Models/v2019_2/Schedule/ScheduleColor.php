@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ScheduleColor
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Schedule\Metadata $_info
+ * @property Metadata $_info
  * @property integer $endPercent
  * @property integer $id
  * @property integer $startPercent
@@ -23,7 +23,7 @@ class ScheduleColor extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\Metadata',
+        '_info' => Metadata::class,
         'color' => 'string',
         'endPercent' => 'integer',
         'id' => 'integer',

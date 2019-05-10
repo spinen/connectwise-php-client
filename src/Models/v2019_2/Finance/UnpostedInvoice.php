@@ -9,18 +9,18 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for UnpostedInvoice
  *
+ * @property BillingTermsReference $billingTerms
  * @property Carbon\Carbon $dateClosed
  * @property Carbon\Carbon $dueDate
  * @property Carbon\Carbon $invoiceDate
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\BillingTermsReference $billingTerms
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference $billToCompany
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference $shipToCompany
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\SiteReference $billToSite
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\SiteReference $shipToSite
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\TaxCodeReference $taxCode
+ * @property CompanyReference $billToCompany
+ * @property CompanyReference $company
+ * @property CompanyReference $shipToCompany
+ * @property CurrencyReference $currency
+ * @property Metadata $_info
+ * @property SiteReference $billToSite
+ * @property SiteReference $shipToSite
+ * @property TaxCodeReference $taxCode
  * @property boolean $avalaraTaxFlag
  * @property boolean $cityTaxFlag
  * @property boolean $compositeTaxFlag
@@ -64,17 +64,17 @@ class UnpostedInvoice extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
+        '_info' => Metadata::class,
         'accountNumber' => 'string',
         'avalaraTaxFlag' => 'boolean',
-        'billToCompany' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference',
-        'billToSite' => 'Spinen\ConnectWise\Models\v2019_2\Finance\SiteReference',
+        'billToCompany' => CompanyReference::class,
+        'billToSite' => SiteReference::class,
         'billingLogId' => 'integer',
-        'billingTerms' => 'Spinen\ConnectWise\Models\v2019_2\Finance\BillingTermsReference',
+        'billingTerms' => BillingTermsReference::class,
         'cityTaxAmount' => 'float',
         'cityTaxFlag' => 'boolean',
         'cityTaxXref' => 'string',
-        'company' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference',
+        'company' => CompanyReference::class,
         'compositeTaxAmount' => 'float',
         'compositeTaxFlag' => 'boolean',
         'compositeTaxXref' => 'string',
@@ -85,14 +85,14 @@ class UnpostedInvoice extends Model
         'countyTaxFlag' => 'boolean',
         'countyTaxXref' => 'string',
         'createdBy' => 'string',
-        'currency' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference',
-        'dateClosed' => 'Carbon\Carbon',
+        'currency' => CurrencyReference::class,
+        'dateClosed' => Carbon\Carbon::class,
         'departmentId' => 'integer',
         'description' => 'string',
-        'dueDate' => 'Carbon\Carbon',
+        'dueDate' => Carbon\Carbon::class,
         'dueDays' => 'string',
         'id' => 'integer',
-        'invoiceDate' => 'Carbon\Carbon',
+        'invoiceDate' => Carbon\Carbon::class,
         'invoiceNumber' => 'string',
         'invoiceTaxableFlag' => 'boolean',
         'invoiceType' => 'string',
@@ -102,13 +102,13 @@ class UnpostedInvoice extends Model
         'levelSixTaxXref' => 'string',
         'locationId' => 'integer',
         'salesTaxAmount' => 'float',
-        'shipToCompany' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference',
-        'shipToSite' => 'Spinen\ConnectWise\Models\v2019_2\Finance\SiteReference',
+        'shipToCompany' => CompanyReference::class,
+        'shipToSite' => SiteReference::class,
         'stateTaxAmount' => 'float',
         'stateTaxFlag' => 'boolean',
         'stateTaxXref' => 'string',
         'subTotal' => 'float',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2019_2\Finance\TaxCodeReference',
+        'taxCode' => TaxCodeReference::class,
         'total' => 'float',
     ];
 }

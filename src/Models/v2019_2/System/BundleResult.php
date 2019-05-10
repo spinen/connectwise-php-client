@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BundleResult
  *
- * @property Spinen\ConnectWise\Models\v2019_2\System\ErrorResponseMessage $Error
+ * @property ErrorResponseMessage $Error
  * @property array $Entities
  * @property boolean $Success
  * @property integer $Count
@@ -28,7 +28,7 @@ class BundleResult extends Model
     protected $casts = [
         'Count' => 'integer',
         'Entities' => 'array',
-        'Error' => 'Spinen\ConnectWise\Models\v2019_2\System\ErrorResponseMessage',
+        'Error' => ErrorResponseMessage::class,
         'ResourceType' => 'string',
         'SequenceNumber' => 'integer',
         'StatusCode' => 'integer',

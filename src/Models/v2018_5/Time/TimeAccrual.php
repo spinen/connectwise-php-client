@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TimeAccrual
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Time\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_5\Time\SystemLocationReference $location
+ * @property Metadata $_info
+ * @property SystemLocationReference $location
  * @property boolean $holidayCarryoverAllowedFlag
  * @property boolean $holidayFlag
  * @property boolean $ptoCarryoverAllowedFlag
@@ -37,13 +37,13 @@ class TimeAccrual extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Time\Metadata',
+        '_info' => Metadata::class,
         'holidayAvailableType' => 'string',
         'holidayCarryoverAllowedFlag' => 'boolean',
         'holidayCarryoverLimit' => 'float',
         'holidayFlag' => 'boolean',
         'id' => 'integer',
-        'location' => 'Spinen\ConnectWise\Models\v2018_5\Time\SystemLocationReference',
+        'location' => SystemLocationReference::class,
         'ptoAvailableType' => 'string',
         'ptoCarryoverAllowedFlag' => 'boolean',
         'ptoCarryoverLimit' => 'float',

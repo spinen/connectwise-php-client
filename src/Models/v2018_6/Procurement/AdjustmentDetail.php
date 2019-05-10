@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AdjustmentDetail
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\AdjustmentReference $adjustment
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\CatalogItemReference $catalogItem
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\WarehouseBinReference $warehouseBin
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\WarehouseReference $warehouse
+ * @property AdjustmentReference $adjustment
+ * @property CatalogItemReference $catalogItem
+ * @property Metadata $_info
+ * @property WarehouseBinReference $warehouseBin
+ * @property WarehouseReference $warehouse
  * @property float $quantityOnHand
  * @property float $unitCost
  * @property integer $id
@@ -29,16 +29,16 @@ class AdjustmentDetail extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
-        'adjustment' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\AdjustmentReference',
-        'catalogItem' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\CatalogItemReference',
+        '_info' => Metadata::class,
+        'adjustment' => AdjustmentReference::class,
+        'catalogItem' => CatalogItemReference::class,
         'description' => 'string',
         'id' => 'integer',
         'quantityAdjusted' => 'integer',
         'quantityOnHand' => 'float',
         'serialNumber' => 'string',
         'unitCost' => 'float',
-        'warehouse' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\WarehouseReference',
-        'warehouseBin' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\WarehouseBinReference',
+        'warehouse' => WarehouseReference::class,
+        'warehouseBin' => WarehouseBinReference::class,
     ];
 }

@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ClearPickerRequest
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Company\MemberReference $member
+ * @property MemberReference $member
  * @property string $type
  */
 class ClearPickerRequest extends Model
@@ -20,7 +20,7 @@ class ClearPickerRequest extends Model
      * @var array
      */
     protected $casts = [
-        'member' => 'Spinen\ConnectWise\Models\v2018_5\Company\MemberReference',
+        'member' => MemberReference::class,
         'type' => 'string',
     ];
 }

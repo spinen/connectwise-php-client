@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ManagementBackup
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Company\AgreementTypeReference $type
- * @property Spinen\ConnectWise\Models\v2019_2\Company\CatalogItemReference $item
- * @property Spinen\ConnectWise\Models\v2019_2\Company\Metadata $_info
+ * @property AgreementTypeReference $type
+ * @property CatalogItemReference $item
+ * @property Metadata $_info
  * @property integer $id
  * @property string $billingLevel
  */
@@ -23,10 +23,10 @@ class ManagementBackup extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Company\Metadata',
+        '_info' => Metadata::class,
         'billingLevel' => 'string',
         'id' => 'integer',
-        'item' => 'Spinen\ConnectWise\Models\v2019_2\Company\CatalogItemReference',
-        'type' => 'Spinen\ConnectWise\Models\v2019_2\Company\AgreementTypeReference',
+        'item' => CatalogItemReference::class,
+        'type' => AgreementTypeReference::class,
     ];
 }

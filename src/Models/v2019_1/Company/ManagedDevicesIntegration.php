@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ManagedDevicesIntegration
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Company\IntegratorLoginReference $integratorLogin
- * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\Company\SystemDepartmentReference $defaultDepartment
- * @property Spinen\ConnectWise\Models\v2019_1\Company\SystemLocationReference $defaultLocation
+ * @property IntegratorLoginReference $integratorLogin
+ * @property Metadata $_info
+ * @property SystemDepartmentReference $defaultDepartment
+ * @property SystemLocationReference $defaultLocation
  * @property boolean $configBillCustomerFlag
  * @property boolean $disableNewCrossReferencesFlag
  * @property boolean $matchOnSerialNumberFlag
@@ -34,16 +34,16 @@ class ManagedDevicesIntegration extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
+        '_info' => Metadata::class,
         'configBillCustomerFlag' => 'boolean',
         'defaultBillingLevel' => 'string',
-        'defaultDepartment' => 'Spinen\ConnectWise\Models\v2019_1\Company\SystemDepartmentReference',
-        'defaultLocation' => 'Spinen\ConnectWise\Models\v2019_1\Company\SystemLocationReference',
+        'defaultDepartment' => SystemDepartmentReference::class,
+        'defaultLocation' => SystemLocationReference::class,
         'disableNewCrossReferencesFlag' => 'boolean',
         'globalLoginPassword' => 'string',
         'globalLoginUsername' => 'string',
         'id' => 'integer',
-        'integratorLogin' => 'Spinen\ConnectWise\Models\v2019_1\Company\IntegratorLoginReference',
+        'integratorLogin' => IntegratorLoginReference::class,
         'loginBy' => 'string',
         'managementItSetupType' => 'string',
         'matchOnSerialNumberFlag' => 'boolean',

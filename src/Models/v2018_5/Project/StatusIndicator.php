@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for StatusIndicator
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Project\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property string $color
  * @property string $icon
@@ -24,7 +24,7 @@ class StatusIndicator extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Project\Metadata',
+        '_info' => Metadata::class,
         'color' => 'string',
         'icon' => 'string',
         'id' => 'integer',

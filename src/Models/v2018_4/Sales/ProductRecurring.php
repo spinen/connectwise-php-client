@@ -28,9 +28,9 @@ class ProductRecurring extends Model
         'billCycleId' => 'integer',
         'cycleType' => 'string',
         'cycles' => 'integer',
-        'endDate' => 'Carbon\Carbon',
+        'endDate' => Carbon\Carbon::class,
         'recurringCost' => 'float',
         'recurringRevenue' => 'float',
-        'startDate' => 'Carbon\Carbon',
+        'startDate' => Carbon\Carbon::class,
     ];
 }

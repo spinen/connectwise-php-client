@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ServiceSurveyQuestion
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Service\Metadata $_info
+ * @property Metadata $_info
  * @property array $options
  * @property boolean $includeFlag
  * @property boolean $requiredFlag
@@ -28,7 +28,7 @@ class ServiceSurveyQuestion extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Service\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'includeFlag' => 'boolean',
         'noAnswerPoints' => 'integer',

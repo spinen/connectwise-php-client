@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BoardAutoTemplate
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Service\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2018_5\Service\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_5\Service\ServiceItemReference $item
- * @property Spinen\ConnectWise\Models\v2018_5\Service\ServiceSubTypeReference $subtype
- * @property Spinen\ConnectWise\Models\v2018_5\Service\ServiceTemplateReference $serviceTemplate
- * @property Spinen\ConnectWise\Models\v2018_5\Service\ServiceTypeReference $type
+ * @property BoardReference $board
+ * @property Metadata $_info
+ * @property ServiceItemReference $item
+ * @property ServiceSubTypeReference $subtype
+ * @property ServiceTemplateReference $serviceTemplate
+ * @property ServiceTypeReference $type
  * @property boolean $autoApplyFlag
  * @property integer $id
  * @property string $budgetHoursSetting
@@ -36,23 +36,23 @@ class BoardAutoTemplate extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Service\Metadata',
+        '_info' => Metadata::class,
         'autoApplyFlag' => 'boolean',
-        'board' => 'Spinen\ConnectWise\Models\v2018_5\Service\BoardReference',
+        'board' => BoardReference::class,
         'budgetHoursSetting' => 'string',
         'discussionSetting' => 'string',
         'documentsSetting' => 'string',
         'financeInformationSetting' => 'string',
         'id' => 'integer',
         'internalAnalysisSetting' => 'string',
-        'item' => 'Spinen\ConnectWise\Models\v2018_5\Service\ServiceItemReference',
+        'item' => ServiceItemReference::class,
         'resolutionSetting' => 'string',
         'resourcesSetting' => 'string',
         'sendNotesAsEmailSetting' => 'string',
-        'serviceTemplate' => 'Spinen\ConnectWise\Models\v2018_5\Service\ServiceTemplateReference',
-        'subtype' => 'Spinen\ConnectWise\Models\v2018_5\Service\ServiceSubTypeReference',
+        'serviceTemplate' => ServiceTemplateReference::class,
+        'subtype' => ServiceSubTypeReference::class,
         'summarySetting' => 'string',
         'tasksSetting' => 'string',
-        'type' => 'Spinen\ConnectWise\Models\v2018_5\Service\ServiceTypeReference',
+        'type' => ServiceTypeReference::class,
     ];
 }

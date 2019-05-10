@@ -11,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Carbon\Carbon $cancelledDate
  * @property Carbon\Carbon $effectiveDate
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\IvItemReference $product
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\OpportunityReference $opportunity
+ * @property IvItemReference $product
+ * @property Metadata $_info
+ * @property OpportunityReference $opportunity
  * @property array $customFields
  * @property boolean $prorateCurrentPeriodFlag
  * @property boolean $purchaseItemFlag
@@ -48,14 +48,14 @@ class Addition extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
+        '_info' => Metadata::class,
         'agreementId' => 'integer',
         'billCustomer' => 'string',
         'billedQuantity' => 'float',
-        'cancelledDate' => 'Carbon\Carbon',
+        'cancelledDate' => Carbon\Carbon::class,
         'customFields' => 'array',
         'description' => 'string',
-        'effectiveDate' => 'Carbon\Carbon',
+        'effectiveDate' => Carbon\Carbon::class,
         'extCost' => 'float',
         'extPrice' => 'float',
         'extendedProrateCost' => 'float',
@@ -64,8 +64,8 @@ class Addition extends Model
         'invoiceDescription' => 'string',
         'lessIncluded' => 'float',
         'margin' => 'float',
-        'opportunity' => 'Spinen\ConnectWise\Models\v2019_2\Finance\OpportunityReference',
-        'product' => 'Spinen\ConnectWise\Models\v2019_2\Finance\IvItemReference',
+        'opportunity' => OpportunityReference::class,
+        'product' => IvItemReference::class,
         'prorateCost' => 'float',
         'prorateCurrentPeriodFlag' => 'boolean',
         'proratePrice' => 'float',

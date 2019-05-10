@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for DocumentInfo
  *
- * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $htmlTemplateFlag
  * @property boolean $imageFlag
  * @property boolean $linkFlag
@@ -30,7 +30,7 @@ class DocumentInfo extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
+        '_info' => Metadata::class,
         'fileName' => 'string',
         'htmlTemplateFlag' => 'boolean',
         'id' => 'integer',

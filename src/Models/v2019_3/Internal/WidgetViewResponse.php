@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for WidgetViewResponse
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Internal\JObject $widget_data
+ * @property JObject $widget_data
  */
 class WidgetViewResponse extends Model
 {
@@ -19,6 +19,6 @@ class WidgetViewResponse extends Model
      * @var array
      */
     protected $casts = [
-        'widget_data' => 'Spinen\ConnectWise\Models\v2019_3\Internal\JObject',
+        'widget_data' => JObject::class,
     ];
 }

@@ -10,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for AdjustmentType
  *
  * @property Carbon\Carbon $dateCreated
- * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $auditTrailFlag
  * @property integer $id
  * @property string $createdBy
@@ -25,10 +25,10 @@ class AdjustmentType extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
+        '_info' => Metadata::class,
         'auditTrailFlag' => 'boolean',
         'createdBy' => 'string',
-        'dateCreated' => 'Carbon\Carbon',
+        'dateCreated' => Carbon\Carbon::class,
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',

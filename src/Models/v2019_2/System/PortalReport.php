@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PortalReport
  *
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_2\System\PortalConfigurationReference $portalConfiguration
+ * @property Metadata $_info
+ * @property PortalConfigurationReference $portalConfiguration
  * @property boolean $customFlag
  * @property boolean $displayFlag
  * @property boolean $openSameWindowFlag
@@ -26,13 +26,13 @@ class PortalReport extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        '_info' => Metadata::class,
         'customFlag' => 'boolean',
         'displayFlag' => 'boolean',
         'id' => 'integer',
         'name' => 'string',
         'openSameWindowFlag' => 'boolean',
-        'portalConfiguration' => 'Spinen\ConnectWise\Models\v2019_2\System\PortalConfigurationReference',
+        'portalConfiguration' => PortalConfigurationReference::class,
         'url' => 'string',
     ];
 }

@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ConfigurationTypeQuestionReference
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property string $question
  */
@@ -21,7 +21,7 @@ class ConfigurationTypeQuestionReference extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'question' => 'string',
     ];

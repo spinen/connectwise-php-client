@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for InvoiceEmailTemplate
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\BillingStatusReference $invoiceStatus
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\ServiceSurveyReference $serviceSurvey
+ * @property BillingStatusReference $invoiceStatus
+ * @property Metadata $_info
+ * @property ServiceSurveyReference $serviceSurvey
  * @property boolean $copySenderFlag
  * @property boolean $useSenderFlag
  * @property integer $id
@@ -30,16 +30,16 @@ class InvoiceEmailTemplate extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
+        '_info' => Metadata::class,
         'body' => 'string',
         'copySenderFlag' => 'boolean',
         'emailAddress' => 'string',
         'firstName' => 'string',
         'id' => 'integer',
-        'invoiceStatus' => 'Spinen\ConnectWise\Models\v2019_1\Finance\BillingStatusReference',
+        'invoiceStatus' => BillingStatusReference::class,
         'lastName' => 'string',
         'name' => 'string',
-        'serviceSurvey' => 'Spinen\ConnectWise\Models\v2019_1\Finance\ServiceSurveyReference',
+        'serviceSurvey' => ServiceSurveyReference::class,
         'subject' => 'string',
         'useSenderFlag' => 'boolean',
     ];

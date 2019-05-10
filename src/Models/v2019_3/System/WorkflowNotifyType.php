@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for WorkflowNotifyType
  *
- * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $externalFlag
  * @property boolean $isSetupFlag
  * @property integer $id
@@ -24,7 +24,7 @@ class WorkflowNotifyType extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
+        '_info' => Metadata::class,
         'externalFlag' => 'boolean',
         'id' => 'integer',
         'identifier' => 'string',

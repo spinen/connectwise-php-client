@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ResultInfo
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\ErrorResponseMessage $error
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\IRestIdentifiedItem $data
+ * @property ErrorResponseMessage $error
+ * @property IRestIdentifiedItem $data
  * @property boolean $success
  * @property integer $originalIndex
  * @property integer $statusCode
@@ -23,8 +23,8 @@ class ResultInfo extends Model
      * @var array
      */
     protected $casts = [
-        'data' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\IRestIdentifiedItem',
-        'error' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\ErrorResponseMessage',
+        'data' => IRestIdentifiedItem::class,
+        'error' => ErrorResponseMessage::class,
         'originalIndex' => 'integer',
         'statusCode' => 'integer',
         'success' => 'boolean',

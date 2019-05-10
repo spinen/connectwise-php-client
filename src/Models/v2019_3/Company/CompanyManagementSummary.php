@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CompanyManagementSummary
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Company\AgreementReference $agreement
- * @property Spinen\ConnectWise\Models\v2019_3\Company\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_3\Company\ManagementSolutionReference $managementSolution
- * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
+ * @property AgreementReference $agreement
+ * @property CompanyReference $company
+ * @property ManagementSolutionReference $managementSolution
+ * @property Metadata $_info
  * @property float $cpuUtilization
  * @property float $internetConnectivity
  * @property float $memoryUtilization
@@ -53,10 +53,10 @@ class CompanyManagementSummary extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
-        'agreement' => 'Spinen\ConnectWise\Models\v2019_3\Company\AgreementReference',
+        '_info' => Metadata::class,
+        'agreement' => AgreementReference::class,
         'alertsGenerated' => 'string',
-        'company' => 'Spinen\ConnectWise\Models\v2019_3\Company\CompanyReference',
+        'company' => CompanyReference::class,
         'cpuUtilization' => 'float',
         'deviceType' => 'string',
         'diskCleanups' => 'integer',
@@ -67,7 +67,7 @@ class CompanyManagementSummary extends Model
         'groupIdentifier' => 'string',
         'id' => 'integer',
         'internetConnectivity' => 'float',
-        'managementSolution' => 'Spinen\ConnectWise\Models\v2019_3\Company\ManagementSolutionReference',
+        'managementSolution' => ManagementSolutionReference::class,
         'memoryUtilization' => 'float',
         'missingMoreFivePatchesMachines' => 'integer',
         'missingOneTwoPatchesMachines' => 'integer',

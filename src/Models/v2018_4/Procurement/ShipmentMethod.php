@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ShipmentMethod
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $defaultFlag
  * @property integer $id
  * @property string $name
@@ -24,7 +24,7 @@ class ShipmentMethod extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
         'id' => 'integer',
         'name' => 'string',

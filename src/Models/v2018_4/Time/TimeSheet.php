@@ -12,8 +12,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Carbon\Carbon $dateEnd
  * @property Carbon\Carbon $dateStart
  * @property Carbon\Carbon $deadline
- * @property Spinen\ConnectWise\Models\v2018_4\Time\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_4\Time\Metadata $_info
+ * @property MemberReference $member
+ * @property Metadata $_info
  * @property float $hours
  * @property integer $id
  * @property integer $period
@@ -28,13 +28,13 @@ class TimeSheet extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Time\Metadata',
-        'dateEnd' => 'Carbon\Carbon',
-        'dateStart' => 'Carbon\Carbon',
-        'deadline' => 'Carbon\Carbon',
+        '_info' => Metadata::class,
+        'dateEnd' => Carbon\Carbon::class,
+        'dateStart' => Carbon\Carbon::class,
+        'deadline' => Carbon\Carbon::class,
         'hours' => 'float',
         'id' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2018_4\Time\MemberReference',
+        'member' => MemberReference::class,
         'period' => 'integer',
         'status' => 'string',
         'year' => 'integer',

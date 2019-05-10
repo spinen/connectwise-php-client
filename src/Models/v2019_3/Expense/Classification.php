@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Classification
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Expense\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $companyFlag
  * @property boolean $defaultFlag
  * @property boolean $employeeFlag
@@ -25,7 +25,7 @@ class Classification extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Expense\Metadata',
+        '_info' => Metadata::class,
         'companyFlag' => 'boolean',
         'defaultFlag' => 'boolean',
         'employeeFlag' => 'boolean',

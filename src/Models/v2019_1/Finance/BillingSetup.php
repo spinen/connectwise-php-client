@@ -9,22 +9,22 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BillingSetup
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\CountryReference $country
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\CountryReference $localizedCountry
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\EmailTemplateReference $emailTemplate
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference $agreementInvoice
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference $creditMemoInvoice
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference $downPaymentInvoice
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference $miscInvoice
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference $overallInvoiceDefault
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference $progressInvoice
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference $salesOrderInvoice
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference $standardInvoiceActual
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference $standardInvoiceFixed
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\StateReference $state
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\SystemLocationReference $location
+ * @property CountryReference $country
+ * @property CountryReference $localizedCountry
+ * @property CurrencyReference $currency
+ * @property EmailTemplateReference $emailTemplate
+ * @property InvoiceTemplateReference $agreementInvoice
+ * @property InvoiceTemplateReference $creditMemoInvoice
+ * @property InvoiceTemplateReference $downPaymentInvoice
+ * @property InvoiceTemplateReference $miscInvoice
+ * @property InvoiceTemplateReference $overallInvoiceDefault
+ * @property InvoiceTemplateReference $progressInvoice
+ * @property InvoiceTemplateReference $salesOrderInvoice
+ * @property InvoiceTemplateReference $standardInvoiceActual
+ * @property InvoiceTemplateReference $standardInvoiceFixed
+ * @property Metadata $_info
+ * @property StateReference $state
+ * @property SystemLocationReference $location
  * @property boolean $NoWatermarkFlag
  * @property boolean $allowRestrictedDeptOnRoutingFlag
  * @property boolean $billProductAfterShipFlag
@@ -78,10 +78,10 @@ class BillingSetup extends Model
      */
     protected $casts = [
         'NoWatermarkFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
+        '_info' => Metadata::class,
         'addressOne' => 'string',
         'addressTwo' => 'string',
-        'agreementInvoice' => 'Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference',
+        'agreementInvoice' => InvoiceTemplateReference::class,
         'allowRestrictedDeptOnRoutingFlag' => 'boolean',
         'billProductAfterShipFlag' => 'boolean',
         'billProjectCompleteFlag' => 'boolean',
@@ -97,16 +97,16 @@ class BillingSetup extends Model
         'copyAgreementProductsFlag' => 'boolean',
         'copyNonServiceProductsFlag' => 'boolean',
         'copyServiceProductsFlag' => 'boolean',
-        'country' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CountryReference',
-        'creditMemoInvoice' => 'Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference',
-        'currency' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CurrencyReference',
+        'country' => CountryReference::class,
+        'creditMemoInvoice' => InvoiceTemplateReference::class,
+        'currency' => CurrencyReference::class,
         'customLabel' => 'string',
         'customText' => 'string',
         'deliveryReceiptFlag' => 'boolean',
         'disableRoutingEmailFlag' => 'boolean',
         'displayTaxFlag' => 'boolean',
-        'downPaymentInvoice' => 'Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference',
-        'emailTemplate' => 'Spinen\ConnectWise\Models\v2019_1\Finance\EmailTemplateReference',
+        'downPaymentInvoice' => InvoiceTemplateReference::class,
+        'emailTemplate' => EmailTemplateReference::class,
         'excludeAvalaraFlag' => 'boolean',
         'excludeDoNotBillExpenseFlag' => 'boolean',
         'excludeDoNotBillProductFlag' => 'boolean',
@@ -114,26 +114,26 @@ class BillingSetup extends Model
         'id' => 'integer',
         'invoiceFooter' => 'string',
         'invoiceTitle' => 'string',
-        'localizedCountry' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CountryReference',
-        'location' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SystemLocationReference',
-        'miscInvoice' => 'Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference',
-        'overallInvoiceDefault' => 'Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference',
+        'localizedCountry' => CountryReference::class,
+        'location' => SystemLocationReference::class,
+        'miscInvoice' => InvoiceTemplateReference::class,
+        'overallInvoiceDefault' => InvoiceTemplateReference::class,
         'payableName' => 'string',
         'phone' => 'string',
         'prefixSuffixFlag' => 'string',
         'prefixSuffixText' => 'string',
         'printLogoFlag' => 'boolean',
-        'progressInvoice' => 'Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference',
+        'progressInvoice' => InvoiceTemplateReference::class,
         'progressTimeFlag' => 'boolean',
         'quoteFooter' => 'string',
         'readReceiptFlag' => 'boolean',
         'remitName' => 'string',
         'restrictDownpaymentFlag' => 'boolean',
         'restrictProjectDownpaymentFlag' => 'boolean',
-        'salesOrderInvoice' => 'Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference',
-        'standardInvoiceActual' => 'Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference',
-        'standardInvoiceFixed' => 'Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference',
-        'state' => 'Spinen\ConnectWise\Models\v2019_1\Finance\StateReference',
+        'salesOrderInvoice' => InvoiceTemplateReference::class,
+        'standardInvoiceActual' => InvoiceTemplateReference::class,
+        'standardInvoiceFixed' => InvoiceTemplateReference::class,
+        'state' => StateReference::class,
         'topcomment' => 'string',
         'zip' => 'string',
     ];

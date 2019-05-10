@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * The List of Activities Assigned to the Member
  *
- * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $reAssignToMember
+ * @property MemberReference $reAssignToMember
  * @property integer $count
  */
 class SalesActivity extends Model
@@ -21,6 +21,6 @@ class SalesActivity extends Model
      */
     protected $casts = [
         'count' => 'integer',
-        'reAssignToMember' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        'reAssignToMember' => MemberReference::class,
     ];
 }

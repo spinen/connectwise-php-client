@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for WorkType
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Time\ExternalWorkTypeIntegrationReference $externalIntegrationXRef
- * @property Spinen\ConnectWise\Models\v2018_6\Time\Metadata $_info
+ * @property ExternalWorkTypeIntegrationReference $externalIntegrationXRef
+ * @property Metadata $_info
  * @property boolean $activityDefaultFlag
  * @property boolean $addAllAgreementExclusions
  * @property boolean $inactiveFlag
@@ -36,13 +36,13 @@ class WorkType extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Time\Metadata',
+        '_info' => Metadata::class,
         'accrualType' => 'string',
         'activityDefaultFlag' => 'boolean',
         'addAllAgreementExclusions' => 'boolean',
         'billTime' => 'string',
         'costMultiplier' => 'float',
-        'externalIntegrationXRef' => 'Spinen\ConnectWise\Models\v2018_6\Time\ExternalWorkTypeIntegrationReference',
+        'externalIntegrationXRef' => ExternalWorkTypeIntegrationReference::class,
         'hoursMax' => 'float',
         'hoursMin' => 'float',
         'id' => 'integer',

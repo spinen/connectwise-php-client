@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AgreementSite
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\SiteReference $site
+ * @property CompanyReference $company
+ * @property Metadata $_info
+ * @property SiteReference $site
  * @property array $customFields
  * @property integer $agreementId
  * @property integer $id
@@ -24,11 +24,11 @@ class AgreementSite extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
+        '_info' => Metadata::class,
         'agreementId' => 'integer',
-        'company' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CompanyReference',
+        'company' => CompanyReference::class,
         'customFields' => 'array',
         'id' => 'integer',
-        'site' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SiteReference',
+        'site' => SiteReference::class,
     ];
 }

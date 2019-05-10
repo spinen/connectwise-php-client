@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TimeSheetAudit
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Time\AuditSource $source
- * @property Spinen\ConnectWise\Models\v2018_4\Time\AuditType $type
- * @property Spinen\ConnectWise\Models\v2018_4\Time\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_4\Time\Metadata $_info
+ * @property AuditSource $source
+ * @property AuditType $type
+ * @property MemberReference $member
+ * @property Metadata $_info
  * @property integer $id
  * @property string $message
  * @property string $newValue
@@ -27,14 +27,14 @@ class TimeSheetAudit extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Time\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2018_4\Time\MemberReference',
+        'member' => MemberReference::class,
         'message' => 'string',
         'newValue' => 'string',
         'oldValue' => 'string',
-        'source' => 'Spinen\ConnectWise\Models\v2018_4\Time\AuditSource',
-        'type' => 'Spinen\ConnectWise\Models\v2018_4\Time\AuditType',
+        'source' => AuditSource::class,
+        'type' => AuditType::class,
         'value' => 'string',
     ];
 }

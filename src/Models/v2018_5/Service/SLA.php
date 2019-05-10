@@ -9,17 +9,17 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SLA
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Service\CalendarReference $customCalendar
- * @property Spinen\ConnectWise\Models\v2018_5\Service\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference $hiImpactHiUrgency
- * @property Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference $hiImpactLowUrgency
- * @property Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference $hiImpactMedUrgency
- * @property Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference $lowImpactHiUrgency
- * @property Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference $lowImpactLowUrgency
- * @property Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference $lowImpactMedUrgency
- * @property Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference $medImpactHiUrgency
- * @property Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference $medImpactLowUrgency
- * @property Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference $medImpactMedUrgency
+ * @property CalendarReference $customCalendar
+ * @property Metadata $_info
+ * @property PriorityReference $hiImpactHiUrgency
+ * @property PriorityReference $hiImpactLowUrgency
+ * @property PriorityReference $hiImpactMedUrgency
+ * @property PriorityReference $lowImpactHiUrgency
+ * @property PriorityReference $lowImpactLowUrgency
+ * @property PriorityReference $lowImpactMedUrgency
+ * @property PriorityReference $medImpactHiUrgency
+ * @property PriorityReference $medImpactLowUrgency
+ * @property PriorityReference $medImpactMedUrgency
  * @property boolean $defaultFlag
  * @property float $planWithin
  * @property float $resolutionHours
@@ -40,21 +40,21 @@ class SLA extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Service\Metadata',
+        '_info' => Metadata::class,
         'applicationOrder' => 'integer',
         'basedOn' => 'string',
-        'customCalendar' => 'Spinen\ConnectWise\Models\v2018_5\Service\CalendarReference',
+        'customCalendar' => CalendarReference::class,
         'defaultFlag' => 'boolean',
-        'hiImpactHiUrgency' => 'Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference',
-        'hiImpactLowUrgency' => 'Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference',
-        'hiImpactMedUrgency' => 'Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference',
+        'hiImpactHiUrgency' => PriorityReference::class,
+        'hiImpactLowUrgency' => PriorityReference::class,
+        'hiImpactMedUrgency' => PriorityReference::class,
         'id' => 'integer',
-        'lowImpactHiUrgency' => 'Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference',
-        'lowImpactLowUrgency' => 'Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference',
-        'lowImpactMedUrgency' => 'Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference',
-        'medImpactHiUrgency' => 'Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference',
-        'medImpactLowUrgency' => 'Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference',
-        'medImpactMedUrgency' => 'Spinen\ConnectWise\Models\v2018_5\Service\PriorityReference',
+        'lowImpactHiUrgency' => PriorityReference::class,
+        'lowImpactLowUrgency' => PriorityReference::class,
+        'lowImpactMedUrgency' => PriorityReference::class,
+        'medImpactHiUrgency' => PriorityReference::class,
+        'medImpactLowUrgency' => PriorityReference::class,
+        'medImpactMedUrgency' => PriorityReference::class,
         'name' => 'string',
         'planWithin' => 'float',
         'planWithinPercent' => 'integer',

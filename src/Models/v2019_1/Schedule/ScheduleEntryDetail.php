@@ -11,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Carbon\Carbon $dateEnd
  * @property Carbon\Carbon $dateStart
- * @property Spinen\ConnectWise\Models\v2019_1\Schedule\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\Schedule\ScheduleEntryReference $scheduleEntry
+ * @property Metadata $_info
+ * @property ScheduleEntryReference $scheduleEntry
  * @property float $hoursScheduled
  * @property integer $id
  */
@@ -24,11 +24,11 @@ class ScheduleEntryDetail extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Schedule\Metadata',
-        'dateEnd' => 'Carbon\Carbon',
-        'dateStart' => 'Carbon\Carbon',
+        '_info' => Metadata::class,
+        'dateEnd' => Carbon\Carbon::class,
+        'dateStart' => Carbon\Carbon::class,
         'hoursScheduled' => 'float',
         'id' => 'integer',
-        'scheduleEntry' => 'Spinen\ConnectWise\Models\v2019_1\Schedule\ScheduleEntryReference',
+        'scheduleEntry' => ScheduleEntryReference::class,
     ];
 }

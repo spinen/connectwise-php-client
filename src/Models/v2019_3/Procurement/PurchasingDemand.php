@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PurchasingDemand
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\CompanyReference $vendor
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\PurchaseOrder $purchaseOrder
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseReference $warehouse
+ * @property CompanyReference $vendor
+ * @property PurchaseOrder $purchaseOrder
+ * @property WarehouseReference $warehouse
  * @property array $products
  */
 class PurchasingDemand extends Model
@@ -23,8 +23,8 @@ class PurchasingDemand extends Model
      */
     protected $casts = [
         'products' => 'array',
-        'purchaseOrder' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\PurchaseOrder',
-        'vendor' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\CompanyReference',
-        'warehouse' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseReference',
+        'purchaseOrder' => PurchaseOrder::class,
+        'vendor' => CompanyReference::class,
+        'warehouse' => WarehouseReference::class,
     ];
 }

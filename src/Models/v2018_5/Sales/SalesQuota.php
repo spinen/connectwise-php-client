@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SalesQuota
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Sales\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2018_5\Sales\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_5\Sales\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_5\Sales\ProductCategoryReference $category
- * @property Spinen\ConnectWise\Models\v2018_5\Sales\ProductSubCategoryReference $subCategory
- * @property Spinen\ConnectWise\Models\v2018_5\Sales\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2018_5\Sales\SystemLocationReference $location
+ * @property CurrencyReference $currency
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property ProductCategoryReference $category
+ * @property ProductSubCategoryReference $subCategory
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
  * @property float $aprilMargin
  * @property float $aprilRevenue
  * @property float $augustMargin
@@ -51,16 +51,16 @@ class SalesQuota extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Sales\Metadata',
+        '_info' => Metadata::class,
         'aprilMargin' => 'float',
         'aprilRevenue' => 'float',
         'augustMargin' => 'float',
         'augustRevenue' => 'float',
-        'category' => 'Spinen\ConnectWise\Models\v2018_5\Sales\ProductCategoryReference',
-        'currency' => 'Spinen\ConnectWise\Models\v2018_5\Sales\CurrencyReference',
+        'category' => ProductCategoryReference::class,
+        'currency' => CurrencyReference::class,
         'decemberMargin' => 'float',
         'decemberRevenue' => 'float',
-        'department' => 'Spinen\ConnectWise\Models\v2018_5\Sales\SystemDepartmentReference',
+        'department' => SystemDepartmentReference::class,
         'februaryMargin' => 'float',
         'februaryRevenue' => 'float',
         'forecastYear' => 'integer',
@@ -71,18 +71,18 @@ class SalesQuota extends Model
         'julyRevenue' => 'float',
         'juneMargin' => 'float',
         'juneRevenue' => 'float',
-        'location' => 'Spinen\ConnectWise\Models\v2018_5\Sales\SystemLocationReference',
+        'location' => SystemLocationReference::class,
         'marchMargin' => 'float',
         'marchRevenue' => 'float',
         'mayMargin' => 'float',
         'mayRevenue' => 'float',
-        'member' => 'Spinen\ConnectWise\Models\v2018_5\Sales\MemberReference',
+        'member' => MemberReference::class,
         'novemberMargin' => 'float',
         'novemberRevenue' => 'float',
         'octoberMargin' => 'float',
         'octoberRevenue' => 'float',
         'septemberMargin' => 'float',
         'septemberRevenue' => 'float',
-        'subCategory' => 'Spinen\ConnectWise\Models\v2018_5\Sales\ProductSubCategoryReference',
+        'subCategory' => ProductSubCategoryReference::class,
     ];
 }

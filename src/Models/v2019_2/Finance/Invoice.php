@@ -9,18 +9,18 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Invoice
  *
+ * @property BillingStatusReference $status
+ * @property BillingTermsReference $billingTerms
  * @property Carbon\Carbon $date
  * @property Carbon\Carbon $dueDate
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\BillingStatusReference $status
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\BillingTermsReference $billingTerms
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference $billToCompany
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference $shipToCompany
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\SiteReference $billingSite
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\SiteReference $shippingSite
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\TaxCodeReference $taxCode
+ * @property CompanyReference $billToCompany
+ * @property CompanyReference $company
+ * @property CompanyReference $shipToCompany
+ * @property CurrencyReference $currency
+ * @property Metadata $_info
+ * @property SiteReference $billingSite
+ * @property SiteReference $shippingSite
+ * @property TaxCodeReference $taxCode
  * @property array $customFields
  * @property boolean $addToBatchEmailList
  * @property boolean $downpaymentPreviouslyTaxedFlag
@@ -68,7 +68,7 @@ class Invoice extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
+        '_info' => Metadata::class,
         'addToBatchEmailList' => 'boolean',
         'adjustedBy' => 'string',
         'adjustmentReason' => 'string',
@@ -77,20 +77,20 @@ class Invoice extends Model
         'applyToType' => 'string',
         'attention' => 'string',
         'balance' => 'float',
-        'billToCompany' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference',
-        'billingSite' => 'Spinen\ConnectWise\Models\v2019_2\Finance\SiteReference',
-        'billingTerms' => 'Spinen\ConnectWise\Models\v2019_2\Finance\BillingTermsReference',
+        'billToCompany' => CompanyReference::class,
+        'billingSite' => SiteReference::class,
+        'billingTerms' => BillingTermsReference::class,
         'bottomComment' => 'string',
-        'company' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference',
+        'company' => CompanyReference::class,
         'credits' => 'float',
-        'currency' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference',
+        'currency' => CurrencyReference::class,
         'customFields' => 'array',
         'customerPO' => 'string',
-        'date' => 'Carbon\Carbon',
+        'date' => Carbon\Carbon::class,
         'departmentId' => 'integer',
         'downpaymentApplied' => 'float',
         'downpaymentPreviouslyTaxedFlag' => 'boolean',
-        'dueDate' => 'Carbon\Carbon',
+        'dueDate' => Carbon\Carbon::class,
         'emailTemplateId' => 'integer',
         'expenseTotal' => 'float',
         'id' => 'integer',
@@ -106,12 +106,12 @@ class Invoice extends Model
         'salesTax' => 'float',
         'serviceAdjustmentAmount' => 'float',
         'serviceTotal' => 'float',
-        'shipToCompany' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference',
-        'shippingSite' => 'Spinen\ConnectWise\Models\v2019_2\Finance\SiteReference',
+        'shipToCompany' => CompanyReference::class,
+        'shippingSite' => SiteReference::class,
         'specialInvoiceFlag' => 'boolean',
-        'status' => 'Spinen\ConnectWise\Models\v2019_2\Finance\BillingStatusReference',
+        'status' => BillingStatusReference::class,
         'subtotal' => 'float',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2019_2\Finance\TaxCodeReference',
+        'taxCode' => TaxCodeReference::class,
         'taxableFlag' => 'boolean',
         'templateSetupId' => 'integer',
         'territoryId' => 'integer',

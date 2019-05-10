@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportVendor
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\BillingTermsReference $billingTerms
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\CompanyReference $vendor
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\SiteReference $site
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference $taxCode
+ * @property BillingTermsReference $billingTerms
+ * @property CompanyReference $company
+ * @property CompanyReference $vendor
+ * @property ContactReference $contact
+ * @property MemberReference $member
+ * @property SiteReference $site
+ * @property TaxCodeReference $taxCode
  * @property integer $dueDays
  * @property string $accountNumber
  * @property string $vendorNumber
@@ -29,14 +29,14 @@ class GLExportVendor extends Model
      */
     protected $casts = [
         'accountNumber' => 'string',
-        'billingTerms' => 'Spinen\ConnectWise\Models\v2018_4\Finance\BillingTermsReference',
-        'company' => 'Spinen\ConnectWise\Models\v2018_4\Finance\CompanyReference',
-        'contact' => 'Spinen\ConnectWise\Models\v2018_4\Finance\ContactReference',
+        'billingTerms' => BillingTermsReference::class,
+        'company' => CompanyReference::class,
+        'contact' => ContactReference::class,
         'dueDays' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2018_4\Finance\MemberReference',
-        'site' => 'Spinen\ConnectWise\Models\v2018_4\Finance\SiteReference',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference',
-        'vendor' => 'Spinen\ConnectWise\Models\v2018_4\Finance\CompanyReference',
+        'member' => MemberReference::class,
+        'site' => SiteReference::class,
+        'taxCode' => TaxCodeReference::class,
+        'vendor' => CompanyReference::class,
         'vendorNumber' => 'string',
     ];
 }

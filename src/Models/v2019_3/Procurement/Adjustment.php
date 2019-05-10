@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Adjustment
  *
+ * @property AdjustmentTypeReference $type
  * @property Carbon\Carbon $closedDate
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\AdjustmentTypeReference $type
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
+ * @property Metadata $_info
  * @property array $adjustmentDetails
  * @property boolean $closedFlag
  * @property integer $id
@@ -28,15 +28,15 @@ class Adjustment extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
+        '_info' => Metadata::class,
         'adjustmentDetails' => 'array',
         'closedBy' => 'string',
-        'closedDate' => 'Carbon\Carbon',
+        'closedDate' => Carbon\Carbon::class,
         'closedFlag' => 'boolean',
         'id' => 'integer',
         'identifier' => 'string',
         'notes' => 'string',
         'reason' => 'string',
-        'type' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\AdjustmentTypeReference',
+        'type' => AdjustmentTypeReference::class,
     ];
 }

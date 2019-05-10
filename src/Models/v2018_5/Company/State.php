@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for State
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Company\CountryReference $country
- * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
+ * @property CountryReference $country
+ * @property Metadata $_info
  * @property integer $id
  * @property string $identifier
  * @property string $name
@@ -23,8 +23,8 @@ class State extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
-        'country' => 'Spinen\ConnectWise\Models\v2018_5\Company\CountryReference',
+        '_info' => Metadata::class,
+        'country' => CountryReference::class,
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',

@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProjectBoardTeamMember
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Project\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2019_3\Project\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_3\Project\ProjectRoleReference $projectRole
- * @property Spinen\ConnectWise\Models\v2019_3\Project\WorkRoleReference $workRole
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property ProjectRoleReference $projectRole
+ * @property WorkRoleReference $workRole
  * @property integer $id
  */
 class ProjectBoardTeamMember extends Model
@@ -23,10 +23,10 @@ class ProjectBoardTeamMember extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Project\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2019_3\Project\MemberReference',
-        'projectRole' => 'Spinen\ConnectWise\Models\v2019_3\Project\ProjectRoleReference',
-        'workRole' => 'Spinen\ConnectWise\Models\v2019_3\Project\WorkRoleReference',
+        'member' => MemberReference::class,
+        'projectRole' => ProjectRoleReference::class,
+        'workRole' => WorkRoleReference::class,
     ];
 }

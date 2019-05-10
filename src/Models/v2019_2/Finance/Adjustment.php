@@ -10,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for Adjustment
  *
  * @property Carbon\Carbon $effectiveDate
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
+ * @property Metadata $_info
  * @property array $customFields
  * @property float $amount
  * @property integer $agreementId
@@ -25,12 +25,12 @@ class Adjustment extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
+        '_info' => Metadata::class,
         'agreementId' => 'integer',
         'amount' => 'float',
         'customFields' => 'array',
         'description' => 'string',
-        'effectiveDate' => 'Carbon\Carbon',
+        'effectiveDate' => Carbon\Carbon::class,
         'id' => 'integer',
     ];
 }

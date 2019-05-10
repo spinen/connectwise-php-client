@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ContactNote
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Company\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\Company\NoteTypeReference $type
+ * @property Metadata $_info
+ * @property NoteTypeReference $type
  * @property boolean $flagged
  * @property integer $contactId
  * @property integer $id
@@ -25,12 +25,12 @@ class ContactNote extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Company\Metadata',
+        '_info' => Metadata::class,
         'contactId' => 'integer',
         'enteredBy' => 'string',
         'flagged' => 'boolean',
         'id' => 'integer',
         'text' => 'string',
-        'type' => 'Spinen\ConnectWise\Models\v2018_4\Company\NoteTypeReference',
+        'type' => NoteTypeReference::class,
     ];
 }

@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TimeAccrualDetail
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Time\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\Time\TimeAccrualReference $timeAccrual
+ * @property Metadata $_info
+ * @property TimeAccrualReference $timeAccrual
  * @property float $hours
  * @property integer $endYear
  * @property integer $id
@@ -25,12 +25,12 @@ class TimeAccrualDetail extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Time\Metadata',
+        '_info' => Metadata::class,
         'accrualType' => 'string',
         'endYear' => 'integer',
         'hours' => 'float',
         'id' => 'integer',
         'startYear' => 'integer',
-        'timeAccrual' => 'Spinen\ConnectWise\Models\v2019_1\Time\TimeAccrualReference',
+        'timeAccrual' => TimeAccrualReference::class,
     ];
 }

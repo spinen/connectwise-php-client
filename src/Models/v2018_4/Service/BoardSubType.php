@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BoardSubType
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Service\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2018_4\Service\Metadata $_info
+ * @property BoardReference $board
+ * @property Metadata $_info
  * @property array $typeAssociationIds
  * @property boolean $addAllTypesFlag
  * @property boolean $inactiveFlag
@@ -26,9 +26,9 @@ class BoardSubType extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Service\Metadata',
+        '_info' => Metadata::class,
         'addAllTypesFlag' => 'boolean',
-        'board' => 'Spinen\ConnectWise\Models\v2018_4\Service\BoardReference',
+        'board' => BoardReference::class,
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'name' => 'string',

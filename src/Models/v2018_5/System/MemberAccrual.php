@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MemberAccrual
  *
- * @property Spinen\ConnectWise\Models\v2018_5\System\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
+ * @property MemberReference $member
+ * @property Metadata $_info
  * @property float $hours
  * @property integer $id
  * @property integer $year
@@ -25,11 +25,11 @@ class MemberAccrual extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
+        '_info' => Metadata::class,
         'accrualType' => 'string',
         'hours' => 'float',
         'id' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2018_5\System\MemberReference',
+        'member' => MemberReference::class,
         'reason' => 'string',
         'year' => 'integer',
     ];

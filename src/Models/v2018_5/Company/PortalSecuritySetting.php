@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PortalSecuritySetting
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $levelFive
  * @property boolean $levelFour
  * @property boolean $levelOne
@@ -28,7 +28,7 @@ class PortalSecuritySetting extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
+        '_info' => Metadata::class,
         'functionDescription' => 'string',
         'functionIdentifier' => 'string',
         'id' => 'integer',

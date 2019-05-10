@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PricingSchedule
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata $_info
+ * @property CurrencyReference $currency
+ * @property Metadata $_info
  * @property array $companies
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
@@ -27,9 +27,9 @@ class PricingSchedule extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata',
+        '_info' => Metadata::class,
         'companies' => 'array',
-        'currency' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\CurrencyReference',
+        'currency' => CurrencyReference::class,
         'defaultFlag' => 'boolean',
         'id' => 'integer',
         'inactiveFlag' => 'boolean',

@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Workflow
  *
+ * @property BoardReference $board
  * @property Carbon\Carbon $batchLastRan
- * @property Spinen\ConnectWise\Models\v2019_1\System\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\System\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2019_1\System\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2019_1\System\WorkflowTableTypeReference $tableType
+ * @property Metadata $_info
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
+ * @property WorkflowTableTypeReference $tableType
  * @property boolean $activateFlag
  * @property integer $batchInterval
  * @property integer $id
@@ -30,17 +30,17 @@ class Workflow extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
+        '_info' => Metadata::class,
         'activateFlag' => 'boolean',
         'batchFrequencyUnit' => 'string',
         'batchInterval' => 'integer',
-        'batchLastRan' => 'Carbon\Carbon',
+        'batchLastRan' => Carbon\Carbon::class,
         'batchSchedule' => 'string',
-        'board' => 'Spinen\ConnectWise\Models\v2019_1\System\BoardReference',
-        'department' => 'Spinen\ConnectWise\Models\v2019_1\System\SystemDepartmentReference',
+        'board' => BoardReference::class,
+        'department' => SystemDepartmentReference::class,
         'id' => 'integer',
-        'location' => 'Spinen\ConnectWise\Models\v2019_1\System\SystemLocationReference',
+        'location' => SystemLocationReference::class,
         'name' => 'string',
-        'tableType' => 'Spinen\ConnectWise\Models\v2019_1\System\WorkflowTableTypeReference',
+        'tableType' => WorkflowTableTypeReference::class,
     ];
 }

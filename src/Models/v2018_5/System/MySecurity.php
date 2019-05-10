@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MySecurity
  *
- * @property Spinen\ConnectWise\Models\v2018_5\System\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
+ * @property MemberReference $member
+ * @property Metadata $_info
  * @property boolean $customFlag
  * @property boolean $myAllFlag
  * @property boolean $reportFlag
@@ -36,14 +36,14 @@ class MySecurity extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
+        '_info' => Metadata::class,
         'addLevel' => 'string',
         'customFlag' => 'boolean',
         'deleteLevel' => 'string',
         'editLevel' => 'string',
         'id' => 'integer',
         'inquireLevel' => 'string',
-        'member' => 'Spinen\ConnectWise\Models\v2018_5\System\MemberReference',
+        'member' => MemberReference::class,
         'moduleDescription' => 'string',
         'moduleFunctionDescription' => 'string',
         'moduleFunctionIdentifier' => 'string',

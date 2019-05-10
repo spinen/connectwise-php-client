@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ServiceTicketLink
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Service\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $enabledFlag
  * @property integer $id
  * @property string $linkText
@@ -24,7 +24,7 @@ class ServiceTicketLink extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Service\Metadata',
+        '_info' => Metadata::class,
         'enabledFlag' => 'boolean',
         'id' => 'integer',
         'linkText' => 'string',

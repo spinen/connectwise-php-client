@@ -11,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Carbon\Carbon $cancelDate
  * @property Carbon\Carbon $effectiveDate
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\CountryReference $country
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
+ * @property CountryReference $country
+ * @property Metadata $_info
  * @property array $expenseTypeIds
  * @property array $productTypeIds
  * @property array $workRoleIds
@@ -110,17 +110,17 @@ class TaxCode extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
+        '_info' => Metadata::class,
         'addAllExpenseTypes' => 'boolean',
         'addAllProductTypes' => 'boolean',
         'addAllWorkRoles' => 'boolean',
         'canadaCalculateGSTFlag' => 'boolean',
-        'cancelDate' => 'Carbon\Carbon',
-        'country' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CountryReference',
+        'cancelDate' => Carbon\Carbon::class,
+        'country' => CountryReference::class,
         'defaultFlag' => 'boolean',
         'description' => 'string',
         'displayOnInvoiceFlag' => 'boolean',
-        'effectiveDate' => 'Carbon\Carbon',
+        'effectiveDate' => Carbon\Carbon::class,
         'expenseTypeIds' => 'array',
         'id' => 'integer',
         'identifier' => 'string',

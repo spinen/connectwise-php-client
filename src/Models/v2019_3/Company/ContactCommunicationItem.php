@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ContactCommunicationItem
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Company\CommunicationTypeReference $type
+ * @property CommunicationTypeReference $type
  * @property boolean $defaultFlag
  * @property integer $id
  * @property string $communicationType
@@ -30,7 +30,7 @@ class ContactCommunicationItem extends Model
         'domain' => 'string',
         'extension' => 'string',
         'id' => 'integer',
-        'type' => 'Spinen\ConnectWise\Models\v2019_3\Company\CommunicationTypeReference',
+        'type' => CommunicationTypeReference::class,
         'value' => 'string',
     ];
 }

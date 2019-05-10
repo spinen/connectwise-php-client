@@ -9,21 +9,21 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProjectPhase
  *
+ * @property AgreementReference $agreement
  * @property Carbon\Carbon $billingStartDate
  * @property Carbon\Carbon $deadlineDate
- * @property Spinen\ConnectWise\Models\v2019_1\Project\AgreementReference $agreement
- * @property Spinen\ConnectWise\Models\v2019_1\Project\CompanyReference $billToCompany
- * @property Spinen\ConnectWise\Models\v2019_1\Project\CompanyReference $shipToCompany
- * @property Spinen\ConnectWise\Models\v2019_1\Project\ContactReference $billToContact
- * @property Spinen\ConnectWise\Models\v2019_1\Project\ContactReference $shipToContact
- * @property Spinen\ConnectWise\Models\v2019_1\Project\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2019_1\Project\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\Project\OpportunityReference $opportunity
- * @property Spinen\ConnectWise\Models\v2019_1\Project\PhaseStatusReference $status
- * @property Spinen\ConnectWise\Models\v2019_1\Project\ProjectBoardReference $board
- * @property Spinen\ConnectWise\Models\v2019_1\Project\ProjectPhaseReference $parentPhase
- * @property Spinen\ConnectWise\Models\v2019_1\Project\SiteReference $billToSite
- * @property Spinen\ConnectWise\Models\v2019_1\Project\SiteReference $shipToSite
+ * @property CompanyReference $billToCompany
+ * @property CompanyReference $shipToCompany
+ * @property ContactReference $billToContact
+ * @property ContactReference $shipToContact
+ * @property CurrencyReference $currency
+ * @property Metadata $_info
+ * @property OpportunityReference $opportunity
+ * @property PhaseStatusReference $status
+ * @property ProjectBoardReference $board
+ * @property ProjectPhaseReference $parentPhase
+ * @property SiteReference $billToSite
+ * @property SiteReference $shipToSite
  * @property array $customFields
  * @property boolean $billPhaseClosedFlag
  * @property boolean $billProjectClosedFlag
@@ -66,28 +66,28 @@ class ProjectPhase extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Project\Metadata',
+        '_info' => Metadata::class,
         'actualEnd' => 'string',
         'actualHours' => 'float',
         'actualStart' => 'string',
-        'agreement' => 'Spinen\ConnectWise\Models\v2019_1\Project\AgreementReference',
+        'agreement' => AgreementReference::class,
         'billExpenses' => 'string',
         'billPhaseClosedFlag' => 'boolean',
         'billProducts' => 'string',
         'billProjectClosedFlag' => 'boolean',
         'billSeparatelyFlag' => 'boolean',
         'billTime' => 'string',
-        'billToCompany' => 'Spinen\ConnectWise\Models\v2019_1\Project\CompanyReference',
-        'billToContact' => 'Spinen\ConnectWise\Models\v2019_1\Project\ContactReference',
-        'billToSite' => 'Spinen\ConnectWise\Models\v2019_1\Project\SiteReference',
+        'billToCompany' => CompanyReference::class,
+        'billToContact' => ContactReference::class,
+        'billToSite' => SiteReference::class,
         'billingMethod' => 'string',
-        'billingStartDate' => 'Carbon\Carbon',
-        'board' => 'Spinen\ConnectWise\Models\v2019_1\Project\ProjectBoardReference',
+        'billingStartDate' => Carbon\Carbon::class,
+        'board' => ProjectBoardReference::class,
         'budgetHours' => 'float',
         'businessUnitId' => 'integer',
-        'currency' => 'Spinen\ConnectWise\Models\v2019_1\Project\CurrencyReference',
+        'currency' => CurrencyReference::class,
         'customFields' => 'array',
-        'deadlineDate' => 'Carbon\Carbon',
+        'deadlineDate' => Carbon\Carbon::class,
         'description' => 'string',
         'downpayment' => 'float',
         'estimatedExpenseCost' => 'float',
@@ -101,18 +101,18 @@ class ProjectPhase extends Model
         'locationId' => 'integer',
         'markAsMilestoneFlag' => 'boolean',
         'notes' => 'string',
-        'opportunity' => 'Spinen\ConnectWise\Models\v2019_1\Project\OpportunityReference',
-        'parentPhase' => 'Spinen\ConnectWise\Models\v2019_1\Project\ProjectPhaseReference',
+        'opportunity' => OpportunityReference::class,
+        'parentPhase' => ProjectPhaseReference::class,
         'poAmount' => 'float',
         'poNumber' => 'string',
         'projectId' => 'integer',
         'scheduledEnd' => 'string',
         'scheduledHours' => 'float',
         'scheduledStart' => 'string',
-        'shipToCompany' => 'Spinen\ConnectWise\Models\v2019_1\Project\CompanyReference',
-        'shipToContact' => 'Spinen\ConnectWise\Models\v2019_1\Project\ContactReference',
-        'shipToSite' => 'Spinen\ConnectWise\Models\v2019_1\Project\SiteReference',
-        'status' => 'Spinen\ConnectWise\Models\v2019_1\Project\PhaseStatusReference',
+        'shipToCompany' => CompanyReference::class,
+        'shipToContact' => ContactReference::class,
+        'shipToSite' => SiteReference::class,
+        'status' => PhaseStatusReference::class,
         'wbsCode' => 'string',
     ];
 }

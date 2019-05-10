@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for WorkRoleLocation
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Time\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_3\Time\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2019_3\Time\WorkRoleReference $workRole
+ * @property Metadata $_info
+ * @property SystemLocationReference $location
+ * @property WorkRoleReference $workRole
  * @property float $hourlyRate
  * @property integer $id
  */
@@ -23,10 +23,10 @@ class WorkRoleLocation extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Time\Metadata',
+        '_info' => Metadata::class,
         'hourlyRate' => 'float',
         'id' => 'integer',
-        'location' => 'Spinen\ConnectWise\Models\v2019_3\Time\SystemLocationReference',
-        'workRole' => 'Spinen\ConnectWise\Models\v2019_3\Time\WorkRoleReference',
+        'location' => SystemLocationReference::class,
+        'workRole' => WorkRoleReference::class,
     ];
 }

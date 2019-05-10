@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for IntegratorLogin
  *
+ * @property BoardReference $board
  * @property Carbon\Carbon $dateInactivated
- * @property Spinen\ConnectWise\Models\v2018_6\System\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $inactivatedBy
- * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
+ * @property MemberReference $inactivatedBy
+ * @property MemberReference $member
+ * @property Metadata $_info
  * @property boolean $CompanyLegacyCallbackFlag
  * @property boolean $activityApiFlag
  * @property boolean $activityLegacyCallbackFlag
@@ -80,14 +80,14 @@ class IntegratorLogin extends Model
      */
     protected $casts = [
         'CompanyLegacyCallbackFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
+        '_info' => Metadata::class,
         'activityApiFlag' => 'boolean',
         'activityCallbackUrl' => 'string',
         'activityLegacyCallbackFlag' => 'boolean',
         'agreementApiFlag' => 'boolean',
         'agreementCallbackLegacyFlag' => 'boolean',
         'agreementCallbackUrl' => 'string',
-        'board' => 'Spinen\ConnectWise\Models\v2018_6\System\BoardReference',
+        'board' => BoardReference::class,
         'canAccessAllApisFlag' => 'boolean',
         'canAccessAllRecordsFlag' => 'boolean',
         'companyApiFlag' => 'boolean',
@@ -100,10 +100,10 @@ class IntegratorLogin extends Model
         'contactApiFlag' => 'boolean',
         'contactCallbackUrl' => 'string',
         'contactLegacyCallbackFlag' => 'boolean',
-        'dateInactivated' => 'Carbon\Carbon',
+        'dateInactivated' => Carbon\Carbon::class,
         'documentApiFlag' => 'boolean',
         'id' => 'integer',
-        'inactivatedBy' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        'inactivatedBy' => MemberReference::class,
         'inactiveFlag' => 'boolean',
         'invoiceApiFlag' => 'boolean',
         'logMeInSupportApiFlag' => 'boolean',
@@ -111,7 +111,7 @@ class IntegratorLogin extends Model
         'managedServicesAutoChildFlag' => 'boolean',
         'managedServicesChildingFlag' => 'boolean',
         'marketingApiFlag' => 'boolean',
-        'member' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        'member' => MemberReference::class,
         'memberApiFlag' => 'boolean',
         'ntrSupportApiFlag' => 'boolean',
         'opportunityApiFlag' => 'boolean',

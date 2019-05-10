@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TeamMember
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Service\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2019_1\Service\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\Service\ServiceTeamReference $team
+ * @property BoardReference $board
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property ServiceTeamReference $team
  * @property boolean $teamLeaderFlag
  * @property integer $id
  */
@@ -24,11 +24,11 @@ class TeamMember extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
-        'board' => 'Spinen\ConnectWise\Models\v2019_1\Service\BoardReference',
+        '_info' => Metadata::class,
+        'board' => BoardReference::class,
         'id' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2019_1\Service\MemberReference',
-        'team' => 'Spinen\ConnectWise\Models\v2019_1\Service\ServiceTeamReference',
+        'member' => MemberReference::class,
+        'team' => ServiceTeamReference::class,
         'teamLeaderFlag' => 'boolean',
     ];
 }

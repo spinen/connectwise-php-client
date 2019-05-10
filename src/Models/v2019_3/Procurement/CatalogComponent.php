@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CatalogComponent
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\CatalogItemReference $catalogItem
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\CatalogItemReference $parentCatalogItem
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
+ * @property CatalogItemReference $catalogItem
+ * @property CatalogItemReference $parentCatalogItem
+ * @property Metadata $_info
  * @property boolean $hideDescriptionFlag
  * @property boolean $hideExtendedPriceFlag
  * @property boolean $hideItemIdentifierFlag
@@ -31,8 +31,8 @@ class CatalogComponent extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
-        'catalogItem' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\CatalogItemReference',
+        '_info' => Metadata::class,
+        'catalogItem' => CatalogItemReference::class,
         'cost' => 'float',
         'hideDescriptionFlag' => 'boolean',
         'hideExtendedPriceFlag' => 'boolean',
@@ -40,7 +40,7 @@ class CatalogComponent extends Model
         'hidePriceFlag' => 'boolean',
         'hideQuantityFlag' => 'boolean',
         'id' => 'integer',
-        'parentCatalogItem' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\CatalogItemReference',
+        'parentCatalogItem' => CatalogItemReference::class,
         'price' => 'float',
         'quantity' => 'float',
         'sequenceNumber' => 'integer',

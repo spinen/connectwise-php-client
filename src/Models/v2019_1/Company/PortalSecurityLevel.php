@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PortalSecurityLevel
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $isDefaultFlag
  * @property integer $id
  * @property string $caption
@@ -23,7 +23,7 @@ class PortalSecurityLevel extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
+        '_info' => Metadata::class,
         'caption' => 'string',
         'captionIdentifier' => 'string',
         'id' => 'integer',

@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TimeExpense
  *
- * @property Spinen\ConnectWise\Models\v2018_6\System\CompanyReference $internalCompany
- * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
+ * @property CompanyReference $internalCompany
+ * @property Metadata $_info
  * @property boolean $disableTimeEntryFlag
  * @property boolean $requireExpenseNoteFlag
  * @property boolean $requireTimeNoteFlag
@@ -28,10 +28,10 @@ class TimeExpense extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
+        '_info' => Metadata::class,
         'disableTimeEntryFlag' => 'boolean',
         'id' => 'integer',
-        'internalCompany' => 'Spinen\ConnectWise\Models\v2018_6\System\CompanyReference',
+        'internalCompany' => CompanyReference::class,
         'invoiceStart' => 'integer',
         'requireExpenseNoteFlag' => 'boolean',
         'requireTimeNoteFlag' => 'boolean',

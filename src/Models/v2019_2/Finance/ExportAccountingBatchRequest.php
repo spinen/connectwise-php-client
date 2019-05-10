@@ -45,6 +45,6 @@ class ExportAccountingBatchRequest extends Model
         'includedProductIds' => 'array',
         'locationId' => 'integer',
         'summarizeInvoices' => 'string',
-        'thruDate' => 'Carbon\Carbon',
+        'thruDate' => Carbon\Carbon::class,
     ];
 }

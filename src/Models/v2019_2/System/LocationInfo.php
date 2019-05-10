@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for LocationInfo
  *
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $location_flag
  * @property integer $id
  * @property string $name
@@ -22,7 +22,7 @@ class LocationInfo extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'location_flag' => 'boolean',
         'name' => 'string',

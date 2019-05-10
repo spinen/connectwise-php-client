@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Warehouse
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\MemberReference $manager
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\SiteReference $site
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\SystemLocationReference $location
+ * @property CompanyReference $company
+ * @property CurrencyReference $currency
+ * @property MemberReference $manager
+ * @property Metadata $_info
+ * @property SiteReference $site
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
  * @property boolean $inactiveFlag
  * @property boolean $locationDefaultFlag
  * @property boolean $overallDefaultFlag
@@ -31,18 +31,18 @@ class Warehouse extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata',
-        'company' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\CompanyReference',
-        'currency' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\CurrencyReference',
-        'department' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\SystemDepartmentReference',
+        '_info' => Metadata::class,
+        'company' => CompanyReference::class,
+        'currency' => CurrencyReference::class,
+        'department' => SystemDepartmentReference::class,
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
-        'location' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\SystemLocationReference',
+        'location' => SystemLocationReference::class,
         'locationDefaultFlag' => 'boolean',
         'locationXref' => 'string',
-        'manager' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\MemberReference',
+        'manager' => MemberReference::class,
         'name' => 'string',
         'overallDefaultFlag' => 'boolean',
-        'site' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\SiteReference',
+        'site' => SiteReference::class,
     ];
 }

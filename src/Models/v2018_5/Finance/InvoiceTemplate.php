@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for InvoiceTemplate
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $headerAccountVisibleFlag
  * @property boolean $headerDueDateVisibleFlag
  * @property boolean $headerPoNumberVisibleFlag
@@ -80,7 +80,7 @@ class InvoiceTemplate extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
+        '_info' => Metadata::class,
         'headerAccountCaption' => 'string',
         'headerAccountVisibleFlag' => 'boolean',
         'headerAddressPosition' => 'string',

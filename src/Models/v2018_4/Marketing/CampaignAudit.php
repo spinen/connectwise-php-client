@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CampaignAudit
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Marketing\GroupReference $group
+ * @property GroupReference $group
  * @property integer $campaignId
  * @property integer $documentsCreated
  * @property integer $emailsSent
@@ -34,7 +34,7 @@ class CampaignAudit extends Model
         'emailSubject' => 'string',
         'emailsSent' => 'integer',
         'emailsUnsent' => 'integer',
-        'group' => 'Spinen\ConnectWise\Models\v2018_4\Marketing\GroupReference',
+        'group' => GroupReference::class,
         'id' => 'integer',
     ];
 }

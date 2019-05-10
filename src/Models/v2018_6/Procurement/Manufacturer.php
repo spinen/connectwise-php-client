@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Manufacturer
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $inactiveFlag
  * @property integer $id
  * @property string $name
@@ -22,7 +22,7 @@ class Manufacturer extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'name' => 'string',

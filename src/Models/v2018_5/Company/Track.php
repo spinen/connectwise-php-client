@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Track
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
+ * @property Metadata $_info
  * @property array $notifyActionIds
  * @property boolean $inactiveFlag
  * @property integer $id
@@ -23,7 +23,7 @@ class Track extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'name' => 'string',

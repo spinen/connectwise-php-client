@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PortalConfigurationOpportunitySetup
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Company\ActivityTypeReference $acceptanceEmailActivityType
- * @property Spinen\ConnectWise\Models\v2018_6\Company\ActivityTypeReference $rejectionEmailActivityType
- * @property Spinen\ConnectWise\Models\v2018_6\Company\MemberReference $acceptanceEmailAssignedByMember
- * @property Spinen\ConnectWise\Models\v2018_6\Company\MemberReference $rejectionEmailAssignedByMember
- * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_6\Company\OpportunityStatusReference $acceptanceOpportunityStatus
- * @property Spinen\ConnectWise\Models\v2018_6\Company\OpportunityStatusReference $rejectionOpportunityStatus
+ * @property ActivityTypeReference $acceptanceEmailActivityType
+ * @property ActivityTypeReference $rejectionEmailActivityType
+ * @property MemberReference $acceptanceEmailAssignedByMember
+ * @property MemberReference $rejectionEmailAssignedByMember
+ * @property Metadata $_info
+ * @property OpportunityStatusReference $acceptanceOpportunityStatus
+ * @property OpportunityStatusReference $rejectionOpportunityStatus
  * @property array $opportunityStatusRecIDs
  * @property array $opportunityTypeRecIDs
  * @property boolean $acceptanceChangeStatusFlag
@@ -57,17 +57,17 @@ class PortalConfigurationOpportunitySetup extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
+        '_info' => Metadata::class,
         'acceptanceChangeStatusFlag' => 'boolean',
         'acceptanceCreateActivityFlag' => 'boolean',
-        'acceptanceEmailActivityType' => 'Spinen\ConnectWise\Models\v2018_6\Company\ActivityTypeReference',
-        'acceptanceEmailAssignedByMember' => 'Spinen\ConnectWise\Models\v2018_6\Company\MemberReference',
+        'acceptanceEmailActivityType' => ActivityTypeReference::class,
+        'acceptanceEmailAssignedByMember' => MemberReference::class,
         'acceptanceEmailBody' => 'string',
         'acceptanceEmailFromFirstName' => 'string',
         'acceptanceEmailFromLastName' => 'string',
         'acceptanceEmailSubject' => 'string',
         'acceptanceFromEmail' => 'string',
-        'acceptanceOpportunityStatus' => 'Spinen\ConnectWise\Models\v2018_6\Company\OpportunityStatusReference',
+        'acceptanceOpportunityStatus' => OpportunityStatusReference::class,
         'acceptanceSendEmailFlag' => 'boolean',
         'addAllOpportunityStatuses' => 'boolean',
         'addAllOpportunityTypes' => 'boolean',
@@ -83,14 +83,14 @@ class PortalConfigurationOpportunitySetup extends Model
         'opportunityTypeRecIDs' => 'array',
         'rejectionChangeStatusFlag' => 'boolean',
         'rejectionCreateActivityFlag' => 'boolean',
-        'rejectionEmailActivityType' => 'Spinen\ConnectWise\Models\v2018_6\Company\ActivityTypeReference',
-        'rejectionEmailAssignedByMember' => 'Spinen\ConnectWise\Models\v2018_6\Company\MemberReference',
+        'rejectionEmailActivityType' => ActivityTypeReference::class,
+        'rejectionEmailAssignedByMember' => MemberReference::class,
         'rejectionEmailBody' => 'string',
         'rejectionEmailFromFirstName' => 'string',
         'rejectionEmailFromLastName' => 'string',
         'rejectionEmailSubject' => 'string',
         'rejectionFromEmail' => 'string',
-        'rejectionOpportunityStatus' => 'Spinen\ConnectWise\Models\v2018_6\Company\OpportunityStatusReference',
+        'rejectionOpportunityStatus' => OpportunityStatusReference::class,
         'rejectionSendEmailFlag' => 'boolean',
         'removeAllOpportunityStatuses' => 'boolean',
         'removeAllOpportunityTypes' => 'boolean',

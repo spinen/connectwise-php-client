@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TimePeriodSetup
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Time\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $lastDayFlag
  * @property boolean $semiMonthlyLastDayFlag
  * @property integer $daysPastEndDate
@@ -32,7 +32,7 @@ class TimePeriodSetup extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Time\Metadata',
+        '_info' => Metadata::class,
         'daysPastEndDate' => 'integer',
         'description' => 'string',
         'firstPeriodEndDate' => 'string',

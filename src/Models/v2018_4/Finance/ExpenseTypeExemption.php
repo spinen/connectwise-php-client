@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ExpenseTypeExemption
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\ExpenseTypeReference $expenseType
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference $taxCode
+ * @property ExpenseTypeReference $expenseType
+ * @property Metadata $_info
+ * @property TaxCodeReference $taxCode
  * @property boolean $levelFiveFlag
  * @property boolean $levelFourFlag
  * @property boolean $levelOneFlag
@@ -28,8 +28,8 @@ class ExpenseTypeExemption extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Finance\Metadata',
-        'expenseType' => 'Spinen\ConnectWise\Models\v2018_4\Finance\ExpenseTypeReference',
+        '_info' => Metadata::class,
+        'expenseType' => ExpenseTypeReference::class,
         'id' => 'integer',
         'levelFiveFlag' => 'boolean',
         'levelFourFlag' => 'boolean',
@@ -37,6 +37,6 @@ class ExpenseTypeExemption extends Model
         'levelSixFlag' => 'boolean',
         'levelThreeFlag' => 'boolean',
         'levelTwoFlag' => 'boolean',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference',
+        'taxCode' => TaxCodeReference::class,
     ];
 }

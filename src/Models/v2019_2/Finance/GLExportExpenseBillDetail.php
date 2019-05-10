@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportExpenseBillDetail
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\ClassificationReference $expenseClass
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference $currency
+ * @property ClassificationReference $expenseClass
+ * @property CompanyReference $company
+ * @property CurrencyReference $currency
  * @property boolean $billable
  * @property boolean $companyAdvance
  * @property boolean $reimbursable
@@ -32,11 +32,11 @@ class GLExportExpenseBillDetail extends Model
     protected $casts = [
         'accountNumber' => 'string',
         'billable' => 'boolean',
-        'company' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference',
+        'company' => CompanyReference::class,
         'companyAdvance' => 'boolean',
-        'currency' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference',
+        'currency' => CurrencyReference::class,
         'documentDate' => 'string',
-        'expenseClass' => 'Spinen\ConnectWise\Models\v2019_2\Finance\ClassificationReference',
+        'expenseClass' => ClassificationReference::class,
         'glTypeId' => 'string',
         'id' => 'integer',
         'memo' => 'string',

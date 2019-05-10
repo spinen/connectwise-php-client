@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ContactCommunication
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Company\CommunicationTypeReference $type
- * @property Spinen\ConnectWise\Models\v2019_3\Company\Guid $mobileGuid
- * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
+ * @property CommunicationTypeReference $type
+ * @property Guid $mobileGuid
+ * @property Metadata $_info
  * @property boolean $defaultFlag
  * @property integer $contactId
  * @property integer $id
@@ -28,15 +28,15 @@ class ContactCommunication extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
+        '_info' => Metadata::class,
         'communicationType' => 'string',
         'contactId' => 'integer',
         'defaultFlag' => 'boolean',
         'domain' => 'string',
         'extension' => 'string',
         'id' => 'integer',
-        'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_3\Company\Guid',
-        'type' => 'Spinen\ConnectWise\Models\v2019_3\Company\CommunicationTypeReference',
+        'mobileGuid' => Guid::class,
+        'type' => CommunicationTypeReference::class,
         'value' => 'string',
     ];
 }

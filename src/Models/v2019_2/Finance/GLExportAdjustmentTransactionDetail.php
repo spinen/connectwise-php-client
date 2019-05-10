@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportAdjustmentTransactionDetail
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\IvItemReference $item
+ * @property IvItemReference $item
  * @property float $cost
  * @property float $total
  * @property integer $quantity
@@ -35,7 +35,7 @@ class GLExportAdjustmentTransactionDetail extends Model
         'description' => 'string',
         'glClass' => 'string',
         'inventoryAccountNumber' => 'string',
-        'item' => 'Spinen\ConnectWise\Models\v2019_2\Finance\IvItemReference',
+        'item' => IvItemReference::class,
         'memo' => 'string',
         'productAccountNumber' => 'string',
         'quantity' => 'integer',

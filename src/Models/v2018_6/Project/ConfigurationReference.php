@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ConfigurationReference
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Project\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property string $deviceIdentifier
  */
@@ -21,7 +21,7 @@ class ConfigurationReference extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Project\Metadata',
+        '_info' => Metadata::class,
         'deviceIdentifier' => 'string',
         'id' => 'integer',
     ];

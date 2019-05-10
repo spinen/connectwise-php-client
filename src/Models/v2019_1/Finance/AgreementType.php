@@ -9,17 +9,17 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AgreementType
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\BillingCycleReference $billingCycle
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\BillingTermsReference $billingTerms
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\EmailTemplateReference $emailTemplate
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference $invoiceTemplate
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\ProjectTypeReference $projectType
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\SLAReference $sla
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\WorkRoleReference $workRole
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\WorkTypeReference $workType
+ * @property BillingCycleReference $billingCycle
+ * @property BillingTermsReference $billingTerms
+ * @property EmailTemplateReference $emailTemplate
+ * @property InvoiceTemplateReference $invoiceTemplate
+ * @property Metadata $_info
+ * @property ProjectTypeReference $projectType
+ * @property SLAReference $sla
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
+ * @property WorkRoleReference $workRole
+ * @property WorkTypeReference $workType
  * @property array $exclusionWorkRoleIds
  * @property array $exclusionWorkTypeIds
  * @property boolean $addAllWorkRoleExclusions
@@ -82,7 +82,7 @@ class AgreementType extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
+        '_info' => Metadata::class,
         'addAllWorkRoleExclusions' => 'boolean',
         'addAllWorkTypeExclusions' => 'boolean',
         'allowOverrunsFlag' => 'boolean',
@@ -99,8 +99,8 @@ class AgreementType extends Model
         'billableExpenseInvoiceFlag' => 'boolean',
         'billableProductInvoiceFlag' => 'boolean',
         'billableTimeInvoiceFlag' => 'boolean',
-        'billingCycle' => 'Spinen\ConnectWise\Models\v2019_1\Finance\BillingCycleReference',
-        'billingTerms' => 'Spinen\ConnectWise\Models\v2019_1\Finance\BillingTermsReference',
+        'billingCycle' => BillingCycleReference::class,
+        'billingTerms' => BillingTermsReference::class,
         'bottomCommentFlag' => 'boolean',
         'carryOverUnusedFlag' => 'boolean',
         'chargeToFirmFlag' => 'boolean',
@@ -113,8 +113,8 @@ class AgreementType extends Model
         'coverAgreementTimeFlag' => 'boolean',
         'coverSalesTaxFlag' => 'boolean',
         'defaultFlag' => 'boolean',
-        'department' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SystemDepartmentReference',
-        'emailTemplate' => 'Spinen\ConnectWise\Models\v2019_1\Finance\EmailTemplateReference',
+        'department' => SystemDepartmentReference::class,
+        'emailTemplate' => EmailTemplateReference::class,
         'employeeCompNotExceed' => 'string',
         'employeeCompRate' => 'string',
         'exclusionWorkRoleIds' => 'array',
@@ -126,25 +126,25 @@ class AgreementType extends Model
         'integrationXRef' => 'string',
         'invoiceDescription' => 'string',
         'invoicePreSuffix' => 'string',
-        'invoiceTemplate' => 'Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference',
+        'invoiceTemplate' => InvoiceTemplateReference::class,
         'invoicingCycle' => 'string',
         'limit' => 'integer',
-        'location' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SystemLocationReference',
+        'location' => SystemLocationReference::class,
         'name' => 'string',
         'oneTimeFlag' => 'boolean',
         'prePaymentFlag' => 'boolean',
         'prefixSuffixOption' => 'string',
-        'projectType' => 'Spinen\ConnectWise\Models\v2019_1\Finance\ProjectTypeReference',
+        'projectType' => ProjectTypeReference::class,
         'prorateFlag' => 'boolean',
         'removeAllWorkRoleExclusions' => 'boolean',
         'removeAllWorkTypeExclusions' => 'boolean',
         'restrictDepartmentFlag' => 'boolean',
         'restrictDownPaymentFlag' => 'boolean',
         'restrictLocationFlag' => 'boolean',
-        'sla' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SLAReference',
+        'sla' => SLAReference::class,
         'taxableFlag' => 'boolean',
         'topCommentFlag' => 'boolean',
-        'workRole' => 'Spinen\ConnectWise\Models\v2019_1\Finance\WorkRoleReference',
-        'workType' => 'Spinen\ConnectWise\Models\v2019_1\Finance\WorkTypeReference',
+        'workRole' => WorkRoleReference::class,
+        'workType' => WorkTypeReference::class,
     ];
 }

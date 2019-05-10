@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AgreementTypeWorkRole
  *
+ * @property AgreementTypeReference $type
  * @property Carbon\Carbon $effectiveDate
  * @property Carbon\Carbon $endingDate
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\AgreementTypeReference $type
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\WorkRoleReference $workRole
+ * @property Metadata $_info
+ * @property WorkRoleReference $workRole
  * @property float $rate
  * @property integer $id
  * @property string $rateType
@@ -26,13 +26,13 @@ class AgreementTypeWorkRole extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Finance\Metadata',
-        'effectiveDate' => 'Carbon\Carbon',
-        'endingDate' => 'Carbon\Carbon',
+        '_info' => Metadata::class,
+        'effectiveDate' => Carbon\Carbon::class,
+        'endingDate' => Carbon\Carbon::class,
         'id' => 'integer',
         'rate' => 'float',
         'rateType' => 'string',
-        'type' => 'Spinen\ConnectWise\Models\v2018_4\Finance\AgreementTypeReference',
-        'workRole' => 'Spinen\ConnectWise\Models\v2018_4\Finance\WorkRoleReference',
+        'type' => AgreementTypeReference::class,
+        'workRole' => WorkRoleReference::class,
     ];
 }

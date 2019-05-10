@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for EmailConnectorParsingStyle
  *
- * @property Spinen\ConnectWise\Models\v2019_1\System\EmailConnectorParsingTypeReference $parsingType
- * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
+ * @property EmailConnectorParsingTypeReference $parsingType
+ * @property Metadata $_info
  * @property integer $id
  * @property integer $priority
  * @property string $parseRule
@@ -23,10 +23,10 @@ class EmailConnectorParsingStyle extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'parseRule' => 'string',
-        'parsingType' => 'Spinen\ConnectWise\Models\v2019_1\System\EmailConnectorParsingTypeReference',
+        'parsingType' => EmailConnectorParsingTypeReference::class,
         'priority' => 'integer',
     ];
 }

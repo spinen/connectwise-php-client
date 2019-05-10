@@ -29,7 +29,7 @@ class GLExportInventoryTransferOffset extends Model
     protected $casts = [
         'accountNumber' => 'string',
         'description' => 'string',
-        'documentDate' => 'Carbon\Carbon',
+        'documentDate' => Carbon\Carbon::class,
         'documentType' => 'string',
         'glClass' => 'string',
         'glTypeId' => 'string',

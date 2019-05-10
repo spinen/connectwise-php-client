@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for UnitOfMeasure
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
  * @property integer $id
@@ -24,7 +24,7 @@ class UnitOfMeasure extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
         'id' => 'integer',
         'inactiveFlag' => 'boolean',

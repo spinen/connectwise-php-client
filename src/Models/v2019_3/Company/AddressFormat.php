@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AddressFormat
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
+ * @property Metadata $_info
  * @property array $countryIds
  * @property boolean $addAllCountries
  * @property boolean $defaultFlag
@@ -26,7 +26,7 @@ class AddressFormat extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
+        '_info' => Metadata::class,
         'addAllCountries' => 'boolean',
         'countryIds' => 'array',
         'defaultFlag' => 'boolean',

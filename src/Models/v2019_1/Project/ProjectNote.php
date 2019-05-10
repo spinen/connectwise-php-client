@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProjectNote
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Project\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\Project\NoteTypeReference $type
+ * @property Metadata $_info
+ * @property NoteTypeReference $type
  * @property boolean $flagged
  * @property integer $id
  * @property integer $projectId
@@ -24,11 +24,11 @@ class ProjectNote extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Project\Metadata',
+        '_info' => Metadata::class,
         'flagged' => 'boolean',
         'id' => 'integer',
         'projectId' => 'integer',
         'text' => 'string',
-        'type' => 'Spinen\ConnectWise\Models\v2019_1\Project\NoteTypeReference',
+        'type' => NoteTypeReference::class,
     ];
 }

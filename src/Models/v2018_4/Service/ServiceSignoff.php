@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ServiceSignoff
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Service\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $billingMethodsTextFlag
  * @property boolean $billingTermsFlag
  * @property boolean $companyInfoFlag
@@ -75,7 +75,7 @@ class ServiceSignoff extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Service\Metadata',
+        '_info' => Metadata::class,
         'billingMethodsText' => 'string',
         'billingMethodsTextFlag' => 'boolean',
         'billingTermsFlag' => 'boolean',

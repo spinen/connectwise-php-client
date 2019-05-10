@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * A list of Sales Teams to which the member is assigned
  *
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberReference $reAssignToMember
+ * @property MemberReference $reAssignToMember
  * @property integer $count
  */
 class MemberDeactivationSalesTeam extends Model
@@ -21,6 +21,6 @@ class MemberDeactivationSalesTeam extends Model
      */
     protected $casts = [
         'count' => 'integer',
-        'reAssignToMember' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberReference',
+        'reAssignToMember' => MemberReference::class,
     ];
 }

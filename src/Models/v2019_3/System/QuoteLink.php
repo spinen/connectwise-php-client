@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for QuoteLink
  *
- * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_3\System\SystemLocationReference $location
+ * @property Metadata $_info
+ * @property SystemLocationReference $location
  * @property boolean $allLocationsFlag
  * @property boolean $newWindowFlag
  * @property integer $id
@@ -24,11 +24,11 @@ class QuoteLink extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
+        '_info' => Metadata::class,
         'allLocationsFlag' => 'boolean',
         'id' => 'integer',
         'link' => 'string',
-        'location' => 'Spinen\ConnectWise\Models\v2019_3\System\SystemLocationReference',
+        'location' => SystemLocationReference::class,
         'newWindowFlag' => 'boolean',
     ];
 }

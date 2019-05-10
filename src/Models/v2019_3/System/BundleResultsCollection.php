@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BundleResultsCollection
  *
- * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $Info
+ * @property Metadata $Info
  * @property array $Results
  */
 class BundleResultsCollection extends Model
@@ -20,7 +20,7 @@ class BundleResultsCollection extends Model
      * @var array
      */
     protected $casts = [
-        'Info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
+        'Info' => Metadata::class,
         'Results' => 'array',
     ];
 }

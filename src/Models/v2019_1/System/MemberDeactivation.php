@@ -9,26 +9,26 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MemberDeactivation
  *
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationDepartmentMananager $departmentManager
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationDispatchMember $dispatchMember
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationDutyManager $dutyManager
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationKnowledgebaseArticle $knowledgeBaseArticle
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationMyCompanyCOORole $myCompanyCOO
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationMyCompanyControllerRole $myCompanyController
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationMyCompanyDispatchRole $myCompanyDispatch
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationMyCompanyDutyManagerRole $myCompanyDutyManagerRole
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationMyCompanyPresidentRole $myCompanyPresident
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationMyCompanyServiceManagerRole $myCompanyServiceManager
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationOpportunity $opportunity
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationProjectManager $projectExpenseApprover
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationProjectManager $projectManager
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationProjectManager $projectTimeApprover
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationSalesActivity $activity
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationSalesTeam $salesTeam
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationServiceManger $serviceManager
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationServiceTeam $serviceTeam
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationServiceTemplate $ticketTemplate
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationWorkflow $workflowEmail
+ * @property MemberDeactivationDepartmentMananager $departmentManager
+ * @property MemberDeactivationDispatchMember $dispatchMember
+ * @property MemberDeactivationDutyManager $dutyManager
+ * @property MemberDeactivationKnowledgebaseArticle $knowledgeBaseArticle
+ * @property MemberDeactivationMyCompanyCOORole $myCompanyCOO
+ * @property MemberDeactivationMyCompanyControllerRole $myCompanyController
+ * @property MemberDeactivationMyCompanyDispatchRole $myCompanyDispatch
+ * @property MemberDeactivationMyCompanyDutyManagerRole $myCompanyDutyManagerRole
+ * @property MemberDeactivationMyCompanyPresidentRole $myCompanyPresident
+ * @property MemberDeactivationMyCompanyServiceManagerRole $myCompanyServiceManager
+ * @property MemberDeactivationOpportunity $opportunity
+ * @property MemberDeactivationProjectManager $projectExpenseApprover
+ * @property MemberDeactivationProjectManager $projectManager
+ * @property MemberDeactivationProjectManager $projectTimeApprover
+ * @property MemberDeactivationSalesActivity $activity
+ * @property MemberDeactivationSalesTeam $salesTeam
+ * @property MemberDeactivationServiceManger $serviceManager
+ * @property MemberDeactivationServiceTeam $serviceTeam
+ * @property MemberDeactivationServiceTemplate $ticketTemplate
+ * @property MemberDeactivationWorkflow $workflowEmail
  * @property array $companyTeam
  * @property array $serviceStatusWorkflow
  * @property boolean $deleteOpenTimeSheetsFlag
@@ -41,28 +41,28 @@ class MemberDeactivation extends Model
      * @var array
      */
     protected $casts = [
-        'activity' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationSalesActivity',
+        'activity' => MemberDeactivationSalesActivity::class,
         'companyTeam' => 'array',
         'deleteOpenTimeSheetsFlag' => 'boolean',
-        'departmentManager' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationDepartmentMananager',
-        'dispatchMember' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationDispatchMember',
-        'dutyManager' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationDutyManager',
-        'knowledgeBaseArticle' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationKnowledgebaseArticle',
-        'myCompanyCOO' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationMyCompanyCOORole',
-        'myCompanyController' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationMyCompanyControllerRole',
-        'myCompanyDispatch' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationMyCompanyDispatchRole',
-        'myCompanyDutyManagerRole' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationMyCompanyDutyManagerRole',
-        'myCompanyPresident' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationMyCompanyPresidentRole',
-        'myCompanyServiceManager' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationMyCompanyServiceManagerRole',
-        'opportunity' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationOpportunity',
-        'projectExpenseApprover' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationProjectManager',
-        'projectManager' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationProjectManager',
-        'projectTimeApprover' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationProjectManager',
-        'salesTeam' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationSalesTeam',
-        'serviceManager' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationServiceManger',
+        'departmentManager' => MemberDeactivationDepartmentMananager::class,
+        'dispatchMember' => MemberDeactivationDispatchMember::class,
+        'dutyManager' => MemberDeactivationDutyManager::class,
+        'knowledgeBaseArticle' => MemberDeactivationKnowledgebaseArticle::class,
+        'myCompanyCOO' => MemberDeactivationMyCompanyCOORole::class,
+        'myCompanyController' => MemberDeactivationMyCompanyControllerRole::class,
+        'myCompanyDispatch' => MemberDeactivationMyCompanyDispatchRole::class,
+        'myCompanyDutyManagerRole' => MemberDeactivationMyCompanyDutyManagerRole::class,
+        'myCompanyPresident' => MemberDeactivationMyCompanyPresidentRole::class,
+        'myCompanyServiceManager' => MemberDeactivationMyCompanyServiceManagerRole::class,
+        'opportunity' => MemberDeactivationOpportunity::class,
+        'projectExpenseApprover' => MemberDeactivationProjectManager::class,
+        'projectManager' => MemberDeactivationProjectManager::class,
+        'projectTimeApprover' => MemberDeactivationProjectManager::class,
+        'salesTeam' => MemberDeactivationSalesTeam::class,
+        'serviceManager' => MemberDeactivationServiceManger::class,
         'serviceStatusWorkflow' => 'array',
-        'serviceTeam' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationServiceTeam',
-        'ticketTemplate' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationServiceTemplate',
-        'workflowEmail' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberDeactivationWorkflow',
+        'serviceTeam' => MemberDeactivationServiceTeam::class,
+        'ticketTemplate' => MemberDeactivationServiceTemplate::class,
+        'workflowEmail' => MemberDeactivationWorkflow::class,
     ];
 }

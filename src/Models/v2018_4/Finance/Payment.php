@@ -10,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for Payment
  *
  * @property Carbon\Carbon $paymentDate
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\InvoiceReference $invoice
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\Metadata $_info
+ * @property InvoiceReference $invoice
+ * @property Metadata $_info
  * @property float $amount
  * @property integer $id
  * @property string $appliedBy
@@ -25,12 +25,12 @@ class Payment extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Finance\Metadata',
+        '_info' => Metadata::class,
         'amount' => 'float',
         'appliedBy' => 'string',
         'id' => 'integer',
-        'invoice' => 'Spinen\ConnectWise\Models\v2018_4\Finance\InvoiceReference',
-        'paymentDate' => 'Carbon\Carbon',
+        'invoice' => InvoiceReference::class,
+        'paymentDate' => Carbon\Carbon::class,
         'type' => 'string',
     ];
 }

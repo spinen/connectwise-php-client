@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TimePeriod
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Time\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\Time\TimePeriodSetupReference $timePeriodSetup
+ * @property Metadata $_info
+ * @property TimePeriodSetupReference $timePeriodSetup
  * @property integer $id
  * @property integer $period
  * @property string $deadlineDate
@@ -25,12 +25,12 @@ class TimePeriod extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Time\Metadata',
+        '_info' => Metadata::class,
         'deadlineDate' => 'string',
         'endDate' => 'string',
         'id' => 'integer',
         'period' => 'integer',
         'startDate' => 'string',
-        'timePeriodSetup' => 'Spinen\ConnectWise\Models\v2019_1\Time\TimePeriodSetupReference',
+        'timePeriodSetup' => TimePeriodSetupReference::class,
     ];
 }

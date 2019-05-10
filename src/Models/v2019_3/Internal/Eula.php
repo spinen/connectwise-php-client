@@ -10,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for Eula
  *
  * @property Carbon\Carbon $signedDate
- * @property Spinen\ConnectWise\Models\v2019_3\Internal\MemberReference $signedMember
- * @property Spinen\ConnectWise\Models\v2019_3\Internal\Metadata $_info
+ * @property MemberReference $signedMember
+ * @property Metadata $_info
  * @property integer $id
  * @property string $eulaKey
  * @property string $eulaServiceLink
@@ -25,12 +25,12 @@ class Eula extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Internal\Metadata',
+        '_info' => Metadata::class,
         'eulaKey' => 'string',
         'eulaServiceLink' => 'string',
         'eulaUiLink' => 'string',
         'id' => 'integer',
-        'signedDate' => 'Carbon\Carbon',
-        'signedMember' => 'Spinen\ConnectWise\Models\v2019_3\Internal\MemberReference',
+        'signedDate' => Carbon\Carbon::class,
+        'signedMember' => MemberReference::class,
     ];
 }

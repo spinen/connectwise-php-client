@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TaxableWorkRoleLevel
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\TaxCodeLevelReference $taxCodeLevel
+ * @property Metadata $_info
+ * @property TaxCodeLevelReference $taxCodeLevel
  * @property integer $id
  */
 class TaxableWorkRoleLevel extends Model
@@ -21,8 +21,8 @@ class TaxableWorkRoleLevel extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'taxCodeLevel' => 'Spinen\ConnectWise\Models\v2018_6\Finance\TaxCodeLevelReference',
+        'taxCodeLevel' => TaxCodeLevelReference::class,
     ];
 }

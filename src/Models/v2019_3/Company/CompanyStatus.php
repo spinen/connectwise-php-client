@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CompanyStatus
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_3\Company\TrackReference $track
+ * @property Metadata $_info
+ * @property TrackReference $track
  * @property boolean $cancelOpenTracksFlag
  * @property boolean $customNoteFlag
  * @property boolean $defaultFlag
@@ -29,7 +29,7 @@ class CompanyStatus extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
+        '_info' => Metadata::class,
         'cancelOpenTracksFlag' => 'boolean',
         'customNoteFlag' => 'boolean',
         'defaultFlag' => 'boolean',
@@ -39,6 +39,6 @@ class CompanyStatus extends Model
         'name' => 'string',
         'notificationMessage' => 'string',
         'notifyFlag' => 'boolean',
-        'track' => 'Spinen\ConnectWise\Models\v2019_3\Company\TrackReference',
+        'track' => TrackReference::class,
     ];
 }

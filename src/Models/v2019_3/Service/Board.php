@@ -9,21 +9,21 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Board
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Service\DocumentReference $boardIcon
- * @property Spinen\ConnectWise\Models\v2019_3\Service\MemberReference $dispatchMember
- * @property Spinen\ConnectWise\Models\v2019_3\Service\MemberReference $dutyManagerMember
- * @property Spinen\ConnectWise\Models\v2019_3\Service\MemberReference $oncallMember
- * @property Spinen\ConnectWise\Models\v2019_3\Service\MemberReference $serviceManagerMember
- * @property Spinen\ConnectWise\Models\v2019_3\Service\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_3\Service\ServiceEmailTemplateReference $contactTemplate
- * @property Spinen\ConnectWise\Models\v2019_3\Service\ServiceEmailTemplateReference $resourceTemplate
- * @property Spinen\ConnectWise\Models\v2019_3\Service\ServiceSignoffReference $signOffTemplate
- * @property Spinen\ConnectWise\Models\v2019_3\Service\ServiceStatusReference $autoCloseStatus
- * @property Spinen\ConnectWise\Models\v2019_3\Service\ServiceStatusReference $emailConnectorReopenStatus
- * @property Spinen\ConnectWise\Models\v2019_3\Service\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2019_3\Service\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2019_3\Service\WorkRoleReference $workRole
- * @property Spinen\ConnectWise\Models\v2019_3\Service\WorkTypeReference $workType
+ * @property DocumentReference $boardIcon
+ * @property MemberReference $dispatchMember
+ * @property MemberReference $dutyManagerMember
+ * @property MemberReference $oncallMember
+ * @property MemberReference $serviceManagerMember
+ * @property Metadata $_info
+ * @property ServiceEmailTemplateReference $contactTemplate
+ * @property ServiceEmailTemplateReference $resourceTemplate
+ * @property ServiceSignoffReference $signOffTemplate
+ * @property ServiceStatusReference $autoCloseStatus
+ * @property ServiceStatusReference $emailConnectorReopenStatus
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
+ * @property WorkRoleReference $workRole
+ * @property WorkTypeReference $workType
  * @property boolean $autoAssignNewECTicketsFlag
  * @property boolean $autoAssignNewPortalTicketsFlag
  * @property boolean $autoAssignNewTicketsFlag
@@ -77,29 +77,29 @@ class Board extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Service\Metadata',
+        '_info' => Metadata::class,
         'allSort' => 'string',
         'autoAssignNewECTicketsFlag' => 'boolean',
         'autoAssignNewPortalTicketsFlag' => 'boolean',
         'autoAssignNewTicketsFlag' => 'boolean',
         'autoAssignTicketOwnerFlag' => 'boolean',
-        'autoCloseStatus' => 'Spinen\ConnectWise\Models\v2019_3\Service\ServiceStatusReference',
+        'autoCloseStatus' => ServiceStatusReference::class,
         'billExpense' => 'string',
         'billProduct' => 'string',
         'billTicketSeparatelyFlag' => 'boolean',
         'billTicketsAfterClosedFlag' => 'boolean',
         'billTime' => 'string',
         'billUnapprovedTimeExpenseFlag' => 'boolean',
-        'boardIcon' => 'Spinen\ConnectWise\Models\v2019_3\Service\DocumentReference',
+        'boardIcon' => DocumentReference::class,
         'closedLoopAllFlag' => 'boolean',
         'closedLoopDiscussionsFlag' => 'boolean',
         'closedLoopInternalAnalysisFlag' => 'boolean',
         'closedLoopResolutionFlag' => 'boolean',
-        'contactTemplate' => 'Spinen\ConnectWise\Models\v2019_3\Service\ServiceEmailTemplateReference',
-        'department' => 'Spinen\ConnectWise\Models\v2019_3\Service\SystemDepartmentReference',
+        'contactTemplate' => ServiceEmailTemplateReference::class,
+        'department' => SystemDepartmentReference::class,
         'discussionsLockedFlag' => 'boolean',
-        'dispatchMember' => 'Spinen\ConnectWise\Models\v2019_3\Service\MemberReference',
-        'dutyManagerMember' => 'Spinen\ConnectWise\Models\v2019_3\Service\MemberReference',
+        'dispatchMember' => MemberReference::class,
+        'dutyManagerMember' => MemberReference::class,
         'emailConnectorAllowReopenClosedFlag' => 'boolean',
         'emailConnectorNeverReopenByDaysClosedFlag' => 'boolean',
         'emailConnectorNeverReopenByDaysFlag' => 'boolean',
@@ -107,34 +107,34 @@ class Board extends Model
         'emailConnectorReopenDaysClosedLimit' => 'integer',
         'emailConnectorReopenDaysLimit' => 'integer',
         'emailConnectorReopenResourcesFlag' => 'boolean',
-        'emailConnectorReopenStatus' => 'Spinen\ConnectWise\Models\v2019_3\Service\ServiceStatusReference',
+        'emailConnectorReopenStatus' => ServiceStatusReference::class,
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'internalAnalysisSort' => 'string',
-        'location' => 'Spinen\ConnectWise\Models\v2019_3\Service\SystemLocationReference',
+        'location' => SystemLocationReference::class,
         'name' => 'string',
         'notifyEmailFrom' => 'string',
         'notifyEmailFromName' => 'string',
-        'oncallMember' => 'Spinen\ConnectWise\Models\v2019_3\Service\MemberReference',
+        'oncallMember' => MemberReference::class,
         'overrideBillingSetupFlag' => 'boolean',
         'percentageCalculation' => 'string',
         'problemSort' => 'string',
         'projectFlag' => 'boolean',
         'resolutionSort' => 'string',
-        'resourceTemplate' => 'Spinen\ConnectWise\Models\v2019_3\Service\ServiceEmailTemplateReference',
+        'resourceTemplate' => ServiceEmailTemplateReference::class,
         'sendToCCFlag' => 'boolean',
         'sendToContactFlag' => 'boolean',
         'sendToResourceFlag' => 'boolean',
-        'serviceManagerMember' => 'Spinen\ConnectWise\Models\v2019_3\Service\MemberReference',
+        'serviceManagerMember' => MemberReference::class,
         'showDependenciesFlag' => 'boolean',
         'showEstimatesFlag' => 'boolean',
-        'signOffTemplate' => 'Spinen\ConnectWise\Models\v2019_3\Service\ServiceSignoffReference',
+        'signOffTemplate' => ServiceSignoffReference::class,
         'timeEntryDiscussionFlag' => 'boolean',
         'timeEntryInternalAnalysisFlag' => 'boolean',
         'timeEntryLockedFlag' => 'boolean',
         'timeEntryResolutionFlag' => 'boolean',
         'useMemberDisplayNameFlag' => 'boolean',
-        'workRole' => 'Spinen\ConnectWise\Models\v2019_3\Service\WorkRoleReference',
-        'workType' => 'Spinen\ConnectWise\Models\v2019_3\Service\WorkTypeReference',
+        'workRole' => WorkRoleReference::class,
+        'workType' => WorkTypeReference::class,
     ];
 }

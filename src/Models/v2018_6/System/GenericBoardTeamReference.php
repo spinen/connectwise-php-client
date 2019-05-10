@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GenericBoardTeamReference
  *
- * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $isProjectTeamFlag
  * @property integer $id
  * @property string $name
@@ -22,7 +22,7 @@ class GenericBoardTeamReference extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'isProjectTeamFlag' => 'boolean',
         'name' => 'string',

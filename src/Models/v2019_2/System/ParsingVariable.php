@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ParsingVariable
  *
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property string $code
  * @property string $name
@@ -22,7 +22,7 @@ class ParsingVariable extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        '_info' => Metadata::class,
         'code' => 'string',
         'id' => 'integer',
         'name' => 'string',

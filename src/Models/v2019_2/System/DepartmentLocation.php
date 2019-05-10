@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for DepartmentLocation
  *
- * @property Spinen\ConnectWise\Models\v2019_2\System\LdapConfigurationReference $ldapConfig
- * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $departmentManager
- * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $dispatch
- * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $dutyManager
- * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $serviceManager
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_2\System\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2019_2\System\SystemLocationReference $location
+ * @property LdapConfigurationReference $ldapConfig
+ * @property MemberReference $departmentManager
+ * @property MemberReference $dispatch
+ * @property MemberReference $dutyManager
+ * @property MemberReference $serviceManager
+ * @property Metadata $_info
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
  * @property boolean $addAllLocations
  * @property boolean $removeAllLocations
  * @property integer $id
@@ -29,16 +29,16 @@ class DepartmentLocation extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        '_info' => Metadata::class,
         'addAllLocations' => 'boolean',
-        'department' => 'Spinen\ConnectWise\Models\v2019_2\System\SystemDepartmentReference',
-        'departmentManager' => 'Spinen\ConnectWise\Models\v2019_2\System\MemberReference',
-        'dispatch' => 'Spinen\ConnectWise\Models\v2019_2\System\MemberReference',
-        'dutyManager' => 'Spinen\ConnectWise\Models\v2019_2\System\MemberReference',
+        'department' => SystemDepartmentReference::class,
+        'departmentManager' => MemberReference::class,
+        'dispatch' => MemberReference::class,
+        'dutyManager' => MemberReference::class,
         'id' => 'integer',
-        'ldapConfig' => 'Spinen\ConnectWise\Models\v2019_2\System\LdapConfigurationReference',
-        'location' => 'Spinen\ConnectWise\Models\v2019_2\System\SystemLocationReference',
+        'ldapConfig' => LdapConfigurationReference::class,
+        'location' => SystemLocationReference::class,
         'removeAllLocations' => 'boolean',
-        'serviceManager' => 'Spinen\ConnectWise\Models\v2019_2\System\MemberReference',
+        'serviceManager' => MemberReference::class,
     ];
 }

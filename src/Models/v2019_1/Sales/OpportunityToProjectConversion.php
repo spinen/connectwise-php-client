@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OpportunityToProjectConversion
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\MemberReference $manager
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\ProjectBoardReference $board
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\ProjectStatusReference $status
+ * @property MemberReference $manager
+ * @property ProjectBoardReference $board
+ * @property ProjectStatusReference $status
  * @property array $includeDocumentIds
  * @property array $includeNoteIds
  * @property array $includeProductIds
@@ -33,7 +33,7 @@ class OpportunityToProjectConversion extends Model
      * @var array
      */
     protected $casts = [
-        'board' => 'Spinen\ConnectWise\Models\v2019_1\Sales\ProjectBoardReference',
+        'board' => ProjectBoardReference::class,
         'businessUnitId' => 'integer',
         'estimatedEnd' => 'string',
         'estimatedStart' => 'string',
@@ -44,9 +44,9 @@ class OpportunityToProjectConversion extends Model
         'includeNoteIds' => 'array',
         'includeProductIds' => 'array',
         'locationId' => 'integer',
-        'manager' => 'Spinen\ConnectWise\Models\v2019_1\Sales\MemberReference',
+        'manager' => MemberReference::class,
         'name' => 'string',
         'projectId' => 'integer',
-        'status' => 'Spinen\ConnectWise\Models\v2019_1\Sales\ProjectStatusReference',
+        'status' => ProjectStatusReference::class,
     ];
 }

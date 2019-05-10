@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for InvoiceTemplateSetup
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $customFlag
  * @property integer $id
  * @property string $name
@@ -22,7 +22,7 @@ class InvoiceTemplateSetup extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
+        '_info' => Metadata::class,
         'customFlag' => 'boolean',
         'id' => 'integer',
         'name' => 'string',

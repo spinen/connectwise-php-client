@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PortalCalendar
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Schedule\Metadata $_info
+ * @property Metadata $_info
  * @property float $adjust1Hours
  * @property float $adjust2Hours
  * @property float $adjust3Hours
@@ -30,7 +30,7 @@ class PortalCalendar extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\Metadata',
+        '_info' => Metadata::class,
         'adjust1End' => 'string',
         'adjust1Hours' => 'float',
         'adjust1Start' => 'string',

@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * A list of Projects that the member is the project manager
  *
- * @property Spinen\ConnectWise\Models\v2018_5\System\MemberReference $reAssignToMember
+ * @property MemberReference $reAssignToMember
  * @property integer $count
  */
 class ProjectManager extends Model
@@ -21,6 +21,6 @@ class ProjectManager extends Model
      */
     protected $casts = [
         'count' => 'integer',
-        'reAssignToMember' => 'Spinen\ConnectWise\Models\v2018_5\System\MemberReference',
+        'reAssignToMember' => MemberReference::class,
     ];
 }

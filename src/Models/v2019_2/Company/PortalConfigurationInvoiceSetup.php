@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PortalConfigurationInvoiceSetup
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Company\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_2\Company\PortalConfigurationPaymentProcessorReference $paymentProcessor
- * @property Spinen\ConnectWise\Models\v2019_2\Company\PortalConfigurationReference $portalConfiguration
- * @property Spinen\ConnectWise\Models\v2019_2\Company\SystemLocationReference $location
+ * @property Metadata $_info
+ * @property PortalConfigurationPaymentProcessorReference $paymentProcessor
+ * @property PortalConfigurationReference $portalConfiguration
+ * @property SystemLocationReference $location
  * @property array $billingStatusIds
  * @property boolean $addAllStatuses
  * @property boolean $allowInvPmtFlag
@@ -31,17 +31,17 @@ class PortalConfigurationInvoiceSetup extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Company\Metadata',
+        '_info' => Metadata::class,
         'addAllStatuses' => 'boolean',
         'allowInvPmtFlag' => 'boolean',
         'billingStatusIds' => 'array',
         'displayInvPmtFlag' => 'boolean',
         'id' => 'integer',
-        'location' => 'Spinen\ConnectWise\Models\v2019_2\Company\SystemLocationReference',
+        'location' => SystemLocationReference::class,
         'login' => 'string',
         'password' => 'string',
-        'paymentProcessor' => 'Spinen\ConnectWise\Models\v2019_2\Company\PortalConfigurationPaymentProcessorReference',
-        'portalConfiguration' => 'Spinen\ConnectWise\Models\v2019_2\Company\PortalConfigurationReference',
+        'paymentProcessor' => PortalConfigurationPaymentProcessorReference::class,
+        'portalConfiguration' => PortalConfigurationReference::class,
         'removeAllStatuses' => 'boolean',
         'urlOverride' => 'string',
     ];

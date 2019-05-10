@@ -9,29 +9,29 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for WorkflowAction
  *
- * @property Spinen\ConnectWise\Models\v2018_4\System\ActivityStatusReference $activityStatus
- * @property Spinen\ConnectWise\Models\v2018_4\System\ActivityTypeReference $activityType
- * @property Spinen\ConnectWise\Models\v2018_4\System\AutomateScriptReference $automateScript
- * @property Spinen\ConnectWise\Models\v2018_4\System\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2018_4\System\CompanyStatusReference $companyStatus
- * @property Spinen\ConnectWise\Models\v2018_4\System\ContactReference $bccContact
- * @property Spinen\ConnectWise\Models\v2018_4\System\ContactReference $ccContact
- * @property Spinen\ConnectWise\Models\v2018_4\System\GroupReference $group
- * @property Spinen\ConnectWise\Models\v2018_4\System\MemberReference $specificMemberFrom
- * @property Spinen\ConnectWise\Models\v2018_4\System\MemberReference $specificMemberTo
- * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\System\NotificationRecipientReference $notifyFrom
- * @property Spinen\ConnectWise\Models\v2018_4\System\NotificationRecipientReference $notifyWho
- * @property Spinen\ConnectWise\Models\v2018_4\System\NotifyTypeReference $notifyType
- * @property Spinen\ConnectWise\Models\v2018_4\System\OrderStatusReference $salesOrderStatus
- * @property Spinen\ConnectWise\Models\v2018_4\System\PriorityReference $servicePriority
- * @property Spinen\ConnectWise\Models\v2018_4\System\ProjectStatusReference $projectStatus
- * @property Spinen\ConnectWise\Models\v2018_4\System\ServiceStatusReference $boardStatus
- * @property Spinen\ConnectWise\Models\v2018_4\System\ServiceStatusReference $scriptFailStatus
- * @property Spinen\ConnectWise\Models\v2018_4\System\ServiceStatusReference $scriptSuccessStatus
- * @property Spinen\ConnectWise\Models\v2018_4\System\ServiceTemplateReference $serviceTemplate
- * @property Spinen\ConnectWise\Models\v2018_4\System\ServiceTypeReference $serviceType
- * @property Spinen\ConnectWise\Models\v2018_4\System\TrackReference $attachedTrack
+ * @property ActivityStatusReference $activityStatus
+ * @property ActivityTypeReference $activityType
+ * @property AutomateScriptReference $automateScript
+ * @property BoardReference $board
+ * @property CompanyStatusReference $companyStatus
+ * @property ContactReference $bccContact
+ * @property ContactReference $ccContact
+ * @property GroupReference $group
+ * @property MemberReference $specificMemberFrom
+ * @property MemberReference $specificMemberTo
+ * @property Metadata $_info
+ * @property NotificationRecipientReference $notifyFrom
+ * @property NotificationRecipientReference $notifyWho
+ * @property NotifyTypeReference $notifyType
+ * @property OrderStatusReference $salesOrderStatus
+ * @property PriorityReference $servicePriority
+ * @property ProjectStatusReference $projectStatus
+ * @property ServiceStatusReference $boardStatus
+ * @property ServiceStatusReference $scriptFailStatus
+ * @property ServiceStatusReference $scriptSuccessStatus
+ * @property ServiceTemplateReference $serviceTemplate
+ * @property ServiceTypeReference $serviceType
+ * @property TrackReference $attachedTrack
  * @property array $attachments
  * @property boolean $auditNotesFlag
  * @property boolean $detailNotesFlag
@@ -53,39 +53,39 @@ class WorkflowAction extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
-        'activityStatus' => 'Spinen\ConnectWise\Models\v2018_4\System\ActivityStatusReference',
-        'activityType' => 'Spinen\ConnectWise\Models\v2018_4\System\ActivityTypeReference',
-        'attachedTrack' => 'Spinen\ConnectWise\Models\v2018_4\System\TrackReference',
+        '_info' => Metadata::class,
+        'activityStatus' => ActivityStatusReference::class,
+        'activityType' => ActivityTypeReference::class,
+        'attachedTrack' => TrackReference::class,
         'attachments' => 'array',
         'auditNotesFlag' => 'boolean',
-        'automateScript' => 'Spinen\ConnectWise\Models\v2018_4\System\AutomateScriptReference',
-        'bccContact' => 'Spinen\ConnectWise\Models\v2018_4\System\ContactReference',
-        'board' => 'Spinen\ConnectWise\Models\v2018_4\System\BoardReference',
-        'boardStatus' => 'Spinen\ConnectWise\Models\v2018_4\System\ServiceStatusReference',
-        'ccContact' => 'Spinen\ConnectWise\Models\v2018_4\System\ContactReference',
-        'companyStatus' => 'Spinen\ConnectWise\Models\v2018_4\System\CompanyStatusReference',
+        'automateScript' => AutomateScriptReference::class,
+        'bccContact' => ContactReference::class,
+        'board' => BoardReference::class,
+        'boardStatus' => ServiceStatusReference::class,
+        'ccContact' => ContactReference::class,
+        'companyStatus' => CompanyStatusReference::class,
         'daysToExecute' => 'integer',
         'detailNotesFlag' => 'boolean',
         'emailFrom' => 'string',
         'emailRecipient' => 'string',
-        'group' => 'Spinen\ConnectWise\Models\v2018_4\System\GroupReference',
+        'group' => GroupReference::class,
         'id' => 'integer',
         'internalNotesFlag' => 'boolean',
         'invoiceMinDays' => 'integer',
         'notes' => 'string',
-        'notifyFrom' => 'Spinen\ConnectWise\Models\v2018_4\System\NotificationRecipientReference',
-        'notifyType' => 'Spinen\ConnectWise\Models\v2018_4\System\NotifyTypeReference',
-        'notifyWho' => 'Spinen\ConnectWise\Models\v2018_4\System\NotificationRecipientReference',
-        'projectStatus' => 'Spinen\ConnectWise\Models\v2018_4\System\ProjectStatusReference',
-        'salesOrderStatus' => 'Spinen\ConnectWise\Models\v2018_4\System\OrderStatusReference',
-        'scriptFailStatus' => 'Spinen\ConnectWise\Models\v2018_4\System\ServiceStatusReference',
-        'scriptSuccessStatus' => 'Spinen\ConnectWise\Models\v2018_4\System\ServiceStatusReference',
-        'servicePriority' => 'Spinen\ConnectWise\Models\v2018_4\System\PriorityReference',
-        'serviceTemplate' => 'Spinen\ConnectWise\Models\v2018_4\System\ServiceTemplateReference',
-        'serviceType' => 'Spinen\ConnectWise\Models\v2018_4\System\ServiceTypeReference',
-        'specificMemberFrom' => 'Spinen\ConnectWise\Models\v2018_4\System\MemberReference',
-        'specificMemberTo' => 'Spinen\ConnectWise\Models\v2018_4\System\MemberReference',
+        'notifyFrom' => NotificationRecipientReference::class,
+        'notifyType' => NotifyTypeReference::class,
+        'notifyWho' => NotificationRecipientReference::class,
+        'projectStatus' => ProjectStatusReference::class,
+        'salesOrderStatus' => OrderStatusReference::class,
+        'scriptFailStatus' => ServiceStatusReference::class,
+        'scriptSuccessStatus' => ServiceStatusReference::class,
+        'servicePriority' => PriorityReference::class,
+        'serviceTemplate' => ServiceTemplateReference::class,
+        'serviceType' => ServiceTypeReference::class,
+        'specificMemberFrom' => MemberReference::class,
+        'specificMemberTo' => MemberReference::class,
         'subject' => 'string',
         'updateOwnerFlag' => 'boolean',
     ];

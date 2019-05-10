@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SalesTeamReference
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property string $identifier
  */
@@ -21,7 +21,7 @@ class SalesTeamReference extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Sales\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'identifier' => 'string',
     ];

@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Certification
  *
- * @property Spinen\ConnectWise\Models\v2018_4\System\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
+ * @property CompanyReference $company
+ * @property Metadata $_info
  * @property integer $id
  * @property string $name
  */
@@ -22,8 +22,8 @@ class Certification extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
-        'company' => 'Spinen\ConnectWise\Models\v2018_4\System\CompanyReference',
+        '_info' => Metadata::class,
+        'company' => CompanyReference::class,
         'id' => 'integer',
         'name' => 'string',
     ];

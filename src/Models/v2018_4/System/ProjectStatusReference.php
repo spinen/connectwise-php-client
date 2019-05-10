@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Required when notifyType is set to: "Change Project Status"
  *
- * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property string $name
  */
@@ -21,7 +21,7 @@ class ProjectStatusReference extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'name' => 'string',
     ];

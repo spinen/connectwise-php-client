@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * A list of the member's currently assigned Opportunities
  *
- * @property Spinen\ConnectWise\Models\v2018_4\System\MemberReference $reAssignToMember
+ * @property MemberReference $reAssignToMember
  * @property integer $count
  */
 class Opportunity extends Model
@@ -21,6 +21,6 @@ class Opportunity extends Model
      */
     protected $casts = [
         'count' => 'integer',
-        'reAssignToMember' => 'Spinen\ConnectWise\Models\v2018_4\System\MemberReference',
+        'reAssignToMember' => MemberReference::class,
     ];
 }

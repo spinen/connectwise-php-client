@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TimePeriodSetupReference
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Time\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  */
 class TimePeriodSetupReference extends Model
@@ -20,7 +20,7 @@ class TimePeriodSetupReference extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Time\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
     ];
 }

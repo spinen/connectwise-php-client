@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TicketMerge
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Service\ServiceStatusReference $status
+ * @property ServiceStatusReference $status
  * @property array $mergeTicketIds
  */
 class TicketMerge extends Model
@@ -21,6 +21,6 @@ class TicketMerge extends Model
      */
     protected $casts = [
         'mergeTicketIds' => 'array',
-        'status' => 'Spinen\ConnectWise\Models\v2018_4\Service\ServiceStatusReference',
+        'status' => ServiceStatusReference::class,
     ];
 }

@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Campaign
  *
+ * @property CampaignStatusReference $status
+ * @property CampaignSubTypeReference $subType
+ * @property CampaignTypeReference $type
  * @property Carbon\Carbon $endDate
  * @property Carbon\Carbon $startDate
- * @property Spinen\ConnectWise\Models\v2019_2\Marketing\CampaignStatusReference $status
- * @property Spinen\ConnectWise\Models\v2019_2\Marketing\CampaignSubTypeReference $subType
- * @property Spinen\ConnectWise\Models\v2019_2\Marketing\CampaignTypeReference $type
- * @property Spinen\ConnectWise\Models\v2019_2\Marketing\GroupReference $defaultGroup
- * @property Spinen\ConnectWise\Models\v2019_2\Marketing\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2019_2\Marketing\Metadata $_info
+ * @property GroupReference $defaultGroup
+ * @property MemberReference $member
+ * @property Metadata $_info
  * @property boolean $inactive
  * @property float $actualCost
  * @property float $actualGrossMargin
@@ -44,7 +44,7 @@ class Campaign extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Marketing\Metadata',
+        '_info' => Metadata::class,
         'actualCost' => 'float',
         'actualGrossMargin' => 'float',
         'actualROI' => 'float',
@@ -53,22 +53,22 @@ class Campaign extends Model
         'budgetGrossMargin' => 'float',
         'budgetROI' => 'float',
         'budgetRevenue' => 'float',
-        'defaultGroup' => 'Spinen\ConnectWise\Models\v2019_2\Marketing\GroupReference',
+        'defaultGroup' => GroupReference::class,
         'emailsSent' => 'integer',
-        'endDate' => 'Carbon\Carbon',
+        'endDate' => Carbon\Carbon::class,
         'id' => 'integer',
         'impressions' => 'integer',
         'inactive' => 'boolean',
         'inactiveDaysAfterEnd' => 'integer',
         'locationId' => 'integer',
         'marketingManagerDefaultTrackId' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2019_2\Marketing\MemberReference',
+        'member' => MemberReference::class,
         'name' => 'string',
         'notes' => 'string',
         'opportunityDefaultTrackId' => 'integer',
-        'startDate' => 'Carbon\Carbon',
-        'status' => 'Spinen\ConnectWise\Models\v2019_2\Marketing\CampaignStatusReference',
-        'subType' => 'Spinen\ConnectWise\Models\v2019_2\Marketing\CampaignSubTypeReference',
-        'type' => 'Spinen\ConnectWise\Models\v2019_2\Marketing\CampaignTypeReference',
+        'startDate' => Carbon\Carbon::class,
+        'status' => CampaignStatusReference::class,
+        'subType' => CampaignSubTypeReference::class,
+        'type' => CampaignTypeReference::class,
     ];
 }

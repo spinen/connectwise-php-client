@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for UnpostedProcurement
  *
+ * @property BillingTermsReference $billingTerms
  * @property Carbon\Carbon $dateClosed
  * @property Carbon\Carbon $purchaseDate
  * @property Carbon\Carbon $vendorInvoiceDate
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\BillingTermsReference $billingTerms
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference $customer
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference $vendor
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\PurchaseOrderReference $purchaseOrder
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\TaxCodeReference $taxCode
+ * @property CompanyReference $customer
+ * @property CompanyReference $vendor
+ * @property CurrencyReference $currency
+ * @property Metadata $_info
+ * @property PurchaseOrderReference $purchaseOrder
+ * @property TaxCodeReference $taxCode
  * @property boolean $avalaraTaxFlag
  * @property boolean $cityTaxFlag
  * @property boolean $compositeTaxFlag
@@ -62,9 +62,9 @@ class UnpostedProcurement extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
+        '_info' => Metadata::class,
         'avalaraTaxFlag' => 'boolean',
-        'billingTerms' => 'Spinen\ConnectWise\Models\v2018_6\Finance\BillingTermsReference',
+        'billingTerms' => BillingTermsReference::class,
         'cityTaxAmount' => 'float',
         'cityTaxFlag' => 'boolean',
         'cityTaxXref' => 'string',
@@ -77,9 +77,9 @@ class UnpostedProcurement extends Model
         'countyTaxAmount' => 'float',
         'countyTaxFlag' => 'boolean',
         'countyTaxXref' => 'string',
-        'currency' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CurrencyReference',
-        'customer' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference',
-        'dateClosed' => 'Carbon\Carbon',
+        'currency' => CurrencyReference::class,
+        'customer' => CompanyReference::class,
+        'dateClosed' => Carbon\Carbon::class,
         'departmentId' => 'integer',
         'description' => 'string',
         'freightCost' => 'float',
@@ -91,20 +91,20 @@ class UnpostedProcurement extends Model
         'levelSixTaxXref' => 'string',
         'locationId' => 'integer',
         'procurementType' => 'string',
-        'purchaseDate' => 'Carbon\Carbon',
-        'purchaseOrder' => 'Spinen\ConnectWise\Models\v2018_6\Finance\PurchaseOrderReference',
+        'purchaseDate' => Carbon\Carbon::class,
+        'purchaseOrder' => PurchaseOrderReference::class,
         'purchaseOrderTaxableFlag' => 'boolean',
         'stateTaxAmount' => 'float',
         'stateTaxFlag' => 'boolean',
         'stateTaxXref' => 'string',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2018_6\Finance\TaxCodeReference',
+        'taxCode' => TaxCodeReference::class,
         'taxFreightFlag' => 'boolean',
         'taxTotal' => 'float',
         'total' => 'float',
         'trackingNumber' => 'string',
-        'vendor' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference',
+        'vendor' => CompanyReference::class,
         'vendorAccountNumber' => 'string',
-        'vendorInvoiceDate' => 'Carbon\Carbon',
+        'vendorInvoiceDate' => Carbon\Carbon::class,
         'vendorInvoiceNumber' => 'string',
     ];
 }

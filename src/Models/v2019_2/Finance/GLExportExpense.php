@@ -12,11 +12,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property Carbon\Carbon $documentDate
  * @property Carbon\Carbon $periodEndDate
  * @property Carbon\Carbon $periodStartDate
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\GLExportExpenseOffset $offset
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\ProjectReference $project
+ * @property CompanyReference $company
+ * @property CurrencyReference $currency
+ * @property GLExportExpenseOffset $offset
+ * @property MemberReference $member
+ * @property ProjectReference $project
  * @property float $total
  * @property integer $id
  * @property string $accountNumber
@@ -41,21 +41,21 @@ class GLExportExpense extends Model
         'accountNumber' => 'string',
         'apAccountNumber' => 'string',
         'apClass' => 'string',
-        'company' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference',
+        'company' => CompanyReference::class,
         'companyAccountNumber' => 'string',
-        'currency' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference',
+        'currency' => CurrencyReference::class,
         'description' => 'string',
-        'documentDate' => 'Carbon\Carbon',
+        'documentDate' => Carbon\Carbon::class,
         'documentType' => 'string',
         'glClass' => 'string',
         'glTypeId' => 'string',
         'id' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2019_2\Finance\MemberReference',
+        'member' => MemberReference::class,
         'memo' => 'string',
-        'offset' => 'Spinen\ConnectWise\Models\v2019_2\Finance\GLExportExpenseOffset',
-        'periodEndDate' => 'Carbon\Carbon',
-        'periodStartDate' => 'Carbon\Carbon',
-        'project' => 'Spinen\ConnectWise\Models\v2019_2\Finance\ProjectReference',
+        'offset' => GLExportExpenseOffset::class,
+        'periodEndDate' => Carbon\Carbon::class,
+        'periodStartDate' => Carbon\Carbon::class,
+        'project' => ProjectReference::class,
         'total' => 'float',
         'vendorNumber' => 'string',
     ];

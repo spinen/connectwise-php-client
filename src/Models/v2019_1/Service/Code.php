@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Code
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
+ * @property Metadata $_info
  * @property integer $boardId
  * @property integer $businessUnitId
  * @property integer $id
@@ -25,7 +25,7 @@ class Code extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
+        '_info' => Metadata::class,
         'boardId' => 'integer',
         'businessUnitId' => 'integer',
         'description' => 'string',

@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PortalConfiguration
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Company\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
+ * @property CompanyReference $company
+ * @property Metadata $_info
  * @property array $agreementTypeIds
  * @property array $boardIds
  * @property array $configTypeIds
@@ -37,11 +37,11 @@ class PortalConfiguration extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
+        '_info' => Metadata::class,
         'agreementTypeIds' => 'array',
         'boardIds' => 'array',
         'buttonColor' => 'string',
-        'company' => 'Spinen\ConnectWise\Models\v2019_1\Company\CompanyReference',
+        'company' => CompanyReference::class,
         'configTypeIds' => 'array',
         'defaultFlag' => 'boolean',
         'displayVendorFlag' => 'boolean',

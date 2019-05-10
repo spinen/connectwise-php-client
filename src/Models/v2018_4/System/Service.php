@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Service
  *
- * @property Spinen\ConnectWise\Models\v2018_4\System\CalendarSetupReference $calendarSetup
- * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
+ * @property CalendarSetupReference $calendarSetup
+ * @property Metadata $_info
  * @property boolean $allowCCFlag
  * @property boolean $allowTOFlag
  * @property boolean $contactColorDisableFlag
@@ -34,10 +34,10 @@ class Service extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
+        '_info' => Metadata::class,
         'allowCCFlag' => 'boolean',
         'allowTOFlag' => 'boolean',
-        'calendarSetup' => 'Spinen\ConnectWise\Models\v2018_4\System\CalendarSetupReference',
+        'calendarSetup' => CalendarSetupReference::class,
         'contactColor' => 'string',
         'contactColorDisableFlag' => 'boolean',
         'headerColor' => 'string',

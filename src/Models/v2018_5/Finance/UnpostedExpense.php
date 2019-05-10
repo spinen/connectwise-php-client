@@ -9,20 +9,20 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for UnpostedExpense
  *
+ * @property AgreementReference $agreement
  * @property Carbon\Carbon $dateClosed
  * @property Carbon\Carbon $dateExpense
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\AgreementReference $agreement
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\ChargeCodeReference $chargeCode
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\ExpenseTypeReference $expenseType
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\PaymentMethodReference $paymentMethod
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\ProjectPhaseReference $projectPhase
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\ProjectReference $project
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\TaxCodeReference $taxCode
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\TicketReference $ticket
+ * @property ChargeCodeReference $chargeCode
+ * @property CompanyReference $company
+ * @property CurrencyReference $currency
+ * @property ExpenseTypeReference $expenseType
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property PaymentMethodReference $paymentMethod
+ * @property ProjectPhaseReference $projectPhase
+ * @property ProjectReference $project
+ * @property TaxCodeReference $taxCode
+ * @property TicketReference $ticket
  * @property boolean $avalaraTaxFlag
  * @property boolean $cityTaxFlag
  * @property boolean $compositeTaxFlag
@@ -67,19 +67,19 @@ class UnpostedExpense extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
+        '_info' => Metadata::class,
         'accountNumber' => 'string',
-        'agreement' => 'Spinen\ConnectWise\Models\v2018_5\Finance\AgreementReference',
+        'agreement' => AgreementReference::class,
         'agreementAmountCovered' => 'float',
         'avalaraTaxFlag' => 'boolean',
         'billableAmount' => 'float',
-        'chargeCode' => 'Spinen\ConnectWise\Models\v2018_5\Finance\ChargeCodeReference',
+        'chargeCode' => ChargeCodeReference::class,
         'chargeDescription' => 'string',
         'cityTaxAmount' => 'float',
         'cityTaxFlag' => 'boolean',
         'cityTaxXref' => 'string',
         'classification' => 'string',
-        'company' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference',
+        'company' => CompanyReference::class,
         'compositeTaxAmount' => 'float',
         'compositeTaxFlag' => 'boolean',
         'compositeTaxXref' => 'string',
@@ -90,12 +90,12 @@ class UnpostedExpense extends Model
         'countyTaxFlag' => 'boolean',
         'countyTaxXref' => 'string',
         'creditAccount' => 'string',
-        'currency' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CurrencyReference',
-        'dateClosed' => 'Carbon\Carbon',
-        'dateExpense' => 'Carbon\Carbon',
+        'currency' => CurrencyReference::class,
+        'dateClosed' => Carbon\Carbon::class,
+        'dateExpense' => Carbon\Carbon::class,
         'departmentId' => 'integer',
         'expenseDetailId' => 'integer',
-        'expenseType' => 'Spinen\ConnectWise\Models\v2018_5\Finance\ExpenseTypeReference',
+        'expenseType' => ExpenseTypeReference::class,
         'glType' => 'string',
         'id' => 'integer',
         'inPolicy' => 'boolean',
@@ -104,17 +104,17 @@ class UnpostedExpense extends Model
         'levelSixTaxFlag' => 'boolean',
         'levelSixTaxXref' => 'string',
         'locationId' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2018_5\Finance\MemberReference',
+        'member' => MemberReference::class,
         'nonBillableAmount' => 'float',
-        'paymentMethod' => 'Spinen\ConnectWise\Models\v2018_5\Finance\PaymentMethodReference',
-        'project' => 'Spinen\ConnectWise\Models\v2018_5\Finance\ProjectReference',
-        'projectPhase' => 'Spinen\ConnectWise\Models\v2018_5\Finance\ProjectPhaseReference',
+        'paymentMethod' => PaymentMethodReference::class,
+        'project' => ProjectReference::class,
+        'projectPhase' => ProjectPhaseReference::class,
         'salesTaxAmount' => 'float',
         'stateTaxAmount' => 'float',
         'stateTaxFlag' => 'boolean',
         'stateTaxXref' => 'string',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2018_5\Finance\TaxCodeReference',
-        'ticket' => 'Spinen\ConnectWise\Models\v2018_5\Finance\TicketReference',
+        'taxCode' => TaxCodeReference::class,
+        'ticket' => TicketReference::class,
         'total' => 'float',
     ];
 }

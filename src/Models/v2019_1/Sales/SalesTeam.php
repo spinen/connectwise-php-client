@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SalesTeam
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\SystemLocationReference $salesTeamLocation
+ * @property Metadata $_info
+ * @property SystemLocationReference $salesTeamLocation
  * @property boolean $inactiveFlag
  * @property integer $id
  * @property string $salesTeamDescription
@@ -24,11 +24,11 @@ class SalesTeam extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Sales\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'salesTeamDescription' => 'string',
         'salesTeamIdentifier' => 'string',
-        'salesTeamLocation' => 'Spinen\ConnectWise\Models\v2019_1\Sales\SystemLocationReference',
+        'salesTeamLocation' => SystemLocationReference::class,
     ];
 }

@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MemberInfo
  *
- * @property Spinen\ConnectWise\Models\v2018_4\System\DocumentReference $photo
- * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
+ * @property DocumentReference $photo
+ * @property Metadata $_info
  * @property integer $id
  * @property string $defaultEmail
  * @property string $firstName
@@ -27,7 +27,7 @@ class MemberInfo extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
+        '_info' => Metadata::class,
         'defaultEmail' => 'string',
         'firstName' => 'string',
         'fullName' => 'string',
@@ -35,6 +35,6 @@ class MemberInfo extends Model
         'identifier' => 'string',
         'lastName' => 'string',
         'middleInitial' => 'string',
-        'photo' => 'Spinen\ConnectWise\Models\v2018_4\System\DocumentReference',
+        'photo' => DocumentReference::class,
     ];
 }

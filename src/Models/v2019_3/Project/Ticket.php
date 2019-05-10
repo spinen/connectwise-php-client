@@ -9,30 +9,30 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Ticket
  *
+ * @property AgreementReference $agreement
+ * @property BoardReference $board
  * @property Carbon\Carbon $estimatedStartDate
  * @property Carbon\Carbon $requiredDate
- * @property Spinen\ConnectWise\Models\v2019_3\Project\AgreementReference $agreement
- * @property Spinen\ConnectWise\Models\v2019_3\Project\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2019_3\Project\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_3\Project\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2019_3\Project\CountryReference $country
- * @property Spinen\ConnectWise\Models\v2019_3\Project\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2019_3\Project\Guid $mobileGuid
- * @property Spinen\ConnectWise\Models\v2019_3\Project\MemberReference $owner
- * @property Spinen\ConnectWise\Models\v2019_3\Project\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_3\Project\OpportunityReference $opportunity
- * @property Spinen\ConnectWise\Models\v2019_3\Project\PriorityReference $priority
- * @property Spinen\ConnectWise\Models\v2019_3\Project\ProjectPhaseReference $phase
- * @property Spinen\ConnectWise\Models\v2019_3\Project\ProjectReference $project
- * @property Spinen\ConnectWise\Models\v2019_3\Project\ServiceItemReference $item
- * @property Spinen\ConnectWise\Models\v2019_3\Project\ServiceLocationReference $serviceLocation
- * @property Spinen\ConnectWise\Models\v2019_3\Project\ServiceSourceReference $source
- * @property Spinen\ConnectWise\Models\v2019_3\Project\ServiceStatusReference $status
- * @property Spinen\ConnectWise\Models\v2019_3\Project\ServiceSubTypeReference $subType
- * @property Spinen\ConnectWise\Models\v2019_3\Project\ServiceTypeReference $type
- * @property Spinen\ConnectWise\Models\v2019_3\Project\SiteReference $site
- * @property Spinen\ConnectWise\Models\v2019_3\Project\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2019_3\Project\SystemLocationReference $location
+ * @property CompanyReference $company
+ * @property ContactReference $contact
+ * @property CountryReference $country
+ * @property CurrencyReference $currency
+ * @property Guid $mobileGuid
+ * @property MemberReference $owner
+ * @property Metadata $_info
+ * @property OpportunityReference $opportunity
+ * @property PriorityReference $priority
+ * @property ProjectPhaseReference $phase
+ * @property ProjectReference $project
+ * @property ServiceItemReference $item
+ * @property ServiceLocationReference $serviceLocation
+ * @property ServiceSourceReference $source
+ * @property ServiceStatusReference $status
+ * @property ServiceSubTypeReference $subType
+ * @property ServiceTypeReference $type
+ * @property SiteReference $site
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
  * @property array $customFields
  * @property boolean $allowAllClientsPortalView
  * @property boolean $approved
@@ -92,11 +92,11 @@ class Ticket extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Project\Metadata',
+        '_info' => Metadata::class,
         'actualHours' => 'float',
         'addressLine1' => 'string',
         'addressLine2' => 'string',
-        'agreement' => 'Spinen\ConnectWise\Models\v2019_3\Project\AgreementReference',
+        'agreement' => AgreementReference::class,
         'allowAllClientsPortalView' => 'boolean',
         'approved' => 'boolean',
         'automaticEmailCc' => 'string',
@@ -106,64 +106,64 @@ class Ticket extends Model
         'billExpenses' => 'string',
         'billProducts' => 'string',
         'billTime' => 'string',
-        'board' => 'Spinen\ConnectWise\Models\v2019_3\Project\BoardReference',
+        'board' => BoardReference::class,
         'budgetHours' => 'float',
         'city' => 'string',
         'closedBy' => 'string',
         'closedDate' => 'string',
         'closedFlag' => 'boolean',
-        'company' => 'Spinen\ConnectWise\Models\v2019_3\Project\CompanyReference',
-        'contact' => 'Spinen\ConnectWise\Models\v2019_3\Project\ContactReference',
+        'company' => CompanyReference::class,
+        'contact' => ContactReference::class,
         'contactEmailAddress' => 'string',
         'contactEmailLookup' => 'string',
         'contactName' => 'string',
         'contactPhoneExtension' => 'string',
         'contactPhoneNumber' => 'string',
-        'country' => 'Spinen\ConnectWise\Models\v2019_3\Project\CountryReference',
-        'currency' => 'Spinen\ConnectWise\Models\v2019_3\Project\CurrencyReference',
+        'country' => CountryReference::class,
+        'currency' => CurrencyReference::class,
         'customFields' => 'array',
         'customerUpdatedFlag' => 'boolean',
-        'department' => 'Spinen\ConnectWise\Models\v2019_3\Project\SystemDepartmentReference',
+        'department' => SystemDepartmentReference::class,
         'duration' => 'integer',
-        'estimatedStartDate' => 'Carbon\Carbon',
+        'estimatedStartDate' => Carbon\Carbon::class,
         'id' => 'integer',
         'initialDescription' => 'string',
         'initialInternalAnalysis' => 'string',
         'initialResolution' => 'string',
         'isIssueFlag' => 'boolean',
-        'item' => 'Spinen\ConnectWise\Models\v2019_3\Project\ServiceItemReference',
+        'item' => ServiceItemReference::class,
         'knowledgeBaseCategoryId' => 'integer',
         'knowledgeBaseLinkId' => 'integer',
         'knowledgeBaseLinkType' => 'string',
         'knowledgeBaseSubCategoryId' => 'integer',
         'lagDays' => 'integer',
         'lagNonworkingDaysFlag' => 'boolean',
-        'location' => 'Spinen\ConnectWise\Models\v2019_3\Project\SystemLocationReference',
-        'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_3\Project\Guid',
-        'opportunity' => 'Spinen\ConnectWise\Models\v2019_3\Project\OpportunityReference',
-        'owner' => 'Spinen\ConnectWise\Models\v2019_3\Project\MemberReference',
-        'phase' => 'Spinen\ConnectWise\Models\v2019_3\Project\ProjectPhaseReference',
+        'location' => SystemLocationReference::class,
+        'mobileGuid' => Guid::class,
+        'opportunity' => OpportunityReference::class,
+        'owner' => MemberReference::class,
+        'phase' => ProjectPhaseReference::class,
         'predecessorClosedFlag' => 'boolean',
         'predecessorId' => 'integer',
         'predecessorType' => 'string',
-        'priority' => 'Spinen\ConnectWise\Models\v2019_3\Project\PriorityReference',
+        'priority' => PriorityReference::class,
         'processNotifications' => 'boolean',
-        'project' => 'Spinen\ConnectWise\Models\v2019_3\Project\ProjectReference',
-        'requiredDate' => 'Carbon\Carbon',
+        'project' => ProjectReference::class,
+        'requiredDate' => Carbon\Carbon::class,
         'resources' => 'string',
-        'serviceLocation' => 'Spinen\ConnectWise\Models\v2019_3\Project\ServiceLocationReference',
-        'site' => 'Spinen\ConnectWise\Models\v2019_3\Project\SiteReference',
+        'serviceLocation' => ServiceLocationReference::class,
+        'site' => SiteReference::class,
         'siteName' => 'string',
         'skipCallback' => 'boolean',
-        'source' => 'Spinen\ConnectWise\Models\v2019_3\Project\ServiceSourceReference',
+        'source' => ServiceSourceReference::class,
         'stateIdentifier' => 'string',
-        'status' => 'Spinen\ConnectWise\Models\v2019_3\Project\ServiceStatusReference',
+        'status' => ServiceStatusReference::class,
         'subBillingAmount' => 'float',
         'subBillingMethod' => 'string',
         'subDateAccepted' => 'string',
-        'subType' => 'Spinen\ConnectWise\Models\v2019_3\Project\ServiceSubTypeReference',
+        'subType' => ServiceSubTypeReference::class,
         'summary' => 'string',
-        'type' => 'Spinen\ConnectWise\Models\v2019_3\Project\ServiceTypeReference',
+        'type' => ServiceTypeReference::class,
         'wbsCode' => 'string',
         'zip' => 'string',
     ];

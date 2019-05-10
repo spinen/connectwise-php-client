@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CustomReport
  *
- * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $agreementFlag
  * @property boolean $agreementTypeFlag
  * @property boolean $companyFlag
@@ -93,7 +93,7 @@ class CustomReport extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
+        '_info' => Metadata::class,
         'agreementFlag' => 'boolean',
         'agreementOverride' => 'string',
         'agreementParamId' => 'integer',

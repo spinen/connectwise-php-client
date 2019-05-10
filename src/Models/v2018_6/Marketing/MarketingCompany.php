@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MarketingCompany
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Marketing\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $allContactsFlag
  * @property boolean $defaultContactFlag
  * @property boolean $unsubscribeFlag
@@ -24,7 +24,7 @@ class MarketingCompany extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Marketing\Metadata',
+        '_info' => Metadata::class,
         'allContactsFlag' => 'boolean',
         'defaultContactFlag' => 'boolean',
         'groupId' => 'integer',

@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ExpenseType
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Expense\ExternalExpenseTypeIntegrationReference $externalIntegrationXRef
- * @property Spinen\ConnectWise\Models\v2019_1\Expense\Metadata $_info
+ * @property ExternalExpenseTypeIntegrationReference $externalIntegrationXRef
+ * @property Metadata $_info
  * @property boolean $advancedAmountFlag
  * @property boolean $inactiveFlag
  * @property boolean $mileageFlag
@@ -33,11 +33,11 @@ class ExpenseType extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Expense\Metadata',
+        '_info' => Metadata::class,
         'advancedAmountFlag' => 'boolean',
         'amountCaption' => 'string',
         'billExpenses' => 'string',
-        'externalIntegrationXRef' => 'Spinen\ConnectWise\Models\v2019_1\Expense\ExternalExpenseTypeIntegrationReference',
+        'externalIntegrationXRef' => ExternalExpenseTypeIntegrationReference::class,
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'integrationXRef' => 'string',

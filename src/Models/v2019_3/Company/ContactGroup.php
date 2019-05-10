@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ContactGroup
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Company\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2019_3\Company\GroupReference $group
- * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
+ * @property ContactReference $contact
+ * @property GroupReference $group
+ * @property Metadata $_info
  * @property boolean $unsubscribeFlag
  * @property integer $id
  * @property string $companyGroupUnsubscribedEmailMessage
@@ -28,14 +28,14 @@ class ContactGroup extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
+        '_info' => Metadata::class,
         'companyGroupUnsubscribedEmailMessage' => 'string',
         'companyUnsubcribedEmailMessage' => 'string',
-        'contact' => 'Spinen\ConnectWise\Models\v2019_3\Company\ContactReference',
+        'contact' => ContactReference::class,
         'contactGroupUnsubscribedEmailMessage' => 'string',
         'contactUnsubscribedEmailMessage' => 'string',
         'description' => 'string',
-        'group' => 'Spinen\ConnectWise\Models\v2019_3\Company\GroupReference',
+        'group' => GroupReference::class,
         'id' => 'integer',
         'unsubscribeFlag' => 'boolean',
     ];

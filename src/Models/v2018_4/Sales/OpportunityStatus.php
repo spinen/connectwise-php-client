@@ -10,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for OpportunityStatus
  *
  * @property Carbon\Carbon $dateEntered
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $closedFlag
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
@@ -28,9 +28,9 @@ class OpportunityStatus extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Sales\Metadata',
+        '_info' => Metadata::class,
         'closedFlag' => 'boolean',
-        'dateEntered' => 'Carbon\Carbon',
+        'dateEntered' => Carbon\Carbon::class,
         'defaultFlag' => 'boolean',
         'enteredBy' => 'string',
         'id' => 'integer',

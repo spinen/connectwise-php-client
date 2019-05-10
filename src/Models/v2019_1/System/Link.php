@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Link
  *
- * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property integer $tableReferenceId
  * @property string $name
@@ -24,7 +24,7 @@ class Link extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'name' => 'string',
         'screenLink' => 'string',

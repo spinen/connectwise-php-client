@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CompanyNoteType
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $defaultFlag
  * @property boolean $importFlag
  * @property integer $id
@@ -24,7 +24,7 @@ class CompanyNoteType extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
         'id' => 'integer',
         'identifier' => 'string',

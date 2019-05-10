@@ -12,8 +12,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Carbon\Carbon $dateEnd
  * @property Carbon\Carbon $dateStart
  * @property Carbon\Carbon $dueDate
- * @property Spinen\ConnectWise\Models\v2019_3\Expense\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2019_3\Expense\Metadata $_info
+ * @property MemberReference $member
+ * @property Metadata $_info
  * @property float $total
  * @property integer $id
  * @property integer $period
@@ -28,12 +28,12 @@ class ExpenseReport extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Expense\Metadata',
-        'dateEnd' => 'Carbon\Carbon',
-        'dateStart' => 'Carbon\Carbon',
-        'dueDate' => 'Carbon\Carbon',
+        '_info' => Metadata::class,
+        'dateEnd' => Carbon\Carbon::class,
+        'dateStart' => Carbon\Carbon::class,
+        'dueDate' => Carbon\Carbon::class,
         'id' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2019_3\Expense\MemberReference',
+        'member' => MemberReference::class,
         'period' => 'integer',
         'status' => 'string',
         'total' => 'float',

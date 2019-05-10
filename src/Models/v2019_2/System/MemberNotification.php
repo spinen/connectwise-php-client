@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MemberNotification
  *
- * @property Spinen\ConnectWise\Models\v2019_2\System\DocumentReference $attachment
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
+ * @property DocumentReference $attachment
+ * @property Metadata $_info
  * @property boolean $readFlag
  * @property integer $id
  * @property integer $recordId
@@ -26,8 +26,8 @@ class MemberNotification extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
-        'attachment' => 'Spinen\ConnectWise\Models\v2019_2\System\DocumentReference',
+        '_info' => Metadata::class,
+        'attachment' => DocumentReference::class,
         'id' => 'integer',
         'message' => 'string',
         'notificationTrigger' => 'string',

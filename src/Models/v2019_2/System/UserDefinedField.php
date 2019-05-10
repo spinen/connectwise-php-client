@@ -10,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for UserDefinedField
  *
  * @property Carbon\Carbon $dateCreated
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
+ * @property Metadata $_info
  * @property array $businessUnitIds
  * @property array $locationIds
  * @property array $options
@@ -40,13 +40,13 @@ class UserDefinedField extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        '_info' => Metadata::class,
         'addAllBusinessUnits' => 'boolean',
         'addAllLocations' => 'boolean',
         'businessUnitIds' => 'array',
         'buttonUrl' => 'string',
         'caption' => 'string',
-        'dateCreated' => 'Carbon\Carbon',
+        'dateCreated' => Carbon\Carbon::class,
         'displayOnScreenFlag' => 'boolean',
         'entryTypeIdentifier' => 'string',
         'fieldTypeIdentifier' => 'string',

@@ -9,30 +9,30 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Ticket
  *
+ * @property AgreementReference $agreement
+ * @property BoardReference $board
  * @property Carbon\Carbon $estimatedStartDate
  * @property Carbon\Carbon $requiredDate
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\AgreementReference $agreement
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\CountryReference $country
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\Guid $mobileGuid
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\MemberReference $owner
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\OpportunityReference $opportunity
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\PriorityReference $priority
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\ProjectPhaseReference $phase
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\ProjectReference $project
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\SLAReference $sla
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\ServiceItemReference $item
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\ServiceLocationReference $serviceLocation
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\ServiceSourceReference $source
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\ServiceStatusReference $status
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\ServiceSubTypeReference $subType
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\ServiceTeamReference $team
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\ServiceTypeReference $type
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\SiteReference $site
+ * @property CompanyReference $company
+ * @property ContactReference $contact
+ * @property CountryReference $country
+ * @property CurrencyReference $currency
+ * @property Guid $mobileGuid
+ * @property MemberReference $owner
+ * @property Metadata $_info
+ * @property OpportunityReference $opportunity
+ * @property PriorityReference $priority
+ * @property ProjectPhaseReference $phase
+ * @property ProjectReference $project
+ * @property SLAReference $sla
+ * @property ServiceItemReference $item
+ * @property ServiceLocationReference $serviceLocation
+ * @property ServiceSourceReference $source
+ * @property ServiceStatusReference $status
+ * @property ServiceSubTypeReference $subType
+ * @property ServiceTeamReference $team
+ * @property ServiceTypeReference $type
+ * @property SiteReference $site
  * @property array $customFields
  * @property boolean $allowAllClientsPortalView
  * @property boolean $approved
@@ -118,11 +118,11 @@ class Ticket extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Sales\Metadata',
+        '_info' => Metadata::class,
         'actualHours' => 'float',
         'addressLine1' => 'string',
         'addressLine2' => 'string',
-        'agreement' => 'Spinen\ConnectWise\Models\v2018_4\Sales\AgreementReference',
+        'agreement' => AgreementReference::class,
         'allowAllClientsPortalView' => 'boolean',
         'approved' => 'boolean',
         'automaticEmailCc' => 'string',
@@ -134,22 +134,22 @@ class Ticket extends Model
         'billTime' => 'string',
         'billingAmount' => 'float',
         'billingMethod' => 'string',
-        'board' => 'Spinen\ConnectWise\Models\v2018_4\Sales\BoardReference',
+        'board' => BoardReference::class,
         'budgetHours' => 'float',
         'businessUnitId' => 'integer',
         'city' => 'string',
         'closedBy' => 'string',
         'closedDate' => 'string',
         'closedFlag' => 'boolean',
-        'company' => 'Spinen\ConnectWise\Models\v2018_4\Sales\CompanyReference',
-        'contact' => 'Spinen\ConnectWise\Models\v2018_4\Sales\ContactReference',
+        'company' => CompanyReference::class,
+        'contact' => ContactReference::class,
         'contactEmailAddress' => 'string',
         'contactEmailLookup' => 'string',
         'contactName' => 'string',
         'contactPhoneExtension' => 'string',
         'contactPhoneNumber' => 'string',
-        'country' => 'Spinen\ConnectWise\Models\v2018_4\Sales\CountryReference',
-        'currency' => 'Spinen\ConnectWise\Models\v2018_4\Sales\CurrencyReference',
+        'country' => CountryReference::class,
+        'currency' => CurrencyReference::class,
         'customFields' => 'array',
         'customerUpdatedFlag' => 'boolean',
         'dateEntered' => 'string',
@@ -162,7 +162,7 @@ class Ticket extends Model
         'estimatedExpenseRevenue' => 'float',
         'estimatedProductCost' => 'float',
         'estimatedProductRevenue' => 'float',
-        'estimatedStartDate' => 'Carbon\Carbon',
+        'estimatedStartDate' => Carbon\Carbon::class,
         'estimatedTimeCost' => 'float',
         'estimatedTimeRevenue' => 'float',
         'externalXRef' => 'string',
@@ -174,7 +174,7 @@ class Ticket extends Model
         'initialInternalAnalysis' => 'string',
         'initialResolution' => 'string',
         'isInSla' => 'boolean',
-        'item' => 'Spinen\ConnectWise\Models\v2018_4\Sales\ServiceItemReference',
+        'item' => ServiceItemReference::class,
         'knowledgeBaseCategoryId' => 'integer',
         'knowledgeBaseLinkId' => 'integer',
         'knowledgeBaseLinkType' => 'string',
@@ -182,40 +182,40 @@ class Ticket extends Model
         'lagDays' => 'integer',
         'lagNonworkingDaysFlag' => 'boolean',
         'locationId' => 'integer',
-        'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_4\Sales\Guid',
-        'opportunity' => 'Spinen\ConnectWise\Models\v2018_4\Sales\OpportunityReference',
-        'owner' => 'Spinen\ConnectWise\Models\v2018_4\Sales\MemberReference',
+        'mobileGuid' => Guid::class,
+        'opportunity' => OpportunityReference::class,
+        'owner' => MemberReference::class,
         'parentTicketId' => 'integer',
-        'phase' => 'Spinen\ConnectWise\Models\v2018_4\Sales\ProjectPhaseReference',
+        'phase' => ProjectPhaseReference::class,
         'poNumber' => 'string',
         'predecessorClosedFlag' => 'boolean',
         'predecessorId' => 'integer',
         'predecessorType' => 'string',
-        'priority' => 'Spinen\ConnectWise\Models\v2018_4\Sales\PriorityReference',
+        'priority' => PriorityReference::class,
         'processNotifications' => 'boolean',
-        'project' => 'Spinen\ConnectWise\Models\v2018_4\Sales\ProjectReference',
+        'project' => ProjectReference::class,
         'recordType' => 'string',
-        'requiredDate' => 'Carbon\Carbon',
+        'requiredDate' => Carbon\Carbon::class,
         'resPlanMinutes' => 'integer',
         'resolveMinutes' => 'integer',
         'resources' => 'string',
         'respondMinutes' => 'integer',
-        'serviceLocation' => 'Spinen\ConnectWise\Models\v2018_4\Sales\ServiceLocationReference',
+        'serviceLocation' => ServiceLocationReference::class,
         'severity' => 'string',
-        'site' => 'Spinen\ConnectWise\Models\v2018_4\Sales\SiteReference',
+        'site' => SiteReference::class,
         'siteName' => 'string',
         'skipCallback' => 'boolean',
-        'sla' => 'Spinen\ConnectWise\Models\v2018_4\Sales\SLAReference',
-        'source' => 'Spinen\ConnectWise\Models\v2018_4\Sales\ServiceSourceReference',
+        'sla' => SLAReference::class,
+        'source' => ServiceSourceReference::class,
         'stateIdentifier' => 'string',
-        'status' => 'Spinen\ConnectWise\Models\v2018_4\Sales\ServiceStatusReference',
+        'status' => ServiceStatusReference::class,
         'subBillingAmount' => 'float',
         'subBillingMethod' => 'string',
         'subDateAccepted' => 'string',
-        'subType' => 'Spinen\ConnectWise\Models\v2018_4\Sales\ServiceSubTypeReference',
+        'subType' => ServiceSubTypeReference::class,
         'summary' => 'string',
-        'team' => 'Spinen\ConnectWise\Models\v2018_4\Sales\ServiceTeamReference',
-        'type' => 'Spinen\ConnectWise\Models\v2018_4\Sales\ServiceTypeReference',
+        'team' => ServiceTeamReference::class,
+        'type' => ServiceTypeReference::class,
         'wbsCode' => 'string',
         'zip' => 'string',
     ];

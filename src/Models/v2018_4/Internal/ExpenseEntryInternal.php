@@ -9,21 +9,21 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ExpenseEntryInternal
  *
+ * @property AgreementReference $agreement
  * @property Carbon\Carbon $date
- * @property Spinen\ConnectWise\Models\v2018_4\Internal\AgreementReference $agreement
- * @property Spinen\ConnectWise\Models\v2018_4\Internal\ChargeToReference $chargeTo
- * @property Spinen\ConnectWise\Models\v2018_4\Internal\ClassificationReference $classification
- * @property Spinen\ConnectWise\Models\v2018_4\Internal\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_4\Internal\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2018_4\Internal\ExpenseReportReference $expenseReport
- * @property Spinen\ConnectWise\Models\v2018_4\Internal\ExpenseTypeReference $type
- * @property Spinen\ConnectWise\Models\v2018_4\Internal\Guid $mobileGuid
- * @property Spinen\ConnectWise\Models\v2018_4\Internal\InvoiceReference $invoice
- * @property Spinen\ConnectWise\Models\v2018_4\Internal\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_4\Internal\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\Internal\PaymentMethodReference $paymentMethod
- * @property Spinen\ConnectWise\Models\v2018_4\Internal\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2018_4\Internal\SystemLocationReference $location
+ * @property ChargeToReference $chargeTo
+ * @property ClassificationReference $classification
+ * @property CompanyReference $company
+ * @property CurrencyReference $currency
+ * @property ExpenseReportReference $expenseReport
+ * @property ExpenseTypeReference $type
+ * @property Guid $mobileGuid
+ * @property InvoiceReference $invoice
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property PaymentMethodReference $paymentMethod
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
  * @property array $taxes
  * @property float $amount
  * @property float $billAmount
@@ -41,28 +41,28 @@ class ExpenseEntryInternal extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Internal\Metadata',
-        'agreement' => 'Spinen\ConnectWise\Models\v2018_4\Internal\AgreementReference',
+        '_info' => Metadata::class,
+        'agreement' => AgreementReference::class,
         'amount' => 'float',
         'billAmount' => 'float',
         'billableOption' => 'string',
-        'chargeTo' => 'Spinen\ConnectWise\Models\v2018_4\Internal\ChargeToReference',
-        'classification' => 'Spinen\ConnectWise\Models\v2018_4\Internal\ClassificationReference',
-        'company' => 'Spinen\ConnectWise\Models\v2018_4\Internal\CompanyReference',
-        'currency' => 'Spinen\ConnectWise\Models\v2018_4\Internal\CurrencyReference',
-        'date' => 'Carbon\Carbon',
-        'department' => 'Spinen\ConnectWise\Models\v2018_4\Internal\SystemDepartmentReference',
-        'expenseReport' => 'Spinen\ConnectWise\Models\v2018_4\Internal\ExpenseReportReference',
+        'chargeTo' => ChargeToReference::class,
+        'classification' => ClassificationReference::class,
+        'company' => CompanyReference::class,
+        'currency' => CurrencyReference::class,
+        'date' => Carbon\Carbon::class,
+        'department' => SystemDepartmentReference::class,
+        'expenseReport' => ExpenseReportReference::class,
         'id' => 'integer',
-        'invoice' => 'Spinen\ConnectWise\Models\v2018_4\Internal\InvoiceReference',
+        'invoice' => InvoiceReference::class,
         'invoiceAmount' => 'float',
-        'location' => 'Spinen\ConnectWise\Models\v2018_4\Internal\SystemLocationReference',
-        'member' => 'Spinen\ConnectWise\Models\v2018_4\Internal\MemberReference',
-        'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_4\Internal\Guid',
+        'location' => SystemLocationReference::class,
+        'member' => MemberReference::class,
+        'mobileGuid' => Guid::class,
         'notes' => 'string',
-        'paymentMethod' => 'Spinen\ConnectWise\Models\v2018_4\Internal\PaymentMethodReference',
+        'paymentMethod' => PaymentMethodReference::class,
         'status' => 'string',
         'taxes' => 'array',
-        'type' => 'Spinen\ConnectWise\Models\v2018_4\Internal\ExpenseTypeReference',
+        'type' => ExpenseTypeReference::class,
     ];
 }

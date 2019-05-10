@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CurrencyReference
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Company\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property string $isoCode
  * @property string $name
@@ -23,7 +23,7 @@ class CurrencyReference extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Company\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'isoCode' => 'string',
         'name' => 'string',

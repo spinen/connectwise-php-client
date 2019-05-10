@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SurveyResult
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Service\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_2\Service\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2019_2\Service\Metadata $_info
+ * @property CompanyReference $company
+ * @property ContactReference $contact
+ * @property Metadata $_info
  * @property array $results
  * @property boolean $contactMeFlag
  * @property integer $id
@@ -29,9 +29,9 @@ class SurveyResult extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Service\Metadata',
-        'company' => 'Spinen\ConnectWise\Models\v2019_2\Service\CompanyReference',
-        'contact' => 'Spinen\ConnectWise\Models\v2019_2\Service\ContactReference',
+        '_info' => Metadata::class,
+        'company' => CompanyReference::class,
+        'contact' => ContactReference::class,
         'contactMeFlag' => 'boolean',
         'emailAddress' => 'string',
         'footerResponse' => 'string',

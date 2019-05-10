@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Crm
  *
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_2\System\TeamRoleReference $accountManagerRole
- * @property Spinen\ConnectWise\Models\v2019_2\System\TeamRoleReference $salesRepRole
- * @property Spinen\ConnectWise\Models\v2019_2\System\TeamRoleReference $technicalContactRole
+ * @property Metadata $_info
+ * @property TeamRoleReference $accountManagerRole
+ * @property TeamRoleReference $salesRepRole
+ * @property TeamRoleReference $technicalContactRole
  * @property boolean $companyIdGenerationFlag
  * @property boolean $defaultYear
  * @property boolean $excludeSpacesFlag
@@ -42,8 +42,8 @@ class Crm extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
-        'accountManagerRole' => 'Spinen\ConnectWise\Models\v2019_2\System\TeamRoleReference',
+        '_info' => Metadata::class,
+        'accountManagerRole' => TeamRoleReference::class,
         'companyIdGenerationFlag' => 'boolean',
         'companyListCount' => 'integer',
         'defaultYear' => 'boolean',
@@ -63,8 +63,8 @@ class Crm extends Model
         'other1Caption' => 'string',
         'other2Caption' => 'string',
         'primaryRepCaption' => 'string',
-        'salesRepRole' => 'Spinen\ConnectWise\Models\v2019_2\System\TeamRoleReference',
+        'salesRepRole' => TeamRoleReference::class,
         'secondaryRepCaption' => 'string',
-        'technicalContactRole' => 'Spinen\ConnectWise\Models\v2019_2\System\TeamRoleReference',
+        'technicalContactRole' => TeamRoleReference::class,
     ];
 }

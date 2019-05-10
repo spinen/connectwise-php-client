@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLAccount
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\MappedRecordReference $mappedRecord
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\MappedTypeReference $mappedType
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
+ * @property MappedRecordReference $mappedRecord
+ * @property MappedTypeReference $mappedType
+ * @property Metadata $_info
  * @property integer $id
  * @property string $cogs1
  * @property string $cogs10
@@ -46,7 +46,7 @@ class GLAccount extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
+        '_info' => Metadata::class,
         'cogs1' => 'string',
         'cogs10' => 'string',
         'cogs2' => 'string',
@@ -60,8 +60,8 @@ class GLAccount extends Model
         'glType' => 'string',
         'id' => 'integer',
         'inventory' => 'string',
-        'mappedRecord' => 'Spinen\ConnectWise\Models\v2019_2\Finance\MappedRecordReference',
-        'mappedType' => 'Spinen\ConnectWise\Models\v2019_2\Finance\MappedTypeReference',
+        'mappedRecord' => MappedRecordReference::class,
+        'mappedType' => MappedTypeReference::class,
         'productId' => 'string',
         'salesCode' => 'string',
         'segment1' => 'string',

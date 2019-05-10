@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProjectSecurityRole
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Project\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $defaultContactFlag
  * @property boolean $managerRoleFlag
  * @property integer $id
@@ -23,7 +23,7 @@ class ProjectSecurityRole extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Project\Metadata',
+        '_info' => Metadata::class,
         'defaultContactFlag' => 'boolean',
         'id' => 'integer',
         'managerRoleFlag' => 'boolean',

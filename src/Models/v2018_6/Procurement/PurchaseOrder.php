@@ -9,24 +9,24 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PurchaseOrder
  *
+ * @property BillingTermsReference $terms
  * @property Carbon\Carbon $dateClosed
  * @property Carbon\Carbon $poDate
  * @property Carbon\Carbon $shipmentDate
  * @property Carbon\Carbon $vendorInvoiceDate
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\BillingTermsReference $terms
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\CompanyReference $customerCompany
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\CompanyReference $vendorCompany
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\ContactReference $customerContact
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\ContactReference $vendorContact
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\CountryReference $customerCountry
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\PurchaseOrderStatusReference $status
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\ShipmentMethodReference $shipmentMethod
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\SiteReference $customerSite
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\SiteReference $vendorSite
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\TaxCodeReference $taxCode
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\WarehouseReference $warehouse
+ * @property CompanyReference $customerCompany
+ * @property CompanyReference $vendorCompany
+ * @property ContactReference $customerContact
+ * @property ContactReference $vendorContact
+ * @property CountryReference $customerCountry
+ * @property CurrencyReference $currency
+ * @property Metadata $_info
+ * @property PurchaseOrderStatusReference $status
+ * @property ShipmentMethodReference $shipmentMethod
+ * @property SiteReference $customerSite
+ * @property SiteReference $vendorSite
+ * @property TaxCodeReference $taxCode
+ * @property WarehouseReference $warehouse
  * @property array $customFields
  * @property boolean $closedFlag
  * @property boolean $dropShipCustomerFlag
@@ -69,26 +69,26 @@ class PurchaseOrder extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
+        '_info' => Metadata::class,
         'businessUnitId' => 'integer',
         'cancelReason' => 'string',
         'closedFlag' => 'boolean',
-        'currency' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\CurrencyReference',
+        'currency' => CurrencyReference::class,
         'customFields' => 'array',
         'customerCity' => 'string',
-        'customerCompany' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\CompanyReference',
-        'customerContact' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\ContactReference',
-        'customerCountry' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\CountryReference',
+        'customerCompany' => CompanyReference::class,
+        'customerContact' => ContactReference::class,
+        'customerCountry' => CountryReference::class,
         'customerExtension' => 'string',
         'customerName' => 'string',
         'customerPhone' => 'string',
-        'customerSite' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\SiteReference',
+        'customerSite' => SiteReference::class,
         'customerSiteName' => 'string',
         'customerState' => 'string',
         'customerStreetLine1' => 'string',
         'customerStreetLine2' => 'string',
         'customerZip' => 'string',
-        'dateClosed' => 'Carbon\Carbon',
+        'dateClosed' => Carbon\Carbon::class,
         'dropShipCustomerFlag' => 'boolean',
         'enteredBy' => 'string',
         'freightCost' => 'float',
@@ -97,28 +97,28 @@ class PurchaseOrder extends Model
         'id' => 'integer',
         'internalNotes' => 'string',
         'locationId' => 'integer',
-        'poDate' => 'Carbon\Carbon',
+        'poDate' => Carbon\Carbon::class,
         'poNumber' => 'string',
         'salesTax' => 'float',
-        'shipmentDate' => 'Carbon\Carbon',
-        'shipmentMethod' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\ShipmentMethodReference',
+        'shipmentDate' => Carbon\Carbon::class,
+        'shipmentMethod' => ShipmentMethodReference::class,
         'shippingInstructions' => 'string',
-        'status' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\PurchaseOrderStatusReference',
+        'status' => PurchaseOrderStatusReference::class,
         'subTotal' => 'float',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\TaxCodeReference',
+        'taxCode' => TaxCodeReference::class,
         'taxFreightFlag' => 'boolean',
         'taxPoFlag' => 'boolean',
-        'terms' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\BillingTermsReference',
+        'terms' => BillingTermsReference::class,
         'total' => 'float',
         'trackingNumber' => 'string',
         'updateShipmentInfo' => 'boolean',
         'updateVendorOrderNumber' => 'boolean',
-        'vendorCompany' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\CompanyReference',
-        'vendorContact' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\ContactReference',
-        'vendorInvoiceDate' => 'Carbon\Carbon',
+        'vendorCompany' => CompanyReference::class,
+        'vendorContact' => ContactReference::class,
+        'vendorInvoiceDate' => Carbon\Carbon::class,
         'vendorInvoiceNumber' => 'string',
         'vendorOrderNumber' => 'string',
-        'vendorSite' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\SiteReference',
-        'warehouse' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\WarehouseReference',
+        'vendorSite' => SiteReference::class,
+        'warehouse' => WarehouseReference::class,
     ];
 }

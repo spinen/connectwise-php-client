@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProjectStatus
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Project\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_3\Project\StatusIndicatorReference $statusIndicator
+ * @property Metadata $_info
+ * @property StatusIndicatorReference $statusIndicator
  * @property boolean $closedFlag
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
@@ -27,7 +27,7 @@ class ProjectStatus extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Project\Metadata',
+        '_info' => Metadata::class,
         'closedFlag' => 'boolean',
         'customStatusIndicatorName' => 'string',
         'defaultFlag' => 'boolean',
@@ -35,6 +35,6 @@ class ProjectStatus extends Model
         'inactiveFlag' => 'boolean',
         'name' => 'string',
         'noTimeFlag' => 'boolean',
-        'statusIndicator' => 'Spinen\ConnectWise\Models\v2019_3\Project\StatusIndicatorReference',
+        'statusIndicator' => StatusIndicatorReference::class,
     ];
 }

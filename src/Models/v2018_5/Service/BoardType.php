@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BoardType
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Service\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2018_5\Service\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_5\Service\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2018_5\Service\SystemLocationReference $location
+ * @property BoardReference $board
+ * @property Metadata $_info
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
  * @property boolean $requestForChangeFlag
@@ -29,15 +29,15 @@ class BoardType extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Service\Metadata',
-        'board' => 'Spinen\ConnectWise\Models\v2018_5\Service\BoardReference',
+        '_info' => Metadata::class,
+        'board' => BoardReference::class,
         'category' => 'string',
         'defaultFlag' => 'boolean',
-        'department' => 'Spinen\ConnectWise\Models\v2018_5\Service\SystemDepartmentReference',
+        'department' => SystemDepartmentReference::class,
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'integrationXref' => 'string',
-        'location' => 'Spinen\ConnectWise\Models\v2018_5\Service\SystemLocationReference',
+        'location' => SystemLocationReference::class,
         'name' => 'string',
         'requestForChangeFlag' => 'boolean',
     ];

@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OpportunityRating
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Sales\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property integer $sortOrder
  * @property string $name
@@ -22,7 +22,7 @@ class OpportunityRating extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Sales\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'name' => 'string',
         'sortOrder' => 'integer',

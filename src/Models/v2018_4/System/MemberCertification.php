@@ -11,10 +11,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Carbon\Carbon $dateExpires
  * @property Carbon\Carbon $dateReceived
- * @property Spinen\ConnectWise\Models\v2018_4\System\CertificationReference $certification
- * @property Spinen\ConnectWise\Models\v2018_4\System\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_4\System\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
+ * @property CertificationReference $certification
+ * @property CompanyReference $company
+ * @property MemberReference $member
+ * @property Metadata $_info
  * @property integer $id
  * @property integer $percentComplete
  * @property string $certificationNumber
@@ -28,14 +28,14 @@ class MemberCertification extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
-        'certification' => 'Spinen\ConnectWise\Models\v2018_4\System\CertificationReference',
+        '_info' => Metadata::class,
+        'certification' => CertificationReference::class,
         'certificationNumber' => 'string',
-        'company' => 'Spinen\ConnectWise\Models\v2018_4\System\CompanyReference',
-        'dateExpires' => 'Carbon\Carbon',
-        'dateReceived' => 'Carbon\Carbon',
+        'company' => CompanyReference::class,
+        'dateExpires' => Carbon\Carbon::class,
+        'dateReceived' => Carbon\Carbon::class,
         'id' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2018_4\System\MemberReference',
+        'member' => MemberReference::class,
         'notes' => 'string',
         'percentComplete' => 'integer',
     ];

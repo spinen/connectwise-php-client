@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CorporateStructure
  *
- * @property Spinen\ConnectWise\Models\v2018_4\System\CurrencyReference $baseCurrency
- * @property Spinen\ConnectWise\Models\v2018_4\System\MemberReference $chiefOperatingOfficer
- * @property Spinen\ConnectWise\Models\v2018_4\System\MemberReference $controller
- * @property Spinen\ConnectWise\Models\v2018_4\System\MemberReference $dispatcher
- * @property Spinen\ConnectWise\Models\v2018_4\System\MemberReference $dutyManager
- * @property Spinen\ConnectWise\Models\v2018_4\System\MemberReference $president
- * @property Spinen\ConnectWise\Models\v2018_4\System\MemberReference $serviceManager
- * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
+ * @property CurrencyReference $baseCurrency
+ * @property MemberReference $chiefOperatingOfficer
+ * @property MemberReference $controller
+ * @property MemberReference $dispatcher
+ * @property MemberReference $dutyManager
+ * @property MemberReference $president
+ * @property MemberReference $serviceManager
+ * @property Metadata $_info
  * @property integer $id
  * @property string $fiscalYearStart
  * @property string $groupCaption
@@ -36,12 +36,12 @@ class CorporateStructure extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
-        'baseCurrency' => 'Spinen\ConnectWise\Models\v2018_4\System\CurrencyReference',
-        'chiefOperatingOfficer' => 'Spinen\ConnectWise\Models\v2018_4\System\MemberReference',
-        'controller' => 'Spinen\ConnectWise\Models\v2018_4\System\MemberReference',
-        'dispatcher' => 'Spinen\ConnectWise\Models\v2018_4\System\MemberReference',
-        'dutyManager' => 'Spinen\ConnectWise\Models\v2018_4\System\MemberReference',
+        '_info' => Metadata::class,
+        'baseCurrency' => CurrencyReference::class,
+        'chiefOperatingOfficer' => MemberReference::class,
+        'controller' => MemberReference::class,
+        'dispatcher' => MemberReference::class,
+        'dutyManager' => MemberReference::class,
         'fiscalYearStart' => 'string',
         'groupCaption' => 'string',
         'id' => 'integer',
@@ -52,7 +52,7 @@ class CorporateStructure extends Model
         'level5Name' => 'string',
         'levelCount' => 'string',
         'locationCaption' => 'string',
-        'president' => 'Spinen\ConnectWise\Models\v2018_4\System\MemberReference',
-        'serviceManager' => 'Spinen\ConnectWise\Models\v2018_4\System\MemberReference',
+        'president' => MemberReference::class,
+        'serviceManager' => MemberReference::class,
     ];
 }

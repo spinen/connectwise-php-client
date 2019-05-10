@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SalesTeamMember
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Sales\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2019_3\Sales\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_3\Sales\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2019_3\Sales\SystemLocationReference $location
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
  * @property boolean $allowAccessFlag
  * @property integer $id
  */
@@ -24,11 +24,11 @@ class SalesTeamMember extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Sales\Metadata',
+        '_info' => Metadata::class,
         'allowAccessFlag' => 'boolean',
-        'department' => 'Spinen\ConnectWise\Models\v2019_3\Sales\SystemDepartmentReference',
+        'department' => SystemDepartmentReference::class,
         'id' => 'integer',
-        'location' => 'Spinen\ConnectWise\Models\v2019_3\Sales\SystemLocationReference',
-        'member' => 'Spinen\ConnectWise\Models\v2019_3\Sales\MemberReference',
+        'location' => SystemLocationReference::class,
+        'member' => MemberReference::class,
     ];
 }

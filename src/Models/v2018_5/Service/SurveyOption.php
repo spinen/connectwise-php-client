@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SurveyOption
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Service\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $visibleflag
  * @property integer $id
  * @property integer $points
@@ -23,7 +23,7 @@ class SurveyOption extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Service\Metadata',
+        '_info' => Metadata::class,
         'caption' => 'string',
         'id' => 'integer',
         'points' => 'integer',

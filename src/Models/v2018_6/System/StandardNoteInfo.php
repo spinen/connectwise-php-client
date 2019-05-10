@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for StandardNoteInfo
  *
- * @property Spinen\ConnectWise\Models\v2018_6\System\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_6\System\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference $location
+ * @property BoardReference $board
+ * @property Metadata $_info
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
  * @property integer $id
  * @property string $contents
  * @property string $name
@@ -25,12 +25,12 @@ class StandardNoteInfo extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
-        'board' => 'Spinen\ConnectWise\Models\v2018_6\System\BoardReference',
+        '_info' => Metadata::class,
+        'board' => BoardReference::class,
         'contents' => 'string',
-        'department' => 'Spinen\ConnectWise\Models\v2018_6\System\SystemDepartmentReference',
+        'department' => SystemDepartmentReference::class,
         'id' => 'integer',
-        'location' => 'Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference',
+        'location' => SystemLocationReference::class,
         'name' => 'string',
     ];
 }

@@ -10,17 +10,17 @@ use Spinen\ConnectWise\Support\Model;
  * Model for GLExportInventoryTransfer
  *
  * @property Carbon\Carbon $documentDate
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\GLExportInventoryTransferOffset $offset
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\IvItemReference $item
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\ProductSubCategoryReference $subCategory
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\ShipmentMethodReference $shipmentMethod
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\TaxCodeReference $taxCode
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\UnitOfMeasureReference $unitOfMeasure
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\WarehouseBinReference $bin
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\WarehouseBinReference $transferFromBin
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\WarehouseBinReference $transferToBin
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\WarehouseReference $warehouse
+ * @property CurrencyReference $currency
+ * @property GLExportInventoryTransferOffset $offset
+ * @property IvItemReference $item
+ * @property ProductSubCategoryReference $subCategory
+ * @property ShipmentMethodReference $shipmentMethod
+ * @property TaxCodeReference $taxCode
+ * @property UnitOfMeasureReference $unitOfMeasure
+ * @property WarehouseBinReference $bin
+ * @property WarehouseBinReference $transferFromBin
+ * @property WarehouseBinReference $transferToBin
+ * @property WarehouseReference $warehouse
  * @property boolean $serializedFlag
  * @property boolean $taxable
  * @property float $cost
@@ -61,13 +61,13 @@ class GLExportInventoryTransfer extends Model
      */
     protected $casts = [
         'accountNumber' => 'string',
-        'bin' => 'Spinen\ConnectWise\Models\v2019_2\Finance\WarehouseBinReference',
+        'bin' => WarehouseBinReference::class,
         'cogsXref' => 'string',
         'cost' => 'float',
         'costAcccountNumber' => 'string',
-        'currency' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference',
+        'currency' => CurrencyReference::class,
         'description' => 'string',
-        'documentDate' => 'Carbon\Carbon',
+        'documentDate' => Carbon\Carbon::class,
         'documentType' => 'string',
         'glClass' => 'string',
         'glItemId' => 'string',
@@ -75,32 +75,32 @@ class GLExportInventoryTransfer extends Model
         'id' => 'string',
         'inventoryAccountNumber' => 'string',
         'inventoryXref' => 'string',
-        'item' => 'Spinen\ConnectWise\Models\v2019_2\Finance\IvItemReference',
+        'item' => IvItemReference::class,
         'itemDescription' => 'string',
         'itemPrice' => 'float',
         'itemTypeXref' => 'string',
         'locationXref' => 'string',
         'memo' => 'string',
-        'offset' => 'Spinen\ConnectWise\Models\v2019_2\Finance\GLExportInventoryTransferOffset',
+        'offset' => GLExportInventoryTransferOffset::class,
         'priceLevelXref' => 'string',
         'quantity' => 'float',
         'salesCode' => 'string',
         'salesDescription' => 'string',
         'serialNumbers' => 'string',
         'serializedFlag' => 'boolean',
-        'shipmentMethod' => 'Spinen\ConnectWise\Models\v2019_2\Finance\ShipmentMethodReference',
-        'subCategory' => 'Spinen\ConnectWise\Models\v2019_2\Finance\ProductSubCategoryReference',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2019_2\Finance\TaxCodeReference',
+        'shipmentMethod' => ShipmentMethodReference::class,
+        'subCategory' => ProductSubCategoryReference::class,
+        'taxCode' => TaxCodeReference::class,
         'taxNote' => 'string',
         'taxable' => 'boolean',
         'total' => 'float',
-        'transferFromBin' => 'Spinen\ConnectWise\Models\v2019_2\Finance\WarehouseBinReference',
+        'transferFromBin' => WarehouseBinReference::class,
         'transferFromLocationXref' => 'string',
         'transferId' => 'integer',
-        'transferToBin' => 'Spinen\ConnectWise\Models\v2019_2\Finance\WarehouseBinReference',
+        'transferToBin' => WarehouseBinReference::class,
         'transferToLocationXref' => 'string',
-        'unitOfMeasure' => 'Spinen\ConnectWise\Models\v2019_2\Finance\UnitOfMeasureReference',
+        'unitOfMeasure' => UnitOfMeasureReference::class,
         'uomScheduleXref' => 'string',
-        'warehouse' => 'Spinen\ConnectWise\Models\v2019_2\Finance\WarehouseReference',
+        'warehouse' => WarehouseReference::class,
     ];
 }

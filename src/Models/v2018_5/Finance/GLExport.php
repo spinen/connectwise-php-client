@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExport
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\GLExportSettings $exportSettings
+ * @property GLExportSettings $exportSettings
  * @property array $adjustmentTransactions
  * @property array $customers
  * @property array $expenseBills
@@ -31,7 +31,7 @@ class GLExport extends Model
         'customers' => 'array',
         'expenseBills' => 'array',
         'expenses' => 'array',
-        'exportSettings' => 'Spinen\ConnectWise\Models\v2018_5\Finance\GLExportSettings',
+        'exportSettings' => GLExportSettings::class,
         'inventoryTransfers' => 'array',
         'purchaseTransactions' => 'array',
         'transactions' => 'array',

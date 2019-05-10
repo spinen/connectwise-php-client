@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ActivityType
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Sales\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $defaultFlag
  * @property boolean $emailFlag
  * @property boolean $inactiveFlag
@@ -26,7 +26,7 @@ class ActivityType extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Sales\Metadata',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
         'emailFlag' => 'boolean',
         'id' => 'integer',

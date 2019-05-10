@@ -9,19 +9,19 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for EmailConnector
  *
- * @property Spinen\ConnectWise\Models\v2019_3\System\BoardReference $serviceBoard
- * @property Spinen\ConnectWise\Models\v2019_3\System\CompanyReference $defaultCompany
- * @property Spinen\ConnectWise\Models\v2019_3\System\ImapSetupReference $imapSetup
- * @property Spinen\ConnectWise\Models\v2019_3\System\MemberReference $defaultMember
- * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_3\System\PriorityReference $priorityOverride
- * @property Spinen\ConnectWise\Models\v2019_3\System\ServiceItemReference $itemOverride
- * @property Spinen\ConnectWise\Models\v2019_3\System\ServiceSourceReference $sourceOverride
- * @property Spinen\ConnectWise\Models\v2019_3\System\ServiceStatusReference $statusOverride
- * @property Spinen\ConnectWise\Models\v2019_3\System\ServiceSubTypeReference $subTypeOverride
- * @property Spinen\ConnectWise\Models\v2019_3\System\ServiceTypeReference $typeOverride
- * @property Spinen\ConnectWise\Models\v2019_3\System\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2019_3\System\SystemLocationReference $location
+ * @property BoardReference $serviceBoard
+ * @property CompanyReference $defaultCompany
+ * @property ImapSetupReference $imapSetup
+ * @property MemberReference $defaultMember
+ * @property Metadata $_info
+ * @property PriorityReference $priorityOverride
+ * @property ServiceItemReference $itemOverride
+ * @property ServiceSourceReference $sourceOverride
+ * @property ServiceStatusReference $statusOverride
+ * @property ServiceSubTypeReference $subTypeOverride
+ * @property ServiceTypeReference $typeOverride
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
  * @property boolean $addCcFlag
  * @property boolean $createContactFlag
  * @property boolean $discardDuplicatesFlag
@@ -44,31 +44,31 @@ class EmailConnector extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
+        '_info' => Metadata::class,
         'addCcFlag' => 'boolean',
         'bccEmailTo' => 'string',
         'createContactFlag' => 'boolean',
-        'defaultCompany' => 'Spinen\ConnectWise\Models\v2019_3\System\CompanyReference',
-        'defaultMember' => 'Spinen\ConnectWise\Models\v2019_3\System\MemberReference',
-        'department' => 'Spinen\ConnectWise\Models\v2019_3\System\SystemDepartmentReference',
+        'defaultCompany' => CompanyReference::class,
+        'defaultMember' => MemberReference::class,
+        'department' => SystemDepartmentReference::class,
         'discardDuplicatesFlag' => 'boolean',
         'emailErrorsTo' => 'string',
         'emailNotifyFrom' => 'string',
         'id' => 'integer',
-        'imapSetup' => 'Spinen\ConnectWise\Models\v2019_3\System\ImapSetupReference',
-        'itemOverride' => 'Spinen\ConnectWise\Models\v2019_3\System\ServiceItemReference',
-        'location' => 'Spinen\ConnectWise\Models\v2019_3\System\SystemLocationReference',
+        'imapSetup' => ImapSetupReference::class,
+        'itemOverride' => ServiceItemReference::class,
+        'location' => SystemLocationReference::class,
         'neverRespondFlag' => 'boolean',
         'noResponseFlag' => 'boolean',
         'postRepliesToTicketFlag' => 'boolean',
-        'priorityOverride' => 'Spinen\ConnectWise\Models\v2019_3\System\PriorityReference',
+        'priorityOverride' => PriorityReference::class,
         'responseEmailForExisting' => 'string',
         'responseEmailForNew' => 'string',
-        'serviceBoard' => 'Spinen\ConnectWise\Models\v2019_3\System\BoardReference',
+        'serviceBoard' => BoardReference::class,
         'setEmailToDefaultContactFlag' => 'boolean',
-        'sourceOverride' => 'Spinen\ConnectWise\Models\v2019_3\System\ServiceSourceReference',
-        'statusOverride' => 'Spinen\ConnectWise\Models\v2019_3\System\ServiceStatusReference',
-        'subTypeOverride' => 'Spinen\ConnectWise\Models\v2019_3\System\ServiceSubTypeReference',
-        'typeOverride' => 'Spinen\ConnectWise\Models\v2019_3\System\ServiceTypeReference',
+        'sourceOverride' => ServiceSourceReference::class,
+        'statusOverride' => ServiceStatusReference::class,
+        'subTypeOverride' => ServiceSubTypeReference::class,
+        'typeOverride' => ServiceTypeReference::class,
     ];
 }

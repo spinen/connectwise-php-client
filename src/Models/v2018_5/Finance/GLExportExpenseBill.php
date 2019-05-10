@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportExpenseBill
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\MemberReference $member
+ * @property CurrencyReference $currency
+ * @property MemberReference $member
  * @property array $detail
  * @property float $total
  * @property integer $id
@@ -31,14 +31,14 @@ class GLExportExpenseBill extends Model
      */
     protected $casts = [
         'apAccountNumber' => 'string',
-        'currency' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CurrencyReference',
+        'currency' => CurrencyReference::class,
         'detail' => 'array',
         'documentDate' => 'string',
         'documentNumber' => 'string',
         'documentType' => 'string',
         'glClass' => 'string',
         'id' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2018_5\Finance\MemberReference',
+        'member' => MemberReference::class,
         'memo' => 'string',
         'total' => 'float',
         'vendorNumber' => 'string',

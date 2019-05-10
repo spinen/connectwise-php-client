@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TodayPageCategory
  *
- * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_5\System\SystemLocationReference $location
+ * @property Metadata $_info
+ * @property SystemLocationReference $location
  * @property integer $id
  * @property integer $sortOrder
  * @property string $name
@@ -23,9 +23,9 @@ class TodayPageCategory extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'location' => 'Spinen\ConnectWise\Models\v2018_5\System\SystemLocationReference',
+        'location' => SystemLocationReference::class,
         'name' => 'string',
         'sortOrder' => 'integer',
     ];

@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AccountingBatch
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $closedFlag
  * @property boolean $exportExpensesFlag
  * @property boolean $exportInvoicesFlag
@@ -25,7 +25,7 @@ class AccountingBatch extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Finance\Metadata',
+        '_info' => Metadata::class,
         'batchIdentifier' => 'string',
         'closedFlag' => 'boolean',
         'exportExpensesFlag' => 'boolean',

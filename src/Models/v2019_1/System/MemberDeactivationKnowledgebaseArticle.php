@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * A list of knowledge base articles that the member is the approver
  *
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberReference $reAssignToMember
+ * @property MemberReference $reAssignToMember
  * @property integer $count
  */
 class MemberDeactivationKnowledgebaseArticle extends Model
@@ -21,6 +21,6 @@ class MemberDeactivationKnowledgebaseArticle extends Model
      */
     protected $casts = [
         'count' => 'integer',
-        'reAssignToMember' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberReference',
+        'reAssignToMember' => MemberReference::class,
     ];
 }

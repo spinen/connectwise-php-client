@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ServiceTeam
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Service\MemberReference $leader
- * @property Spinen\ConnectWise\Models\v2018_5\Service\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_5\Service\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2018_5\Service\SystemLocationReference $location
+ * @property MemberReference $leader
+ * @property Metadata $_info
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
  * @property boolean $deleteNotifyFlag
  * @property integer $id
  * @property string $name
@@ -25,12 +25,12 @@ class ServiceTeam extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Service\Metadata',
+        '_info' => Metadata::class,
         'deleteNotifyFlag' => 'boolean',
-        'department' => 'Spinen\ConnectWise\Models\v2018_5\Service\SystemDepartmentReference',
+        'department' => SystemDepartmentReference::class,
         'id' => 'integer',
-        'leader' => 'Spinen\ConnectWise\Models\v2018_5\Service\MemberReference',
-        'location' => 'Spinen\ConnectWise\Models\v2018_5\Service\SystemLocationReference',
+        'leader' => MemberReference::class,
+        'location' => SystemLocationReference::class,
         'name' => 'string',
     ];
 }

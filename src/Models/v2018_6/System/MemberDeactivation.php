@@ -9,26 +9,26 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MemberDeactivation
  *
- * @property Spinen\ConnectWise\Models\v2018_6\System\DepartmentMananager $departmentManager
- * @property Spinen\ConnectWise\Models\v2018_6\System\DispatchMember $dispatchMember
- * @property Spinen\ConnectWise\Models\v2018_6\System\DutyManager $dutyManager
- * @property Spinen\ConnectWise\Models\v2018_6\System\KnowledgebaseArticle $knowledgeBaseArticle
- * @property Spinen\ConnectWise\Models\v2018_6\System\MyCompanyCOORole $myCompanyCOO
- * @property Spinen\ConnectWise\Models\v2018_6\System\MyCompanyControllerRole $myCompanyController
- * @property Spinen\ConnectWise\Models\v2018_6\System\MyCompanyDispatchRole $myCompanyDispatch
- * @property Spinen\ConnectWise\Models\v2018_6\System\MyCompanyDutyManagerRole $myCompanyDutyManagerRole
- * @property Spinen\ConnectWise\Models\v2018_6\System\MyCompanyPresidentRole $myCompanyPresident
- * @property Spinen\ConnectWise\Models\v2018_6\System\MyCompanyServiceManagerRole $myCompanyServiceManager
- * @property Spinen\ConnectWise\Models\v2018_6\System\Opportunity $opportunity
- * @property Spinen\ConnectWise\Models\v2018_6\System\ProjectManager $projectExpenseApprover
- * @property Spinen\ConnectWise\Models\v2018_6\System\ProjectManager $projectManager
- * @property Spinen\ConnectWise\Models\v2018_6\System\ProjectManager $projectTimeApprover
- * @property Spinen\ConnectWise\Models\v2018_6\System\SalesActivity $activity
- * @property Spinen\ConnectWise\Models\v2018_6\System\SalesTeam $salesTeam
- * @property Spinen\ConnectWise\Models\v2018_6\System\ServiceManger $serviceManager
- * @property Spinen\ConnectWise\Models\v2018_6\System\ServiceTeam $serviceTeam
- * @property Spinen\ConnectWise\Models\v2018_6\System\ServiceTemplate $ticketTemplate
- * @property Spinen\ConnectWise\Models\v2018_6\System\Workflow $workflowEmail
+ * @property DepartmentMananager $departmentManager
+ * @property DispatchMember $dispatchMember
+ * @property DutyManager $dutyManager
+ * @property KnowledgebaseArticle $knowledgeBaseArticle
+ * @property MyCompanyCOORole $myCompanyCOO
+ * @property MyCompanyControllerRole $myCompanyController
+ * @property MyCompanyDispatchRole $myCompanyDispatch
+ * @property MyCompanyDutyManagerRole $myCompanyDutyManagerRole
+ * @property MyCompanyPresidentRole $myCompanyPresident
+ * @property MyCompanyServiceManagerRole $myCompanyServiceManager
+ * @property Opportunity $opportunity
+ * @property ProjectManager $projectExpenseApprover
+ * @property ProjectManager $projectManager
+ * @property ProjectManager $projectTimeApprover
+ * @property SalesActivity $activity
+ * @property SalesTeam $salesTeam
+ * @property ServiceManger $serviceManager
+ * @property ServiceTeam $serviceTeam
+ * @property ServiceTemplate $ticketTemplate
+ * @property Workflow $workflowEmail
  * @property array $companyTeam
  * @property array $serviceStatusWorkflow
  * @property boolean $deleteOpenTimeSheetsFlag
@@ -41,28 +41,28 @@ class MemberDeactivation extends Model
      * @var array
      */
     protected $casts = [
-        'activity' => 'Spinen\ConnectWise\Models\v2018_6\System\SalesActivity',
+        'activity' => SalesActivity::class,
         'companyTeam' => 'array',
         'deleteOpenTimeSheetsFlag' => 'boolean',
-        'departmentManager' => 'Spinen\ConnectWise\Models\v2018_6\System\DepartmentMananager',
-        'dispatchMember' => 'Spinen\ConnectWise\Models\v2018_6\System\DispatchMember',
-        'dutyManager' => 'Spinen\ConnectWise\Models\v2018_6\System\DutyManager',
-        'knowledgeBaseArticle' => 'Spinen\ConnectWise\Models\v2018_6\System\KnowledgebaseArticle',
-        'myCompanyCOO' => 'Spinen\ConnectWise\Models\v2018_6\System\MyCompanyCOORole',
-        'myCompanyController' => 'Spinen\ConnectWise\Models\v2018_6\System\MyCompanyControllerRole',
-        'myCompanyDispatch' => 'Spinen\ConnectWise\Models\v2018_6\System\MyCompanyDispatchRole',
-        'myCompanyDutyManagerRole' => 'Spinen\ConnectWise\Models\v2018_6\System\MyCompanyDutyManagerRole',
-        'myCompanyPresident' => 'Spinen\ConnectWise\Models\v2018_6\System\MyCompanyPresidentRole',
-        'myCompanyServiceManager' => 'Spinen\ConnectWise\Models\v2018_6\System\MyCompanyServiceManagerRole',
-        'opportunity' => 'Spinen\ConnectWise\Models\v2018_6\System\Opportunity',
-        'projectExpenseApprover' => 'Spinen\ConnectWise\Models\v2018_6\System\ProjectManager',
-        'projectManager' => 'Spinen\ConnectWise\Models\v2018_6\System\ProjectManager',
-        'projectTimeApprover' => 'Spinen\ConnectWise\Models\v2018_6\System\ProjectManager',
-        'salesTeam' => 'Spinen\ConnectWise\Models\v2018_6\System\SalesTeam',
-        'serviceManager' => 'Spinen\ConnectWise\Models\v2018_6\System\ServiceManger',
+        'departmentManager' => DepartmentMananager::class,
+        'dispatchMember' => DispatchMember::class,
+        'dutyManager' => DutyManager::class,
+        'knowledgeBaseArticle' => KnowledgebaseArticle::class,
+        'myCompanyCOO' => MyCompanyCOORole::class,
+        'myCompanyController' => MyCompanyControllerRole::class,
+        'myCompanyDispatch' => MyCompanyDispatchRole::class,
+        'myCompanyDutyManagerRole' => MyCompanyDutyManagerRole::class,
+        'myCompanyPresident' => MyCompanyPresidentRole::class,
+        'myCompanyServiceManager' => MyCompanyServiceManagerRole::class,
+        'opportunity' => Opportunity::class,
+        'projectExpenseApprover' => ProjectManager::class,
+        'projectManager' => ProjectManager::class,
+        'projectTimeApprover' => ProjectManager::class,
+        'salesTeam' => SalesTeam::class,
+        'serviceManager' => ServiceManger::class,
         'serviceStatusWorkflow' => 'array',
-        'serviceTeam' => 'Spinen\ConnectWise\Models\v2018_6\System\ServiceTeam',
-        'ticketTemplate' => 'Spinen\ConnectWise\Models\v2018_6\System\ServiceTemplate',
-        'workflowEmail' => 'Spinen\ConnectWise\Models\v2018_6\System\Workflow',
+        'serviceTeam' => ServiceTeam::class,
+        'ticketTemplate' => ServiceTemplate::class,
+        'workflowEmail' => Workflow::class,
     ];
 }

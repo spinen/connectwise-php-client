@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for KPI
  *
- * @property Spinen\ConnectWise\Models\v2018_5\System\KPICategoryReference $category
+ * @property KPICategoryReference $category
  * @property boolean $inactiveFlag
  * @property integer $id
  * @property integer $sortOrder
@@ -24,7 +24,7 @@ class KPI extends Model
      * @var array
      */
     protected $casts = [
-        'category' => 'Spinen\ConnectWise\Models\v2018_5\System\KPICategoryReference',
+        'category' => KPICategoryReference::class,
         'dateFilter' => 'string',
         'id' => 'integer',
         'inactiveFlag' => 'boolean',

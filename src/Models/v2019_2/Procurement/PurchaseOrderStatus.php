@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PurchaseOrderStatus
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\PurchaseOrderStatusEmailTemplateReference $emailTemplate
+ * @property Metadata $_info
+ * @property PurchaseOrderStatusEmailTemplateReference $emailTemplate
  * @property boolean $closedFlag
  * @property boolean $defaultClosedFlag
  * @property boolean $defaultFlag
@@ -27,11 +27,11 @@ class PurchaseOrderStatus extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata',
+        '_info' => Metadata::class,
         'closedFlag' => 'boolean',
         'defaultClosedFlag' => 'boolean',
         'defaultFlag' => 'boolean',
-        'emailTemplate' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\PurchaseOrderStatusEmailTemplateReference',
+        'emailTemplate' => PurchaseOrderStatusEmailTemplateReference::class,
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'name' => 'string',

@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CompanyNote
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Company\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_6\Company\NoteTypeReference $type
+ * @property CompanyReference $company
+ * @property Metadata $_info
+ * @property NoteTypeReference $type
  * @property boolean $flagged
  * @property integer $id
  * @property string $enteredBy
@@ -25,12 +25,12 @@ class CompanyNote extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
-        'company' => 'Spinen\ConnectWise\Models\v2018_6\Company\CompanyReference',
+        '_info' => Metadata::class,
+        'company' => CompanyReference::class,
         'enteredBy' => 'string',
         'flagged' => 'boolean',
         'id' => 'integer',
         'text' => 'string',
-        'type' => 'Spinen\ConnectWise\Models\v2018_6\Company\NoteTypeReference',
+        'type' => NoteTypeReference::class,
     ];
 }

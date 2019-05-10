@@ -9,20 +9,20 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportPurchaseTransaction
  *
+ * @property BillingTermsReference $billingTerms
  * @property Carbon\Carbon $documentDate
  * @property Carbon\Carbon $purchaseDate
  * @property Carbon\Carbon $vendorInvoiceDate
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\BillingTermsReference $billingTerms
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\CompanyReference $shipToCompany
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\CompanyTypeReference $companyType
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\CompanyTypeReference $shipToCompanyType
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\ContactReference $shipToContact
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\SiteReference $shipToSite
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\SiteReference $site
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\TaxCodeReference $taxCode
+ * @property CompanyReference $company
+ * @property CompanyReference $shipToCompany
+ * @property CompanyTypeReference $companyType
+ * @property CompanyTypeReference $shipToCompanyType
+ * @property ContactReference $contact
+ * @property ContactReference $shipToContact
+ * @property CurrencyReference $currency
+ * @property SiteReference $shipToSite
+ * @property SiteReference $site
+ * @property TaxCodeReference $taxCode
  * @property array $purchaseDetail
  * @property array $purchaseDetailTax
  * @property array $taxLevels
@@ -63,16 +63,16 @@ class GLExportPurchaseTransaction extends Model
      */
     protected $casts = [
         'apAccountNumber' => 'string',
-        'billingTerms' => 'Spinen\ConnectWise\Models\v2019_1\Finance\BillingTermsReference',
+        'billingTerms' => BillingTermsReference::class,
         'billingTermsXref' => 'string',
         'cityTaxXref' => 'string',
-        'company' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CompanyReference',
-        'companyType' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CompanyTypeReference',
-        'contact' => 'Spinen\ConnectWise\Models\v2019_1\Finance\ContactReference',
+        'company' => CompanyReference::class,
+        'companyType' => CompanyTypeReference::class,
+        'contact' => ContactReference::class,
         'countyTaxXref' => 'string',
-        'currency' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CurrencyReference',
+        'currency' => CurrencyReference::class,
         'description' => 'string',
-        'documentDate' => 'Carbon\Carbon',
+        'documentDate' => Carbon\Carbon::class,
         'documentNumber' => 'string',
         'dropshipFlag' => 'boolean',
         'dueDays' => 'integer',
@@ -82,28 +82,28 @@ class GLExportPurchaseTransaction extends Model
         'memo' => 'string',
         'packingSlip' => 'string',
         'purchaseClass' => 'string',
-        'purchaseDate' => 'Carbon\Carbon',
+        'purchaseDate' => Carbon\Carbon::class,
         'purchaseDetail' => 'array',
         'purchaseDetailTax' => 'array',
         'purchaseHeaderFreightTaxableFlag' => 'boolean',
         'purchaseHeaderTaxGroup' => 'string',
         'purchaseHeaderTaxableFlag' => 'boolean',
-        'shipToCompany' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CompanyReference',
+        'shipToCompany' => CompanyReference::class,
         'shipToCompanyAccountNumber' => 'string',
-        'shipToCompanyType' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CompanyTypeReference',
-        'shipToContact' => 'Spinen\ConnectWise\Models\v2019_1\Finance\ContactReference',
-        'shipToSite' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SiteReference',
+        'shipToCompanyType' => CompanyTypeReference::class,
+        'shipToContact' => ContactReference::class,
+        'shipToSite' => SiteReference::class,
         'shipToTaxGroup' => 'string',
-        'site' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SiteReference',
+        'site' => SiteReference::class,
         'stateTaxXref' => 'string',
         'taxAgencyXref' => 'string',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2019_1\Finance\TaxCodeReference',
+        'taxCode' => TaxCodeReference::class,
         'taxGroupRate' => 'float',
         'taxLevels' => 'array',
         'total' => 'float',
         'useAvalaraTaxFlag' => 'boolean',
         'vendorAccountNumber' => 'string',
-        'vendorInvoiceDate' => 'Carbon\Carbon',
+        'vendorInvoiceDate' => Carbon\Carbon::class,
         'vendorInvoiceNumber' => 'string',
         'vendorNumber' => 'string',
     ];

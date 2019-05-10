@@ -9,17 +9,17 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProductItem
  *
+ * @property AgreementReference $agreement
  * @property Carbon\Carbon $cancelledDate
  * @property Carbon\Carbon $purchaseDate
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\AgreementReference $agreement
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\CatalogItemReference $catalogItem
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\CompanyReference $vendor
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\EntityTypeReference $entityType
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\OpportunityStatusReference $forecastStatus
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\ProductRecurring $recurring
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\SLAReference $sla
+ * @property CatalogItemReference $catalogItem
+ * @property CompanyReference $company
+ * @property CompanyReference $vendor
+ * @property EntityTypeReference $entityType
+ * @property Metadata $_info
+ * @property OpportunityStatusReference $forecastStatus
+ * @property ProductRecurring $recurring
+ * @property SLAReference $sla
  * @property array $customFields
  * @property array $serialNumberIds
  * @property boolean $bypassForecastUpdate
@@ -66,28 +66,28 @@ class ProductItem extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata',
-        'agreement' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\AgreementReference',
+        '_info' => Metadata::class,
+        'agreement' => AgreementReference::class,
         'billableOption' => 'string',
         'businessUnitId' => 'integer',
         'bypassForecastUpdate' => 'boolean',
         'cancelledBy' => 'integer',
-        'cancelledDate' => 'Carbon\Carbon',
+        'cancelledDate' => Carbon\Carbon::class,
         'cancelledFlag' => 'boolean',
         'cancelledReason' => 'string',
-        'catalogItem' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\CatalogItemReference',
+        'catalogItem' => CatalogItemReference::class,
         'chargeToId' => 'integer',
         'chargeToType' => 'string',
-        'company' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\CompanyReference',
+        'company' => CompanyReference::class,
         'cost' => 'float',
         'customFields' => 'array',
         'customerDescription' => 'string',
         'description' => 'string',
         'discount' => 'float',
         'dropshipFlag' => 'boolean',
-        'entityType' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\EntityTypeReference',
+        'entityType' => EntityTypeReference::class,
         'forecastDetailId' => 'integer',
-        'forecastStatus' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\OpportunityStatusReference',
+        'forecastStatus' => OpportunityStatusReference::class,
         'id' => 'integer',
         'integrationXRef' => 'string',
         'internalNotes' => 'string',
@@ -99,18 +99,18 @@ class ProductItem extends Model
         'priceMethod' => 'string',
         'productClass' => 'string',
         'productSuppliedFlag' => 'boolean',
-        'purchaseDate' => 'Carbon\Carbon',
+        'purchaseDate' => Carbon\Carbon::class,
         'quantity' => 'float',
         'quantityCancelled' => 'float',
-        'recurring' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\ProductRecurring',
+        'recurring' => ProductRecurring::class,
         'sequenceNumber' => 'float',
         'serialNumberIds' => 'array',
-        'sla' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\SLAReference',
+        'sla' => SLAReference::class,
         'specialOrderFlag' => 'boolean',
         'subContractorAmountLimit' => 'float',
         'subContractorShipToId' => 'integer',
         'taxableFlag' => 'boolean',
-        'vendor' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\CompanyReference',
+        'vendor' => CompanyReference::class,
         'vendorSku' => 'string',
         'warehouse' => 'string',
         'warehouseBin' => 'string',

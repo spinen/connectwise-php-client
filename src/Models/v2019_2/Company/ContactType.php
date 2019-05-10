@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ContactType
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Company\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $defaultFlag
  * @property boolean $serviceAlertFlag
  * @property integer $id
@@ -24,7 +24,7 @@ class ContactType extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Company\Metadata',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
         'description' => 'string',
         'id' => 'integer',

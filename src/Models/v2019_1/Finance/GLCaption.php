@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLCaption
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  * @property string $cogs1
  * @property string $cogs10
@@ -40,7 +40,7 @@ class GLCaption extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
+        '_info' => Metadata::class,
         'cogs1' => 'string',
         'cogs10' => 'string',
         'cogs2' => 'string',

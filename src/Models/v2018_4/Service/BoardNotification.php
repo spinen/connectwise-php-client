@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BoardNotification
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Service\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_4\Service\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\Service\NotificationRecipientReference $notifyWho
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property NotificationRecipientReference $notifyWho
  * @property integer $id
  * @property string $email
  */
@@ -23,10 +23,10 @@ class BoardNotification extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Service\Metadata',
+        '_info' => Metadata::class,
         'email' => 'string',
         'id' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2018_4\Service\MemberReference',
-        'notifyWho' => 'Spinen\ConnectWise\Models\v2018_4\Service\NotificationRecipientReference',
+        'member' => MemberReference::class,
+        'notifyWho' => NotificationRecipientReference::class,
     ];
 }

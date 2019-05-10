@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OpportunityNote
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Sales\Guid $mobileGuid
- * @property Spinen\ConnectWise\Models\v2018_5\Sales\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_5\Sales\NoteTypeReference $type
+ * @property Guid $mobileGuid
+ * @property Metadata $_info
+ * @property NoteTypeReference $type
  * @property boolean $flagged
  * @property integer $id
  * @property integer $opportunityId
@@ -26,13 +26,13 @@ class OpportunityNote extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Sales\Metadata',
+        '_info' => Metadata::class,
         'enteredBy' => 'string',
         'flagged' => 'boolean',
         'id' => 'integer',
-        'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_5\Sales\Guid',
+        'mobileGuid' => Guid::class,
         'opportunityId' => 'integer',
         'text' => 'string',
-        'type' => 'Spinen\ConnectWise\Models\v2018_5\Sales\NoteTypeReference',
+        'type' => NoteTypeReference::class,
     ];
 }

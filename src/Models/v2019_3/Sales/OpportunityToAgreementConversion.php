@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OpportunityToAgreementConversion
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Sales\AgreementTypeReference $type
+ * @property AgreementTypeReference $type
  * @property array $includeDocumentIds
  * @property array $includeNoteIds
  * @property array $includeProductIds
@@ -49,6 +49,6 @@ class OpportunityToAgreementConversion extends Model
         'name' => 'string',
         'noEndingDateFlag' => 'boolean',
         'startDate' => 'string',
-        'type' => 'Spinen\ConnectWise\Models\v2019_3\Sales\AgreementTypeReference',
+        'type' => AgreementTypeReference::class,
     ];
 }

@@ -10,16 +10,16 @@ use Spinen\ConnectWise\Support\Model;
  * Model for GLExportTransactionDetail
  *
  * @property Carbon\Carbon $documentDate
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\IvItemReference $item
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\ProductReference $product
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\ProductSubCategoryReference $subCategory
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\ShipmentMethodReference $shipmentMethod
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\SiteReference $warehouseSite
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\TaxCodeReference $taxCode
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\TimeEntryReference $timeEntry
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\UnitOfMeasureReference $unitOfMeasure
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\WarehouseBinReference $warehouseBin
+ * @property CurrencyReference $currency
+ * @property IvItemReference $item
+ * @property ProductReference $product
+ * @property ProductSubCategoryReference $subCategory
+ * @property ShipmentMethodReference $shipmentMethod
+ * @property SiteReference $warehouseSite
+ * @property TaxCodeReference $taxCode
+ * @property TimeEntryReference $timeEntry
+ * @property UnitOfMeasureReference $unitOfMeasure
+ * @property WarehouseBinReference $warehouseBin
  * @property array $taxLevels
  * @property boolean $dropShippedFlag
  * @property boolean $itemTaxableFlag
@@ -74,9 +74,9 @@ class GLExportTransactionDetail extends Model
         'cogsXref' => 'string',
         'cost' => 'float',
         'costAccountNumber' => 'string',
-        'currency' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CurrencyReference',
+        'currency' => CurrencyReference::class,
         'description' => 'string',
-        'documentDate' => 'Carbon\Carbon',
+        'documentDate' => Carbon\Carbon::class,
         'documentType' => 'string',
         'dropShippedFlag' => 'boolean',
         'glClass' => 'string',
@@ -86,7 +86,7 @@ class GLExportTransactionDetail extends Model
         'inventoryAccountNumber' => 'string',
         'inventoryXref' => 'string',
         'invoiceSummaryOption' => 'integer',
-        'item' => 'Spinen\ConnectWise\Models\v2018_5\Finance\IvItemReference',
+        'item' => IvItemReference::class,
         'itemCost' => 'float',
         'itemDescription' => 'string',
         'itemPrice' => 'float',
@@ -95,17 +95,17 @@ class GLExportTransactionDetail extends Model
         'locationXref' => 'string',
         'memo' => 'string',
         'priceLevelXref' => 'string',
-        'product' => 'Spinen\ConnectWise\Models\v2018_5\Finance\ProductReference',
+        'product' => ProductReference::class,
         'productAccountNumber' => 'string',
         'quantity' => 'float',
         'salesCode' => 'string',
         'salesDescription' => 'string',
         'serialNumbers' => 'string',
         'serializedFlag' => 'boolean',
-        'shipmentMethod' => 'Spinen\ConnectWise\Models\v2018_5\Finance\ShipmentMethodReference',
-        'subCategory' => 'Spinen\ConnectWise\Models\v2018_5\Finance\ProductSubCategoryReference',
+        'shipmentMethod' => ShipmentMethodReference::class,
+        'subCategory' => ProductSubCategoryReference::class,
         'taxAgencyXref' => 'string',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2018_5\Finance\TaxCodeReference',
+        'taxCode' => TaxCodeReference::class,
         'taxCodeXref' => 'string',
         'taxLevels' => 'array',
         'taxNote' => 'string',
@@ -116,11 +116,11 @@ class GLExportTransactionDetail extends Model
         'taxable4Flag' => 'boolean',
         'taxable5Flag' => 'boolean',
         'taxableFlag' => 'boolean',
-        'timeEntry' => 'Spinen\ConnectWise\Models\v2018_5\Finance\TimeEntryReference',
+        'timeEntry' => TimeEntryReference::class,
         'total' => 'float',
-        'unitOfMeasure' => 'Spinen\ConnectWise\Models\v2018_5\Finance\UnitOfMeasureReference',
+        'unitOfMeasure' => UnitOfMeasureReference::class,
         'uomScheduleXref' => 'string',
-        'warehouseBin' => 'Spinen\ConnectWise\Models\v2018_5\Finance\WarehouseBinReference',
-        'warehouseSite' => 'Spinen\ConnectWise\Models\v2018_5\Finance\SiteReference',
+        'warehouseBin' => WarehouseBinReference::class,
+        'warehouseSite' => SiteReference::class,
     ];
 }

@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TaxableProductTypeLevel
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\TaxCodeLevelReference $taxCodeLevel
+ * @property Metadata $_info
+ * @property TaxCodeLevelReference $taxCodeLevel
  * @property integer $id
  */
 class TaxableProductTypeLevel extends Model
@@ -21,8 +21,8 @@ class TaxableProductTypeLevel extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'taxCodeLevel' => 'Spinen\ConnectWise\Models\v2018_5\Finance\TaxCodeLevelReference',
+        'taxCodeLevel' => TaxCodeLevelReference::class,
     ];
 }

@@ -9,22 +9,22 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Agreement
  *
+ * @property AgreementTypeReference $type
  * @property Carbon\Carbon $billStartDate
  * @property Carbon\Carbon $dateCancelled
  * @property Carbon\Carbon $endDate
  * @property Carbon\Carbon $startDate
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\AgreementTypeReference $type
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\CompanyReference $billToCompany
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\CompanyReference $subContractCompany
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\ContactReference $subContractContact
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\OpportunityReference $opportunity
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\SiteReference $billToSite
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\WorkRoleReference $workRole
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\WorkTypeReference $workType
+ * @property CompanyReference $billToCompany
+ * @property CompanyReference $company
+ * @property CompanyReference $subContractCompany
+ * @property ContactReference $contact
+ * @property ContactReference $subContractContact
+ * @property CurrencyReference $currency
+ * @property Metadata $_info
+ * @property OpportunityReference $opportunity
+ * @property SiteReference $billToSite
+ * @property WorkRoleReference $workRole
+ * @property WorkTypeReference $workType
  * @property array $customFields
  * @property boolean $allowOverruns
  * @property boolean $applicationUnlimitedFlag
@@ -90,7 +90,7 @@ class Agreement extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Finance\Metadata',
+        '_info' => Metadata::class,
         'allowOverruns' => 'boolean',
         'applicationCycle' => 'string',
         'applicationLimit' => 'float',
@@ -101,11 +101,11 @@ class Agreement extends Model
         'billExpenses' => 'string',
         'billOneTimeFlag' => 'boolean',
         'billProducts' => 'string',
-        'billStartDate' => 'Carbon\Carbon',
+        'billStartDate' => Carbon\Carbon::class,
         'billTermsId' => 'integer',
         'billTime' => 'string',
-        'billToCompany' => 'Spinen\ConnectWise\Models\v2018_4\Finance\CompanyReference',
-        'billToSite' => 'Spinen\ConnectWise\Models\v2018_4\Finance\SiteReference',
+        'billToCompany' => CompanyReference::class,
+        'billToSite' => SiteReference::class,
         'billableExpenseInvoice' => 'boolean',
         'billableProductInvoice' => 'boolean',
         'billableTimeInvoice' => 'boolean',
@@ -116,19 +116,19 @@ class Agreement extends Model
         'chargeToFirm' => 'boolean',
         'compHourlyRate' => 'float',
         'compLimitAmount' => 'float',
-        'company' => 'Spinen\ConnectWise\Models\v2018_4\Finance\CompanyReference',
-        'contact' => 'Spinen\ConnectWise\Models\v2018_4\Finance\ContactReference',
+        'company' => CompanyReference::class,
+        'contact' => ContactReference::class,
         'coverAgreementExpense' => 'boolean',
         'coverAgreementProduct' => 'boolean',
         'coverAgreementTime' => 'boolean',
         'coverSalesTax' => 'boolean',
-        'currency' => 'Spinen\ConnectWise\Models\v2018_4\Finance\CurrencyReference',
+        'currency' => CurrencyReference::class,
         'customFields' => 'array',
         'customerPO' => 'string',
-        'dateCancelled' => 'Carbon\Carbon',
+        'dateCancelled' => Carbon\Carbon::class,
         'employeeCompNotExceed' => 'string',
         'employeeCompRate' => 'string',
-        'endDate' => 'Carbon\Carbon',
+        'endDate' => Carbon\Carbon::class,
         'expireWhenZero' => 'boolean',
         'expiredDays' => 'integer',
         'id' => 'integer',
@@ -141,7 +141,7 @@ class Agreement extends Model
         'name' => 'string',
         'noEndingDateFlag' => 'boolean',
         'oneTimeFlag' => 'boolean',
-        'opportunity' => 'Spinen\ConnectWise\Models\v2018_4\Finance\OpportunityReference',
+        'opportunity' => OpportunityReference::class,
         'parentAgreementId' => 'integer',
         'periodType' => 'string',
         'projectTypeId' => 'integer',
@@ -152,15 +152,15 @@ class Agreement extends Model
         'restrictDownPayment' => 'boolean',
         'restrictLocationFlag' => 'boolean',
         'slaId' => 'integer',
-        'startDate' => 'Carbon\Carbon',
-        'subContractCompany' => 'Spinen\ConnectWise\Models\v2018_4\Finance\CompanyReference',
-        'subContractContact' => 'Spinen\ConnectWise\Models\v2018_4\Finance\ContactReference',
+        'startDate' => Carbon\Carbon::class,
+        'subContractCompany' => CompanyReference::class,
+        'subContractContact' => ContactReference::class,
         'taxCodeId' => 'integer',
         'taxable' => 'boolean',
         'topComment' => 'boolean',
-        'type' => 'Spinen\ConnectWise\Models\v2018_4\Finance\AgreementTypeReference',
+        'type' => AgreementTypeReference::class,
         'workOrder' => 'string',
-        'workRole' => 'Spinen\ConnectWise\Models\v2018_4\Finance\WorkRoleReference',
-        'workType' => 'Spinen\ConnectWise\Models\v2018_4\Finance\WorkTypeReference',
+        'workRole' => WorkRoleReference::class,
+        'workType' => WorkTypeReference::class,
     ];
 }

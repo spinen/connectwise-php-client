@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SubCategory
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\Procurement\ProductCategoryReference $category
+ * @property Metadata $_info
+ * @property ProductCategoryReference $category
  * @property boolean $inactiveFlag
  * @property integer $id
  * @property string $integrationXref
@@ -24,8 +24,8 @@ class SubCategory extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
-        'category' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\ProductCategoryReference',
+        '_info' => Metadata::class,
+        'category' => ProductCategoryReference::class,
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'integrationXref' => 'string',

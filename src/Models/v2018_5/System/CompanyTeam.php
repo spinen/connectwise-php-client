@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * A list of customers for which the member holds a team role
  *
- * @property Spinen\ConnectWise\Models\v2018_5\System\ContactReference $reAssignToContact
- * @property Spinen\ConnectWise\Models\v2018_5\System\MemberReference $reAssignToMember
+ * @property ContactReference $reAssignToContact
+ * @property MemberReference $reAssignToMember
  * @property integer $count
  * @property integer $id
  * @property string $name
@@ -26,7 +26,7 @@ class CompanyTeam extends Model
         'count' => 'integer',
         'id' => 'integer',
         'name' => 'string',
-        'reAssignToContact' => 'Spinen\ConnectWise\Models\v2018_5\System\ContactReference',
-        'reAssignToMember' => 'Spinen\ConnectWise\Models\v2018_5\System\MemberReference',
+        'reAssignToContact' => ContactReference::class,
+        'reAssignToMember' => MemberReference::class,
     ];
 }

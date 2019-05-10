@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TaxCodeLevel
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $singleUnitFlag
  * @property boolean $taxExpensesFlag
  * @property boolean $taxProductsFlag
@@ -33,7 +33,7 @@ class TaxCodeLevel extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
+        '_info' => Metadata::class,
         'agencyXref' => 'string',
         'caption' => 'string',
         'id' => 'integer',

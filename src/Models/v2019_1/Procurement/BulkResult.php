@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BulkResult
  *
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\Metadata $_info
+ * @property Metadata $_info
  * @property array $payload
  */
 class BulkResult extends Model
@@ -20,7 +20,7 @@ class BulkResult extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\Metadata',
+        '_info' => Metadata::class,
         'payload' => 'array',
     ];
 }

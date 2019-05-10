@@ -12,14 +12,14 @@ use Spinen\ConnectWise\Support\Model;
  * @property Carbon\Carbon $closeDate
  * @property Carbon\Carbon $dateEnd
  * @property Carbon\Carbon $dateStart
- * @property Spinen\ConnectWise\Models\v2019_2\Schedule\Guid $mobileGuid
- * @property Spinen\ConnectWise\Models\v2019_2\Schedule\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2019_2\Schedule\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_2\Schedule\ReminderReference $reminder
- * @property Spinen\ConnectWise\Models\v2019_2\Schedule\ScheduleSpanReference $span
- * @property Spinen\ConnectWise\Models\v2019_2\Schedule\ScheduleStatusReference $status
- * @property Spinen\ConnectWise\Models\v2019_2\Schedule\ScheduleTypeReference $type
- * @property Spinen\ConnectWise\Models\v2019_2\Schedule\ServiceLocationReference $where
+ * @property Guid $mobileGuid
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property ReminderReference $reminder
+ * @property ScheduleSpanReference $span
+ * @property ScheduleStatusReference $status
+ * @property ScheduleTypeReference $type
+ * @property ServiceLocationReference $where
  * @property boolean $acknowledgedFlag
  * @property boolean $addMemberToProjectFlag
  * @property boolean $allowScheduleConflictsFlag
@@ -40,27 +40,27 @@ class ScheduleEntry extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\Metadata',
+        '_info' => Metadata::class,
         'acknowledgedFlag' => 'boolean',
         'addMemberToProjectFlag' => 'boolean',
         'allowScheduleConflictsFlag' => 'boolean',
-        'closeDate' => 'Carbon\Carbon',
-        'dateEnd' => 'Carbon\Carbon',
-        'dateStart' => 'Carbon\Carbon',
+        'closeDate' => Carbon\Carbon::class,
+        'dateEnd' => Carbon\Carbon::class,
+        'dateStart' => Carbon\Carbon::class,
         'doneFlag' => 'boolean',
         'hours' => 'float',
         'id' => 'integer',
         'meetingFlag' => 'boolean',
-        'member' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\MemberReference',
-        'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\Guid',
+        'member' => MemberReference::class,
+        'mobileGuid' => Guid::class,
         'name' => 'string',
         'objectId' => 'integer',
         'ownerFlag' => 'boolean',
         'projectRoleId' => 'integer',
-        'reminder' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\ReminderReference',
-        'span' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\ScheduleSpanReference',
-        'status' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\ScheduleStatusReference',
-        'type' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\ScheduleTypeReference',
-        'where' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\ServiceLocationReference',
+        'reminder' => ReminderReference::class,
+        'span' => ScheduleSpanReference::class,
+        'status' => ScheduleStatusReference::class,
+        'type' => ScheduleTypeReference::class,
+        'where' => ServiceLocationReference::class,
     ];
 }

@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TimeEntryReference
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Service\Metadata $_info
+ * @property Metadata $_info
  * @property integer $id
  */
 class TimeEntryReference extends Model
@@ -20,7 +20,7 @@ class TimeEntryReference extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Service\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
     ];
 }

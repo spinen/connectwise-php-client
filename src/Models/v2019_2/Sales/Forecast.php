@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Forecast
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\OpportunityStatusReference $status
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\ProductRecurring $recurring
+ * @property Metadata $_info
+ * @property OpportunityStatusReference $status
+ * @property ProductRecurring $recurring
  * @property boolean $includedFlag
  * @property float $cost
  * @property float $margin
@@ -34,7 +34,7 @@ class Forecast extends Model
     protected $casts = [
         'QuoteName' => 'string',
         'QuoteNumber' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Sales\Metadata',
+        '_info' => Metadata::class,
         'cost' => 'float',
         'id' => 'integer',
         'includedFlag' => 'boolean',
@@ -42,9 +42,9 @@ class Forecast extends Model
         'name' => 'string',
         'opportunityId' => 'integer',
         'percent' => 'float',
-        'recurring' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ProductRecurring',
+        'recurring' => ProductRecurring::class,
         'revenue' => 'float',
-        'status' => 'Spinen\ConnectWise\Models\v2019_2\Sales\OpportunityStatusReference',
+        'status' => OpportunityStatusReference::class,
         'type' => 'string',
     ];
 }

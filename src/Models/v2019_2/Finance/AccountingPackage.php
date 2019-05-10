@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AccountingPackage
  *
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $activeFlag
  * @property boolean $directTransferFlag
  * @property boolean $enableTaxGroupsFlag
@@ -40,7 +40,7 @@ class AccountingPackage extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
+        '_info' => Metadata::class,
         'activeFlag' => 'boolean',
         'directTransferFlag' => 'boolean',
         'enableTaxGroupsFlag' => 'boolean',

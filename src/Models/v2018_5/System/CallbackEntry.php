@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CallbackEntry
  *
- * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $inactiveFlag
  * @property integer $id
  * @property integer $memberId
@@ -27,7 +27,7 @@ class CallbackEntry extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
+        '_info' => Metadata::class,
         'description' => 'string',
         'id' => 'integer',
         'inactiveFlag' => 'boolean',

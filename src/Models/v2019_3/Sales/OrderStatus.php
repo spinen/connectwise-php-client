@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OrderStatus
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Sales\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_3\Sales\OrderStatusEmailTemplateReference $emailTemplate
+ * @property Metadata $_info
+ * @property OrderStatusEmailTemplateReference $emailTemplate
  * @property boolean $closedFlag
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
@@ -26,10 +26,10 @@ class OrderStatus extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Sales\Metadata',
+        '_info' => Metadata::class,
         'closedFlag' => 'boolean',
         'defaultFlag' => 'boolean',
-        'emailTemplate' => 'Spinen\ConnectWise\Models\v2019_3\Sales\OrderStatusEmailTemplateReference',
+        'emailTemplate' => OrderStatusEmailTemplateReference::class,
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'name' => 'string',

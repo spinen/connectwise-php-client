@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AgreementTypeWorkType
  *
+ * @property AgreementTypeReference $type
  * @property Carbon\Carbon $effectiveDate
  * @property Carbon\Carbon $endingDate
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\AgreementTypeReference $type
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\WorkTypeReference $workType
+ * @property Metadata $_info
+ * @property WorkTypeReference $workType
  * @property float $hoursMax
  * @property float $hoursMin
  * @property float $limitTo
@@ -33,10 +33,10 @@ class AgreementTypeWorkType extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
+        '_info' => Metadata::class,
         'billTime' => 'string',
-        'effectiveDate' => 'Carbon\Carbon',
-        'endingDate' => 'Carbon\Carbon',
+        'effectiveDate' => Carbon\Carbon::class,
+        'endingDate' => Carbon\Carbon::class,
         'hoursMax' => 'float',
         'hoursMin' => 'float',
         'id' => 'integer',
@@ -46,7 +46,7 @@ class AgreementTypeWorkType extends Model
         'rate' => 'float',
         'rateType' => 'string',
         'roundBillHours' => 'float',
-        'type' => 'Spinen\ConnectWise\Models\v2019_2\Finance\AgreementTypeReference',
-        'workType' => 'Spinen\ConnectWise\Models\v2019_2\Finance\WorkTypeReference',
+        'type' => AgreementTypeReference::class,
+        'workType' => WorkTypeReference::class,
     ];
 }

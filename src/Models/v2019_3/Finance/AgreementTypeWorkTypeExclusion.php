@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AgreementTypeWorkTypeExclusion
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\AgreementTypeReference $type
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\WorkTypeReference $workType
+ * @property AgreementTypeReference $type
+ * @property Metadata $_info
+ * @property WorkTypeReference $workType
  * @property integer $id
  */
 class AgreementTypeWorkTypeExclusion extends Model
@@ -22,9 +22,9 @@ class AgreementTypeWorkTypeExclusion extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Finance\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'type' => 'Spinen\ConnectWise\Models\v2019_3\Finance\AgreementTypeReference',
-        'workType' => 'Spinen\ConnectWise\Models\v2019_3\Finance\WorkTypeReference',
+        'type' => AgreementTypeReference::class,
+        'workType' => WorkTypeReference::class,
     ];
 }

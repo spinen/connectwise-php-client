@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ServiceEmailTemplate
  *
- * @property Spinen\ConnectWise\Models\v2018_4\Service\BoardReference $serviceBoard
- * @property Spinen\ConnectWise\Models\v2018_4\Service\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\Service\ServiceStatusReference $serviceStatus
- * @property Spinen\ConnectWise\Models\v2018_4\Service\ServiceSurveyReference $serviceSurvey
+ * @property BoardReference $serviceBoard
+ * @property Metadata $_info
+ * @property ServiceStatusReference $serviceStatus
+ * @property ServiceSurveyReference $serviceSurvey
  * @property boolean $copySenderFlag
  * @property boolean $externalContactNotifications
  * @property boolean $internalContactNotifications
@@ -35,7 +35,7 @@ class ServiceEmailTemplate extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Service\Metadata',
+        '_info' => Metadata::class,
         'body' => 'string',
         'copySenderFlag' => 'boolean',
         'emailAddress' => 'string',
@@ -45,9 +45,9 @@ class ServiceEmailTemplate extends Model
         'internalContactNotifications' => 'boolean',
         'lastName' => 'string',
         'resourceRecordsFlag' => 'boolean',
-        'serviceBoard' => 'Spinen\ConnectWise\Models\v2018_4\Service\BoardReference',
-        'serviceStatus' => 'Spinen\ConnectWise\Models\v2018_4\Service\ServiceStatusReference',
-        'serviceSurvey' => 'Spinen\ConnectWise\Models\v2018_4\Service\ServiceSurveyReference',
+        'serviceBoard' => BoardReference::class,
+        'serviceStatus' => ServiceStatusReference::class,
+        'serviceSurvey' => ServiceSurveyReference::class,
         'subject' => 'string',
         'tasksFlag' => 'boolean',
         'type' => 'string',

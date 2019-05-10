@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BillingSetupRouting
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
+ * @property MemberReference $member
+ * @property Metadata $_info
  * @property integer $id
  * @property integer $sequenceNumber
  * @property string $invoiceRule
@@ -24,10 +24,10 @@ class BillingSetupRouting extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'invoiceRule' => 'string',
-        'member' => 'Spinen\ConnectWise\Models\v2018_5\Finance\MemberReference',
+        'member' => MemberReference::class,
         'routingRule' => 'string',
         'sequenceNumber' => 'integer',
     ];

@@ -11,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Carbon\Carbon $endDate
  * @property Carbon\Carbon $startDate
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
+ * @property Metadata $_info
  * @property boolean $daylightSavingsFlag
  * @property float $offset
  * @property integer $id
@@ -25,12 +25,12 @@ class TimeZone extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        '_info' => Metadata::class,
         'daylightSavingsFlag' => 'boolean',
-        'endDate' => 'Carbon\Carbon',
+        'endDate' => Carbon\Carbon::class,
         'id' => 'integer',
         'name' => 'string',
         'offset' => 'float',
-        'startDate' => 'Carbon\Carbon',
+        'startDate' => Carbon\Carbon::class,
     ];
 }

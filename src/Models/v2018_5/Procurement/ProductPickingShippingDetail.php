@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProductPickingShippingDetail
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\ProductItemReference $productItem
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\ShipmentMethodReference $shipmentMethod
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\WarehouseBinReference $warehouseBin
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\WarehouseReference $warehouse
+ * @property Metadata $_info
+ * @property ProductItemReference $productItem
+ * @property ShipmentMethodReference $shipmentMethod
+ * @property WarehouseBinReference $warehouseBin
+ * @property WarehouseReference $warehouse
  * @property array $serialNumberIds
  * @property integer $id
  * @property integer $lineNumber
@@ -31,18 +31,18 @@ class ProductPickingShippingDetail extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata',
+        '_info' => Metadata::class,
         'id' => 'integer',
         'lineNumber' => 'integer',
         'pickedQuantity' => 'integer',
-        'productItem' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\ProductItemReference',
+        'productItem' => ProductItemReference::class,
         'quantity' => 'integer',
         'serialNumber' => 'string',
         'serialNumberIds' => 'array',
-        'shipmentMethod' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\ShipmentMethodReference',
+        'shipmentMethod' => ShipmentMethodReference::class,
         'shippedQuantity' => 'integer',
         'trackingNumber' => 'string',
-        'warehouse' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\WarehouseReference',
-        'warehouseBin' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\WarehouseBinReference',
+        'warehouse' => WarehouseReference::class,
+        'warehouseBin' => WarehouseBinReference::class,
     ];
 }

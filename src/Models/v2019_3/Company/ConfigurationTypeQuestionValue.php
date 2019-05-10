@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ConfigurationTypeQuestionValue
  *
- * @property Spinen\ConnectWise\Models\v2019_3\Company\ConfigurationTypeQuestionReference $question
- * @property Spinen\ConnectWise\Models\v2019_3\Company\ConfigurationTypeReference $configurationType
- * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
+ * @property ConfigurationTypeQuestionReference $question
+ * @property ConfigurationTypeReference $configurationType
+ * @property Metadata $_info
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
  * @property integer $id
@@ -25,12 +25,12 @@ class ConfigurationTypeQuestionValue extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
-        'configurationType' => 'Spinen\ConnectWise\Models\v2019_3\Company\ConfigurationTypeReference',
+        '_info' => Metadata::class,
+        'configurationType' => ConfigurationTypeReference::class,
         'defaultFlag' => 'boolean',
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
-        'question' => 'Spinen\ConnectWise\Models\v2019_3\Company\ConfigurationTypeQuestionReference',
+        'question' => ConfigurationTypeQuestionReference::class,
         'value' => 'string',
     ];
 }

@@ -9,18 +9,18 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TimeEntry
  *
+ * @property AgreementReference $agreement
  * @property Carbon\Carbon $dateEntered
  * @property Carbon\Carbon $timeEnd
  * @property Carbon\Carbon $timeStart
- * @property Spinen\ConnectWise\Models\v2018_4\Time\AgreementReference $agreement
- * @property Spinen\ConnectWise\Models\v2018_4\Time\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_4\Time\Guid $mobileGuid
- * @property Spinen\ConnectWise\Models\v2018_4\Time\InvoiceReference $invoice
- * @property Spinen\ConnectWise\Models\v2018_4\Time\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_4\Time\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_4\Time\TimeSheetReference $timeSheet
- * @property Spinen\ConnectWise\Models\v2018_4\Time\WorkRoleReference $workRole
- * @property Spinen\ConnectWise\Models\v2018_4\Time\WorkTypeReference $workType
+ * @property CompanyReference $company
+ * @property Guid $mobileGuid
+ * @property InvoiceReference $invoice
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property TimeSheetReference $timeSheet
+ * @property WorkRoleReference $workRole
+ * @property WorkTypeReference $workType
  * @property array $customFields
  * @property boolean $addToDetailDescriptionFlag
  * @property boolean $addToInternalAnalysisFlag
@@ -52,19 +52,19 @@ class TimeEntry extends Model
      * @var array
      */
     protected $casts = [
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Time\Metadata',
+        '_info' => Metadata::class,
         'actualHours' => 'float',
         'addToDetailDescriptionFlag' => 'boolean',
         'addToInternalAnalysisFlag' => 'boolean',
         'addToResolutionFlag' => 'boolean',
-        'agreement' => 'Spinen\ConnectWise\Models\v2018_4\Time\AgreementReference',
+        'agreement' => AgreementReference::class,
         'billableOption' => 'string',
         'businessUnitId' => 'integer',
         'chargeToId' => 'integer',
         'chargeToType' => 'string',
-        'company' => 'Spinen\ConnectWise\Models\v2018_4\Time\CompanyReference',
+        'company' => CompanyReference::class,
         'customFields' => 'array',
-        'dateEntered' => 'Carbon\Carbon',
+        'dateEntered' => Carbon\Carbon::class,
         'emailCc' => 'string',
         'emailCcFlag' => 'boolean',
         'emailContactFlag' => 'boolean',
@@ -75,16 +75,16 @@ class TimeEntry extends Model
         'hoursDeduct' => 'float',
         'id' => 'integer',
         'internalNotes' => 'string',
-        'invoice' => 'Spinen\ConnectWise\Models\v2018_4\Time\InvoiceReference',
+        'invoice' => InvoiceReference::class,
         'locationId' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2018_4\Time\MemberReference',
-        'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_4\Time\Guid',
+        'member' => MemberReference::class,
+        'mobileGuid' => Guid::class,
         'notes' => 'string',
         'status' => 'string',
-        'timeEnd' => 'Carbon\Carbon',
-        'timeSheet' => 'Spinen\ConnectWise\Models\v2018_4\Time\TimeSheetReference',
-        'timeStart' => 'Carbon\Carbon',
-        'workRole' => 'Spinen\ConnectWise\Models\v2018_4\Time\WorkRoleReference',
-        'workType' => 'Spinen\ConnectWise\Models\v2018_4\Time\WorkTypeReference',
+        'timeEnd' => Carbon\Carbon::class,
+        'timeSheet' => TimeSheetReference::class,
+        'timeStart' => Carbon\Carbon::class,
+        'workRole' => WorkRoleReference::class,
+        'workType' => WorkTypeReference::class,
     ];
 }
