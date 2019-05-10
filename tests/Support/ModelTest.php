@@ -124,7 +124,7 @@ class ModelTest extends TestCase
             ]
         );
 
-        $expected = '{"array_attribute":[],"boolean_attribute":false,"carbon_attribute":{"date":"2017-01-01 00:00:00.000000","timezone_type":3,"timezone":"UTC"},"collection_attribute":[],"float_attribute":1.2,"info_attribute":[],"integer_attribute":1,"json_attribute":"{\"property\":1}","null_attribute":null,"object_attribute":{},"string_attribute":"something"}';
+        $expected = '{"array_attribute":[],"boolean_attribute":false,"carbon_attribute":"2017-01-01T00:00:00.000000Z","collection_attribute":[],"float_attribute":1.2,"info_attribute":[],"integer_attribute":1,"json_attribute":"{\"property\":1}","null_attribute":null,"object_attribute":{},"string_attribute":"something"}';
 
         $this->assertEquals($expected, $model->toJson());
     }
