@@ -2,54 +2,73 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BillingSetup
+ * Class BillingSetup Version v2019_3
  *
- * @property integer $id
- * @property string $remitName
- * @property string $addressOne
- * @property string $addressTwo
- * @property string $city
- * @property string $zip
- * @property string $phone
- * @property string $invoiceTitle
- * @property string $payableName
- * @property string $topcomment
- * @property string $invoiceFooter
- * @property string $quoteFooter
- * @property boolean $excludeDoNotBillTimeFlag
- * @property boolean $excludeDoNotBillExpenseFlag
- * @property boolean $excludeDoNotBillProductFlag
- * @property string $prefixSuffixFlag
- * @property string $prefixSuffixText
- * @property boolean $chargeAdjToFirmFlag
+ * Model for BillingSetup
+ *
+ * @property CountryReference $country
+ * @property CountryReference $localizedCountry
+ * @property CurrencyReference $currency
+ * @property EmailTemplateReference $emailTemplate
+ * @property InvoiceTemplateReference $agreementInvoice
+ * @property InvoiceTemplateReference $creditMemoInvoice
+ * @property InvoiceTemplateReference $downPaymentInvoice
+ * @property InvoiceTemplateReference $miscInvoice
+ * @property InvoiceTemplateReference $overallInvoiceDefault
+ * @property InvoiceTemplateReference $progressInvoice
+ * @property InvoiceTemplateReference $salesOrderInvoice
+ * @property InvoiceTemplateReference $standardInvoiceActual
+ * @property InvoiceTemplateReference $standardInvoiceFixed
+ * @property Metadata $_info
+ * @property StateReference $state
+ * @property SystemLocationReference $location
  * @property boolean $NoWatermarkFlag
- * @property boolean $displayTaxFlag
  * @property boolean $allowRestrictedDeptOnRoutingFlag
- * @property boolean $billTicketSeparatelyFlag
- * @property boolean $billTicketCompleteFlag
- * @property boolean $billTicketUnapprovedFlag
+ * @property boolean $billProductAfterShipFlag
  * @property boolean $billProjectCompleteFlag
  * @property boolean $billProjectUnapprovedFlag
- * @property boolean $progressTimeFlag
- * @property boolean $restrictProjectDownpaymentFlag
  * @property boolean $billSalesOrderCompleteFlag
- * @property boolean $billProductAfterShipFlag
- * @property boolean $restrictDownpaymentFlag
+ * @property boolean $billTicketCompleteFlag
+ * @property boolean $billTicketSeparatelyFlag
+ * @property boolean $billTicketUnapprovedFlag
+ * @property boolean $chargeAdjToFirmFlag
+ * @property boolean $copyAgreementProductsFlag
  * @property boolean $copyNonServiceProductsFlag
  * @property boolean $copyServiceProductsFlag
- * @property boolean $copyAgreementProductsFlag
- * @property boolean $printLogoFlag
- * @property boolean $readReceiptFlag
  * @property boolean $deliveryReceiptFlag
  * @property boolean $disableRoutingEmailFlag
+ * @property boolean $displayTaxFlag
+ * @property boolean $excludeAvalaraFlag
+ * @property boolean $excludeDoNotBillExpenseFlag
+ * @property boolean $excludeDoNotBillProductFlag
+ * @property boolean $excludeDoNotBillTimeFlag
+ * @property boolean $printLogoFlag
+ * @property boolean $progressTimeFlag
+ * @property boolean $readReceiptFlag
+ * @property boolean $restrictDownpaymentFlag
+ * @property boolean $restrictProjectDownpaymentFlag
+ * @property integer $id
+ * @property string $addressOne
+ * @property string $addressTwo
  * @property string $businessNumber
+ * @property string $city
+ * @property string $companyCode
  * @property string $customLabel
  * @property string $customText
- * @property string $companyCode
- * @property boolean $excludeAvalaraFlag
+ * @property string $invoiceFooter
+ * @property string $invoiceTitle
+ * @property string $payableName
+ * @property string $phone
+ * @property string $prefixSuffixFlag
+ * @property string $prefixSuffixText
+ * @property string $quoteFooter
+ * @property string $remitName
+ * @property string $topcomment
+ * @property string $zip
  */
 class BillingSetup extends Model
 {
@@ -59,48 +78,64 @@ class BillingSetup extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'remitName' => 'string',
+        'NoWatermarkFlag' => 'boolean',
+        '_info' => Metadata::class,
         'addressOne' => 'string',
         'addressTwo' => 'string',
-        'city' => 'string',
-        'zip' => 'string',
-        'phone' => 'string',
-        'invoiceTitle' => 'string',
-        'payableName' => 'string',
-        'topcomment' => 'string',
-        'invoiceFooter' => 'string',
-        'quoteFooter' => 'string',
-        'excludeDoNotBillTimeFlag' => 'boolean',
-        'excludeDoNotBillExpenseFlag' => 'boolean',
-        'excludeDoNotBillProductFlag' => 'boolean',
-        'prefixSuffixFlag' => 'string',
-        'prefixSuffixText' => 'string',
-        'chargeAdjToFirmFlag' => 'boolean',
-        'NoWatermarkFlag' => 'boolean',
-        'displayTaxFlag' => 'boolean',
+        'agreementInvoice' => InvoiceTemplateReference::class,
         'allowRestrictedDeptOnRoutingFlag' => 'boolean',
-        'billTicketSeparatelyFlag' => 'boolean',
-        'billTicketCompleteFlag' => 'boolean',
-        'billTicketUnapprovedFlag' => 'boolean',
+        'billProductAfterShipFlag' => 'boolean',
         'billProjectCompleteFlag' => 'boolean',
         'billProjectUnapprovedFlag' => 'boolean',
-        'progressTimeFlag' => 'boolean',
-        'restrictProjectDownpaymentFlag' => 'boolean',
         'billSalesOrderCompleteFlag' => 'boolean',
-        'billProductAfterShipFlag' => 'boolean',
-        'restrictDownpaymentFlag' => 'boolean',
+        'billTicketCompleteFlag' => 'boolean',
+        'billTicketSeparatelyFlag' => 'boolean',
+        'billTicketUnapprovedFlag' => 'boolean',
+        'businessNumber' => 'string',
+        'chargeAdjToFirmFlag' => 'boolean',
+        'city' => 'string',
+        'companyCode' => 'string',
+        'copyAgreementProductsFlag' => 'boolean',
         'copyNonServiceProductsFlag' => 'boolean',
         'copyServiceProductsFlag' => 'boolean',
-        'copyAgreementProductsFlag' => 'boolean',
-        'printLogoFlag' => 'boolean',
-        'readReceiptFlag' => 'boolean',
-        'deliveryReceiptFlag' => 'boolean',
-        'disableRoutingEmailFlag' => 'boolean',
-        'businessNumber' => 'string',
+        'country' => CountryReference::class,
+        'creditMemoInvoice' => InvoiceTemplateReference::class,
+        'currency' => CurrencyReference::class,
         'customLabel' => 'string',
         'customText' => 'string',
-        'companyCode' => 'string',
+        'deliveryReceiptFlag' => 'boolean',
+        'disableRoutingEmailFlag' => 'boolean',
+        'displayTaxFlag' => 'boolean',
+        'downPaymentInvoice' => InvoiceTemplateReference::class,
+        'emailTemplate' => EmailTemplateReference::class,
         'excludeAvalaraFlag' => 'boolean',
+        'excludeDoNotBillExpenseFlag' => 'boolean',
+        'excludeDoNotBillProductFlag' => 'boolean',
+        'excludeDoNotBillTimeFlag' => 'boolean',
+        'id' => 'integer',
+        'invoiceFooter' => 'string',
+        'invoiceTitle' => 'string',
+        'localizedCountry' => CountryReference::class,
+        'location' => SystemLocationReference::class,
+        'miscInvoice' => InvoiceTemplateReference::class,
+        'overallInvoiceDefault' => InvoiceTemplateReference::class,
+        'payableName' => 'string',
+        'phone' => 'string',
+        'prefixSuffixFlag' => 'string',
+        'prefixSuffixText' => 'string',
+        'printLogoFlag' => 'boolean',
+        'progressInvoice' => InvoiceTemplateReference::class,
+        'progressTimeFlag' => 'boolean',
+        'quoteFooter' => 'string',
+        'readReceiptFlag' => 'boolean',
+        'remitName' => 'string',
+        'restrictDownpaymentFlag' => 'boolean',
+        'restrictProjectDownpaymentFlag' => 'boolean',
+        'salesOrderInvoice' => InvoiceTemplateReference::class,
+        'standardInvoiceActual' => InvoiceTemplateReference::class,
+        'standardInvoiceFixed' => InvoiceTemplateReference::class,
+        'state' => StateReference::class,
+        'topcomment' => 'string',
+        'zip' => 'string'
     ];
 }

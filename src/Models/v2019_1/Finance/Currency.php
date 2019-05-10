@@ -2,18 +2,22 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Currency
+ * Class Currency Version v2019_1
  *
- * @property integer $id
- * @property string $currencyIdentifier
- * @property string $name
- * @property string $symbol
+ * Model for Currency
+ *
+ * @property Metadata $_info
  * @property boolean $displayIdFlag
  * @property boolean $displaySymbolFlag
+ * @property integer $id
+ * @property string $currencyIdentifier
  * @property string $isoCode
+ * @property string $name
+ * @property string $symbol
  */
 class Currency extends Model
 {
@@ -23,12 +27,13 @@ class Currency extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
         'currencyIdentifier' => 'string',
-        'name' => 'string',
-        'symbol' => 'string',
         'displayIdFlag' => 'boolean',
         'displaySymbolFlag' => 'boolean',
+        'id' => 'integer',
         'isoCode' => 'string',
+        'name' => 'string',
+        'symbol' => 'string'
     ];
 }

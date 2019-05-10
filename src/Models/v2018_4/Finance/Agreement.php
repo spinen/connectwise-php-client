@@ -2,71 +2,86 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Agreement
+ * Class Agreement Version v2018_4
  *
- * @property integer $id
- * @property string $name
- * @property integer $parentAgreementId
- * @property string $customerPO
- * @property integer $locationId
- * @property integer $businessUnitId
- * @property boolean $restrictLocationFlag
- * @property boolean $restrictDepartmentFlag
- * @property carbon $startDate
- * @property carbon $endDate
- * @property boolean $noEndingDateFlag
- * @property boolean $cancelledFlag
- * @property carbon $dateCancelled
- * @property string $reasonCancelled
- * @property integer $slaId
- * @property string $workOrder
- * @property string $internalNotes
- * @property string $applicationUnits
- * @property double $applicationLimit
- * @property string $applicationCycle
- * @property boolean $applicationUnlimitedFlag
- * @property boolean $oneTimeFlag
- * @property boolean $coverAgreementTime
- * @property boolean $coverAgreementProduct
- * @property boolean $coverAgreementExpense
- * @property boolean $coverSalesTax
- * @property boolean $carryOverUnused
+ * Model for Agreement
+ *
+ * @property AgreementTypeReference $type
+ * @property Carbon $billStartDate
+ * @property Carbon $dateCancelled
+ * @property Carbon $endDate
+ * @property Carbon $startDate
+ * @property CompanyReference $billToCompany
+ * @property CompanyReference $company
+ * @property CompanyReference $subContractCompany
+ * @property ContactReference $contact
+ * @property ContactReference $subContractContact
+ * @property CurrencyReference $currency
+ * @property Metadata $_info
+ * @property OpportunityReference $opportunity
+ * @property SiteReference $billToSite
+ * @property WorkRoleReference $workRole
+ * @property WorkTypeReference $workType
+ * @property array $customFields
  * @property boolean $allowOverruns
- * @property integer $expiredDays
- * @property integer $limit
- * @property boolean $expireWhenZero
- * @property boolean $chargeToFirm
- * @property string $employeeCompRate
- * @property string $employeeCompNotExceed
- * @property double $compHourlyRate
- * @property double $compLimitAmount
- * @property integer $billCycleId
+ * @property boolean $applicationUnlimitedFlag
  * @property boolean $billOneTimeFlag
- * @property integer $billTermsId
- * @property string $invoicingCycle
- * @property double $billAmount
- * @property boolean $taxable
- * @property double $prorateFirstBill
- * @property carbon $billStartDate
- * @property integer $taxCodeId
- * @property boolean $restrictDownPayment
- * @property boolean $prorateFlag
- * @property string $invoiceDescription
- * @property boolean $topComment
- * @property boolean $bottomComment
- * @property integer $projectTypeId
- * @property integer $invoiceTemplateSetupId
- * @property string $billTime
- * @property string $billExpenses
- * @property string $billProducts
- * @property boolean $billableTimeInvoice
  * @property boolean $billableExpenseInvoice
  * @property boolean $billableProductInvoice
+ * @property boolean $billableTimeInvoice
+ * @property boolean $bottomComment
+ * @property boolean $cancelledFlag
+ * @property boolean $carryOverUnused
+ * @property boolean $chargeToFirm
+ * @property boolean $coverAgreementExpense
+ * @property boolean $coverAgreementProduct
+ * @property boolean $coverAgreementTime
+ * @property boolean $coverSalesTax
+ * @property boolean $expireWhenZero
+ * @property boolean $noEndingDateFlag
+ * @property boolean $oneTimeFlag
+ * @property boolean $prorateFlag
+ * @property boolean $restrictDepartmentFlag
+ * @property boolean $restrictDownPayment
+ * @property boolean $restrictLocationFlag
+ * @property boolean $taxable
+ * @property boolean $topComment
+ * @property float $applicationLimit
+ * @property float $billAmount
+ * @property float $compHourlyRate
+ * @property float $compLimitAmount
+ * @property float $prorateFirstBill
+ * @property integer $billCycleId
+ * @property integer $billTermsId
+ * @property integer $businessUnitId
+ * @property integer $expiredDays
+ * @property integer $id
+ * @property integer $invoiceTemplateSetupId
+ * @property integer $limit
+ * @property integer $locationId
+ * @property integer $parentAgreementId
+ * @property integer $projectTypeId
+ * @property integer $slaId
+ * @property integer $taxCodeId
+ * @property string $applicationCycle
+ * @property string $applicationUnits
+ * @property string $billExpenses
+ * @property string $billProducts
+ * @property string $billTime
+ * @property string $customerPO
+ * @property string $employeeCompNotExceed
+ * @property string $employeeCompRate
+ * @property string $internalNotes
+ * @property string $invoiceDescription
+ * @property string $invoicingCycle
+ * @property string $name
  * @property string $periodType
- * @property array $customFields
+ * @property string $reasonCancelled
+ * @property string $workOrder
  */
 class Agreement extends Model
 {
@@ -76,65 +91,77 @@ class Agreement extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'parentAgreementId' => 'integer',
-        'customerPO' => 'string',
-        'locationId' => 'integer',
-        'businessUnitId' => 'integer',
-        'restrictLocationFlag' => 'boolean',
-        'restrictDepartmentFlag' => 'boolean',
-        'startDate' => 'carbon',
-        'endDate' => 'carbon',
-        'noEndingDateFlag' => 'boolean',
-        'cancelledFlag' => 'boolean',
-        'dateCancelled' => 'carbon',
-        'reasonCancelled' => 'string',
-        'slaId' => 'integer',
-        'workOrder' => 'string',
-        'internalNotes' => 'string',
-        'applicationUnits' => 'string',
-        'applicationLimit' => 'double',
-        'applicationCycle' => 'string',
-        'applicationUnlimitedFlag' => 'boolean',
-        'oneTimeFlag' => 'boolean',
-        'coverAgreementTime' => 'boolean',
-        'coverAgreementProduct' => 'boolean',
-        'coverAgreementExpense' => 'boolean',
-        'coverSalesTax' => 'boolean',
-        'carryOverUnused' => 'boolean',
+        '_info' => Metadata::class,
         'allowOverruns' => 'boolean',
-        'expiredDays' => 'integer',
-        'limit' => 'integer',
-        'expireWhenZero' => 'boolean',
-        'chargeToFirm' => 'boolean',
-        'employeeCompRate' => 'string',
-        'employeeCompNotExceed' => 'string',
-        'compHourlyRate' => 'double',
-        'compLimitAmount' => 'double',
+        'applicationCycle' => 'string',
+        'applicationLimit' => 'float',
+        'applicationUnits' => 'string',
+        'applicationUnlimitedFlag' => 'boolean',
+        'billAmount' => 'float',
         'billCycleId' => 'integer',
-        'billOneTimeFlag' => 'boolean',
-        'billTermsId' => 'integer',
-        'invoicingCycle' => 'string',
-        'billAmount' => 'double',
-        'taxable' => 'boolean',
-        'prorateFirstBill' => 'double',
-        'billStartDate' => 'carbon',
-        'taxCodeId' => 'integer',
-        'restrictDownPayment' => 'boolean',
-        'prorateFlag' => 'boolean',
-        'invoiceDescription' => 'string',
-        'topComment' => 'boolean',
-        'bottomComment' => 'boolean',
-        'projectTypeId' => 'integer',
-        'invoiceTemplateSetupId' => 'integer',
-        'billTime' => 'string',
         'billExpenses' => 'string',
+        'billOneTimeFlag' => 'boolean',
         'billProducts' => 'string',
-        'billableTimeInvoice' => 'boolean',
+        'billStartDate' => Carbon::class,
+        'billTermsId' => 'integer',
+        'billTime' => 'string',
+        'billToCompany' => CompanyReference::class,
+        'billToSite' => SiteReference::class,
         'billableExpenseInvoice' => 'boolean',
         'billableProductInvoice' => 'boolean',
-        'periodType' => 'string',
+        'billableTimeInvoice' => 'boolean',
+        'bottomComment' => 'boolean',
+        'businessUnitId' => 'integer',
+        'cancelledFlag' => 'boolean',
+        'carryOverUnused' => 'boolean',
+        'chargeToFirm' => 'boolean',
+        'compHourlyRate' => 'float',
+        'compLimitAmount' => 'float',
+        'company' => CompanyReference::class,
+        'contact' => ContactReference::class,
+        'coverAgreementExpense' => 'boolean',
+        'coverAgreementProduct' => 'boolean',
+        'coverAgreementTime' => 'boolean',
+        'coverSalesTax' => 'boolean',
+        'currency' => CurrencyReference::class,
         'customFields' => 'array',
+        'customerPO' => 'string',
+        'dateCancelled' => Carbon::class,
+        'employeeCompNotExceed' => 'string',
+        'employeeCompRate' => 'string',
+        'endDate' => Carbon::class,
+        'expireWhenZero' => 'boolean',
+        'expiredDays' => 'integer',
+        'id' => 'integer',
+        'internalNotes' => 'string',
+        'invoiceDescription' => 'string',
+        'invoiceTemplateSetupId' => 'integer',
+        'invoicingCycle' => 'string',
+        'limit' => 'integer',
+        'locationId' => 'integer',
+        'name' => 'string',
+        'noEndingDateFlag' => 'boolean',
+        'oneTimeFlag' => 'boolean',
+        'opportunity' => OpportunityReference::class,
+        'parentAgreementId' => 'integer',
+        'periodType' => 'string',
+        'projectTypeId' => 'integer',
+        'prorateFirstBill' => 'float',
+        'prorateFlag' => 'boolean',
+        'reasonCancelled' => 'string',
+        'restrictDepartmentFlag' => 'boolean',
+        'restrictDownPayment' => 'boolean',
+        'restrictLocationFlag' => 'boolean',
+        'slaId' => 'integer',
+        'startDate' => Carbon::class,
+        'subContractCompany' => CompanyReference::class,
+        'subContractContact' => ContactReference::class,
+        'taxCodeId' => 'integer',
+        'taxable' => 'boolean',
+        'topComment' => 'boolean',
+        'type' => AgreementTypeReference::class,
+        'workOrder' => 'string',
+        'workRole' => WorkRoleReference::class,
+        'workType' => WorkTypeReference::class
     ];
 }

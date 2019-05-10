@@ -2,14 +2,19 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TodayPageCategory
+ * Class TodayPageCategory Version v2019_2
  *
+ * Model for TodayPageCategory
+ *
+ * @property Metadata $_info
+ * @property SystemLocationReference $location
  * @property integer $id
- * @property string $name
  * @property integer $sortOrder
+ * @property string $name
  */
 class TodayPageCategory extends Model
 {
@@ -19,8 +24,10 @@ class TodayPageCategory extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
+        'location' => SystemLocationReference::class,
         'name' => 'string',
-        'sortOrder' => 'integer',
+        'sortOrder' => 'integer'
     ];
 }

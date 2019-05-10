@@ -2,11 +2,16 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Skill
+ * Class Skill Version v2018_5
  *
+ * Model for Skill
+ *
+ * @property Metadata $_info
+ * @property SkillCategoryReference $category
  * @property integer $id
  * @property string $name
  */
@@ -18,7 +23,9 @@ class Skill extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'category' => SkillCategoryReference::class,
         'id' => 'integer',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

@@ -2,16 +2,19 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Info
+ * Class Info Version v2019_3
  *
- * @property string $version
- * @property boolean $isCloud
- * @property string $serverTimeZone
+ * Model for Info
+ *
  * @property array $licenseBits
+ * @property boolean $isCloud
  * @property string $cloudRegion
+ * @property string $serverTimeZone
+ * @property string $version
  */
 class Info extends Model
 {
@@ -21,10 +24,10 @@ class Info extends Model
      * @var array
      */
     protected $casts = [
-        'version' => 'string',
-        'isCloud' => 'boolean',
-        'serverTimeZone' => 'string',
-        'licenseBits' => 'array',
         'cloudRegion' => 'string',
+        'isCloud' => 'boolean',
+        'licenseBits' => 'array',
+        'serverTimeZone' => 'string',
+        'version' => 'string'
     ];
 }

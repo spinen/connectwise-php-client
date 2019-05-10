@@ -2,11 +2,16 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TaxableExpenseTypeLevel
+ * Class TaxableExpenseTypeLevel Version v2018_5
  *
+ * Model for TaxableExpenseTypeLevel
+ *
+ * @property Metadata $_info
+ * @property TaxCodeLevelReference $taxCodeLevel
  * @property integer $id
  */
 class TaxableExpenseTypeLevel extends Model
@@ -17,6 +22,8 @@ class TaxableExpenseTypeLevel extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
+        'taxCodeLevel' => TaxCodeLevelReference::class
     ];
 }

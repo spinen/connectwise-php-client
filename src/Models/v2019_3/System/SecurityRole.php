@@ -2,15 +2,19 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SecurityRole
+ * Class SecurityRole Version v2019_3
  *
- * @property integer $id
- * @property string $name
+ * Model for SecurityRole
+ *
+ * @property Metadata $_info
  * @property boolean $adminFlag
  * @property boolean $inactiveFlag
+ * @property integer $id
+ * @property string $name
  */
 class SecurityRole extends Model
 {
@@ -20,9 +24,10 @@ class SecurityRole extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => Metadata::class,
         'adminFlag' => 'boolean',
+        'id' => 'integer',
         'inactiveFlag' => 'boolean',
+        'name' => 'string'
     ];
 }

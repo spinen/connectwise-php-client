@@ -2,11 +2,15 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SystemSetting
+ * Class SystemSetting Version v2018_5
  *
+ * Model for SystemSetting
+ *
+ * @property Metadata $_info
  * @property integer $id
  * @property string $description
  * @property string $value
@@ -20,9 +24,10 @@ class SystemSetting extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
         'description' => 'string',
+        'id' => 'integer',
         'value' => 'string',
-        'valueType' => 'string',
+        'valueType' => 'string'
     ];
 }

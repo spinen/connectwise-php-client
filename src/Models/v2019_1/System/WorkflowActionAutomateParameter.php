@@ -2,10 +2,13 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class WorkflowActionAutomateParameter
+ * Class WorkflowActionAutomateParameter Version v2019_1
+ *
+ * Model for WorkflowActionAutomateParameter
  *
  * @property integer $id
  * @property string $name
@@ -21,6 +24,6 @@ class WorkflowActionAutomateParameter extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'value' => 'string',
+        'value' => 'string'
     ];
 }

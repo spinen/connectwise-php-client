@@ -2,15 +2,21 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AgreementTypeWorkRole
+ * Class AgreementTypeWorkRole Version v2018_6
  *
+ * Model for AgreementTypeWorkRole
+ *
+ * @property AgreementTypeReference $type
+ * @property Carbon $effectiveDate
+ * @property Carbon $endingDate
+ * @property Metadata $_info
+ * @property WorkRoleReference $workRole
+ * @property float $rate
  * @property integer $id
- * @property carbon $effectiveDate
- * @property carbon $endingDate
- * @property double $rate
  * @property string $rateType
  */
 class AgreementTypeWorkRole extends Model
@@ -21,10 +27,13 @@ class AgreementTypeWorkRole extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'effectiveDate' => Carbon::class,
+        'endingDate' => Carbon::class,
         'id' => 'integer',
-        'effectiveDate' => 'carbon',
-        'endingDate' => 'carbon',
-        'rate' => 'double',
+        'rate' => 'float',
         'rateType' => 'string',
+        'type' => AgreementTypeReference::class,
+        'workRole' => WorkRoleReference::class
     ];
 }

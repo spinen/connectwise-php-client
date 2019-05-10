@@ -2,17 +2,21 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AdjustmentType
+ * Class AdjustmentType Version v2018_5
  *
+ * Model for AdjustmentType
+ *
+ * @property Carbon $dateCreated
+ * @property Metadata $_info
+ * @property boolean $auditTrailFlag
  * @property integer $id
+ * @property string $createdBy
  * @property string $identifier
  * @property string $name
- * @property boolean $auditTrailFlag
- * @property carbon $dateCreated
- * @property string $createdBy
  */
 class AdjustmentType extends Model
 {
@@ -22,11 +26,12 @@ class AdjustmentType extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'auditTrailFlag' => 'boolean',
+        'createdBy' => 'string',
+        'dateCreated' => Carbon::class,
         'id' => 'integer',
         'identifier' => 'string',
-        'name' => 'string',
-        'auditTrailFlag' => 'boolean',
-        'dateCreated' => 'carbon',
-        'createdBy' => 'string',
+        'name' => 'string'
     ];
 }

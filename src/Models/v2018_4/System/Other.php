@@ -2,23 +2,31 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Other
+ * Class Other Version v2018_4
  *
+ * Model for Other
+ *
+ * @property AddressFormatReference $defaultAddressFormat
+ * @property CalendarReference $defaultCalendar
+ * @property LdapConfigurationReference $defaultLdap
+ * @property Metadata $_info
+ * @property TimeZoneSetupReference $serverTimeZone
+ * @property boolean $includePortalLinkFlag
+ * @property boolean $syncLeadsFlag
+ * @property boolean $updateMemberTimeZonesFlag
+ * @property boolean $useExpandedFormatActivityFlag
+ * @property boolean $useExpandedFormatTimeFlag
+ * @property boolean $useSslFlag
  * @property integer $id
+ * @property string $contactSync
  * @property string $defaultFromAddress
+ * @property string $logoPath
  * @property string $portalUrlOverride
  * @property string $siteUrl
- * @property string $logoPath
- * @property string $contactSync
- * @property boolean $useSslFlag
- * @property boolean $syncLeadsFlag
- * @property boolean $includePortalLinkFlag
- * @property boolean $useExpandedFormatTimeFlag
- * @property boolean $useExpandedFormatActivityFlag
- * @property boolean $updateMemberTimeZonesFlag
  */
 class Other extends Model
 {
@@ -28,17 +36,22 @@ class Other extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'defaultFromAddress' => 'string',
-        'portalUrlOverride' => 'string',
-        'siteUrl' => 'string',
-        'logoPath' => 'string',
+        '_info' => Metadata::class,
         'contactSync' => 'string',
-        'useSslFlag' => 'boolean',
-        'syncLeadsFlag' => 'boolean',
+        'defaultAddressFormat' => AddressFormatReference::class,
+        'defaultCalendar' => CalendarReference::class,
+        'defaultFromAddress' => 'string',
+        'defaultLdap' => LdapConfigurationReference::class,
+        'id' => 'integer',
         'includePortalLinkFlag' => 'boolean',
-        'useExpandedFormatTimeFlag' => 'boolean',
-        'useExpandedFormatActivityFlag' => 'boolean',
+        'logoPath' => 'string',
+        'portalUrlOverride' => 'string',
+        'serverTimeZone' => TimeZoneSetupReference::class,
+        'siteUrl' => 'string',
+        'syncLeadsFlag' => 'boolean',
         'updateMemberTimeZonesFlag' => 'boolean',
+        'useExpandedFormatActivityFlag' => 'boolean',
+        'useExpandedFormatTimeFlag' => 'boolean',
+        'useSslFlag' => 'boolean'
     ];
 }

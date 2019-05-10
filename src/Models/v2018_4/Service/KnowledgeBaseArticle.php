@@ -2,21 +2,26 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class KnowledgeBaseArticle
+ * Class KnowledgeBaseArticle Version v2018_4
  *
- * @property integer $id
- * @property string $title
- * @property string $issue
- * @property string $resolution
- * @property integer $locationId
+ * Model for KnowledgeBaseArticle
+ *
+ * @property BoardReference $board
+ * @property Metadata $_info
  * @property integer $businessUnitId
  * @property integer $categoryId
+ * @property integer $id
+ * @property integer $locationId
  * @property integer $subCategoryId
- * @property string $dateCreated
  * @property string $createdBy
+ * @property string $dateCreated
+ * @property string $issue
+ * @property string $resolution
+ * @property string $title
  */
 class KnowledgeBaseArticle extends Model
 {
@@ -26,15 +31,17 @@ class KnowledgeBaseArticle extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'title' => 'string',
-        'issue' => 'string',
-        'resolution' => 'string',
-        'locationId' => 'integer',
+        '_info' => Metadata::class,
+        'board' => BoardReference::class,
         'businessUnitId' => 'integer',
         'categoryId' => 'integer',
-        'subCategoryId' => 'integer',
-        'dateCreated' => 'string',
         'createdBy' => 'string',
+        'dateCreated' => 'string',
+        'id' => 'integer',
+        'issue' => 'string',
+        'locationId' => 'integer',
+        'resolution' => 'string',
+        'subCategoryId' => 'integer',
+        'title' => 'string'
     ];
 }

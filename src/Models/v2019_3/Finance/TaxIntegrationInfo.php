@@ -2,13 +2,17 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TaxIntegrationInfo
+ * Class TaxIntegrationInfo Version v2019_3
  *
- * @property integer $id
+ * Model for TaxIntegrationInfo
+ *
+ * @property Metadata $_info
  * @property boolean $enabledFlag
+ * @property integer $id
  * @property string $taxIntegrationType
  */
 class TaxIntegrationInfo extends Model
@@ -19,8 +23,9 @@ class TaxIntegrationInfo extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
         'enabledFlag' => 'boolean',
-        'taxIntegrationType' => 'string',
+        'id' => 'integer',
+        'taxIntegrationType' => 'string'
     ];
 }

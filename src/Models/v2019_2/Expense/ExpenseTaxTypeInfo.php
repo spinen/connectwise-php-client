@@ -2,14 +2,18 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Expense;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ExpenseTaxTypeInfo
+ * Class ExpenseTaxTypeInfo Version v2019_2
  *
+ * Model for ExpenseTaxTypeInfo
+ *
+ * @property Metadata $_info
+ * @property boolean $inactive
  * @property integer $id
  * @property string $name
- * @property boolean $inactive
  */
 class ExpenseTaxTypeInfo extends Model
 {
@@ -19,8 +23,9 @@ class ExpenseTaxTypeInfo extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'name' => 'string',
         'inactive' => 'boolean',
+        'name' => 'string'
     ];
 }

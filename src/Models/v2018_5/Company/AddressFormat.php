@@ -2,18 +2,22 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AddressFormat
+ * Class AddressFormat Version v2018_5
  *
- * @property integer $id
- * @property string $name
- * @property string $format
- * @property boolean $defaultFlag
+ * Model for AddressFormat
+ *
+ * @property Metadata $_info
  * @property array $countryIds
  * @property boolean $addAllCountries
+ * @property boolean $defaultFlag
  * @property boolean $removeAllCountries
+ * @property integer $id
+ * @property string $format
+ * @property string $name
  */
 class AddressFormat extends Model
 {
@@ -23,12 +27,13 @@ class AddressFormat extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'addAllCountries' => 'boolean',
+        'countryIds' => 'array',
+        'defaultFlag' => 'boolean',
+        'format' => 'string',
         'id' => 'integer',
         'name' => 'string',
-        'format' => 'string',
-        'defaultFlag' => 'boolean',
-        'countryIds' => 'array',
-        'addAllCountries' => 'boolean',
-        'removeAllCountries' => 'boolean',
+        'removeAllCountries' => 'boolean'
     ];
 }

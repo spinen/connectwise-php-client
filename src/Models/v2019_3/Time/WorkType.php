@@ -2,27 +2,32 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class WorkType
+ * Class WorkType Version v2019_3
  *
- * @property integer $id
- * @property string $name
- * @property string $billTime
- * @property string $rateType
- * @property double $rate
- * @property double $hoursMin
- * @property double $hoursMax
- * @property double $roundBillHoursTo
- * @property string $accrualType
+ * Model for WorkType
+ *
+ * @property ExternalWorkTypeIntegrationReference $externalIntegrationXRef
+ * @property Metadata $_info
+ * @property boolean $activityDefaultFlag
+ * @property boolean $addAllAgreementExclusions
  * @property boolean $inactiveFlag
  * @property boolean $overallDefaultFlag
- * @property boolean $activityDefaultFlag
  * @property boolean $utilizationFlag
- * @property double $costMultiplier
+ * @property float $costMultiplier
+ * @property float $hoursMax
+ * @property float $hoursMin
+ * @property float $rate
+ * @property float $roundBillHoursTo
+ * @property integer $id
+ * @property string $accrualType
+ * @property string $billTime
  * @property string $integrationXRef
- * @property boolean $addAllAgreementExclusions
+ * @property string $name
+ * @property string $rateType
  */
 class WorkType extends Model
 {
@@ -32,21 +37,23 @@ class WorkType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'billTime' => 'string',
-        'rateType' => 'string',
-        'rate' => 'double',
-        'hoursMin' => 'double',
-        'hoursMax' => 'double',
-        'roundBillHoursTo' => 'double',
+        '_info' => Metadata::class,
         'accrualType' => 'string',
-        'inactiveFlag' => 'boolean',
-        'overallDefaultFlag' => 'boolean',
         'activityDefaultFlag' => 'boolean',
-        'utilizationFlag' => 'boolean',
-        'costMultiplier' => 'double',
-        'integrationXRef' => 'string',
         'addAllAgreementExclusions' => 'boolean',
+        'billTime' => 'string',
+        'costMultiplier' => 'float',
+        'externalIntegrationXRef' => ExternalWorkTypeIntegrationReference::class,
+        'hoursMax' => 'float',
+        'hoursMin' => 'float',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'integrationXRef' => 'string',
+        'name' => 'string',
+        'overallDefaultFlag' => 'boolean',
+        'rate' => 'float',
+        'rateType' => 'string',
+        'roundBillHoursTo' => 'float',
+        'utilizationFlag' => 'boolean'
     ];
 }

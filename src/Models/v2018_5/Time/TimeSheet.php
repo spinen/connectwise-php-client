@@ -2,19 +2,24 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TimeSheet
+ * Class TimeSheet Version v2018_5
  *
+ * Model for TimeSheet
+ *
+ * @property Carbon $dateEnd
+ * @property Carbon $dateStart
+ * @property Carbon $deadline
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property float $hours
  * @property integer $id
- * @property integer $year
  * @property integer $period
- * @property carbon $dateStart
- * @property carbon $dateEnd
+ * @property integer $year
  * @property string $status
- * @property double $hours
- * @property carbon $deadline
  */
 class TimeSheet extends Model
 {
@@ -24,13 +29,15 @@ class TimeSheet extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'dateEnd' => Carbon::class,
+        'dateStart' => Carbon::class,
+        'deadline' => Carbon::class,
+        'hours' => 'float',
         'id' => 'integer',
-        'year' => 'integer',
+        'member' => MemberReference::class,
         'period' => 'integer',
-        'dateStart' => 'carbon',
-        'dateEnd' => 'carbon',
         'status' => 'string',
-        'hours' => 'double',
-        'deadline' => 'carbon',
+        'year' => 'integer'
     ];
 }

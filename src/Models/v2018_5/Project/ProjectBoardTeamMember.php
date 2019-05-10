@@ -2,11 +2,18 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Project;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProjectBoardTeamMember
+ * Class ProjectBoardTeamMember Version v2018_5
  *
+ * Model for ProjectBoardTeamMember
+ *
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property ProjectRoleReference $projectRole
+ * @property WorkRoleReference $workRole
  * @property integer $id
  */
 class ProjectBoardTeamMember extends Model
@@ -17,6 +24,10 @@ class ProjectBoardTeamMember extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
+        'member' => MemberReference::class,
+        'projectRole' => ProjectRoleReference::class,
+        'workRole' => WorkRoleReference::class
     ];
 }

@@ -2,18 +2,22 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SetupScreen
+ * Class SetupScreen Version v2018_5
  *
+ * Model for SetupScreen
+ *
+ * @property Metadata $_info
  * @property integer $id
- * @property string $category
- * @property string $name
  * @property string $Description
+ * @property string $category
  * @property string $moduleDescription
  * @property string $moduleIdentifier
  * @property string $moduleName
+ * @property string $name
  */
 class SetupScreen extends Model
 {
@@ -23,12 +27,13 @@ class SetupScreen extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'category' => 'string',
-        'name' => 'string',
         'Description' => 'string',
+        '_info' => Metadata::class,
+        'category' => 'string',
+        'id' => 'integer',
         'moduleDescription' => 'string',
         'moduleIdentifier' => 'string',
         'moduleName' => 'string',
+        'name' => 'string'
     ];
 }

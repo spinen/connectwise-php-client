@@ -2,18 +2,22 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class DeliveryMethod
+ * Class DeliveryMethod Version v2018_6
  *
- * @property integer $id
- * @property string $name
+ * Model for DeliveryMethod
+ *
+ * @property Metadata $_info
  * @property boolean $defaultFlag
  * @property boolean $emailFlag
+ * @property boolean $integrationActiveFlag
  * @property boolean $integrationEmailFlag
  * @property boolean $integrationPrintFlag
- * @property boolean $integrationActiveFlag
+ * @property integer $id
+ * @property string $name
  */
 class DeliveryMethod extends Model
 {
@@ -23,12 +27,13 @@ class DeliveryMethod extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
         'emailFlag' => 'boolean',
+        'id' => 'integer',
+        'integrationActiveFlag' => 'boolean',
         'integrationEmailFlag' => 'boolean',
         'integrationPrintFlag' => 'boolean',
-        'integrationActiveFlag' => 'boolean',
+        'name' => 'string'
     ];
 }

@@ -2,20 +2,24 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PortalSecuritySetting
+ * Class PortalSecuritySetting Version v2019_1
  *
- * @property integer $id
- * @property string $functionIdentifier
- * @property string $functionDescription
- * @property boolean $levelOne
- * @property boolean $levelTwo
- * @property boolean $levelThree
- * @property boolean $levelFour
+ * Model for PortalSecuritySetting
+ *
+ * @property Metadata $_info
  * @property boolean $levelFive
+ * @property boolean $levelFour
+ * @property boolean $levelOne
  * @property boolean $levelSix
+ * @property boolean $levelThree
+ * @property boolean $levelTwo
+ * @property integer $id
+ * @property string $functionDescription
+ * @property string $functionIdentifier
  */
 class PortalSecuritySetting extends Model
 {
@@ -25,14 +29,15 @@ class PortalSecuritySetting extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'functionIdentifier' => 'string',
+        '_info' => Metadata::class,
         'functionDescription' => 'string',
-        'levelOne' => 'boolean',
-        'levelTwo' => 'boolean',
-        'levelThree' => 'boolean',
-        'levelFour' => 'boolean',
+        'functionIdentifier' => 'string',
+        'id' => 'integer',
         'levelFive' => 'boolean',
+        'levelFour' => 'boolean',
+        'levelOne' => 'boolean',
         'levelSix' => 'boolean',
+        'levelThree' => 'boolean',
+        'levelTwo' => 'boolean'
     ];
 }

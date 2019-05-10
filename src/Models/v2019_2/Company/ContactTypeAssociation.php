@@ -2,11 +2,17 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ContactTypeAssociation
+ * Class ContactTypeAssociation Version v2019_2
  *
+ * Model for ContactTypeAssociation
+ *
+ * @property ContactReference $contact
+ * @property ContactTypeReference $type
+ * @property Metadata $_info
  * @property integer $id
  */
 class ContactTypeAssociation extends Model
@@ -17,6 +23,9 @@ class ContactTypeAssociation extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'contact' => ContactReference::class,
         'id' => 'integer',
+        'type' => ContactTypeReference::class
     ];
 }

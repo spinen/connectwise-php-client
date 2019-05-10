@@ -2,19 +2,24 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ConfigurationTypeQuestion
+ * Class ConfigurationTypeQuestion Version v2018_4
  *
- * @property integer $id
- * @property string $fieldType
- * @property string $entryType
- * @property double $sequenceNumber
- * @property string $question
- * @property integer $numberOfDecimals
- * @property boolean $requiredFlag
+ * Model for ConfigurationTypeQuestion
+ *
+ * @property ConfigurationTypeReference $configurationType
+ * @property Metadata $_info
  * @property boolean $inactiveFlag
+ * @property boolean $requiredFlag
+ * @property float $sequenceNumber
+ * @property integer $id
+ * @property integer $numberOfDecimals
+ * @property string $entryType
+ * @property string $fieldType
+ * @property string $question
  */
 class ConfigurationTypeQuestion extends Model
 {
@@ -24,13 +29,15 @@ class ConfigurationTypeQuestion extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'fieldType' => 'string',
+        '_info' => Metadata::class,
+        'configurationType' => ConfigurationTypeReference::class,
         'entryType' => 'string',
-        'sequenceNumber' => 'double',
-        'question' => 'string',
-        'numberOfDecimals' => 'integer',
-        'requiredFlag' => 'boolean',
+        'fieldType' => 'string',
+        'id' => 'integer',
         'inactiveFlag' => 'boolean',
+        'numberOfDecimals' => 'integer',
+        'question' => 'string',
+        'requiredFlag' => 'boolean',
+        'sequenceNumber' => 'float'
     ];
 }

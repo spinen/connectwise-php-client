@@ -2,18 +2,23 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PurchaseOrderStatus
+ * Class PurchaseOrderStatus Version v2018_6
  *
- * @property integer $id
- * @property string $name
- * @property boolean $defaultFlag
+ * Model for PurchaseOrderStatus
+ *
+ * @property Metadata $_info
+ * @property PurchaseOrderStatusEmailTemplateReference $emailTemplate
  * @property boolean $closedFlag
- * @property boolean $inactiveFlag
  * @property boolean $defaultClosedFlag
+ * @property boolean $defaultFlag
+ * @property boolean $inactiveFlag
+ * @property integer $id
  * @property integer $sortOrder
+ * @property string $name
  */
 class PurchaseOrderStatus extends Model
 {
@@ -23,12 +28,14 @@ class PurchaseOrderStatus extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'defaultFlag' => 'boolean',
+        '_info' => Metadata::class,
         'closedFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
         'defaultClosedFlag' => 'boolean',
-        'sortOrder' => 'integer',
+        'defaultFlag' => 'boolean',
+        'emailTemplate' => PurchaseOrderStatusEmailTemplateReference::class,
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
+        'sortOrder' => 'integer'
     ];
 }

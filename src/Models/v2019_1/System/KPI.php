@@ -2,16 +2,20 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class KPI
+ * Class KPI Version v2019_1
  *
- * @property integer $id
- * @property string $name
- * @property string $dateFilter
- * @property integer $sortOrder
+ * Model for KPI
+ *
+ * @property KPICategoryReference $category
  * @property boolean $inactiveFlag
+ * @property integer $id
+ * @property integer $sortOrder
+ * @property string $dateFilter
+ * @property string $name
  */
 class KPI extends Model
 {
@@ -21,10 +25,11 @@ class KPI extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        'category' => KPICategoryReference::class,
         'dateFilter' => 'string',
-        'sortOrder' => 'integer',
+        'id' => 'integer',
         'inactiveFlag' => 'boolean',
+        'name' => 'string',
+        'sortOrder' => 'integer'
     ];
 }

@@ -2,20 +2,25 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CompanyStatus
+ * Class CompanyStatus Version v2018_4
  *
- * @property integer $id
- * @property string $name
+ * Model for CompanyStatus
+ *
+ * @property Metadata $_info
+ * @property TrackReference $track
+ * @property boolean $cancelOpenTracksFlag
+ * @property boolean $customNoteFlag
  * @property boolean $defaultFlag
+ * @property boolean $disallowSavingFlag
  * @property boolean $inactiveFlag
  * @property boolean $notifyFlag
- * @property boolean $disallowSavingFlag
+ * @property integer $id
+ * @property string $name
  * @property string $notificationMessage
- * @property boolean $customNoteFlag
- * @property boolean $cancelOpenTracksFlag
  */
 class CompanyStatus extends Model
 {
@@ -25,14 +30,16 @@ class CompanyStatus extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'defaultFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
-        'notifyFlag' => 'boolean',
-        'disallowSavingFlag' => 'boolean',
-        'notificationMessage' => 'string',
-        'customNoteFlag' => 'boolean',
+        '_info' => Metadata::class,
         'cancelOpenTracksFlag' => 'boolean',
+        'customNoteFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'disallowSavingFlag' => 'boolean',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
+        'notificationMessage' => 'string',
+        'notifyFlag' => 'boolean',
+        'track' => TrackReference::class
     ];
 }

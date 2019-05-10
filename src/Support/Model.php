@@ -154,14 +154,12 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
             return $value;
         }
 
-        $class = 'Spinen\ConnectWise\\' . $cast;
-
-        if (class_exists($class)) {
-            return new $class($value);
+        if (Carbon::class === $cast) {
+            return Carbon::parse($value);
         }
 
-        if (strcasecmp('carbon', $cast) == 0) {
-            return Carbon::parse($value);
+        if (class_exists($cast)) {
+            return new $cast($value);
         }
 
         if (strcasecmp('json', $cast) == 0) {

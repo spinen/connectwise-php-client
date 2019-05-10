@@ -2,16 +2,20 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class WorkflowNotifyType
+ * Class WorkflowNotifyType Version v2019_3
  *
+ * Model for WorkflowNotifyType
+ *
+ * @property Metadata $_info
+ * @property boolean $externalFlag
+ * @property boolean $isSetupFlag
  * @property integer $id
  * @property string $identifier
  * @property string $name
- * @property boolean $isSetupFlag
- * @property boolean $externalFlag
  */
 class WorkflowNotifyType extends Model
 {
@@ -21,10 +25,11 @@ class WorkflowNotifyType extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'externalFlag' => 'boolean',
         'id' => 'integer',
         'identifier' => 'string',
-        'name' => 'string',
         'isSetupFlag' => 'boolean',
-        'externalFlag' => 'boolean',
+        'name' => 'string'
     ];
 }

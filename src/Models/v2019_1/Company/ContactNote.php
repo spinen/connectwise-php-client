@@ -2,16 +2,21 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ContactNote
+ * Class ContactNote Version v2019_1
  *
- * @property integer $id
- * @property integer $contactId
- * @property string $text
+ * Model for ContactNote
+ *
+ * @property Metadata $_info
+ * @property NoteTypeReference $type
  * @property boolean $flagged
+ * @property integer $contactId
+ * @property integer $id
  * @property string $enteredBy
+ * @property string $text
  */
 class ContactNote extends Model
 {
@@ -21,10 +26,12 @@ class ContactNote extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
         'contactId' => 'integer',
-        'text' => 'string',
-        'flagged' => 'boolean',
         'enteredBy' => 'string',
+        'flagged' => 'boolean',
+        'id' => 'integer',
+        'text' => 'string',
+        'type' => NoteTypeReference::class
     ];
 }

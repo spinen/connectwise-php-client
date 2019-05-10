@@ -2,11 +2,18 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ManagedDevicesIntegrationNotification
+ * Class ManagedDevicesIntegrationNotification Version v2018_6
  *
+ * Model for ManagedDevicesIntegrationNotification
+ *
+ * @property ManagedDevicesIntegrationReference $managedDevicesIntegration
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property NotificationRecipientReference $notifyWho
  * @property integer $id
  * @property string $logType
  */
@@ -18,7 +25,11 @@ class ManagedDevicesIntegrationNotification extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
         'logType' => 'string',
+        'managedDevicesIntegration' => ManagedDevicesIntegrationReference::class,
+        'member' => MemberReference::class,
+        'notifyWho' => NotificationRecipientReference::class
     ];
 }

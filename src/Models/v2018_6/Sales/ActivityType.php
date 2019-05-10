@@ -2,18 +2,22 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ActivityType
+ * Class ActivityType Version v2018_6
  *
- * @property integer $id
- * @property string $name
- * @property integer $points
+ * Model for ActivityType
+ *
+ * @property Metadata $_info
  * @property boolean $defaultFlag
- * @property boolean $inactiveFlag
  * @property boolean $emailFlag
+ * @property boolean $inactiveFlag
  * @property boolean $memoFlag
+ * @property integer $id
+ * @property integer $points
+ * @property string $name
  */
 class ActivityType extends Model
 {
@@ -23,12 +27,13 @@ class ActivityType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'points' => 'integer',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
         'emailFlag' => 'boolean',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
         'memoFlag' => 'boolean',
+        'name' => 'string',
+        'points' => 'integer'
     ];
 }

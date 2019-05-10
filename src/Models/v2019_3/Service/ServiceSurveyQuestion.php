@@ -2,20 +2,24 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ServiceSurveyQuestion
+ * Class ServiceSurveyQuestion Version v2019_3
  *
- * @property integer $id
- * @property integer $sequenceNumber
- * @property string $type
- * @property string $question
+ * Model for ServiceSurveyQuestion
+ *
+ * @property Metadata $_info
  * @property array $options
  * @property boolean $includeFlag
  * @property boolean $requiredFlag
+ * @property integer $id
  * @property integer $noAnswerPoints
+ * @property integer $sequenceNumber
  * @property integer $surveyId
+ * @property string $question
+ * @property string $type
  */
 class ServiceSurveyQuestion extends Model
 {
@@ -25,14 +29,15 @@ class ServiceSurveyQuestion extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'sequenceNumber' => 'integer',
-        'type' => 'string',
-        'question' => 'string',
-        'options' => 'array',
         'includeFlag' => 'boolean',
-        'requiredFlag' => 'boolean',
         'noAnswerPoints' => 'integer',
+        'options' => 'array',
+        'question' => 'string',
+        'requiredFlag' => 'boolean',
+        'sequenceNumber' => 'integer',
         'surveyId' => 'integer',
+        'type' => 'string'
     ];
 }

@@ -2,17 +2,21 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Project;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProjectStatus
+ * Class ProjectStatus Version v2018_4
  *
- * @property integer $id
- * @property string $name
+ * Model for ProjectStatus
+ *
+ * @property Metadata $_info
+ * @property boolean $closedFlag
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
  * @property boolean $noTimeFlag
- * @property boolean $closedFlag
+ * @property integer $id
+ * @property string $name
  */
 class ProjectStatus extends Model
 {
@@ -22,11 +26,12 @@ class ProjectStatus extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'defaultFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
-        'noTimeFlag' => 'boolean',
+        '_info' => Metadata::class,
         'closedFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
+        'noTimeFlag' => 'boolean'
     ];
 }

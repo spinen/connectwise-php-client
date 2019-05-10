@@ -2,15 +2,21 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class MemberDelegation
+ * Class MemberDelegation Version v2018_6
  *
+ * Model for MemberDelegation
+ *
+ * @property Carbon $dateEnd
+ * @property Carbon $dateStart
+ * @property MemberReference $delegatedTo
+ * @property MemberReference $member
+ * @property Metadata $_info
  * @property integer $id
  * @property string $delegationType
- * @property carbon $dateStart
- * @property carbon $dateEnd
  */
 class MemberDelegation extends Model
 {
@@ -20,9 +26,12 @@ class MemberDelegation extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
+        'dateEnd' => Carbon::class,
+        'dateStart' => Carbon::class,
+        'delegatedTo' => MemberReference::class,
         'delegationType' => 'string',
-        'dateStart' => 'carbon',
-        'dateEnd' => 'carbon',
+        'id' => 'integer',
+        'member' => MemberReference::class
     ];
 }

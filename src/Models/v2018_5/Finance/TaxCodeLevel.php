@@ -2,25 +2,29 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TaxCodeLevel
+ * Class TaxCodeLevel Version v2018_5
  *
- * @property integer $id
- * @property integer $taxLevel
- * @property double $taxRate
- * @property string $rateType
- * @property double $taxableMax
- * @property string $caption
- * @property string $taxCodeXref
- * @property string $agencyXref
- * @property boolean $taxServicesFlag
+ * Model for TaxCodeLevel
+ *
+ * @property Metadata $_info
+ * @property boolean $singleUnitFlag
  * @property boolean $taxExpensesFlag
  * @property boolean $taxProductsFlag
- * @property boolean $singleUnitFlag
- * @property double $singleUnitMinimum
- * @property double $singleUnitMaximum
+ * @property boolean $taxServicesFlag
+ * @property float $singleUnitMaximum
+ * @property float $singleUnitMinimum
+ * @property float $taxRate
+ * @property float $taxableMax
+ * @property integer $id
+ * @property integer $taxLevel
+ * @property string $agencyXref
+ * @property string $caption
+ * @property string $rateType
+ * @property string $taxCodeXref
  */
 class TaxCodeLevel extends Model
 {
@@ -30,19 +34,20 @@ class TaxCodeLevel extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'taxLevel' => 'integer',
-        'taxRate' => 'double',
-        'rateType' => 'string',
-        'taxableMax' => 'double',
-        'caption' => 'string',
-        'taxCodeXref' => 'string',
+        '_info' => Metadata::class,
         'agencyXref' => 'string',
-        'taxServicesFlag' => 'boolean',
-        'taxExpensesFlag' => 'boolean',
-        'taxProductsFlag' => 'boolean',
+        'caption' => 'string',
+        'id' => 'integer',
+        'rateType' => 'string',
         'singleUnitFlag' => 'boolean',
-        'singleUnitMinimum' => 'double',
-        'singleUnitMaximum' => 'double',
+        'singleUnitMaximum' => 'float',
+        'singleUnitMinimum' => 'float',
+        'taxCodeXref' => 'string',
+        'taxExpensesFlag' => 'boolean',
+        'taxLevel' => 'integer',
+        'taxProductsFlag' => 'boolean',
+        'taxRate' => 'float',
+        'taxServicesFlag' => 'boolean',
+        'taxableMax' => 'float'
     ];
 }

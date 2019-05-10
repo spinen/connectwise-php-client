@@ -2,17 +2,20 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class MappedType
+ * Class MappedType Version v2019_1
+ *
+ * Model for MappedType
  *
  * @property integer $id
- * @property string $name
- * @property string $table
- * @property string $recIdField
- * @property string $glType
  * @property integer $sortOrder
+ * @property string $glType
+ * @property string $name
+ * @property string $recIdField
+ * @property string $table
  */
 class MappedType extends Model
 {
@@ -22,11 +25,11 @@ class MappedType extends Model
      * @var array
      */
     protected $casts = [
+        'glType' => 'string',
         'id' => 'integer',
         'name' => 'string',
-        'table' => 'string',
         'recIdField' => 'string',
-        'glType' => 'string',
         'sortOrder' => 'integer',
+        'table' => 'string'
     ];
 }

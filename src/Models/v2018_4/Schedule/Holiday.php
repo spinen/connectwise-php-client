@@ -2,17 +2,22 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Schedule;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Holiday
+ * Class Holiday Version v2018_4
  *
- * @property integer $id
- * @property string $name
+ * Model for Holiday
+ *
+ * @property HolidayListReference $holidayList
+ * @property Metadata $_info
  * @property boolean $allDayFlag
+ * @property integer $id
  * @property string $date
- * @property string $timeStart
+ * @property string $name
  * @property string $timeEnd
+ * @property string $timeStart
  */
 class Holiday extends Model
 {
@@ -22,11 +27,13 @@ class Holiday extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => Metadata::class,
         'allDayFlag' => 'boolean',
         'date' => 'string',
-        'timeStart' => 'string',
+        'holidayList' => HolidayListReference::class,
+        'id' => 'integer',
+        'name' => 'string',
         'timeEnd' => 'string',
+        'timeStart' => 'string'
     ];
 }

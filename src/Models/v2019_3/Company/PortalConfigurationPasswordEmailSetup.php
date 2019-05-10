@@ -2,24 +2,28 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PortalConfigurationPasswordEmailSetup
+ * Class PortalConfigurationPasswordEmailSetup Version v2019_3
  *
- * @property integer $id
- * @property boolean $validPasswordEmailUseCustomEmailFlag
- * @property string $validPasswordEmailFromFirstName
- * @property string $validPasswordEmailFromLastName
- * @property string $validPasswordEmailFromEmail
- * @property string $validPasswordEmailSubject
- * @property string $validPasswordEmailBody
+ * Model for PortalConfigurationPasswordEmailSetup
+ *
+ * @property Metadata $_info
  * @property boolean $invalidPasswordEmailUseCustomEmailFlag
+ * @property boolean $validPasswordEmailUseCustomEmailFlag
+ * @property integer $id
+ * @property string $invalidPasswordEmailBody
+ * @property string $invalidPasswordEmailFromEmail
  * @property string $invalidPasswordEmailFromFirstName
  * @property string $invalidPasswordEmailFromLastName
- * @property string $invalidPasswordEmailFromEmail
  * @property string $invalidPasswordEmailSubject
- * @property string $invalidPasswordEmailBody
+ * @property string $validPasswordEmailBody
+ * @property string $validPasswordEmailFromEmail
+ * @property string $validPasswordEmailFromFirstName
+ * @property string $validPasswordEmailFromLastName
+ * @property string $validPasswordEmailSubject
  */
 class PortalConfigurationPasswordEmailSetup extends Model
 {
@@ -29,18 +33,19 @@ class PortalConfigurationPasswordEmailSetup extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'validPasswordEmailUseCustomEmailFlag' => 'boolean',
-        'validPasswordEmailFromFirstName' => 'string',
-        'validPasswordEmailFromLastName' => 'string',
-        'validPasswordEmailFromEmail' => 'string',
-        'validPasswordEmailSubject' => 'string',
-        'validPasswordEmailBody' => 'string',
-        'invalidPasswordEmailUseCustomEmailFlag' => 'boolean',
+        'invalidPasswordEmailBody' => 'string',
+        'invalidPasswordEmailFromEmail' => 'string',
         'invalidPasswordEmailFromFirstName' => 'string',
         'invalidPasswordEmailFromLastName' => 'string',
-        'invalidPasswordEmailFromEmail' => 'string',
         'invalidPasswordEmailSubject' => 'string',
-        'invalidPasswordEmailBody' => 'string',
+        'invalidPasswordEmailUseCustomEmailFlag' => 'boolean',
+        'validPasswordEmailBody' => 'string',
+        'validPasswordEmailFromEmail' => 'string',
+        'validPasswordEmailFromFirstName' => 'string',
+        'validPasswordEmailFromLastName' => 'string',
+        'validPasswordEmailSubject' => 'string',
+        'validPasswordEmailUseCustomEmailFlag' => 'boolean'
     ];
 }

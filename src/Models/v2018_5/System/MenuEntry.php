@@ -2,21 +2,26 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class MenuEntry
+ * Class MenuEntry Version v2018_5
  *
+ * Model for MenuEntry
+ *
+ * @property MenuLocationReference $menuLocation
+ * @property Metadata $_info
+ * @property array $locationIds
+ * @property boolean $addAllLocations
+ * @property boolean $newWindowFlag
+ * @property boolean $removeAllLocations
  * @property integer $id
+ * @property integer $largeMenuIconId
+ * @property integer $smallMenuIconId
  * @property string $caption
  * @property string $link
- * @property boolean $newWindowFlag
- * @property array $locationIds
  * @property string $origin
- * @property boolean $addAllLocations
- * @property boolean $removeAllLocations
- * @property integer $smallMenuIconId
- * @property integer $largeMenuIconId
  */
 class MenuEntry extends Model
 {
@@ -26,15 +31,17 @@ class MenuEntry extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'caption' => 'string',
-        'link' => 'string',
-        'newWindowFlag' => 'boolean',
-        'locationIds' => 'array',
-        'origin' => 'string',
+        '_info' => Metadata::class,
         'addAllLocations' => 'boolean',
-        'removeAllLocations' => 'boolean',
-        'smallMenuIconId' => 'integer',
+        'caption' => 'string',
+        'id' => 'integer',
         'largeMenuIconId' => 'integer',
+        'link' => 'string',
+        'locationIds' => 'array',
+        'menuLocation' => MenuLocationReference::class,
+        'newWindowFlag' => 'boolean',
+        'origin' => 'string',
+        'removeAllLocations' => 'boolean',
+        'smallMenuIconId' => 'integer'
     ];
 }

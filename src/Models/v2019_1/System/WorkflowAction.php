@@ -2,23 +2,50 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class WorkflowAction
+ * Class WorkflowAction Version v2019_1
  *
- * @property integer $id
- * @property string $emailRecipient
- * @property string $emailFrom
- * @property string $subject
- * @property string $notes
- * @property integer $daysToExecute
- * @property integer $invoiceMinDays
+ * Model for WorkflowAction
+ *
+ * @property ActivityStatusReference $activityStatus
+ * @property ActivityTypeReference $activityType
+ * @property AutomateScriptReference $automateScript
+ * @property BoardReference $board
+ * @property CompanyStatusReference $companyStatus
+ * @property ContactReference $bccContact
+ * @property ContactReference $ccContact
+ * @property GenericBoardTeamReference $specificTeamTo
+ * @property GroupReference $group
+ * @property MemberReference $specificMemberFrom
+ * @property MemberReference $specificMemberTo
+ * @property Metadata $_info
+ * @property NotificationRecipientReference $notifyFrom
+ * @property NotificationRecipientReference $notifyWho
+ * @property NotifyTypeReference $notifyType
+ * @property OrderStatusReference $salesOrderStatus
+ * @property PriorityReference $servicePriority
+ * @property ProjectStatusReference $projectStatus
+ * @property ServiceStatusReference $boardStatus
+ * @property ServiceStatusReference $scriptFailStatus
+ * @property ServiceStatusReference $scriptSuccessStatus
+ * @property ServiceTemplateReference $serviceTemplate
+ * @property ServiceTypeReference $serviceType
+ * @property TrackReference $attachedTrack
+ * @property array $attachments
+ * @property boolean $auditNotesFlag
  * @property boolean $detailNotesFlag
  * @property boolean $internalNotesFlag
- * @property boolean $auditNotesFlag
  * @property boolean $updateOwnerFlag
- * @property array $attachments
+ * @property integer $daysToExecute
+ * @property integer $id
+ * @property integer $invoiceMinDays
+ * @property string $emailFrom
+ * @property string $emailRecipient
+ * @property string $notes
+ * @property string $subject
  */
 class WorkflowAction extends Model
 {
@@ -28,17 +55,41 @@ class WorkflowAction extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'emailRecipient' => 'string',
-        'emailFrom' => 'string',
-        'subject' => 'string',
-        'notes' => 'string',
-        'daysToExecute' => 'integer',
-        'invoiceMinDays' => 'integer',
-        'detailNotesFlag' => 'boolean',
-        'internalNotesFlag' => 'boolean',
-        'auditNotesFlag' => 'boolean',
-        'updateOwnerFlag' => 'boolean',
+        '_info' => Metadata::class,
+        'activityStatus' => ActivityStatusReference::class,
+        'activityType' => ActivityTypeReference::class,
+        'attachedTrack' => TrackReference::class,
         'attachments' => 'array',
+        'auditNotesFlag' => 'boolean',
+        'automateScript' => AutomateScriptReference::class,
+        'bccContact' => ContactReference::class,
+        'board' => BoardReference::class,
+        'boardStatus' => ServiceStatusReference::class,
+        'ccContact' => ContactReference::class,
+        'companyStatus' => CompanyStatusReference::class,
+        'daysToExecute' => 'integer',
+        'detailNotesFlag' => 'boolean',
+        'emailFrom' => 'string',
+        'emailRecipient' => 'string',
+        'group' => GroupReference::class,
+        'id' => 'integer',
+        'internalNotesFlag' => 'boolean',
+        'invoiceMinDays' => 'integer',
+        'notes' => 'string',
+        'notifyFrom' => NotificationRecipientReference::class,
+        'notifyType' => NotifyTypeReference::class,
+        'notifyWho' => NotificationRecipientReference::class,
+        'projectStatus' => ProjectStatusReference::class,
+        'salesOrderStatus' => OrderStatusReference::class,
+        'scriptFailStatus' => ServiceStatusReference::class,
+        'scriptSuccessStatus' => ServiceStatusReference::class,
+        'servicePriority' => PriorityReference::class,
+        'serviceTemplate' => ServiceTemplateReference::class,
+        'serviceType' => ServiceTypeReference::class,
+        'specificMemberFrom' => MemberReference::class,
+        'specificMemberTo' => MemberReference::class,
+        'specificTeamTo' => GenericBoardTeamReference::class,
+        'subject' => 'string',
+        'updateOwnerFlag' => 'boolean'
     ];
 }

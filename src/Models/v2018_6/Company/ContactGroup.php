@@ -2,18 +2,24 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ContactGroup
+ * Class ContactGroup Version v2018_6
  *
- * @property integer $id
- * @property string $description
+ * Model for ContactGroup
+ *
+ * @property ContactReference $contact
+ * @property GroupReference $group
+ * @property Metadata $_info
  * @property boolean $unsubscribeFlag
- * @property string $companyUnsubcribedEmailMessage
+ * @property integer $id
  * @property string $companyGroupUnsubscribedEmailMessage
- * @property string $contactUnsubscribedEmailMessage
+ * @property string $companyUnsubcribedEmailMessage
  * @property string $contactGroupUnsubscribedEmailMessage
+ * @property string $contactUnsubscribedEmailMessage
+ * @property string $description
  */
 class ContactGroup extends Model
 {
@@ -23,12 +29,15 @@ class ContactGroup extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'description' => 'string',
-        'unsubscribeFlag' => 'boolean',
-        'companyUnsubcribedEmailMessage' => 'string',
+        '_info' => Metadata::class,
         'companyGroupUnsubscribedEmailMessage' => 'string',
-        'contactUnsubscribedEmailMessage' => 'string',
+        'companyUnsubcribedEmailMessage' => 'string',
+        'contact' => ContactReference::class,
         'contactGroupUnsubscribedEmailMessage' => 'string',
+        'contactUnsubscribedEmailMessage' => 'string',
+        'description' => 'string',
+        'group' => GroupReference::class,
+        'id' => 'integer',
+        'unsubscribeFlag' => 'boolean'
     ];
 }

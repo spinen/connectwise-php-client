@@ -2,15 +2,19 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CompanyType
+ * Class CompanyType Version v2018_4
  *
- * @property integer $id
- * @property string $name
+ * Model for CompanyType
+ *
+ * @property Metadata $_info
  * @property boolean $defaultFlag
  * @property boolean $vendorFlag
+ * @property integer $id
+ * @property string $name
  */
 class CompanyType extends Model
 {
@@ -20,9 +24,10 @@ class CompanyType extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'defaultFlag' => 'boolean',
         'id' => 'integer',
         'name' => 'string',
-        'defaultFlag' => 'boolean',
-        'vendorFlag' => 'boolean',
+        'vendorFlag' => 'boolean'
     ];
 }

@@ -2,16 +2,21 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class RmaStatus
+ * Class RmaStatus Version v2018_6
  *
- * @property integer $id
- * @property string $name
- * @property boolean $defaultFlag
- * @property integer $sortOrder
+ * Model for RmaStatus
+ *
+ * @property Metadata $_info
+ * @property RmaStatusEmailTemplateReference $emailTemplate
  * @property boolean $closedFlag
+ * @property boolean $defaultFlag
+ * @property integer $id
+ * @property integer $sortOrder
+ * @property string $name
  */
 class RmaStatus extends Model
 {
@@ -21,10 +26,12 @@ class RmaStatus extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'closedFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'emailTemplate' => RmaStatusEmailTemplateReference::class,
         'id' => 'integer',
         'name' => 'string',
-        'defaultFlag' => 'boolean',
-        'sortOrder' => 'integer',
-        'closedFlag' => 'boolean',
+        'sortOrder' => 'integer'
     ];
 }

@@ -2,17 +2,22 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class MemberNotification
+ * Class MemberNotification Version v2019_3
  *
+ * Model for MemberNotification
+ *
+ * @property DocumentReference $attachment
+ * @property Metadata $_info
+ * @property boolean $readFlag
  * @property integer $id
+ * @property integer $recordId
  * @property string $message
  * @property string $notificationTrigger
- * @property integer $recordId
  * @property string $recordType
- * @property boolean $readFlag
  */
 class MemberNotification extends Model
 {
@@ -22,11 +27,13 @@ class MemberNotification extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'attachment' => DocumentReference::class,
         'id' => 'integer',
         'message' => 'string',
         'notificationTrigger' => 'string',
-        'recordId' => 'integer',
-        'recordType' => 'string',
         'readFlag' => 'boolean',
+        'recordId' => 'integer',
+        'recordType' => 'string'
     ];
 }

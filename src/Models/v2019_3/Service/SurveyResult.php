@@ -2,19 +2,25 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SurveyResult
+ * Class SurveyResult Version v2019_3
  *
+ * Model for SurveyResult
+ *
+ * @property CompanyReference $company
+ * @property ContactReference $contact
+ * @property Metadata $_info
+ * @property array $results
+ * @property boolean $contactMeFlag
  * @property integer $id
+ * @property integer $surveyId
  * @property integer $ticketId
+ * @property integer $totalPoints
  * @property string $emailAddress
  * @property string $footerResponse
- * @property boolean $contactMeFlag
- * @property array $results
- * @property integer $totalPoints
- * @property integer $surveyId
  */
 class SurveyResult extends Model
 {
@@ -24,13 +30,16 @@ class SurveyResult extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'ticketId' => 'integer',
+        '_info' => Metadata::class,
+        'company' => CompanyReference::class,
+        'contact' => ContactReference::class,
+        'contactMeFlag' => 'boolean',
         'emailAddress' => 'string',
         'footerResponse' => 'string',
-        'contactMeFlag' => 'boolean',
+        'id' => 'integer',
         'results' => 'array',
-        'totalPoints' => 'integer',
         'surveyId' => 'integer',
+        'ticketId' => 'integer',
+        'totalPoints' => 'integer'
     ];
 }

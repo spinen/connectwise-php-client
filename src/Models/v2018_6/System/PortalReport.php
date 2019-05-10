@@ -2,17 +2,22 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PortalReport
+ * Class PortalReport Version v2018_6
  *
+ * Model for PortalReport
+ *
+ * @property Metadata $_info
+ * @property PortalConfigurationReference $portalConfiguration
+ * @property boolean $customFlag
+ * @property boolean $displayFlag
+ * @property boolean $openSameWindowFlag
  * @property integer $id
  * @property string $name
  * @property string $url
- * @property boolean $openSameWindowFlag
- * @property boolean $customFlag
- * @property boolean $displayFlag
  */
 class PortalReport extends Model
 {
@@ -22,11 +27,13 @@ class PortalReport extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'url' => 'string',
-        'openSameWindowFlag' => 'boolean',
+        '_info' => Metadata::class,
         'customFlag' => 'boolean',
         'displayFlag' => 'boolean',
+        'id' => 'integer',
+        'name' => 'string',
+        'openSameWindowFlag' => 'boolean',
+        'portalConfiguration' => PortalConfigurationReference::class,
+        'url' => 'string'
     ];
 }

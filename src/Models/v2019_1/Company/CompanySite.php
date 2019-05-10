@@ -2,28 +2,38 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CompanySite
+ * Class CompanySite Version v2019_1
  *
+ * Model for CompanySite
+ *
+ * @property CalendarReference $calendar
+ * @property CompanyReference $company
+ * @property CountryReference $country
+ * @property EntityTypeReference $entityType
+ * @property Guid $mobileGuid
+ * @property Metadata $_info
+ * @property TimeZoneSetupReference $timeZone
+ * @property boolean $defaultBillingFlag
+ * @property boolean $defaultMailingFlag
+ * @property boolean $defaultShippingFlag
+ * @property boolean $inactiveFlag
+ * @property boolean $primaryAddressFlag
+ * @property float $expenseReimbursement
  * @property integer $id
- * @property string $name
+ * @property integer $taxCodeId
+ * @property string $addressFormat
  * @property string $addressLine1
  * @property string $addressLine2
  * @property string $city
+ * @property string $faxNumber
+ * @property string $name
+ * @property string $phoneNumber
  * @property string $state
  * @property string $zip
- * @property string $addressFormat
- * @property string $phoneNumber
- * @property string $faxNumber
- * @property integer $taxCodeId
- * @property double $expenseReimbursement
- * @property boolean $primaryAddressFlag
- * @property boolean $defaultShippingFlag
- * @property boolean $defaultBillingFlag
- * @property boolean $defaultMailingFlag
- * @property boolean $inactiveFlag
  */
 class CompanySite extends Model
 {
@@ -33,22 +43,29 @@ class CompanySite extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => Metadata::class,
+        'addressFormat' => 'string',
         'addressLine1' => 'string',
         'addressLine2' => 'string',
+        'calendar' => CalendarReference::class,
         'city' => 'string',
-        'state' => 'string',
-        'zip' => 'string',
-        'addressFormat' => 'string',
-        'phoneNumber' => 'string',
-        'faxNumber' => 'string',
-        'taxCodeId' => 'integer',
-        'expenseReimbursement' => 'double',
-        'primaryAddressFlag' => 'boolean',
-        'defaultShippingFlag' => 'boolean',
+        'company' => CompanyReference::class,
+        'country' => CountryReference::class,
         'defaultBillingFlag' => 'boolean',
         'defaultMailingFlag' => 'boolean',
+        'defaultShippingFlag' => 'boolean',
+        'entityType' => EntityTypeReference::class,
+        'expenseReimbursement' => 'float',
+        'faxNumber' => 'string',
+        'id' => 'integer',
         'inactiveFlag' => 'boolean',
+        'mobileGuid' => Guid::class,
+        'name' => 'string',
+        'phoneNumber' => 'string',
+        'primaryAddressFlag' => 'boolean',
+        'state' => 'string',
+        'taxCodeId' => 'integer',
+        'timeZone' => TimeZoneSetupReference::class,
+        'zip' => 'string'
     ];
 }

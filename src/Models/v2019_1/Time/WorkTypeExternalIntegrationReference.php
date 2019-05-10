@@ -2,11 +2,15 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class WorkTypeExternalIntegrationReference
+ * Class WorkTypeExternalIntegrationReference Version v2019_1
  *
+ * Model for WorkTypeExternalIntegrationReference
+ *
+ * @property Metadata $_info
  * @property integer $id
  * @property string $identifier
  * @property string $name
@@ -19,8 +23,9 @@ class WorkTypeExternalIntegrationReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
         'identifier' => 'string',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

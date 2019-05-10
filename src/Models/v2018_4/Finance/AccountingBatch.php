@@ -2,17 +2,21 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AccountingBatch
+ * Class AccountingBatch Version v2018_4
  *
+ * Model for AccountingBatch
+ *
+ * @property Metadata $_info
+ * @property boolean $closedFlag
+ * @property boolean $exportExpensesFlag
+ * @property boolean $exportInvoicesFlag
+ * @property boolean $exportProductsFlag
  * @property integer $id
  * @property string $batchIdentifier
- * @property boolean $exportInvoicesFlag
- * @property boolean $exportExpensesFlag
- * @property boolean $exportProductsFlag
- * @property boolean $closedFlag
  */
 class AccountingBatch extends Model
 {
@@ -22,11 +26,12 @@ class AccountingBatch extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
         'batchIdentifier' => 'string',
-        'exportInvoicesFlag' => 'boolean',
-        'exportExpensesFlag' => 'boolean',
-        'exportProductsFlag' => 'boolean',
         'closedFlag' => 'boolean',
+        'exportExpensesFlag' => 'boolean',
+        'exportInvoicesFlag' => 'boolean',
+        'exportProductsFlag' => 'boolean',
+        'id' => 'integer'
     ];
 }

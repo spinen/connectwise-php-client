@@ -2,13 +2,18 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Internal;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Session
+ * Class Session Version v2018_4
  *
- * @property integer $id
+ * Model for Session
+ *
+ * @property MemberReference $member
+ * @property TicketReference $ticket
  * @property integer $configurationId
+ * @property integer $id
  * @property string $sessionGuid
  */
 class Session extends Model
@@ -19,8 +24,10 @@ class Session extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
         'configurationId' => 'integer',
+        'id' => 'integer',
+        'member' => MemberReference::class,
         'sessionGuid' => 'string',
+        'ticket' => TicketReference::class
     ];
 }

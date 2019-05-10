@@ -2,51 +2,64 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Invoice
+ * Class Invoice Version v2018_6
  *
- * @property integer $id
- * @property string $invoiceNumber
- * @property string $type
- * @property string $applyToType
- * @property integer $applyToId
- * @property string $attention
- * @property string $reference
- * @property string $customerPO
- * @property integer $templateSetupId
- * @property integer $emailTemplateId
- * @property boolean $addToBatchEmailList
- * @property carbon $date
- * @property boolean $restrictDownpaymentFlag
- * @property integer $locationId
- * @property integer $departmentId
- * @property integer $territoryId
- * @property string $topComment
- * @property string $bottomComment
- * @property boolean $taxableFlag
- * @property string $internalNotes
- * @property boolean $downpaymentPreviouslyTaxedFlag
- * @property double $serviceTotal
- * @property carbon $dueDate
- * @property double $expenseTotal
- * @property double $productTotal
- * @property double $previousProgressApplied
- * @property double $serviceAdjustmentAmount
- * @property double $agreementAmount
- * @property double $downpaymentApplied
- * @property double $subtotal
- * @property double $total
- * @property double $remainingDownpayment
- * @property double $salesTax
- * @property string $adjustmentReason
- * @property string $adjustedBy
- * @property double $payments
- * @property double $credits
- * @property double $balance
- * @property boolean $specialInvoiceFlag
+ * Model for Invoice
+ *
+ * @property BillingStatusReference $status
+ * @property BillingTermsReference $billingTerms
+ * @property Carbon $date
+ * @property Carbon $dueDate
+ * @property CompanyReference $billToCompany
+ * @property CompanyReference $company
+ * @property CompanyReference $shipToCompany
+ * @property CurrencyReference $currency
+ * @property Metadata $_info
+ * @property SiteReference $billingSite
+ * @property SiteReference $shippingSite
+ * @property TaxCodeReference $taxCode
  * @property array $customFields
+ * @property boolean $addToBatchEmailList
+ * @property boolean $downpaymentPreviouslyTaxedFlag
+ * @property boolean $restrictDownpaymentFlag
+ * @property boolean $specialInvoiceFlag
+ * @property boolean $taxableFlag
+ * @property float $agreementAmount
+ * @property float $balance
+ * @property float $credits
+ * @property float $downpaymentApplied
+ * @property float $expenseTotal
+ * @property float $payments
+ * @property float $previousProgressApplied
+ * @property float $productTotal
+ * @property float $remainingDownpayment
+ * @property float $salesTax
+ * @property float $serviceAdjustmentAmount
+ * @property float $serviceTotal
+ * @property float $subtotal
+ * @property float $total
+ * @property integer $applyToId
+ * @property integer $departmentId
+ * @property integer $emailTemplateId
+ * @property integer $id
+ * @property integer $locationId
+ * @property integer $templateSetupId
+ * @property integer $territoryId
+ * @property string $adjustedBy
+ * @property string $adjustmentReason
+ * @property string $applyToType
+ * @property string $attention
+ * @property string $bottomComment
+ * @property string $customerPO
+ * @property string $internalNotes
+ * @property string $invoiceNumber
+ * @property string $reference
+ * @property string $topComment
+ * @property string $type
  */
 class Invoice extends Model
 {
@@ -56,45 +69,55 @@ class Invoice extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'invoiceNumber' => 'string',
-        'type' => 'string',
-        'applyToType' => 'string',
-        'applyToId' => 'integer',
-        'attention' => 'string',
-        'reference' => 'string',
-        'customerPO' => 'string',
-        'templateSetupId' => 'integer',
-        'emailTemplateId' => 'integer',
+        '_info' => Metadata::class,
         'addToBatchEmailList' => 'boolean',
-        'date' => 'carbon',
-        'restrictDownpaymentFlag' => 'boolean',
-        'locationId' => 'integer',
+        'adjustedBy' => 'string',
+        'adjustmentReason' => 'string',
+        'agreementAmount' => 'float',
+        'applyToId' => 'integer',
+        'applyToType' => 'string',
+        'attention' => 'string',
+        'balance' => 'float',
+        'billToCompany' => CompanyReference::class,
+        'billingSite' => SiteReference::class,
+        'billingTerms' => BillingTermsReference::class,
+        'bottomComment' => 'string',
+        'company' => CompanyReference::class,
+        'credits' => 'float',
+        'currency' => CurrencyReference::class,
+        'customFields' => 'array',
+        'customerPO' => 'string',
+        'date' => Carbon::class,
         'departmentId' => 'integer',
+        'downpaymentApplied' => 'float',
+        'downpaymentPreviouslyTaxedFlag' => 'boolean',
+        'dueDate' => Carbon::class,
+        'emailTemplateId' => 'integer',
+        'expenseTotal' => 'float',
+        'id' => 'integer',
+        'internalNotes' => 'string',
+        'invoiceNumber' => 'string',
+        'locationId' => 'integer',
+        'payments' => 'float',
+        'previousProgressApplied' => 'float',
+        'productTotal' => 'float',
+        'reference' => 'string',
+        'remainingDownpayment' => 'float',
+        'restrictDownpaymentFlag' => 'boolean',
+        'salesTax' => 'float',
+        'serviceAdjustmentAmount' => 'float',
+        'serviceTotal' => 'float',
+        'shipToCompany' => CompanyReference::class,
+        'shippingSite' => SiteReference::class,
+        'specialInvoiceFlag' => 'boolean',
+        'status' => BillingStatusReference::class,
+        'subtotal' => 'float',
+        'taxCode' => TaxCodeReference::class,
+        'taxableFlag' => 'boolean',
+        'templateSetupId' => 'integer',
         'territoryId' => 'integer',
         'topComment' => 'string',
-        'bottomComment' => 'string',
-        'taxableFlag' => 'boolean',
-        'internalNotes' => 'string',
-        'downpaymentPreviouslyTaxedFlag' => 'boolean',
-        'serviceTotal' => 'double',
-        'dueDate' => 'carbon',
-        'expenseTotal' => 'double',
-        'productTotal' => 'double',
-        'previousProgressApplied' => 'double',
-        'serviceAdjustmentAmount' => 'double',
-        'agreementAmount' => 'double',
-        'downpaymentApplied' => 'double',
-        'subtotal' => 'double',
-        'total' => 'double',
-        'remainingDownpayment' => 'double',
-        'salesTax' => 'double',
-        'adjustmentReason' => 'string',
-        'adjustedBy' => 'string',
-        'payments' => 'double',
-        'credits' => 'double',
-        'balance' => 'double',
-        'specialInvoiceFlag' => 'boolean',
-        'customFields' => 'array',
+        'total' => 'float',
+        'type' => 'string'
     ];
 }

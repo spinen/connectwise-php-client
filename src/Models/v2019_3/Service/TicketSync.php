@@ -2,21 +2,27 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TicketSync
+ * Class TicketSync Version v2019_3
  *
+ * Model for TicketSync
+ *
+ * @property CompanyReference $company
+ * @property IntegratorLoginReference $integratorLogin
+ * @property Metadata $_info
+ * @property boolean $internalAnalysisFlag
+ * @property boolean $problemDescriptionFlag
+ * @property boolean $resolutionFlag
  * @property integer $id
  * @property string $name
- * @property string $vendorType
- * @property string $url
- * @property string $userName
  * @property string $password
  * @property string $psg
- * @property boolean $problemDescriptionFlag
- * @property boolean $internalAnalysisFlag
- * @property boolean $resolutionFlag
+ * @property string $url
+ * @property string $userName
+ * @property string $vendorType
  */
 class TicketSync extends Model
 {
@@ -26,15 +32,18 @@ class TicketSync extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'company' => CompanyReference::class,
         'id' => 'integer',
+        'integratorLogin' => IntegratorLoginReference::class,
+        'internalAnalysisFlag' => 'boolean',
         'name' => 'string',
-        'vendorType' => 'string',
+        'password' => 'string',
+        'problemDescriptionFlag' => 'boolean',
+        'psg' => 'string',
+        'resolutionFlag' => 'boolean',
         'url' => 'string',
         'userName' => 'string',
-        'password' => 'string',
-        'psg' => 'string',
-        'problemDescriptionFlag' => 'boolean',
-        'internalAnalysisFlag' => 'boolean',
-        'resolutionFlag' => 'boolean',
+        'vendorType' => 'string'
     ];
 }

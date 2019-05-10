@@ -2,25 +2,32 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AgreementWorkType
+ * Class AgreementWorkType Version v2019_3
  *
+ * Model for AgreementWorkType
+ *
+ * @property Carbon $effectiveDate
+ * @property Carbon $endingDate
+ * @property CompanyReference $company
+ * @property Metadata $_info
+ * @property SiteReference $site
+ * @property WorkTypeReference $workType
+ * @property float $agreementLimit
+ * @property float $hoursMax
+ * @property float $hoursMin
+ * @property float $overageRate
+ * @property float $rate
+ * @property float $roundBillHours
+ * @property integer $agreementId
  * @property integer $id
  * @property integer $locationId
- * @property string $rateType
  * @property string $billTime
- * @property double $rate
- * @property double $hoursMax
- * @property double $hoursMin
- * @property double $roundBillHours
- * @property double $overageRate
  * @property string $overageRateType
- * @property double $agreementLimit
- * @property carbon $effectiveDate
- * @property carbon $endingDate
- * @property integer $agreementId
+ * @property string $rateType
  */
 class AgreementWorkType extends Model
 {
@@ -30,19 +37,23 @@ class AgreementWorkType extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'agreementId' => 'integer',
+        'agreementLimit' => 'float',
+        'billTime' => 'string',
+        'company' => CompanyReference::class,
+        'effectiveDate' => Carbon::class,
+        'endingDate' => Carbon::class,
+        'hoursMax' => 'float',
+        'hoursMin' => 'float',
         'id' => 'integer',
         'locationId' => 'integer',
-        'rateType' => 'string',
-        'billTime' => 'string',
-        'rate' => 'double',
-        'hoursMax' => 'double',
-        'hoursMin' => 'double',
-        'roundBillHours' => 'double',
-        'overageRate' => 'double',
+        'overageRate' => 'float',
         'overageRateType' => 'string',
-        'agreementLimit' => 'double',
-        'effectiveDate' => 'carbon',
-        'endingDate' => 'carbon',
-        'agreementId' => 'integer',
+        'rate' => 'float',
+        'rateType' => 'string',
+        'roundBillHours' => 'float',
+        'site' => SiteReference::class,
+        'workType' => WorkTypeReference::class
     ];
 }

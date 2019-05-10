@@ -2,17 +2,24 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Management
+ * Class Management Version v2019_3
  *
- * @property integer $id
- * @property carbon $runTime
+ * Model for Management
+ *
+ * @property Carbon $runTime
+ * @property ConfigurationStatusReference $addedConfigurationStatus
+ * @property ConfigurationStatusReference $deletedConfigurationStatus
+ * @property IntegratorLoginReference $integratorLogin
+ * @property Metadata $_info
  * @property boolean $scheduleExecutiveSummaryReportFlag
  * @property integer $executiveSummaryReportScheduleDay
  * @property integer $executiveSummaryReportScheduleHour
  * @property integer $executiveSummaryReportScheduleMinute
+ * @property integer $id
  */
 class Management extends Model
 {
@@ -22,11 +29,15 @@ class Management extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'runTime' => 'carbon',
-        'scheduleExecutiveSummaryReportFlag' => 'boolean',
+        '_info' => Metadata::class,
+        'addedConfigurationStatus' => ConfigurationStatusReference::class,
+        'deletedConfigurationStatus' => ConfigurationStatusReference::class,
         'executiveSummaryReportScheduleDay' => 'integer',
         'executiveSummaryReportScheduleHour' => 'integer',
         'executiveSummaryReportScheduleMinute' => 'integer',
+        'id' => 'integer',
+        'integratorLogin' => IntegratorLoginReference::class,
+        'runTime' => Carbon::class,
+        'scheduleExecutiveSummaryReportFlag' => 'boolean'
     ];
 }

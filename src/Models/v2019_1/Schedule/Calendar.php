@@ -2,27 +2,32 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Schedule;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Calendar
+ * Class Calendar Version v2019_1
  *
+ * Model for Calendar
+ *
+ * @property HolidayListReference $holidayList
+ * @property Metadata $_info
  * @property integer $id
- * @property string $name
- * @property string $mondayStartTime
- * @property string $mondayEndTime
- * @property string $tuesdayStartTime
- * @property string $tuesdayEndTime
- * @property string $wednesdayStartTime
- * @property string $wednesdayEndTime
- * @property string $thursdayStartTime
- * @property string $thursdayEndTime
- * @property string $fridayStartTime
  * @property string $fridayEndTime
- * @property string $saturdayStartTime
+ * @property string $fridayStartTime
+ * @property string $mondayEndTime
+ * @property string $mondayStartTime
+ * @property string $name
  * @property string $saturdayEndTime
- * @property string $sundayStartTime
+ * @property string $saturdayStartTime
  * @property string $sundayEndTime
+ * @property string $sundayStartTime
+ * @property string $thursdayEndTime
+ * @property string $thursdayStartTime
+ * @property string $tuesdayEndTime
+ * @property string $tuesdayStartTime
+ * @property string $wednesdayEndTime
+ * @property string $wednesdayStartTime
  */
 class Calendar extends Model
 {
@@ -32,21 +37,23 @@ class Calendar extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'mondayStartTime' => 'string',
-        'mondayEndTime' => 'string',
-        'tuesdayStartTime' => 'string',
-        'tuesdayEndTime' => 'string',
-        'wednesdayStartTime' => 'string',
-        'wednesdayEndTime' => 'string',
-        'thursdayStartTime' => 'string',
-        'thursdayEndTime' => 'string',
-        'fridayStartTime' => 'string',
+        '_info' => Metadata::class,
         'fridayEndTime' => 'string',
-        'saturdayStartTime' => 'string',
+        'fridayStartTime' => 'string',
+        'holidayList' => HolidayListReference::class,
+        'id' => 'integer',
+        'mondayEndTime' => 'string',
+        'mondayStartTime' => 'string',
+        'name' => 'string',
         'saturdayEndTime' => 'string',
-        'sundayStartTime' => 'string',
+        'saturdayStartTime' => 'string',
         'sundayEndTime' => 'string',
+        'sundayStartTime' => 'string',
+        'thursdayEndTime' => 'string',
+        'thursdayStartTime' => 'string',
+        'tuesdayEndTime' => 'string',
+        'tuesdayStartTime' => 'string',
+        'wednesdayEndTime' => 'string',
+        'wednesdayStartTime' => 'string'
     ];
 }

@@ -2,21 +2,32 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CorporateStructure
+ * Class CorporateStructure Version v2018_5
  *
+ * Model for CorporateStructure
+ *
+ * @property CurrencyReference $baseCurrency
+ * @property MemberReference $chiefOperatingOfficer
+ * @property MemberReference $controller
+ * @property MemberReference $dispatcher
+ * @property MemberReference $dutyManager
+ * @property MemberReference $president
+ * @property MemberReference $serviceManager
+ * @property Metadata $_info
  * @property integer $id
- * @property string $levelCount
+ * @property string $fiscalYearStart
+ * @property string $groupCaption
  * @property string $level1Name
  * @property string $level2Name
  * @property string $level3Name
  * @property string $level4Name
  * @property string $level5Name
- * @property string $fiscalYearStart
+ * @property string $levelCount
  * @property string $locationCaption
- * @property string $groupCaption
  */
 class CorporateStructure extends Model
 {
@@ -26,15 +37,23 @@ class CorporateStructure extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'baseCurrency' => CurrencyReference::class,
+        'chiefOperatingOfficer' => MemberReference::class,
+        'controller' => MemberReference::class,
+        'dispatcher' => MemberReference::class,
+        'dutyManager' => MemberReference::class,
+        'fiscalYearStart' => 'string',
+        'groupCaption' => 'string',
         'id' => 'integer',
-        'levelCount' => 'string',
         'level1Name' => 'string',
         'level2Name' => 'string',
         'level3Name' => 'string',
         'level4Name' => 'string',
         'level5Name' => 'string',
-        'fiscalYearStart' => 'string',
+        'levelCount' => 'string',
         'locationCaption' => 'string',
-        'groupCaption' => 'string',
+        'president' => MemberReference::class,
+        'serviceManager' => MemberReference::class
     ];
 }

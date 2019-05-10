@@ -2,14 +2,18 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BoardExcludedMember
+ * Class BoardExcludedMember Version v2018_4
  *
+ * Model for BoardExcludedMember
+ *
+ * @property Metadata $_info
+ * @property integer $boardId
  * @property integer $id
  * @property integer $memberId
- * @property integer $boardId
  */
 class BoardExcludedMember extends Model
 {
@@ -19,8 +23,9 @@ class BoardExcludedMember extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'memberId' => 'integer',
+        '_info' => Metadata::class,
         'boardId' => 'integer',
+        'id' => 'integer',
+        'memberId' => 'integer'
     ];
 }

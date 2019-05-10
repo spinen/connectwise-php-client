@@ -2,14 +2,19 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CustomReportParameter
+ * Class CustomReportParameter Version v2018_5
  *
+ * Model for CustomReportParameter
+ *
+ * @property CustomReportReference $customReport
+ * @property Metadata $_info
  * @property integer $id
- * @property string $name
  * @property string $captionName
+ * @property string $name
  */
 class CustomReportParameter extends Model
 {
@@ -19,8 +24,10 @@ class CustomReportParameter extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => Metadata::class,
         'captionName' => 'string',
+        'customReport' => CustomReportReference::class,
+        'id' => 'integer',
+        'name' => 'string'
     ];
 }

@@ -2,19 +2,27 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProductPickingShippingDetail
+ * Class ProductPickingShippingDetail Version v2019_2
  *
+ * Model for ProductPickingShippingDetail
+ *
+ * @property Metadata $_info
+ * @property ProductItemReference $productItem
+ * @property ShipmentMethodReference $shipmentMethod
+ * @property WarehouseBinReference $warehouseBin
+ * @property WarehouseReference $warehouse
+ * @property array $serialNumberIds
  * @property integer $id
+ * @property integer $lineNumber
  * @property integer $pickedQuantity
+ * @property integer $quantity
  * @property integer $shippedQuantity
  * @property string $serialNumber
- * @property array $serialNumberIds
  * @property string $trackingNumber
- * @property integer $lineNumber
- * @property integer $quantity
  */
 class ProductPickingShippingDetail extends Model
 {
@@ -24,13 +32,18 @@ class ProductPickingShippingDetail extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
+        'lineNumber' => 'integer',
         'pickedQuantity' => 'integer',
-        'shippedQuantity' => 'integer',
+        'productItem' => ProductItemReference::class,
+        'quantity' => 'integer',
         'serialNumber' => 'string',
         'serialNumberIds' => 'array',
+        'shipmentMethod' => ShipmentMethodReference::class,
+        'shippedQuantity' => 'integer',
         'trackingNumber' => 'string',
-        'lineNumber' => 'integer',
-        'quantity' => 'integer',
+        'warehouse' => WarehouseReference::class,
+        'warehouseBin' => WarehouseBinReference::class
     ];
 }

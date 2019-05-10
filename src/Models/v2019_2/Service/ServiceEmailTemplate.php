@@ -2,24 +2,31 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ServiceEmailTemplate
+ * Class ServiceEmailTemplate Version v2019_2
  *
- * @property integer $id
- * @property string $type
- * @property boolean $useSenderFlag
- * @property string $firstName
- * @property string $lastName
- * @property string $emailAddress
- * @property string $subject
- * @property string $body
+ * Model for ServiceEmailTemplate
+ *
+ * @property BoardReference $serviceBoard
+ * @property Metadata $_info
+ * @property ServiceStatusReference $serviceStatus
+ * @property ServiceSurveyReference $serviceSurvey
  * @property boolean $copySenderFlag
- * @property boolean $tasksFlag
- * @property boolean $resourceRecordsFlag
  * @property boolean $externalContactNotifications
  * @property boolean $internalContactNotifications
+ * @property boolean $resourceRecordsFlag
+ * @property boolean $tasksFlag
+ * @property boolean $useSenderFlag
+ * @property integer $id
+ * @property string $body
+ * @property string $emailAddress
+ * @property string $firstName
+ * @property string $lastName
+ * @property string $subject
+ * @property string $type
  */
 class ServiceEmailTemplate extends Model
 {
@@ -29,18 +36,22 @@ class ServiceEmailTemplate extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'type' => 'string',
-        'useSenderFlag' => 'boolean',
-        'firstName' => 'string',
-        'lastName' => 'string',
-        'emailAddress' => 'string',
-        'subject' => 'string',
+        '_info' => Metadata::class,
         'body' => 'string',
         'copySenderFlag' => 'boolean',
-        'tasksFlag' => 'boolean',
-        'resourceRecordsFlag' => 'boolean',
+        'emailAddress' => 'string',
         'externalContactNotifications' => 'boolean',
+        'firstName' => 'string',
+        'id' => 'integer',
         'internalContactNotifications' => 'boolean',
+        'lastName' => 'string',
+        'resourceRecordsFlag' => 'boolean',
+        'serviceBoard' => BoardReference::class,
+        'serviceStatus' => ServiceStatusReference::class,
+        'serviceSurvey' => ServiceSurveyReference::class,
+        'subject' => 'string',
+        'tasksFlag' => 'boolean',
+        'type' => 'string',
+        'useSenderFlag' => 'boolean'
     ];
 }

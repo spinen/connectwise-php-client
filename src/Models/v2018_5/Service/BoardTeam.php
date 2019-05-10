@@ -2,19 +2,24 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BoardTeam
+ * Class BoardTeam Version v2018_5
  *
- * @property integer $id
- * @property string $name
+ * Model for BoardTeam
+ *
+ * @property MemberReference $teamLeader
+ * @property Metadata $_info
  * @property array $members
  * @property boolean $defaultFlag
  * @property boolean $notifyOnTicketDelete
  * @property integer $boardId
- * @property integer $locationId
  * @property integer $businessUnitId
+ * @property integer $id
+ * @property integer $locationId
+ * @property string $name
  */
 class BoardTeam extends Model
 {
@@ -24,13 +29,15 @@ class BoardTeam extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'members' => 'array',
-        'defaultFlag' => 'boolean',
-        'notifyOnTicketDelete' => 'boolean',
+        '_info' => Metadata::class,
         'boardId' => 'integer',
-        'locationId' => 'integer',
         'businessUnitId' => 'integer',
+        'defaultFlag' => 'boolean',
+        'id' => 'integer',
+        'locationId' => 'integer',
+        'members' => 'array',
+        'name' => 'string',
+        'notifyOnTicketDelete' => 'boolean',
+        'teamLeader' => MemberReference::class
     ];
 }

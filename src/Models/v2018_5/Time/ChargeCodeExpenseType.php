@@ -2,11 +2,17 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ChargeCodeExpenseType
+ * Class ChargeCodeExpenseType Version v2018_5
  *
+ * Model for ChargeCodeExpenseType
+ *
+ * @property ChargeCodeReference $chargeCode
+ * @property ExpenseTypeReference $type
+ * @property Metadata $_info
  * @property integer $id
  */
 class ChargeCodeExpenseType extends Model
@@ -17,6 +23,9 @@ class ChargeCodeExpenseType extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'chargeCode' => ChargeCodeReference::class,
         'id' => 'integer',
+        'type' => ExpenseTypeReference::class
     ];
 }

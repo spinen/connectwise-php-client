@@ -2,37 +2,47 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SalesQuota
+ * Class SalesQuota Version v2018_5
  *
- * @property integer $id
+ * Model for SalesQuota
+ *
+ * @property CurrencyReference $currency
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property ProductCategoryReference $category
+ * @property ProductSubCategoryReference $subCategory
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
+ * @property float $aprilMargin
+ * @property float $aprilRevenue
+ * @property float $augustMargin
+ * @property float $augustRevenue
+ * @property float $decemberMargin
+ * @property float $decemberRevenue
+ * @property float $februaryMargin
+ * @property float $februaryRevenue
+ * @property float $januaryMargin
+ * @property float $januaryRevenue
+ * @property float $julyMargin
+ * @property float $julyRevenue
+ * @property float $juneMargin
+ * @property float $juneRevenue
+ * @property float $marchMargin
+ * @property float $marchRevenue
+ * @property float $mayMargin
+ * @property float $mayRevenue
+ * @property float $novemberMargin
+ * @property float $novemberRevenue
+ * @property float $octoberMargin
+ * @property float $octoberRevenue
+ * @property float $septemberMargin
+ * @property float $septemberRevenue
  * @property integer $forecastYear
- * @property double $januaryRevenue
- * @property double $januaryMargin
- * @property double $februaryRevenue
- * @property double $februaryMargin
- * @property double $marchRevenue
- * @property double $marchMargin
- * @property double $aprilRevenue
- * @property double $aprilMargin
- * @property double $mayRevenue
- * @property double $mayMargin
- * @property double $juneRevenue
- * @property double $juneMargin
- * @property double $julyRevenue
- * @property double $julyMargin
- * @property double $augustRevenue
- * @property double $augustMargin
- * @property double $septemberRevenue
- * @property double $septemberMargin
- * @property double $octoberRevenue
- * @property double $octoberMargin
- * @property double $novemberRevenue
- * @property double $novemberMargin
- * @property double $decemberRevenue
- * @property double $decemberMargin
+ * @property integer $id
  */
 class SalesQuota extends Model
 {
@@ -42,31 +52,38 @@ class SalesQuota extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
+        'aprilMargin' => 'float',
+        'aprilRevenue' => 'float',
+        'augustMargin' => 'float',
+        'augustRevenue' => 'float',
+        'category' => ProductCategoryReference::class,
+        'currency' => CurrencyReference::class,
+        'decemberMargin' => 'float',
+        'decemberRevenue' => 'float',
+        'department' => SystemDepartmentReference::class,
+        'februaryMargin' => 'float',
+        'februaryRevenue' => 'float',
         'forecastYear' => 'integer',
-        'januaryRevenue' => 'double',
-        'januaryMargin' => 'double',
-        'februaryRevenue' => 'double',
-        'februaryMargin' => 'double',
-        'marchRevenue' => 'double',
-        'marchMargin' => 'double',
-        'aprilRevenue' => 'double',
-        'aprilMargin' => 'double',
-        'mayRevenue' => 'double',
-        'mayMargin' => 'double',
-        'juneRevenue' => 'double',
-        'juneMargin' => 'double',
-        'julyRevenue' => 'double',
-        'julyMargin' => 'double',
-        'augustRevenue' => 'double',
-        'augustMargin' => 'double',
-        'septemberRevenue' => 'double',
-        'septemberMargin' => 'double',
-        'octoberRevenue' => 'double',
-        'octoberMargin' => 'double',
-        'novemberRevenue' => 'double',
-        'novemberMargin' => 'double',
-        'decemberRevenue' => 'double',
-        'decemberMargin' => 'double',
+        'id' => 'integer',
+        'januaryMargin' => 'float',
+        'januaryRevenue' => 'float',
+        'julyMargin' => 'float',
+        'julyRevenue' => 'float',
+        'juneMargin' => 'float',
+        'juneRevenue' => 'float',
+        'location' => SystemLocationReference::class,
+        'marchMargin' => 'float',
+        'marchRevenue' => 'float',
+        'mayMargin' => 'float',
+        'mayRevenue' => 'float',
+        'member' => MemberReference::class,
+        'novemberMargin' => 'float',
+        'novemberRevenue' => 'float',
+        'octoberMargin' => 'float',
+        'octoberRevenue' => 'float',
+        'septemberMargin' => 'float',
+        'septemberRevenue' => 'float',
+        'subCategory' => ProductSubCategoryReference::class
     ];
 }

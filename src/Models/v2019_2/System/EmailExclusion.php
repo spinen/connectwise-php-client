@@ -2,11 +2,15 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class EmailExclusion
+ * Class EmailExclusion Version v2019_2
  *
+ * Model for EmailExclusion
+ *
+ * @property Metadata $_info
  * @property integer $id
  * @property string $description
  */
@@ -18,7 +22,8 @@ class EmailExclusion extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
         'description' => 'string',
+        'id' => 'integer'
     ];
 }

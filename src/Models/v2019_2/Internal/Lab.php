@@ -2,15 +2,19 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Internal;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Lab
+ * Class Lab Version v2019_2
  *
+ * Model for Lab
+ *
+ * @property Metadata $_info
+ * @property boolean $adminLock
+ * @property boolean $inactiveFlag
  * @property integer $id
  * @property string $identifier
- * @property boolean $inactiveFlag
- * @property boolean $adminLock
  */
 class Lab extends Model
 {
@@ -20,9 +24,10 @@ class Lab extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'adminLock' => 'boolean',
         'id' => 'integer',
         'identifier' => 'string',
-        'inactiveFlag' => 'boolean',
-        'adminLock' => 'boolean',
+        'inactiveFlag' => 'boolean'
     ];
 }

@@ -2,15 +2,21 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ConfigurationTypeQuestionValue
+ * Class ConfigurationTypeQuestionValue Version v2019_1
  *
- * @property integer $id
- * @property string $value
+ * Model for ConfigurationTypeQuestionValue
+ *
+ * @property ConfigurationTypeQuestionReference $question
+ * @property ConfigurationTypeReference $configurationType
+ * @property Metadata $_info
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
+ * @property integer $id
+ * @property string $value
  */
 class ConfigurationTypeQuestionValue extends Model
 {
@@ -20,9 +26,12 @@ class ConfigurationTypeQuestionValue extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'value' => 'string',
+        '_info' => Metadata::class,
+        'configurationType' => ConfigurationTypeReference::class,
         'defaultFlag' => 'boolean',
+        'id' => 'integer',
         'inactiveFlag' => 'boolean',
+        'question' => ConfigurationTypeQuestionReference::class,
+        'value' => 'string'
     ];
 }

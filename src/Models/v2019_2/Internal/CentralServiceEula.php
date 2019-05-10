@@ -2,17 +2,22 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Internal;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CentralServiceEula
+ * Class CentralServiceEula Version v2019_2
  *
+ * Model for CentralServiceEula
+ *
+ * @property Carbon $signedDate
+ * @property MemberReference $signedMember
+ * @property Metadata $_info
+ * @property boolean $acceptedFlag
  * @property integer $id
  * @property string $eulaKey
- * @property boolean $acceptedFlag
  * @property string $eulaServiceLink
  * @property string $eulaUiLink
- * @property carbon $signedDate
  */
 class CentralServiceEula extends Model
 {
@@ -22,11 +27,13 @@ class CentralServiceEula extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'eulaKey' => 'string',
+        '_info' => Metadata::class,
         'acceptedFlag' => 'boolean',
+        'eulaKey' => 'string',
         'eulaServiceLink' => 'string',
         'eulaUiLink' => 'string',
-        'signedDate' => 'carbon',
+        'id' => 'integer',
+        'signedDate' => Carbon::class,
+        'signedMember' => MemberReference::class
     ];
 }

@@ -2,15 +2,19 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ServiceLocation
+ * Class ServiceLocation Version v2018_4
  *
+ * Model for ServiceLocation
+ *
+ * @property Metadata $_info
+ * @property boolean $defaultFlag
  * @property integer $id
  * @property string $name
  * @property string $where
- * @property boolean $defaultFlag
  */
 class ServiceLocation extends Model
 {
@@ -20,9 +24,10 @@ class ServiceLocation extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'defaultFlag' => 'boolean',
         'id' => 'integer',
         'name' => 'string',
-        'where' => 'string',
-        'defaultFlag' => 'boolean',
+        'where' => 'string'
     ];
 }

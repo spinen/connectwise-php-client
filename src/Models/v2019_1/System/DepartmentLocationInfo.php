@@ -2,11 +2,17 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class DepartmentLocationInfo
+ * Class DepartmentLocationInfo Version v2019_1
  *
+ * Model for DepartmentLocationInfo
+ *
+ * @property Metadata $_info
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
  * @property integer $id
  */
 class DepartmentLocationInfo extends Model
@@ -17,6 +23,9 @@ class DepartmentLocationInfo extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'department' => SystemDepartmentReference::class,
         'id' => 'integer',
+        'location' => SystemLocationReference::class
     ];
 }

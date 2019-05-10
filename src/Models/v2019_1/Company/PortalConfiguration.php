@@ -2,28 +2,33 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PortalConfiguration
+ * Class PortalConfiguration Version v2019_1
  *
- * @property integer $id
- * @property string $name
- * @property boolean $defaultFlag
- * @property string $loginBackgroundColor
- * @property string $portalBackgroundColor
- * @property string $menuColor
- * @property string $buttonColor
- * @property string $headerColor
- * @property string $url
- * @property string $language
- * @property string $welcomeText
- * @property array $boardIds
+ * Model for PortalConfiguration
+ *
+ * @property CompanyReference $company
+ * @property Metadata $_info
  * @property array $agreementTypeIds
+ * @property array $boardIds
  * @property array $configTypeIds
  * @property array $locationIds
- * @property boolean $portalImageCopySuccessFlag
+ * @property boolean $defaultFlag
  * @property boolean $displayVendorFlag
+ * @property boolean $portalImageCopySuccessFlag
+ * @property integer $id
+ * @property string $buttonColor
+ * @property string $headerColor
+ * @property string $language
+ * @property string $loginBackgroundColor
+ * @property string $menuColor
+ * @property string $name
+ * @property string $portalBackgroundColor
+ * @property string $url
+ * @property string $welcomeText
  */
 class PortalConfiguration extends Model
 {
@@ -33,22 +38,24 @@ class PortalConfiguration extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'defaultFlag' => 'boolean',
-        'loginBackgroundColor' => 'string',
-        'portalBackgroundColor' => 'string',
-        'menuColor' => 'string',
-        'buttonColor' => 'string',
-        'headerColor' => 'string',
-        'url' => 'string',
-        'language' => 'string',
-        'welcomeText' => 'string',
-        'boardIds' => 'array',
+        '_info' => Metadata::class,
         'agreementTypeIds' => 'array',
+        'boardIds' => 'array',
+        'buttonColor' => 'string',
+        'company' => CompanyReference::class,
         'configTypeIds' => 'array',
-        'locationIds' => 'array',
-        'portalImageCopySuccessFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
         'displayVendorFlag' => 'boolean',
+        'headerColor' => 'string',
+        'id' => 'integer',
+        'language' => 'string',
+        'locationIds' => 'array',
+        'loginBackgroundColor' => 'string',
+        'menuColor' => 'string',
+        'name' => 'string',
+        'portalBackgroundColor' => 'string',
+        'portalImageCopySuccessFlag' => 'boolean',
+        'url' => 'string',
+        'welcomeText' => 'string'
     ];
 }

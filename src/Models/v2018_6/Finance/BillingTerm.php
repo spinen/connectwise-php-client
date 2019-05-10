@@ -2,15 +2,19 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BillingTerm
+ * Class BillingTerm Version v2018_6
  *
- * @property integer $id
- * @property string $name
+ * Model for BillingTerm
+ *
+ * @property Metadata $_info
  * @property boolean $defaultFlag
  * @property integer $dueDays
+ * @property integer $id
+ * @property string $name
  * @property string $termsXref
  */
 class BillingTerm extends Model
@@ -21,10 +25,11 @@ class BillingTerm extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
         'dueDays' => 'integer',
-        'termsXref' => 'string',
+        'id' => 'integer',
+        'name' => 'string',
+        'termsXref' => 'string'
     ];
 }

@@ -2,63 +2,88 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Project;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Ticket
+ * Class Ticket Version v2019_1
  *
- * @property integer $id
- * @property string $summary
- * @property boolean $isIssueFlag
- * @property string $wbsCode
- * @property string $siteName
- * @property string $addressLine1
- * @property string $addressLine2
- * @property string $city
- * @property string $stateIdentifier
- * @property string $zip
- * @property string $contactName
- * @property string $contactPhoneNumber
- * @property string $contactPhoneExtension
- * @property string $contactEmailAddress
- * @property carbon $requiredDate
- * @property double $budgetHours
- * @property integer $knowledgeBaseCategoryId
- * @property integer $knowledgeBaseSubCategoryId
- * @property integer $knowledgeBaseLinkId
- * @property string $knowledgeBaseLinkType
+ * Model for Ticket
+ *
+ * @property AgreementReference $agreement
+ * @property BoardReference $board
+ * @property Carbon $estimatedStartDate
+ * @property Carbon $requiredDate
+ * @property CompanyReference $company
+ * @property ContactReference $contact
+ * @property CountryReference $country
+ * @property CurrencyReference $currency
+ * @property Guid $mobileGuid
+ * @property MemberReference $owner
+ * @property Metadata $_info
+ * @property OpportunityReference $opportunity
+ * @property PriorityReference $priority
+ * @property ProjectPhaseReference $phase
+ * @property ProjectReference $project
+ * @property ServiceItemReference $item
+ * @property ServiceLocationReference $serviceLocation
+ * @property ServiceSourceReference $source
+ * @property ServiceStatusReference $status
+ * @property ServiceSubTypeReference $subType
+ * @property ServiceTypeReference $type
+ * @property SiteReference $site
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
+ * @property array $customFields
  * @property boolean $allowAllClientsPortalView
- * @property boolean $customerUpdatedFlag
+ * @property boolean $approved
+ * @property boolean $automaticEmailCcFlag
  * @property boolean $automaticEmailContactFlag
  * @property boolean $automaticEmailResourceFlag
- * @property boolean $automaticEmailCcFlag
- * @property string $automaticEmailCc
- * @property string $closedDate
- * @property string $closedBy
  * @property boolean $closedFlag
- * @property double $actualHours
- * @property boolean $approved
- * @property string $subBillingMethod
- * @property double $subBillingAmount
- * @property string $subDateAccepted
- * @property string $resources
- * @property string $billTime
+ * @property boolean $customerUpdatedFlag
+ * @property boolean $isIssueFlag
+ * @property boolean $lagNonworkingDaysFlag
+ * @property boolean $predecessorClosedFlag
+ * @property boolean $processNotifications
+ * @property boolean $skipCallback
+ * @property float $actualHours
+ * @property float $budgetHours
+ * @property float $subBillingAmount
+ * @property integer $duration
+ * @property integer $id
+ * @property integer $knowledgeBaseCategoryId
+ * @property integer $knowledgeBaseLinkId
+ * @property integer $knowledgeBaseSubCategoryId
+ * @property integer $lagDays
+ * @property integer $predecessorId
+ * @property string $addressLine1
+ * @property string $addressLine2
+ * @property string $automaticEmailCc
  * @property string $billExpenses
  * @property string $billProducts
- * @property string $predecessorType
- * @property integer $predecessorId
- * @property boolean $predecessorClosedFlag
- * @property integer $lagDays
- * @property boolean $lagNonworkingDaysFlag
- * @property carbon $estimatedStartDate
- * @property integer $duration
+ * @property string $billTime
+ * @property string $city
+ * @property string $closedBy
+ * @property string $closedDate
+ * @property string $contactEmailAddress
+ * @property string $contactEmailLookup
+ * @property string $contactName
+ * @property string $contactPhoneExtension
+ * @property string $contactPhoneNumber
  * @property string $initialDescription
  * @property string $initialInternalAnalysis
  * @property string $initialResolution
- * @property string $contactEmailLookup
- * @property boolean $processNotifications
- * @property boolean $skipCallback
- * @property array $customFields
+ * @property string $knowledgeBaseLinkType
+ * @property string $predecessorType
+ * @property string $resources
+ * @property string $siteName
+ * @property string $stateIdentifier
+ * @property string $subBillingMethod
+ * @property string $subDateAccepted
+ * @property string $summary
+ * @property string $wbsCode
+ * @property string $zip
  */
 class Ticket extends Model
 {
@@ -68,57 +93,79 @@ class Ticket extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'summary' => 'string',
-        'isIssueFlag' => 'boolean',
-        'wbsCode' => 'string',
-        'siteName' => 'string',
+        '_info' => Metadata::class,
+        'actualHours' => 'float',
         'addressLine1' => 'string',
         'addressLine2' => 'string',
-        'city' => 'string',
-        'stateIdentifier' => 'string',
-        'zip' => 'string',
-        'contactName' => 'string',
-        'contactPhoneNumber' => 'string',
-        'contactPhoneExtension' => 'string',
-        'contactEmailAddress' => 'string',
-        'requiredDate' => 'carbon',
-        'budgetHours' => 'double',
-        'knowledgeBaseCategoryId' => 'integer',
-        'knowledgeBaseSubCategoryId' => 'integer',
-        'knowledgeBaseLinkId' => 'integer',
-        'knowledgeBaseLinkType' => 'string',
+        'agreement' => AgreementReference::class,
         'allowAllClientsPortalView' => 'boolean',
-        'customerUpdatedFlag' => 'boolean',
+        'approved' => 'boolean',
+        'automaticEmailCc' => 'string',
+        'automaticEmailCcFlag' => 'boolean',
         'automaticEmailContactFlag' => 'boolean',
         'automaticEmailResourceFlag' => 'boolean',
-        'automaticEmailCcFlag' => 'boolean',
-        'automaticEmailCc' => 'string',
-        'closedDate' => 'string',
-        'closedBy' => 'string',
-        'closedFlag' => 'boolean',
-        'actualHours' => 'double',
-        'approved' => 'boolean',
-        'subBillingMethod' => 'string',
-        'subBillingAmount' => 'double',
-        'subDateAccepted' => 'string',
-        'resources' => 'string',
-        'billTime' => 'string',
         'billExpenses' => 'string',
         'billProducts' => 'string',
-        'predecessorType' => 'string',
-        'predecessorId' => 'integer',
-        'predecessorClosedFlag' => 'boolean',
-        'lagDays' => 'integer',
-        'lagNonworkingDaysFlag' => 'boolean',
-        'estimatedStartDate' => 'carbon',
+        'billTime' => 'string',
+        'board' => BoardReference::class,
+        'budgetHours' => 'float',
+        'city' => 'string',
+        'closedBy' => 'string',
+        'closedDate' => 'string',
+        'closedFlag' => 'boolean',
+        'company' => CompanyReference::class,
+        'contact' => ContactReference::class,
+        'contactEmailAddress' => 'string',
+        'contactEmailLookup' => 'string',
+        'contactName' => 'string',
+        'contactPhoneExtension' => 'string',
+        'contactPhoneNumber' => 'string',
+        'country' => CountryReference::class,
+        'currency' => CurrencyReference::class,
+        'customFields' => 'array',
+        'customerUpdatedFlag' => 'boolean',
+        'department' => SystemDepartmentReference::class,
         'duration' => 'integer',
+        'estimatedStartDate' => Carbon::class,
+        'id' => 'integer',
         'initialDescription' => 'string',
         'initialInternalAnalysis' => 'string',
         'initialResolution' => 'string',
-        'contactEmailLookup' => 'string',
+        'isIssueFlag' => 'boolean',
+        'item' => ServiceItemReference::class,
+        'knowledgeBaseCategoryId' => 'integer',
+        'knowledgeBaseLinkId' => 'integer',
+        'knowledgeBaseLinkType' => 'string',
+        'knowledgeBaseSubCategoryId' => 'integer',
+        'lagDays' => 'integer',
+        'lagNonworkingDaysFlag' => 'boolean',
+        'location' => SystemLocationReference::class,
+        'mobileGuid' => Guid::class,
+        'opportunity' => OpportunityReference::class,
+        'owner' => MemberReference::class,
+        'phase' => ProjectPhaseReference::class,
+        'predecessorClosedFlag' => 'boolean',
+        'predecessorId' => 'integer',
+        'predecessorType' => 'string',
+        'priority' => PriorityReference::class,
         'processNotifications' => 'boolean',
+        'project' => ProjectReference::class,
+        'requiredDate' => Carbon::class,
+        'resources' => 'string',
+        'serviceLocation' => ServiceLocationReference::class,
+        'site' => SiteReference::class,
+        'siteName' => 'string',
         'skipCallback' => 'boolean',
-        'customFields' => 'array',
+        'source' => ServiceSourceReference::class,
+        'stateIdentifier' => 'string',
+        'status' => ServiceStatusReference::class,
+        'subBillingAmount' => 'float',
+        'subBillingMethod' => 'string',
+        'subDateAccepted' => 'string',
+        'subType' => ServiceSubTypeReference::class,
+        'summary' => 'string',
+        'type' => ServiceTypeReference::class,
+        'wbsCode' => 'string',
+        'zip' => 'string'
     ];
 }

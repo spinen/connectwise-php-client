@@ -2,23 +2,29 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AgreementTypeWorkType
+ * Class AgreementTypeWorkType Version v2019_3
  *
+ * Model for AgreementTypeWorkType
+ *
+ * @property AgreementTypeReference $type
+ * @property Carbon $effectiveDate
+ * @property Carbon $endingDate
+ * @property Metadata $_info
+ * @property WorkTypeReference $workType
+ * @property float $hoursMax
+ * @property float $hoursMin
+ * @property float $limitTo
+ * @property float $overageRate
+ * @property float $rate
+ * @property float $roundBillHours
  * @property integer $id
- * @property carbon $effectiveDate
- * @property carbon $endingDate
- * @property double $rate
- * @property string $rateType
  * @property string $billTime
- * @property double $hoursMin
- * @property double $hoursMax
- * @property double $roundBillHours
- * @property double $overageRate
  * @property string $overageRateType
- * @property double $limitTo
+ * @property string $rateType
  */
 class AgreementTypeWorkType extends Model
 {
@@ -28,17 +34,20 @@ class AgreementTypeWorkType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'effectiveDate' => 'carbon',
-        'endingDate' => 'carbon',
-        'rate' => 'double',
-        'rateType' => 'string',
+        '_info' => Metadata::class,
         'billTime' => 'string',
-        'hoursMin' => 'double',
-        'hoursMax' => 'double',
-        'roundBillHours' => 'double',
-        'overageRate' => 'double',
+        'effectiveDate' => Carbon::class,
+        'endingDate' => Carbon::class,
+        'hoursMax' => 'float',
+        'hoursMin' => 'float',
+        'id' => 'integer',
+        'limitTo' => 'float',
+        'overageRate' => 'float',
         'overageRateType' => 'string',
-        'limitTo' => 'double',
+        'rate' => 'float',
+        'rateType' => 'string',
+        'roundBillHours' => 'float',
+        'type' => AgreementTypeReference::class,
+        'workType' => WorkTypeReference::class
     ];
 }

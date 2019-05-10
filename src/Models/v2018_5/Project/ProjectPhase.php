@@ -2,46 +2,62 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Project;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProjectPhase
+ * Class ProjectPhase Version v2018_5
  *
- * @property integer $id
- * @property integer $projectId
- * @property string $description
- * @property string $wbsCode
- * @property string $billTime
- * @property string $billExpenses
- * @property string $billProducts
- * @property boolean $markAsMilestoneFlag
- * @property string $notes
- * @property carbon $deadlineDate
- * @property boolean $billSeparatelyFlag
- * @property string $billingMethod
- * @property double $scheduledHours
- * @property string $scheduledStart
- * @property string $scheduledEnd
- * @property double $actualHours
- * @property string $actualStart
- * @property string $actualEnd
- * @property double $budgetHours
- * @property integer $locationId
- * @property integer $businessUnitId
- * @property double $hourlyRate
- * @property carbon $billingStartDate
+ * Model for ProjectPhase
+ *
+ * @property AgreementReference $agreement
+ * @property Carbon $billingStartDate
+ * @property Carbon $deadlineDate
+ * @property CompanyReference $billToCompany
+ * @property CompanyReference $shipToCompany
+ * @property ContactReference $billToContact
+ * @property ContactReference $shipToContact
+ * @property CurrencyReference $currency
+ * @property Metadata $_info
+ * @property OpportunityReference $opportunity
+ * @property PhaseStatusReference $status
+ * @property ProjectBoardReference $board
+ * @property ProjectPhaseReference $parentPhase
+ * @property SiteReference $billToSite
+ * @property SiteReference $shipToSite
+ * @property array $customFields
  * @property boolean $billPhaseClosedFlag
  * @property boolean $billProjectClosedFlag
- * @property double $downpayment
+ * @property boolean $billSeparatelyFlag
+ * @property boolean $markAsMilestoneFlag
+ * @property float $actualHours
+ * @property float $budgetHours
+ * @property float $downpayment
+ * @property float $estimatedExpenseCost
+ * @property float $estimatedExpenseRevenue
+ * @property float $estimatedProductCost
+ * @property float $estimatedProductRevenue
+ * @property float $estimatedTimeCost
+ * @property float $estimatedTimeRevenue
+ * @property float $hourlyRate
+ * @property float $poAmount
+ * @property float $scheduledHours
+ * @property integer $businessUnitId
+ * @property integer $id
+ * @property integer $locationId
+ * @property integer $projectId
+ * @property string $actualEnd
+ * @property string $actualStart
+ * @property string $billExpenses
+ * @property string $billProducts
+ * @property string $billTime
+ * @property string $billingMethod
+ * @property string $description
+ * @property string $notes
  * @property string $poNumber
- * @property double $poAmount
- * @property double $estimatedTimeCost
- * @property double $estimatedExpenseCost
- * @property double $estimatedProductCost
- * @property double $estimatedTimeRevenue
- * @property double $estimatedExpenseRevenue
- * @property double $estimatedProductRevenue
- * @property array $customFields
+ * @property string $scheduledEnd
+ * @property string $scheduledStart
+ * @property string $wbsCode
  */
 class ProjectPhase extends Model
 {
@@ -51,40 +67,53 @@ class ProjectPhase extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'projectId' => 'integer',
-        'description' => 'string',
-        'wbsCode' => 'string',
-        'billTime' => 'string',
+        '_info' => Metadata::class,
+        'actualEnd' => 'string',
+        'actualHours' => 'float',
+        'actualStart' => 'string',
+        'agreement' => AgreementReference::class,
         'billExpenses' => 'string',
+        'billPhaseClosedFlag' => 'boolean',
         'billProducts' => 'string',
+        'billProjectClosedFlag' => 'boolean',
+        'billSeparatelyFlag' => 'boolean',
+        'billTime' => 'string',
+        'billToCompany' => CompanyReference::class,
+        'billToContact' => ContactReference::class,
+        'billToSite' => SiteReference::class,
+        'billingMethod' => 'string',
+        'billingStartDate' => Carbon::class,
+        'board' => ProjectBoardReference::class,
+        'budgetHours' => 'float',
+        'businessUnitId' => 'integer',
+        'currency' => CurrencyReference::class,
+        'customFields' => 'array',
+        'deadlineDate' => Carbon::class,
+        'description' => 'string',
+        'downpayment' => 'float',
+        'estimatedExpenseCost' => 'float',
+        'estimatedExpenseRevenue' => 'float',
+        'estimatedProductCost' => 'float',
+        'estimatedProductRevenue' => 'float',
+        'estimatedTimeCost' => 'float',
+        'estimatedTimeRevenue' => 'float',
+        'hourlyRate' => 'float',
+        'id' => 'integer',
+        'locationId' => 'integer',
         'markAsMilestoneFlag' => 'boolean',
         'notes' => 'string',
-        'deadlineDate' => 'carbon',
-        'billSeparatelyFlag' => 'boolean',
-        'billingMethod' => 'string',
-        'scheduledHours' => 'double',
-        'scheduledStart' => 'string',
-        'scheduledEnd' => 'string',
-        'actualHours' => 'double',
-        'actualStart' => 'string',
-        'actualEnd' => 'string',
-        'budgetHours' => 'double',
-        'locationId' => 'integer',
-        'businessUnitId' => 'integer',
-        'hourlyRate' => 'double',
-        'billingStartDate' => 'carbon',
-        'billPhaseClosedFlag' => 'boolean',
-        'billProjectClosedFlag' => 'boolean',
-        'downpayment' => 'double',
+        'opportunity' => OpportunityReference::class,
+        'parentPhase' => ProjectPhaseReference::class,
+        'poAmount' => 'float',
         'poNumber' => 'string',
-        'poAmount' => 'double',
-        'estimatedTimeCost' => 'double',
-        'estimatedExpenseCost' => 'double',
-        'estimatedProductCost' => 'double',
-        'estimatedTimeRevenue' => 'double',
-        'estimatedExpenseRevenue' => 'double',
-        'estimatedProductRevenue' => 'double',
-        'customFields' => 'array',
+        'projectId' => 'integer',
+        'scheduledEnd' => 'string',
+        'scheduledHours' => 'float',
+        'scheduledStart' => 'string',
+        'shipToCompany' => CompanyReference::class,
+        'shipToContact' => ContactReference::class,
+        'shipToSite' => SiteReference::class,
+        'status' => PhaseStatusReference::class,
+        'wbsCode' => 'string'
     ];
 }

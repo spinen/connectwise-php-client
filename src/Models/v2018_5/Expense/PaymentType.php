@@ -2,15 +2,20 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Expense;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PaymentType
+ * Class PaymentType Version v2018_5
  *
+ * Model for PaymentType
+ *
+ * @property ClassificationReference $classification
+ * @property Metadata $_info
+ * @property boolean $companyFlag
+ * @property boolean $defaultFlag
  * @property integer $id
  * @property string $name
- * @property boolean $defaultFlag
- * @property boolean $companyFlag
  */
 class PaymentType extends Model
 {
@@ -20,9 +25,11 @@ class PaymentType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'defaultFlag' => 'boolean',
+        '_info' => Metadata::class,
+        'classification' => ClassificationReference::class,
         'companyFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'id' => 'integer',
+        'name' => 'string'
     ];
 }

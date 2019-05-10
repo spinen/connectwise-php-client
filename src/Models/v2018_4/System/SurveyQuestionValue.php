@@ -2,16 +2,22 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SurveyQuestionValue
+ * Class SurveyQuestionValue Version v2018_4
  *
- * @property integer $id
- * @property string $value
+ * Model for SurveyQuestionValue
+ *
+ * @property Metadata $_info
+ * @property SurveyQuestionReference $question
+ * @property SurveyReference $survey
  * @property boolean $defaultFlag
- * @property integer $pointValue
  * @property boolean $inactiveFlag
+ * @property integer $id
+ * @property integer $pointValue
+ * @property string $value
  */
 class SurveyQuestionValue extends Model
 {
@@ -21,10 +27,13 @@ class SurveyQuestionValue extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'value' => 'string',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
-        'pointValue' => 'integer',
+        'id' => 'integer',
         'inactiveFlag' => 'boolean',
+        'pointValue' => 'integer',
+        'question' => SurveyQuestionReference::class,
+        'survey' => SurveyReference::class,
+        'value' => 'string'
     ];
 }

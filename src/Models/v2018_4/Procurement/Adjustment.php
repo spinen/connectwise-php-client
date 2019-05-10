@@ -2,18 +2,23 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Adjustment
+ * Class Adjustment Version v2018_4
  *
- * @property integer $id
- * @property string $identifier
- * @property string $reason
- * @property string $notes
+ * Model for Adjustment
+ *
+ * @property AdjustmentTypeReference $type
+ * @property Carbon $closedDate
+ * @property Metadata $_info
  * @property boolean $closedFlag
+ * @property integer $id
  * @property string $closedBy
- * @property carbon $closedDate
+ * @property string $identifier
+ * @property string $notes
+ * @property string $reason
  */
 class Adjustment extends Model
 {
@@ -23,12 +28,14 @@ class Adjustment extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'closedBy' => 'string',
+        'closedDate' => Carbon::class,
+        'closedFlag' => 'boolean',
         'id' => 'integer',
         'identifier' => 'string',
-        'reason' => 'string',
         'notes' => 'string',
-        'closedFlag' => 'boolean',
-        'closedBy' => 'string',
-        'closedDate' => 'carbon',
+        'reason' => 'string',
+        'type' => AdjustmentTypeReference::class
     ];
 }

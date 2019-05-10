@@ -2,13 +2,20 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SalesTeamMember
+ * Class SalesTeamMember Version v2018_6
  *
- * @property integer $id
+ * Model for SalesTeamMember
+ *
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
  * @property boolean $allowAccessFlag
+ * @property integer $id
  */
 class SalesTeamMember extends Model
 {
@@ -18,7 +25,11 @@ class SalesTeamMember extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
         'allowAccessFlag' => 'boolean',
+        'department' => SystemDepartmentReference::class,
+        'id' => 'integer',
+        'location' => SystemLocationReference::class,
+        'member' => MemberReference::class
     ];
 }

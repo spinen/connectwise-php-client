@@ -2,17 +2,21 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Priority
+ * Class Priority Version v2018_6
  *
- * @property integer $id
- * @property string $name
- * @property string $color
- * @property integer $sortOrder
+ * Model for Priority
+ *
+ * @property Metadata $_info
  * @property boolean $defaultFlag
+ * @property integer $id
+ * @property integer $sortOrder
+ * @property string $color
  * @property string $imageLink
+ * @property string $name
  */
 class Priority extends Model
 {
@@ -22,11 +26,12 @@ class Priority extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => Metadata::class,
         'color' => 'string',
-        'sortOrder' => 'integer',
         'defaultFlag' => 'boolean',
+        'id' => 'integer',
         'imageLink' => 'string',
+        'name' => 'string',
+        'sortOrder' => 'integer'
     ];
 }

@@ -2,51 +2,65 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Configuration
+ * Class Configuration Version v2018_6
  *
- * @property integer $id
- * @property string $name
- * @property integer $locationId
- * @property integer $businessUnitId
- * @property string $deviceIdentifier
- * @property string $serialNumber
- * @property string $modelNumber
- * @property string $tagNumber
- * @property carbon $purchaseDate
- * @property carbon $installationDate
- * @property carbon $warrantyExpirationDate
- * @property string $vendorNotes
- * @property string $notes
- * @property string $macAddress
- * @property string $lastLoginName
- * @property boolean $billFlag
- * @property integer $backupSuccesses
- * @property integer $backupIncomplete
- * @property integer $backupFailed
- * @property integer $backupRestores
- * @property carbon $lastBackupDate
- * @property string $backupServerName
- * @property double $backupBillableSpaceGb
- * @property string $backupProtectedDeviceList
- * @property integer $backupYear
- * @property integer $backupMonth
- * @property string $ipAddress
- * @property string $defaultGateway
- * @property string $osType
- * @property string $osInfo
- * @property string $cpuSpeed
- * @property string $ram
- * @property string $localHardDrives
- * @property integer $parentConfigurationId
+ * Model for Configuration
+ *
+ * @property Carbon $installationDate
+ * @property Carbon $lastBackupDate
+ * @property Carbon $purchaseDate
+ * @property Carbon $warrantyExpirationDate
+ * @property CompanyReference $company
+ * @property CompanyReference $vendor
+ * @property ConfigurationStatusReference $status
+ * @property ConfigurationTypeReference $type
+ * @property ContactReference $contact
+ * @property Guid $mobileGuid
+ * @property ManufacturerReference $manufacturer
+ * @property MemberReference $installedBy
+ * @property Metadata $_info
+ * @property SLAReference $sla
+ * @property SiteReference $site
+ * @property array $customFields
  * @property array $questions
  * @property boolean $activeFlag
- * @property string $managementLink
- * @property string $remoteLink
+ * @property boolean $billFlag
  * @property boolean $displayVendorFlag
- * @property array $customFields
+ * @property float $backupBillableSpaceGb
+ * @property integer $backupFailed
+ * @property integer $backupIncomplete
+ * @property integer $backupMonth
+ * @property integer $backupRestores
+ * @property integer $backupSuccesses
+ * @property integer $backupYear
+ * @property integer $businessUnitId
+ * @property integer $id
+ * @property integer $locationId
+ * @property integer $parentConfigurationId
+ * @property string $backupProtectedDeviceList
+ * @property string $backupServerName
+ * @property string $cpuSpeed
+ * @property string $defaultGateway
+ * @property string $deviceIdentifier
+ * @property string $ipAddress
+ * @property string $lastLoginName
+ * @property string $localHardDrives
+ * @property string $macAddress
+ * @property string $managementLink
+ * @property string $modelNumber
+ * @property string $name
+ * @property string $notes
+ * @property string $osInfo
+ * @property string $osType
+ * @property string $ram
+ * @property string $remoteLink
+ * @property string $serialNumber
+ * @property string $tagNumber
+ * @property string $vendorNotes
  */
 class Configuration extends Model
 {
@@ -56,45 +70,56 @@ class Configuration extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'locationId' => 'integer',
-        'businessUnitId' => 'integer',
-        'deviceIdentifier' => 'string',
-        'serialNumber' => 'string',
-        'modelNumber' => 'string',
-        'tagNumber' => 'string',
-        'purchaseDate' => 'carbon',
-        'installationDate' => 'carbon',
-        'warrantyExpirationDate' => 'carbon',
-        'vendorNotes' => 'string',
-        'notes' => 'string',
-        'macAddress' => 'string',
-        'lastLoginName' => 'string',
-        'billFlag' => 'boolean',
-        'backupSuccesses' => 'integer',
-        'backupIncomplete' => 'integer',
-        'backupFailed' => 'integer',
-        'backupRestores' => 'integer',
-        'lastBackupDate' => 'carbon',
-        'backupServerName' => 'string',
-        'backupBillableSpaceGb' => 'double',
-        'backupProtectedDeviceList' => 'string',
-        'backupYear' => 'integer',
-        'backupMonth' => 'integer',
-        'ipAddress' => 'string',
-        'defaultGateway' => 'string',
-        'osType' => 'string',
-        'osInfo' => 'string',
-        'cpuSpeed' => 'string',
-        'ram' => 'string',
-        'localHardDrives' => 'string',
-        'parentConfigurationId' => 'integer',
-        'questions' => 'array',
+        '_info' => Metadata::class,
         'activeFlag' => 'boolean',
-        'managementLink' => 'string',
-        'remoteLink' => 'string',
-        'displayVendorFlag' => 'boolean',
+        'backupBillableSpaceGb' => 'float',
+        'backupFailed' => 'integer',
+        'backupIncomplete' => 'integer',
+        'backupMonth' => 'integer',
+        'backupProtectedDeviceList' => 'string',
+        'backupRestores' => 'integer',
+        'backupServerName' => 'string',
+        'backupSuccesses' => 'integer',
+        'backupYear' => 'integer',
+        'billFlag' => 'boolean',
+        'businessUnitId' => 'integer',
+        'company' => CompanyReference::class,
+        'contact' => ContactReference::class,
+        'cpuSpeed' => 'string',
         'customFields' => 'array',
+        'defaultGateway' => 'string',
+        'deviceIdentifier' => 'string',
+        'displayVendorFlag' => 'boolean',
+        'id' => 'integer',
+        'installationDate' => Carbon::class,
+        'installedBy' => MemberReference::class,
+        'ipAddress' => 'string',
+        'lastBackupDate' => Carbon::class,
+        'lastLoginName' => 'string',
+        'localHardDrives' => 'string',
+        'locationId' => 'integer',
+        'macAddress' => 'string',
+        'managementLink' => 'string',
+        'manufacturer' => ManufacturerReference::class,
+        'mobileGuid' => Guid::class,
+        'modelNumber' => 'string',
+        'name' => 'string',
+        'notes' => 'string',
+        'osInfo' => 'string',
+        'osType' => 'string',
+        'parentConfigurationId' => 'integer',
+        'purchaseDate' => Carbon::class,
+        'questions' => 'array',
+        'ram' => 'string',
+        'remoteLink' => 'string',
+        'serialNumber' => 'string',
+        'site' => SiteReference::class,
+        'sla' => SLAReference::class,
+        'status' => ConfigurationStatusReference::class,
+        'tagNumber' => 'string',
+        'type' => ConfigurationTypeReference::class,
+        'vendor' => CompanyReference::class,
+        'vendorNotes' => 'string',
+        'warrantyExpirationDate' => Carbon::class
     ];
 }

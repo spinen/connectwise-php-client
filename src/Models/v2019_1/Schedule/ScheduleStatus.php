@@ -2,15 +2,19 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Schedule;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ScheduleStatus
+ * Class ScheduleStatus Version v2019_1
  *
- * @property integer $id
- * @property string $name
+ * Model for ScheduleStatus
+ *
+ * @property Metadata $_info
  * @property boolean $defaultFlag
  * @property boolean $showAsTentativeFlag
+ * @property integer $id
+ * @property string $name
  */
 class ScheduleStatus extends Model
 {
@@ -20,9 +24,10 @@ class ScheduleStatus extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'defaultFlag' => 'boolean',
         'id' => 'integer',
         'name' => 'string',
-        'defaultFlag' => 'boolean',
-        'showAsTentativeFlag' => 'boolean',
+        'showAsTentativeFlag' => 'boolean'
     ];
 }

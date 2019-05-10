@@ -2,20 +2,24 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class WorkRole
+ * Class WorkRole Version v2019_2
  *
- * @property integer $id
- * @property string $name
- * @property double $hourlyRate
- * @property string $integrationXref
- * @property boolean $inactiveFlag
- * @property boolean $addAllLocations
- * @property boolean $removeAllLocations
- * @property boolean $addAllAgreementExclusions
+ * Model for WorkRole
+ *
+ * @property Metadata $_info
  * @property array $locationIds
+ * @property boolean $addAllAgreementExclusions
+ * @property boolean $addAllLocations
+ * @property boolean $inactiveFlag
+ * @property boolean $removeAllLocations
+ * @property float $hourlyRate
+ * @property integer $id
+ * @property string $integrationXref
+ * @property string $name
  */
 class WorkRole extends Model
 {
@@ -25,14 +29,15 @@ class WorkRole extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'hourlyRate' => 'double',
-        'integrationXref' => 'string',
-        'inactiveFlag' => 'boolean',
-        'addAllLocations' => 'boolean',
-        'removeAllLocations' => 'boolean',
+        '_info' => Metadata::class,
         'addAllAgreementExclusions' => 'boolean',
+        'addAllLocations' => 'boolean',
+        'hourlyRate' => 'float',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'integrationXref' => 'string',
         'locationIds' => 'array',
+        'name' => 'string',
+        'removeAllLocations' => 'boolean'
     ];
 }

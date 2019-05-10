@@ -2,20 +2,39 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Activity
+ * Class Activity Version v2019_3
  *
- * @property integer $id
- * @property string $name
- * @property string $phoneNumber
- * @property string $email
- * @property string $notes
- * @property carbon $dateStart
- * @property carbon $dateEnd
- * @property boolean $notifyFlag
+ * Model for Activity
+ *
+ * @property ActivityStatusReference $status
+ * @property ActivityTypeReference $type
+ * @property AgreementReference $agreement
+ * @property CampaignReference $campaign
+ * @property Carbon $dateEnd
+ * @property Carbon $dateStart
+ * @property CompanyReference $company
+ * @property ContactReference $contact
+ * @property CurrencyReference $currency
+ * @property Guid $mobileGuid
+ * @property MemberReference $assignTo
+ * @property MemberReference $assignedBy
+ * @property Metadata $_info
+ * @property OpportunityReference $opportunity
+ * @property ReminderReference $reminder
+ * @property ScheduleStatusReference $scheduleStatus
+ * @property ServiceLocationReference $where
+ * @property TicketReference $ticket
  * @property array $customFields
+ * @property boolean $notifyFlag
+ * @property integer $id
+ * @property string $email
+ * @property string $name
+ * @property string $notes
+ * @property string $phoneNumber
  */
 class Activity extends Model
 {
@@ -25,14 +44,30 @@ class Activity extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'phoneNumber' => 'string',
-        'email' => 'string',
-        'notes' => 'string',
-        'dateStart' => 'carbon',
-        'dateEnd' => 'carbon',
-        'notifyFlag' => 'boolean',
+        '_info' => Metadata::class,
+        'agreement' => AgreementReference::class,
+        'assignTo' => MemberReference::class,
+        'assignedBy' => MemberReference::class,
+        'campaign' => CampaignReference::class,
+        'company' => CompanyReference::class,
+        'contact' => ContactReference::class,
+        'currency' => CurrencyReference::class,
         'customFields' => 'array',
+        'dateEnd' => Carbon::class,
+        'dateStart' => Carbon::class,
+        'email' => 'string',
+        'id' => 'integer',
+        'mobileGuid' => Guid::class,
+        'name' => 'string',
+        'notes' => 'string',
+        'notifyFlag' => 'boolean',
+        'opportunity' => OpportunityReference::class,
+        'phoneNumber' => 'string',
+        'reminder' => ReminderReference::class,
+        'scheduleStatus' => ScheduleStatusReference::class,
+        'status' => ActivityStatusReference::class,
+        'ticket' => TicketReference::class,
+        'type' => ActivityTypeReference::class,
+        'where' => ServiceLocationReference::class
     ];
 }

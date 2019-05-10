@@ -2,19 +2,31 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ApiMember
+ * Class ApiMember Version v2019_3
  *
+ * Model for ApiMember
+ *
+ * @property BoardReference $serviceDefaultBoard
+ * @property Carbon $inactiveDate
+ * @property Metadata $_info
+ * @property SecurityRoleReference $securityRole
+ * @property StructureReference $structureLevel
+ * @property SystemDepartmentReference $defaultDepartment
+ * @property SystemLocationReference $defaultLocation
+ * @property SystemLocationReference $salesDefaultLocation
+ * @property SystemLocationReference $securityLocation
+ * @property TimeZoneSetupReference $timeZone
+ * @property array $excludedServiceBoardIds
+ * @property boolean $inactiveFlag
  * @property integer $id
+ * @property string $emailAddress
  * @property string $identifier
  * @property string $name
- * @property string $emailAddress
- * @property boolean $inactiveFlag
- * @property carbon $inactiveDate
  * @property string $notes
- * @property array $excludedServiceBoardIds
  */
 class ApiMember extends Model
 {
@@ -24,13 +36,22 @@ class ApiMember extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'defaultDepartment' => SystemDepartmentReference::class,
+        'defaultLocation' => SystemLocationReference::class,
+        'emailAddress' => 'string',
+        'excludedServiceBoardIds' => 'array',
         'id' => 'integer',
         'identifier' => 'string',
-        'name' => 'string',
-        'emailAddress' => 'string',
+        'inactiveDate' => Carbon::class,
         'inactiveFlag' => 'boolean',
-        'inactiveDate' => 'carbon',
+        'name' => 'string',
         'notes' => 'string',
-        'excludedServiceBoardIds' => 'array',
+        'salesDefaultLocation' => SystemLocationReference::class,
+        'securityLocation' => SystemLocationReference::class,
+        'securityRole' => SecurityRoleReference::class,
+        'serviceDefaultBoard' => BoardReference::class,
+        'structureLevel' => StructureReference::class,
+        'timeZone' => TimeZoneSetupReference::class
     ];
 }

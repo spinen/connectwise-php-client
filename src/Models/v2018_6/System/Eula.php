@@ -2,16 +2,21 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Eula
+ * Class Eula Version v2018_6
  *
+ * Model for Eula
+ *
+ * @property Carbon $signedDate
+ * @property MemberReference $signedMember
+ * @property Metadata $_info
  * @property integer $id
  * @property string $eulaKey
  * @property string $eulaServiceLink
  * @property string $eulaUiLink
- * @property carbon $signedDate
  */
 class Eula extends Model
 {
@@ -21,10 +26,12 @@ class Eula extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
         'eulaKey' => 'string',
         'eulaServiceLink' => 'string',
         'eulaUiLink' => 'string',
-        'signedDate' => 'carbon',
+        'id' => 'integer',
+        'signedDate' => Carbon::class,
+        'signedMember' => MemberReference::class
     ];
 }

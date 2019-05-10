@@ -2,15 +2,19 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Severity
+ * Class Severity Version v2018_6
  *
- * @property integer $id
- * @property string $name
- * @property string $description
+ * Model for Severity
+ *
+ * @property Metadata $_info
  * @property boolean $defaultFlag
+ * @property integer $id
+ * @property string $description
+ * @property string $name
  */
 class Severity extends Model
 {
@@ -20,9 +24,10 @@ class Severity extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'description' => 'string',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
+        'description' => 'string',
+        'id' => 'integer',
+        'name' => 'string'
     ];
 }

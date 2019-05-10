@@ -2,31 +2,40 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Marketing;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Campaign
+ * Class Campaign Version v2018_5
  *
- * @property integer $id
- * @property string $name
- * @property carbon $startDate
- * @property carbon $endDate
- * @property integer $locationId
+ * Model for Campaign
+ *
+ * @property CampaignStatusReference $status
+ * @property CampaignSubTypeReference $subType
+ * @property CampaignTypeReference $type
+ * @property Carbon $endDate
+ * @property Carbon $startDate
+ * @property GroupReference $defaultGroup
+ * @property MemberReference $member
+ * @property Metadata $_info
  * @property boolean $inactive
+ * @property float $actualCost
+ * @property float $actualGrossMargin
+ * @property float $actualROI
+ * @property float $actualRevenue
+ * @property float $budgetCost
+ * @property float $budgetGrossMargin
+ * @property float $budgetROI
+ * @property float $budgetRevenue
+ * @property integer $emailsSent
+ * @property integer $id
+ * @property integer $impressions
  * @property integer $inactiveDaysAfterEnd
- * @property string $notes
+ * @property integer $locationId
  * @property integer $marketingManagerDefaultTrackId
  * @property integer $opportunityDefaultTrackId
- * @property integer $impressions
- * @property double $budgetRevenue
- * @property double $budgetCost
- * @property double $actualCost
- * @property double $budgetGrossMargin
- * @property double $budgetROI
- * @property double $actualRevenue
- * @property double $actualGrossMargin
- * @property double $actualROI
- * @property integer $emailsSent
+ * @property string $name
+ * @property string $notes
  */
 class Campaign extends Model
 {
@@ -36,25 +45,31 @@ class Campaign extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'actualCost' => 'float',
+        'actualGrossMargin' => 'float',
+        'actualROI' => 'float',
+        'actualRevenue' => 'float',
+        'budgetCost' => 'float',
+        'budgetGrossMargin' => 'float',
+        'budgetROI' => 'float',
+        'budgetRevenue' => 'float',
+        'defaultGroup' => GroupReference::class,
+        'emailsSent' => 'integer',
+        'endDate' => Carbon::class,
         'id' => 'integer',
-        'name' => 'string',
-        'startDate' => 'carbon',
-        'endDate' => 'carbon',
-        'locationId' => 'integer',
+        'impressions' => 'integer',
         'inactive' => 'boolean',
         'inactiveDaysAfterEnd' => 'integer',
-        'notes' => 'string',
+        'locationId' => 'integer',
         'marketingManagerDefaultTrackId' => 'integer',
+        'member' => MemberReference::class,
+        'name' => 'string',
+        'notes' => 'string',
         'opportunityDefaultTrackId' => 'integer',
-        'impressions' => 'integer',
-        'budgetRevenue' => 'double',
-        'budgetCost' => 'double',
-        'actualCost' => 'double',
-        'budgetGrossMargin' => 'double',
-        'budgetROI' => 'double',
-        'actualRevenue' => 'double',
-        'actualGrossMargin' => 'double',
-        'actualROI' => 'double',
-        'emailsSent' => 'integer',
+        'startDate' => Carbon::class,
+        'status' => CampaignStatusReference::class,
+        'subType' => CampaignSubTypeReference::class,
+        'type' => CampaignTypeReference::class
     ];
 }

@@ -2,17 +2,24 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class OpportunityContact
+ * Class OpportunityContact Version v2019_3
  *
- * @property integer $id
- * @property string $notes
+ * Model for OpportunityContact
+ *
+ * @property CompanyReference $company
+ * @property ContactReference $contact
+ * @property Metadata $_info
+ * @property OpportunitySalesRoleReference $role
  * @property boolean $referralFlag
+ * @property integer $id
  * @property integer $opportunityId
- * @property string $phoneNumber
  * @property string $emailAddress
+ * @property string $notes
+ * @property string $phoneNumber
  */
 class OpportunityContact extends Model
 {
@@ -22,11 +29,15 @@ class OpportunityContact extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'company' => CompanyReference::class,
+        'contact' => ContactReference::class,
+        'emailAddress' => 'string',
         'id' => 'integer',
         'notes' => 'string',
-        'referralFlag' => 'boolean',
         'opportunityId' => 'integer',
         'phoneNumber' => 'string',
-        'emailAddress' => 'string',
+        'referralFlag' => 'boolean',
+        'role' => OpportunitySalesRoleReference::class
     ];
 }

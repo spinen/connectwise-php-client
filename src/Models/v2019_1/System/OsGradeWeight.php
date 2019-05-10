@@ -2,13 +2,17 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class OsGradeWeight
+ * Class OsGradeWeight Version v2019_1
  *
+ * Model for OsGradeWeight
+ *
+ * @property Metadata $_info
+ * @property float $osGradeWeight
  * @property integer $id
- * @property double $osGradeWeight
  * @property string $osName
  */
 class OsGradeWeight extends Model
@@ -19,8 +23,9 @@ class OsGradeWeight extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'osGradeWeight' => 'double',
-        'osName' => 'string',
+        'osGradeWeight' => 'float',
+        'osName' => 'string'
     ];
 }

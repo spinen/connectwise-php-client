@@ -2,17 +2,21 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ActivityStatus
+ * Class ActivityStatus Version v2018_4
  *
- * @property integer $id
- * @property string $name
+ * Model for ActivityStatus
+ *
+ * @property Metadata $_info
+ * @property boolean $closedFlag
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
  * @property boolean $spawnFollowupFlag
- * @property boolean $closedFlag
+ * @property integer $id
+ * @property string $name
  */
 class ActivityStatus extends Model
 {
@@ -22,11 +26,12 @@ class ActivityStatus extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'defaultFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
-        'spawnFollowupFlag' => 'boolean',
+        '_info' => Metadata::class,
         'closedFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
+        'spawnFollowupFlag' => 'boolean'
     ];
 }

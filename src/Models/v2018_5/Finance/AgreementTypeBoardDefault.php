@@ -2,13 +2,22 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AgreementTypeBoardDefault
+ * Class AgreementTypeBoardDefault Version v2018_5
  *
- * @property integer $id
+ * Model for AgreementTypeBoardDefault
+ *
+ * @property AgreementTypeReference $type
+ * @property BoardReference $board
+ * @property Metadata $_info
+ * @property ServiceTypeReference $serviceType
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
  * @property boolean $defaultFlag
+ * @property integer $id
  */
 class AgreementTypeBoardDefault extends Model
 {
@@ -18,7 +27,13 @@ class AgreementTypeBoardDefault extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
+        'board' => BoardReference::class,
         'defaultFlag' => 'boolean',
+        'department' => SystemDepartmentReference::class,
+        'id' => 'integer',
+        'location' => SystemLocationReference::class,
+        'serviceType' => ServiceTypeReference::class,
+        'type' => AgreementTypeReference::class
     ];
 }

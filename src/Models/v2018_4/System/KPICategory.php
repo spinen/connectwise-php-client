@@ -2,14 +2,17 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class KPICategory
+ * Class KPICategory Version v2018_4
+ *
+ * Model for KPICategory
  *
  * @property integer $id
- * @property string $name
  * @property integer $sortOrder
+ * @property string $name
  */
 class KPICategory extends Model
 {
@@ -21,6 +24,6 @@ class KPICategory extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'sortOrder' => 'integer',
+        'sortOrder' => 'integer'
     ];
 }

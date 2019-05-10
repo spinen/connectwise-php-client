@@ -2,11 +2,16 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BillingSetupRouting
+ * Class BillingSetupRouting Version v2019_1
  *
+ * Model for BillingSetupRouting
+ *
+ * @property MemberReference $member
+ * @property Metadata $_info
  * @property integer $id
  * @property integer $sequenceNumber
  * @property string $invoiceRule
@@ -20,9 +25,11 @@ class BillingSetupRouting extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'sequenceNumber' => 'integer',
         'invoiceRule' => 'string',
+        'member' => MemberReference::class,
         'routingRule' => 'string',
+        'sequenceNumber' => 'integer'
     ];
 }

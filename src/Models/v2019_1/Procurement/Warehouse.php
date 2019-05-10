@@ -2,17 +2,27 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Warehouse
+ * Class Warehouse Version v2019_1
  *
- * @property integer $id
- * @property string $name
- * @property string $locationXref
+ * Model for Warehouse
+ *
+ * @property CompanyReference $company
+ * @property CurrencyReference $currency
+ * @property MemberReference $manager
+ * @property Metadata $_info
+ * @property SiteReference $site
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
+ * @property boolean $inactiveFlag
  * @property boolean $locationDefaultFlag
  * @property boolean $overallDefaultFlag
- * @property boolean $inactiveFlag
+ * @property integer $id
+ * @property string $locationXref
+ * @property string $name
  */
 class Warehouse extends Model
 {
@@ -22,11 +32,18 @@ class Warehouse extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'company' => CompanyReference::class,
+        'currency' => CurrencyReference::class,
+        'department' => SystemDepartmentReference::class,
         'id' => 'integer',
-        'name' => 'string',
-        'locationXref' => 'string',
-        'locationDefaultFlag' => 'boolean',
-        'overallDefaultFlag' => 'boolean',
         'inactiveFlag' => 'boolean',
+        'location' => SystemLocationReference::class,
+        'locationDefaultFlag' => 'boolean',
+        'locationXref' => 'string',
+        'manager' => MemberReference::class,
+        'name' => 'string',
+        'overallDefaultFlag' => 'boolean',
+        'site' => SiteReference::class
     ];
 }

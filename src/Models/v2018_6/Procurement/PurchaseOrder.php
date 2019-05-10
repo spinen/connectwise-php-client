@@ -2,15 +2,48 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PurchaseOrder
+ * Class PurchaseOrder Version v2018_6
  *
- * @property integer $id
- * @property integer $businessUnitId
- * @property string $cancelReason
+ * Model for PurchaseOrder
+ *
+ * @property BillingTermsReference $terms
+ * @property Carbon $dateClosed
+ * @property Carbon $poDate
+ * @property Carbon $shipmentDate
+ * @property Carbon $vendorInvoiceDate
+ * @property CompanyReference $customerCompany
+ * @property CompanyReference $vendorCompany
+ * @property ContactReference $customerContact
+ * @property ContactReference $vendorContact
+ * @property CountryReference $customerCountry
+ * @property CurrencyReference $currency
+ * @property Metadata $_info
+ * @property PurchaseOrderStatusReference $status
+ * @property ShipmentMethodReference $shipmentMethod
+ * @property SiteReference $customerSite
+ * @property SiteReference $vendorSite
+ * @property TaxCodeReference $taxCode
+ * @property WarehouseReference $warehouse
+ * @property array $customFields
  * @property boolean $closedFlag
+ * @property boolean $dropShipCustomerFlag
+ * @property boolean $taxFreightFlag
+ * @property boolean $taxPoFlag
+ * @property boolean $updateShipmentInfo
+ * @property boolean $updateVendorOrderNumber
+ * @property float $freightCost
+ * @property float $freightTaxTotal
+ * @property float $salesTax
+ * @property float $subTotal
+ * @property float $total
+ * @property integer $businessUnitId
+ * @property integer $id
+ * @property integer $locationId
+ * @property string $cancelReason
  * @property string $customerCity
  * @property string $customerExtension
  * @property string $customerName
@@ -20,30 +53,14 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $customerStreetLine1
  * @property string $customerStreetLine2
  * @property string $customerZip
- * @property carbon $dateClosed
- * @property boolean $dropShipCustomerFlag
  * @property string $enteredBy
- * @property double $freightCost
  * @property string $freightPackingSlip
- * @property double $freightTaxTotal
  * @property string $internalNotes
- * @property integer $locationId
- * @property carbon $poDate
  * @property string $poNumber
- * @property double $salesTax
- * @property carbon $shipmentDate
  * @property string $shippingInstructions
- * @property double $subTotal
- * @property boolean $taxFreightFlag
- * @property boolean $taxPoFlag
- * @property double $total
  * @property string $trackingNumber
- * @property boolean $updateShipmentInfo
- * @property boolean $updateVendorOrderNumber
- * @property carbon $vendorInvoiceDate
  * @property string $vendorInvoiceNumber
  * @property string $vendorOrderNumber
- * @property array $customFields
  */
 class PurchaseOrder extends Model
 {
@@ -53,42 +70,56 @@ class PurchaseOrder extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
         'businessUnitId' => 'integer',
         'cancelReason' => 'string',
         'closedFlag' => 'boolean',
+        'currency' => CurrencyReference::class,
+        'customFields' => 'array',
         'customerCity' => 'string',
+        'customerCompany' => CompanyReference::class,
+        'customerContact' => ContactReference::class,
+        'customerCountry' => CountryReference::class,
         'customerExtension' => 'string',
         'customerName' => 'string',
         'customerPhone' => 'string',
+        'customerSite' => SiteReference::class,
         'customerSiteName' => 'string',
         'customerState' => 'string',
         'customerStreetLine1' => 'string',
         'customerStreetLine2' => 'string',
         'customerZip' => 'string',
-        'dateClosed' => 'carbon',
+        'dateClosed' => Carbon::class,
         'dropShipCustomerFlag' => 'boolean',
         'enteredBy' => 'string',
-        'freightCost' => 'double',
+        'freightCost' => 'float',
         'freightPackingSlip' => 'string',
-        'freightTaxTotal' => 'double',
+        'freightTaxTotal' => 'float',
+        'id' => 'integer',
         'internalNotes' => 'string',
         'locationId' => 'integer',
-        'poDate' => 'carbon',
+        'poDate' => Carbon::class,
         'poNumber' => 'string',
-        'salesTax' => 'double',
-        'shipmentDate' => 'carbon',
+        'salesTax' => 'float',
+        'shipmentDate' => Carbon::class,
+        'shipmentMethod' => ShipmentMethodReference::class,
         'shippingInstructions' => 'string',
-        'subTotal' => 'double',
+        'status' => PurchaseOrderStatusReference::class,
+        'subTotal' => 'float',
+        'taxCode' => TaxCodeReference::class,
         'taxFreightFlag' => 'boolean',
         'taxPoFlag' => 'boolean',
-        'total' => 'double',
+        'terms' => BillingTermsReference::class,
+        'total' => 'float',
         'trackingNumber' => 'string',
         'updateShipmentInfo' => 'boolean',
         'updateVendorOrderNumber' => 'boolean',
-        'vendorInvoiceDate' => 'carbon',
+        'vendorCompany' => CompanyReference::class,
+        'vendorContact' => ContactReference::class,
+        'vendorInvoiceDate' => Carbon::class,
         'vendorInvoiceNumber' => 'string',
         'vendorOrderNumber' => 'string',
-        'customFields' => 'array',
+        'vendorSite' => SiteReference::class,
+        'warehouse' => WarehouseReference::class
     ];
 }

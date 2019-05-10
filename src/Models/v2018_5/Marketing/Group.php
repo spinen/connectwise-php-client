@@ -2,16 +2,20 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Marketing;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Group
+ * Class Group Version v2018_5
  *
+ * Model for Group
+ *
+ * @property Metadata $_info
+ * @property boolean $inactiveFlag
+ * @property boolean $publicFlag
  * @property integer $id
  * @property string $name
  * @property string $publicDescription
- * @property boolean $publicFlag
- * @property boolean $inactiveFlag
  */
 class Group extends Model
 {
@@ -21,10 +25,11 @@ class Group extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
+        'inactiveFlag' => 'boolean',
         'name' => 'string',
         'publicDescription' => 'string',
-        'publicFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
+        'publicFlag' => 'boolean'
     ];
 }

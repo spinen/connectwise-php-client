@@ -2,15 +2,19 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class LdapConfiguration
+ * Class LdapConfiguration Version v2018_5
  *
+ * Model for LdapConfiguration
+ *
+ * @property Metadata $_info
  * @property integer $id
+ * @property string $domain
  * @property string $name
  * @property string $server
- * @property string $domain
  */
 class LdapConfiguration extends Model
 {
@@ -20,9 +24,10 @@ class LdapConfiguration extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'domain' => 'string',
         'id' => 'integer',
         'name' => 'string',
-        'server' => 'string',
-        'domain' => 'string',
+        'server' => 'string'
     ];
 }

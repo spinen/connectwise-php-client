@@ -2,16 +2,20 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ReportingService
+ * Class ReportingService Version v2019_2
  *
+ * Model for ReportingService
+ *
+ * @property Metadata $_info
  * @property integer $id
- * @property string $reportingUserName
- * @property string $reportingPassword
  * @property string $reportingDomain
+ * @property string $reportingPassword
  * @property string $reportingUrl
+ * @property string $reportingUserName
  */
 class ReportingService extends Model
 {
@@ -21,10 +25,11 @@ class ReportingService extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'reportingUserName' => 'string',
-        'reportingPassword' => 'string',
         'reportingDomain' => 'string',
+        'reportingPassword' => 'string',
         'reportingUrl' => 'string',
+        'reportingUserName' => 'string'
     ];
 }

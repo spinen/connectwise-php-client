@@ -2,11 +2,15 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Role
+ * Class Role Version v2019_3
  *
+ * Model for Role
+ *
+ * @property Metadata $_info
  * @property integer $id
  * @property string $name
  */
@@ -18,7 +22,8 @@ class Role extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

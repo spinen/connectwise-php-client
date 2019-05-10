@@ -2,12 +2,30 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ApiMember
+ * Class ApiMember Version v2018_6
  *
- * @property integer $count
+ * Model for ApiMember
+ *
+ * @property BoardReference $serviceDefaultBoard
+ * @property Carbon $inactiveDate
+ * @property Metadata $_info
+ * @property SecurityRoleReference $securityRole
+ * @property StructureReference $structureLevel
+ * @property SystemLocationReference $defaultLocation
+ * @property SystemLocationReference $salesDefaultLocation
+ * @property SystemLocationReference $securityLocation
+ * @property TimeZoneSetupReference $timeZone
+ * @property array $excludedServiceBoardIds
+ * @property boolean $inactiveFlag
+ * @property integer $id
+ * @property string $emailAddress
+ * @property string $identifier
+ * @property string $name
+ * @property string $notes
  */
 class ApiMember extends Model
 {
@@ -17,6 +35,21 @@ class ApiMember extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer',
+        '_info' => Metadata::class,
+        'defaultLocation' => SystemLocationReference::class,
+        'emailAddress' => 'string',
+        'excludedServiceBoardIds' => 'array',
+        'id' => 'integer',
+        'identifier' => 'string',
+        'inactiveDate' => Carbon::class,
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
+        'notes' => 'string',
+        'salesDefaultLocation' => SystemLocationReference::class,
+        'securityLocation' => SystemLocationReference::class,
+        'securityRole' => SecurityRoleReference::class,
+        'serviceDefaultBoard' => BoardReference::class,
+        'structureLevel' => StructureReference::class,
+        'timeZone' => TimeZoneSetupReference::class
     ];
 }

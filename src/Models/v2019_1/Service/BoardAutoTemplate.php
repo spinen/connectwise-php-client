@@ -2,23 +2,32 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BoardAutoTemplate
+ * Class BoardAutoTemplate Version v2019_1
  *
+ * Model for BoardAutoTemplate
+ *
+ * @property BoardReference $board
+ * @property Metadata $_info
+ * @property ServiceItemReference $item
+ * @property ServiceSubTypeReference $subtype
+ * @property ServiceTemplateReference $serviceTemplate
+ * @property ServiceTypeReference $type
+ * @property boolean $autoApplyFlag
  * @property integer $id
- * @property string $summarySetting
+ * @property string $budgetHoursSetting
  * @property string $discussionSetting
+ * @property string $documentsSetting
+ * @property string $financeInformationSetting
  * @property string $internalAnalysisSetting
  * @property string $resolutionSetting
- * @property string $tasksSetting
- * @property string $documentsSetting
  * @property string $resourcesSetting
- * @property string $budgetHoursSetting
- * @property string $financeInformationSetting
  * @property string $sendNotesAsEmailSetting
- * @property boolean $autoApplyFlag
+ * @property string $summarySetting
+ * @property string $tasksSetting
  */
 class BoardAutoTemplate extends Model
 {
@@ -28,17 +37,23 @@ class BoardAutoTemplate extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'summarySetting' => 'string',
-        'discussionSetting' => 'string',
-        'internalAnalysisSetting' => 'string',
-        'resolutionSetting' => 'string',
-        'tasksSetting' => 'string',
-        'documentsSetting' => 'string',
-        'resourcesSetting' => 'string',
-        'budgetHoursSetting' => 'string',
-        'financeInformationSetting' => 'string',
-        'sendNotesAsEmailSetting' => 'string',
+        '_info' => Metadata::class,
         'autoApplyFlag' => 'boolean',
+        'board' => BoardReference::class,
+        'budgetHoursSetting' => 'string',
+        'discussionSetting' => 'string',
+        'documentsSetting' => 'string',
+        'financeInformationSetting' => 'string',
+        'id' => 'integer',
+        'internalAnalysisSetting' => 'string',
+        'item' => ServiceItemReference::class,
+        'resolutionSetting' => 'string',
+        'resourcesSetting' => 'string',
+        'sendNotesAsEmailSetting' => 'string',
+        'serviceTemplate' => ServiceTemplateReference::class,
+        'subtype' => ServiceSubTypeReference::class,
+        'summarySetting' => 'string',
+        'tasksSetting' => 'string',
+        'type' => ServiceTypeReference::class
     ];
 }

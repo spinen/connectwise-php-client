@@ -2,14 +2,21 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PurchaseOrderStatusNotification
+ * Class PurchaseOrderStatusNotification Version v2019_1
  *
+ * Model for PurchaseOrderStatusNotification
+ *
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property NotificationRecipientReference $notifyWho
+ * @property PurchaseOrderStatusReference $status
  * @property integer $id
- * @property string $email
  * @property integer $workflowStep
+ * @property string $email
  */
 class PurchaseOrderStatusNotification extends Model
 {
@@ -19,8 +26,12 @@ class PurchaseOrderStatusNotification extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
         'email' => 'string',
-        'workflowStep' => 'integer',
+        'id' => 'integer',
+        'member' => MemberReference::class,
+        'notifyWho' => NotificationRecipientReference::class,
+        'status' => PurchaseOrderStatusReference::class,
+        'workflowStep' => 'integer'
     ];
 }

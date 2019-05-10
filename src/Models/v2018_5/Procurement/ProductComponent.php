@@ -2,20 +2,28 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProductComponent
+ * Class ProductComponent Version v2018_5
  *
+ * Model for ProductComponent
+ *
+ * @property CatalogItemReference $catalogItem
+ * @property CompanyReference $vendor
+ * @property Metadata $_info
+ * @property ProductItemReference $parentProductItem
+ * @property ProductItemReference $productItem
+ * @property boolean $hideDescriptionFlag
+ * @property boolean $hideItemIdentifierFlag
+ * @property boolean $hidePriceFlag
+ * @property boolean $hideQuantityFlag
+ * @property float $cost
+ * @property float $price
+ * @property float $quantity
  * @property integer $id
  * @property integer $sequenceNumber
- * @property double $quantity
- * @property boolean $hidePriceFlag
- * @property boolean $hideItemIdentifierFlag
- * @property boolean $hideDescriptionFlag
- * @property boolean $hideQuantityFlag
- * @property double $price
- * @property double $cost
  */
 class ProductComponent extends Model
 {
@@ -25,14 +33,19 @@ class ProductComponent extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'sequenceNumber' => 'integer',
-        'quantity' => 'double',
-        'hidePriceFlag' => 'boolean',
-        'hideItemIdentifierFlag' => 'boolean',
+        '_info' => Metadata::class,
+        'catalogItem' => CatalogItemReference::class,
+        'cost' => 'float',
         'hideDescriptionFlag' => 'boolean',
+        'hideItemIdentifierFlag' => 'boolean',
+        'hidePriceFlag' => 'boolean',
         'hideQuantityFlag' => 'boolean',
-        'price' => 'double',
-        'cost' => 'double',
+        'id' => 'integer',
+        'parentProductItem' => ProductItemReference::class,
+        'price' => 'float',
+        'productItem' => ProductItemReference::class,
+        'quantity' => 'float',
+        'sequenceNumber' => 'integer',
+        'vendor' => CompanyReference::class
     ];
 }

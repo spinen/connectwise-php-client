@@ -2,14 +2,17 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ConnectWiseHostedScreen
+ * Class ConnectWiseHostedScreen Version v2019_1
+ *
+ * Model for ConnectWiseHostedScreen
  *
  * @property integer $id
- * @property string $screenId
  * @property string $name
+ * @property string $screenId
  */
 class ConnectWiseHostedScreen extends Model
 {
@@ -20,7 +23,7 @@ class ConnectWiseHostedScreen extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'screenId' => 'string',
         'name' => 'string',
+        'screenId' => 'string'
     ];
 }

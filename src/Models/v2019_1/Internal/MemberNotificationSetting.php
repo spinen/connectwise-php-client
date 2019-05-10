@@ -2,14 +2,18 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Internal;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class MemberNotificationSetting
+ * Class MemberNotificationSetting Version v2019_1
  *
+ * Model for MemberNotificationSetting
+ *
+ * @property Metadata $_info
  * @property integer $id
- * @property string $notificationType
  * @property string $notificationTrigger
+ * @property string $notificationType
  */
 class MemberNotificationSetting extends Model
 {
@@ -19,8 +23,9 @@ class MemberNotificationSetting extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'notificationType' => 'string',
         'notificationTrigger' => 'string',
+        'notificationType' => 'string'
     ];
 }

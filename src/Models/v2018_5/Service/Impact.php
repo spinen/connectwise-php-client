@@ -2,15 +2,19 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Impact
+ * Class Impact Version v2018_5
  *
- * @property integer $id
- * @property string $name
- * @property string $description
+ * Model for Impact
+ *
+ * @property Metadata $_info
  * @property boolean $defaultFlag
+ * @property integer $id
+ * @property string $description
+ * @property string $name
  */
 class Impact extends Model
 {
@@ -20,9 +24,10 @@ class Impact extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'description' => 'string',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
+        'description' => 'string',
+        'id' => 'integer',
+        'name' => 'string'
     ];
 }

@@ -2,16 +2,21 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TimePeriod
+ * Class TimePeriod Version v2019_1
  *
+ * Model for TimePeriod
+ *
+ * @property Metadata $_info
+ * @property TimePeriodSetupReference $timePeriodSetup
  * @property integer $id
  * @property integer $period
- * @property string $startDate
- * @property string $endDate
  * @property string $deadlineDate
+ * @property string $endDate
+ * @property string $startDate
  */
 class TimePeriod extends Model
 {
@@ -21,10 +26,12 @@ class TimePeriod extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'deadlineDate' => 'string',
+        'endDate' => 'string',
         'id' => 'integer',
         'period' => 'integer',
         'startDate' => 'string',
-        'endDate' => 'string',
-        'deadlineDate' => 'string',
+        'timePeriodSetup' => TimePeriodSetupReference::class
     ];
 }

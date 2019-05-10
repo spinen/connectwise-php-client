@@ -2,18 +2,26 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Workflow
+ * Class Workflow Version v2018_5
  *
- * @property integer $id
- * @property string $name
+ * Model for Workflow
+ *
+ * @property BoardReference $board
+ * @property Carbon $batchLastRan
+ * @property Metadata $_info
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
+ * @property WorkflowTableTypeReference $tableType
  * @property boolean $activateFlag
  * @property integer $batchInterval
+ * @property integer $id
  * @property string $batchFrequencyUnit
- * @property carbon $batchLastRan
  * @property string $batchSchedule
+ * @property string $name
  */
 class Workflow extends Model
 {
@@ -23,12 +31,17 @@ class Workflow extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => Metadata::class,
         'activateFlag' => 'boolean',
-        'batchInterval' => 'integer',
         'batchFrequencyUnit' => 'string',
-        'batchLastRan' => 'carbon',
+        'batchInterval' => 'integer',
+        'batchLastRan' => Carbon::class,
         'batchSchedule' => 'string',
+        'board' => BoardReference::class,
+        'department' => SystemDepartmentReference::class,
+        'id' => 'integer',
+        'location' => SystemLocationReference::class,
+        'name' => 'string',
+        'tableType' => WorkflowTableTypeReference::class
     ];
 }

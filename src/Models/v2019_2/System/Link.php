@@ -2,16 +2,20 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Link
+ * Class Link Version v2019_2
  *
+ * Model for Link
+ *
+ * @property Metadata $_info
  * @property integer $id
- * @property string $name
  * @property integer $tableReferenceId
- * @property string $url
+ * @property string $name
  * @property string $screenLink
+ * @property string $url
  */
 class Link extends Model
 {
@@ -21,10 +25,11 @@ class Link extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
         'name' => 'string',
-        'tableReferenceId' => 'integer',
-        'url' => 'string',
         'screenLink' => 'string',
+        'tableReferenceId' => 'integer',
+        'url' => 'string'
     ];
 }

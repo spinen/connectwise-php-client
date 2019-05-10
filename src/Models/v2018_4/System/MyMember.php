@@ -2,89 +2,122 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class MyMember
+ * Class MyMember Version v2018_4
  *
- * @property integer $id
- * @property string $identifier
- * @property string $password
- * @property string $firstName
- * @property string $middleInitial
- * @property string $lastName
- * @property string $title
- * @property string $licenseClass
- * @property boolean $disableOnlineFlag
- * @property boolean $enableMobileFlag
- * @property string $employeeIdentifer
- * @property string $vendorNumber
- * @property string $notes
+ * Model for MyMember
+ *
+ * @property BoardReference $serviceDefaultBoard
+ * @property CalendarReference $calendar
+ * @property Carbon $hireDate
+ * @property Carbon $inactiveDate
+ * @property Carbon $timeSheetStartDate
+ * @property CountryReference $country
+ * @property DocumentReference $photo
+ * @property LdapConfigurationReference $ldapConfiguration
+ * @property MemberReference $expenseApprover
+ * @property MemberReference $reportsTo
+ * @property MemberReference $timeApprover
+ * @property MemberTypeReference $type
+ * @property Metadata $_info
+ * @property ProjectBoardReference $projectDefaultBoard
+ * @property ReportCardReference $reportCard
+ * @property SecurityRoleReference $securityRole
+ * @property ServiceLocationReference $serviceLocation
+ * @property StructureReference $structureLevel
+ * @property SystemDepartmentReference $defaultDepartment
+ * @property SystemDepartmentReference $projectDefaultDepartment
+ * @property SystemDepartmentReference $scheduleDefaultDepartment
+ * @property SystemDepartmentReference $serviceDefaultDepartment
+ * @property SystemLocationReference $defaultLocation
+ * @property SystemLocationReference $projectDefaultLocation
+ * @property SystemLocationReference $salesDefaultLocation
+ * @property SystemLocationReference $scheduleDefaultLocation
+ * @property SystemLocationReference $securityLocation
+ * @property SystemLocationReference $serviceDefaultLocation
+ * @property TimeZoneSetupReference $timeZone
+ * @property WarehouseBinReference $warehouseBin
+ * @property WarehouseReference $warehouse
+ * @property WorkRoleReference $workRole
+ * @property WorkTypeReference $workType
+ * @property array $excludedProjectBoardIds
+ * @property array $excludedServiceBoardIds
  * @property array $serviceBoardTeamIds
- * @property boolean $enableMobileGpsFlag
- * @property carbon $inactiveDate
- * @property boolean $inactiveFlag
- * @property string $lastLogin
- * @property string $officeEmail
- * @property string $officePhone
- * @property string $officeExtension
- * @property string $mobileEmail
- * @property string $mobilePhone
- * @property string $mobileExtension
- * @property string $homeEmail
- * @property string $homePhone
- * @property string $homeExtension
- * @property string $defaultEmail
- * @property string $defaultPhone
  * @property boolean $adminFlag
- * @property boolean $restrictLocationFlag
- * @property boolean $restrictDepartmentFlag
- * @property double $billableForecast
- * @property double $dailyCapacity
- * @property double $hourlyCost
- * @property double $hourlyRate
+ * @property boolean $allowExpensesEnteredAgainstCompaniesFlag
+ * @property boolean $allowInCellEntryOnTimeSheet
+ * @property boolean $calendarSyncIntegrationFlag
+ * @property boolean $disableOnlineFlag
+ * @property boolean $enableLdapAuthenticationFlag
+ * @property boolean $enableMobileFlag
+ * @property boolean $enableMobileGpsFlag
+ * @property boolean $enterTimeAgainstCompanyFlag
+ * @property boolean $hideMemberInDispatchPortalFlag
+ * @property boolean $inactiveFlag
  * @property boolean $includeInUtilizationReportingFlag
  * @property boolean $requireExpenseEntryFlag
- * @property boolean $requireTimeSheetEntryFlag
  * @property boolean $requireStartAndEndTimeOnTimeEntryFlag
- * @property boolean $allowInCellEntryOnTimeSheet
- * @property boolean $enterTimeAgainstCompanyFlag
- * @property boolean $allowExpensesEnteredAgainstCompaniesFlag
- * @property boolean $timeReminderEmailFlag
- * @property integer $daysTolerance
- * @property double $minimumHours
- * @property carbon $timeSheetStartDate
- * @property carbon $hireDate
- * @property boolean $restrictServiceDefaultLocationFlag
- * @property boolean $restrictServiceDefaultDepartmentFlag
- * @property array $excludedServiceBoardIds
- * @property boolean $restrictProjectDefaultLocationFlag
- * @property boolean $restrictProjectDefaultDepartmentFlag
- * @property array $excludedProjectBoardIds
- * @property double $scheduleCapacity
- * @property boolean $restrictScheduleFlag
- * @property boolean $hideMemberInDispatchPortalFlag
+ * @property boolean $requireTimeSheetEntryFlag
  * @property boolean $restrictDefaultSalesTerritoryFlag
- * @property boolean $restrictDefaultWarehouseFlag
  * @property boolean $restrictDefaultWarehouseBinFlag
- * @property string $mapiName
- * @property boolean $calendarSyncIntegrationFlag
- * @property boolean $enableLdapAuthenticationFlag
- * @property string $ldapUserName
- * @property string $companyActivityTabFormat
- * @property string $invoiceTimeTabFormat
- * @property string $invoiceScreenDefaultTabFormat
- * @property string $invoicingDisplayOptions
+ * @property boolean $restrictDefaultWarehouseFlag
+ * @property boolean $restrictDepartmentFlag
+ * @property boolean $restrictLocationFlag
+ * @property boolean $restrictProjectDefaultDepartmentFlag
+ * @property boolean $restrictProjectDefaultLocationFlag
+ * @property boolean $restrictScheduleFlag
+ * @property boolean $restrictServiceDefaultDepartmentFlag
+ * @property boolean $restrictServiceDefaultLocationFlag
+ * @property boolean $timeReminderEmailFlag
+ * @property boolean $timebasedOneTimePasswordActivated
+ * @property float $billableForecast
+ * @property float $dailyCapacity
+ * @property float $hourlyCost
+ * @property float $hourlyRate
+ * @property float $minimumHours
+ * @property float $scheduleCapacity
+ * @property integer $daysTolerance
+ * @property integer $id
  * @property string $agreementInvoicingDisplayOptions
- * @property string $corelyticsUsername
+ * @property string $authenticationServiceType
+ * @property string $companyActivityTabFormat
  * @property string $corelyticsPassword
+ * @property string $corelyticsUsername
+ * @property string $defaultEmail
+ * @property string $defaultPhone
+ * @property string $employeeIdentifer
+ * @property string $firstName
+ * @property string $homeEmail
+ * @property string $homeExtension
+ * @property string $homePhone
+ * @property string $identifier
+ * @property string $invoiceScreenDefaultTabFormat
+ * @property string $invoiceTimeTabFormat
+ * @property string $invoicingDisplayOptions
+ * @property string $lastLogin
+ * @property string $lastName
+ * @property string $ldapUserName
+ * @property string $licenseClass
+ * @property string $mapiName
+ * @property string $middleInitial
+ * @property string $mobileEmail
+ * @property string $mobileExtension
+ * @property string $mobilePhone
+ * @property string $notes
+ * @property string $officeEmail
+ * @property string $officeExtension
+ * @property string $officePhone
+ * @property string $password
  * @property string $remotePackage
+ * @property string $remotePackageAccount
+ * @property string $remotePackagePassword
  * @property string $remotePackagePlatform
  * @property string $remotePackageUserName
- * @property string $remotePackagePassword
- * @property string $remotePackageAccount
- * @property string $authenticationServiceType
- * @property boolean $timebasedOneTimePasswordActivated
+ * @property string $title
+ * @property string $vendorNumber
  */
 class MyMember extends Model
 {
@@ -94,83 +127,113 @@ class MyMember extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'adminFlag' => 'boolean',
+        'agreementInvoicingDisplayOptions' => 'string',
+        'allowExpensesEnteredAgainstCompaniesFlag' => 'boolean',
+        'allowInCellEntryOnTimeSheet' => 'boolean',
+        'authenticationServiceType' => 'string',
+        'billableForecast' => 'float',
+        'calendar' => CalendarReference::class,
+        'calendarSyncIntegrationFlag' => 'boolean',
+        'companyActivityTabFormat' => 'string',
+        'corelyticsPassword' => 'string',
+        'corelyticsUsername' => 'string',
+        'country' => CountryReference::class,
+        'dailyCapacity' => 'float',
+        'daysTolerance' => 'integer',
+        'defaultDepartment' => SystemDepartmentReference::class,
+        'defaultEmail' => 'string',
+        'defaultLocation' => SystemLocationReference::class,
+        'defaultPhone' => 'string',
+        'disableOnlineFlag' => 'boolean',
+        'employeeIdentifer' => 'string',
+        'enableLdapAuthenticationFlag' => 'boolean',
+        'enableMobileFlag' => 'boolean',
+        'enableMobileGpsFlag' => 'boolean',
+        'enterTimeAgainstCompanyFlag' => 'boolean',
+        'excludedProjectBoardIds' => 'array',
+        'excludedServiceBoardIds' => 'array',
+        'expenseApprover' => MemberReference::class,
+        'firstName' => 'string',
+        'hideMemberInDispatchPortalFlag' => 'boolean',
+        'hireDate' => Carbon::class,
+        'homeEmail' => 'string',
+        'homeExtension' => 'string',
+        'homePhone' => 'string',
+        'hourlyCost' => 'float',
+        'hourlyRate' => 'float',
         'id' => 'integer',
         'identifier' => 'string',
-        'password' => 'string',
-        'firstName' => 'string',
-        'middleInitial' => 'string',
-        'lastName' => 'string',
-        'title' => 'string',
-        'licenseClass' => 'string',
-        'disableOnlineFlag' => 'boolean',
-        'enableMobileFlag' => 'boolean',
-        'employeeIdentifer' => 'string',
-        'vendorNumber' => 'string',
-        'notes' => 'string',
-        'serviceBoardTeamIds' => 'array',
-        'enableMobileGpsFlag' => 'boolean',
-        'inactiveDate' => 'carbon',
+        'inactiveDate' => Carbon::class,
         'inactiveFlag' => 'boolean',
-        'lastLogin' => 'string',
-        'officeEmail' => 'string',
-        'officePhone' => 'string',
-        'officeExtension' => 'string',
-        'mobileEmail' => 'string',
-        'mobilePhone' => 'string',
-        'mobileExtension' => 'string',
-        'homeEmail' => 'string',
-        'homePhone' => 'string',
-        'homeExtension' => 'string',
-        'defaultEmail' => 'string',
-        'defaultPhone' => 'string',
-        'adminFlag' => 'boolean',
-        'restrictLocationFlag' => 'boolean',
-        'restrictDepartmentFlag' => 'boolean',
-        'billableForecast' => 'double',
-        'dailyCapacity' => 'double',
-        'hourlyCost' => 'double',
-        'hourlyRate' => 'double',
         'includeInUtilizationReportingFlag' => 'boolean',
-        'requireExpenseEntryFlag' => 'boolean',
-        'requireTimeSheetEntryFlag' => 'boolean',
-        'requireStartAndEndTimeOnTimeEntryFlag' => 'boolean',
-        'allowInCellEntryOnTimeSheet' => 'boolean',
-        'enterTimeAgainstCompanyFlag' => 'boolean',
-        'allowExpensesEnteredAgainstCompaniesFlag' => 'boolean',
-        'timeReminderEmailFlag' => 'boolean',
-        'daysTolerance' => 'integer',
-        'minimumHours' => 'double',
-        'timeSheetStartDate' => 'carbon',
-        'hireDate' => 'carbon',
-        'restrictServiceDefaultLocationFlag' => 'boolean',
-        'restrictServiceDefaultDepartmentFlag' => 'boolean',
-        'excludedServiceBoardIds' => 'array',
-        'restrictProjectDefaultLocationFlag' => 'boolean',
-        'restrictProjectDefaultDepartmentFlag' => 'boolean',
-        'excludedProjectBoardIds' => 'array',
-        'scheduleCapacity' => 'double',
-        'restrictScheduleFlag' => 'boolean',
-        'hideMemberInDispatchPortalFlag' => 'boolean',
-        'restrictDefaultSalesTerritoryFlag' => 'boolean',
-        'restrictDefaultWarehouseFlag' => 'boolean',
-        'restrictDefaultWarehouseBinFlag' => 'boolean',
-        'mapiName' => 'string',
-        'calendarSyncIntegrationFlag' => 'boolean',
-        'enableLdapAuthenticationFlag' => 'boolean',
-        'ldapUserName' => 'string',
-        'companyActivityTabFormat' => 'string',
-        'invoiceTimeTabFormat' => 'string',
         'invoiceScreenDefaultTabFormat' => 'string',
+        'invoiceTimeTabFormat' => 'string',
         'invoicingDisplayOptions' => 'string',
-        'agreementInvoicingDisplayOptions' => 'string',
-        'corelyticsUsername' => 'string',
-        'corelyticsPassword' => 'string',
+        'lastLogin' => 'string',
+        'lastName' => 'string',
+        'ldapConfiguration' => LdapConfigurationReference::class,
+        'ldapUserName' => 'string',
+        'licenseClass' => 'string',
+        'mapiName' => 'string',
+        'middleInitial' => 'string',
+        'minimumHours' => 'float',
+        'mobileEmail' => 'string',
+        'mobileExtension' => 'string',
+        'mobilePhone' => 'string',
+        'notes' => 'string',
+        'officeEmail' => 'string',
+        'officeExtension' => 'string',
+        'officePhone' => 'string',
+        'password' => 'string',
+        'photo' => DocumentReference::class,
+        'projectDefaultBoard' => ProjectBoardReference::class,
+        'projectDefaultDepartment' => SystemDepartmentReference::class,
+        'projectDefaultLocation' => SystemLocationReference::class,
         'remotePackage' => 'string',
+        'remotePackageAccount' => 'string',
+        'remotePackagePassword' => 'string',
         'remotePackagePlatform' => 'string',
         'remotePackageUserName' => 'string',
-        'remotePackagePassword' => 'string',
-        'remotePackageAccount' => 'string',
-        'authenticationServiceType' => 'string',
+        'reportCard' => ReportCardReference::class,
+        'reportsTo' => MemberReference::class,
+        'requireExpenseEntryFlag' => 'boolean',
+        'requireStartAndEndTimeOnTimeEntryFlag' => 'boolean',
+        'requireTimeSheetEntryFlag' => 'boolean',
+        'restrictDefaultSalesTerritoryFlag' => 'boolean',
+        'restrictDefaultWarehouseBinFlag' => 'boolean',
+        'restrictDefaultWarehouseFlag' => 'boolean',
+        'restrictDepartmentFlag' => 'boolean',
+        'restrictLocationFlag' => 'boolean',
+        'restrictProjectDefaultDepartmentFlag' => 'boolean',
+        'restrictProjectDefaultLocationFlag' => 'boolean',
+        'restrictScheduleFlag' => 'boolean',
+        'restrictServiceDefaultDepartmentFlag' => 'boolean',
+        'restrictServiceDefaultLocationFlag' => 'boolean',
+        'salesDefaultLocation' => SystemLocationReference::class,
+        'scheduleCapacity' => 'float',
+        'scheduleDefaultDepartment' => SystemDepartmentReference::class,
+        'scheduleDefaultLocation' => SystemLocationReference::class,
+        'securityLocation' => SystemLocationReference::class,
+        'securityRole' => SecurityRoleReference::class,
+        'serviceBoardTeamIds' => 'array',
+        'serviceDefaultBoard' => BoardReference::class,
+        'serviceDefaultDepartment' => SystemDepartmentReference::class,
+        'serviceDefaultLocation' => SystemLocationReference::class,
+        'serviceLocation' => ServiceLocationReference::class,
+        'structureLevel' => StructureReference::class,
+        'timeApprover' => MemberReference::class,
+        'timeReminderEmailFlag' => 'boolean',
+        'timeSheetStartDate' => Carbon::class,
+        'timeZone' => TimeZoneSetupReference::class,
         'timebasedOneTimePasswordActivated' => 'boolean',
+        'title' => 'string',
+        'type' => MemberTypeReference::class,
+        'vendorNumber' => 'string',
+        'warehouse' => WarehouseReference::class,
+        'warehouseBin' => WarehouseBinReference::class,
+        'workRole' => WorkRoleReference::class,
+        'workType' => WorkTypeReference::class
     ];
 }

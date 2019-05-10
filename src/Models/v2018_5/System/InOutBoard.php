@@ -2,14 +2,20 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class InOutBoard
+ * Class InOutBoard Version v2018_5
  *
+ * Model for InOutBoard
+ *
+ * @property Carbon $dateBack
+ * @property InOutTypeReference $inOutType
+ * @property MemberReference $member
+ * @property Metadata $_info
  * @property integer $id
  * @property string $additionalInfo
- * @property carbon $dateBack
  */
 class InOutBoard extends Model
 {
@@ -19,8 +25,11 @@ class InOutBoard extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
         'additionalInfo' => 'string',
-        'dateBack' => 'carbon',
+        'dateBack' => Carbon::class,
+        'id' => 'integer',
+        'inOutType' => InOutTypeReference::class,
+        'member' => MemberReference::class
     ];
 }

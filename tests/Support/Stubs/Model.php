@@ -2,6 +2,8 @@
 
 namespace Spinen\ConnectWise\Support\Stubs;
 
+use Carbon\Carbon;
+use Spinen\ConnectWise\Models\v2019_3\System\Info;
 use Spinen\ConnectWise\Support\Model as BaseModel;
 
 class Model extends BaseModel
@@ -12,13 +14,18 @@ class Model extends BaseModel
      * @var array
      */
     protected $casts = [
-        'object_attribute'     => 'Models\v2019_2\System\Info',
-        'carbon_attribute'     => 'carbon',
-        'json_attribute'       => 'json',
-        'collection_attribute' => 'collection',
+        'array_attribute'      => 'array',
         'boolean_attribute'    => 'boolean',
+        'carbon_attribute'     => Carbon::class,
+        'collection_attribute' => 'collection',
+        'float_attribute'      => 'float',
+        'info_attribute'       => Info::class,
+        'integer_attribute'    => 'integer',
         'invalid_attribute'    => 'invalid',
-        'null_attribute'       => 'string',
+        'json_attribute'       => 'json',
+        'null_attribute'       => 'null',
+        'string_attribute'     => 'string',
+        'object_attribute'     => 'object',
     ];
 
     public function getGetterAttribute()

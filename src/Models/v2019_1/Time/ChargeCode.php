@@ -2,19 +2,28 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ChargeCode
+ * Class ChargeCode Version v2019_1
  *
- * @property integer $id
- * @property string $name
- * @property string $billTime
- * @property boolean $expenseEntryFlag
- * @property boolean $allowAllExpenseTypeFlag
- * @property boolean $timeEntryFlag
- * @property string $integrationXref
+ * Model for ChargeCode
+ *
+ * @property CompanyReference $company
+ * @property Metadata $_info
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
+ * @property WorkRoleReference $workRole
+ * @property WorkTypeReference $workType
  * @property array $expenseTypeIds
+ * @property boolean $allowAllExpenseTypeFlag
+ * @property boolean $expenseEntryFlag
+ * @property boolean $timeEntryFlag
+ * @property integer $id
+ * @property string $billTime
+ * @property string $integrationXref
+ * @property string $name
  */
 class ChargeCode extends Model
 {
@@ -24,13 +33,19 @@ class ChargeCode extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'billTime' => 'string',
-        'expenseEntryFlag' => 'boolean',
+        '_info' => Metadata::class,
         'allowAllExpenseTypeFlag' => 'boolean',
-        'timeEntryFlag' => 'boolean',
-        'integrationXref' => 'string',
+        'billTime' => 'string',
+        'company' => CompanyReference::class,
+        'department' => SystemDepartmentReference::class,
+        'expenseEntryFlag' => 'boolean',
         'expenseTypeIds' => 'array',
+        'id' => 'integer',
+        'integrationXref' => 'string',
+        'location' => SystemLocationReference::class,
+        'name' => 'string',
+        'timeEntryFlag' => 'boolean',
+        'workRole' => WorkRoleReference::class,
+        'workType' => WorkTypeReference::class
     ];
 }

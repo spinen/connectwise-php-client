@@ -2,11 +2,17 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ManagementBackup
+ * Class ManagementBackup Version v2019_3
  *
+ * Model for ManagementBackup
+ *
+ * @property AgreementTypeReference $type
+ * @property CatalogItemReference $item
+ * @property Metadata $_info
  * @property integer $id
  * @property string $billingLevel
  */
@@ -18,7 +24,10 @@ class ManagementBackup extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
         'billingLevel' => 'string',
+        'id' => 'integer',
+        'item' => CatalogItemReference::class,
+        'type' => AgreementTypeReference::class
     ];
 }

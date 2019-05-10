@@ -2,14 +2,18 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Marketing;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CampaignType
+ * Class CampaignType Version v2018_4
  *
+ * Model for CampaignType
+ *
+ * @property Metadata $_info
+ * @property boolean $defaultFlag
  * @property integer $id
  * @property string $name
- * @property boolean $defaultFlag
  */
 class CampaignType extends Model
 {
@@ -19,8 +23,9 @@ class CampaignType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
+        'id' => 'integer',
+        'name' => 'string'
     ];
 }

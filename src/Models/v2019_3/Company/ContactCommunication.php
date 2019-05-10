@@ -2,18 +2,24 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ContactCommunication
+ * Class ContactCommunication Version v2019_3
  *
- * @property integer $id
- * @property integer $contactId
- * @property string $value
- * @property string $extension
+ * Model for ContactCommunication
+ *
+ * @property CommunicationTypeReference $type
+ * @property Guid $mobileGuid
+ * @property Metadata $_info
  * @property boolean $defaultFlag
+ * @property integer $contactId
+ * @property integer $id
  * @property string $communicationType
  * @property string $domain
+ * @property string $extension
+ * @property string $value
  */
 class ContactCommunication extends Model
 {
@@ -23,12 +29,15 @@ class ContactCommunication extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'contactId' => 'integer',
-        'value' => 'string',
-        'extension' => 'string',
-        'defaultFlag' => 'boolean',
+        '_info' => Metadata::class,
         'communicationType' => 'string',
+        'contactId' => 'integer',
+        'defaultFlag' => 'boolean',
         'domain' => 'string',
+        'extension' => 'string',
+        'id' => 'integer',
+        'mobileGuid' => Guid::class,
+        'type' => CommunicationTypeReference::class,
+        'value' => 'string'
     ];
 }

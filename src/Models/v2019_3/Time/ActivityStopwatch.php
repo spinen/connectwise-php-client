@@ -2,23 +2,33 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ActivityStopwatch
+ * Class ActivityStopwatch Version v2019_3
  *
+ * Model for ActivityStopwatch
+ *
+ * @property AgreementReference $agreement
+ * @property Carbon $dateEntered
+ * @property Carbon $endTime
+ * @property Carbon $startTime
+ * @property Guid $activityMobileGuid
+ * @property Guid $mobileGuid
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property WorkRoleReference $workRole
+ * @property WorkTypeReference $workType
  * @property integer $activityId
- * @property string $billableOption
  * @property integer $businessUnitId
- * @property carbon $dateEntered
- * @property carbon $endTime
  * @property integer $id
- * @property string $internalNotes
  * @property integer $locationId
- * @property string $notes
- * @property carbon $startTime
- * @property string $status
  * @property integer $totalPauseTime
+ * @property string $billableOption
+ * @property string $internalNotes
+ * @property string $notes
+ * @property string $status
  */
 class ActivityStopwatch extends Model
 {
@@ -28,17 +38,24 @@ class ActivityStopwatch extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'activityId' => 'integer',
+        'activityMobileGuid' => Guid::class,
+        'agreement' => AgreementReference::class,
         'billableOption' => 'string',
         'businessUnitId' => 'integer',
-        'dateEntered' => 'carbon',
-        'endTime' => 'carbon',
+        'dateEntered' => Carbon::class,
+        'endTime' => Carbon::class,
         'id' => 'integer',
         'internalNotes' => 'string',
         'locationId' => 'integer',
+        'member' => MemberReference::class,
+        'mobileGuid' => Guid::class,
         'notes' => 'string',
-        'startTime' => 'carbon',
+        'startTime' => Carbon::class,
         'status' => 'string',
         'totalPauseTime' => 'integer',
+        'workRole' => WorkRoleReference::class,
+        'workType' => WorkTypeReference::class
     ];
 }

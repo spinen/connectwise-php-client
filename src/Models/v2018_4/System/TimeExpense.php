@@ -2,18 +2,23 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TimeExpense
+ * Class TimeExpense Version v2018_4
  *
- * @property integer $id
+ * Model for TimeExpense
+ *
+ * @property CompanyReference $internalCompany
+ * @property Metadata $_info
+ * @property boolean $disableTimeEntryFlag
+ * @property boolean $requireExpenseNoteFlag
+ * @property boolean $requireTimeNoteFlag
  * @property boolean $tier1ApprovalFlag
  * @property boolean $tier2ApprovalFlag
- * @property boolean $disableTimeEntryFlag
- * @property boolean $requireTimeNoteFlag
- * @property boolean $requireExpenseNoteFlag
- * @property double $roundingFactor
+ * @property float $roundingFactor
+ * @property integer $id
  * @property integer $invoiceStart
  */
 class TimeExpense extends Model
@@ -24,13 +29,15 @@ class TimeExpense extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'tier1ApprovalFlag' => 'boolean',
-        'tier2ApprovalFlag' => 'boolean',
+        '_info' => Metadata::class,
         'disableTimeEntryFlag' => 'boolean',
-        'requireTimeNoteFlag' => 'boolean',
-        'requireExpenseNoteFlag' => 'boolean',
-        'roundingFactor' => 'double',
+        'id' => 'integer',
+        'internalCompany' => CompanyReference::class,
         'invoiceStart' => 'integer',
+        'requireExpenseNoteFlag' => 'boolean',
+        'requireTimeNoteFlag' => 'boolean',
+        'roundingFactor' => 'float',
+        'tier1ApprovalFlag' => 'boolean',
+        'tier2ApprovalFlag' => 'boolean'
     ];
 }

@@ -2,26 +2,30 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProcurementSetting
+ * Class ProcurementSetting Version v2019_1
  *
- * @property integer $id
- * @property integer $startingPurchaseOrderNum
- * @property string $purchaseOrderPrefix
- * @property string $purchaseOrderSuffix
- * @property string $prefixSuffixType
- * @property boolean $disableCostUpdatesFlag
- * @property boolean $disableNegativeInventoryFlag
- * @property string $costingMethod
+ * Model for ProcurementSetting
+ *
+ * @property Metadata $_info
+ * @property boolean $autoApprovePurchaseOrderFlag
  * @property boolean $autoClosePurchaseOrderFlag
  * @property boolean $autoClosePurchaseOrderItemFlag
- * @property boolean $autoApprovePurchaseOrderFlag
- * @property boolean $taxPurchaseOrderFlag
+ * @property boolean $disableCostUpdatesFlag
+ * @property boolean $disableNegativeInventoryFlag
  * @property boolean $taxFreightFlag
+ * @property boolean $taxPurchaseOrderFlag
  * @property boolean $useVendorTaxCodeFlag
+ * @property integer $id
  * @property integer $numDecimalPlaces
+ * @property integer $startingPurchaseOrderNum
+ * @property string $costingMethod
+ * @property string $prefixSuffixType
+ * @property string $purchaseOrderPrefix
+ * @property string $purchaseOrderSuffix
  */
 class ProcurementSetting extends Model
 {
@@ -31,20 +35,21 @@ class ProcurementSetting extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'startingPurchaseOrderNum' => 'integer',
-        'purchaseOrderPrefix' => 'string',
-        'purchaseOrderSuffix' => 'string',
-        'prefixSuffixType' => 'string',
-        'disableCostUpdatesFlag' => 'boolean',
-        'disableNegativeInventoryFlag' => 'boolean',
-        'costingMethod' => 'string',
+        '_info' => Metadata::class,
+        'autoApprovePurchaseOrderFlag' => 'boolean',
         'autoClosePurchaseOrderFlag' => 'boolean',
         'autoClosePurchaseOrderItemFlag' => 'boolean',
-        'autoApprovePurchaseOrderFlag' => 'boolean',
-        'taxPurchaseOrderFlag' => 'boolean',
-        'taxFreightFlag' => 'boolean',
-        'useVendorTaxCodeFlag' => 'boolean',
+        'costingMethod' => 'string',
+        'disableCostUpdatesFlag' => 'boolean',
+        'disableNegativeInventoryFlag' => 'boolean',
+        'id' => 'integer',
         'numDecimalPlaces' => 'integer',
+        'prefixSuffixType' => 'string',
+        'purchaseOrderPrefix' => 'string',
+        'purchaseOrderSuffix' => 'string',
+        'startingPurchaseOrderNum' => 'integer',
+        'taxFreightFlag' => 'boolean',
+        'taxPurchaseOrderFlag' => 'boolean',
+        'useVendorTaxCodeFlag' => 'boolean'
     ];
 }

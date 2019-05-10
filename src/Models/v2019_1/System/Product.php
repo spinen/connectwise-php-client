@@ -2,14 +2,18 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Product
+ * Class Product Version v2019_1
  *
+ * Model for Product
+ *
+ * @property Metadata $_info
+ * @property boolean $installedFlag
  * @property string $identifier
  * @property string $password
- * @property boolean $installedFlag
  */
 class Product extends Model
 {
@@ -19,8 +23,9 @@ class Product extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'identifier' => 'string',
-        'password' => 'string',
         'installedFlag' => 'boolean',
+        'password' => 'string'
     ];
 }

@@ -2,24 +2,29 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Expense;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ExpenseType
+ * Class ExpenseType Version v2019_2
  *
- * @property integer $id
- * @property string $name
- * @property string $amountCaption
- * @property double $reimbursementRate
- * @property string $billExpenses
- * @property string $invoiceMarkupOption
- * @property double $invoiceMarkupAmount
+ * Model for ExpenseType
+ *
+ * @property ExternalExpenseTypeIntegrationReference $externalIntegrationXRef
+ * @property Metadata $_info
  * @property boolean $advancedAmountFlag
+ * @property boolean $inactiveFlag
  * @property boolean $mileageFlag
  * @property boolean $quantityFlag
- * @property boolean $inactiveFlag
- * @property double $maxAmount
+ * @property float $invoiceMarkupAmount
+ * @property float $maxAmount
+ * @property float $reimbursementRate
+ * @property integer $id
+ * @property string $amountCaption
+ * @property string $billExpenses
  * @property string $integrationXRef
+ * @property string $invoiceMarkupOption
+ * @property string $name
  */
 class ExpenseType extends Model
 {
@@ -29,18 +34,20 @@ class ExpenseType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'amountCaption' => 'string',
-        'reimbursementRate' => 'double',
-        'billExpenses' => 'string',
-        'invoiceMarkupOption' => 'string',
-        'invoiceMarkupAmount' => 'double',
+        '_info' => Metadata::class,
         'advancedAmountFlag' => 'boolean',
-        'mileageFlag' => 'boolean',
-        'quantityFlag' => 'boolean',
+        'amountCaption' => 'string',
+        'billExpenses' => 'string',
+        'externalIntegrationXRef' => ExternalExpenseTypeIntegrationReference::class,
+        'id' => 'integer',
         'inactiveFlag' => 'boolean',
-        'maxAmount' => 'double',
         'integrationXRef' => 'string',
+        'invoiceMarkupAmount' => 'float',
+        'invoiceMarkupOption' => 'string',
+        'maxAmount' => 'float',
+        'mileageFlag' => 'boolean',
+        'name' => 'string',
+        'quantityFlag' => 'boolean',
+        'reimbursementRate' => 'float'
     ];
 }

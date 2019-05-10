@@ -2,14 +2,20 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AgreementSite
+ * Class AgreementSite Version v2018_4
  *
- * @property integer $id
- * @property integer $agreementId
+ * Model for AgreementSite
+ *
+ * @property CompanyReference $company
+ * @property Metadata $_info
+ * @property SiteReference $site
  * @property array $customFields
+ * @property integer $agreementId
+ * @property integer $id
  */
 class AgreementSite extends Model
 {
@@ -19,8 +25,11 @@ class AgreementSite extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
         'agreementId' => 'integer',
+        'company' => CompanyReference::class,
         'customFields' => 'array',
+        'id' => 'integer',
+        'site' => SiteReference::class
     ];
 }

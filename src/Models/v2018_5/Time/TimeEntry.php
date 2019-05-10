@@ -2,36 +2,48 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TimeEntry
+ * Class TimeEntry Version v2018_5
  *
- * @property integer $id
- * @property integer $chargeToId
- * @property string $chargeToType
- * @property integer $locationId
- * @property integer $businessUnitId
- * @property carbon $timeStart
- * @property carbon $timeEnd
- * @property double $hoursDeduct
- * @property double $actualHours
- * @property string $billableOption
- * @property string $notes
- * @property string $internalNotes
+ * Model for TimeEntry
+ *
+ * @property AgreementReference $agreement
+ * @property Carbon $dateEntered
+ * @property Carbon $timeEnd
+ * @property Carbon $timeStart
+ * @property CompanyReference $company
+ * @property Guid $mobileGuid
+ * @property InvoiceReference $invoice
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property TimeSheetReference $timeSheet
+ * @property WorkRoleReference $workRole
+ * @property WorkTypeReference $workType
+ * @property array $customFields
  * @property boolean $addToDetailDescriptionFlag
  * @property boolean $addToInternalAnalysisFlag
  * @property boolean $addToResolutionFlag
- * @property boolean $emailResourceFlag
- * @property boolean $emailContactFlag
  * @property boolean $emailCcFlag
+ * @property boolean $emailContactFlag
+ * @property boolean $emailResourceFlag
+ * @property float $actualHours
+ * @property float $hourlyRate
+ * @property float $hoursBilled
+ * @property float $hoursDeduct
+ * @property integer $businessUnitId
+ * @property integer $chargeToId
+ * @property integer $id
+ * @property integer $locationId
+ * @property string $billableOption
+ * @property string $chargeToType
  * @property string $emailCc
- * @property double $hoursBilled
  * @property string $enteredBy
- * @property carbon $dateEntered
- * @property double $hourlyRate
+ * @property string $internalNotes
+ * @property string $notes
  * @property string $status
- * @property array $customFields
  */
 class TimeEntry extends Model
 {
@@ -41,30 +53,39 @@ class TimeEntry extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'chargeToId' => 'integer',
-        'chargeToType' => 'string',
-        'locationId' => 'integer',
-        'businessUnitId' => 'integer',
-        'timeStart' => 'carbon',
-        'timeEnd' => 'carbon',
-        'hoursDeduct' => 'double',
-        'actualHours' => 'double',
-        'billableOption' => 'string',
-        'notes' => 'string',
-        'internalNotes' => 'string',
+        '_info' => Metadata::class,
+        'actualHours' => 'float',
         'addToDetailDescriptionFlag' => 'boolean',
         'addToInternalAnalysisFlag' => 'boolean',
         'addToResolutionFlag' => 'boolean',
-        'emailResourceFlag' => 'boolean',
-        'emailContactFlag' => 'boolean',
-        'emailCcFlag' => 'boolean',
-        'emailCc' => 'string',
-        'hoursBilled' => 'double',
-        'enteredBy' => 'string',
-        'dateEntered' => 'carbon',
-        'hourlyRate' => 'double',
-        'status' => 'string',
+        'agreement' => AgreementReference::class,
+        'billableOption' => 'string',
+        'businessUnitId' => 'integer',
+        'chargeToId' => 'integer',
+        'chargeToType' => 'string',
+        'company' => CompanyReference::class,
         'customFields' => 'array',
+        'dateEntered' => Carbon::class,
+        'emailCc' => 'string',
+        'emailCcFlag' => 'boolean',
+        'emailContactFlag' => 'boolean',
+        'emailResourceFlag' => 'boolean',
+        'enteredBy' => 'string',
+        'hourlyRate' => 'float',
+        'hoursBilled' => 'float',
+        'hoursDeduct' => 'float',
+        'id' => 'integer',
+        'internalNotes' => 'string',
+        'invoice' => InvoiceReference::class,
+        'locationId' => 'integer',
+        'member' => MemberReference::class,
+        'mobileGuid' => Guid::class,
+        'notes' => 'string',
+        'status' => 'string',
+        'timeEnd' => Carbon::class,
+        'timeSheet' => TimeSheetReference::class,
+        'timeStart' => Carbon::class,
+        'workRole' => WorkRoleReference::class,
+        'workType' => WorkTypeReference::class
     ];
 }

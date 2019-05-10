@@ -2,18 +2,23 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PricingSchedule
+ * Class PricingSchedule Version v2018_5
  *
+ * Model for PricingSchedule
+ *
+ * @property CurrencyReference $currency
+ * @property Metadata $_info
+ * @property array $companies
+ * @property boolean $defaultFlag
+ * @property boolean $inactiveFlag
+ * @property boolean $removeAllCompaniesFlag
+ * @property boolean $setAllCompaniesFlag
  * @property integer $id
  * @property string $name
- * @property boolean $inactiveFlag
- * @property boolean $defaultFlag
- * @property array $companies
- * @property boolean $setAllCompaniesFlag
- * @property boolean $removeAllCompaniesFlag
  */
 class PricingSchedule extends Model
 {
@@ -23,12 +28,14 @@ class PricingSchedule extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'inactiveFlag' => 'boolean',
-        'defaultFlag' => 'boolean',
+        '_info' => Metadata::class,
         'companies' => 'array',
-        'setAllCompaniesFlag' => 'boolean',
+        'currency' => CurrencyReference::class,
+        'defaultFlag' => 'boolean',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
         'removeAllCompaniesFlag' => 'boolean',
+        'setAllCompaniesFlag' => 'boolean'
     ];
 }

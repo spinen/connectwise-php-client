@@ -2,13 +2,24 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CompanyPickerItem
+ * Class CompanyPickerItem Version v2019_3
  *
- * @property integer $id
+ * Model for CompanyPickerItem
+ *
+ * @property CompanyReference $company
+ * @property CompanyStatusReference $companyStatus
+ * @property CompanyTypeReference $companyType
+ * @property CountryReference $companyCountry
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property SiteReference $companySite
+ * @property SystemLocationReference $companyLocation
  * @property boolean $vendorPickerFlag
+ * @property integer $id
  */
 class CompanyPickerItem extends Model
 {
@@ -18,7 +29,15 @@ class CompanyPickerItem extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'company' => CompanyReference::class,
+        'companyCountry' => CountryReference::class,
+        'companyLocation' => SystemLocationReference::class,
+        'companySite' => SiteReference::class,
+        'companyStatus' => CompanyStatusReference::class,
+        'companyType' => CompanyTypeReference::class,
         'id' => 'integer',
-        'vendorPickerFlag' => 'boolean',
+        'member' => MemberReference::class,
+        'vendorPickerFlag' => 'boolean'
     ];
 }

@@ -2,16 +2,20 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BillingCycle
+ * Class BillingCycle Version v2019_3
  *
+ * Model for BillingCycle
+ *
+ * @property Metadata $_info
+ * @property boolean $defaultFlag
  * @property integer $id
+ * @property string $billingOptions
  * @property string $identifier
  * @property string $name
- * @property boolean $defaultFlag
- * @property string $billingOptions
  */
 class BillingCycle extends Model
 {
@@ -21,10 +25,11 @@ class BillingCycle extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'billingOptions' => 'string',
+        'defaultFlag' => 'boolean',
         'id' => 'integer',
         'identifier' => 'string',
-        'name' => 'string',
-        'defaultFlag' => 'boolean',
-        'billingOptions' => 'string',
+        'name' => 'string'
     ];
 }

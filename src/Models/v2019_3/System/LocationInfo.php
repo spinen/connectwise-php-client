@@ -2,14 +2,18 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class LocationInfo
+ * Class LocationInfo Version v2019_3
  *
+ * Model for LocationInfo
+ *
+ * @property Metadata $_info
+ * @property boolean $location_flag
  * @property integer $id
  * @property string $name
- * @property boolean $location_flag
  */
 class LocationInfo extends Model
 {
@@ -19,8 +23,9 @@ class LocationInfo extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'name' => 'string',
         'location_flag' => 'boolean',
+        'name' => 'string'
     ];
 }

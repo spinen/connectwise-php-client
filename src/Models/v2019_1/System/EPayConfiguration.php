@@ -2,16 +2,22 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class EPayConfiguration
+ * Class EPayConfiguration Version v2019_1
  *
+ * Model for EPayConfiguration
+ *
+ * @property CurrencyReference $currency
+ * @property Metadata $_info
+ * @property SystemLocationReference $location
  * @property integer $id
- * @property string $url
- * @property string $storeIdentifier
  * @property string $encryptionKey
  * @property string $initializationVector
+ * @property string $storeIdentifier
+ * @property string $url
  */
 class EPayConfiguration extends Model
 {
@@ -21,10 +27,13 @@ class EPayConfiguration extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'url' => 'string',
-        'storeIdentifier' => 'string',
+        '_info' => Metadata::class,
+        'currency' => CurrencyReference::class,
         'encryptionKey' => 'string',
+        'id' => 'integer',
         'initializationVector' => 'string',
+        'location' => SystemLocationReference::class,
+        'storeIdentifier' => 'string',
+        'url' => 'string'
     ];
 }

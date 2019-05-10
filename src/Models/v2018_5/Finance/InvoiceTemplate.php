@@ -2,72 +2,76 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class InvoiceTemplate
+ * Class InvoiceTemplate Version v2018_5
  *
- * @property integer $id
- * @property string $name
- * @property double $marginLeft
- * @property double $marginRight
- * @property double $marginTop
- * @property double $marginBottom
- * @property boolean $logoVisibleFlag
- * @property string $headerLogoPosition
- * @property boolean $remitToVisibleFlag
- * @property string $headerAddressPosition
- * @property boolean $headerTitleVisibleFlag
- * @property string $headerTitleCaption
- * @property string $headerTitlePosition
- * @property string $headerTitleFont
- * @property boolean $headerTermsVisibleFlag
- * @property string $headerTermsCaption
- * @property boolean $headerDueDateVisibleFlag
- * @property string $headerDueDateCaption
- * @property boolean $headerPoNumberVisibleFlag
- * @property string $headerPoNumberCaption
- * @property boolean $headerReferenceVisibleFlag
- * @property string $headerReferenceCaption
+ * Model for InvoiceTemplate
+ *
+ * @property Metadata $_info
  * @property boolean $headerAccountVisibleFlag
- * @property string $headerAccountCaption
- * @property boolean $headerTaxIdVisibleFlag
- * @property string $headerTaxIdCaption
+ * @property boolean $headerDueDateVisibleFlag
+ * @property boolean $headerPoNumberVisibleFlag
+ * @property boolean $headerReferenceVisibleFlag
  * @property boolean $headerShipToVisibleFlag
- * @property string $headerShipToCaption
- * @property boolean $serviceHeaderTicketNumberVisibleFlag
- * @property string $serviceHeaderTicketNumberCaption
- * @property boolean $serviceHeaderCompanyNameVisibleFlag
- * @property string $serviceHeaderCompanyNameCaption
- * @property boolean $serviceHeaderSummaryVisibleFlag
- * @property string $serviceHeaderSummaryCaption
- * @property boolean $serviceHeaderContactNameVisibleFlag
- * @property string $serviceHeaderContactNameCaption
- * @property boolean $serviceHeaderDetailDescriptionVisibleFlag
- * @property string $serviceHeaderDetailDescriptionCaption
- * @property boolean $serviceHeaderResolutionVisibleFlag
- * @property string $serviceHeaderResolutionCaption
- * @property boolean $serviceHeaderAmountVisibleFlag
- * @property string $serviceHeaderAmountCaption
- * @property boolean $serviceHeaderBillingMethodVisibleFlag
- * @property string $serviceHeaderBillingMethodCaption
- * @property boolean $serviceHeaderClosedTasksVisibleFlag
- * @property boolean $serviceHeaderOpenTasksVisibleFlag
- * @property boolean $serviceHeaderBundledTicketsVisibleFlag
- * @property boolean $projectHeaderProjectNameVisibleFlag
- * @property string $projectHeaderProjectNameCaption
- * @property boolean $projectHeaderCompanyNameVisibleFlag
- * @property string $projectHeaderCompanyNameCaption
- * @property boolean $projectHeaderOriginalDownpaymentVisibleFlag
- * @property string $projectHeaderOriginalDownpaymentCaption
- * @property boolean $projectHeaderContactNameVisibleFlag
- * @property string $projectHeaderContactNameCaption
+ * @property boolean $headerTaxIdVisibleFlag
+ * @property boolean $headerTermsVisibleFlag
+ * @property boolean $headerTitleVisibleFlag
+ * @property boolean $logoVisibleFlag
  * @property boolean $projectHeaderAmountVisibleFlag
- * @property string $projectHeaderAmountCaption
  * @property boolean $projectHeaderBillingMethodVisibleFlag
- * @property string $projectHeaderBillingMethodCaption
  * @property boolean $projectHeaderBillingTypeVisibleFlag
+ * @property boolean $projectHeaderCompanyNameVisibleFlag
+ * @property boolean $projectHeaderContactNameVisibleFlag
+ * @property boolean $projectHeaderOriginalDownpaymentVisibleFlag
+ * @property boolean $projectHeaderProjectNameVisibleFlag
+ * @property boolean $remitToVisibleFlag
+ * @property boolean $serviceHeaderAmountVisibleFlag
+ * @property boolean $serviceHeaderBillingMethodVisibleFlag
+ * @property boolean $serviceHeaderBundledTicketsVisibleFlag
+ * @property boolean $serviceHeaderClosedTasksVisibleFlag
+ * @property boolean $serviceHeaderCompanyNameVisibleFlag
+ * @property boolean $serviceHeaderContactNameVisibleFlag
+ * @property boolean $serviceHeaderDetailDescriptionVisibleFlag
+ * @property boolean $serviceHeaderOpenTasksVisibleFlag
+ * @property boolean $serviceHeaderResolutionVisibleFlag
+ * @property boolean $serviceHeaderSummaryVisibleFlag
+ * @property boolean $serviceHeaderTicketNumberVisibleFlag
+ * @property float $marginBottom
+ * @property float $marginLeft
+ * @property float $marginRight
+ * @property float $marginTop
+ * @property integer $id
+ * @property string $headerAccountCaption
+ * @property string $headerAddressPosition
+ * @property string $headerDueDateCaption
+ * @property string $headerLogoPosition
+ * @property string $headerPoNumberCaption
+ * @property string $headerReferenceCaption
+ * @property string $headerShipToCaption
+ * @property string $headerTaxIdCaption
+ * @property string $headerTermsCaption
+ * @property string $headerTitleCaption
+ * @property string $headerTitleFont
+ * @property string $headerTitlePosition
+ * @property string $name
+ * @property string $projectHeaderAmountCaption
+ * @property string $projectHeaderBillingMethodCaption
  * @property string $projectHeaderBillingTypeCaption
+ * @property string $projectHeaderCompanyNameCaption
+ * @property string $projectHeaderContactNameCaption
+ * @property string $projectHeaderOriginalDownpaymentCaption
+ * @property string $projectHeaderProjectNameCaption
+ * @property string $serviceHeaderAmountCaption
+ * @property string $serviceHeaderBillingMethodCaption
+ * @property string $serviceHeaderCompanyNameCaption
+ * @property string $serviceHeaderContactNameCaption
+ * @property string $serviceHeaderDetailDescriptionCaption
+ * @property string $serviceHeaderResolutionCaption
+ * @property string $serviceHeaderSummaryCaption
+ * @property string $serviceHeaderTicketNumberCaption
  */
 class InvoiceTemplate extends Model
 {
@@ -77,66 +81,67 @@ class InvoiceTemplate extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'marginLeft' => 'double',
-        'marginRight' => 'double',
-        'marginTop' => 'double',
-        'marginBottom' => 'double',
-        'logoVisibleFlag' => 'boolean',
-        'headerLogoPosition' => 'string',
-        'remitToVisibleFlag' => 'boolean',
-        'headerAddressPosition' => 'string',
-        'headerTitleVisibleFlag' => 'boolean',
-        'headerTitleCaption' => 'string',
-        'headerTitlePosition' => 'string',
-        'headerTitleFont' => 'string',
-        'headerTermsVisibleFlag' => 'boolean',
-        'headerTermsCaption' => 'string',
-        'headerDueDateVisibleFlag' => 'boolean',
-        'headerDueDateCaption' => 'string',
-        'headerPoNumberVisibleFlag' => 'boolean',
-        'headerPoNumberCaption' => 'string',
-        'headerReferenceVisibleFlag' => 'boolean',
-        'headerReferenceCaption' => 'string',
-        'headerAccountVisibleFlag' => 'boolean',
+        '_info' => Metadata::class,
         'headerAccountCaption' => 'string',
-        'headerTaxIdVisibleFlag' => 'boolean',
-        'headerTaxIdCaption' => 'string',
-        'headerShipToVisibleFlag' => 'boolean',
+        'headerAccountVisibleFlag' => 'boolean',
+        'headerAddressPosition' => 'string',
+        'headerDueDateCaption' => 'string',
+        'headerDueDateVisibleFlag' => 'boolean',
+        'headerLogoPosition' => 'string',
+        'headerPoNumberCaption' => 'string',
+        'headerPoNumberVisibleFlag' => 'boolean',
+        'headerReferenceCaption' => 'string',
+        'headerReferenceVisibleFlag' => 'boolean',
         'headerShipToCaption' => 'string',
-        'serviceHeaderTicketNumberVisibleFlag' => 'boolean',
-        'serviceHeaderTicketNumberCaption' => 'string',
-        'serviceHeaderCompanyNameVisibleFlag' => 'boolean',
-        'serviceHeaderCompanyNameCaption' => 'string',
-        'serviceHeaderSummaryVisibleFlag' => 'boolean',
-        'serviceHeaderSummaryCaption' => 'string',
-        'serviceHeaderContactNameVisibleFlag' => 'boolean',
-        'serviceHeaderContactNameCaption' => 'string',
-        'serviceHeaderDetailDescriptionVisibleFlag' => 'boolean',
-        'serviceHeaderDetailDescriptionCaption' => 'string',
-        'serviceHeaderResolutionVisibleFlag' => 'boolean',
-        'serviceHeaderResolutionCaption' => 'string',
-        'serviceHeaderAmountVisibleFlag' => 'boolean',
-        'serviceHeaderAmountCaption' => 'string',
-        'serviceHeaderBillingMethodVisibleFlag' => 'boolean',
-        'serviceHeaderBillingMethodCaption' => 'string',
-        'serviceHeaderClosedTasksVisibleFlag' => 'boolean',
-        'serviceHeaderOpenTasksVisibleFlag' => 'boolean',
-        'serviceHeaderBundledTicketsVisibleFlag' => 'boolean',
-        'projectHeaderProjectNameVisibleFlag' => 'boolean',
-        'projectHeaderProjectNameCaption' => 'string',
-        'projectHeaderCompanyNameVisibleFlag' => 'boolean',
-        'projectHeaderCompanyNameCaption' => 'string',
-        'projectHeaderOriginalDownpaymentVisibleFlag' => 'boolean',
-        'projectHeaderOriginalDownpaymentCaption' => 'string',
-        'projectHeaderContactNameVisibleFlag' => 'boolean',
-        'projectHeaderContactNameCaption' => 'string',
-        'projectHeaderAmountVisibleFlag' => 'boolean',
+        'headerShipToVisibleFlag' => 'boolean',
+        'headerTaxIdCaption' => 'string',
+        'headerTaxIdVisibleFlag' => 'boolean',
+        'headerTermsCaption' => 'string',
+        'headerTermsVisibleFlag' => 'boolean',
+        'headerTitleCaption' => 'string',
+        'headerTitleFont' => 'string',
+        'headerTitlePosition' => 'string',
+        'headerTitleVisibleFlag' => 'boolean',
+        'id' => 'integer',
+        'logoVisibleFlag' => 'boolean',
+        'marginBottom' => 'float',
+        'marginLeft' => 'float',
+        'marginRight' => 'float',
+        'marginTop' => 'float',
+        'name' => 'string',
         'projectHeaderAmountCaption' => 'string',
-        'projectHeaderBillingMethodVisibleFlag' => 'boolean',
+        'projectHeaderAmountVisibleFlag' => 'boolean',
         'projectHeaderBillingMethodCaption' => 'string',
-        'projectHeaderBillingTypeVisibleFlag' => 'boolean',
+        'projectHeaderBillingMethodVisibleFlag' => 'boolean',
         'projectHeaderBillingTypeCaption' => 'string',
+        'projectHeaderBillingTypeVisibleFlag' => 'boolean',
+        'projectHeaderCompanyNameCaption' => 'string',
+        'projectHeaderCompanyNameVisibleFlag' => 'boolean',
+        'projectHeaderContactNameCaption' => 'string',
+        'projectHeaderContactNameVisibleFlag' => 'boolean',
+        'projectHeaderOriginalDownpaymentCaption' => 'string',
+        'projectHeaderOriginalDownpaymentVisibleFlag' => 'boolean',
+        'projectHeaderProjectNameCaption' => 'string',
+        'projectHeaderProjectNameVisibleFlag' => 'boolean',
+        'remitToVisibleFlag' => 'boolean',
+        'serviceHeaderAmountCaption' => 'string',
+        'serviceHeaderAmountVisibleFlag' => 'boolean',
+        'serviceHeaderBillingMethodCaption' => 'string',
+        'serviceHeaderBillingMethodVisibleFlag' => 'boolean',
+        'serviceHeaderBundledTicketsVisibleFlag' => 'boolean',
+        'serviceHeaderClosedTasksVisibleFlag' => 'boolean',
+        'serviceHeaderCompanyNameCaption' => 'string',
+        'serviceHeaderCompanyNameVisibleFlag' => 'boolean',
+        'serviceHeaderContactNameCaption' => 'string',
+        'serviceHeaderContactNameVisibleFlag' => 'boolean',
+        'serviceHeaderDetailDescriptionCaption' => 'string',
+        'serviceHeaderDetailDescriptionVisibleFlag' => 'boolean',
+        'serviceHeaderOpenTasksVisibleFlag' => 'boolean',
+        'serviceHeaderResolutionCaption' => 'string',
+        'serviceHeaderResolutionVisibleFlag' => 'boolean',
+        'serviceHeaderSummaryCaption' => 'string',
+        'serviceHeaderSummaryVisibleFlag' => 'boolean',
+        'serviceHeaderTicketNumberCaption' => 'string',
+        'serviceHeaderTicketNumberVisibleFlag' => 'boolean'
     ];
 }

@@ -2,21 +2,29 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProductComponent
+ * Class ProductComponent Version v2019_3
  *
+ * Model for ProductComponent
+ *
+ * @property CatalogItemReference $catalogItem
+ * @property CompanyReference $vendor
+ * @property Metadata $_info
+ * @property ProductItemReference $parentProductItem
+ * @property ProductItemReference $productItem
+ * @property boolean $hideDescriptionFlag
+ * @property boolean $hideExtendedPriceFlag
+ * @property boolean $hideItemIdentifierFlag
+ * @property boolean $hidePriceFlag
+ * @property boolean $hideQuantityFlag
+ * @property float $cost
+ * @property float $price
+ * @property float $quantity
  * @property integer $id
  * @property integer $sequenceNumber
- * @property double $quantity
- * @property boolean $hidePriceFlag
- * @property boolean $hideItemIdentifierFlag
- * @property boolean $hideDescriptionFlag
- * @property boolean $hideQuantityFlag
- * @property boolean $hideExtendedPriceFlag
- * @property double $price
- * @property double $cost
  */
 class ProductComponent extends Model
 {
@@ -26,15 +34,20 @@ class ProductComponent extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'sequenceNumber' => 'integer',
-        'quantity' => 'double',
-        'hidePriceFlag' => 'boolean',
-        'hideItemIdentifierFlag' => 'boolean',
+        '_info' => Metadata::class,
+        'catalogItem' => CatalogItemReference::class,
+        'cost' => 'float',
         'hideDescriptionFlag' => 'boolean',
-        'hideQuantityFlag' => 'boolean',
         'hideExtendedPriceFlag' => 'boolean',
-        'price' => 'double',
-        'cost' => 'double',
+        'hideItemIdentifierFlag' => 'boolean',
+        'hidePriceFlag' => 'boolean',
+        'hideQuantityFlag' => 'boolean',
+        'id' => 'integer',
+        'parentProductItem' => ProductItemReference::class,
+        'price' => 'float',
+        'productItem' => ProductItemReference::class,
+        'quantity' => 'float',
+        'sequenceNumber' => 'integer',
+        'vendor' => CompanyReference::class
     ];
 }

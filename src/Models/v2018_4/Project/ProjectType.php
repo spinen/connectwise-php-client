@@ -2,16 +2,20 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Project;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProjectType
+ * Class ProjectType Version v2018_4
  *
- * @property integer $id
- * @property string $name
+ * Model for ProjectType
+ *
+ * @property Metadata $_info
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
+ * @property integer $id
  * @property string $integrationXref
+ * @property string $name
  */
 class ProjectType extends Model
 {
@@ -21,10 +25,11 @@ class ProjectType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
+        'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'integrationXref' => 'string',
+        'name' => 'string'
     ];
 }

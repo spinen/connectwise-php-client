@@ -2,20 +2,26 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class InvoiceEmailTemplate
+ * Class InvoiceEmailTemplate Version v2018_4
  *
- * @property integer $id
- * @property string $name
+ * Model for InvoiceEmailTemplate
+ *
+ * @property BillingStatusReference $invoiceStatus
+ * @property Metadata $_info
+ * @property ServiceSurveyReference $serviceSurvey
+ * @property boolean $copySenderFlag
  * @property boolean $useSenderFlag
+ * @property integer $id
+ * @property string $body
+ * @property string $emailAddress
  * @property string $firstName
  * @property string $lastName
- * @property string $emailAddress
+ * @property string $name
  * @property string $subject
- * @property string $body
- * @property boolean $copySenderFlag
  */
 class InvoiceEmailTemplate extends Model
 {
@@ -25,14 +31,17 @@ class InvoiceEmailTemplate extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'useSenderFlag' => 'boolean',
-        'firstName' => 'string',
-        'lastName' => 'string',
-        'emailAddress' => 'string',
-        'subject' => 'string',
+        '_info' => Metadata::class,
         'body' => 'string',
         'copySenderFlag' => 'boolean',
+        'emailAddress' => 'string',
+        'firstName' => 'string',
+        'id' => 'integer',
+        'invoiceStatus' => BillingStatusReference::class,
+        'lastName' => 'string',
+        'name' => 'string',
+        'serviceSurvey' => ServiceSurveyReference::class,
+        'subject' => 'string',
+        'useSenderFlag' => 'boolean'
     ];
 }

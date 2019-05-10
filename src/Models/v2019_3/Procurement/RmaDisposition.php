@@ -2,14 +2,18 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class RmaDisposition
+ * Class RmaDisposition Version v2019_3
  *
+ * Model for RmaDisposition
+ *
+ * @property Metadata $_info
+ * @property boolean $defaultFlag
  * @property integer $id
  * @property string $name
- * @property boolean $defaultFlag
  */
 class RmaDisposition extends Model
 {
@@ -19,8 +23,9 @@ class RmaDisposition extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
+        'id' => 'integer',
+        'name' => 'string'
     ];
 }

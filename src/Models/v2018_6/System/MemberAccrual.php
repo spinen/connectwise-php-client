@@ -2,15 +2,20 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class MemberAccrual
+ * Class MemberAccrual Version v2018_6
  *
+ * Model for MemberAccrual
+ *
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property float $hours
  * @property integer $id
- * @property string $accrualType
  * @property integer $year
- * @property double $hours
+ * @property string $accrualType
  * @property string $reason
  */
 class MemberAccrual extends Model
@@ -21,10 +26,12 @@ class MemberAccrual extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
         'accrualType' => 'string',
-        'year' => 'integer',
-        'hours' => 'double',
+        'hours' => 'float',
+        'id' => 'integer',
+        'member' => MemberReference::class,
         'reason' => 'string',
+        'year' => 'integer'
     ];
 }

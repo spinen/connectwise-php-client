@@ -1,146 +1,55 @@
 <?php
 
-/**
- * This is a quick & dirty script to parse the swagger files to build the response models.
- *
- * There are things about it that needs to be more robust, but it pretty much works, so leaving
- * it as is for now.
- *
- * You have to make a directly local to this script named "swagger" with all of the swagger.json
- * files in it.  Then you just run the script.  It should make all of the models in a folder named
- * "Generated" that you can move to src/Models/
- */
+use Illuminate\Support\Collection;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Illuminate\Support\Str;
-
-function determinePropertyType($properties)
+class Swagger
 {
-    if (array_key_exists('format', $properties)) {
-        if ('number' == $properties['type']) {
-            return $properties['format'];
-        }
+    /**
+     * @var Collection
+     */
+    public $map;
 
-        if ('string' == $properties['type'] && 'date-time' == $properties['format']) {
-            return 'carbon';
-        }
+    /**
+     * @var Collection
+     */
+    public $models;
+
+    /**
+     * @var Collection
+     */
+    public $specs;
+
+    /**
+     * @var string
+     */
+    public $version;
+
+    public function __construct($file, $version)
+    {
+        $this->map = collect([]);
+        $this->models = collect([]);
+        $this->specs = collect(json_decode(file_get_contents($file), true));
+        $this->version = $version;
     }
 
-    return $properties['type'];
-}
-
-function getDefinitions($definition)
-{
-    $definition = preg_replace('|^#/definitions/|u', '', $definition);
-
-    if (!array_key_exists($definition, $GLOBALS['swagger']['definitions'])) {
-        throw new RuntimeException(sprintf("Unexpected definition [%s]", $definition));
-    }
-
-    return $GLOBALS['swagger']['definitions'][$definition]['properties'];
-}
-
-function getResponse(array $responses, $code = 200)
-{
-    // Make sure that there is a response for the code
-    if (!array_key_exists($code, $responses)) {
-        throw new InvalidArgumentException(sprintf("The code [%s] is not in the response", $code));
-    }
-
-    // No schema, so just empty array--no response
-    if (!array_key_exists('schema', $responses[$code])) {
-        return [];
-    }
-
-    // Essentially not an array of items
-    if (array_key_exists('$ref', $responses[$code]['schema'])) {
-        return $responses[$code]['schema'];
-    }
-
-    // No items, so just empty array--no response
-    if (!array_key_exists('items', $responses[$code]['schema'])) {
-        return [];
-    }
-
-    // Give back the items
-    return $responses[$code]['schema']['items'];
-}
-
-function mapResourceToClass($uri, $namespace, $class)
-{
-    echo "'${uri}' => '" . $namespace . "\\" . $class . "',\n";
-}
-
-function parseResponse($response, $uri)
-{
-    $attributes = [];
-
-    foreach ($response as $name => $item) {
-        if ('$ref' !== $name) {
-            throw new RuntimeException(sprintf('Unexpected item [%s] in uri [%s]', $name, $uri));
-        }
-
-        $definition = getDefinitions($item);
-
-        foreach ($definition as $attribute => $properties) {
-            // TODO: Handle recursive defs
-            if (!array_key_exists('$ref', $properties)) {
-                $attributes[$attribute] = determinePropertyType($properties);
-            }
-        }
-    }
-
-    return $attributes;
-}
-
-function processPaths()
-{
-    $namespace = Str::studly($GLOBALS['api']);
-    $path = __DIR__ . '/Generated/' . $GLOBALS['version'] . '/';
-
-    mkdir($path . $namespace, 0755, true);
-
-    foreach ($GLOBALS['swagger']['paths'] as $uri => $actions) {
-        if (array_key_exists('get', $actions)) {
-            $docs = $actions['get'];
-            $class = Str::singular($docs['tags'][0]);
-            $file = $path . '/' . $namespace . '/' . $class . '.php';
-
-            if (!file_exists($file)) {
-                $GLOBALS['map'][$uri] = $GLOBALS['version'] . '\\' . $namespace . '\\' . $class;
-
-                $attributes = parseResponse(getResponse($docs['responses']), $uri);
-
-                writeClassFile(
-                    $file,
-                    $namespace,
-                    $GLOBALS['version'],
-                    $class,
-                    $attributes
-                );
-            }
-        }
-    }
-}
-
-function readSwagger($file)
-{
-    return json_decode(file_get_contents($file), true);
-}
-
-function writeClassFile($file_path, $namespace, $version, $class, $attributes)
-{
-    $template = <<<EOF
+    public function convertDefinitionToModel($class, $attributes)
+    {
+        $template = <<<EOF
 <?php
 
-namespace Spinen\ConnectWise\Models\{{ Version }}\{{ Namespace }};
+namespace {{ Namespace }};
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class {{ Class }}
- *{{ Properties }}
+ * Class {{ Class }} Version {{ Version }}
+ *
+ * {{ Description }}
+ *
+{{ Properties }}
  */
 class {{ Class }} extends Model
 {
@@ -149,41 +58,207 @@ class {{ Class }} extends Model
      *
      * @var array
      */
-    protected \$casts = [{{ Casts }}
+    protected \$casts = [
+{{ Casts }}
     ];
 }
 
 EOF;
 
-    $casts = null;
-    $properties = null;
+        // Make array of types keyed by property
+        $property_type = collect($attributes['properties'])
+            ->map(function ($attributes) {
+                return $this->parseType($attributes);
+            });
 
-    foreach ($attributes as $attribute => $type) {
-        $casts .= "\n        '" . $attribute . "' => '" . $type . "',";
-        $properties .= "\n * @property " . $type . ' $' . $attribute;
+        $casts = $property_type->map(function ($type, $property) {
+            $primitives = [
+                'array',
+                'boolean',
+                'float',
+                'integer',
+                'object',
+                'string',
+            ];
+
+            return "        '${property}' => " . ((in_array($type, $primitives)) ? "'${type}'" : "${type}::class");
+        })
+                               ->values()
+                               ->sort()
+                               ->implode(",\n");
+
+        $properties = $property_type->map(function ($type, $property) {
+            return " * @property ${type} $${property}";
+        })
+                                    ->values()
+                                    ->sort()
+                                    ->implode("\n");
+
+        $model = preg_replace('|{{ Namespace }}|u', $this->getNamespace(), $template);
+        $model = preg_replace('|{{ Version }}|u', $this->version, $model);
+        $model = preg_replace('|{{ Class }}|u', $class, $model);
+        $model = preg_replace('|{{ Description }}|u', $attributes['description'] ?? 'Model for ' . $class, $model);
+        $model = preg_replace('|{{ Casts }}|u', $casts, $model);
+        $model = preg_replace('|{{ Properties }}|u', $properties, $model);
+
+        return $model;
     }
 
-    $file = preg_replace('|{{ Namespace }}|u', $namespace, $template);
-    $file = preg_replace('|{{ Version }}|u', $version, $file);
-    $file = preg_replace('|{{ Class }}|u', $class, $file);
-    $file = preg_replace('|{{ Casts }}|u', $casts, $file);
-    $file = preg_replace('|{{ Properties }}|u', $properties, $file);
+    public function getNamespace($class = null)
+    {
+        return implode(
+            '\\',
+            array_filter(
+                [
+                    'Spinen',
+                    'ConnectWise',
+                    'Models',
+                    $this->version,
+                    $this->getTitle(),
+                    $class,
+                ]
+            )
+        );
+    }
 
-    file_put_contents($file_path, $file);
+    public function getTitle()
+    {
+        return preg_replace('/\\s+API$/u', '', $this->specs['info']['title']);
+    }
+
+    public function parseDefinitions()
+    {
+        foreach ($this->specs['definitions'] as $class => $attributes) {
+            $this->models[$class] = $this->convertDefinitionToModel($class, $attributes);
+        };
+
+        return $this;
+    }
+
+    public function parseType(array $attributes)
+    {
+        // Cast to another model
+        if (array_key_exists('$ref', $attributes)) {
+            return collect(explode('/', $attributes['$ref']))->last();
+        }
+
+        $format = $attributes['format'] ?? null;
+        $type = $attributes['type'];
+
+        // NOTE: We should consider supporting bigint, but for now, just int
+        if (in_array($format, ['int32', 'int64']) || 'integer' === $type) {
+            return 'integer';
+        }
+
+        if (in_array($format, ['double', 'float']) || 'number' === $type) {
+            return 'float';
+        }
+
+        if (in_array($format, ['date', 'date-time'])) {
+            return 'Carbon';
+        }
+
+        // NOTE: Would be nice to parse the 'items' key to get the types of the properties
+        if ('array' === $type) {
+            return 'array';
+        }
+
+        if ('boolean' === $type) {
+            return 'boolean';
+        }
+
+        if ('object' === $type) {
+            return 'object';
+        }
+
+        // default to string
+        return 'string';
+    }
+
+    public function parsePaths()
+    {
+        foreach ($this->specs['paths'] as $path => $actions) {
+            if (array_key_exists('get', $actions) && array_key_exists('schema', $actions['get']['responses'][200])) {
+                $schema = $actions['get']['responses'][200]['schema'];
+
+                // Single item or collection of items
+                $ref = $schema['$ref'] ?? $schema['items']['$ref'];
+
+                $this->map[$path] = $this->getNamespace(collect(explode('/', $ref))->last());
+            }
+        };
+
+        return $this;
+    }
 }
 
-foreach (glob(__DIR__ . "/swagger/*") as $version) {
-    $GLOBALS['version'] = basename($version);
-    $GLOBALS['map'] = null;
+class Loader
+{
+    /**
+     * @var Collection
+     */
+    public $swaggers;
 
-    foreach (glob(__DIR__ . "/swagger/" . $GLOBALS['version'] . "/*.json") as $swaggerfile) {
-        $GLOBALS['api'] = explode('.', basename($swaggerfile))[0];
-        $GLOBALS['swagger'] = readSwagger($swaggerfile);
+    /**
+     * @var string
+     */
+    public $version;
 
-        processPaths();
+    public function loadVersion($version)
+    {
+        $this->version = $version;
+
+        $this->swaggers = collect([]);
+
+        foreach (glob(__DIR__ . "/swagger/" . $this->version . "/*.json") as $swaggerfile) {
+            $this->swaggers->push(new Swagger($swaggerfile, $this->version));
+        }
+
+        return $this;
     }
 
-    file_put_contents(__DIR__ . '/Generated/' . $GLOBALS['version'] . '/map.json', json_encode($GLOBALS['map']));
+    public function process()
+    {
+        $this->swaggers->each(
+            function (Swagger $swagger) {
+                $swagger->parseDefinitions();
+
+                $swagger->parsePaths();
+            }
+        );
+
+        return $this;
+    }
+}
+
+/** @var Loader $loader */
+$loader = new Loader();
+
+foreach (glob(__DIR__ . "/swagger/*") as $version) {
+    $version = basename($version);
+
+    echo "Working on version ${version}\n";
+
+    $loader->loadVersion($version)
+           ->process()->swaggers->each(function (Swagger $swagger) use ($version) {
+                $directory = __DIR__ . '/Generated/' . $version;
+
+                echo "Writing " . $swagger->getTitle() . "\n";
+
+                mkdir($directory . '/' . $swagger->getTitle(), 0755, true);
+
+                $swagger->models->each(function ($contents, $model) use ($directory, $swagger) {
+                    file_put_contents($directory . '/' . $swagger->getTitle() . '/' . $model . '.php', $contents);
+                });
+
+                echo "Appending map\n";
+
+                $map = collect(json_decode(@ file_get_contents($directory . '/map.json'), true))
+                    ->merge($swagger->map)
+                    ->sort();
+
+                file_put_contents($directory . '/map.json', $map->toJson());
+           });
 }
 
 

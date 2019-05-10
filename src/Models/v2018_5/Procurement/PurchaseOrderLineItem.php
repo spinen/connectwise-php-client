@@ -2,35 +2,44 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PurchaseOrderLineItem
+ * Class PurchaseOrderLineItem Version v2018_5
  *
- * @property integer $id
- * @property boolean $backorderedFlag
- * @property string $canceledBy
- * @property boolean $canceledFlag
- * @property string $canceledReason
- * @property boolean $closedFlag
- * @property carbon $dateCanceled
- * @property carbon $dateCanceledUtc
- * @property string $description
- * @property boolean $displayInternalNotesFlag
- * @property carbon $expectedShipDate
- * @property string $internalNotes
- * @property integer $lineNumber
- * @property string $packingSlip
- * @property integer $purchaseOrderId
- * @property double $quantity
- * @property integer $receivedQuantity
- * @property string $serialNumbers
- * @property carbon $shipDate
- * @property double $tax
- * @property string $trackingNumber
- * @property double $unitCost
- * @property string $vendorOrderNumber
+ * Model for PurchaseOrderLineItem
+ *
+ * @property Carbon $dateCanceled
+ * @property Carbon $dateCanceledUtc
+ * @property Carbon $expectedShipDate
+ * @property Carbon $shipDate
+ * @property IvItemReference $product
+ * @property Metadata $_info
+ * @property ShipmentMethodReference $shipmentMethod
+ * @property UnitOfMeasureReference $unitOfMeasure
+ * @property WarehouseBinReference $warehouseBin
+ * @property WarehouseReference $warehouse
  * @property array $customFields
+ * @property boolean $backorderedFlag
+ * @property boolean $canceledFlag
+ * @property boolean $closedFlag
+ * @property boolean $displayInternalNotesFlag
+ * @property float $quantity
+ * @property float $tax
+ * @property float $unitCost
+ * @property integer $id
+ * @property integer $lineNumber
+ * @property integer $purchaseOrderId
+ * @property integer $receivedQuantity
+ * @property string $canceledBy
+ * @property string $canceledReason
+ * @property string $description
+ * @property string $internalNotes
+ * @property string $packingSlip
+ * @property string $serialNumbers
+ * @property string $trackingNumber
+ * @property string $vendorOrderNumber
  */
 class PurchaseOrderLineItem extends Model
 {
@@ -40,29 +49,35 @@ class PurchaseOrderLineItem extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
         'backorderedFlag' => 'boolean',
         'canceledBy' => 'string',
         'canceledFlag' => 'boolean',
         'canceledReason' => 'string',
         'closedFlag' => 'boolean',
-        'dateCanceled' => 'carbon',
-        'dateCanceledUtc' => 'carbon',
+        'customFields' => 'array',
+        'dateCanceled' => Carbon::class,
+        'dateCanceledUtc' => Carbon::class,
         'description' => 'string',
         'displayInternalNotesFlag' => 'boolean',
-        'expectedShipDate' => 'carbon',
+        'expectedShipDate' => Carbon::class,
+        'id' => 'integer',
         'internalNotes' => 'string',
         'lineNumber' => 'integer',
         'packingSlip' => 'string',
+        'product' => IvItemReference::class,
         'purchaseOrderId' => 'integer',
-        'quantity' => 'double',
+        'quantity' => 'float',
         'receivedQuantity' => 'integer',
         'serialNumbers' => 'string',
-        'shipDate' => 'carbon',
-        'tax' => 'double',
+        'shipDate' => Carbon::class,
+        'shipmentMethod' => ShipmentMethodReference::class,
+        'tax' => 'float',
         'trackingNumber' => 'string',
-        'unitCost' => 'double',
+        'unitCost' => 'float',
+        'unitOfMeasure' => UnitOfMeasureReference::class,
         'vendorOrderNumber' => 'string',
-        'customFields' => 'array',
+        'warehouse' => WarehouseReference::class,
+        'warehouseBin' => WarehouseBinReference::class
     ];
 }

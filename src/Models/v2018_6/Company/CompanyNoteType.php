@@ -2,16 +2,20 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CompanyNoteType
+ * Class CompanyNoteType Version v2018_6
  *
+ * Model for CompanyNoteType
+ *
+ * @property Metadata $_info
+ * @property boolean $defaultFlag
+ * @property boolean $importFlag
  * @property integer $id
  * @property string $identifier
  * @property string $name
- * @property boolean $defaultFlag
- * @property boolean $importFlag
  */
 class CompanyNoteType extends Model
 {
@@ -21,10 +25,11 @@ class CompanyNoteType extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'defaultFlag' => 'boolean',
         'id' => 'integer',
         'identifier' => 'string',
-        'name' => 'string',
-        'defaultFlag' => 'boolean',
         'importFlag' => 'boolean',
+        'name' => 'string'
     ];
 }

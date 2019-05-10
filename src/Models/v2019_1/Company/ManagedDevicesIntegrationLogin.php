@@ -2,14 +2,20 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ManagedDevicesIntegrationLogin
+ * Class ManagedDevicesIntegrationLogin Version v2019_1
  *
+ * Model for ManagedDevicesIntegrationLogin
+ *
+ * @property ManagedDevicesIntegrationReference $managedDevicesIntegration
+ * @property MemberReference $member
+ * @property Metadata $_info
  * @property integer $id
- * @property string $username
  * @property string $password
+ * @property string $username
  */
 class ManagedDevicesIntegrationLogin extends Model
 {
@@ -19,8 +25,11 @@ class ManagedDevicesIntegrationLogin extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'username' => 'string',
+        'managedDevicesIntegration' => ManagedDevicesIntegrationReference::class,
+        'member' => MemberReference::class,
         'password' => 'string',
+        'username' => 'string'
     ];
 }

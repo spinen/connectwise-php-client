@@ -2,13 +2,18 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class WorkflowTriggerOption
+ * Class WorkflowTriggerOption Version v2018_4
  *
- * @property string $value
+ * Model for WorkflowTriggerOption
+ *
+ * @property Metadata $_info
+ * @property UserDefinedFieldReference $customField
  * @property string $name
+ * @property string $value
  */
 class WorkflowTriggerOption extends Model
 {
@@ -18,7 +23,9 @@ class WorkflowTriggerOption extends Model
      * @var array
      */
     protected $casts = [
-        'value' => 'string',
+        '_info' => Metadata::class,
+        'customField' => UserDefinedFieldReference::class,
         'name' => 'string',
+        'value' => 'string'
     ];
 }

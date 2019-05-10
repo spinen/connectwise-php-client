@@ -2,11 +2,16 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Marketing;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CampaignSubType
+ * Class CampaignSubType Version v2018_5
  *
+ * Model for CampaignSubType
+ *
+ * @property CampaignTypeReference $type
+ * @property Metadata $_info
  * @property integer $id
  * @property string $name
  */
@@ -18,7 +23,9 @@ class CampaignSubType extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
         'name' => 'string',
+        'type' => CampaignTypeReference::class
     ];
 }

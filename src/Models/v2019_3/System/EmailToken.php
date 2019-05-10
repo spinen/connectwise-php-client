@@ -2,20 +2,21 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class EmailToken
+ * Class EmailToken Version v2019_3
  *
- * @property integer $id
- * @property string $token
- * @property string $description
+ * Model for EmailToken
+ *
  * @property boolean $addressFlag
  * @property boolean $agreementFlag
  * @property boolean $companyFlag
  * @property boolean $configFlag
  * @property boolean $contactFlag
  * @property boolean $invoiceFlag
+ * @property boolean $portalPasswordFlag
  * @property boolean $purchaseOrderFlag
  * @property boolean $purchaseOrderStatusFlag
  * @property boolean $rmaFlag
@@ -23,7 +24,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $serviceFlag
  * @property boolean $tracksFlag
  * @property boolean $workflowFlag
- * @property boolean $portalPasswordFlag
+ * @property integer $id
+ * @property string $description
+ * @property string $token
  */
 class EmailToken extends Model
 {
@@ -33,22 +36,22 @@ class EmailToken extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'token' => 'string',
-        'description' => 'string',
         'addressFlag' => 'boolean',
         'agreementFlag' => 'boolean',
         'companyFlag' => 'boolean',
         'configFlag' => 'boolean',
         'contactFlag' => 'boolean',
+        'description' => 'string',
+        'id' => 'integer',
         'invoiceFlag' => 'boolean',
+        'portalPasswordFlag' => 'boolean',
         'purchaseOrderFlag' => 'boolean',
         'purchaseOrderStatusFlag' => 'boolean',
         'rmaFlag' => 'boolean',
         'salesFlag' => 'boolean',
         'serviceFlag' => 'boolean',
+        'token' => 'string',
         'tracksFlag' => 'boolean',
-        'workflowFlag' => 'boolean',
-        'portalPasswordFlag' => 'boolean',
+        'workflowFlag' => 'boolean'
     ];
 }

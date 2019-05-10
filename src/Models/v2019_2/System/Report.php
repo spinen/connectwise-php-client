@@ -2,10 +2,13 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Report
+ * Class Report Version v2019_2
+ *
+ * Model for Report
  *
  * @property string $name
  */
@@ -17,6 +20,6 @@ class Report extends Model
      * @var array
      */
     protected $casts = [
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

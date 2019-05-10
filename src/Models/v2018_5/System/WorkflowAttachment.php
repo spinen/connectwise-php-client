@@ -2,11 +2,15 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class WorkflowAttachment
+ * Class WorkflowAttachment Version v2018_5
  *
+ * Model for WorkflowAttachment
+ *
+ * @property Metadata $_info
  * @property integer $id
  * @property string $name
  */
@@ -18,7 +22,8 @@ class WorkflowAttachment extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

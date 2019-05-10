@@ -2,14 +2,17 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class EntityType
+ * Class EntityType Version v2018_4
+ *
+ * Model for EntityType
  *
  * @property integer $id
- * @property string $name
  * @property string $code
+ * @property string $name
  */
 class EntityType extends Model
 {
@@ -19,8 +22,8 @@ class EntityType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
         'code' => 'string',
+        'id' => 'integer',
+        'name' => 'string'
     ];
 }

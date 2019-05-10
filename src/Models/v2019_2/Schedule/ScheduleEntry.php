@@ -2,25 +2,36 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Schedule;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ScheduleEntry
+ * Class ScheduleEntry Version v2019_2
  *
+ * Model for ScheduleEntry
+ *
+ * @property Carbon $closeDate
+ * @property Carbon $dateEnd
+ * @property Carbon $dateStart
+ * @property Guid $mobileGuid
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property ReminderReference $reminder
+ * @property ScheduleSpanReference $span
+ * @property ScheduleStatusReference $status
+ * @property ScheduleTypeReference $type
+ * @property ServiceLocationReference $where
+ * @property boolean $acknowledgedFlag
+ * @property boolean $addMemberToProjectFlag
+ * @property boolean $allowScheduleConflictsFlag
+ * @property boolean $doneFlag
+ * @property boolean $meetingFlag
+ * @property boolean $ownerFlag
+ * @property float $hours
  * @property integer $id
  * @property integer $objectId
- * @property string $name
- * @property carbon $dateStart
- * @property carbon $dateEnd
- * @property boolean $doneFlag
- * @property boolean $acknowledgedFlag
- * @property boolean $ownerFlag
- * @property boolean $meetingFlag
- * @property boolean $allowScheduleConflictsFlag
- * @property boolean $addMemberToProjectFlag
  * @property integer $projectRoleId
- * @property carbon $closeDate
- * @property double $hours
+ * @property string $name
  */
 class ScheduleEntry extends Model
 {
@@ -30,19 +41,27 @@ class ScheduleEntry extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'objectId' => 'integer',
-        'name' => 'string',
-        'dateStart' => 'carbon',
-        'dateEnd' => 'carbon',
-        'doneFlag' => 'boolean',
+        '_info' => Metadata::class,
         'acknowledgedFlag' => 'boolean',
-        'ownerFlag' => 'boolean',
-        'meetingFlag' => 'boolean',
-        'allowScheduleConflictsFlag' => 'boolean',
         'addMemberToProjectFlag' => 'boolean',
+        'allowScheduleConflictsFlag' => 'boolean',
+        'closeDate' => Carbon::class,
+        'dateEnd' => Carbon::class,
+        'dateStart' => Carbon::class,
+        'doneFlag' => 'boolean',
+        'hours' => 'float',
+        'id' => 'integer',
+        'meetingFlag' => 'boolean',
+        'member' => MemberReference::class,
+        'mobileGuid' => Guid::class,
+        'name' => 'string',
+        'objectId' => 'integer',
+        'ownerFlag' => 'boolean',
         'projectRoleId' => 'integer',
-        'closeDate' => 'carbon',
-        'hours' => 'double',
+        'reminder' => ReminderReference::class,
+        'span' => ScheduleSpanReference::class,
+        'status' => ScheduleStatusReference::class,
+        'type' => ScheduleTypeReference::class,
+        'where' => ServiceLocationReference::class
     ];
 }

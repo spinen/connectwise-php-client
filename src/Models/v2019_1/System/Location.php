@@ -2,28 +2,38 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Location
+ * Class Location Version v2019_1
  *
+ * Model for Location
+ *
+ * @property CalendarReference $calendar
+ * @property CorporateStructureLevelReference $structureLevel
+ * @property CountryReference $overrideCountry
+ * @property MemberReference $manager
+ * @property Metadata $_info
+ * @property SystemLocationReference $reportsTo
+ * @property TimeZoneSetupReference $timeZoneSetup
+ * @property array $departmentIds
+ * @property array $workRoleIds
+ * @property boolean $clientFlag
+ * @property boolean $locationFlag
  * @property integer $id
  * @property integer $ownerLevelId
  * @property string $name
- * @property string $salesRep
  * @property string $overrideAddressLine1
  * @property string $overrideAddressLine2
  * @property string $overrideCity
+ * @property string $overrideFaxNumber
+ * @property string $overridePhoneNumber
  * @property string $overrideState
  * @property string $overrideZip
- * @property string $overridePhoneNumber
- * @property string $overrideFaxNumber
  * @property string $owaUrl
  * @property string $payrollXref
- * @property boolean $locationFlag
- * @property boolean $clientFlag
- * @property array $workRoleIds
- * @property array $departmentIds
+ * @property string $salesRep
  */
 class Location extends Model
 {
@@ -33,22 +43,29 @@ class Location extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'calendar' => CalendarReference::class,
+        'clientFlag' => 'boolean',
+        'departmentIds' => 'array',
         'id' => 'integer',
-        'ownerLevelId' => 'integer',
+        'locationFlag' => 'boolean',
+        'manager' => MemberReference::class,
         'name' => 'string',
-        'salesRep' => 'string',
         'overrideAddressLine1' => 'string',
         'overrideAddressLine2' => 'string',
         'overrideCity' => 'string',
+        'overrideCountry' => CountryReference::class,
+        'overrideFaxNumber' => 'string',
+        'overridePhoneNumber' => 'string',
         'overrideState' => 'string',
         'overrideZip' => 'string',
-        'overridePhoneNumber' => 'string',
-        'overrideFaxNumber' => 'string',
         'owaUrl' => 'string',
+        'ownerLevelId' => 'integer',
         'payrollXref' => 'string',
-        'locationFlag' => 'boolean',
-        'clientFlag' => 'boolean',
-        'workRoleIds' => 'array',
-        'departmentIds' => 'array',
+        'reportsTo' => SystemLocationReference::class,
+        'salesRep' => 'string',
+        'structureLevel' => CorporateStructureLevelReference::class,
+        'timeZoneSetup' => TimeZoneSetupReference::class,
+        'workRoleIds' => 'array'
     ];
 }

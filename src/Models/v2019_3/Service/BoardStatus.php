@@ -2,23 +2,31 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BoardStatus
+ * Class BoardStatus Version v2019_3
  *
- * @property integer $id
- * @property string $name
- * @property integer $sortOrder
+ * Model for BoardStatus
+ *
+ * @property BoardReference $board
+ * @property ExternalIntegrationStatusReference $externalIntegrationXref
+ * @property Metadata $_info
+ * @property ServiceEmailTemplateReference $emailTemplate
+ * @property StatusIndicatorReference $statusIndicator
+ * @property boolean $closedStatus
+ * @property boolean $customerPortalFlag
+ * @property boolean $defaultFlag
  * @property boolean $displayOnBoard
  * @property boolean $inactive
- * @property boolean $closedStatus
  * @property boolean $timeEntryNotAllowed
- * @property boolean $defaultFlag
- * @property string $escalationStatus
- * @property string $customerPortalDescription
- * @property boolean $customerPortalFlag
+ * @property integer $id
+ * @property integer $sortOrder
  * @property string $customStatusIndicatorName
+ * @property string $customerPortalDescription
+ * @property string $escalationStatus
+ * @property string $name
  */
 class BoardStatus extends Model
 {
@@ -28,17 +36,22 @@ class BoardStatus extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'sortOrder' => 'integer',
-        'displayOnBoard' => 'boolean',
-        'inactive' => 'boolean',
+        '_info' => Metadata::class,
+        'board' => BoardReference::class,
         'closedStatus' => 'boolean',
-        'timeEntryNotAllowed' => 'boolean',
-        'defaultFlag' => 'boolean',
-        'escalationStatus' => 'string',
+        'customStatusIndicatorName' => 'string',
         'customerPortalDescription' => 'string',
         'customerPortalFlag' => 'boolean',
-        'customStatusIndicatorName' => 'string',
+        'defaultFlag' => 'boolean',
+        'displayOnBoard' => 'boolean',
+        'emailTemplate' => ServiceEmailTemplateReference::class,
+        'escalationStatus' => 'string',
+        'externalIntegrationXref' => ExternalIntegrationStatusReference::class,
+        'id' => 'integer',
+        'inactive' => 'boolean',
+        'name' => 'string',
+        'sortOrder' => 'integer',
+        'statusIndicator' => StatusIndicatorReference::class,
+        'timeEntryNotAllowed' => 'boolean'
     ];
 }

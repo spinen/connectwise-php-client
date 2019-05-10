@@ -2,14 +2,19 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class EmailConnectorParsingStyle
+ * Class EmailConnectorParsingStyle Version v2019_3
  *
+ * Model for EmailConnectorParsingStyle
+ *
+ * @property EmailConnectorParsingTypeReference $parsingType
+ * @property Metadata $_info
  * @property integer $id
- * @property string $parseRule
  * @property integer $priority
+ * @property string $parseRule
  */
 class EmailConnectorParsingStyle extends Model
 {
@@ -19,8 +24,10 @@ class EmailConnectorParsingStyle extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
         'parseRule' => 'string',
-        'priority' => 'integer',
+        'parsingType' => EmailConnectorParsingTypeReference::class,
+        'priority' => 'integer'
     ];
 }

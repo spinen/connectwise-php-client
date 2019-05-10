@@ -2,28 +2,33 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TimeAccrual
+ * Class TimeAccrual Version v2019_1
  *
- * @property integer $id
- * @property boolean $vacationFlag
- * @property string $vacationAvailableType
- * @property boolean $vacationCarryoverAllowedFlag
- * @property double $vacationCarryoverLimit
- * @property boolean $sickFlag
- * @property string $sickAvailableType
- * @property boolean $sickCarryoverAllowedFlag
- * @property double $sickCarryoverLimit
- * @property boolean $ptoFlag
- * @property string $ptoAvailableType
- * @property boolean $ptoCarryoverAllowedFlag
- * @property double $ptoCarryoverLimit
- * @property boolean $holidayFlag
- * @property string $holidayAvailableType
+ * Model for TimeAccrual
+ *
+ * @property Metadata $_info
+ * @property SystemLocationReference $location
  * @property boolean $holidayCarryoverAllowedFlag
- * @property double $holidayCarryoverLimit
+ * @property boolean $holidayFlag
+ * @property boolean $ptoCarryoverAllowedFlag
+ * @property boolean $ptoFlag
+ * @property boolean $sickCarryoverAllowedFlag
+ * @property boolean $sickFlag
+ * @property boolean $vacationCarryoverAllowedFlag
+ * @property boolean $vacationFlag
+ * @property float $holidayCarryoverLimit
+ * @property float $ptoCarryoverLimit
+ * @property float $sickCarryoverLimit
+ * @property float $vacationCarryoverLimit
+ * @property integer $id
+ * @property string $holidayAvailableType
+ * @property string $ptoAvailableType
+ * @property string $sickAvailableType
+ * @property string $vacationAvailableType
  */
 class TimeAccrual extends Model
 {
@@ -33,22 +38,24 @@ class TimeAccrual extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'vacationFlag' => 'boolean',
-        'vacationAvailableType' => 'string',
-        'vacationCarryoverAllowedFlag' => 'boolean',
-        'vacationCarryoverLimit' => 'double',
-        'sickFlag' => 'boolean',
-        'sickAvailableType' => 'string',
-        'sickCarryoverAllowedFlag' => 'boolean',
-        'sickCarryoverLimit' => 'double',
-        'ptoFlag' => 'boolean',
-        'ptoAvailableType' => 'string',
-        'ptoCarryoverAllowedFlag' => 'boolean',
-        'ptoCarryoverLimit' => 'double',
-        'holidayFlag' => 'boolean',
+        '_info' => Metadata::class,
         'holidayAvailableType' => 'string',
         'holidayCarryoverAllowedFlag' => 'boolean',
-        'holidayCarryoverLimit' => 'double',
+        'holidayCarryoverLimit' => 'float',
+        'holidayFlag' => 'boolean',
+        'id' => 'integer',
+        'location' => SystemLocationReference::class,
+        'ptoAvailableType' => 'string',
+        'ptoCarryoverAllowedFlag' => 'boolean',
+        'ptoCarryoverLimit' => 'float',
+        'ptoFlag' => 'boolean',
+        'sickAvailableType' => 'string',
+        'sickCarryoverAllowedFlag' => 'boolean',
+        'sickCarryoverLimit' => 'float',
+        'sickFlag' => 'boolean',
+        'vacationAvailableType' => 'string',
+        'vacationCarryoverAllowedFlag' => 'boolean',
+        'vacationCarryoverLimit' => 'float',
+        'vacationFlag' => 'boolean'
     ];
 }

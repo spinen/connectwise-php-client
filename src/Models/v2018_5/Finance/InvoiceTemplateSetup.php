@@ -2,14 +2,18 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class InvoiceTemplateSetup
+ * Class InvoiceTemplateSetup Version v2018_5
  *
+ * Model for InvoiceTemplateSetup
+ *
+ * @property Metadata $_info
+ * @property boolean $customFlag
  * @property integer $id
  * @property string $name
- * @property boolean $customFlag
  */
 class InvoiceTemplateSetup extends Model
 {
@@ -19,8 +23,9 @@ class InvoiceTemplateSetup extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => Metadata::class,
         'customFlag' => 'boolean',
+        'id' => 'integer',
+        'name' => 'string'
     ];
 }

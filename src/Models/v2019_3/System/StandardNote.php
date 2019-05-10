@@ -2,14 +2,21 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class StandardNote
+ * Class StandardNote Version v2019_3
  *
+ * Model for StandardNote
+ *
+ * @property BoardReference $board
+ * @property Metadata $_info
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
  * @property integer $id
- * @property string $name
  * @property string $contents
+ * @property string $name
  */
 class StandardNote extends Model
 {
@@ -19,8 +26,12 @@ class StandardNote extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => Metadata::class,
+        'board' => BoardReference::class,
         'contents' => 'string',
+        'department' => SystemDepartmentReference::class,
+        'id' => 'integer',
+        'location' => SystemLocationReference::class,
+        'name' => 'string'
     ];
 }

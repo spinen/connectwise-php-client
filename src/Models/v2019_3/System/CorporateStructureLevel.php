@@ -2,10 +2,13 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CorporateStructureLevel
+ * Class CorporateStructureLevel Version v2019_3
+ *
+ * Model for CorporateStructureLevel
  *
  * @property integer $id
  * @property string $name
@@ -19,6 +22,6 @@ class CorporateStructureLevel extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

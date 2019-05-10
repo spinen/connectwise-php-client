@@ -2,11 +2,17 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BoardAutoAssignResource
+ * Class BoardAutoAssignResource Version v2018_5
  *
+ * Model for BoardAutoAssignResource
+ *
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property NotificationRecipientReference $notifyWho
  * @property integer $id
  */
 class BoardAutoAssignResource extends Model
@@ -17,6 +23,9 @@ class BoardAutoAssignResource extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
+        'member' => MemberReference::class,
+        'notifyWho' => NotificationRecipientReference::class
     ];
 }

@@ -2,13 +2,19 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Time;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class WorkRoleLocation
+ * Class WorkRoleLocation Version v2019_1
  *
+ * Model for WorkRoleLocation
+ *
+ * @property Metadata $_info
+ * @property SystemLocationReference $location
+ * @property WorkRoleReference $workRole
+ * @property float $hourlyRate
  * @property integer $id
- * @property double $hourlyRate
  */
 class WorkRoleLocation extends Model
 {
@@ -18,7 +24,10 @@ class WorkRoleLocation extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'hourlyRate' => 'float',
         'id' => 'integer',
-        'hourlyRate' => 'double',
+        'location' => SystemLocationReference::class,
+        'workRole' => WorkRoleReference::class
     ];
 }

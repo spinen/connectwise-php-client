@@ -2,16 +2,20 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Source
+ * Class Source Version v2019_1
  *
- * @property integer $id
- * @property string $name
+ * Model for Source
+ *
+ * @property Carbon $dateEntered
+ * @property Metadata $_info
  * @property boolean $defaultFlag
+ * @property integer $id
  * @property string $enteredBy
- * @property carbon $dateEntered
+ * @property string $name
  */
 class Source extends Model
 {
@@ -21,10 +25,11 @@ class Source extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => Metadata::class,
+        'dateEntered' => Carbon::class,
         'defaultFlag' => 'boolean',
         'enteredBy' => 'string',
-        'dateEntered' => 'carbon',
+        'id' => 'integer',
+        'name' => 'string'
     ];
 }

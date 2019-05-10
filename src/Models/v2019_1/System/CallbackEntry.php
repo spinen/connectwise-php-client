@@ -2,19 +2,23 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CallbackEntry
+ * Class CallbackEntry Version v2019_1
  *
- * @property integer $id
- * @property string $description
- * @property string $url
- * @property integer $objectId
- * @property string $type
- * @property string $level
- * @property integer $memberId
+ * Model for CallbackEntry
+ *
+ * @property Metadata $_info
  * @property boolean $inactiveFlag
+ * @property integer $id
+ * @property integer $memberId
+ * @property integer $objectId
+ * @property string $description
+ * @property string $level
+ * @property string $type
+ * @property string $url
  */
 class CallbackEntry extends Model
 {
@@ -24,13 +28,14 @@ class CallbackEntry extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
         'description' => 'string',
-        'url' => 'string',
-        'objectId' => 'integer',
-        'type' => 'string',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
         'level' => 'string',
         'memberId' => 'integer',
-        'inactiveFlag' => 'boolean',
+        'objectId' => 'integer',
+        'type' => 'string',
+        'url' => 'string'
     ];
 }

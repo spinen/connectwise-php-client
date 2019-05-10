@@ -2,15 +2,19 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ConfigurationStatus
+ * Class ConfigurationStatus Version v2018_5
  *
- * @property integer $id
- * @property string $description
+ * Model for ConfigurationStatus
+ *
+ * @property Metadata $_info
  * @property boolean $closedFlag
  * @property boolean $defaultFlag
+ * @property integer $id
+ * @property string $description
  */
 class ConfigurationStatus extends Model
 {
@@ -20,9 +24,10 @@ class ConfigurationStatus extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'description' => 'string',
+        '_info' => Metadata::class,
         'closedFlag' => 'boolean',
         'defaultFlag' => 'boolean',
+        'description' => 'string',
+        'id' => 'integer'
     ];
 }

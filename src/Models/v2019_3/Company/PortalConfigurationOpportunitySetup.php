@@ -2,43 +2,53 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PortalConfigurationOpportunitySetup
+ * Class PortalConfigurationOpportunitySetup Version v2019_3
  *
- * @property integer $id
+ * Model for PortalConfigurationOpportunitySetup
+ *
+ * @property ActivityTypeReference $acceptanceEmailActivityType
+ * @property ActivityTypeReference $rejectionEmailActivityType
+ * @property MemberReference $acceptanceEmailAssignedByMember
+ * @property MemberReference $rejectionEmailAssignedByMember
+ * @property Metadata $_info
+ * @property OpportunityStatusReference $acceptanceOpportunityStatus
+ * @property OpportunityStatusReference $rejectionOpportunityStatus
  * @property array $opportunityStatusRecIDs
- * @property boolean $addAllOpportunityStatuses
- * @property boolean $removeAllOpportunityStatuses
  * @property array $opportunityTypeRecIDs
- * @property boolean $addAllOpportunityTypes
- * @property boolean $removeAllOpportunityTypes
- * @property boolean $restrictViewByOpportunityStatusFlag
- * @property boolean $restrictViewByOpportunityTypeFlag
  * @property boolean $acceptanceChangeStatusFlag
  * @property boolean $acceptanceCreateActivityFlag
  * @property boolean $acceptanceSendEmailFlag
- * @property string $acceptanceEmailFromFirstName
- * @property string $acceptanceEmailFromLastName
- * @property string $acceptanceEmailSubject
- * @property string $acceptanceEmailBody
- * @property string $acceptanceFromEmail
+ * @property boolean $addAllOpportunityStatuses
+ * @property boolean $addAllOpportunityTypes
+ * @property boolean $confirmationEmailUseDefaultCompanyEmailAddressFlag
+ * @property boolean $confirmationSendEmailFlag
  * @property boolean $rejectionChangeStatusFlag
  * @property boolean $rejectionCreateActivityFlag
  * @property boolean $rejectionSendEmailFlag
- * @property string $rejectionEmailFromFirstName
- * @property string $rejectionEmailFromLastName
- * @property string $rejectionFromEmail
- * @property string $rejectionEmailSubject
- * @property string $rejectionEmailBody
- * @property boolean $confirmationSendEmailFlag
- * @property boolean $confirmationEmailUseDefaultCompanyEmailAddressFlag
+ * @property boolean $removeAllOpportunityStatuses
+ * @property boolean $removeAllOpportunityTypes
+ * @property boolean $restrictViewByOpportunityStatusFlag
+ * @property boolean $restrictViewByOpportunityTypeFlag
+ * @property integer $id
+ * @property string $acceptanceEmailBody
+ * @property string $acceptanceEmailFromFirstName
+ * @property string $acceptanceEmailFromLastName
+ * @property string $acceptanceEmailSubject
+ * @property string $acceptanceFromEmail
+ * @property string $confirmationEmailBody
  * @property string $confirmationEmailFromFirstName
  * @property string $confirmationEmailFromLastName
- * @property string $confirmationFromEmail
  * @property string $confirmationEmailSubject
- * @property string $confirmationEmailBody
+ * @property string $confirmationFromEmail
+ * @property string $rejectionEmailBody
+ * @property string $rejectionEmailFromFirstName
+ * @property string $rejectionEmailFromLastName
+ * @property string $rejectionEmailSubject
+ * @property string $rejectionFromEmail
  */
 class PortalConfigurationOpportunitySetup extends Model
 {
@@ -48,37 +58,44 @@ class PortalConfigurationOpportunitySetup extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'opportunityStatusRecIDs' => 'array',
-        'addAllOpportunityStatuses' => 'boolean',
-        'removeAllOpportunityStatuses' => 'boolean',
-        'opportunityTypeRecIDs' => 'array',
-        'addAllOpportunityTypes' => 'boolean',
-        'removeAllOpportunityTypes' => 'boolean',
-        'restrictViewByOpportunityStatusFlag' => 'boolean',
-        'restrictViewByOpportunityTypeFlag' => 'boolean',
+        '_info' => Metadata::class,
         'acceptanceChangeStatusFlag' => 'boolean',
         'acceptanceCreateActivityFlag' => 'boolean',
-        'acceptanceSendEmailFlag' => 'boolean',
+        'acceptanceEmailActivityType' => ActivityTypeReference::class,
+        'acceptanceEmailAssignedByMember' => MemberReference::class,
+        'acceptanceEmailBody' => 'string',
         'acceptanceEmailFromFirstName' => 'string',
         'acceptanceEmailFromLastName' => 'string',
         'acceptanceEmailSubject' => 'string',
-        'acceptanceEmailBody' => 'string',
         'acceptanceFromEmail' => 'string',
-        'rejectionChangeStatusFlag' => 'boolean',
-        'rejectionCreateActivityFlag' => 'boolean',
-        'rejectionSendEmailFlag' => 'boolean',
-        'rejectionEmailFromFirstName' => 'string',
-        'rejectionEmailFromLastName' => 'string',
-        'rejectionFromEmail' => 'string',
-        'rejectionEmailSubject' => 'string',
-        'rejectionEmailBody' => 'string',
-        'confirmationSendEmailFlag' => 'boolean',
-        'confirmationEmailUseDefaultCompanyEmailAddressFlag' => 'boolean',
+        'acceptanceOpportunityStatus' => OpportunityStatusReference::class,
+        'acceptanceSendEmailFlag' => 'boolean',
+        'addAllOpportunityStatuses' => 'boolean',
+        'addAllOpportunityTypes' => 'boolean',
+        'confirmationEmailBody' => 'string',
         'confirmationEmailFromFirstName' => 'string',
         'confirmationEmailFromLastName' => 'string',
-        'confirmationFromEmail' => 'string',
         'confirmationEmailSubject' => 'string',
-        'confirmationEmailBody' => 'string',
+        'confirmationEmailUseDefaultCompanyEmailAddressFlag' => 'boolean',
+        'confirmationFromEmail' => 'string',
+        'confirmationSendEmailFlag' => 'boolean',
+        'id' => 'integer',
+        'opportunityStatusRecIDs' => 'array',
+        'opportunityTypeRecIDs' => 'array',
+        'rejectionChangeStatusFlag' => 'boolean',
+        'rejectionCreateActivityFlag' => 'boolean',
+        'rejectionEmailActivityType' => ActivityTypeReference::class,
+        'rejectionEmailAssignedByMember' => MemberReference::class,
+        'rejectionEmailBody' => 'string',
+        'rejectionEmailFromFirstName' => 'string',
+        'rejectionEmailFromLastName' => 'string',
+        'rejectionEmailSubject' => 'string',
+        'rejectionFromEmail' => 'string',
+        'rejectionOpportunityStatus' => OpportunityStatusReference::class,
+        'rejectionSendEmailFlag' => 'boolean',
+        'removeAllOpportunityStatuses' => 'boolean',
+        'removeAllOpportunityTypes' => 'boolean',
+        'restrictViewByOpportunityStatusFlag' => 'boolean',
+        'restrictViewByOpportunityTypeFlag' => 'boolean'
     ];
 }

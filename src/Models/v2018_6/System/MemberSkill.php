@@ -2,16 +2,22 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class MemberSkill
+ * Class MemberSkill Version v2018_6
  *
- * @property integer $id
- * @property string $skillLevel
+ * Model for MemberSkill
+ *
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property SkillReference $skill
  * @property boolean $certifiedFlag
+ * @property integer $id
  * @property integer $yearsExperience
  * @property string $notes
+ * @property string $skillLevel
  */
 class MemberSkill extends Model
 {
@@ -21,10 +27,13 @@ class MemberSkill extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'skillLevel' => 'string',
+        '_info' => Metadata::class,
         'certifiedFlag' => 'boolean',
-        'yearsExperience' => 'integer',
+        'id' => 'integer',
+        'member' => MemberReference::class,
         'notes' => 'string',
+        'skill' => SkillReference::class,
+        'skillLevel' => 'string',
+        'yearsExperience' => 'integer'
     ];
 }

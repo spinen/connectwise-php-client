@@ -2,101 +2,106 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TaxCode
+ * Class TaxCode Version v2018_5
  *
- * @property integer $id
- * @property string $identifier
- * @property string $description
- * @property string $invoiceCaption
- * @property carbon $effectiveDate
+ * Model for TaxCode
+ *
+ * @property Carbon $cancelDate
+ * @property Carbon $effectiveDate
+ * @property CountryReference $country
+ * @property Metadata $_info
+ * @property array $expenseTypeIds
+ * @property array $productTypeIds
+ * @property array $workRoleIds
+ * @property boolean $addAllExpenseTypes
+ * @property boolean $addAllProductTypes
+ * @property boolean $addAllWorkRoles
+ * @property boolean $canadaCalculateGSTFlag
  * @property boolean $defaultFlag
  * @property boolean $displayOnInvoiceFlag
- * @property boolean $canadaCalculateGSTFlag
- * @property carbon $cancelDate
- * @property double $levelOneRate
- * @property string $levelOneRateType
- * @property double $levelOneTaxableMax
- * @property string $levelOneCaption
- * @property string $levelOneTaxCodeXref
- * @property string $levelOneAgencyXref
- * @property boolean $levelOneServicesFlag
- * @property boolean $levelOneExpensesFlag
- * @property boolean $levelOneProductsFlag
- * @property boolean $levelOneApplySingleUnitFlag
- * @property double $levelOneApplySingleUnitMin
- * @property double $levelOneApplySingleUnitMax
- * @property double $levelTwoRate
- * @property string $levelTwoRateType
- * @property double $levelTwoTaxableMax
- * @property string $levelTwoCaption
- * @property string $levelTwoTaxCodeXref
- * @property string $levelTwoAgencyXref
- * @property boolean $levelTwoServicesFlag
- * @property boolean $levelTwoExpensesFlag
- * @property boolean $levelTwoProductsFlag
- * @property boolean $levelTwoApplySingleUnitFlag
- * @property double $levelTwoApplySingleUnitMin
- * @property double $levelTwoApplySingleUnitMax
- * @property double $levelThreeRate
- * @property string $levelThreeRateType
- * @property double $levelThreeTaxableMax
- * @property string $levelThreeCaption
- * @property string $levelThreeTaxCodeXref
- * @property string $levelThreeAgencyXref
- * @property boolean $levelThreeServicesFlag
- * @property boolean $levelThreeExpensesFlag
- * @property boolean $levelThreeProductsFlag
- * @property boolean $levelThreeApplySingleUnitFlag
- * @property double $levelThreeApplySingleUnitMin
- * @property double $levelThreeApplySingleUnitMax
- * @property double $levelFourRate
- * @property string $levelFourRateType
- * @property double $levelFourTaxableMax
- * @property string $levelFourCaption
- * @property string $levelFourTaxCodeXref
- * @property string $levelFourAgencyXref
- * @property boolean $levelFourServicesFlag
- * @property boolean $levelFourExpensesFlag
- * @property boolean $levelFourProductsFlag
- * @property boolean $levelFourApplySingleUnitFlag
- * @property double $levelFourApplySingleUnitMin
- * @property double $levelFourApplySingleUnitMax
- * @property double $levelFiveRate
- * @property string $levelFiveRateType
- * @property double $levelFiveTaxableMax
- * @property string $levelFiveCaption
- * @property string $levelFiveTaxCodeXref
- * @property string $levelFiveAgencyXref
- * @property boolean $levelFiveServicesFlag
+ * @property boolean $levelFiveApplySingleUnitFlag
  * @property boolean $levelFiveExpensesFlag
  * @property boolean $levelFiveProductsFlag
- * @property boolean $levelFiveApplySingleUnitFlag
- * @property double $levelFiveApplySingleUnitMin
- * @property double $levelFiveApplySingleUnitMax
- * @property double $levelSixRate
- * @property string $levelSixRateType
- * @property double $levelSixTaxableMax
- * @property string $levelSixCaption
- * @property string $levelSixTaxCodeXref
- * @property string $levelSixAgencyXref
- * @property boolean $levelSixServicesFlag
+ * @property boolean $levelFiveServicesFlag
+ * @property boolean $levelFourApplySingleUnitFlag
+ * @property boolean $levelFourExpensesFlag
+ * @property boolean $levelFourProductsFlag
+ * @property boolean $levelFourServicesFlag
+ * @property boolean $levelOneApplySingleUnitFlag
+ * @property boolean $levelOneExpensesFlag
+ * @property boolean $levelOneProductsFlag
+ * @property boolean $levelOneServicesFlag
+ * @property boolean $levelSixApplySingleUnitFlag
  * @property boolean $levelSixExpensesFlag
  * @property boolean $levelSixProductsFlag
- * @property boolean $levelSixApplySingleUnitFlag
- * @property double $levelSixApplySingleUnitMin
- * @property double $levelSixApplySingleUnitMax
- * @property array $workRoleIds
- * @property boolean $addAllWorkRoles
- * @property boolean $removeAllWorkRoles
- * @property array $expenseTypeIds
- * @property boolean $addAllExpenseTypes
+ * @property boolean $levelSixServicesFlag
+ * @property boolean $levelThreeApplySingleUnitFlag
+ * @property boolean $levelThreeExpensesFlag
+ * @property boolean $levelThreeProductsFlag
+ * @property boolean $levelThreeServicesFlag
+ * @property boolean $levelTwoApplySingleUnitFlag
+ * @property boolean $levelTwoExpensesFlag
+ * @property boolean $levelTwoProductsFlag
+ * @property boolean $levelTwoServicesFlag
  * @property boolean $removeAllExpenseTypes
- * @property array $productTypeIds
- * @property boolean $addAllProductTypes
  * @property boolean $removeAllProductTypes
+ * @property boolean $removeAllWorkRoles
+ * @property float $levelFiveApplySingleUnitMax
+ * @property float $levelFiveApplySingleUnitMin
+ * @property float $levelFiveRate
+ * @property float $levelFiveTaxableMax
+ * @property float $levelFourApplySingleUnitMax
+ * @property float $levelFourApplySingleUnitMin
+ * @property float $levelFourRate
+ * @property float $levelFourTaxableMax
+ * @property float $levelOneApplySingleUnitMax
+ * @property float $levelOneApplySingleUnitMin
+ * @property float $levelOneRate
+ * @property float $levelOneTaxableMax
+ * @property float $levelSixApplySingleUnitMax
+ * @property float $levelSixApplySingleUnitMin
+ * @property float $levelSixRate
+ * @property float $levelSixTaxableMax
+ * @property float $levelThreeApplySingleUnitMax
+ * @property float $levelThreeApplySingleUnitMin
+ * @property float $levelThreeRate
+ * @property float $levelThreeTaxableMax
+ * @property float $levelTwoApplySingleUnitMax
+ * @property float $levelTwoApplySingleUnitMin
+ * @property float $levelTwoRate
+ * @property float $levelTwoTaxableMax
+ * @property integer $id
+ * @property string $description
+ * @property string $identifier
+ * @property string $invoiceCaption
+ * @property string $levelFiveAgencyXref
+ * @property string $levelFiveCaption
+ * @property string $levelFiveRateType
+ * @property string $levelFiveTaxCodeXref
+ * @property string $levelFourAgencyXref
+ * @property string $levelFourCaption
+ * @property string $levelFourRateType
+ * @property string $levelFourTaxCodeXref
+ * @property string $levelOneAgencyXref
+ * @property string $levelOneCaption
+ * @property string $levelOneRateType
+ * @property string $levelOneTaxCodeXref
+ * @property string $levelSixAgencyXref
+ * @property string $levelSixCaption
+ * @property string $levelSixRateType
+ * @property string $levelSixTaxCodeXref
+ * @property string $levelThreeAgencyXref
+ * @property string $levelThreeCaption
+ * @property string $levelThreeRateType
+ * @property string $levelThreeTaxCodeXref
+ * @property string $levelTwoAgencyXref
+ * @property string $levelTwoCaption
+ * @property string $levelTwoRateType
+ * @property string $levelTwoTaxCodeXref
  */
 class TaxCode extends Model
 {
@@ -106,95 +111,97 @@ class TaxCode extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'addAllExpenseTypes' => 'boolean',
+        'addAllProductTypes' => 'boolean',
+        'addAllWorkRoles' => 'boolean',
+        'canadaCalculateGSTFlag' => 'boolean',
+        'cancelDate' => Carbon::class,
+        'country' => CountryReference::class,
+        'defaultFlag' => 'boolean',
+        'description' => 'string',
+        'displayOnInvoiceFlag' => 'boolean',
+        'effectiveDate' => Carbon::class,
+        'expenseTypeIds' => 'array',
         'id' => 'integer',
         'identifier' => 'string',
-        'description' => 'string',
         'invoiceCaption' => 'string',
-        'effectiveDate' => 'carbon',
-        'defaultFlag' => 'boolean',
-        'displayOnInvoiceFlag' => 'boolean',
-        'canadaCalculateGSTFlag' => 'boolean',
-        'cancelDate' => 'carbon',
-        'levelOneRate' => 'double',
-        'levelOneRateType' => 'string',
-        'levelOneTaxableMax' => 'double',
-        'levelOneCaption' => 'string',
-        'levelOneTaxCodeXref' => 'string',
-        'levelOneAgencyXref' => 'string',
-        'levelOneServicesFlag' => 'boolean',
-        'levelOneExpensesFlag' => 'boolean',
-        'levelOneProductsFlag' => 'boolean',
-        'levelOneApplySingleUnitFlag' => 'boolean',
-        'levelOneApplySingleUnitMin' => 'double',
-        'levelOneApplySingleUnitMax' => 'double',
-        'levelTwoRate' => 'double',
-        'levelTwoRateType' => 'string',
-        'levelTwoTaxableMax' => 'double',
-        'levelTwoCaption' => 'string',
-        'levelTwoTaxCodeXref' => 'string',
-        'levelTwoAgencyXref' => 'string',
-        'levelTwoServicesFlag' => 'boolean',
-        'levelTwoExpensesFlag' => 'boolean',
-        'levelTwoProductsFlag' => 'boolean',
-        'levelTwoApplySingleUnitFlag' => 'boolean',
-        'levelTwoApplySingleUnitMin' => 'double',
-        'levelTwoApplySingleUnitMax' => 'double',
-        'levelThreeRate' => 'double',
-        'levelThreeRateType' => 'string',
-        'levelThreeTaxableMax' => 'double',
-        'levelThreeCaption' => 'string',
-        'levelThreeTaxCodeXref' => 'string',
-        'levelThreeAgencyXref' => 'string',
-        'levelThreeServicesFlag' => 'boolean',
-        'levelThreeExpensesFlag' => 'boolean',
-        'levelThreeProductsFlag' => 'boolean',
-        'levelThreeApplySingleUnitFlag' => 'boolean',
-        'levelThreeApplySingleUnitMin' => 'double',
-        'levelThreeApplySingleUnitMax' => 'double',
-        'levelFourRate' => 'double',
-        'levelFourRateType' => 'string',
-        'levelFourTaxableMax' => 'double',
-        'levelFourCaption' => 'string',
-        'levelFourTaxCodeXref' => 'string',
-        'levelFourAgencyXref' => 'string',
-        'levelFourServicesFlag' => 'boolean',
-        'levelFourExpensesFlag' => 'boolean',
-        'levelFourProductsFlag' => 'boolean',
-        'levelFourApplySingleUnitFlag' => 'boolean',
-        'levelFourApplySingleUnitMin' => 'double',
-        'levelFourApplySingleUnitMax' => 'double',
-        'levelFiveRate' => 'double',
-        'levelFiveRateType' => 'string',
-        'levelFiveTaxableMax' => 'double',
-        'levelFiveCaption' => 'string',
-        'levelFiveTaxCodeXref' => 'string',
         'levelFiveAgencyXref' => 'string',
-        'levelFiveServicesFlag' => 'boolean',
+        'levelFiveApplySingleUnitFlag' => 'boolean',
+        'levelFiveApplySingleUnitMax' => 'float',
+        'levelFiveApplySingleUnitMin' => 'float',
+        'levelFiveCaption' => 'string',
         'levelFiveExpensesFlag' => 'boolean',
         'levelFiveProductsFlag' => 'boolean',
-        'levelFiveApplySingleUnitFlag' => 'boolean',
-        'levelFiveApplySingleUnitMin' => 'double',
-        'levelFiveApplySingleUnitMax' => 'double',
-        'levelSixRate' => 'double',
-        'levelSixRateType' => 'string',
-        'levelSixTaxableMax' => 'double',
-        'levelSixCaption' => 'string',
-        'levelSixTaxCodeXref' => 'string',
+        'levelFiveRate' => 'float',
+        'levelFiveRateType' => 'string',
+        'levelFiveServicesFlag' => 'boolean',
+        'levelFiveTaxCodeXref' => 'string',
+        'levelFiveTaxableMax' => 'float',
+        'levelFourAgencyXref' => 'string',
+        'levelFourApplySingleUnitFlag' => 'boolean',
+        'levelFourApplySingleUnitMax' => 'float',
+        'levelFourApplySingleUnitMin' => 'float',
+        'levelFourCaption' => 'string',
+        'levelFourExpensesFlag' => 'boolean',
+        'levelFourProductsFlag' => 'boolean',
+        'levelFourRate' => 'float',
+        'levelFourRateType' => 'string',
+        'levelFourServicesFlag' => 'boolean',
+        'levelFourTaxCodeXref' => 'string',
+        'levelFourTaxableMax' => 'float',
+        'levelOneAgencyXref' => 'string',
+        'levelOneApplySingleUnitFlag' => 'boolean',
+        'levelOneApplySingleUnitMax' => 'float',
+        'levelOneApplySingleUnitMin' => 'float',
+        'levelOneCaption' => 'string',
+        'levelOneExpensesFlag' => 'boolean',
+        'levelOneProductsFlag' => 'boolean',
+        'levelOneRate' => 'float',
+        'levelOneRateType' => 'string',
+        'levelOneServicesFlag' => 'boolean',
+        'levelOneTaxCodeXref' => 'string',
+        'levelOneTaxableMax' => 'float',
         'levelSixAgencyXref' => 'string',
-        'levelSixServicesFlag' => 'boolean',
+        'levelSixApplySingleUnitFlag' => 'boolean',
+        'levelSixApplySingleUnitMax' => 'float',
+        'levelSixApplySingleUnitMin' => 'float',
+        'levelSixCaption' => 'string',
         'levelSixExpensesFlag' => 'boolean',
         'levelSixProductsFlag' => 'boolean',
-        'levelSixApplySingleUnitFlag' => 'boolean',
-        'levelSixApplySingleUnitMin' => 'double',
-        'levelSixApplySingleUnitMax' => 'double',
-        'workRoleIds' => 'array',
-        'addAllWorkRoles' => 'boolean',
-        'removeAllWorkRoles' => 'boolean',
-        'expenseTypeIds' => 'array',
-        'addAllExpenseTypes' => 'boolean',
-        'removeAllExpenseTypes' => 'boolean',
+        'levelSixRate' => 'float',
+        'levelSixRateType' => 'string',
+        'levelSixServicesFlag' => 'boolean',
+        'levelSixTaxCodeXref' => 'string',
+        'levelSixTaxableMax' => 'float',
+        'levelThreeAgencyXref' => 'string',
+        'levelThreeApplySingleUnitFlag' => 'boolean',
+        'levelThreeApplySingleUnitMax' => 'float',
+        'levelThreeApplySingleUnitMin' => 'float',
+        'levelThreeCaption' => 'string',
+        'levelThreeExpensesFlag' => 'boolean',
+        'levelThreeProductsFlag' => 'boolean',
+        'levelThreeRate' => 'float',
+        'levelThreeRateType' => 'string',
+        'levelThreeServicesFlag' => 'boolean',
+        'levelThreeTaxCodeXref' => 'string',
+        'levelThreeTaxableMax' => 'float',
+        'levelTwoAgencyXref' => 'string',
+        'levelTwoApplySingleUnitFlag' => 'boolean',
+        'levelTwoApplySingleUnitMax' => 'float',
+        'levelTwoApplySingleUnitMin' => 'float',
+        'levelTwoCaption' => 'string',
+        'levelTwoExpensesFlag' => 'boolean',
+        'levelTwoProductsFlag' => 'boolean',
+        'levelTwoRate' => 'float',
+        'levelTwoRateType' => 'string',
+        'levelTwoServicesFlag' => 'boolean',
+        'levelTwoTaxCodeXref' => 'string',
+        'levelTwoTaxableMax' => 'float',
         'productTypeIds' => 'array',
-        'addAllProductTypes' => 'boolean',
+        'removeAllExpenseTypes' => 'boolean',
         'removeAllProductTypes' => 'boolean',
+        'removeAllWorkRoles' => 'boolean',
+        'workRoleIds' => 'array'
     ];
 }

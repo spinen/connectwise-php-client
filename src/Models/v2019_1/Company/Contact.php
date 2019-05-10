@@ -2,45 +2,57 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Contact
+ * Class Contact Version v2019_1
  *
- * @property integer $id
- * @property string $firstName
- * @property string $lastName
- * @property string $addressLine1
- * @property string $addressLine2
- * @property string $city
- * @property string $state
- * @property string $zip
- * @property string $relationshipOverride
- * @property boolean $inactiveFlag
- * @property integer $defaultMergeContactId
- * @property string $securityIdentifier
- * @property string $title
- * @property string $school
- * @property string $nickName
- * @property boolean $marriedFlag
- * @property boolean $childrenFlag
- * @property string $significantOther
- * @property string $portalPassword
- * @property integer $portalSecurityLevel
- * @property boolean $disablePortalLoginFlag
- * @property boolean $unsubscribeFlag
- * @property string $gender
- * @property carbon $birthDay
- * @property carbon $anniversary
- * @property string $presence
- * @property string $facebookUrl
- * @property string $twitterUrl
- * @property string $linkedInUrl
- * @property boolean $defaultBillingFlag
- * @property boolean $defaultFlag
+ * Model for Contact
+ *
+ * @property Carbon $anniversary
+ * @property Carbon $birthDay
+ * @property CompanyReference $company
+ * @property ContactDepartmentReference $department
+ * @property ContactReference $assistantContact
+ * @property ContactReference $managerContact
+ * @property CountryReference $country
+ * @property Guid $mobileGuid
+ * @property Metadata $_info
+ * @property RelationshipReference $relationship
+ * @property SiteReference $site
  * @property array $communicationItems
  * @property array $customFields
  * @property array $typeIds
+ * @property boolean $childrenFlag
+ * @property boolean $defaultBillingFlag
+ * @property boolean $defaultFlag
+ * @property boolean $disablePortalLoginFlag
+ * @property boolean $inactiveFlag
+ * @property boolean $marriedFlag
+ * @property boolean $unsubscribeFlag
+ * @property integer $defaultMergeContactId
+ * @property integer $id
+ * @property integer $portalSecurityLevel
+ * @property string $addressLine1
+ * @property string $addressLine2
+ * @property string $city
+ * @property string $facebookUrl
+ * @property string $firstName
+ * @property string $gender
+ * @property string $lastName
+ * @property string $linkedInUrl
+ * @property string $nickName
+ * @property string $portalPassword
+ * @property string $presence
+ * @property string $relationshipOverride
+ * @property string $school
+ * @property string $securityIdentifier
+ * @property string $significantOther
+ * @property string $state
+ * @property string $title
+ * @property string $twitterUrl
+ * @property string $zip
  */
 class Contact extends Model
 {
@@ -50,39 +62,48 @@ class Contact extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'firstName' => 'string',
-        'lastName' => 'string',
+        '_info' => Metadata::class,
         'addressLine1' => 'string',
         'addressLine2' => 'string',
-        'city' => 'string',
-        'state' => 'string',
-        'zip' => 'string',
-        'relationshipOverride' => 'string',
-        'inactiveFlag' => 'boolean',
-        'defaultMergeContactId' => 'integer',
-        'securityIdentifier' => 'string',
-        'title' => 'string',
-        'school' => 'string',
-        'nickName' => 'string',
-        'marriedFlag' => 'boolean',
+        'anniversary' => Carbon::class,
+        'assistantContact' => ContactReference::class,
+        'birthDay' => Carbon::class,
         'childrenFlag' => 'boolean',
-        'significantOther' => 'string',
-        'portalPassword' => 'string',
-        'portalSecurityLevel' => 'integer',
-        'disablePortalLoginFlag' => 'boolean',
-        'unsubscribeFlag' => 'boolean',
-        'gender' => 'string',
-        'birthDay' => 'carbon',
-        'anniversary' => 'carbon',
-        'presence' => 'string',
-        'facebookUrl' => 'string',
-        'twitterUrl' => 'string',
-        'linkedInUrl' => 'string',
+        'city' => 'string',
+        'communicationItems' => 'array',
+        'company' => CompanyReference::class,
+        'country' => CountryReference::class,
+        'customFields' => 'array',
         'defaultBillingFlag' => 'boolean',
         'defaultFlag' => 'boolean',
-        'communicationItems' => 'array',
-        'customFields' => 'array',
+        'defaultMergeContactId' => 'integer',
+        'department' => ContactDepartmentReference::class,
+        'disablePortalLoginFlag' => 'boolean',
+        'facebookUrl' => 'string',
+        'firstName' => 'string',
+        'gender' => 'string',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'lastName' => 'string',
+        'linkedInUrl' => 'string',
+        'managerContact' => ContactReference::class,
+        'marriedFlag' => 'boolean',
+        'mobileGuid' => Guid::class,
+        'nickName' => 'string',
+        'portalPassword' => 'string',
+        'portalSecurityLevel' => 'integer',
+        'presence' => 'string',
+        'relationship' => RelationshipReference::class,
+        'relationshipOverride' => 'string',
+        'school' => 'string',
+        'securityIdentifier' => 'string',
+        'significantOther' => 'string',
+        'site' => SiteReference::class,
+        'state' => 'string',
+        'title' => 'string',
+        'twitterUrl' => 'string',
         'typeIds' => 'array',
+        'unsubscribeFlag' => 'boolean',
+        'zip' => 'string'
     ];
 }

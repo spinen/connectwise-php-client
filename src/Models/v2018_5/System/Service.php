@@ -2,25 +2,30 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Service
+ * Class Service Version v2018_5
  *
- * @property integer $id
- * @property string $srNotify
- * @property string $scheduleSpan
- * @property boolean $hideDelimiterFlag
+ * Model for Service
+ *
+ * @property CalendarSetupReference $calendarSetup
+ * @property Metadata $_info
  * @property boolean $allowCCFlag
  * @property boolean $allowTOFlag
+ * @property boolean $contactColorDisableFlag
+ * @property boolean $headerColorDisableFlag
+ * @property boolean $hideDelimiterFlag
+ * @property boolean $memberColorDisableFlag
+ * @property boolean $unknownColorDisableFlag
+ * @property integer $id
+ * @property string $contactColor
  * @property string $headerColor
  * @property string $memberColor
- * @property string $contactColor
+ * @property string $scheduleSpan
+ * @property string $srNotify
  * @property string $unknownColor
- * @property boolean $headerColorDisableFlag
- * @property boolean $memberColorDisableFlag
- * @property boolean $contactColorDisableFlag
- * @property boolean $unknownColorDisableFlag
  */
 class Service extends Model
 {
@@ -30,19 +35,21 @@ class Service extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'srNotify' => 'string',
-        'scheduleSpan' => 'string',
-        'hideDelimiterFlag' => 'boolean',
+        '_info' => Metadata::class,
         'allowCCFlag' => 'boolean',
         'allowTOFlag' => 'boolean',
-        'headerColor' => 'string',
-        'memberColor' => 'string',
+        'calendarSetup' => CalendarSetupReference::class,
         'contactColor' => 'string',
-        'unknownColor' => 'string',
-        'headerColorDisableFlag' => 'boolean',
-        'memberColorDisableFlag' => 'boolean',
         'contactColorDisableFlag' => 'boolean',
-        'unknownColorDisableFlag' => 'boolean',
+        'headerColor' => 'string',
+        'headerColorDisableFlag' => 'boolean',
+        'hideDelimiterFlag' => 'boolean',
+        'id' => 'integer',
+        'memberColor' => 'string',
+        'memberColorDisableFlag' => 'boolean',
+        'scheduleSpan' => 'string',
+        'srNotify' => 'string',
+        'unknownColor' => 'string',
+        'unknownColorDisableFlag' => 'boolean'
     ];
 }

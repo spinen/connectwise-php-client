@@ -2,16 +2,25 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Crm
+ * Class Crm Version v2019_2
  *
- * @property integer $id
- * @property integer $companyListCount
- * @property boolean $lockProbabilityFlag
+ * Model for Crm
+ *
+ * @property Metadata $_info
+ * @property TeamRoleReference $accountManagerRole
+ * @property TeamRoleReference $salesRepRole
+ * @property TeamRoleReference $technicalContactRole
  * @property boolean $companyIdGenerationFlag
+ * @property boolean $defaultYear
  * @property boolean $excludeSpacesFlag
+ * @property boolean $lockProbabilityFlag
+ * @property integer $companyListCount
+ * @property integer $id
+ * @property string $field10Caption
  * @property string $field1Caption
  * @property string $field2Caption
  * @property string $field3Caption
@@ -21,12 +30,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $field7Caption
  * @property string $field8Caption
  * @property string $field9Caption
- * @property string $field10Caption
- * @property string $primaryRepCaption
- * @property string $secondaryRepCaption
  * @property string $other1Caption
  * @property string $other2Caption
- * @property boolean $defaultYear
+ * @property string $primaryRepCaption
+ * @property string $secondaryRepCaption
  */
 class Crm extends Model
 {
@@ -36,11 +43,13 @@ class Crm extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'companyListCount' => 'integer',
-        'lockProbabilityFlag' => 'boolean',
+        '_info' => Metadata::class,
+        'accountManagerRole' => TeamRoleReference::class,
         'companyIdGenerationFlag' => 'boolean',
+        'companyListCount' => 'integer',
+        'defaultYear' => 'boolean',
         'excludeSpacesFlag' => 'boolean',
+        'field10Caption' => 'string',
         'field1Caption' => 'string',
         'field2Caption' => 'string',
         'field3Caption' => 'string',
@@ -50,11 +59,13 @@ class Crm extends Model
         'field7Caption' => 'string',
         'field8Caption' => 'string',
         'field9Caption' => 'string',
-        'field10Caption' => 'string',
-        'primaryRepCaption' => 'string',
-        'secondaryRepCaption' => 'string',
+        'id' => 'integer',
+        'lockProbabilityFlag' => 'boolean',
         'other1Caption' => 'string',
         'other2Caption' => 'string',
-        'defaultYear' => 'boolean',
+        'primaryRepCaption' => 'string',
+        'salesRepRole' => TeamRoleReference::class,
+        'secondaryRepCaption' => 'string',
+        'technicalContactRole' => TeamRoleReference::class
     ];
 }

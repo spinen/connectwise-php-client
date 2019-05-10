@@ -2,11 +2,15 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Schedule;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class HolidayList
+ * Class HolidayList Version v2019_2
  *
+ * Model for HolidayList
+ *
+ * @property Metadata $_info
  * @property integer $id
  * @property string $name
  */
@@ -18,7 +22,8 @@ class HolidayList extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'name' => 'string',
+        'name' => 'string'
     ];
 }

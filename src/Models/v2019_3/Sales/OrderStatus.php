@@ -2,17 +2,22 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class OrderStatus
+ * Class OrderStatus Version v2019_3
  *
- * @property integer $id
- * @property string $name
+ * Model for OrderStatus
+ *
+ * @property Metadata $_info
+ * @property OrderStatusEmailTemplateReference $emailTemplate
+ * @property boolean $closedFlag
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
+ * @property integer $id
  * @property integer $sortOrder
- * @property boolean $closedFlag
+ * @property string $name
  */
 class OrderStatus extends Model
 {
@@ -22,11 +27,13 @@ class OrderStatus extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'defaultFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
-        'sortOrder' => 'integer',
+        '_info' => Metadata::class,
         'closedFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'emailTemplate' => OrderStatusEmailTemplateReference::class,
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
+        'sortOrder' => 'integer'
     ];
 }

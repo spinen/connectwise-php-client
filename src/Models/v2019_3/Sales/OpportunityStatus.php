@@ -2,20 +2,24 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class OpportunityStatus
+ * Class OpportunityStatus Version v2019_3
  *
- * @property integer $id
- * @property string $name
- * @property boolean $wonFlag
- * @property boolean $lostFlag
+ * Model for OpportunityStatus
+ *
+ * @property Carbon $dateEntered
+ * @property Metadata $_info
  * @property boolean $closedFlag
- * @property boolean $inactiveFlag
  * @property boolean $defaultFlag
+ * @property boolean $inactiveFlag
+ * @property boolean $lostFlag
+ * @property boolean $wonFlag
+ * @property integer $id
  * @property string $enteredBy
- * @property carbon $dateEntered
+ * @property string $name
  */
 class OpportunityStatus extends Model
 {
@@ -25,14 +29,15 @@ class OpportunityStatus extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'wonFlag' => 'boolean',
-        'lostFlag' => 'boolean',
+        '_info' => Metadata::class,
         'closedFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
+        'dateEntered' => Carbon::class,
         'defaultFlag' => 'boolean',
         'enteredBy' => 'string',
-        'dateEntered' => 'carbon',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'lostFlag' => 'boolean',
+        'name' => 'string',
+        'wonFlag' => 'boolean'
     ];
 }

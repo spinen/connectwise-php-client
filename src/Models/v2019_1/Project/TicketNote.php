@@ -2,21 +2,27 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Project;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TicketNote
+ * Class TicketNote Version v2019_1
  *
+ * Model for TicketNote
+ *
+ * @property ContactReference $contact
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property boolean $customerUpdatedFlag
+ * @property boolean $detailDescriptionFlag
+ * @property boolean $externalFlag
+ * @property boolean $internalAnalysisFlag
+ * @property boolean $internalFlag
+ * @property boolean $processNotifications
+ * @property boolean $resolutionFlag
  * @property integer $id
  * @property integer $ticketId
  * @property string $text
- * @property boolean $detailDescriptionFlag
- * @property boolean $internalAnalysisFlag
- * @property boolean $resolutionFlag
- * @property boolean $customerUpdatedFlag
- * @property boolean $processNotifications
- * @property boolean $internalFlag
- * @property boolean $externalFlag
  */
 class TicketNote extends Model
 {
@@ -26,15 +32,18 @@ class TicketNote extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'ticketId' => 'integer',
-        'text' => 'string',
-        'detailDescriptionFlag' => 'boolean',
-        'internalAnalysisFlag' => 'boolean',
-        'resolutionFlag' => 'boolean',
+        '_info' => Metadata::class,
+        'contact' => ContactReference::class,
         'customerUpdatedFlag' => 'boolean',
-        'processNotifications' => 'boolean',
-        'internalFlag' => 'boolean',
+        'detailDescriptionFlag' => 'boolean',
         'externalFlag' => 'boolean',
+        'id' => 'integer',
+        'internalAnalysisFlag' => 'boolean',
+        'internalFlag' => 'boolean',
+        'member' => MemberReference::class,
+        'processNotifications' => 'boolean',
+        'resolutionFlag' => 'boolean',
+        'text' => 'string',
+        'ticketId' => 'integer'
     ];
 }

@@ -2,17 +2,22 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BoardSubType
+ * Class BoardSubType Version v2018_4
  *
- * @property integer $id
- * @property string $name
- * @property boolean $inactiveFlag
+ * Model for BoardSubType
+ *
+ * @property BoardReference $board
+ * @property Metadata $_info
  * @property array $typeAssociationIds
  * @property boolean $addAllTypesFlag
+ * @property boolean $inactiveFlag
  * @property boolean $removeAllTypesFlag
+ * @property integer $id
+ * @property string $name
  */
 class BoardSubType extends Model
 {
@@ -22,11 +27,13 @@ class BoardSubType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'inactiveFlag' => 'boolean',
-        'typeAssociationIds' => 'array',
+        '_info' => Metadata::class,
         'addAllTypesFlag' => 'boolean',
+        'board' => BoardReference::class,
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
         'removeAllTypesFlag' => 'boolean',
+        'typeAssociationIds' => 'array'
     ];
 }

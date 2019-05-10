@@ -2,21 +2,26 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TaxCodeXRef
+ * Class TaxCodeXRef Version v2019_2
  *
+ * Model for TaxCodeXRef
+ *
+ * @property Metadata $_info
+ * @property TaxCodeReference $taxCode
+ * @property array $taxableLevels
+ * @property boolean $defaultFlag
  * @property integer $id
  * @property string $description
- * @property boolean $defaultFlag
- * @property string $levelOne
- * @property string $levelTwo
- * @property string $levelThree
- * @property string $levelFour
  * @property string $levelFive
+ * @property string $levelFour
+ * @property string $levelOne
  * @property string $levelSix
- * @property array $taxableLevels
+ * @property string $levelThree
+ * @property string $levelTwo
  */
 class TaxCodeXRef extends Model
 {
@@ -26,15 +31,17 @@ class TaxCodeXRef extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'description' => 'string',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
-        'levelOne' => 'string',
-        'levelTwo' => 'string',
-        'levelThree' => 'string',
-        'levelFour' => 'string',
+        'description' => 'string',
+        'id' => 'integer',
         'levelFive' => 'string',
+        'levelFour' => 'string',
+        'levelOne' => 'string',
         'levelSix' => 'string',
-        'taxableLevels' => 'array',
+        'levelThree' => 'string',
+        'levelTwo' => 'string',
+        'taxCode' => TaxCodeReference::class,
+        'taxableLevels' => 'array'
     ];
 }

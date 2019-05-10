@@ -2,15 +2,22 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class PricingDetail
+ * Class PricingDetail Version v2019_1
  *
- * @property integer $id
- * @property carbon $startDate
- * @property carbon $endDate
+ * Model for PricingDetail
+ *
+ * @property Carbon $endDate
+ * @property Carbon $startDate
+ * @property CatalogItemReference $product
+ * @property Metadata $_info
+ * @property ProductCategoryReference $category
+ * @property ProductSubCategoryReference $subCategory
  * @property boolean $noEndDate
+ * @property integer $id
  */
 class PricingDetail extends Model
 {
@@ -20,9 +27,13 @@ class PricingDetail extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'category' => ProductCategoryReference::class,
+        'endDate' => Carbon::class,
         'id' => 'integer',
-        'startDate' => 'carbon',
-        'endDate' => 'carbon',
         'noEndDate' => 'boolean',
+        'product' => CatalogItemReference::class,
+        'startDate' => Carbon::class,
+        'subCategory' => ProductSubCategoryReference::class
     ];
 }

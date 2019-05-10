@@ -2,20 +2,25 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class MemberInfo
+ * Class MemberInfo Version v2019_3
  *
- * @property integer $id
- * @property string $identifier
- * @property string $firstName
- * @property string $middleInitial
- * @property string $lastName
- * @property string $fullName
- * @property string $defaultEmail
- * @property string $licenseClass
+ * Model for MemberInfo
+ *
+ * @property DocumentReference $photo
+ * @property Metadata $_info
  * @property boolean $inactiveFlag
+ * @property integer $id
+ * @property string $defaultEmail
+ * @property string $firstName
+ * @property string $fullName
+ * @property string $identifier
+ * @property string $lastName
+ * @property string $licenseClass
+ * @property string $middleInitial
  */
 class MemberInfo extends Model
 {
@@ -25,14 +30,16 @@ class MemberInfo extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'defaultEmail' => 'string',
+        'firstName' => 'string',
+        'fullName' => 'string',
         'id' => 'integer',
         'identifier' => 'string',
-        'firstName' => 'string',
-        'middleInitial' => 'string',
-        'lastName' => 'string',
-        'fullName' => 'string',
-        'defaultEmail' => 'string',
-        'licenseClass' => 'string',
         'inactiveFlag' => 'boolean',
+        'lastName' => 'string',
+        'licenseClass' => 'string',
+        'middleInitial' => 'string',
+        'photo' => DocumentReference::class
     ];
 }

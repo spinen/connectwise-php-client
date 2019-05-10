@@ -2,23 +2,30 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ManagedDevicesIntegration
+ * Class ManagedDevicesIntegration Version v2019_2
  *
- * @property integer $id
- * @property string $name
- * @property string $solution
- * @property string $portalUrl
- * @property string $loginBy
- * @property string $globalLoginUsername
- * @property string $globalLoginPassword
- * @property string $defaultBillingLevel
- * @property string $managementItSetupType
- * @property boolean $matchOnSerialNumberFlag
- * @property boolean $disableNewCrossReferencesFlag
+ * Model for ManagedDevicesIntegration
+ *
+ * @property IntegratorLoginReference $integratorLogin
+ * @property Metadata $_info
+ * @property SystemDepartmentReference $defaultDepartment
+ * @property SystemLocationReference $defaultLocation
  * @property boolean $configBillCustomerFlag
+ * @property boolean $disableNewCrossReferencesFlag
+ * @property boolean $matchOnSerialNumberFlag
+ * @property integer $id
+ * @property string $defaultBillingLevel
+ * @property string $globalLoginPassword
+ * @property string $globalLoginUsername
+ * @property string $loginBy
+ * @property string $managementItSetupType
+ * @property string $name
+ * @property string $portalUrl
+ * @property string $solution
  */
 class ManagedDevicesIntegration extends Model
 {
@@ -28,17 +35,21 @@ class ManagedDevicesIntegration extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'solution' => 'string',
-        'portalUrl' => 'string',
-        'loginBy' => 'string',
-        'globalLoginUsername' => 'string',
-        'globalLoginPassword' => 'string',
+        '_info' => Metadata::class,
+        'configBillCustomerFlag' => 'boolean',
         'defaultBillingLevel' => 'string',
+        'defaultDepartment' => SystemDepartmentReference::class,
+        'defaultLocation' => SystemLocationReference::class,
+        'disableNewCrossReferencesFlag' => 'boolean',
+        'globalLoginPassword' => 'string',
+        'globalLoginUsername' => 'string',
+        'id' => 'integer',
+        'integratorLogin' => IntegratorLoginReference::class,
+        'loginBy' => 'string',
         'managementItSetupType' => 'string',
         'matchOnSerialNumberFlag' => 'boolean',
-        'disableNewCrossReferencesFlag' => 'boolean',
-        'configBillCustomerFlag' => 'boolean',
+        'name' => 'string',
+        'portalUrl' => 'string',
+        'solution' => 'string'
     ];
 }

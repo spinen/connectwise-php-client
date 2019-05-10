@@ -2,14 +2,18 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Manufacturer
+ * Class Manufacturer Version v2018_5
  *
+ * Model for Manufacturer
+ *
+ * @property Metadata $_info
+ * @property boolean $inactiveFlag
  * @property integer $id
  * @property string $name
- * @property boolean $inactiveFlag
  */
 class Manufacturer extends Model
 {
@@ -19,8 +23,9 @@ class Manufacturer extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'name' => 'string',
         'inactiveFlag' => 'boolean',
+        'name' => 'string'
     ];
 }

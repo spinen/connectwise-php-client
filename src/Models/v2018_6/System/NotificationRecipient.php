@@ -2,26 +2,30 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class NotificationRecipient
+ * Class NotificationRecipient Version v2018_6
  *
+ * Model for NotificationRecipient
+ *
+ * @property Metadata $_info
+ * @property boolean $agreementFlag
+ * @property boolean $configFlag
+ * @property boolean $externalFlag
+ * @property boolean $invoiceFlag
+ * @property boolean $knowledgeBaseFlag
+ * @property boolean $memberFlag
+ * @property boolean $mspFlag
+ * @property boolean $procurementFlag
+ * @property boolean $projectFlag
+ * @property boolean $salesFlag
+ * @property boolean $serviceFlag
+ * @property boolean $trackFlag
  * @property integer $id
  * @property string $identifier
  * @property string $name
- * @property boolean $externalFlag
- * @property boolean $serviceFlag
- * @property boolean $salesFlag
- * @property boolean $invoiceFlag
- * @property boolean $agreementFlag
- * @property boolean $memberFlag
- * @property boolean $configFlag
- * @property boolean $mspFlag
- * @property boolean $trackFlag
- * @property boolean $projectFlag
- * @property boolean $procurementFlag
- * @property boolean $knowledgeBaseFlag
  */
 class NotificationRecipient extends Model
 {
@@ -31,20 +35,21 @@ class NotificationRecipient extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'agreementFlag' => 'boolean',
+        'configFlag' => 'boolean',
+        'externalFlag' => 'boolean',
         'id' => 'integer',
         'identifier' => 'string',
-        'name' => 'string',
-        'externalFlag' => 'boolean',
-        'serviceFlag' => 'boolean',
-        'salesFlag' => 'boolean',
         'invoiceFlag' => 'boolean',
-        'agreementFlag' => 'boolean',
-        'memberFlag' => 'boolean',
-        'configFlag' => 'boolean',
-        'mspFlag' => 'boolean',
-        'trackFlag' => 'boolean',
-        'projectFlag' => 'boolean',
-        'procurementFlag' => 'boolean',
         'knowledgeBaseFlag' => 'boolean',
+        'memberFlag' => 'boolean',
+        'mspFlag' => 'boolean',
+        'name' => 'string',
+        'procurementFlag' => 'boolean',
+        'projectFlag' => 'boolean',
+        'salesFlag' => 'boolean',
+        'serviceFlag' => 'boolean',
+        'trackFlag' => 'boolean'
     ];
 }

@@ -2,63 +2,77 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Finance;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class AgreementType
+ * Class AgreementType Version v2018_6
  *
- * @property integer $id
- * @property string $name
- * @property string $prefixSuffixOption
- * @property boolean $defaultFlag
- * @property boolean $inactiveFlag
- * @property boolean $prePaymentFlag
- * @property string $invoicePreSuffix
- * @property boolean $restrictLocationFlag
- * @property boolean $restrictDepartmentFlag
- * @property string $applicationUnits
- * @property double $applicationLimit
- * @property string $applicationCycle
- * @property boolean $applicationUnlimitedFlag
- * @property boolean $oneTimeFlag
- * @property boolean $coverAgreementTimeFlag
- * @property boolean $coverAgreementProductFlag
- * @property boolean $coverAgreementExpenseFlag
- * @property boolean $coverSalesTaxFlag
- * @property boolean $carryOverUnusedFlag
+ * Model for AgreementType
+ *
+ * @property BillingCycleReference $billingCycle
+ * @property BillingTermsReference $billingTerms
+ * @property EmailTemplateReference $emailTemplate
+ * @property InvoiceTemplateReference $invoiceTemplate
+ * @property Metadata $_info
+ * @property ProjectTypeReference $projectType
+ * @property SLAReference $sla
+ * @property SystemDepartmentReference $department
+ * @property SystemLocationReference $location
+ * @property WorkRoleReference $workRole
+ * @property WorkTypeReference $workType
+ * @property array $exclusionWorkRoleIds
+ * @property array $exclusionWorkTypeIds
+ * @property boolean $addAllWorkRoleExclusions
+ * @property boolean $addAllWorkTypeExclusions
  * @property boolean $allowOverrunsFlag
- * @property integer $expiredDays
- * @property integer $limit
- * @property boolean $expireWhenZero
- * @property boolean $chargeToFirmFlag
- * @property string $employeeCompRate
- * @property string $employeeCompNotExceed
- * @property double $compHourlyRate
- * @property double $compLimitAmount
+ * @property boolean $applicationUnlimitedFlag
  * @property boolean $billOneTimeFlag
- * @property string $invoicingCycle
- * @property double $billAmount
- * @property boolean $taxableFlag
- * @property boolean $restrictDownPaymentFlag
- * @property string $invoiceDescription
- * @property boolean $topCommentFlag
- * @property boolean $bottomCommentFlag
- * @property string $billTime
- * @property string $billExpenses
- * @property string $billProducts
- * @property boolean $billableTimeInvoiceFlag
  * @property boolean $billableExpenseInvoiceFlag
  * @property boolean $billableProductInvoiceFlag
+ * @property boolean $billableTimeInvoiceFlag
+ * @property boolean $bottomCommentFlag
+ * @property boolean $carryOverUnusedFlag
+ * @property boolean $chargeToFirmFlag
  * @property boolean $copyWorkRolesFlag
  * @property boolean $copyWorkTypesFlag
- * @property array $exclusionWorkRoleIds
- * @property boolean $addAllWorkRoleExclusions
- * @property boolean $removeAllWorkRoleExclusions
- * @property array $exclusionWorkTypeIds
- * @property boolean $addAllWorkTypeExclusions
- * @property boolean $removeAllWorkTypeExclusions
- * @property string $integrationXRef
+ * @property boolean $coverAgreementExpenseFlag
+ * @property boolean $coverAgreementProductFlag
+ * @property boolean $coverAgreementTimeFlag
+ * @property boolean $coverSalesTaxFlag
+ * @property boolean $defaultFlag
+ * @property boolean $expireWhenZero
+ * @property boolean $inactiveFlag
+ * @property boolean $oneTimeFlag
+ * @property boolean $prePaymentFlag
  * @property boolean $prorateFlag
+ * @property boolean $removeAllWorkRoleExclusions
+ * @property boolean $removeAllWorkTypeExclusions
+ * @property boolean $restrictDepartmentFlag
+ * @property boolean $restrictDownPaymentFlag
+ * @property boolean $restrictLocationFlag
+ * @property boolean $taxableFlag
+ * @property boolean $topCommentFlag
+ * @property float $applicationLimit
+ * @property float $billAmount
+ * @property float $compHourlyRate
+ * @property float $compLimitAmount
+ * @property integer $expiredDays
+ * @property integer $id
+ * @property integer $limit
+ * @property string $applicationCycle
+ * @property string $applicationUnits
+ * @property string $billExpenses
+ * @property string $billProducts
+ * @property string $billTime
+ * @property string $employeeCompNotExceed
+ * @property string $employeeCompRate
+ * @property string $integrationXRef
+ * @property string $invoiceDescription
+ * @property string $invoicePreSuffix
+ * @property string $invoicingCycle
+ * @property string $name
+ * @property string $prefixSuffixOption
  */
 class AgreementType extends Model
 {
@@ -68,57 +82,68 @@ class AgreementType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'prefixSuffixOption' => 'string',
-        'defaultFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
-        'prePaymentFlag' => 'boolean',
-        'invoicePreSuffix' => 'string',
-        'restrictLocationFlag' => 'boolean',
-        'restrictDepartmentFlag' => 'boolean',
-        'applicationUnits' => 'string',
-        'applicationLimit' => 'double',
-        'applicationCycle' => 'string',
-        'applicationUnlimitedFlag' => 'boolean',
-        'oneTimeFlag' => 'boolean',
-        'coverAgreementTimeFlag' => 'boolean',
-        'coverAgreementProductFlag' => 'boolean',
-        'coverAgreementExpenseFlag' => 'boolean',
-        'coverSalesTaxFlag' => 'boolean',
-        'carryOverUnusedFlag' => 'boolean',
+        '_info' => Metadata::class,
+        'addAllWorkRoleExclusions' => 'boolean',
+        'addAllWorkTypeExclusions' => 'boolean',
         'allowOverrunsFlag' => 'boolean',
-        'expiredDays' => 'integer',
-        'limit' => 'integer',
-        'expireWhenZero' => 'boolean',
-        'chargeToFirmFlag' => 'boolean',
-        'employeeCompRate' => 'string',
-        'employeeCompNotExceed' => 'string',
-        'compHourlyRate' => 'double',
-        'compLimitAmount' => 'double',
-        'billOneTimeFlag' => 'boolean',
-        'invoicingCycle' => 'string',
-        'billAmount' => 'double',
-        'taxableFlag' => 'boolean',
-        'restrictDownPaymentFlag' => 'boolean',
-        'invoiceDescription' => 'string',
-        'topCommentFlag' => 'boolean',
-        'bottomCommentFlag' => 'boolean',
-        'billTime' => 'string',
+        'applicationCycle' => 'string',
+        'applicationLimit' => 'float',
+        'applicationUnits' => 'string',
+        'applicationUnlimitedFlag' => 'boolean',
+        'billAmount' => 'float',
         'billExpenses' => 'string',
+        'billOneTimeFlag' => 'boolean',
         'billProducts' => 'string',
-        'billableTimeInvoiceFlag' => 'boolean',
+        'billTime' => 'string',
         'billableExpenseInvoiceFlag' => 'boolean',
         'billableProductInvoiceFlag' => 'boolean',
+        'billableTimeInvoiceFlag' => 'boolean',
+        'billingCycle' => BillingCycleReference::class,
+        'billingTerms' => BillingTermsReference::class,
+        'bottomCommentFlag' => 'boolean',
+        'carryOverUnusedFlag' => 'boolean',
+        'chargeToFirmFlag' => 'boolean',
+        'compHourlyRate' => 'float',
+        'compLimitAmount' => 'float',
         'copyWorkRolesFlag' => 'boolean',
         'copyWorkTypesFlag' => 'boolean',
+        'coverAgreementExpenseFlag' => 'boolean',
+        'coverAgreementProductFlag' => 'boolean',
+        'coverAgreementTimeFlag' => 'boolean',
+        'coverSalesTaxFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'department' => SystemDepartmentReference::class,
+        'emailTemplate' => EmailTemplateReference::class,
+        'employeeCompNotExceed' => 'string',
+        'employeeCompRate' => 'string',
         'exclusionWorkRoleIds' => 'array',
-        'addAllWorkRoleExclusions' => 'boolean',
-        'removeAllWorkRoleExclusions' => 'boolean',
         'exclusionWorkTypeIds' => 'array',
-        'addAllWorkTypeExclusions' => 'boolean',
-        'removeAllWorkTypeExclusions' => 'boolean',
+        'expireWhenZero' => 'boolean',
+        'expiredDays' => 'integer',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
         'integrationXRef' => 'string',
+        'invoiceDescription' => 'string',
+        'invoicePreSuffix' => 'string',
+        'invoiceTemplate' => InvoiceTemplateReference::class,
+        'invoicingCycle' => 'string',
+        'limit' => 'integer',
+        'location' => SystemLocationReference::class,
+        'name' => 'string',
+        'oneTimeFlag' => 'boolean',
+        'prePaymentFlag' => 'boolean',
+        'prefixSuffixOption' => 'string',
+        'projectType' => ProjectTypeReference::class,
         'prorateFlag' => 'boolean',
+        'removeAllWorkRoleExclusions' => 'boolean',
+        'removeAllWorkTypeExclusions' => 'boolean',
+        'restrictDepartmentFlag' => 'boolean',
+        'restrictDownPaymentFlag' => 'boolean',
+        'restrictLocationFlag' => 'boolean',
+        'sla' => SLAReference::class,
+        'taxableFlag' => 'boolean',
+        'topCommentFlag' => 'boolean',
+        'workRole' => WorkRoleReference::class,
+        'workType' => WorkTypeReference::class
     ];
 }

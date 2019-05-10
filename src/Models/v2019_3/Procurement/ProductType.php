@@ -2,14 +2,18 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Procurement;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProductType
+ * Class ProductType Version v2019_3
  *
+ * Model for ProductType
+ *
+ * @property Metadata $_info
+ * @property boolean $inactiveFlag
  * @property integer $id
  * @property string $name
- * @property boolean $inactiveFlag
  * @property string $typeXref
  */
 class ProductType extends Model
@@ -20,9 +24,10 @@ class ProductType extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'name' => 'string',
         'inactiveFlag' => 'boolean',
-        'typeXref' => 'string',
+        'name' => 'string',
+        'typeXref' => 'string'
     ];
 }

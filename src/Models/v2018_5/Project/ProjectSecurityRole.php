@@ -2,15 +2,19 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Project;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProjectSecurityRole
+ * Class ProjectSecurityRole Version v2018_5
  *
+ * Model for ProjectSecurityRole
+ *
+ * @property Metadata $_info
+ * @property boolean $defaultContactFlag
+ * @property boolean $managerRoleFlag
  * @property integer $id
  * @property string $name
- * @property boolean $managerRoleFlag
- * @property boolean $defaultContactFlag
  */
 class ProjectSecurityRole extends Model
 {
@@ -20,9 +24,10 @@ class ProjectSecurityRole extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'managerRoleFlag' => 'boolean',
+        '_info' => Metadata::class,
         'defaultContactFlag' => 'boolean',
+        'id' => 'integer',
+        'managerRoleFlag' => 'boolean',
+        'name' => 'string'
     ];
 }

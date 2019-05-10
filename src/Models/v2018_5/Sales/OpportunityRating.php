@@ -2,14 +2,18 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Sales;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class OpportunityRating
+ * Class OpportunityRating Version v2018_5
  *
+ * Model for OpportunityRating
+ *
+ * @property Metadata $_info
  * @property integer $id
- * @property string $name
  * @property integer $sortOrder
+ * @property string $name
  */
 class OpportunityRating extends Model
 {
@@ -19,8 +23,9 @@ class OpportunityRating extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
         'name' => 'string',
-        'sortOrder' => 'integer',
+        'sortOrder' => 'integer'
     ];
 }

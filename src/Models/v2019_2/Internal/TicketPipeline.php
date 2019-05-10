@@ -2,11 +2,18 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Internal;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class TicketPipeline
+ * Class TicketPipeline Version v2019_2
  *
+ * Model for TicketPipeline
+ *
+ * @property BoardReference $board
+ * @property Metadata $_info
+ * @property ServiceStatusReference $status
+ * @property TicketReference $ticket
  * @property integer $id
  */
 class TicketPipeline extends Model
@@ -17,6 +24,10 @@ class TicketPipeline extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'board' => BoardReference::class,
         'id' => 'integer',
+        'status' => ServiceStatusReference::class,
+        'ticket' => TicketReference::class
     ];
 }

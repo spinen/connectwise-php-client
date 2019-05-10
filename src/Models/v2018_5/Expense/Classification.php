@@ -2,17 +2,21 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Expense;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class Classification
+ * Class Classification Version v2018_5
  *
+ * Model for Classification
+ *
+ * @property Metadata $_info
+ * @property boolean $companyFlag
+ * @property boolean $defaultFlag
+ * @property boolean $employeeFlag
+ * @property float $multiplier
  * @property integer $id
  * @property string $name
- * @property double $multiplier
- * @property boolean $defaultFlag
- * @property boolean $companyFlag
- * @property boolean $employeeFlag
  */
 class Classification extends Model
 {
@@ -22,11 +26,12 @@ class Classification extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'multiplier' => 'double',
-        'defaultFlag' => 'boolean',
+        '_info' => Metadata::class,
         'companyFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
         'employeeFlag' => 'boolean',
+        'id' => 'integer',
+        'multiplier' => 'float',
+        'name' => 'string'
     ];
 }

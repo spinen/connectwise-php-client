@@ -2,14 +2,18 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Company;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ContactType
+ * Class ContactType Version v2018_5
  *
+ * Model for ContactType
+ *
+ * @property Metadata $_info
+ * @property boolean $defaultFlag
  * @property integer $id
  * @property string $description
- * @property boolean $defaultFlag
  */
 class ContactType extends Model
 {
@@ -19,8 +23,9 @@ class ContactType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'description' => 'string',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
+        'description' => 'string',
+        'id' => 'integer'
     ];
 }

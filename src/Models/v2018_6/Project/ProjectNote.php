@@ -2,15 +2,20 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Project;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class ProjectNote
+ * Class ProjectNote Version v2018_6
  *
+ * Model for ProjectNote
+ *
+ * @property Metadata $_info
+ * @property NoteTypeReference $type
+ * @property boolean $flagged
  * @property integer $id
  * @property integer $projectId
  * @property string $text
- * @property boolean $flagged
  */
 class ProjectNote extends Model
 {
@@ -20,9 +25,11 @@ class ProjectNote extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
+        'flagged' => 'boolean',
         'id' => 'integer',
         'projectId' => 'integer',
         'text' => 'string',
-        'flagged' => 'boolean',
+        'type' => NoteTypeReference::class
     ];
 }

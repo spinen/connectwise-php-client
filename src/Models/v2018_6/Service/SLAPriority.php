@@ -2,18 +2,24 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class SLAPriority
+ * Class SLAPriority Version v2018_6
  *
+ * Model for SLAPriority
+ *
+ * @property Metadata $_info
+ * @property PriorityReference $priority
+ * @property SLAReference $sla
+ * @property float $planWithin
+ * @property float $resolutionHours
+ * @property float $respondHours
  * @property integer $id
- * @property double $respondHours
- * @property integer $respondPercent
- * @property double $planWithin
  * @property integer $planWithinPercent
- * @property double $resolutionHours
  * @property integer $resolutionPercent
+ * @property integer $respondPercent
  */
 class SLAPriority extends Model
 {
@@ -23,12 +29,15 @@ class SLAPriority extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'respondHours' => 'double',
-        'respondPercent' => 'integer',
-        'planWithin' => 'double',
+        'planWithin' => 'float',
         'planWithinPercent' => 'integer',
-        'resolutionHours' => 'double',
+        'priority' => PriorityReference::class,
+        'resolutionHours' => 'float',
         'resolutionPercent' => 'integer',
+        'respondHours' => 'float',
+        'respondPercent' => 'integer',
+        'sla' => SLAReference::class
     ];
 }

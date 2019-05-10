@@ -2,13 +2,19 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class LocationWorkRole
+ * Class LocationWorkRole Version v2019_3
  *
- * @property integer $id
+ * Model for LocationWorkRole
+ *
+ * @property Metadata $_info
+ * @property SystemLocationReference $location
+ * @property WorkRoleReference $workRole
  * @property boolean $workRoleInactiveFlag
+ * @property integer $id
  */
 class LocationWorkRole extends Model
 {
@@ -18,7 +24,10 @@ class LocationWorkRole extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => Metadata::class,
         'id' => 'integer',
-        'workRoleInactiveFlag' => 'boolean',
+        'location' => SystemLocationReference::class,
+        'workRole' => WorkRoleReference::class,
+        'workRoleInactiveFlag' => 'boolean'
     ];
 }

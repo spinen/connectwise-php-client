@@ -2,15 +2,19 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Marketing;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class CampaignStatus
+ * Class CampaignStatus Version v2018_4
  *
- * @property integer $id
- * @property string $name
+ * Model for CampaignStatus
+ *
+ * @property Metadata $_info
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
+ * @property integer $id
+ * @property string $name
  */
 class CampaignStatus extends Model
 {
@@ -20,9 +24,10 @@ class CampaignStatus extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
+        'id' => 'integer',
         'inactiveFlag' => 'boolean',
+        'name' => 'string'
     ];
 }

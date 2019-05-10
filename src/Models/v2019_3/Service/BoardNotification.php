@@ -2,11 +2,17 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Service;
 
+use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
- * Class BoardNotification
+ * Class BoardNotification Version v2019_3
  *
+ * Model for BoardNotification
+ *
+ * @property MemberReference $member
+ * @property Metadata $_info
+ * @property NotificationRecipientReference $notifyWho
  * @property integer $id
  * @property string $email
  */
@@ -18,7 +24,10 @@ class BoardNotification extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => Metadata::class,
         'email' => 'string',
+        'id' => 'integer',
+        'member' => MemberReference::class,
+        'notifyWho' => NotificationRecipientReference::class
     ];
 }
