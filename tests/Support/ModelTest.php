@@ -110,16 +110,21 @@ class ModelTest extends TestCase
     {
         $model = new Stubs\Model(
             [
-                'object_attribute'     => [],
-                'carbon_attribute'     => 'January 1, 2017',
-                'json_attribute'       => ['property' => 1],
-                'collection_attribute' => [],
+                'array_attribute'      => [],
                 'boolean_attribute'    => "false",
+                'carbon_attribute'     => 'January 1, 2017',
+                'collection_attribute' => [],
+                'float_attribute'      => "1.2",
+                'info_attribute'       => [],
+                'integer_attribute'    => "1",
+                'json_attribute'       => ['property' => 1],
                 'null_attribute'       => null,
+                'object_attribute'     => [],
+                'string_attribute'     => 'something',
             ]
         );
 
-        $expected = '{"object_attribute":[],"carbon_attribute":{"date":"2017-01-01 00:00:00.000000","timezone_type":3,"timezone":"UTC"},"json_attribute":"{\"property\":1}","collection_attribute":[],"boolean_attribute":false,"null_attribute":null}';
+        $expected = '{"array_attribute":[],"boolean_attribute":false,"carbon_attribute":{"date":"2017-01-01 00:00:00.000000","timezone_type":3,"timezone":"UTC"},"collection_attribute":[],"float_attribute":1.2,"info_attribute":[],"integer_attribute":1,"json_attribute":"{\"property\":1}","null_attribute":null,"object_attribute":{},"string_attribute":"something"}';
 
         $this->assertEquals($expected, $model->toJson());
     }
