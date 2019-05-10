@@ -102,4 +102,25 @@ class ModelTest extends TestCase
         $this->assertEquals('From getter', $model['getter']);
         $this->assertEquals('From setter', $model['setter']);
     }
+
+    /**
+     * @test
+     */
+    public function it_can_serialize_model_as_json()
+    {
+        $model = new Stubs\Model(
+            [
+                'object_attribute'     => [],
+                'carbon_attribute'     => 'January 1, 2017',
+                'json_attribute'       => ['property' => 1],
+                'collection_attribute' => [],
+                'boolean_attribute'    => "false",
+                'null_attribute'       => null,
+            ]
+        );
+
+        $expected = '{"object_attribute":[],"carbon_attribute":{"date":"2017-01-01 00:00:00.000000","timezone_type":3,"timezone":"UTC"},"json_attribute":"{\"property\":1}","collection_attribute":[],"boolean_attribute":false,"null_attribute":null}';
+
+        $this->assertEquals($expected, $model->toJson());
+    }
 }
