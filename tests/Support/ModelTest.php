@@ -4,7 +4,7 @@ namespace Spinen\ConnectWise\Support;
 
 use Carbon\Carbon;
 use InvalidArgumentException;
-use Spinen\ConnectWise\Models\v2019_2\System\Info;
+use Spinen\ConnectWise\Models\v2019_3\System\Info;
 use Spinen\ConnectWise\TestCase;
 
 class ModelTest extends TestCase
@@ -48,12 +48,12 @@ class ModelTest extends TestCase
             'null_attribute'       => null,
         ]);
 
-        $this->assertInstanceOf(Info::class, $model['object_attribute']);
-        $this->assertInstanceOf(Carbon::class, $model['carbon_attribute']);
-        $this->assertJson($model['json_attribute']);
-        $this->assertInstanceOf(Collection::class, $model['collection_attribute']);
-        $this->assertTrue(false === $model['boolean_attribute']);
-        $this->assertNull($model['null_attribute']);
+        $this->assertInstanceOf(Info::class, $model['object_attribute'], 'object');
+        $this->assertInstanceOf(Carbon::class, $model['carbon_attribute'], 'Carbon');
+        $this->assertJson($model['json_attribute'], 'json');
+        $this->assertInstanceOf(Collection::class, $model['collection_attribute'], 'collection');
+        $this->assertTrue(false === $model['boolean_attribute'], 'boolean');
+        $this->assertNull($model['null_attribute'], 'null');
     }
 
     /**

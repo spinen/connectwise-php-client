@@ -76,7 +76,7 @@ class ClientTest extends TestCase
         $this->resolver->shouldReceive('find')
                        ->once()
                        ->with('uri', Mockery::any())
-                       ->andReturn('v2019_3\System\Info');
+                       ->andReturn('Spinen\ConnectWise\Models\v2019_3\System\Info');
 
         $this->token->shouldReceive('needsRefreshing')
                     ->once()
@@ -123,7 +123,7 @@ class ClientTest extends TestCase
         $this->resolver->shouldReceive('find')
                        ->once()
                        ->with('uri', '2019.3')
-                       ->andReturn('v2019_3\System\Info');
+                       ->andReturn('Spinen\ConnectWise\Models\v2019_3\System\Info');
 
         $this->token->shouldReceive('needsRefreshing')
                     ->once()
