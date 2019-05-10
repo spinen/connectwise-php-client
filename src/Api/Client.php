@@ -337,8 +337,6 @@ class Client
         $response = (array)json_decode($response->getBody(), true);
 
         if ($model = $this->resolver->find($resource, $this->getVersion())) {
-            $model = 'Spinen\ConnectWise\Models\\' . $model;
-
             if ($this->isCollection($response)) {
                 $response = array_map(
                     function ($item) use ($model) {
