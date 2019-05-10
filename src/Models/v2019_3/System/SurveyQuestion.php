@@ -13,7 +13,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_3\System\SurveyReference $survey
  * @property string $fieldType
  * @property string $entryType
- * @property number $sequenceNumber
+ * @property float $sequenceNumber
  * @property string $question
  * @property integer $numberOfDecimals
  * @property boolean $requiredFlag
@@ -32,7 +32,7 @@ class SurveyQuestion extends Model
         'survey' => 'Spinen\ConnectWise\Models\v2019_3\System\SurveyReference',
         'fieldType' => 'string',
         'entryType' => 'string',
-        'sequenceNumber' => 'number',
+        'sequenceNumber' => 'float',
         'question' => 'string',
         'numberOfDecimals' => 'integer',
         'requiredFlag' => 'boolean',

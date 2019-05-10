@@ -10,29 +10,29 @@ use Spinen\ConnectWise\Support\Model;
  * Model for GLExportPurchaseTransaction
  *
  * @property string $id
- * @property string $documentDate
+ * @property Carbon\Carbon $documentDate
  * @property string $documentNumber
  * @property string $description
  * @property string $memo
  * @property string $apAccountNumber
- * @property string $purchaseDate
+ * @property Carbon\Carbon $purchaseDate
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference $company
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\CompanyTypeReference $companyType
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\ContactReference $contact
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\SiteReference $site
  * @property string $purchaseClass
- * @property number $freightAmount
+ * @property float $freightAmount
  * @property string $freightPackingSlip
  * @property string $packingSlip
  * @property boolean $dropshipFlag
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\CurrencyReference $currency
- * @property number $total
+ * @property float $total
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\BillingTermsReference $billingTerms
  * @property string $billingTermsXref
  * @property integer $dueDays
  * @property string $vendorNumber
  * @property string $vendorAccountNumber
- * @property string $vendorInvoiceDate
+ * @property Carbon\Carbon $vendorInvoiceDate
  * @property string $vendorInvoiceNumber
  * @property string $taxAgencyXref
  * @property string $stateTaxXref
@@ -45,7 +45,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\SiteReference $shipToSite
  * @property string $shipToTaxGroup
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\TaxCodeReference $taxCode
- * @property number $taxGroupRate
+ * @property float $taxGroupRate
  * @property boolean $useAvalaraTaxFlag
  * @property string $purchaseHeaderTaxGroup
  * @property boolean $purchaseHeaderTaxableFlag
@@ -63,29 +63,29 @@ class GLExportPurchaseTransaction extends Model
      */
     protected $casts = [
         'id' => 'string',
-        'documentDate' => 'string',
+        'documentDate' => 'Carbon\Carbon',
         'documentNumber' => 'string',
         'description' => 'string',
         'memo' => 'string',
         'apAccountNumber' => 'string',
-        'purchaseDate' => 'string',
+        'purchaseDate' => 'Carbon\Carbon',
         'company' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference',
         'companyType' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CompanyTypeReference',
         'contact' => 'Spinen\ConnectWise\Models\v2018_6\Finance\ContactReference',
         'site' => 'Spinen\ConnectWise\Models\v2018_6\Finance\SiteReference',
         'purchaseClass' => 'string',
-        'freightAmount' => 'number',
+        'freightAmount' => 'float',
         'freightPackingSlip' => 'string',
         'packingSlip' => 'string',
         'dropshipFlag' => 'boolean',
         'currency' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CurrencyReference',
-        'total' => 'number',
+        'total' => 'float',
         'billingTerms' => 'Spinen\ConnectWise\Models\v2018_6\Finance\BillingTermsReference',
         'billingTermsXref' => 'string',
         'dueDays' => 'integer',
         'vendorNumber' => 'string',
         'vendorAccountNumber' => 'string',
-        'vendorInvoiceDate' => 'string',
+        'vendorInvoiceDate' => 'Carbon\Carbon',
         'vendorInvoiceNumber' => 'string',
         'taxAgencyXref' => 'string',
         'stateTaxXref' => 'string',
@@ -98,7 +98,7 @@ class GLExportPurchaseTransaction extends Model
         'shipToSite' => 'Spinen\ConnectWise\Models\v2018_6\Finance\SiteReference',
         'shipToTaxGroup' => 'string',
         'taxCode' => 'Spinen\ConnectWise\Models\v2018_6\Finance\TaxCodeReference',
-        'taxGroupRate' => 'number',
+        'taxGroupRate' => 'float',
         'useAvalaraTaxFlag' => 'boolean',
         'purchaseHeaderTaxGroup' => 'string',
         'purchaseHeaderTaxableFlag' => 'boolean',

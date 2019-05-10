@@ -38,8 +38,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_6\Project\PriorityReference $priority
  * @property Spinen\ConnectWise\Models\v2018_6\Project\ServiceLocationReference $serviceLocation
  * @property Spinen\ConnectWise\Models\v2018_6\Project\ServiceSourceReference $source
- * @property string $requiredDate
- * @property number $budgetHours
+ * @property Carbon\Carbon $requiredDate
+ * @property float $budgetHours
  * @property Spinen\ConnectWise\Models\v2018_6\Project\OpportunityReference $opportunity
  * @property Spinen\ConnectWise\Models\v2018_6\Project\AgreementReference $agreement
  * @property integer $knowledgeBaseCategoryId
@@ -55,10 +55,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $closedDate
  * @property string $closedBy
  * @property boolean $closedFlag
- * @property number $actualHours
+ * @property float $actualHours
  * @property boolean $approved
  * @property string $subBillingMethod
- * @property number $subBillingAmount
+ * @property float $subBillingAmount
  * @property string $subDateAccepted
  * @property string $resources
  * @property string $billTime
@@ -69,7 +69,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $predecessorClosedFlag
  * @property integer $lagDays
  * @property boolean $lagNonworkingDaysFlag
- * @property string $estimatedStartDate
+ * @property Carbon\Carbon $estimatedStartDate
  * @property Spinen\ConnectWise\Models\v2018_6\Project\SystemLocationReference $location
  * @property Spinen\ConnectWise\Models\v2018_6\Project\SystemDepartmentReference $department
  * @property integer $duration
@@ -121,8 +121,8 @@ class Ticket extends Model
         'priority' => 'Spinen\ConnectWise\Models\v2018_6\Project\PriorityReference',
         'serviceLocation' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceLocationReference',
         'source' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceSourceReference',
-        'requiredDate' => 'string',
-        'budgetHours' => 'number',
+        'requiredDate' => 'Carbon\Carbon',
+        'budgetHours' => 'float',
         'opportunity' => 'Spinen\ConnectWise\Models\v2018_6\Project\OpportunityReference',
         'agreement' => 'Spinen\ConnectWise\Models\v2018_6\Project\AgreementReference',
         'knowledgeBaseCategoryId' => 'integer',
@@ -138,10 +138,10 @@ class Ticket extends Model
         'closedDate' => 'string',
         'closedBy' => 'string',
         'closedFlag' => 'boolean',
-        'actualHours' => 'number',
+        'actualHours' => 'float',
         'approved' => 'boolean',
         'subBillingMethod' => 'string',
-        'subBillingAmount' => 'number',
+        'subBillingAmount' => 'float',
         'subDateAccepted' => 'string',
         'resources' => 'string',
         'billTime' => 'string',
@@ -152,7 +152,7 @@ class Ticket extends Model
         'predecessorClosedFlag' => 'boolean',
         'lagDays' => 'integer',
         'lagNonworkingDaysFlag' => 'boolean',
-        'estimatedStartDate' => 'string',
+        'estimatedStartDate' => 'Carbon\Carbon',
         'location' => 'Spinen\ConnectWise\Models\v2018_6\Project\SystemLocationReference',
         'department' => 'Spinen\ConnectWise\Models\v2018_6\Project\SystemDepartmentReference',
         'duration' => 'integer',

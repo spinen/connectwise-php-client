@@ -18,14 +18,14 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_4\Expense\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2018_4\Expense\PaymentMethodReference $paymentMethod
  * @property Spinen\ConnectWise\Models\v2018_4\Expense\ClassificationReference $classification
- * @property number $amount
+ * @property float $amount
  * @property string $billableOption
- * @property string $date
+ * @property Carbon\Carbon $date
  * @property integer $locationId
  * @property integer $businessUnitId
  * @property string $notes
  * @property Spinen\ConnectWise\Models\v2018_4\Expense\AgreementReference $agreement
- * @property number $invoiceAmount
+ * @property float $invoiceAmount
  * @property Spinen\ConnectWise\Models\v2018_4\Expense\Guid $mobileGuid
  * @property array $taxes
  * @property Spinen\ConnectWise\Models\v2018_4\Expense\InvoiceReference $invoice
@@ -49,14 +49,14 @@ class ExpenseEntry extends Model
         'member' => 'Spinen\ConnectWise\Models\v2018_4\Expense\MemberReference',
         'paymentMethod' => 'Spinen\ConnectWise\Models\v2018_4\Expense\PaymentMethodReference',
         'classification' => 'Spinen\ConnectWise\Models\v2018_4\Expense\ClassificationReference',
-        'amount' => 'number',
+        'amount' => 'float',
         'billableOption' => 'string',
-        'date' => 'string',
+        'date' => 'Carbon\Carbon',
         'locationId' => 'integer',
         'businessUnitId' => 'integer',
         'notes' => 'string',
         'agreement' => 'Spinen\ConnectWise\Models\v2018_4\Expense\AgreementReference',
-        'invoiceAmount' => 'number',
+        'invoiceAmount' => 'float',
         'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_4\Expense\Guid',
         'taxes' => 'array',
         'invoice' => 'Spinen\ConnectWise\Models\v2018_4\Expense\InvoiceReference',

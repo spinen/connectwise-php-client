@@ -18,10 +18,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_3\Internal\WorkTypeReference $workType
  * @property Spinen\ConnectWise\Models\v2019_3\Internal\WorkRoleReference $workRole
  * @property Spinen\ConnectWise\Models\v2019_3\Internal\AgreementReference $agreement
- * @property string $timeStart
- * @property string $timeEnd
- * @property number $hoursDeduct
- * @property number $actualHours
+ * @property Carbon\Carbon $timeStart
+ * @property Carbon\Carbon $timeEnd
+ * @property float $hoursDeduct
+ * @property float $actualHours
  * @property string $billableOption
  * @property string $notes
  * @property string $internalNotes
@@ -32,10 +32,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $emailContactFlag
  * @property boolean $emailCcFlag
  * @property string $emailCc
- * @property number $hoursBilled
+ * @property float $hoursBilled
  * @property Spinen\ConnectWise\Models\v2019_3\Internal\InvoiceReference $invoice
  * @property Spinen\ConnectWise\Models\v2019_3\Internal\Guid $mobileGuid
- * @property number $hourlyRate
+ * @property float $hourlyRate
  * @property Spinen\ConnectWise\Models\v2019_3\Internal\TimeSheetReference $timeSheet
  * @property string $status
  * @property Spinen\ConnectWise\Models\v2019_3\Internal\Metadata $_info
@@ -58,10 +58,10 @@ class TimeEntryInternal extends Model
         'workType' => 'Spinen\ConnectWise\Models\v2019_3\Internal\WorkTypeReference',
         'workRole' => 'Spinen\ConnectWise\Models\v2019_3\Internal\WorkRoleReference',
         'agreement' => 'Spinen\ConnectWise\Models\v2019_3\Internal\AgreementReference',
-        'timeStart' => 'string',
-        'timeEnd' => 'string',
-        'hoursDeduct' => 'number',
-        'actualHours' => 'number',
+        'timeStart' => 'Carbon\Carbon',
+        'timeEnd' => 'Carbon\Carbon',
+        'hoursDeduct' => 'float',
+        'actualHours' => 'float',
         'billableOption' => 'string',
         'notes' => 'string',
         'internalNotes' => 'string',
@@ -72,10 +72,10 @@ class TimeEntryInternal extends Model
         'emailContactFlag' => 'boolean',
         'emailCcFlag' => 'boolean',
         'emailCc' => 'string',
-        'hoursBilled' => 'number',
+        'hoursBilled' => 'float',
         'invoice' => 'Spinen\ConnectWise\Models\v2019_3\Internal\InvoiceReference',
         'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_3\Internal\Guid',
-        'hourlyRate' => 'number',
+        'hourlyRate' => 'float',
         'timeSheet' => 'Spinen\ConnectWise\Models\v2019_3\Internal\TimeSheetReference',
         'status' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Internal\Metadata',

@@ -28,7 +28,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_3\Service\SystemDepartmentReference $department
  * @property string $summary
  * @property string $problem
- * @property number $hoursBudget
+ * @property float $hoursBudget
  * @property string $internalAnalysis
  * @property boolean $timeBillableFlag
  * @property boolean $expenseBillableFlag
@@ -36,7 +36,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $reference
  * @property boolean $BillComplete_Flag
  * @property boolean $billServiceSeparatelyFlag
- * @property number $billingAmount
+ * @property float $billingAmount
  * @property boolean $billUnapprovedTimeAndExpensesFlag
  * @property boolean $overrideFlag
  * @property boolean $timeInvoiceFlag
@@ -85,7 +85,7 @@ class ServiceTemplate extends Model
         'department' => 'Spinen\ConnectWise\Models\v2019_3\Service\SystemDepartmentReference',
         'summary' => 'string',
         'problem' => 'string',
-        'hoursBudget' => 'number',
+        'hoursBudget' => 'float',
         'internalAnalysis' => 'string',
         'timeBillableFlag' => 'boolean',
         'expenseBillableFlag' => 'boolean',
@@ -93,7 +93,7 @@ class ServiceTemplate extends Model
         'reference' => 'string',
         'BillComplete_Flag' => 'boolean',
         'billServiceSeparatelyFlag' => 'boolean',
-        'billingAmount' => 'number',
+        'billingAmount' => 'float',
         'billUnapprovedTimeAndExpensesFlag' => 'boolean',
         'overrideFlag' => 'boolean',
         'timeInvoiceFlag' => 'boolean',

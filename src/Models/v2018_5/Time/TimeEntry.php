@@ -19,10 +19,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_5\Time\WorkTypeReference $workType
  * @property Spinen\ConnectWise\Models\v2018_5\Time\WorkRoleReference $workRole
  * @property Spinen\ConnectWise\Models\v2018_5\Time\AgreementReference $agreement
- * @property string $timeStart
- * @property string $timeEnd
- * @property number $hoursDeduct
- * @property number $actualHours
+ * @property Carbon\Carbon $timeStart
+ * @property Carbon\Carbon $timeEnd
+ * @property float $hoursDeduct
+ * @property float $actualHours
  * @property string $billableOption
  * @property string $notes
  * @property string $internalNotes
@@ -33,12 +33,12 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $emailContactFlag
  * @property boolean $emailCcFlag
  * @property string $emailCc
- * @property number $hoursBilled
+ * @property float $hoursBilled
  * @property string $enteredBy
- * @property string $dateEntered
+ * @property Carbon\Carbon $dateEntered
  * @property Spinen\ConnectWise\Models\v2018_5\Time\InvoiceReference $invoice
  * @property Spinen\ConnectWise\Models\v2018_5\Time\Guid $mobileGuid
- * @property number $hourlyRate
+ * @property float $hourlyRate
  * @property Spinen\ConnectWise\Models\v2018_5\Time\TimeSheetReference $timeSheet
  * @property string $status
  * @property Spinen\ConnectWise\Models\v2018_5\Time\Metadata $_info
@@ -62,10 +62,10 @@ class TimeEntry extends Model
         'workType' => 'Spinen\ConnectWise\Models\v2018_5\Time\WorkTypeReference',
         'workRole' => 'Spinen\ConnectWise\Models\v2018_5\Time\WorkRoleReference',
         'agreement' => 'Spinen\ConnectWise\Models\v2018_5\Time\AgreementReference',
-        'timeStart' => 'string',
-        'timeEnd' => 'string',
-        'hoursDeduct' => 'number',
-        'actualHours' => 'number',
+        'timeStart' => 'Carbon\Carbon',
+        'timeEnd' => 'Carbon\Carbon',
+        'hoursDeduct' => 'float',
+        'actualHours' => 'float',
         'billableOption' => 'string',
         'notes' => 'string',
         'internalNotes' => 'string',
@@ -76,12 +76,12 @@ class TimeEntry extends Model
         'emailContactFlag' => 'boolean',
         'emailCcFlag' => 'boolean',
         'emailCc' => 'string',
-        'hoursBilled' => 'number',
+        'hoursBilled' => 'float',
         'enteredBy' => 'string',
-        'dateEntered' => 'string',
+        'dateEntered' => 'Carbon\Carbon',
         'invoice' => 'Spinen\ConnectWise\Models\v2018_5\Time\InvoiceReference',
         'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_5\Time\Guid',
-        'hourlyRate' => 'number',
+        'hourlyRate' => 'float',
         'timeSheet' => 'Spinen\ConnectWise\Models\v2018_5\Time\TimeSheetReference',
         'status' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Time\Metadata',

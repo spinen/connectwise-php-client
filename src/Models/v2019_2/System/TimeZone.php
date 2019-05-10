@@ -11,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property integer $id
  * @property string $name
- * @property number $offset
- * @property string $startDate
- * @property string $endDate
+ * @property float $offset
+ * @property Carbon\Carbon $startDate
+ * @property Carbon\Carbon $endDate
  * @property boolean $daylightSavingsFlag
  * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  */
@@ -27,9 +27,9 @@ class TimeZone extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'offset' => 'number',
-        'startDate' => 'string',
-        'endDate' => 'string',
+        'offset' => 'float',
+        'startDate' => 'Carbon\Carbon',
+        'endDate' => 'Carbon\Carbon',
         'daylightSavingsFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
     ];

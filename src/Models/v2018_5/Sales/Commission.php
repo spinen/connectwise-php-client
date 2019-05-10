@@ -11,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property integer $id
  * @property Spinen\ConnectWise\Models\v2018_5\Sales\MemberReference $member
- * @property number $commissionPercent
- * @property string $dateStart
- * @property string $dateEnd
+ * @property float $commissionPercent
+ * @property Carbon\Carbon $dateStart
+ * @property Carbon\Carbon $dateEnd
  * @property Spinen\ConnectWise\Models\v2018_5\Sales\SystemLocationReference $location
  * @property Spinen\ConnectWise\Models\v2018_5\Sales\SystemDepartmentReference $department
  * @property Spinen\ConnectWise\Models\v2018_5\Sales\CompanyReference $company
@@ -50,9 +50,9 @@ class Commission extends Model
     protected $casts = [
         'id' => 'integer',
         'member' => 'Spinen\ConnectWise\Models\v2018_5\Sales\MemberReference',
-        'commissionPercent' => 'number',
-        'dateStart' => 'string',
-        'dateEnd' => 'string',
+        'commissionPercent' => 'float',
+        'dateStart' => 'Carbon\Carbon',
+        'dateEnd' => 'Carbon\Carbon',
         'location' => 'Spinen\ConnectWise\Models\v2018_5\Sales\SystemLocationReference',
         'department' => 'Spinen\ConnectWise\Models\v2018_5\Sales\SystemDepartmentReference',
         'company' => 'Spinen\ConnectWise\Models\v2018_5\Sales\CompanyReference',

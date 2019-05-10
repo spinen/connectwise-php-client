@@ -13,8 +13,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_3\Procurement\CompanyReference $company
  * @property Spinen\ConnectWise\Models\v2019_3\Procurement\SystemLocationReference $location
  * @property integer $quantity
- * @property string $date
- * @property number $price
+ * @property Carbon\Carbon $date
+ * @property float $price
  */
 class CatalogPricing extends Model
 {
@@ -28,7 +28,7 @@ class CatalogPricing extends Model
         'company' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\CompanyReference',
         'location' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\SystemLocationReference',
         'quantity' => 'integer',
-        'date' => 'string',
-        'price' => 'number',
+        'date' => 'Carbon\Carbon',
+        'price' => 'float',
     ];
 }

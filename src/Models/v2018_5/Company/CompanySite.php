@@ -21,7 +21,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $phoneNumber
  * @property string $faxNumber
  * @property integer $taxCodeId
- * @property number $expenseReimbursement
+ * @property float $expenseReimbursement
  * @property boolean $primaryAddressFlag
  * @property boolean $defaultShippingFlag
  * @property boolean $defaultBillingFlag
@@ -53,7 +53,7 @@ class CompanySite extends Model
         'phoneNumber' => 'string',
         'faxNumber' => 'string',
         'taxCodeId' => 'integer',
-        'expenseReimbursement' => 'number',
+        'expenseReimbursement' => 'float',
         'primaryAddressFlag' => 'boolean',
         'defaultShippingFlag' => 'boolean',
         'defaultBillingFlag' => 'boolean',

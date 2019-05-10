@@ -17,7 +17,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $accountNumber
  * @property Spinen\ConnectWise\Models\v2019_1\Finance\ClassificationReference $expenseClass
  * @property Spinen\ConnectWise\Models\v2019_1\Finance\CurrencyReference $currency
- * @property number $total
+ * @property float $total
  * @property boolean $billable
  * @property boolean $reimbursable
  * @property boolean $companyAdvance
@@ -38,7 +38,7 @@ class GLExportExpenseBillDetail extends Model
         'accountNumber' => 'string',
         'expenseClass' => 'Spinen\ConnectWise\Models\v2019_1\Finance\ClassificationReference',
         'currency' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CurrencyReference',
-        'total' => 'number',
+        'total' => 'float',
         'billable' => 'boolean',
         'reimbursable' => 'boolean',
         'companyAdvance' => 'boolean',

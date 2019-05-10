@@ -14,7 +14,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $name
  * @property string $emailAddress
  * @property boolean $inactiveFlag
- * @property string $inactiveDate
+ * @property Carbon\Carbon $inactiveDate
  * @property Spinen\ConnectWise\Models\v2018_5\System\TimeZoneSetupReference $timeZone
  * @property Spinen\ConnectWise\Models\v2018_5\System\SecurityRoleReference $securityRole
  * @property Spinen\ConnectWise\Models\v2018_5\System\StructureReference $structureLevel
@@ -36,7 +36,7 @@ class ApiMember extends Model
         'name' => 'string',
         'emailAddress' => 'string',
         'inactiveFlag' => 'boolean',
-        'inactiveDate' => 'string',
+        'inactiveDate' => 'Carbon\Carbon',
         'timeZone' => 'Spinen\ConnectWise\Models\v2018_5\System\TimeZoneSetupReference',
         'securityRole' => 'Spinen\ConnectWise\Models\v2018_5\System\SecurityRoleReference',
         'structureLevel' => 'Spinen\ConnectWise\Models\v2018_5\System\StructureReference',

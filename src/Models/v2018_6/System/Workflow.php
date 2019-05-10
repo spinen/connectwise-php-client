@@ -17,7 +17,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $activateFlag
  * @property integer $batchInterval
  * @property string $batchFrequencyUnit
- * @property string $batchLastRan
+ * @property Carbon\Carbon $batchLastRan
  * @property string $batchSchedule
  * @property Spinen\ConnectWise\Models\v2018_6\System\BoardReference $board
  * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
@@ -38,7 +38,7 @@ class Workflow extends Model
         'activateFlag' => 'boolean',
         'batchInterval' => 'integer',
         'batchFrequencyUnit' => 'string',
-        'batchLastRan' => 'string',
+        'batchLastRan' => 'Carbon\Carbon',
         'batchSchedule' => 'string',
         'board' => 'Spinen\ConnectWise\Models\v2018_6\System\BoardReference',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',

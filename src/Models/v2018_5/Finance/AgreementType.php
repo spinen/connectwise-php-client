@@ -22,7 +22,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $restrictDepartmentFlag
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\SLAReference $sla
  * @property string $applicationUnits
- * @property number $applicationLimit
+ * @property float $applicationLimit
  * @property string $applicationCycle
  * @property boolean $applicationUnlimitedFlag
  * @property boolean $oneTimeFlag
@@ -38,13 +38,13 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $chargeToFirmFlag
  * @property string $employeeCompRate
  * @property string $employeeCompNotExceed
- * @property number $compHourlyRate
- * @property number $compLimitAmount
+ * @property float $compHourlyRate
+ * @property float $compLimitAmount
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\BillingCycleReference $billingCycle
  * @property boolean $billOneTimeFlag
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\BillingTermsReference $billingTerms
  * @property string $invoicingCycle
- * @property number $billAmount
+ * @property float $billAmount
  * @property boolean $taxableFlag
  * @property boolean $restrictDownPaymentFlag
  * @property string $invoiceDescription
@@ -94,7 +94,7 @@ class AgreementType extends Model
         'restrictDepartmentFlag' => 'boolean',
         'sla' => 'Spinen\ConnectWise\Models\v2018_5\Finance\SLAReference',
         'applicationUnits' => 'string',
-        'applicationLimit' => 'number',
+        'applicationLimit' => 'float',
         'applicationCycle' => 'string',
         'applicationUnlimitedFlag' => 'boolean',
         'oneTimeFlag' => 'boolean',
@@ -110,13 +110,13 @@ class AgreementType extends Model
         'chargeToFirmFlag' => 'boolean',
         'employeeCompRate' => 'string',
         'employeeCompNotExceed' => 'string',
-        'compHourlyRate' => 'number',
-        'compLimitAmount' => 'number',
+        'compHourlyRate' => 'float',
+        'compLimitAmount' => 'float',
         'billingCycle' => 'Spinen\ConnectWise\Models\v2018_5\Finance\BillingCycleReference',
         'billOneTimeFlag' => 'boolean',
         'billingTerms' => 'Spinen\ConnectWise\Models\v2018_5\Finance\BillingTermsReference',
         'invoicingCycle' => 'string',
-        'billAmount' => 'number',
+        'billAmount' => 'float',
         'taxableFlag' => 'boolean',
         'restrictDownPaymentFlag' => 'boolean',
         'invoiceDescription' => 'string',

@@ -12,7 +12,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $id
  * @property integer $campaignId
  * @property integer $contactId
- * @property string $dateSubmitted
+ * @property Carbon\Carbon $dateSubmitted
  * @property string $url
  * @property string $queryString
  * @property string $pageType
@@ -32,7 +32,7 @@ class FormSubmitted extends Model
         'id' => 'integer',
         'campaignId' => 'integer',
         'contactId' => 'integer',
-        'dateSubmitted' => 'string',
+        'dateSubmitted' => 'Carbon\Carbon',
         'url' => 'string',
         'queryString' => 'string',
         'pageType' => 'string',

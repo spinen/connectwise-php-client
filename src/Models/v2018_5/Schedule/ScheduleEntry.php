@@ -14,8 +14,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $name
  * @property Spinen\ConnectWise\Models\v2018_5\Schedule\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2018_5\Schedule\ServiceLocationReference $where
- * @property string $dateStart
- * @property string $dateEnd
+ * @property Carbon\Carbon $dateStart
+ * @property Carbon\Carbon $dateEnd
  * @property Spinen\ConnectWise\Models\v2018_5\Schedule\ReminderReference $reminder
  * @property Spinen\ConnectWise\Models\v2018_5\Schedule\ScheduleStatusReference $status
  * @property Spinen\ConnectWise\Models\v2018_5\Schedule\ScheduleTypeReference $type
@@ -28,8 +28,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $addMemberToProjectFlag
  * @property integer $projectRoleId
  * @property Spinen\ConnectWise\Models\v2018_5\Schedule\Guid $mobileGuid
- * @property string $closeDate
- * @property number $hours
+ * @property Carbon\Carbon $closeDate
+ * @property float $hours
  * @property Spinen\ConnectWise\Models\v2018_5\Schedule\Metadata $_info
  */
 class ScheduleEntry extends Model
@@ -45,8 +45,8 @@ class ScheduleEntry extends Model
         'name' => 'string',
         'member' => 'Spinen\ConnectWise\Models\v2018_5\Schedule\MemberReference',
         'where' => 'Spinen\ConnectWise\Models\v2018_5\Schedule\ServiceLocationReference',
-        'dateStart' => 'string',
-        'dateEnd' => 'string',
+        'dateStart' => 'Carbon\Carbon',
+        'dateEnd' => 'Carbon\Carbon',
         'reminder' => 'Spinen\ConnectWise\Models\v2018_5\Schedule\ReminderReference',
         'status' => 'Spinen\ConnectWise\Models\v2018_5\Schedule\ScheduleStatusReference',
         'type' => 'Spinen\ConnectWise\Models\v2018_5\Schedule\ScheduleTypeReference',
@@ -59,8 +59,8 @@ class ScheduleEntry extends Model
         'addMemberToProjectFlag' => 'boolean',
         'projectRoleId' => 'integer',
         'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_5\Schedule\Guid',
-        'closeDate' => 'string',
-        'hours' => 'number',
+        'closeDate' => 'Carbon\Carbon',
+        'hours' => 'float',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Schedule\Metadata',
     ];
 }

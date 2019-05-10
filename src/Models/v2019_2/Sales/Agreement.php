@@ -23,18 +23,18 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_2\Sales\SystemDepartmentReference $department
  * @property boolean $restrictLocationFlag
  * @property boolean $restrictDepartmentFlag
- * @property string $startDate
- * @property string $endDate
+ * @property Carbon\Carbon $startDate
+ * @property Carbon\Carbon $endDate
  * @property boolean $noEndingDateFlag
  * @property Spinen\ConnectWise\Models\v2019_2\Sales\OpportunityReference $opportunity
  * @property boolean $cancelledFlag
- * @property string $dateCancelled
+ * @property Carbon\Carbon $dateCancelled
  * @property string $reasonCancelled
  * @property Spinen\ConnectWise\Models\v2019_2\Sales\SLAReference $sla
  * @property string $workOrder
  * @property string $internalNotes
  * @property string $applicationUnits
- * @property number $applicationLimit
+ * @property float $applicationLimit
  * @property string $applicationCycle
  * @property boolean $applicationUnlimitedFlag
  * @property boolean $oneTimeFlag
@@ -50,8 +50,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $chargeToFirm
  * @property string $employeeCompRate
  * @property string $employeeCompNotExceed
- * @property number $compHourlyRate
- * @property number $compLimitAmount
+ * @property float $compHourlyRate
+ * @property float $compLimitAmount
  * @property Spinen\ConnectWise\Models\v2019_2\Sales\BillingCycleReference $billingCycle
  * @property boolean $billOneTimeFlag
  * @property Spinen\ConnectWise\Models\v2019_2\Sales\BillingTermsReference $billingTerms
@@ -59,10 +59,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_2\Sales\CompanyReference $billToCompany
  * @property Spinen\ConnectWise\Models\v2019_2\Sales\ContactReference $billToContact
  * @property Spinen\ConnectWise\Models\v2019_2\Sales\SiteReference $billToSite
- * @property number $billAmount
+ * @property float $billAmount
  * @property boolean $taxable
- * @property number $prorateFirstBill
- * @property string $billStartDate
+ * @property float $prorateFirstBill
+ * @property Carbon\Carbon $billStartDate
  * @property Spinen\ConnectWise\Models\v2019_2\Sales\TaxCodeReference $taxCode
  * @property boolean $restrictDownPayment
  * @property boolean $prorateFlag
@@ -109,18 +109,18 @@ class Agreement extends Model
         'department' => 'Spinen\ConnectWise\Models\v2019_2\Sales\SystemDepartmentReference',
         'restrictLocationFlag' => 'boolean',
         'restrictDepartmentFlag' => 'boolean',
-        'startDate' => 'string',
-        'endDate' => 'string',
+        'startDate' => 'Carbon\Carbon',
+        'endDate' => 'Carbon\Carbon',
         'noEndingDateFlag' => 'boolean',
         'opportunity' => 'Spinen\ConnectWise\Models\v2019_2\Sales\OpportunityReference',
         'cancelledFlag' => 'boolean',
-        'dateCancelled' => 'string',
+        'dateCancelled' => 'Carbon\Carbon',
         'reasonCancelled' => 'string',
         'sla' => 'Spinen\ConnectWise\Models\v2019_2\Sales\SLAReference',
         'workOrder' => 'string',
         'internalNotes' => 'string',
         'applicationUnits' => 'string',
-        'applicationLimit' => 'number',
+        'applicationLimit' => 'float',
         'applicationCycle' => 'string',
         'applicationUnlimitedFlag' => 'boolean',
         'oneTimeFlag' => 'boolean',
@@ -136,8 +136,8 @@ class Agreement extends Model
         'chargeToFirm' => 'boolean',
         'employeeCompRate' => 'string',
         'employeeCompNotExceed' => 'string',
-        'compHourlyRate' => 'number',
-        'compLimitAmount' => 'number',
+        'compHourlyRate' => 'float',
+        'compLimitAmount' => 'float',
         'billingCycle' => 'Spinen\ConnectWise\Models\v2019_2\Sales\BillingCycleReference',
         'billOneTimeFlag' => 'boolean',
         'billingTerms' => 'Spinen\ConnectWise\Models\v2019_2\Sales\BillingTermsReference',
@@ -145,10 +145,10 @@ class Agreement extends Model
         'billToCompany' => 'Spinen\ConnectWise\Models\v2019_2\Sales\CompanyReference',
         'billToContact' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ContactReference',
         'billToSite' => 'Spinen\ConnectWise\Models\v2019_2\Sales\SiteReference',
-        'billAmount' => 'number',
+        'billAmount' => 'float',
         'taxable' => 'boolean',
-        'prorateFirstBill' => 'number',
-        'billStartDate' => 'string',
+        'prorateFirstBill' => 'float',
+        'billStartDate' => 'Carbon\Carbon',
         'taxCode' => 'Spinen\ConnectWise\Models\v2019_2\Sales\TaxCodeReference',
         'restrictDownPayment' => 'boolean',
         'prorateFlag' => 'boolean',

@@ -13,11 +13,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_4\Time\MemberReference $member
  * @property integer $year
  * @property integer $period
- * @property string $dateStart
- * @property string $dateEnd
+ * @property Carbon\Carbon $dateStart
+ * @property Carbon\Carbon $dateEnd
  * @property string $status
- * @property number $hours
- * @property string $deadline
+ * @property float $hours
+ * @property Carbon\Carbon $deadline
  * @property Spinen\ConnectWise\Models\v2018_4\Time\Metadata $_info
  */
 class TimeSheet extends Model
@@ -32,11 +32,11 @@ class TimeSheet extends Model
         'member' => 'Spinen\ConnectWise\Models\v2018_4\Time\MemberReference',
         'year' => 'integer',
         'period' => 'integer',
-        'dateStart' => 'string',
-        'dateEnd' => 'string',
+        'dateStart' => 'Carbon\Carbon',
+        'dateEnd' => 'Carbon\Carbon',
         'status' => 'string',
-        'hours' => 'number',
-        'deadline' => 'string',
+        'hours' => 'float',
+        'deadline' => 'Carbon\Carbon',
         '_info' => 'Spinen\ConnectWise\Models\v2018_4\Time\Metadata',
     ];
 }

@@ -14,16 +14,16 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $locationId
  * @property string $rateType
  * @property string $billTime
- * @property number $rate
- * @property number $hoursMax
- * @property number $hoursMin
- * @property number $roundBillHours
- * @property number $overageRate
+ * @property float $rate
+ * @property float $hoursMax
+ * @property float $hoursMin
+ * @property float $roundBillHours
+ * @property float $overageRate
  * @property string $overageRateType
- * @property number $agreementLimit
+ * @property float $agreementLimit
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\SiteReference $site
- * @property string $effectiveDate
- * @property string $endingDate
+ * @property Carbon\Carbon $effectiveDate
+ * @property Carbon\Carbon $endingDate
  * @property integer $agreementId
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference $company
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
@@ -41,16 +41,16 @@ class AgreementWorkType extends Model
         'locationId' => 'integer',
         'rateType' => 'string',
         'billTime' => 'string',
-        'rate' => 'number',
-        'hoursMax' => 'number',
-        'hoursMin' => 'number',
-        'roundBillHours' => 'number',
-        'overageRate' => 'number',
+        'rate' => 'float',
+        'hoursMax' => 'float',
+        'hoursMin' => 'float',
+        'roundBillHours' => 'float',
+        'overageRate' => 'float',
         'overageRateType' => 'string',
-        'agreementLimit' => 'number',
+        'agreementLimit' => 'float',
         'site' => 'Spinen\ConnectWise\Models\v2019_2\Finance\SiteReference',
-        'effectiveDate' => 'string',
-        'endingDate' => 'string',
+        'effectiveDate' => 'Carbon\Carbon',
+        'endingDate' => 'Carbon\Carbon',
         'agreementId' => 'integer',
         'company' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference',
         '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',

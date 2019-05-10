@@ -19,7 +19,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\MemberReference $member
  * @property string $vendorNumber
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\CurrencyReference $currency
- * @property number $total
+ * @property float $total
  * @property array $detail
  */
 class GLExportExpenseBill extends Model
@@ -40,7 +40,7 @@ class GLExportExpenseBill extends Model
         'member' => 'Spinen\ConnectWise\Models\v2018_5\Finance\MemberReference',
         'vendorNumber' => 'string',
         'currency' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CurrencyReference',
-        'total' => 'number',
+        'total' => 'float',
         'detail' => 'array',
     ];
 }

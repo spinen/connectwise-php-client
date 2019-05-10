@@ -10,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ExpenseDetailReference
  *
  * @property integer $id
- * @property number $amount
+ * @property float $amount
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\Metadata $_info
  */
 class ExpenseDetailReference extends Model
@@ -22,7 +22,7 @@ class ExpenseDetailReference extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'amount' => 'number',
+        'amount' => 'float',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Finance\Metadata',
     ];
 }

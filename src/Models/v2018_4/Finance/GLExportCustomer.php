@@ -25,12 +25,12 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $cityTaxXref
  * @property string $countryTaxXref
  * @property string $compositeTaxXref
- * @property number $stateTaxRate
- * @property number $countyTaxRate
- * @property number $cityTaxRate
- * @property number $countryTaxRate
- * @property number $compositeTaxRate
- * @property number $taxGroupRate
+ * @property float $stateTaxRate
+ * @property float $countyTaxRate
+ * @property float $cityTaxRate
+ * @property float $countryTaxRate
+ * @property float $compositeTaxRate
+ * @property float $taxGroupRate
  * @property string $taxAgencyXref
  * @property string $stateTaxAgencyXref
  * @property string $countyTaxAgencyXref
@@ -62,12 +62,12 @@ class GLExportCustomer extends Model
         'cityTaxXref' => 'string',
         'countryTaxXref' => 'string',
         'compositeTaxXref' => 'string',
-        'stateTaxRate' => 'number',
-        'countyTaxRate' => 'number',
-        'cityTaxRate' => 'number',
-        'countryTaxRate' => 'number',
-        'compositeTaxRate' => 'number',
-        'taxGroupRate' => 'number',
+        'stateTaxRate' => 'float',
+        'countyTaxRate' => 'float',
+        'cityTaxRate' => 'float',
+        'countryTaxRate' => 'float',
+        'compositeTaxRate' => 'float',
+        'taxGroupRate' => 'float',
         'taxAgencyXref' => 'string',
         'stateTaxAgencyXref' => 'string',
         'countyTaxAgencyXref' => 'string',

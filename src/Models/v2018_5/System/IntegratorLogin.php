@@ -15,7 +15,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $canAccessAllRecordsFlag
  * @property boolean $canAccessAllApisFlag
  * @property boolean $inactiveFlag
- * @property string $dateInactivated
+ * @property Carbon\Carbon $dateInactivated
  * @property Spinen\ConnectWise\Models\v2018_5\System\MemberReference $inactivatedBy
  * @property boolean $serviceTicketApiFlag
  * @property Spinen\ConnectWise\Models\v2018_5\System\BoardReference $board
@@ -85,7 +85,7 @@ class IntegratorLogin extends Model
         'canAccessAllRecordsFlag' => 'boolean',
         'canAccessAllApisFlag' => 'boolean',
         'inactiveFlag' => 'boolean',
-        'dateInactivated' => 'string',
+        'dateInactivated' => 'Carbon\Carbon',
         'inactivatedBy' => 'Spinen\ConnectWise\Models\v2018_5\System\MemberReference',
         'serviceTicketApiFlag' => 'boolean',
         'board' => 'Spinen\ConnectWise\Models\v2018_5\System\BoardReference',

@@ -13,8 +13,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\CatalogItemReference $product
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\ProductCategoryReference $category
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\ProductSubCategoryReference $subCategory
- * @property string $startDate
- * @property string $endDate
+ * @property Carbon\Carbon $startDate
+ * @property Carbon\Carbon $endDate
  * @property boolean $noEndDate
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata $_info
  */
@@ -30,8 +30,8 @@ class PricingDetail extends Model
         'product' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\CatalogItemReference',
         'category' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\ProductCategoryReference',
         'subCategory' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\ProductSubCategoryReference',
-        'startDate' => 'string',
-        'endDate' => 'string',
+        'startDate' => 'Carbon\Carbon',
+        'endDate' => 'Carbon\Carbon',
         'noEndDate' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata',
     ];

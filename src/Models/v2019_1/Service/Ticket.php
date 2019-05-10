@@ -39,8 +39,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference $priority
  * @property Spinen\ConnectWise\Models\v2019_1\Service\ServiceLocationReference $serviceLocation
  * @property Spinen\ConnectWise\Models\v2019_1\Service\ServiceSourceReference $source
- * @property string $requiredDate
- * @property number $budgetHours
+ * @property Carbon\Carbon $requiredDate
+ * @property float $budgetHours
  * @property Spinen\ConnectWise\Models\v2019_1\Service\OpportunityReference $opportunity
  * @property Spinen\ConnectWise\Models\v2019_1\Service\AgreementReference $agreement
  * @property string $severity
@@ -66,19 +66,19 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $closedFlag
  * @property string $dateEntered
  * @property string $enteredBy
- * @property number $actualHours
+ * @property float $actualHours
  * @property boolean $approved
- * @property number $estimatedExpenseCost
- * @property number $estimatedExpenseRevenue
- * @property number $estimatedProductCost
- * @property number $estimatedProductRevenue
- * @property number $estimatedTimeCost
- * @property number $estimatedTimeRevenue
+ * @property float $estimatedExpenseCost
+ * @property float $estimatedExpenseRevenue
+ * @property float $estimatedProductCost
+ * @property float $estimatedProductRevenue
+ * @property float $estimatedTimeCost
+ * @property float $estimatedTimeRevenue
  * @property string $billingMethod
- * @property number $billingAmount
- * @property number $hourlyRate
+ * @property float $billingAmount
+ * @property float $hourlyRate
  * @property string $subBillingMethod
- * @property number $subBillingAmount
+ * @property float $subBillingAmount
  * @property string $subDateAccepted
  * @property string $dateResolved
  * @property string $dateResplan
@@ -101,7 +101,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $predecessorClosedFlag
  * @property integer $lagDays
  * @property boolean $lagNonworkingDaysFlag
- * @property string $estimatedStartDate
+ * @property Carbon\Carbon $estimatedStartDate
  * @property integer $duration
  * @property integer $locationId
  * @property integer $businessUnitId
@@ -149,8 +149,8 @@ class Ticket extends Model
         'priority' => 'Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference',
         'serviceLocation' => 'Spinen\ConnectWise\Models\v2019_1\Service\ServiceLocationReference',
         'source' => 'Spinen\ConnectWise\Models\v2019_1\Service\ServiceSourceReference',
-        'requiredDate' => 'string',
-        'budgetHours' => 'number',
+        'requiredDate' => 'Carbon\Carbon',
+        'budgetHours' => 'float',
         'opportunity' => 'Spinen\ConnectWise\Models\v2019_1\Service\OpportunityReference',
         'agreement' => 'Spinen\ConnectWise\Models\v2019_1\Service\AgreementReference',
         'severity' => 'string',
@@ -176,19 +176,19 @@ class Ticket extends Model
         'closedFlag' => 'boolean',
         'dateEntered' => 'string',
         'enteredBy' => 'string',
-        'actualHours' => 'number',
+        'actualHours' => 'float',
         'approved' => 'boolean',
-        'estimatedExpenseCost' => 'number',
-        'estimatedExpenseRevenue' => 'number',
-        'estimatedProductCost' => 'number',
-        'estimatedProductRevenue' => 'number',
-        'estimatedTimeCost' => 'number',
-        'estimatedTimeRevenue' => 'number',
+        'estimatedExpenseCost' => 'float',
+        'estimatedExpenseRevenue' => 'float',
+        'estimatedProductCost' => 'float',
+        'estimatedProductRevenue' => 'float',
+        'estimatedTimeCost' => 'float',
+        'estimatedTimeRevenue' => 'float',
         'billingMethod' => 'string',
-        'billingAmount' => 'number',
-        'hourlyRate' => 'number',
+        'billingAmount' => 'float',
+        'hourlyRate' => 'float',
         'subBillingMethod' => 'string',
-        'subBillingAmount' => 'number',
+        'subBillingAmount' => 'float',
         'subDateAccepted' => 'string',
         'dateResolved' => 'string',
         'dateResplan' => 'string',
@@ -211,7 +211,7 @@ class Ticket extends Model
         'predecessorClosedFlag' => 'boolean',
         'lagDays' => 'integer',
         'lagNonworkingDaysFlag' => 'boolean',
-        'estimatedStartDate' => 'string',
+        'estimatedStartDate' => 'Carbon\Carbon',
         'duration' => 'integer',
         'locationId' => 'integer',
         'businessUnitId' => 'integer',

@@ -15,7 +15,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $disableTimeEntryFlag
  * @property boolean $requireTimeNoteFlag
  * @property boolean $requireExpenseNoteFlag
- * @property number $roundingFactor
+ * @property float $roundingFactor
  * @property integer $invoiceStart
  * @property Spinen\ConnectWise\Models\v2018_6\System\CompanyReference $internalCompany
  * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
@@ -34,7 +34,7 @@ class TimeExpense extends Model
         'disableTimeEntryFlag' => 'boolean',
         'requireTimeNoteFlag' => 'boolean',
         'requireExpenseNoteFlag' => 'boolean',
-        'roundingFactor' => 'number',
+        'roundingFactor' => 'float',
         'invoiceStart' => 'integer',
         'internalCompany' => 'Spinen\ConnectWise\Models\v2018_6\System\CompanyReference',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',

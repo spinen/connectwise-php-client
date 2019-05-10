@@ -10,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for GLExportExpense
  *
  * @property integer $id
- * @property string $documentDate
+ * @property Carbon\Carbon $documentDate
  * @property string $documentType
  * @property string $apAccountNumber
  * @property string $apClass
@@ -19,15 +19,15 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $glTypeId
  * @property string $memo
  * @property string $description
- * @property string $periodStartDate
- * @property string $periodEndDate
+ * @property Carbon\Carbon $periodStartDate
+ * @property Carbon\Carbon $periodEndDate
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\MemberReference $member
  * @property string $vendorNumber
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\CompanyReference $company
  * @property string $companyAccountNumber
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\ProjectReference $project
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\CurrencyReference $currency
- * @property number $total
+ * @property float $total
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\GLExportExpenseOffset $offset
  */
 class GLExportExpense extends Model
@@ -39,7 +39,7 @@ class GLExportExpense extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'documentDate' => 'string',
+        'documentDate' => 'Carbon\Carbon',
         'documentType' => 'string',
         'apAccountNumber' => 'string',
         'apClass' => 'string',
@@ -48,15 +48,15 @@ class GLExportExpense extends Model
         'glTypeId' => 'string',
         'memo' => 'string',
         'description' => 'string',
-        'periodStartDate' => 'string',
-        'periodEndDate' => 'string',
+        'periodStartDate' => 'Carbon\Carbon',
+        'periodEndDate' => 'Carbon\Carbon',
         'member' => 'Spinen\ConnectWise\Models\v2019_3\Finance\MemberReference',
         'vendorNumber' => 'string',
         'company' => 'Spinen\ConnectWise\Models\v2019_3\Finance\CompanyReference',
         'companyAccountNumber' => 'string',
         'project' => 'Spinen\ConnectWise\Models\v2019_3\Finance\ProjectReference',
         'currency' => 'Spinen\ConnectWise\Models\v2019_3\Finance\CurrencyReference',
-        'total' => 'number',
+        'total' => 'float',
         'offset' => 'Spinen\ConnectWise\Models\v2019_3\Finance\GLExportExpenseOffset',
     ];
 }

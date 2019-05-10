@@ -12,8 +12,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $id
  * @property Spinen\ConnectWise\Models\v2018_6\System\CertificationReference $certification
  * @property integer $percentComplete
- * @property string $dateReceived
- * @property string $dateExpires
+ * @property Carbon\Carbon $dateReceived
+ * @property Carbon\Carbon $dateExpires
  * @property string $certificationNumber
  * @property string $notes
  * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $member
@@ -31,8 +31,8 @@ class MemberCertification extends Model
         'id' => 'integer',
         'certification' => 'Spinen\ConnectWise\Models\v2018_6\System\CertificationReference',
         'percentComplete' => 'integer',
-        'dateReceived' => 'string',
-        'dateExpires' => 'string',
+        'dateReceived' => 'Carbon\Carbon',
+        'dateExpires' => 'Carbon\Carbon',
         'certificationNumber' => 'string',
         'notes' => 'string',
         'member' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',

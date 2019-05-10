@@ -14,7 +14,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $eulaServiceLink
  * @property string $eulaUiLink
  * @property Spinen\ConnectWise\Models\v2018_5\System\MemberReference $signedMember
- * @property string $signedDate
+ * @property Carbon\Carbon $signedDate
  * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
  */
 class Eula extends Model
@@ -30,7 +30,7 @@ class Eula extends Model
         'eulaServiceLink' => 'string',
         'eulaUiLink' => 'string',
         'signedMember' => 'Spinen\ConnectWise\Models\v2018_5\System\MemberReference',
-        'signedDate' => 'string',
+        'signedDate' => 'Carbon\Carbon',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
     ];
 }

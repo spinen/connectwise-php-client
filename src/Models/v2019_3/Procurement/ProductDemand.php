@@ -11,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property integer $productRecId
  * @property integer $quantity
- * @property number $cost
+ * @property float $cost
  */
 class ProductDemand extends Model
 {
@@ -23,6 +23,6 @@ class ProductDemand extends Model
     protected $casts = [
         'productRecId' => 'integer',
         'quantity' => 'integer',
-        'cost' => 'number',
+        'cost' => 'float',
     ];
 }

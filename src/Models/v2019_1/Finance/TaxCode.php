@@ -14,14 +14,14 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $description
  * @property string $invoiceCaption
  * @property Spinen\ConnectWise\Models\v2019_1\Finance\CountryReference $country
- * @property string $effectiveDate
+ * @property Carbon\Carbon $effectiveDate
  * @property boolean $defaultFlag
  * @property boolean $displayOnInvoiceFlag
  * @property boolean $canadaCalculateGSTFlag
- * @property string $cancelDate
- * @property number $levelOneRate
+ * @property Carbon\Carbon $cancelDate
+ * @property float $levelOneRate
  * @property string $levelOneRateType
- * @property number $levelOneTaxableMax
+ * @property float $levelOneTaxableMax
  * @property string $levelOneCaption
  * @property string $levelOneTaxCodeXref
  * @property string $levelOneAgencyXref
@@ -29,11 +29,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $levelOneExpensesFlag
  * @property boolean $levelOneProductsFlag
  * @property boolean $levelOneApplySingleUnitFlag
- * @property number $levelOneApplySingleUnitMin
- * @property number $levelOneApplySingleUnitMax
- * @property number $levelTwoRate
+ * @property float $levelOneApplySingleUnitMin
+ * @property float $levelOneApplySingleUnitMax
+ * @property float $levelTwoRate
  * @property string $levelTwoRateType
- * @property number $levelTwoTaxableMax
+ * @property float $levelTwoTaxableMax
  * @property string $levelTwoCaption
  * @property string $levelTwoTaxCodeXref
  * @property string $levelTwoAgencyXref
@@ -41,11 +41,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $levelTwoExpensesFlag
  * @property boolean $levelTwoProductsFlag
  * @property boolean $levelTwoApplySingleUnitFlag
- * @property number $levelTwoApplySingleUnitMin
- * @property number $levelTwoApplySingleUnitMax
- * @property number $levelThreeRate
+ * @property float $levelTwoApplySingleUnitMin
+ * @property float $levelTwoApplySingleUnitMax
+ * @property float $levelThreeRate
  * @property string $levelThreeRateType
- * @property number $levelThreeTaxableMax
+ * @property float $levelThreeTaxableMax
  * @property string $levelThreeCaption
  * @property string $levelThreeTaxCodeXref
  * @property string $levelThreeAgencyXref
@@ -53,11 +53,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $levelThreeExpensesFlag
  * @property boolean $levelThreeProductsFlag
  * @property boolean $levelThreeApplySingleUnitFlag
- * @property number $levelThreeApplySingleUnitMin
- * @property number $levelThreeApplySingleUnitMax
- * @property number $levelFourRate
+ * @property float $levelThreeApplySingleUnitMin
+ * @property float $levelThreeApplySingleUnitMax
+ * @property float $levelFourRate
  * @property string $levelFourRateType
- * @property number $levelFourTaxableMax
+ * @property float $levelFourTaxableMax
  * @property string $levelFourCaption
  * @property string $levelFourTaxCodeXref
  * @property string $levelFourAgencyXref
@@ -65,11 +65,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $levelFourExpensesFlag
  * @property boolean $levelFourProductsFlag
  * @property boolean $levelFourApplySingleUnitFlag
- * @property number $levelFourApplySingleUnitMin
- * @property number $levelFourApplySingleUnitMax
- * @property number $levelFiveRate
+ * @property float $levelFourApplySingleUnitMin
+ * @property float $levelFourApplySingleUnitMax
+ * @property float $levelFiveRate
  * @property string $levelFiveRateType
- * @property number $levelFiveTaxableMax
+ * @property float $levelFiveTaxableMax
  * @property string $levelFiveCaption
  * @property string $levelFiveTaxCodeXref
  * @property string $levelFiveAgencyXref
@@ -77,11 +77,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $levelFiveExpensesFlag
  * @property boolean $levelFiveProductsFlag
  * @property boolean $levelFiveApplySingleUnitFlag
- * @property number $levelFiveApplySingleUnitMin
- * @property number $levelFiveApplySingleUnitMax
- * @property number $levelSixRate
+ * @property float $levelFiveApplySingleUnitMin
+ * @property float $levelFiveApplySingleUnitMax
+ * @property float $levelSixRate
  * @property string $levelSixRateType
- * @property number $levelSixTaxableMax
+ * @property float $levelSixTaxableMax
  * @property string $levelSixCaption
  * @property string $levelSixTaxCodeXref
  * @property string $levelSixAgencyXref
@@ -89,8 +89,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $levelSixExpensesFlag
  * @property boolean $levelSixProductsFlag
  * @property boolean $levelSixApplySingleUnitFlag
- * @property number $levelSixApplySingleUnitMin
- * @property number $levelSixApplySingleUnitMax
+ * @property float $levelSixApplySingleUnitMin
+ * @property float $levelSixApplySingleUnitMax
  * @property array $workRoleIds
  * @property boolean $addAllWorkRoles
  * @property boolean $removeAllWorkRoles
@@ -115,14 +115,14 @@ class TaxCode extends Model
         'description' => 'string',
         'invoiceCaption' => 'string',
         'country' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CountryReference',
-        'effectiveDate' => 'string',
+        'effectiveDate' => 'Carbon\Carbon',
         'defaultFlag' => 'boolean',
         'displayOnInvoiceFlag' => 'boolean',
         'canadaCalculateGSTFlag' => 'boolean',
-        'cancelDate' => 'string',
-        'levelOneRate' => 'number',
+        'cancelDate' => 'Carbon\Carbon',
+        'levelOneRate' => 'float',
         'levelOneRateType' => 'string',
-        'levelOneTaxableMax' => 'number',
+        'levelOneTaxableMax' => 'float',
         'levelOneCaption' => 'string',
         'levelOneTaxCodeXref' => 'string',
         'levelOneAgencyXref' => 'string',
@@ -130,11 +130,11 @@ class TaxCode extends Model
         'levelOneExpensesFlag' => 'boolean',
         'levelOneProductsFlag' => 'boolean',
         'levelOneApplySingleUnitFlag' => 'boolean',
-        'levelOneApplySingleUnitMin' => 'number',
-        'levelOneApplySingleUnitMax' => 'number',
-        'levelTwoRate' => 'number',
+        'levelOneApplySingleUnitMin' => 'float',
+        'levelOneApplySingleUnitMax' => 'float',
+        'levelTwoRate' => 'float',
         'levelTwoRateType' => 'string',
-        'levelTwoTaxableMax' => 'number',
+        'levelTwoTaxableMax' => 'float',
         'levelTwoCaption' => 'string',
         'levelTwoTaxCodeXref' => 'string',
         'levelTwoAgencyXref' => 'string',
@@ -142,11 +142,11 @@ class TaxCode extends Model
         'levelTwoExpensesFlag' => 'boolean',
         'levelTwoProductsFlag' => 'boolean',
         'levelTwoApplySingleUnitFlag' => 'boolean',
-        'levelTwoApplySingleUnitMin' => 'number',
-        'levelTwoApplySingleUnitMax' => 'number',
-        'levelThreeRate' => 'number',
+        'levelTwoApplySingleUnitMin' => 'float',
+        'levelTwoApplySingleUnitMax' => 'float',
+        'levelThreeRate' => 'float',
         'levelThreeRateType' => 'string',
-        'levelThreeTaxableMax' => 'number',
+        'levelThreeTaxableMax' => 'float',
         'levelThreeCaption' => 'string',
         'levelThreeTaxCodeXref' => 'string',
         'levelThreeAgencyXref' => 'string',
@@ -154,11 +154,11 @@ class TaxCode extends Model
         'levelThreeExpensesFlag' => 'boolean',
         'levelThreeProductsFlag' => 'boolean',
         'levelThreeApplySingleUnitFlag' => 'boolean',
-        'levelThreeApplySingleUnitMin' => 'number',
-        'levelThreeApplySingleUnitMax' => 'number',
-        'levelFourRate' => 'number',
+        'levelThreeApplySingleUnitMin' => 'float',
+        'levelThreeApplySingleUnitMax' => 'float',
+        'levelFourRate' => 'float',
         'levelFourRateType' => 'string',
-        'levelFourTaxableMax' => 'number',
+        'levelFourTaxableMax' => 'float',
         'levelFourCaption' => 'string',
         'levelFourTaxCodeXref' => 'string',
         'levelFourAgencyXref' => 'string',
@@ -166,11 +166,11 @@ class TaxCode extends Model
         'levelFourExpensesFlag' => 'boolean',
         'levelFourProductsFlag' => 'boolean',
         'levelFourApplySingleUnitFlag' => 'boolean',
-        'levelFourApplySingleUnitMin' => 'number',
-        'levelFourApplySingleUnitMax' => 'number',
-        'levelFiveRate' => 'number',
+        'levelFourApplySingleUnitMin' => 'float',
+        'levelFourApplySingleUnitMax' => 'float',
+        'levelFiveRate' => 'float',
         'levelFiveRateType' => 'string',
-        'levelFiveTaxableMax' => 'number',
+        'levelFiveTaxableMax' => 'float',
         'levelFiveCaption' => 'string',
         'levelFiveTaxCodeXref' => 'string',
         'levelFiveAgencyXref' => 'string',
@@ -178,11 +178,11 @@ class TaxCode extends Model
         'levelFiveExpensesFlag' => 'boolean',
         'levelFiveProductsFlag' => 'boolean',
         'levelFiveApplySingleUnitFlag' => 'boolean',
-        'levelFiveApplySingleUnitMin' => 'number',
-        'levelFiveApplySingleUnitMax' => 'number',
-        'levelSixRate' => 'number',
+        'levelFiveApplySingleUnitMin' => 'float',
+        'levelFiveApplySingleUnitMax' => 'float',
+        'levelSixRate' => 'float',
         'levelSixRateType' => 'string',
-        'levelSixTaxableMax' => 'number',
+        'levelSixTaxableMax' => 'float',
         'levelSixCaption' => 'string',
         'levelSixTaxCodeXref' => 'string',
         'levelSixAgencyXref' => 'string',
@@ -190,8 +190,8 @@ class TaxCode extends Model
         'levelSixExpensesFlag' => 'boolean',
         'levelSixProductsFlag' => 'boolean',
         'levelSixApplySingleUnitFlag' => 'boolean',
-        'levelSixApplySingleUnitMin' => 'number',
-        'levelSixApplySingleUnitMax' => 'number',
+        'levelSixApplySingleUnitMin' => 'float',
+        'levelSixApplySingleUnitMax' => 'float',
         'workRoleIds' => 'array',
         'addAllWorkRoles' => 'boolean',
         'removeAllWorkRoles' => 'boolean',

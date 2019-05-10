@@ -16,30 +16,30 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_1\Sales\SystemDepartmentReference $department
  * @property Spinen\ConnectWise\Models\v2019_1\Sales\ProductCategoryReference $category
  * @property Spinen\ConnectWise\Models\v2019_1\Sales\ProductSubCategoryReference $subCategory
- * @property number $januaryRevenue
- * @property number $januaryMargin
- * @property number $februaryRevenue
- * @property number $februaryMargin
- * @property number $marchRevenue
- * @property number $marchMargin
- * @property number $aprilRevenue
- * @property number $aprilMargin
- * @property number $mayRevenue
- * @property number $mayMargin
- * @property number $juneRevenue
- * @property number $juneMargin
- * @property number $julyRevenue
- * @property number $julyMargin
- * @property number $augustRevenue
- * @property number $augustMargin
- * @property number $septemberRevenue
- * @property number $septemberMargin
- * @property number $octoberRevenue
- * @property number $octoberMargin
- * @property number $novemberRevenue
- * @property number $novemberMargin
- * @property number $decemberRevenue
- * @property number $decemberMargin
+ * @property float $januaryRevenue
+ * @property float $januaryMargin
+ * @property float $februaryRevenue
+ * @property float $februaryMargin
+ * @property float $marchRevenue
+ * @property float $marchMargin
+ * @property float $aprilRevenue
+ * @property float $aprilMargin
+ * @property float $mayRevenue
+ * @property float $mayMargin
+ * @property float $juneRevenue
+ * @property float $juneMargin
+ * @property float $julyRevenue
+ * @property float $julyMargin
+ * @property float $augustRevenue
+ * @property float $augustMargin
+ * @property float $septemberRevenue
+ * @property float $septemberMargin
+ * @property float $octoberRevenue
+ * @property float $octoberMargin
+ * @property float $novemberRevenue
+ * @property float $novemberMargin
+ * @property float $decemberRevenue
+ * @property float $decemberMargin
  * @property Spinen\ConnectWise\Models\v2019_1\Sales\CurrencyReference $currency
  * @property Spinen\ConnectWise\Models\v2019_1\Sales\Metadata $_info
  */
@@ -58,30 +58,30 @@ class SalesQuota extends Model
         'department' => 'Spinen\ConnectWise\Models\v2019_1\Sales\SystemDepartmentReference',
         'category' => 'Spinen\ConnectWise\Models\v2019_1\Sales\ProductCategoryReference',
         'subCategory' => 'Spinen\ConnectWise\Models\v2019_1\Sales\ProductSubCategoryReference',
-        'januaryRevenue' => 'number',
-        'januaryMargin' => 'number',
-        'februaryRevenue' => 'number',
-        'februaryMargin' => 'number',
-        'marchRevenue' => 'number',
-        'marchMargin' => 'number',
-        'aprilRevenue' => 'number',
-        'aprilMargin' => 'number',
-        'mayRevenue' => 'number',
-        'mayMargin' => 'number',
-        'juneRevenue' => 'number',
-        'juneMargin' => 'number',
-        'julyRevenue' => 'number',
-        'julyMargin' => 'number',
-        'augustRevenue' => 'number',
-        'augustMargin' => 'number',
-        'septemberRevenue' => 'number',
-        'septemberMargin' => 'number',
-        'octoberRevenue' => 'number',
-        'octoberMargin' => 'number',
-        'novemberRevenue' => 'number',
-        'novemberMargin' => 'number',
-        'decemberRevenue' => 'number',
-        'decemberMargin' => 'number',
+        'januaryRevenue' => 'float',
+        'januaryMargin' => 'float',
+        'februaryRevenue' => 'float',
+        'februaryMargin' => 'float',
+        'marchRevenue' => 'float',
+        'marchMargin' => 'float',
+        'aprilRevenue' => 'float',
+        'aprilMargin' => 'float',
+        'mayRevenue' => 'float',
+        'mayMargin' => 'float',
+        'juneRevenue' => 'float',
+        'juneMargin' => 'float',
+        'julyRevenue' => 'float',
+        'julyMargin' => 'float',
+        'augustRevenue' => 'float',
+        'augustMargin' => 'float',
+        'septemberRevenue' => 'float',
+        'septemberMargin' => 'float',
+        'octoberRevenue' => 'float',
+        'octoberMargin' => 'float',
+        'novemberRevenue' => 'float',
+        'novemberMargin' => 'float',
+        'decemberRevenue' => 'float',
+        'decemberMargin' => 'float',
         'currency' => 'Spinen\ConnectWise\Models\v2019_1\Sales\CurrencyReference',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\Sales\Metadata',
     ];

@@ -21,8 +21,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $phaseProductFlag
  * @property Spinen\ConnectWise\Models\v2019_3\Procurement\UnitOfMeasureReference $unitOfMeasure
  * @property integer $minStockLevel
- * @property number $price
- * @property number $cost
+ * @property float $price
+ * @property float $cost
  * @property string $priceAttribute
  * @property boolean $taxableFlag
  * @property boolean $dropShipFlag
@@ -37,8 +37,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_3\Procurement\SLAReference $sla
  * @property Spinen\ConnectWise\Models\v2019_3\Procurement\EntityTypeReference $entityType
  * @property boolean $recurringFlag
- * @property number $recurringRevenue
- * @property number $recurringCost
+ * @property float $recurringRevenue
+ * @property float $recurringCost
  * @property boolean $recurringOneTimeFlag
  * @property Spinen\ConnectWise\Models\v2019_3\Procurement\BillingCycleReference $recurringBillCycle
  * @property string $recurringCycleType
@@ -46,8 +46,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $calculatedPriceFlag
  * @property boolean $calculatedCostFlag
  * @property Spinen\ConnectWise\Models\v2019_3\Procurement\ProductCategoryReference $category
- * @property number $calculatedPrice
- * @property number $calculatedCost
+ * @property float $calculatedPrice
+ * @property float $calculatedCost
  * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
  * @property array $customFields
  */
@@ -71,8 +71,8 @@ class CatalogItem extends Model
         'phaseProductFlag' => 'boolean',
         'unitOfMeasure' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\UnitOfMeasureReference',
         'minStockLevel' => 'integer',
-        'price' => 'number',
-        'cost' => 'number',
+        'price' => 'float',
+        'cost' => 'float',
         'priceAttribute' => 'string',
         'taxableFlag' => 'boolean',
         'dropShipFlag' => 'boolean',
@@ -87,8 +87,8 @@ class CatalogItem extends Model
         'sla' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\SLAReference',
         'entityType' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\EntityTypeReference',
         'recurringFlag' => 'boolean',
-        'recurringRevenue' => 'number',
-        'recurringCost' => 'number',
+        'recurringRevenue' => 'float',
+        'recurringCost' => 'float',
         'recurringOneTimeFlag' => 'boolean',
         'recurringBillCycle' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\BillingCycleReference',
         'recurringCycleType' => 'string',
@@ -96,8 +96,8 @@ class CatalogItem extends Model
         'calculatedPriceFlag' => 'boolean',
         'calculatedCostFlag' => 'boolean',
         'category' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\ProductCategoryReference',
-        'calculatedPrice' => 'number',
-        'calculatedCost' => 'number',
+        'calculatedPrice' => 'float',
+        'calculatedCost' => 'float',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
         'customFields' => 'array',
     ];

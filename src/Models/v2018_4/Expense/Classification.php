@@ -11,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property integer $id
  * @property string $name
- * @property number $multiplier
+ * @property float $multiplier
  * @property boolean $defaultFlag
  * @property boolean $companyFlag
  * @property boolean $employeeFlag
@@ -27,7 +27,7 @@ class Classification extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'multiplier' => 'number',
+        'multiplier' => 'float',
         'defaultFlag' => 'boolean',
         'companyFlag' => 'boolean',
         'employeeFlag' => 'boolean',

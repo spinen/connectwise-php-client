@@ -11,10 +11,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property integer $id
  * @property string $documentType
- * @property string $documentDate
+ * @property Carbon\Carbon $documentDate
  * @property string $accountNumber
  * @property string $glClass
- * @property number $total
+ * @property float $total
  * @property string $memo
  * @property string $description
  * @property string $glTypeId
@@ -29,10 +29,10 @@ class GLExportInventoryTransferOffset extends Model
     protected $casts = [
         'id' => 'integer',
         'documentType' => 'string',
-        'documentDate' => 'string',
+        'documentDate' => 'Carbon\Carbon',
         'accountNumber' => 'string',
         'glClass' => 'string',
-        'total' => 'number',
+        'total' => 'float',
         'memo' => 'string',
         'description' => 'string',
         'glTypeId' => 'string',

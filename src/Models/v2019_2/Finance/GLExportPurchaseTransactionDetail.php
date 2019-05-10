@@ -10,13 +10,13 @@ use Spinen\ConnectWise\Support\Model;
  * Model for GLExportPurchaseTransactionDetail
  *
  * @property integer $id
- * @property string $documentDate
+ * @property Carbon\Carbon $documentDate
  * @property string $glClass
  * @property string $glTypeId
  * @property string $glItemId
  * @property string $salesCode
  * @property string $description
- * @property number $cost
+ * @property float $cost
  * @property string $memo
  * @property string $taxNote
  * @property string $vendorNumber
@@ -28,11 +28,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $itemDescription
  * @property string $salesDescription
  * @property boolean $taxable
- * @property number $itemPrice
- * @property number $itemCost
+ * @property float $itemPrice
+ * @property float $itemCost
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\UnitOfMeasureReference $unitOfMeasure
- * @property number $quantity
- * @property number $total
+ * @property float $quantity
+ * @property float $total
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference $currency
  * @property boolean $serializedFlag
  * @property string $serialNumbers
@@ -51,7 +51,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\TaxCodeReference $taxCode
  * @property string $purchaseHeaderTaxGroup
  * @property string $taxCodeXref
- * @property number $taxRate
+ * @property float $taxRate
  * @property string $taxAgencyXref
  */
 class GLExportPurchaseTransactionDetail extends Model
@@ -63,13 +63,13 @@ class GLExportPurchaseTransactionDetail extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'documentDate' => 'string',
+        'documentDate' => 'Carbon\Carbon',
         'glClass' => 'string',
         'glTypeId' => 'string',
         'glItemId' => 'string',
         'salesCode' => 'string',
         'description' => 'string',
-        'cost' => 'number',
+        'cost' => 'float',
         'memo' => 'string',
         'taxNote' => 'string',
         'vendorNumber' => 'string',
@@ -81,11 +81,11 @@ class GLExportPurchaseTransactionDetail extends Model
         'itemDescription' => 'string',
         'salesDescription' => 'string',
         'taxable' => 'boolean',
-        'itemPrice' => 'number',
-        'itemCost' => 'number',
+        'itemPrice' => 'float',
+        'itemCost' => 'float',
         'unitOfMeasure' => 'Spinen\ConnectWise\Models\v2019_2\Finance\UnitOfMeasureReference',
-        'quantity' => 'number',
-        'total' => 'number',
+        'quantity' => 'float',
+        'total' => 'float',
         'currency' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference',
         'serializedFlag' => 'boolean',
         'serialNumbers' => 'string',
@@ -104,7 +104,7 @@ class GLExportPurchaseTransactionDetail extends Model
         'taxCode' => 'Spinen\ConnectWise\Models\v2019_2\Finance\TaxCodeReference',
         'purchaseHeaderTaxGroup' => 'string',
         'taxCodeXref' => 'string',
-        'taxRate' => 'number',
+        'taxRate' => 'float',
         'taxAgencyXref' => 'string',
     ];
 }

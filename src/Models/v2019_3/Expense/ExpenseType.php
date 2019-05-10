@@ -12,15 +12,15 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $id
  * @property string $name
  * @property string $amountCaption
- * @property number $reimbursementRate
+ * @property float $reimbursementRate
  * @property string $billExpenses
  * @property string $invoiceMarkupOption
- * @property number $invoiceMarkupAmount
+ * @property float $invoiceMarkupAmount
  * @property boolean $advancedAmountFlag
  * @property boolean $mileageFlag
  * @property boolean $quantityFlag
  * @property boolean $inactiveFlag
- * @property number $maxAmount
+ * @property float $maxAmount
  * @property Spinen\ConnectWise\Models\v2019_3\Expense\ExternalExpenseTypeIntegrationReference $externalIntegrationXRef
  * @property string $integrationXRef
  * @property boolean $defaultFlag
@@ -37,15 +37,15 @@ class ExpenseType extends Model
         'id' => 'integer',
         'name' => 'string',
         'amountCaption' => 'string',
-        'reimbursementRate' => 'number',
+        'reimbursementRate' => 'float',
         'billExpenses' => 'string',
         'invoiceMarkupOption' => 'string',
-        'invoiceMarkupAmount' => 'number',
+        'invoiceMarkupAmount' => 'float',
         'advancedAmountFlag' => 'boolean',
         'mileageFlag' => 'boolean',
         'quantityFlag' => 'boolean',
         'inactiveFlag' => 'boolean',
-        'maxAmount' => 'number',
+        'maxAmount' => 'float',
         'externalIntegrationXRef' => 'Spinen\ConnectWise\Models\v2019_3\Expense\ExternalExpenseTypeIntegrationReference',
         'integrationXRef' => 'string',
         'defaultFlag' => 'boolean',

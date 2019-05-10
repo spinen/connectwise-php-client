@@ -11,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property integer $id
  * @property Spinen\ConnectWise\Models\v2018_5\Time\SystemLocationReference $location
- * @property number $hourlyRate
+ * @property float $hourlyRate
  * @property Spinen\ConnectWise\Models\v2018_5\Time\WorkRoleReference $workRole
  * @property Spinen\ConnectWise\Models\v2018_5\Time\Metadata $_info
  */
@@ -25,7 +25,7 @@ class WorkRoleLocation extends Model
     protected $casts = [
         'id' => 'integer',
         'location' => 'Spinen\ConnectWise\Models\v2018_5\Time\SystemLocationReference',
-        'hourlyRate' => 'number',
+        'hourlyRate' => 'float',
         'workRole' => 'Spinen\ConnectWise\Models\v2018_5\Time\WorkRoleReference',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Time\Metadata',
     ];

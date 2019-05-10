@@ -14,7 +14,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $defaultFlag
  * @property Spinen\ConnectWise\Models\v2018_4\Service\Metadata $_info
  * @property string $enteredBy
- * @property string $dateEntered
+ * @property Carbon\Carbon $dateEntered
  */
 class Source extends Model
 {
@@ -29,6 +29,6 @@ class Source extends Model
         'defaultFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2018_4\Service\Metadata',
         'enteredBy' => 'string',
-        'dateEntered' => 'string',
+        'dateEntered' => 'Carbon\Carbon',
     ];
 }

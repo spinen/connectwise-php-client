@@ -13,7 +13,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $identifier
  * @property string $name
  * @property boolean $auditTrailFlag
- * @property string $dateCreated
+ * @property Carbon\Carbon $dateCreated
  * @property string $createdBy
  * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
  */
@@ -29,7 +29,7 @@ class AdjustmentType extends Model
         'identifier' => 'string',
         'name' => 'string',
         'auditTrailFlag' => 'boolean',
-        'dateCreated' => 'string',
+        'dateCreated' => 'Carbon\Carbon',
         'createdBy' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
     ];

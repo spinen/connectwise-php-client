@@ -14,11 +14,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $chargeToId
  * @property string $chargeToType
  * @property string $description
- * @property number $sequenceNumber
- * @property number $quantity
- * @property number $price
- * @property number $cost
- * @property number $discount
+ * @property float $sequenceNumber
+ * @property float $quantity
+ * @property float $price
+ * @property float $cost
+ * @property float $discount
  * @property string $priceMethod
  * @property string $billableOption
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\AgreementReference $agreement
@@ -31,24 +31,24 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $specialOrderFlag
  * @property boolean $phaseProductFlag
  * @property boolean $cancelledFlag
- * @property number $quantityCancelled
+ * @property float $quantityCancelled
  * @property string $cancelledReason
  * @property string $customerDescription
  * @property string $internalNotes
  * @property boolean $productSuppliedFlag
  * @property integer $subContractorShipToId
- * @property number $subContractorAmountLimit
+ * @property float $subContractorAmountLimit
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\ProductRecurring $recurring
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\SLAReference $sla
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\EntityTypeReference $entityType
  * @property integer $forecastDetailId
  * @property integer $cancelledBy
- * @property string $cancelledDate
+ * @property Carbon\Carbon $cancelledDate
  * @property string $warehouse
  * @property string $warehouseBin
- * @property string $purchaseDate
+ * @property Carbon\Carbon $purchaseDate
  * @property string $integrationXRef
- * @property number $listPrice
+ * @property float $listPrice
  * @property array $serialNumberIds
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\CompanyReference $company
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\OpportunityStatusReference $forecastStatus
@@ -71,11 +71,11 @@ class ProductItem extends Model
         'chargeToId' => 'integer',
         'chargeToType' => 'string',
         'description' => 'string',
-        'sequenceNumber' => 'number',
-        'quantity' => 'number',
-        'price' => 'number',
-        'cost' => 'number',
-        'discount' => 'number',
+        'sequenceNumber' => 'float',
+        'quantity' => 'float',
+        'price' => 'float',
+        'cost' => 'float',
+        'discount' => 'float',
         'priceMethod' => 'string',
         'billableOption' => 'string',
         'agreement' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\AgreementReference',
@@ -88,24 +88,24 @@ class ProductItem extends Model
         'specialOrderFlag' => 'boolean',
         'phaseProductFlag' => 'boolean',
         'cancelledFlag' => 'boolean',
-        'quantityCancelled' => 'number',
+        'quantityCancelled' => 'float',
         'cancelledReason' => 'string',
         'customerDescription' => 'string',
         'internalNotes' => 'string',
         'productSuppliedFlag' => 'boolean',
         'subContractorShipToId' => 'integer',
-        'subContractorAmountLimit' => 'number',
+        'subContractorAmountLimit' => 'float',
         'recurring' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\ProductRecurring',
         'sla' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\SLAReference',
         'entityType' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\EntityTypeReference',
         'forecastDetailId' => 'integer',
         'cancelledBy' => 'integer',
-        'cancelledDate' => 'string',
+        'cancelledDate' => 'Carbon\Carbon',
         'warehouse' => 'string',
         'warehouseBin' => 'string',
-        'purchaseDate' => 'string',
+        'purchaseDate' => 'Carbon\Carbon',
         'integrationXRef' => 'string',
-        'listPrice' => 'number',
+        'listPrice' => 'float',
         'serialNumberIds' => 'array',
         'company' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\CompanyReference',
         'forecastStatus' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\OpportunityStatusReference',

@@ -13,8 +13,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_5\Time\AgreementReference $agreement
  * @property string $billableOption
  * @property integer $businessUnitId
- * @property string $dateEntered
- * @property string $endTime
+ * @property Carbon\Carbon $dateEntered
+ * @property Carbon\Carbon $endTime
  * @property integer $id
  * @property string $internalNotes
  * @property integer $locationId
@@ -22,7 +22,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_5\Time\Guid $mobileGuid
  * @property string $notes
  * @property Spinen\ConnectWise\Models\v2018_5\Time\ServiceStatusReference $serviceStatus
- * @property string $startTime
+ * @property Carbon\Carbon $startTime
  * @property string $status
  * @property Spinen\ConnectWise\Models\v2018_5\Time\TicketReference $ticket
  * @property Spinen\ConnectWise\Models\v2018_5\Time\Guid $ticketMobileGuid
@@ -47,8 +47,8 @@ class TicketStopwatch extends Model
         'agreement' => 'Spinen\ConnectWise\Models\v2018_5\Time\AgreementReference',
         'billableOption' => 'string',
         'businessUnitId' => 'integer',
-        'dateEntered' => 'string',
-        'endTime' => 'string',
+        'dateEntered' => 'Carbon\Carbon',
+        'endTime' => 'Carbon\Carbon',
         'id' => 'integer',
         'internalNotes' => 'string',
         'locationId' => 'integer',
@@ -56,7 +56,7 @@ class TicketStopwatch extends Model
         'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_5\Time\Guid',
         'notes' => 'string',
         'serviceStatus' => 'Spinen\ConnectWise\Models\v2018_5\Time\ServiceStatusReference',
-        'startTime' => 'string',
+        'startTime' => 'Carbon\Carbon',
         'status' => 'string',
         'ticket' => 'Spinen\ConnectWise\Models\v2018_5\Time\TicketReference',
         'ticketMobileGuid' => 'Spinen\ConnectWise\Models\v2018_5\Time\Guid',

@@ -27,10 +27,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $marketId
  * @property string $accountNumber
  * @property Spinen\ConnectWise\Models\v2018_4\Company\ContactReference $defaultContact
- * @property string $dateAcquired
+ * @property Carbon\Carbon $dateAcquired
  * @property Spinen\ConnectWise\Models\v2018_4\Company\SicCodeReference $sicCode
  * @property Spinen\ConnectWise\Models\v2018_4\Company\CompanyReference $parentCompany
- * @property number $annualRevenue
+ * @property float $annualRevenue
  * @property integer $numberOfEmployees
  * @property Spinen\ConnectWise\Models\v2018_4\Company\OwnershipTypeReference $ownershipType
  * @property Spinen\ConnectWise\Models\v2018_4\Company\TimeZoneSetupReference $timeZone
@@ -62,7 +62,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $invoiceToEmailAddress
  * @property string $invoiceCCEmailAddress
  * @property boolean $deletedFlag
- * @property string $dateDeleted
+ * @property Carbon\Carbon $dateDeleted
  * @property string $deletedBy
  * @property Spinen\ConnectWise\Models\v2018_4\Company\Guid $mobileGuid
  * @property string $facebookUrl
@@ -99,10 +99,10 @@ class Company extends Model
         'marketId' => 'integer',
         'accountNumber' => 'string',
         'defaultContact' => 'Spinen\ConnectWise\Models\v2018_4\Company\ContactReference',
-        'dateAcquired' => 'string',
+        'dateAcquired' => 'Carbon\Carbon',
         'sicCode' => 'Spinen\ConnectWise\Models\v2018_4\Company\SicCodeReference',
         'parentCompany' => 'Spinen\ConnectWise\Models\v2018_4\Company\CompanyReference',
-        'annualRevenue' => 'number',
+        'annualRevenue' => 'float',
         'numberOfEmployees' => 'integer',
         'ownershipType' => 'Spinen\ConnectWise\Models\v2018_4\Company\OwnershipTypeReference',
         'timeZone' => 'Spinen\ConnectWise\Models\v2018_4\Company\TimeZoneSetupReference',
@@ -134,7 +134,7 @@ class Company extends Model
         'invoiceToEmailAddress' => 'string',
         'invoiceCCEmailAddress' => 'string',
         'deletedFlag' => 'boolean',
-        'dateDeleted' => 'string',
+        'dateDeleted' => 'Carbon\Carbon',
         'deletedBy' => 'string',
         'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_4\Company\Guid',
         'facebookUrl' => 'string',

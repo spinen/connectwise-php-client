@@ -18,8 +18,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_6\Sales\SiteReference $site
  * @property Spinen\ConnectWise\Models\v2018_6\Sales\OrderStatusReference $status
  * @property Spinen\ConnectWise\Models\v2018_6\Sales\OpportunityReference $opportunity
- * @property string $orderDate
- * @property string $dueDate
+ * @property Carbon\Carbon $orderDate
+ * @property Carbon\Carbon $dueDate
  * @property Spinen\ConnectWise\Models\v2018_6\Sales\BillingTermsReference $billingTerms
  * @property Spinen\ConnectWise\Models\v2018_6\Sales\TaxCodeReference $taxCode
  * @property string $poNumber
@@ -43,8 +43,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property array $documentIds
  * @property array $invoiceIds
  * @property array $configIds
- * @property number $total
- * @property number $taxTotal
+ * @property float $total
+ * @property float $taxTotal
  * @property Spinen\ConnectWise\Models\v2018_6\Sales\CurrencyReference $currency
  * @property Spinen\ConnectWise\Models\v2018_6\Sales\Metadata $_info
  */
@@ -65,8 +65,8 @@ class Order extends Model
         'site' => 'Spinen\ConnectWise\Models\v2018_6\Sales\SiteReference',
         'status' => 'Spinen\ConnectWise\Models\v2018_6\Sales\OrderStatusReference',
         'opportunity' => 'Spinen\ConnectWise\Models\v2018_6\Sales\OpportunityReference',
-        'orderDate' => 'string',
-        'dueDate' => 'string',
+        'orderDate' => 'Carbon\Carbon',
+        'dueDate' => 'Carbon\Carbon',
         'billingTerms' => 'Spinen\ConnectWise\Models\v2018_6\Sales\BillingTermsReference',
         'taxCode' => 'Spinen\ConnectWise\Models\v2018_6\Sales\TaxCodeReference',
         'poNumber' => 'string',
@@ -90,8 +90,8 @@ class Order extends Model
         'documentIds' => 'array',
         'invoiceIds' => 'array',
         'configIds' => 'array',
-        'total' => 'number',
-        'taxTotal' => 'number',
+        'total' => 'float',
+        'taxTotal' => 'float',
         'currency' => 'Spinen\ConnectWise\Models\v2018_6\Sales\CurrencyReference',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Sales\Metadata',
     ];

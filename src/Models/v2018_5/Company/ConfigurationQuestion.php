@@ -13,7 +13,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $questionId
  * @property string $question
  * @property string $answer
- * @property number $sequenceNumber
+ * @property float $sequenceNumber
  * @property integer $numberOfDecimals
  * @property string $fieldType
  * @property boolean $requiredFlag
@@ -30,7 +30,7 @@ class ConfigurationQuestion extends Model
         'questionId' => 'integer',
         'question' => 'string',
         'answer' => 'string',
-        'sequenceNumber' => 'number',
+        'sequenceNumber' => 'float',
         'numberOfDecimals' => 'integer',
         'fieldType' => 'string',
         'requiredFlag' => 'boolean',

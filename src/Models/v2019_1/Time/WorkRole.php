@@ -11,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property integer $id
  * @property string $name
- * @property number $hourlyRate
+ * @property float $hourlyRate
  * @property string $integrationXref
  * @property boolean $inactiveFlag
  * @property boolean $addAllLocations
@@ -30,7 +30,7 @@ class WorkRole extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'hourlyRate' => 'number',
+        'hourlyRate' => 'float',
         'integrationXref' => 'string',
         'inactiveFlag' => 'boolean',
         'addAllLocations' => 'boolean',

@@ -22,7 +22,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $faxNumber
  * @property integer $taxCodeId
  * @property Spinen\ConnectWise\Models\v2019_1\Company\EntityTypeReference $entityType
- * @property number $expenseReimbursement
+ * @property float $expenseReimbursement
  * @property boolean $primaryAddressFlag
  * @property boolean $defaultShippingFlag
  * @property boolean $defaultBillingFlag
@@ -55,7 +55,7 @@ class CompanySite extends Model
         'faxNumber' => 'string',
         'taxCodeId' => 'integer',
         'entityType' => 'Spinen\ConnectWise\Models\v2019_1\Company\EntityTypeReference',
-        'expenseReimbursement' => 'number',
+        'expenseReimbursement' => 'float',
         'primaryAddressFlag' => 'boolean',
         'defaultShippingFlag' => 'boolean',
         'defaultBillingFlag' => 'boolean',

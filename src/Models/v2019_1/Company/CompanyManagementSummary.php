@@ -37,11 +37,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $missingMoreFivePatchesMachines
  * @property integer $missingUnscannedPatchesMachines
  * @property string $alertsGenerated
- * @property number $internetConnectivity
+ * @property float $internetConnectivity
  * @property integer $diskSpaceCleanedMb
  * @property string $missingSecurityPatches
- * @property number $cpuUtilization
- * @property number $memoryUtilization
+ * @property float $cpuUtilization
+ * @property float $memoryUtilization
  * @property Spinen\ConnectWise\Models\v2019_1\Company\CompanyReference $company
  * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
  */
@@ -81,11 +81,11 @@ class CompanyManagementSummary extends Model
         'missingMoreFivePatchesMachines' => 'integer',
         'missingUnscannedPatchesMachines' => 'integer',
         'alertsGenerated' => 'string',
-        'internetConnectivity' => 'number',
+        'internetConnectivity' => 'float',
         'diskSpaceCleanedMb' => 'integer',
         'missingSecurityPatches' => 'string',
-        'cpuUtilization' => 'number',
-        'memoryUtilization' => 'number',
+        'cpuUtilization' => 'float',
+        'memoryUtilization' => 'float',
         'company' => 'Spinen\ConnectWise\Models\v2019_1\Company\CompanyReference',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
     ];

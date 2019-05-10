@@ -22,10 +22,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $serialNumber
  * @property string $modelNumber
  * @property string $tagNumber
- * @property string $purchaseDate
- * @property string $installationDate
+ * @property Carbon\Carbon $purchaseDate
+ * @property Carbon\Carbon $installationDate
  * @property Spinen\ConnectWise\Models\v2018_5\Company\MemberReference $installedBy
- * @property string $warrantyExpirationDate
+ * @property Carbon\Carbon $warrantyExpirationDate
  * @property string $vendorNotes
  * @property string $notes
  * @property string $macAddress
@@ -35,9 +35,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $backupIncomplete
  * @property integer $backupFailed
  * @property integer $backupRestores
- * @property string $lastBackupDate
+ * @property Carbon\Carbon $lastBackupDate
  * @property string $backupServerName
- * @property number $backupBillableSpaceGb
+ * @property float $backupBillableSpaceGb
  * @property string $backupProtectedDeviceList
  * @property integer $backupYear
  * @property integer $backupMonth
@@ -82,10 +82,10 @@ class Configuration extends Model
         'serialNumber' => 'string',
         'modelNumber' => 'string',
         'tagNumber' => 'string',
-        'purchaseDate' => 'string',
-        'installationDate' => 'string',
+        'purchaseDate' => 'Carbon\Carbon',
+        'installationDate' => 'Carbon\Carbon',
         'installedBy' => 'Spinen\ConnectWise\Models\v2018_5\Company\MemberReference',
-        'warrantyExpirationDate' => 'string',
+        'warrantyExpirationDate' => 'Carbon\Carbon',
         'vendorNotes' => 'string',
         'notes' => 'string',
         'macAddress' => 'string',
@@ -95,9 +95,9 @@ class Configuration extends Model
         'backupIncomplete' => 'integer',
         'backupFailed' => 'integer',
         'backupRestores' => 'integer',
-        'lastBackupDate' => 'string',
+        'lastBackupDate' => 'Carbon\Carbon',
         'backupServerName' => 'string',
-        'backupBillableSpaceGb' => 'number',
+        'backupBillableSpaceGb' => 'float',
         'backupProtectedDeviceList' => 'string',
         'backupYear' => 'integer',
         'backupMonth' => 'integer',

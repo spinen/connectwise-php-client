@@ -10,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for OsGradeWeight
  *
  * @property integer $id
- * @property number $osGradeWeight
+ * @property float $osGradeWeight
  * @property string $osName
  * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  */
@@ -23,7 +23,7 @@ class OsGradeWeight extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'osGradeWeight' => 'number',
+        'osGradeWeight' => 'float',
         'osName' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
     ];

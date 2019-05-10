@@ -12,7 +12,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $id
  * @property integer $campaignId
  * @property integer $contactId
- * @property string $dateOpened
+ * @property Carbon\Carbon $dateOpened
  */
 class EmailOpened extends Model
 {
@@ -25,6 +25,6 @@ class EmailOpened extends Model
         'id' => 'integer',
         'campaignId' => 'integer',
         'contactId' => 'integer',
-        'dateOpened' => 'string',
+        'dateOpened' => 'Carbon\Carbon',
     ];
 }

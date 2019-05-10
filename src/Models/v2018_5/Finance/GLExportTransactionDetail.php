@@ -10,19 +10,19 @@ use Spinen\ConnectWise\Support\Model;
  * Model for GLExportTransactionDetail
  *
  * @property integer $id
- * @property string $documentDate
+ * @property Carbon\Carbon $documentDate
  * @property string $documentType
  * @property string $accountNumber
  * @property string $glClass
  * @property string $glTypeId
  * @property string $glItemId
  * @property integer $invoiceSummaryOption
- * @property number $cost
+ * @property float $cost
  * @property string $salesCode
  * @property string $memo
  * @property string $description
- * @property number $quantity
- * @property number $total
+ * @property float $quantity
+ * @property float $total
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\CurrencyReference $currency
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\TimeEntryReference $timeEntry
  * @property string $costAccountNumber
@@ -32,8 +32,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $taxCodeXref
  * @property string $taxAgencyXref
  * @property string $taxNote
- * @property number $taxRate
- * @property number $taxRatePercent
+ * @property float $taxRate
+ * @property float $taxRatePercent
  * @property boolean $taxableFlag
  * @property boolean $taxable2Flag
  * @property boolean $taxable3Flag
@@ -42,8 +42,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\IvItemReference $item
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\ProductReference $product
  * @property boolean $itemTaxableFlag
- * @property number $itemPrice
- * @property number $itemCost
+ * @property float $itemPrice
+ * @property float $itemCost
  * @property string $itemDescription
  * @property string $salesDescription
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\UnitOfMeasureReference $unitOfMeasure
@@ -71,19 +71,19 @@ class GLExportTransactionDetail extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'documentDate' => 'string',
+        'documentDate' => 'Carbon\Carbon',
         'documentType' => 'string',
         'accountNumber' => 'string',
         'glClass' => 'string',
         'glTypeId' => 'string',
         'glItemId' => 'string',
         'invoiceSummaryOption' => 'integer',
-        'cost' => 'number',
+        'cost' => 'float',
         'salesCode' => 'string',
         'memo' => 'string',
         'description' => 'string',
-        'quantity' => 'number',
-        'total' => 'number',
+        'quantity' => 'float',
+        'total' => 'float',
         'currency' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CurrencyReference',
         'timeEntry' => 'Spinen\ConnectWise\Models\v2018_5\Finance\TimeEntryReference',
         'costAccountNumber' => 'string',
@@ -93,8 +93,8 @@ class GLExportTransactionDetail extends Model
         'taxCodeXref' => 'string',
         'taxAgencyXref' => 'string',
         'taxNote' => 'string',
-        'taxRate' => 'number',
-        'taxRatePercent' => 'number',
+        'taxRate' => 'float',
+        'taxRatePercent' => 'float',
         'taxableFlag' => 'boolean',
         'taxable2Flag' => 'boolean',
         'taxable3Flag' => 'boolean',
@@ -103,8 +103,8 @@ class GLExportTransactionDetail extends Model
         'item' => 'Spinen\ConnectWise\Models\v2018_5\Finance\IvItemReference',
         'product' => 'Spinen\ConnectWise\Models\v2018_5\Finance\ProductReference',
         'itemTaxableFlag' => 'boolean',
-        'itemPrice' => 'number',
-        'itemCost' => 'number',
+        'itemPrice' => 'float',
+        'itemCost' => 'float',
         'itemDescription' => 'string',
         'salesDescription' => 'string',
         'unitOfMeasure' => 'Spinen\ConnectWise\Models\v2018_5\Finance\UnitOfMeasureReference',

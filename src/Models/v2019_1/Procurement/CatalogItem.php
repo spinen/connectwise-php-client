@@ -21,8 +21,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $phaseProductFlag
  * @property Spinen\ConnectWise\Models\v2019_1\Procurement\UnitOfMeasureReference $unitOfMeasure
  * @property integer $minStockLevel
- * @property number $price
- * @property number $cost
+ * @property float $price
+ * @property float $cost
  * @property string $priceAttribute
  * @property boolean $taxableFlag
  * @property string $customerDescription
@@ -35,8 +35,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_1\Procurement\SLAReference $sla
  * @property Spinen\ConnectWise\Models\v2019_1\Procurement\EntityTypeReference $entityType
  * @property boolean $recurringFlag
- * @property number $recurringRevenue
- * @property number $recurringCost
+ * @property float $recurringRevenue
+ * @property float $recurringCost
  * @property boolean $recurringOneTimeFlag
  * @property Spinen\ConnectWise\Models\v2019_1\Procurement\BillingCycleReference $recurringBillCycle
  * @property string $recurringCycleType
@@ -65,8 +65,8 @@ class CatalogItem extends Model
         'phaseProductFlag' => 'boolean',
         'unitOfMeasure' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\UnitOfMeasureReference',
         'minStockLevel' => 'integer',
-        'price' => 'number',
-        'cost' => 'number',
+        'price' => 'float',
+        'cost' => 'float',
         'priceAttribute' => 'string',
         'taxableFlag' => 'boolean',
         'customerDescription' => 'string',
@@ -79,8 +79,8 @@ class CatalogItem extends Model
         'sla' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\SLAReference',
         'entityType' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\EntityTypeReference',
         'recurringFlag' => 'boolean',
-        'recurringRevenue' => 'number',
-        'recurringCost' => 'number',
+        'recurringRevenue' => 'float',
+        'recurringCost' => 'float',
         'recurringOneTimeFlag' => 'boolean',
         'recurringBillCycle' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\BillingCycleReference',
         'recurringCycleType' => 'string',

@@ -12,7 +12,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $id
  * @property integer $campaignId
  * @property integer $contactId
- * @property string $dateClicked
+ * @property Carbon\Carbon $dateClicked
  * @property string $url
  * @property string $queryString
  */
@@ -27,7 +27,7 @@ class LinkClicked extends Model
         'id' => 'integer',
         'campaignId' => 'integer',
         'contactId' => 'integer',
-        'dateClicked' => 'string',
+        'dateClicked' => 'Carbon\Carbon',
         'url' => 'string',
         'queryString' => 'string',
     ];

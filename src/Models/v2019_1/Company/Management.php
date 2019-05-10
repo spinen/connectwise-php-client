@@ -10,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for Management
  *
  * @property integer $id
- * @property string $runTime
+ * @property Carbon\Carbon $runTime
  * @property Spinen\ConnectWise\Models\v2019_1\Company\ConfigurationStatusReference $addedConfigurationStatus
  * @property Spinen\ConnectWise\Models\v2019_1\Company\ConfigurationStatusReference $deletedConfigurationStatus
  * @property Spinen\ConnectWise\Models\v2019_1\Company\IntegratorLoginReference $integratorLogin
@@ -29,7 +29,7 @@ class Management extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'runTime' => 'string',
+        'runTime' => 'Carbon\Carbon',
         'addedConfigurationStatus' => 'Spinen\ConnectWise\Models\v2019_1\Company\ConfigurationStatusReference',
         'deletedConfigurationStatus' => 'Spinen\ConnectWise\Models\v2019_1\Company\ConfigurationStatusReference',
         'integratorLogin' => 'Spinen\ConnectWise\Models\v2019_1\Company\IntegratorLoginReference',

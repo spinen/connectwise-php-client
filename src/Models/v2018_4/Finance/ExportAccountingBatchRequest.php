@@ -11,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property string $batchIdentifier
  * @property string $glInterfaceIdentifier
- * @property string $thruDate
+ * @property Carbon\Carbon $thruDate
  * @property integer $locationId
  * @property string $summarizeInvoices
  * @property boolean $exportInvoicesFlag
@@ -34,7 +34,7 @@ class ExportAccountingBatchRequest extends Model
     protected $casts = [
         'batchIdentifier' => 'string',
         'glInterfaceIdentifier' => 'string',
-        'thruDate' => 'string',
+        'thruDate' => 'Carbon\Carbon',
         'locationId' => 'integer',
         'summarizeInvoices' => 'string',
         'exportInvoicesFlag' => 'boolean',

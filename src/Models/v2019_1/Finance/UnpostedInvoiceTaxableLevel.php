@@ -12,7 +12,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $id
  * @property integer $taxLevel
  * @property string $taxCodeXref
- * @property number $taxAmount
+ * @property float $taxAmount
  * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
  */
 class UnpostedInvoiceTaxableLevel extends Model
@@ -26,7 +26,7 @@ class UnpostedInvoiceTaxableLevel extends Model
         'id' => 'integer',
         'taxLevel' => 'integer',
         'taxCodeXref' => 'string',
-        'taxAmount' => 'number',
+        'taxAmount' => 'float',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
     ];
 }

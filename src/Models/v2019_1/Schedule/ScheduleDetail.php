@@ -11,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property integer $id
  * @property Spinen\ConnectWise\Models\v2019_1\Schedule\ScheduleEntryReference $scheduleEntry
- * @property string $dateStart
- * @property string $dateEnd
+ * @property Carbon\Carbon $dateStart
+ * @property Carbon\Carbon $dateEnd
  * @property Spinen\ConnectWise\Models\v2019_1\Schedule\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2019_1\Schedule\Metadata $_info
  */
@@ -26,8 +26,8 @@ class ScheduleDetail extends Model
     protected $casts = [
         'id' => 'integer',
         'scheduleEntry' => 'Spinen\ConnectWise\Models\v2019_1\Schedule\ScheduleEntryReference',
-        'dateStart' => 'string',
-        'dateEnd' => 'string',
+        'dateStart' => 'Carbon\Carbon',
+        'dateEnd' => 'Carbon\Carbon',
         'member' => 'Spinen\ConnectWise\Models\v2019_1\Schedule\MemberReference',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\Schedule\Metadata',
     ];

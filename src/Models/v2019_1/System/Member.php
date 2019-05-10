@@ -28,7 +28,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_1\System\CountryReference $country
  * @property array $serviceBoardTeamIds
  * @property boolean $enableMobileGpsFlag
- * @property string $inactiveDate
+ * @property Carbon\Carbon $inactiveDate
  * @property boolean $inactiveFlag
  * @property string $lastLogin
  * @property Spinen\ConnectWise\Models\v2019_1\System\DocumentReference $photo
@@ -61,10 +61,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_1\System\WorkTypeReference $workType
  * @property Spinen\ConnectWise\Models\v2019_1\System\MemberReference $timeApprover
  * @property Spinen\ConnectWise\Models\v2019_1\System\MemberReference $expenseApprover
- * @property number $billableForecast
- * @property number $dailyCapacity
- * @property number $hourlyCost
- * @property number $hourlyRate
+ * @property float $billableForecast
+ * @property float $dailyCapacity
+ * @property float $hourlyCost
+ * @property float $hourlyRate
  * @property boolean $includeInUtilizationReportingFlag
  * @property boolean $requireExpenseEntryFlag
  * @property boolean $requireTimeSheetEntryFlag
@@ -74,9 +74,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $allowExpensesEnteredAgainstCompaniesFlag
  * @property boolean $timeReminderEmailFlag
  * @property integer $daysTolerance
- * @property number $minimumHours
- * @property string $timeSheetStartDate
- * @property string $hireDate
+ * @property float $minimumHours
+ * @property Carbon\Carbon $timeSheetStartDate
+ * @property Carbon\Carbon $hireDate
  * @property Spinen\ConnectWise\Models\v2019_1\System\SystemLocationReference $serviceDefaultLocation
  * @property Spinen\ConnectWise\Models\v2019_1\System\SystemDepartmentReference $serviceDefaultDepartment
  * @property Spinen\ConnectWise\Models\v2019_1\System\BoardReference $serviceDefaultBoard
@@ -91,7 +91,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property array $excludedProjectBoardIds
  * @property Spinen\ConnectWise\Models\v2019_1\System\SystemLocationReference $scheduleDefaultLocation
  * @property Spinen\ConnectWise\Models\v2019_1\System\SystemDepartmentReference $scheduleDefaultDepartment
- * @property number $scheduleCapacity
+ * @property float $scheduleCapacity
  * @property Spinen\ConnectWise\Models\v2019_1\System\ServiceLocationReference $serviceLocation
  * @property boolean $restrictScheduleFlag
  * @property boolean $hideMemberInDispatchPortalFlag
@@ -148,7 +148,7 @@ class Member extends Model
         'country' => 'Spinen\ConnectWise\Models\v2019_1\System\CountryReference',
         'serviceBoardTeamIds' => 'array',
         'enableMobileGpsFlag' => 'boolean',
-        'inactiveDate' => 'string',
+        'inactiveDate' => 'Carbon\Carbon',
         'inactiveFlag' => 'boolean',
         'lastLogin' => 'string',
         'photo' => 'Spinen\ConnectWise\Models\v2019_1\System\DocumentReference',
@@ -181,10 +181,10 @@ class Member extends Model
         'workType' => 'Spinen\ConnectWise\Models\v2019_1\System\WorkTypeReference',
         'timeApprover' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberReference',
         'expenseApprover' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberReference',
-        'billableForecast' => 'number',
-        'dailyCapacity' => 'number',
-        'hourlyCost' => 'number',
-        'hourlyRate' => 'number',
+        'billableForecast' => 'float',
+        'dailyCapacity' => 'float',
+        'hourlyCost' => 'float',
+        'hourlyRate' => 'float',
         'includeInUtilizationReportingFlag' => 'boolean',
         'requireExpenseEntryFlag' => 'boolean',
         'requireTimeSheetEntryFlag' => 'boolean',
@@ -194,9 +194,9 @@ class Member extends Model
         'allowExpensesEnteredAgainstCompaniesFlag' => 'boolean',
         'timeReminderEmailFlag' => 'boolean',
         'daysTolerance' => 'integer',
-        'minimumHours' => 'number',
-        'timeSheetStartDate' => 'string',
-        'hireDate' => 'string',
+        'minimumHours' => 'float',
+        'timeSheetStartDate' => 'Carbon\Carbon',
+        'hireDate' => 'Carbon\Carbon',
         'serviceDefaultLocation' => 'Spinen\ConnectWise\Models\v2019_1\System\SystemLocationReference',
         'serviceDefaultDepartment' => 'Spinen\ConnectWise\Models\v2019_1\System\SystemDepartmentReference',
         'serviceDefaultBoard' => 'Spinen\ConnectWise\Models\v2019_1\System\BoardReference',
@@ -211,7 +211,7 @@ class Member extends Model
         'excludedProjectBoardIds' => 'array',
         'scheduleDefaultLocation' => 'Spinen\ConnectWise\Models\v2019_1\System\SystemLocationReference',
         'scheduleDefaultDepartment' => 'Spinen\ConnectWise\Models\v2019_1\System\SystemDepartmentReference',
-        'scheduleCapacity' => 'number',
+        'scheduleCapacity' => 'float',
         'serviceLocation' => 'Spinen\ConnectWise\Models\v2019_1\System\ServiceLocationReference',
         'restrictScheduleFlag' => 'boolean',
         'hideMemberInDispatchPortalFlag' => 'boolean',

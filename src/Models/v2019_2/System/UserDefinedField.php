@@ -29,7 +29,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $removeAllBusinessUnits
  * @property boolean $addAllLocations
  * @property boolean $removeAllLocations
- * @property string $dateCreated
+ * @property Carbon\Carbon $dateCreated
  * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  */
 class UserDefinedField extends Model
@@ -60,7 +60,7 @@ class UserDefinedField extends Model
         'removeAllBusinessUnits' => 'boolean',
         'addAllLocations' => 'boolean',
         'removeAllLocations' => 'boolean',
-        'dateCreated' => 'string',
+        'dateCreated' => 'Carbon\Carbon',
         '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
     ];
 }

@@ -20,40 +20,40 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference $shipToCompany
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\SiteReference $shipToSite
  * @property string $invoiceNumber
- * @property string $invoiceDate
+ * @property Carbon\Carbon $invoiceDate
  * @property string $invoiceType
  * @property string $description
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\BillingTermsReference $billingTerms
  * @property string $dueDays
- * @property string $dueDate
+ * @property Carbon\Carbon $dueDate
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\CurrencyReference $currency
- * @property number $subTotal
- * @property number $total
+ * @property float $subTotal
+ * @property float $total
  * @property boolean $invoiceTaxableFlag
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\TaxCodeReference $taxCode
  * @property boolean $avalaraTaxFlag
  * @property boolean $itemTaxableFlag
- * @property number $salesTaxAmount
+ * @property float $salesTaxAmount
  * @property boolean $stateTaxFlag
  * @property string $stateTaxXref
- * @property number $stateTaxAmount
+ * @property float $stateTaxAmount
  * @property boolean $countyTaxFlag
  * @property string $countyTaxXref
- * @property number $countyTaxAmount
+ * @property float $countyTaxAmount
  * @property boolean $cityTaxFlag
  * @property string $cityTaxXref
- * @property number $cityTaxAmount
+ * @property float $cityTaxAmount
  * @property boolean $countryTaxFlag
  * @property string $countryTaxXref
- * @property number $countryTaxAmount
+ * @property float $countryTaxAmount
  * @property boolean $compositeTaxFlag
  * @property string $compositeTaxXref
- * @property number $compositeTaxAmount
+ * @property float $compositeTaxAmount
  * @property boolean $levelSixTaxFlag
  * @property string $levelSixTaxXref
- * @property number $levelSixTaxAmount
+ * @property float $levelSixTaxAmount
  * @property string $createdBy
- * @property string $dateClosed
+ * @property Carbon\Carbon $dateClosed
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\Metadata $_info
  */
 class UnpostedInvoice extends Model
@@ -75,40 +75,40 @@ class UnpostedInvoice extends Model
         'shipToCompany' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference',
         'shipToSite' => 'Spinen\ConnectWise\Models\v2018_6\Finance\SiteReference',
         'invoiceNumber' => 'string',
-        'invoiceDate' => 'string',
+        'invoiceDate' => 'Carbon\Carbon',
         'invoiceType' => 'string',
         'description' => 'string',
         'billingTerms' => 'Spinen\ConnectWise\Models\v2018_6\Finance\BillingTermsReference',
         'dueDays' => 'string',
-        'dueDate' => 'string',
+        'dueDate' => 'Carbon\Carbon',
         'currency' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CurrencyReference',
-        'subTotal' => 'number',
-        'total' => 'number',
+        'subTotal' => 'float',
+        'total' => 'float',
         'invoiceTaxableFlag' => 'boolean',
         'taxCode' => 'Spinen\ConnectWise\Models\v2018_6\Finance\TaxCodeReference',
         'avalaraTaxFlag' => 'boolean',
         'itemTaxableFlag' => 'boolean',
-        'salesTaxAmount' => 'number',
+        'salesTaxAmount' => 'float',
         'stateTaxFlag' => 'boolean',
         'stateTaxXref' => 'string',
-        'stateTaxAmount' => 'number',
+        'stateTaxAmount' => 'float',
         'countyTaxFlag' => 'boolean',
         'countyTaxXref' => 'string',
-        'countyTaxAmount' => 'number',
+        'countyTaxAmount' => 'float',
         'cityTaxFlag' => 'boolean',
         'cityTaxXref' => 'string',
-        'cityTaxAmount' => 'number',
+        'cityTaxAmount' => 'float',
         'countryTaxFlag' => 'boolean',
         'countryTaxXref' => 'string',
-        'countryTaxAmount' => 'number',
+        'countryTaxAmount' => 'float',
         'compositeTaxFlag' => 'boolean',
         'compositeTaxXref' => 'string',
-        'compositeTaxAmount' => 'number',
+        'compositeTaxAmount' => 'float',
         'levelSixTaxFlag' => 'boolean',
         'levelSixTaxXref' => 'string',
-        'levelSixTaxAmount' => 'number',
+        'levelSixTaxAmount' => 'float',
         'createdBy' => 'string',
-        'dateClosed' => 'string',
+        'dateClosed' => 'Carbon\Carbon',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
     ];
 }

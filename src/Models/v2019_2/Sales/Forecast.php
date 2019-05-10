@@ -11,14 +11,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property integer $id
  * @property string $name
- * @property number $revenue
- * @property number $cost
+ * @property float $revenue
+ * @property float $cost
  * @property string $type
  * @property Spinen\ConnectWise\Models\v2019_2\Sales\OpportunityStatusReference $status
  * @property boolean $includedFlag
  * @property Spinen\ConnectWise\Models\v2019_2\Sales\ProductRecurring $recurring
- * @property number $percent
- * @property number $margin
+ * @property float $percent
+ * @property float $margin
  * @property integer $opportunityId
  * @property string $QuoteNumber
  * @property string $QuoteName
@@ -34,14 +34,14 @@ class Forecast extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'revenue' => 'number',
-        'cost' => 'number',
+        'revenue' => 'float',
+        'cost' => 'float',
         'type' => 'string',
         'status' => 'Spinen\ConnectWise\Models\v2019_2\Sales\OpportunityStatusReference',
         'includedFlag' => 'boolean',
         'recurring' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ProductRecurring',
-        'percent' => 'number',
-        'margin' => 'number',
+        'percent' => 'float',
+        'margin' => 'float',
         'opportunityId' => 'integer',
         'QuoteNumber' => 'string',
         'QuoteName' => 'string',

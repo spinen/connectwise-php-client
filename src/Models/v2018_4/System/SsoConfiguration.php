@@ -19,8 +19,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $samlCertificateName
  * @property string $samlCertificateIssuedTo
  * @property string $samlCertificateThumbprint
- * @property string $samlCertificateValidFrom
- * @property string $samlCertificateValidTo
+ * @property Carbon\Carbon $samlCertificateValidFrom
+ * @property Carbon\Carbon $samlCertificateValidTo
  * @property array $locationIds
  * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
  */
@@ -42,8 +42,8 @@ class SsoConfiguration extends Model
         'samlCertificateName' => 'string',
         'samlCertificateIssuedTo' => 'string',
         'samlCertificateThumbprint' => 'string',
-        'samlCertificateValidFrom' => 'string',
-        'samlCertificateValidTo' => 'string',
+        'samlCertificateValidFrom' => 'Carbon\Carbon',
+        'samlCertificateValidTo' => 'Carbon\Carbon',
         'locationIds' => 'array',
         '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
     ];

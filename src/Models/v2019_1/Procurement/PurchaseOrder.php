@@ -26,33 +26,33 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $customerStreetLine1
  * @property string $customerStreetLine2
  * @property string $customerZip
- * @property string $dateClosed
+ * @property Carbon\Carbon $dateClosed
  * @property boolean $dropShipCustomerFlag
  * @property string $enteredBy
- * @property number $freightCost
+ * @property float $freightCost
  * @property string $freightPackingSlip
- * @property number $freightTaxTotal
+ * @property float $freightTaxTotal
  * @property string $internalNotes
  * @property integer $locationId
- * @property string $poDate
+ * @property Carbon\Carbon $poDate
  * @property string $poNumber
- * @property number $salesTax
- * @property string $shipmentDate
+ * @property float $salesTax
+ * @property Carbon\Carbon $shipmentDate
  * @property Spinen\ConnectWise\Models\v2019_1\Procurement\ShipmentMethodReference $shipmentMethod
  * @property string $shippingInstructions
  * @property Spinen\ConnectWise\Models\v2019_1\Procurement\PurchaseOrderStatusReference $status
- * @property number $subTotal
+ * @property float $subTotal
  * @property Spinen\ConnectWise\Models\v2019_1\Procurement\TaxCodeReference $taxCode
  * @property boolean $taxFreightFlag
  * @property boolean $taxPoFlag
  * @property Spinen\ConnectWise\Models\v2019_1\Procurement\BillingTermsReference $terms
- * @property number $total
+ * @property float $total
  * @property string $trackingNumber
  * @property boolean $updateShipmentInfo
  * @property boolean $updateVendorOrderNumber
  * @property Spinen\ConnectWise\Models\v2019_1\Procurement\CompanyReference $vendorCompany
  * @property Spinen\ConnectWise\Models\v2019_1\Procurement\ContactReference $vendorContact
- * @property string $vendorInvoiceDate
+ * @property Carbon\Carbon $vendorInvoiceDate
  * @property string $vendorInvoiceNumber
  * @property string $vendorOrderNumber
  * @property Spinen\ConnectWise\Models\v2019_1\Procurement\SiteReference $vendorSite
@@ -86,33 +86,33 @@ class PurchaseOrder extends Model
         'customerStreetLine1' => 'string',
         'customerStreetLine2' => 'string',
         'customerZip' => 'string',
-        'dateClosed' => 'string',
+        'dateClosed' => 'Carbon\Carbon',
         'dropShipCustomerFlag' => 'boolean',
         'enteredBy' => 'string',
-        'freightCost' => 'number',
+        'freightCost' => 'float',
         'freightPackingSlip' => 'string',
-        'freightTaxTotal' => 'number',
+        'freightTaxTotal' => 'float',
         'internalNotes' => 'string',
         'locationId' => 'integer',
-        'poDate' => 'string',
+        'poDate' => 'Carbon\Carbon',
         'poNumber' => 'string',
-        'salesTax' => 'number',
-        'shipmentDate' => 'string',
+        'salesTax' => 'float',
+        'shipmentDate' => 'Carbon\Carbon',
         'shipmentMethod' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\ShipmentMethodReference',
         'shippingInstructions' => 'string',
         'status' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\PurchaseOrderStatusReference',
-        'subTotal' => 'number',
+        'subTotal' => 'float',
         'taxCode' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\TaxCodeReference',
         'taxFreightFlag' => 'boolean',
         'taxPoFlag' => 'boolean',
         'terms' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\BillingTermsReference',
-        'total' => 'number',
+        'total' => 'float',
         'trackingNumber' => 'string',
         'updateShipmentInfo' => 'boolean',
         'updateVendorOrderNumber' => 'boolean',
         'vendorCompany' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\CompanyReference',
         'vendorContact' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\ContactReference',
-        'vendorInvoiceDate' => 'string',
+        'vendorInvoiceDate' => 'Carbon\Carbon',
         'vendorInvoiceNumber' => 'string',
         'vendorOrderNumber' => 'string',
         'vendorSite' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\SiteReference',

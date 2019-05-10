@@ -11,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property string $id
  * @property string $documentType
- * @property string $documentDate
+ * @property Carbon\Carbon $documentDate
  * @property string $glTypeID
  * @property string $accountNumber
  * @property string $memo
@@ -29,7 +29,7 @@ class GLExportAdjustmentTransaction extends Model
     protected $casts = [
         'id' => 'string',
         'documentType' => 'string',
-        'documentDate' => 'string',
+        'documentDate' => 'Carbon\Carbon',
         'glTypeID' => 'string',
         'accountNumber' => 'string',
         'memo' => 'string',

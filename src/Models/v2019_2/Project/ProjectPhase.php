@@ -23,31 +23,31 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $billProducts
  * @property boolean $markAsMilestoneFlag
  * @property string $notes
- * @property string $deadlineDate
+ * @property Carbon\Carbon $deadlineDate
  * @property boolean $billSeparatelyFlag
  * @property string $billingMethod
- * @property number $scheduledHours
+ * @property float $scheduledHours
  * @property string $scheduledStart
  * @property string $scheduledEnd
- * @property number $actualHours
+ * @property float $actualHours
  * @property string $actualStart
  * @property string $actualEnd
- * @property number $budgetHours
+ * @property float $budgetHours
  * @property integer $locationId
  * @property integer $businessUnitId
- * @property number $hourlyRate
- * @property string $billingStartDate
+ * @property float $hourlyRate
+ * @property Carbon\Carbon $billingStartDate
  * @property boolean $billPhaseClosedFlag
  * @property boolean $billProjectClosedFlag
- * @property number $downpayment
+ * @property float $downpayment
  * @property string $poNumber
- * @property number $poAmount
- * @property number $estimatedTimeCost
- * @property number $estimatedExpenseCost
- * @property number $estimatedProductCost
- * @property number $estimatedTimeRevenue
- * @property number $estimatedExpenseRevenue
- * @property number $estimatedProductRevenue
+ * @property float $poAmount
+ * @property float $estimatedTimeCost
+ * @property float $estimatedExpenseCost
+ * @property float $estimatedProductCost
+ * @property float $estimatedTimeRevenue
+ * @property float $estimatedExpenseRevenue
+ * @property float $estimatedProductRevenue
  * @property Spinen\ConnectWise\Models\v2019_2\Project\CurrencyReference $currency
  * @property Spinen\ConnectWise\Models\v2019_2\Project\CompanyReference $billToCompany
  * @property Spinen\ConnectWise\Models\v2019_2\Project\ContactReference $billToContact
@@ -80,31 +80,31 @@ class ProjectPhase extends Model
         'billProducts' => 'string',
         'markAsMilestoneFlag' => 'boolean',
         'notes' => 'string',
-        'deadlineDate' => 'string',
+        'deadlineDate' => 'Carbon\Carbon',
         'billSeparatelyFlag' => 'boolean',
         'billingMethod' => 'string',
-        'scheduledHours' => 'number',
+        'scheduledHours' => 'float',
         'scheduledStart' => 'string',
         'scheduledEnd' => 'string',
-        'actualHours' => 'number',
+        'actualHours' => 'float',
         'actualStart' => 'string',
         'actualEnd' => 'string',
-        'budgetHours' => 'number',
+        'budgetHours' => 'float',
         'locationId' => 'integer',
         'businessUnitId' => 'integer',
-        'hourlyRate' => 'number',
-        'billingStartDate' => 'string',
+        'hourlyRate' => 'float',
+        'billingStartDate' => 'Carbon\Carbon',
         'billPhaseClosedFlag' => 'boolean',
         'billProjectClosedFlag' => 'boolean',
-        'downpayment' => 'number',
+        'downpayment' => 'float',
         'poNumber' => 'string',
-        'poAmount' => 'number',
-        'estimatedTimeCost' => 'number',
-        'estimatedExpenseCost' => 'number',
-        'estimatedProductCost' => 'number',
-        'estimatedTimeRevenue' => 'number',
-        'estimatedExpenseRevenue' => 'number',
-        'estimatedProductRevenue' => 'number',
+        'poAmount' => 'float',
+        'estimatedTimeCost' => 'float',
+        'estimatedExpenseCost' => 'float',
+        'estimatedProductCost' => 'float',
+        'estimatedTimeRevenue' => 'float',
+        'estimatedExpenseRevenue' => 'float',
+        'estimatedProductRevenue' => 'float',
         'currency' => 'Spinen\ConnectWise\Models\v2019_2\Project\CurrencyReference',
         'billToCompany' => 'Spinen\ConnectWise\Models\v2019_2\Project\CompanyReference',
         'billToContact' => 'Spinen\ConnectWise\Models\v2019_2\Project\ContactReference',

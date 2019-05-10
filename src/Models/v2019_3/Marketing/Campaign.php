@@ -14,8 +14,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_3\Marketing\CampaignTypeReference $type
  * @property Spinen\ConnectWise\Models\v2019_3\Marketing\CampaignSubTypeReference $subType
  * @property Spinen\ConnectWise\Models\v2019_3\Marketing\CampaignStatusReference $status
- * @property string $startDate
- * @property string $endDate
+ * @property Carbon\Carbon $startDate
+ * @property Carbon\Carbon $endDate
  * @property integer $locationId
  * @property Spinen\ConnectWise\Models\v2019_3\Marketing\MemberReference $member
  * @property boolean $inactive
@@ -25,14 +25,14 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $marketingManagerDefaultTrackId
  * @property integer $opportunityDefaultTrackId
  * @property integer $impressions
- * @property number $budgetRevenue
- * @property number $budgetCost
- * @property number $actualCost
- * @property number $budgetGrossMargin
- * @property number $budgetROI
- * @property number $actualRevenue
- * @property number $actualGrossMargin
- * @property number $actualROI
+ * @property float $budgetRevenue
+ * @property float $budgetCost
+ * @property float $actualCost
+ * @property float $budgetGrossMargin
+ * @property float $budgetROI
+ * @property float $actualRevenue
+ * @property float $actualGrossMargin
+ * @property float $actualROI
  * @property integer $emailsSent
  * @property Spinen\ConnectWise\Models\v2019_3\Marketing\Metadata $_info
  */
@@ -49,8 +49,8 @@ class Campaign extends Model
         'type' => 'Spinen\ConnectWise\Models\v2019_3\Marketing\CampaignTypeReference',
         'subType' => 'Spinen\ConnectWise\Models\v2019_3\Marketing\CampaignSubTypeReference',
         'status' => 'Spinen\ConnectWise\Models\v2019_3\Marketing\CampaignStatusReference',
-        'startDate' => 'string',
-        'endDate' => 'string',
+        'startDate' => 'Carbon\Carbon',
+        'endDate' => 'Carbon\Carbon',
         'locationId' => 'integer',
         'member' => 'Spinen\ConnectWise\Models\v2019_3\Marketing\MemberReference',
         'inactive' => 'boolean',
@@ -60,14 +60,14 @@ class Campaign extends Model
         'marketingManagerDefaultTrackId' => 'integer',
         'opportunityDefaultTrackId' => 'integer',
         'impressions' => 'integer',
-        'budgetRevenue' => 'number',
-        'budgetCost' => 'number',
-        'actualCost' => 'number',
-        'budgetGrossMargin' => 'number',
-        'budgetROI' => 'number',
-        'actualRevenue' => 'number',
-        'actualGrossMargin' => 'number',
-        'actualROI' => 'number',
+        'budgetRevenue' => 'float',
+        'budgetCost' => 'float',
+        'actualCost' => 'float',
+        'budgetGrossMargin' => 'float',
+        'budgetROI' => 'float',
+        'actualRevenue' => 'float',
+        'actualGrossMargin' => 'float',
+        'actualROI' => 'float',
         'emailsSent' => 'integer',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Marketing\Metadata',
     ];

@@ -13,7 +13,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_1\System\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2019_1\System\InOutTypeReference $inOutType
  * @property string $additionalInfo
- * @property string $dateBack
+ * @property Carbon\Carbon $dateBack
  * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  */
 class InOutBoard extends Model
@@ -28,7 +28,7 @@ class InOutBoard extends Model
         'member' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberReference',
         'inOutType' => 'Spinen\ConnectWise\Models\v2019_1\System\InOutTypeReference',
         'additionalInfo' => 'string',
-        'dateBack' => 'string',
+        'dateBack' => 'Carbon\Carbon',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
     ];
 }

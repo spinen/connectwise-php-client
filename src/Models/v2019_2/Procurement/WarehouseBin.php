@@ -14,14 +14,14 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_2\Procurement\WarehouseReference $warehouse
  * @property Spinen\ConnectWise\Models\v2019_2\Procurement\SystemLocationReference $location
  * @property Spinen\ConnectWise\Models\v2019_2\Procurement\SystemDepartmentReference $department
- * @property number $minQuantity
- * @property number $maxQuantity
+ * @property float $minQuantity
+ * @property float $maxQuantity
  * @property Spinen\ConnectWise\Models\v2019_2\Procurement\WarehouseBinReference $overflowBin
  * @property Spinen\ConnectWise\Models\v2019_2\Procurement\MemberReference $manager
- * @property number $length
- * @property number $width
- * @property number $height
- * @property number $weight
+ * @property float $length
+ * @property float $width
+ * @property float $height
+ * @property float $weight
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
  * @property integer $quantityOnHand
@@ -41,14 +41,14 @@ class WarehouseBin extends Model
         'warehouse' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\WarehouseReference',
         'location' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\SystemLocationReference',
         'department' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\SystemDepartmentReference',
-        'minQuantity' => 'number',
-        'maxQuantity' => 'number',
+        'minQuantity' => 'float',
+        'maxQuantity' => 'float',
         'overflowBin' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\WarehouseBinReference',
         'manager' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\MemberReference',
-        'length' => 'number',
-        'width' => 'number',
-        'height' => 'number',
-        'weight' => 'number',
+        'length' => 'float',
+        'width' => 'float',
+        'height' => 'float',
+        'weight' => 'float',
         'defaultFlag' => 'boolean',
         'inactiveFlag' => 'boolean',
         'quantityOnHand' => 'integer',

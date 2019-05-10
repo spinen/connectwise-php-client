@@ -22,8 +22,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_5\Sales\AgreementReference $agreement
  * @property Spinen\ConnectWise\Models\v2018_5\Sales\CampaignReference $campaign
  * @property string $notes
- * @property string $dateStart
- * @property string $dateEnd
+ * @property Carbon\Carbon $dateStart
+ * @property Carbon\Carbon $dateEnd
  * @property Spinen\ConnectWise\Models\v2018_5\Sales\MemberReference $assignedBy
  * @property Spinen\ConnectWise\Models\v2018_5\Sales\MemberReference $assignTo
  * @property Spinen\ConnectWise\Models\v2018_5\Sales\ScheduleStatusReference $scheduleStatus
@@ -56,8 +56,8 @@ class Activity extends Model
         'agreement' => 'Spinen\ConnectWise\Models\v2018_5\Sales\AgreementReference',
         'campaign' => 'Spinen\ConnectWise\Models\v2018_5\Sales\CampaignReference',
         'notes' => 'string',
-        'dateStart' => 'string',
-        'dateEnd' => 'string',
+        'dateStart' => 'Carbon\Carbon',
+        'dateEnd' => 'Carbon\Carbon',
         'assignedBy' => 'Spinen\ConnectWise\Models\v2018_5\Sales\MemberReference',
         'assignTo' => 'Spinen\ConnectWise\Models\v2018_5\Sales\MemberReference',
         'scheduleStatus' => 'Spinen\ConnectWise\Models\v2018_5\Sales\ScheduleStatusReference',

@@ -39,8 +39,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $disablePortalLoginFlag
  * @property boolean $unsubscribeFlag
  * @property string $gender
- * @property string $birthDay
- * @property string $anniversary
+ * @property Carbon\Carbon $birthDay
+ * @property Carbon\Carbon $anniversary
  * @property string $presence
  * @property Spinen\ConnectWise\Models\v2019_2\Company\Guid $mobileGuid
  * @property string $facebookUrl
@@ -91,8 +91,8 @@ class Contact extends Model
         'disablePortalLoginFlag' => 'boolean',
         'unsubscribeFlag' => 'boolean',
         'gender' => 'string',
-        'birthDay' => 'string',
-        'anniversary' => 'string',
+        'birthDay' => 'Carbon\Carbon',
+        'anniversary' => 'Carbon\Carbon',
         'presence' => 'string',
         'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_2\Company\Guid',
         'facebookUrl' => 'string',

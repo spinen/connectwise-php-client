@@ -18,7 +18,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $defaultFlag
  * @property Spinen\ConnectWise\Models\v2019_3\Sales\Metadata $_info
  * @property string $enteredBy
- * @property string $dateEntered
+ * @property Carbon\Carbon $dateEntered
  */
 class OpportunityStatus extends Model
 {
@@ -37,6 +37,6 @@ class OpportunityStatus extends Model
         'defaultFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Sales\Metadata',
         'enteredBy' => 'string',
-        'dateEntered' => 'string',
+        'dateEntered' => 'Carbon\Carbon',
     ];
 }

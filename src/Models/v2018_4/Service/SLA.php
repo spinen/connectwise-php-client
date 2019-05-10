@@ -24,11 +24,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_4\Service\PriorityReference $lowImpactHiUrgency
  * @property Spinen\ConnectWise\Models\v2018_4\Service\PriorityReference $lowImpactMedUrgency
  * @property Spinen\ConnectWise\Models\v2018_4\Service\PriorityReference $lowImpactLowUrgency
- * @property number $respondHours
+ * @property float $respondHours
  * @property integer $respondPercent
- * @property number $planWithin
+ * @property float $planWithin
  * @property integer $planWithinPercent
- * @property number $resolutionHours
+ * @property float $resolutionHours
  * @property integer $resolutionPercent
  * @property Spinen\ConnectWise\Models\v2018_4\Service\Metadata $_info
  */
@@ -55,11 +55,11 @@ class SLA extends Model
         'lowImpactHiUrgency' => 'Spinen\ConnectWise\Models\v2018_4\Service\PriorityReference',
         'lowImpactMedUrgency' => 'Spinen\ConnectWise\Models\v2018_4\Service\PriorityReference',
         'lowImpactLowUrgency' => 'Spinen\ConnectWise\Models\v2018_4\Service\PriorityReference',
-        'respondHours' => 'number',
+        'respondHours' => 'float',
         'respondPercent' => 'integer',
-        'planWithin' => 'number',
+        'planWithin' => 'float',
         'planWithinPercent' => 'integer',
-        'resolutionHours' => 'number',
+        'resolutionHours' => 'float',
         'resolutionPercent' => 'integer',
         '_info' => 'Spinen\ConnectWise\Models\v2018_4\Service\Metadata',
     ];

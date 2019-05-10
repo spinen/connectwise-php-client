@@ -10,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for GLExportExpenseOffset
  *
  * @property integer $id
- * @property string $documentDate
+ * @property Carbon\Carbon $documentDate
  * @property string $documentType
  * @property string $accountNumber
  * @property string $glTypeId
@@ -18,7 +18,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_4\Finance\MemberReference $member
  * @property string $memo
  * @property string $description
- * @property number $total
+ * @property float $total
  */
 class GLExportExpenseOffset extends Model
 {
@@ -29,7 +29,7 @@ class GLExportExpenseOffset extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'documentDate' => 'string',
+        'documentDate' => 'Carbon\Carbon',
         'documentType' => 'string',
         'accountNumber' => 'string',
         'glTypeId' => 'string',
@@ -37,6 +37,6 @@ class GLExportExpenseOffset extends Model
         'member' => 'Spinen\ConnectWise\Models\v2018_4\Finance\MemberReference',
         'memo' => 'string',
         'description' => 'string',
-        'total' => 'number',
+        'total' => 'float',
     ];
 }

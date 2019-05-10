@@ -15,24 +15,24 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $canceledFlag
  * @property string $canceledReason
  * @property boolean $closedFlag
- * @property string $dateCanceled
- * @property string $dateCanceledUtc
+ * @property Carbon\Carbon $dateCanceled
+ * @property Carbon\Carbon $dateCanceledUtc
  * @property string $description
  * @property boolean $displayInternalNotesFlag
- * @property string $expectedShipDate
+ * @property Carbon\Carbon $expectedShipDate
  * @property string $internalNotes
  * @property integer $lineNumber
  * @property string $packingSlip
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\IvItemReference $product
  * @property integer $purchaseOrderId
- * @property number $quantity
+ * @property float $quantity
  * @property integer $receivedQuantity
  * @property string $serialNumbers
- * @property string $shipDate
+ * @property Carbon\Carbon $shipDate
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\ShipmentMethodReference $shipmentMethod
- * @property number $tax
+ * @property float $tax
  * @property string $trackingNumber
- * @property number $unitCost
+ * @property float $unitCost
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\UnitOfMeasureReference $unitOfMeasure
  * @property string $vendorOrderNumber
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\WarehouseReference $warehouse
@@ -54,24 +54,24 @@ class PurchaseOrderLineItem extends Model
         'canceledFlag' => 'boolean',
         'canceledReason' => 'string',
         'closedFlag' => 'boolean',
-        'dateCanceled' => 'string',
-        'dateCanceledUtc' => 'string',
+        'dateCanceled' => 'Carbon\Carbon',
+        'dateCanceledUtc' => 'Carbon\Carbon',
         'description' => 'string',
         'displayInternalNotesFlag' => 'boolean',
-        'expectedShipDate' => 'string',
+        'expectedShipDate' => 'Carbon\Carbon',
         'internalNotes' => 'string',
         'lineNumber' => 'integer',
         'packingSlip' => 'string',
         'product' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\IvItemReference',
         'purchaseOrderId' => 'integer',
-        'quantity' => 'number',
+        'quantity' => 'float',
         'receivedQuantity' => 'integer',
         'serialNumbers' => 'string',
-        'shipDate' => 'string',
+        'shipDate' => 'Carbon\Carbon',
         'shipmentMethod' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\ShipmentMethodReference',
-        'tax' => 'number',
+        'tax' => 'float',
         'trackingNumber' => 'string',
-        'unitCost' => 'number',
+        'unitCost' => 'float',
         'unitOfMeasure' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\UnitOfMeasureReference',
         'vendorOrderNumber' => 'string',
         'warehouse' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\WarehouseReference',

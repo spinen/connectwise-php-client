@@ -10,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for Conversion
  *
  * @property integer $id
- * @property number $quantity
+ * @property float $quantity
  * @property Spinen\ConnectWise\Models\v2018_4\Procurement\UnitOfMeasureReference $uomType
  * @property Spinen\ConnectWise\Models\v2018_4\Procurement\UnitOfMeasureReference $parentUOM
  * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
@@ -24,7 +24,7 @@ class Conversion extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'quantity' => 'number',
+        'quantity' => 'float',
         'uomType' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\UnitOfMeasureReference',
         'parentUOM' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\UnitOfMeasureReference',
         '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',

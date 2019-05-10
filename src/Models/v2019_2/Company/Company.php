@@ -26,10 +26,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_2\Company\MarketDescriptionReference $market
  * @property string $accountNumber
  * @property Spinen\ConnectWise\Models\v2019_2\Company\ContactReference $defaultContact
- * @property string $dateAcquired
+ * @property Carbon\Carbon $dateAcquired
  * @property Spinen\ConnectWise\Models\v2019_2\Company\SicCodeReference $sicCode
  * @property Spinen\ConnectWise\Models\v2019_2\Company\CompanyReference $parentCompany
- * @property number $annualRevenue
+ * @property float $annualRevenue
  * @property integer $numberOfEmployees
  * @property Spinen\ConnectWise\Models\v2019_2\Company\OwnershipTypeReference $ownershipType
  * @property Spinen\ConnectWise\Models\v2019_2\Company\TimeZoneSetupReference $timeZoneSetup
@@ -61,7 +61,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $invoiceToEmailAddress
  * @property string $invoiceCCEmailAddress
  * @property boolean $deletedFlag
- * @property string $dateDeleted
+ * @property Carbon\Carbon $dateDeleted
  * @property string $deletedBy
  * @property Spinen\ConnectWise\Models\v2019_2\Company\Guid $mobileGuid
  * @property string $facebookUrl
@@ -98,10 +98,10 @@ class Company extends Model
         'market' => 'Spinen\ConnectWise\Models\v2019_2\Company\MarketDescriptionReference',
         'accountNumber' => 'string',
         'defaultContact' => 'Spinen\ConnectWise\Models\v2019_2\Company\ContactReference',
-        'dateAcquired' => 'string',
+        'dateAcquired' => 'Carbon\Carbon',
         'sicCode' => 'Spinen\ConnectWise\Models\v2019_2\Company\SicCodeReference',
         'parentCompany' => 'Spinen\ConnectWise\Models\v2019_2\Company\CompanyReference',
-        'annualRevenue' => 'number',
+        'annualRevenue' => 'float',
         'numberOfEmployees' => 'integer',
         'ownershipType' => 'Spinen\ConnectWise\Models\v2019_2\Company\OwnershipTypeReference',
         'timeZoneSetup' => 'Spinen\ConnectWise\Models\v2019_2\Company\TimeZoneSetupReference',
@@ -133,7 +133,7 @@ class Company extends Model
         'invoiceToEmailAddress' => 'string',
         'invoiceCCEmailAddress' => 'string',
         'deletedFlag' => 'boolean',
-        'dateDeleted' => 'string',
+        'dateDeleted' => 'Carbon\Carbon',
         'deletedBy' => 'string',
         'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_2\Company\Guid',
         'facebookUrl' => 'string',

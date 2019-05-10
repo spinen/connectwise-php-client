@@ -13,10 +13,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\WorkRoleReference $workRole
  * @property integer $locationId
  * @property string $rateType
- * @property number $rate
- * @property number $limitTo
- * @property string $effectiveDate
- * @property string $endingDate
+ * @property float $rate
+ * @property float $limitTo
+ * @property Carbon\Carbon $effectiveDate
+ * @property Carbon\Carbon $endingDate
  * @property integer $agreementId
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
  */
@@ -32,10 +32,10 @@ class AgreementWorkRole extends Model
         'workRole' => 'Spinen\ConnectWise\Models\v2018_5\Finance\WorkRoleReference',
         'locationId' => 'integer',
         'rateType' => 'string',
-        'rate' => 'number',
-        'limitTo' => 'number',
-        'effectiveDate' => 'string',
-        'endingDate' => 'string',
+        'rate' => 'float',
+        'limitTo' => 'float',
+        'effectiveDate' => 'Carbon\Carbon',
+        'endingDate' => 'Carbon\Carbon',
         'agreementId' => 'integer',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
     ];

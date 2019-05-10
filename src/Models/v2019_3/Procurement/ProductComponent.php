@@ -11,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property integer $id
  * @property integer $sequenceNumber
- * @property number $quantity
+ * @property float $quantity
  * @property Spinen\ConnectWise\Models\v2019_3\Procurement\CatalogItemReference $catalogItem
  * @property boolean $hidePriceFlag
  * @property boolean $hideItemIdentifierFlag
@@ -21,8 +21,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_3\Procurement\CompanyReference $vendor
  * @property Spinen\ConnectWise\Models\v2019_3\Procurement\ProductItemReference $parentProductItem
  * @property Spinen\ConnectWise\Models\v2019_3\Procurement\ProductItemReference $productItem
- * @property number $price
- * @property number $cost
+ * @property float $price
+ * @property float $cost
  * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
  */
 class ProductComponent extends Model
@@ -35,7 +35,7 @@ class ProductComponent extends Model
     protected $casts = [
         'id' => 'integer',
         'sequenceNumber' => 'integer',
-        'quantity' => 'number',
+        'quantity' => 'float',
         'catalogItem' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\CatalogItemReference',
         'hidePriceFlag' => 'boolean',
         'hideItemIdentifierFlag' => 'boolean',
@@ -45,8 +45,8 @@ class ProductComponent extends Model
         'vendor' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\CompanyReference',
         'parentProductItem' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\ProductItemReference',
         'productItem' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\ProductItemReference',
-        'price' => 'number',
-        'cost' => 'number',
+        'price' => 'float',
+        'cost' => 'float',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
     ];
 }

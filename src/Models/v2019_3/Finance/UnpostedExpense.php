@@ -20,43 +20,43 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $classification
  * @property string $glType
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\MemberReference $member
- * @property string $dateExpense
+ * @property Carbon\Carbon $dateExpense
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\ChargeCodeReference $chargeCode
  * @property string $chargeDescription
  * @property boolean $inPolicy
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\PaymentMethodReference $paymentMethod
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\CurrencyReference $currency
- * @property number $total
- * @property number $billableAmount
- * @property number $nonBillableAmount
+ * @property float $total
+ * @property float $billableAmount
+ * @property float $nonBillableAmount
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\AgreementReference $agreement
- * @property number $agreementAmountCovered
+ * @property float $agreementAmountCovered
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\TicketReference $ticket
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\ProjectReference $project
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\ProjectPhaseReference $projectPhase
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\TaxCodeReference $taxCode
  * @property boolean $avalaraTaxFlag
  * @property boolean $itemTaxableFlag
- * @property number $salesTaxAmount
+ * @property float $salesTaxAmount
  * @property boolean $stateTaxFlag
  * @property string $stateTaxXref
- * @property number $stateTaxAmount
+ * @property float $stateTaxAmount
  * @property boolean $countyTaxFlag
  * @property string $countyTaxXref
- * @property number $countyTaxAmount
+ * @property float $countyTaxAmount
  * @property boolean $cityTaxFlag
  * @property string $cityTaxXref
- * @property number $cityTaxAmount
+ * @property float $cityTaxAmount
  * @property boolean $countryTaxFlag
  * @property string $countryTaxXref
- * @property number $countryTaxAmount
+ * @property float $countryTaxAmount
  * @property boolean $compositeTaxFlag
  * @property string $compositeTaxXref
- * @property number $compositeTaxAmount
+ * @property float $compositeTaxAmount
  * @property boolean $levelSixTaxFlag
  * @property string $levelSixTaxXref
- * @property number $levelSixTaxAmount
- * @property string $dateClosed
+ * @property float $levelSixTaxAmount
+ * @property Carbon\Carbon $dateClosed
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\Metadata $_info
  */
 class UnpostedExpense extends Model
@@ -78,43 +78,43 @@ class UnpostedExpense extends Model
         'classification' => 'string',
         'glType' => 'string',
         'member' => 'Spinen\ConnectWise\Models\v2019_3\Finance\MemberReference',
-        'dateExpense' => 'string',
+        'dateExpense' => 'Carbon\Carbon',
         'chargeCode' => 'Spinen\ConnectWise\Models\v2019_3\Finance\ChargeCodeReference',
         'chargeDescription' => 'string',
         'inPolicy' => 'boolean',
         'paymentMethod' => 'Spinen\ConnectWise\Models\v2019_3\Finance\PaymentMethodReference',
         'currency' => 'Spinen\ConnectWise\Models\v2019_3\Finance\CurrencyReference',
-        'total' => 'number',
-        'billableAmount' => 'number',
-        'nonBillableAmount' => 'number',
+        'total' => 'float',
+        'billableAmount' => 'float',
+        'nonBillableAmount' => 'float',
         'agreement' => 'Spinen\ConnectWise\Models\v2019_3\Finance\AgreementReference',
-        'agreementAmountCovered' => 'number',
+        'agreementAmountCovered' => 'float',
         'ticket' => 'Spinen\ConnectWise\Models\v2019_3\Finance\TicketReference',
         'project' => 'Spinen\ConnectWise\Models\v2019_3\Finance\ProjectReference',
         'projectPhase' => 'Spinen\ConnectWise\Models\v2019_3\Finance\ProjectPhaseReference',
         'taxCode' => 'Spinen\ConnectWise\Models\v2019_3\Finance\TaxCodeReference',
         'avalaraTaxFlag' => 'boolean',
         'itemTaxableFlag' => 'boolean',
-        'salesTaxAmount' => 'number',
+        'salesTaxAmount' => 'float',
         'stateTaxFlag' => 'boolean',
         'stateTaxXref' => 'string',
-        'stateTaxAmount' => 'number',
+        'stateTaxAmount' => 'float',
         'countyTaxFlag' => 'boolean',
         'countyTaxXref' => 'string',
-        'countyTaxAmount' => 'number',
+        'countyTaxAmount' => 'float',
         'cityTaxFlag' => 'boolean',
         'cityTaxXref' => 'string',
-        'cityTaxAmount' => 'number',
+        'cityTaxAmount' => 'float',
         'countryTaxFlag' => 'boolean',
         'countryTaxXref' => 'string',
-        'countryTaxAmount' => 'number',
+        'countryTaxAmount' => 'float',
         'compositeTaxFlag' => 'boolean',
         'compositeTaxXref' => 'string',
-        'compositeTaxAmount' => 'number',
+        'compositeTaxAmount' => 'float',
         'levelSixTaxFlag' => 'boolean',
         'levelSixTaxXref' => 'string',
-        'levelSixTaxAmount' => 'number',
-        'dateClosed' => 'string',
+        'levelSixTaxAmount' => 'float',
+        'dateClosed' => 'Carbon\Carbon',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Finance\Metadata',
     ];
 }

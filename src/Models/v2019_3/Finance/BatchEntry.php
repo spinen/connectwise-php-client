@@ -13,9 +13,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $accountType
  * @property string $name
  * @property string $accountNumber
- * @property number $debit
- * @property number $credit
- * @property number $cost
+ * @property float $debit
+ * @property float $credit
+ * @property float $cost
  * @property string $item
  * @property string $salesCode
  * @property string $costOfGoodsSoldAccountNumber
@@ -39,9 +39,9 @@ class BatchEntry extends Model
         'accountType' => 'string',
         'name' => 'string',
         'accountNumber' => 'string',
-        'debit' => 'number',
-        'credit' => 'number',
-        'cost' => 'number',
+        'debit' => 'float',
+        'credit' => 'float',
+        'cost' => 'float',
         'item' => 'string',
         'salesCode' => 'string',
         'costOfGoodsSoldAccountNumber' => 'string',

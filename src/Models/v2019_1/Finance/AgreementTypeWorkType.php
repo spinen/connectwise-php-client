@@ -12,15 +12,15 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $id
  * @property Spinen\ConnectWise\Models\v2019_1\Finance\AgreementTypeReference $type
  * @property Spinen\ConnectWise\Models\v2019_1\Finance\WorkTypeReference $workType
- * @property string $effectiveDate
- * @property string $endingDate
- * @property number $rate
+ * @property Carbon\Carbon $effectiveDate
+ * @property Carbon\Carbon $endingDate
+ * @property float $rate
  * @property string $rateType
  * @property string $billTime
- * @property number $hoursMin
- * @property number $hoursMax
- * @property number $roundBillHours
- * @property number $overageRate
+ * @property float $hoursMin
+ * @property float $hoursMax
+ * @property float $roundBillHours
+ * @property float $overageRate
  * @property string $overageRateType
  * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
  */
@@ -35,15 +35,15 @@ class AgreementTypeWorkType extends Model
         'id' => 'integer',
         'type' => 'Spinen\ConnectWise\Models\v2019_1\Finance\AgreementTypeReference',
         'workType' => 'Spinen\ConnectWise\Models\v2019_1\Finance\WorkTypeReference',
-        'effectiveDate' => 'string',
-        'endingDate' => 'string',
-        'rate' => 'number',
+        'effectiveDate' => 'Carbon\Carbon',
+        'endingDate' => 'Carbon\Carbon',
+        'rate' => 'float',
         'rateType' => 'string',
         'billTime' => 'string',
-        'hoursMin' => 'number',
-        'hoursMax' => 'number',
-        'roundBillHours' => 'number',
-        'overageRate' => 'number',
+        'hoursMin' => 'float',
+        'hoursMax' => 'float',
+        'roundBillHours' => 'float',
+        'overageRate' => 'float',
         'overageRateType' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
     ];

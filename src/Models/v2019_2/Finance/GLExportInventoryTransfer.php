@@ -11,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property string $id
  * @property string $documentType
- * @property string $documentDate
+ * @property Carbon\Carbon $documentDate
  * @property string $accountNumber
  * @property string $glClass
  * @property string $glTypeId
@@ -26,12 +26,12 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $salesDescription
  * @property string $itemDescription
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference $currency
- * @property number $itemPrice
+ * @property float $itemPrice
  * @property boolean $taxable
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\UnitOfMeasureReference $unitOfMeasure
- * @property number $quantity
- * @property number $cost
- * @property number $total
+ * @property float $quantity
+ * @property float $cost
+ * @property float $total
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\ProductSubCategoryReference $subCategory
  * @property boolean $serializedFlag
  * @property string $serialNumbers
@@ -62,7 +62,7 @@ class GLExportInventoryTransfer extends Model
     protected $casts = [
         'id' => 'string',
         'documentType' => 'string',
-        'documentDate' => 'string',
+        'documentDate' => 'Carbon\Carbon',
         'accountNumber' => 'string',
         'glClass' => 'string',
         'glTypeId' => 'string',
@@ -77,12 +77,12 @@ class GLExportInventoryTransfer extends Model
         'salesDescription' => 'string',
         'itemDescription' => 'string',
         'currency' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference',
-        'itemPrice' => 'number',
+        'itemPrice' => 'float',
         'taxable' => 'boolean',
         'unitOfMeasure' => 'Spinen\ConnectWise\Models\v2019_2\Finance\UnitOfMeasureReference',
-        'quantity' => 'number',
-        'cost' => 'number',
-        'total' => 'number',
+        'quantity' => 'float',
+        'cost' => 'float',
+        'total' => 'float',
         'subCategory' => 'Spinen\ConnectWise\Models\v2019_2\Finance\ProductSubCategoryReference',
         'serializedFlag' => 'boolean',
         'serialNumbers' => 'string',

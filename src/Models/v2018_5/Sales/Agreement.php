@@ -22,18 +22,18 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $businessUnitId
  * @property boolean $restrictLocationFlag
  * @property boolean $restrictDepartmentFlag
- * @property string $startDate
- * @property string $endDate
+ * @property Carbon\Carbon $startDate
+ * @property Carbon\Carbon $endDate
  * @property boolean $noEndingDateFlag
  * @property Spinen\ConnectWise\Models\v2018_5\Sales\OpportunityReference $opportunity
  * @property boolean $cancelledFlag
- * @property string $dateCancelled
+ * @property Carbon\Carbon $dateCancelled
  * @property string $reasonCancelled
  * @property integer $slaId
  * @property string $workOrder
  * @property string $internalNotes
  * @property string $applicationUnits
- * @property number $applicationLimit
+ * @property float $applicationLimit
  * @property string $applicationCycle
  * @property boolean $applicationUnlimitedFlag
  * @property boolean $oneTimeFlag
@@ -49,18 +49,18 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $chargeToFirm
  * @property string $employeeCompRate
  * @property string $employeeCompNotExceed
- * @property number $compHourlyRate
- * @property number $compLimitAmount
+ * @property float $compHourlyRate
+ * @property float $compLimitAmount
  * @property integer $billCycleId
  * @property boolean $billOneTimeFlag
  * @property integer $billTermsId
  * @property string $invoicingCycle
  * @property Spinen\ConnectWise\Models\v2018_5\Sales\CompanyReference $billToCompany
  * @property Spinen\ConnectWise\Models\v2018_5\Sales\SiteReference $billToSite
- * @property number $billAmount
+ * @property float $billAmount
  * @property boolean $taxable
- * @property number $prorateFirstBill
- * @property string $billStartDate
+ * @property float $prorateFirstBill
+ * @property Carbon\Carbon $billStartDate
  * @property integer $taxCodeId
  * @property boolean $restrictDownPayment
  * @property boolean $prorateFlag
@@ -103,18 +103,18 @@ class Agreement extends Model
         'businessUnitId' => 'integer',
         'restrictLocationFlag' => 'boolean',
         'restrictDepartmentFlag' => 'boolean',
-        'startDate' => 'string',
-        'endDate' => 'string',
+        'startDate' => 'Carbon\Carbon',
+        'endDate' => 'Carbon\Carbon',
         'noEndingDateFlag' => 'boolean',
         'opportunity' => 'Spinen\ConnectWise\Models\v2018_5\Sales\OpportunityReference',
         'cancelledFlag' => 'boolean',
-        'dateCancelled' => 'string',
+        'dateCancelled' => 'Carbon\Carbon',
         'reasonCancelled' => 'string',
         'slaId' => 'integer',
         'workOrder' => 'string',
         'internalNotes' => 'string',
         'applicationUnits' => 'string',
-        'applicationLimit' => 'number',
+        'applicationLimit' => 'float',
         'applicationCycle' => 'string',
         'applicationUnlimitedFlag' => 'boolean',
         'oneTimeFlag' => 'boolean',
@@ -130,18 +130,18 @@ class Agreement extends Model
         'chargeToFirm' => 'boolean',
         'employeeCompRate' => 'string',
         'employeeCompNotExceed' => 'string',
-        'compHourlyRate' => 'number',
-        'compLimitAmount' => 'number',
+        'compHourlyRate' => 'float',
+        'compLimitAmount' => 'float',
         'billCycleId' => 'integer',
         'billOneTimeFlag' => 'boolean',
         'billTermsId' => 'integer',
         'invoicingCycle' => 'string',
         'billToCompany' => 'Spinen\ConnectWise\Models\v2018_5\Sales\CompanyReference',
         'billToSite' => 'Spinen\ConnectWise\Models\v2018_5\Sales\SiteReference',
-        'billAmount' => 'number',
+        'billAmount' => 'float',
         'taxable' => 'boolean',
-        'prorateFirstBill' => 'number',
-        'billStartDate' => 'string',
+        'prorateFirstBill' => 'float',
+        'billStartDate' => 'Carbon\Carbon',
         'taxCodeId' => 'integer',
         'restrictDownPayment' => 'boolean',
         'prorateFlag' => 'boolean',

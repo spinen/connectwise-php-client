@@ -11,10 +11,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property integer $id
  * @property string $name
- * @property number $marginLeft
- * @property number $marginRight
- * @property number $marginTop
- * @property number $marginBottom
+ * @property float $marginLeft
+ * @property float $marginRight
+ * @property float $marginTop
+ * @property float $marginBottom
  * @property boolean $logoVisibleFlag
  * @property string $headerLogoPosition
  * @property boolean $remitToVisibleFlag
@@ -82,10 +82,10 @@ class InvoiceTemplate extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'marginLeft' => 'number',
-        'marginRight' => 'number',
-        'marginTop' => 'number',
-        'marginBottom' => 'number',
+        'marginLeft' => 'float',
+        'marginRight' => 'float',
+        'marginTop' => 'float',
+        'marginBottom' => 'float',
         'logoVisibleFlag' => 'boolean',
         'headerLogoPosition' => 'string',
         'remitToVisibleFlag' => 'boolean',

@@ -14,19 +14,19 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $vacationFlag
  * @property string $vacationAvailableType
  * @property boolean $vacationCarryoverAllowedFlag
- * @property number $vacationCarryoverLimit
+ * @property float $vacationCarryoverLimit
  * @property boolean $sickFlag
  * @property string $sickAvailableType
  * @property boolean $sickCarryoverAllowedFlag
- * @property number $sickCarryoverLimit
+ * @property float $sickCarryoverLimit
  * @property boolean $ptoFlag
  * @property string $ptoAvailableType
  * @property boolean $ptoCarryoverAllowedFlag
- * @property number $ptoCarryoverLimit
+ * @property float $ptoCarryoverLimit
  * @property boolean $holidayFlag
  * @property string $holidayAvailableType
  * @property boolean $holidayCarryoverAllowedFlag
- * @property number $holidayCarryoverLimit
+ * @property float $holidayCarryoverLimit
  * @property Spinen\ConnectWise\Models\v2018_6\Time\Metadata $_info
  */
 class TimeAccrual extends Model
@@ -42,19 +42,19 @@ class TimeAccrual extends Model
         'vacationFlag' => 'boolean',
         'vacationAvailableType' => 'string',
         'vacationCarryoverAllowedFlag' => 'boolean',
-        'vacationCarryoverLimit' => 'number',
+        'vacationCarryoverLimit' => 'float',
         'sickFlag' => 'boolean',
         'sickAvailableType' => 'string',
         'sickCarryoverAllowedFlag' => 'boolean',
-        'sickCarryoverLimit' => 'number',
+        'sickCarryoverLimit' => 'float',
         'ptoFlag' => 'boolean',
         'ptoAvailableType' => 'string',
         'ptoCarryoverAllowedFlag' => 'boolean',
-        'ptoCarryoverLimit' => 'number',
+        'ptoCarryoverLimit' => 'float',
         'holidayFlag' => 'boolean',
         'holidayAvailableType' => 'string',
         'holidayCarryoverAllowedFlag' => 'boolean',
-        'holidayCarryoverLimit' => 'number',
+        'holidayCarryoverLimit' => 'float',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Time\Metadata',
     ];
 }

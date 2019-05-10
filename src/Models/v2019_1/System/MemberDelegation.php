@@ -12,8 +12,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $id
  * @property string $delegationType
  * @property Spinen\ConnectWise\Models\v2019_1\System\MemberReference $delegatedTo
- * @property string $dateStart
- * @property string $dateEnd
+ * @property Carbon\Carbon $dateStart
+ * @property Carbon\Carbon $dateEnd
  * @property Spinen\ConnectWise\Models\v2019_1\System\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  */
@@ -28,8 +28,8 @@ class MemberDelegation extends Model
         'id' => 'integer',
         'delegationType' => 'string',
         'delegatedTo' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberReference',
-        'dateStart' => 'string',
-        'dateEnd' => 'string',
+        'dateStart' => 'Carbon\Carbon',
+        'dateEnd' => 'Carbon\Carbon',
         'member' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberReference',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
     ];

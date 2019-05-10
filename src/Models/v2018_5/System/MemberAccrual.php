@@ -12,7 +12,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $id
  * @property string $accrualType
  * @property integer $year
- * @property number $hours
+ * @property float $hours
  * @property string $reason
  * @property Spinen\ConnectWise\Models\v2018_5\System\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
@@ -28,7 +28,7 @@ class MemberAccrual extends Model
         'id' => 'integer',
         'accrualType' => 'string',
         'year' => 'integer',
-        'hours' => 'number',
+        'hours' => 'float',
         'reason' => 'string',
         'member' => 'Spinen\ConnectWise\Models\v2018_5\System\MemberReference',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',

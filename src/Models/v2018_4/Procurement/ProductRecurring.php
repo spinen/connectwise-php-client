@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  * 
  * Model for ProductRecurring
  *
- * @property number $recurringRevenue
- * @property number $recurringCost
- * @property string $startDate
- * @property string $endDate
+ * @property float $recurringRevenue
+ * @property float $recurringCost
+ * @property Carbon\Carbon $startDate
+ * @property Carbon\Carbon $endDate
  * @property integer $billCycleId
  * @property integer $cycles
  * @property string $cycleType
@@ -25,10 +25,10 @@ class ProductRecurring extends Model
      * @var array
      */
     protected $casts = [
-        'recurringRevenue' => 'number',
-        'recurringCost' => 'number',
-        'startDate' => 'string',
-        'endDate' => 'string',
+        'recurringRevenue' => 'float',
+        'recurringCost' => 'float',
+        'startDate' => 'Carbon\Carbon',
+        'endDate' => 'Carbon\Carbon',
         'billCycleId' => 'integer',
         'cycles' => 'integer',
         'cycleType' => 'string',

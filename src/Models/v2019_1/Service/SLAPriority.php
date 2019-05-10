@@ -11,11 +11,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property integer $id
  * @property Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference $priority
- * @property number $respondHours
+ * @property float $respondHours
  * @property integer $respondPercent
- * @property number $planWithin
+ * @property float $planWithin
  * @property integer $planWithinPercent
- * @property number $resolutionHours
+ * @property float $resolutionHours
  * @property integer $resolutionPercent
  * @property Spinen\ConnectWise\Models\v2019_1\Service\SLAReference $sla
  * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
@@ -30,11 +30,11 @@ class SLAPriority extends Model
     protected $casts = [
         'id' => 'integer',
         'priority' => 'Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference',
-        'respondHours' => 'number',
+        'respondHours' => 'float',
         'respondPercent' => 'integer',
-        'planWithin' => 'number',
+        'planWithin' => 'float',
         'planWithinPercent' => 'integer',
-        'resolutionHours' => 'number',
+        'resolutionHours' => 'float',
         'resolutionPercent' => 'integer',
         'sla' => 'Spinen\ConnectWise\Models\v2019_1\Service\SLAReference',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',

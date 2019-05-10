@@ -16,7 +16,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $notes
  * @property boolean $closedFlag
  * @property string $closedBy
- * @property string $closedDate
+ * @property Carbon\Carbon $closedDate
  * @property array $adjustmentDetails
  * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
  */
@@ -35,7 +35,7 @@ class Adjustment extends Model
         'notes' => 'string',
         'closedFlag' => 'boolean',
         'closedBy' => 'string',
-        'closedDate' => 'string',
+        'closedDate' => 'Carbon\Carbon',
         'adjustmentDetails' => 'array',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
     ];

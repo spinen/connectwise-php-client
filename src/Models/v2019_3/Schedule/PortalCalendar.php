@@ -13,13 +13,13 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $weekStart
  * @property string $adjust1Start
  * @property string $adjust1End
- * @property number $adjust1Hours
+ * @property float $adjust1Hours
  * @property string $adjust2Start
  * @property string $adjust2End
- * @property number $adjust2Hours
+ * @property float $adjust2Hours
  * @property string $adjust3Start
  * @property string $adjust3End
- * @property number $adjust3Hours
+ * @property float $adjust3Hours
  * @property Spinen\ConnectWise\Models\v2019_3\Schedule\Metadata $_info
  */
 class PortalCalendar extends Model
@@ -34,13 +34,13 @@ class PortalCalendar extends Model
         'weekStart' => 'string',
         'adjust1Start' => 'string',
         'adjust1End' => 'string',
-        'adjust1Hours' => 'number',
+        'adjust1Hours' => 'float',
         'adjust2Start' => 'string',
         'adjust2End' => 'string',
-        'adjust2Hours' => 'number',
+        'adjust2Hours' => 'float',
         'adjust3Start' => 'string',
         'adjust3End' => 'string',
-        'adjust3Hours' => 'number',
+        'adjust3Hours' => 'float',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\Metadata',
     ];
 }

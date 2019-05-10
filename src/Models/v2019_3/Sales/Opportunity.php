@@ -11,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property integer $id
  * @property string $name
- * @property string $expectedCloseDate
+ * @property Carbon\Carbon $expectedCloseDate
  * @property Spinen\ConnectWise\Models\v2019_3\Sales\OpportunityTypeReference $type
  * @property Spinen\ConnectWise\Models\v2019_3\Sales\OpportunityStageReference $stage
  * @property Spinen\ConnectWise\Models\v2019_3\Sales\OpportunityStatusReference $status
@@ -29,11 +29,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_3\Sales\ContactReference $contact
  * @property Spinen\ConnectWise\Models\v2019_3\Sales\SiteReference $site
  * @property string $customerPO
- * @property string $pipelineChangeDate
- * @property string $dateBecameLead
- * @property string $closedDate
+ * @property Carbon\Carbon $pipelineChangeDate
+ * @property Carbon\Carbon $dateBecameLead
+ * @property Carbon\Carbon $closedDate
  * @property Spinen\ConnectWise\Models\v2019_3\Sales\MemberReference $closedBy
- * @property number $totalSalesTax
+ * @property float $totalSalesTax
  * @property Spinen\ConnectWise\Models\v2019_3\Sales\CompanyReference $shipToCompany
  * @property Spinen\ConnectWise\Models\v2019_3\Sales\ContactReference $shipToContact
  * @property Spinen\ConnectWise\Models\v2019_3\Sales\SiteReference $shipToSite
@@ -58,7 +58,7 @@ class Opportunity extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'expectedCloseDate' => 'string',
+        'expectedCloseDate' => 'Carbon\Carbon',
         'type' => 'Spinen\ConnectWise\Models\v2019_3\Sales\OpportunityTypeReference',
         'stage' => 'Spinen\ConnectWise\Models\v2019_3\Sales\OpportunityStageReference',
         'status' => 'Spinen\ConnectWise\Models\v2019_3\Sales\OpportunityStatusReference',
@@ -76,11 +76,11 @@ class Opportunity extends Model
         'contact' => 'Spinen\ConnectWise\Models\v2019_3\Sales\ContactReference',
         'site' => 'Spinen\ConnectWise\Models\v2019_3\Sales\SiteReference',
         'customerPO' => 'string',
-        'pipelineChangeDate' => 'string',
-        'dateBecameLead' => 'string',
-        'closedDate' => 'string',
+        'pipelineChangeDate' => 'Carbon\Carbon',
+        'dateBecameLead' => 'Carbon\Carbon',
+        'closedDate' => 'Carbon\Carbon',
         'closedBy' => 'Spinen\ConnectWise\Models\v2019_3\Sales\MemberReference',
-        'totalSalesTax' => 'number',
+        'totalSalesTax' => 'float',
         'shipToCompany' => 'Spinen\ConnectWise\Models\v2019_3\Sales\CompanyReference',
         'shipToContact' => 'Spinen\ConnectWise\Models\v2019_3\Sales\ContactReference',
         'shipToSite' => 'Spinen\ConnectWise\Models\v2019_3\Sales\SiteReference',

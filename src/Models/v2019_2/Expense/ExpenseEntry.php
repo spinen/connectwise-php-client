@@ -18,20 +18,20 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2019_2\Expense\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2019_2\Expense\PaymentMethodReference $paymentMethod
  * @property Spinen\ConnectWise\Models\v2019_2\Expense\ClassificationReference $classification
- * @property number $amount
+ * @property float $amount
  * @property string $billableOption
- * @property string $date
+ * @property Carbon\Carbon $date
  * @property integer $locationId
  * @property integer $businessUnitId
  * @property string $notes
  * @property Spinen\ConnectWise\Models\v2019_2\Expense\AgreementReference $agreement
- * @property number $invoiceAmount
+ * @property float $invoiceAmount
  * @property Spinen\ConnectWise\Models\v2019_2\Expense\Guid $mobileGuid
  * @property array $taxes
  * @property Spinen\ConnectWise\Models\v2019_2\Expense\InvoiceReference $invoice
  * @property Spinen\ConnectWise\Models\v2019_2\Expense\CurrencyReference $currency
  * @property string $status
- * @property number $billAmount
+ * @property float $billAmount
  * @property Spinen\ConnectWise\Models\v2019_2\Expense\Metadata $_info
  * @property array $customFields
  */
@@ -52,20 +52,20 @@ class ExpenseEntry extends Model
         'member' => 'Spinen\ConnectWise\Models\v2019_2\Expense\MemberReference',
         'paymentMethod' => 'Spinen\ConnectWise\Models\v2019_2\Expense\PaymentMethodReference',
         'classification' => 'Spinen\ConnectWise\Models\v2019_2\Expense\ClassificationReference',
-        'amount' => 'number',
+        'amount' => 'float',
         'billableOption' => 'string',
-        'date' => 'string',
+        'date' => 'Carbon\Carbon',
         'locationId' => 'integer',
         'businessUnitId' => 'integer',
         'notes' => 'string',
         'agreement' => 'Spinen\ConnectWise\Models\v2019_2\Expense\AgreementReference',
-        'invoiceAmount' => 'number',
+        'invoiceAmount' => 'float',
         'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_2\Expense\Guid',
         'taxes' => 'array',
         'invoice' => 'Spinen\ConnectWise\Models\v2019_2\Expense\InvoiceReference',
         'currency' => 'Spinen\ConnectWise\Models\v2019_2\Expense\CurrencyReference',
         'status' => 'string',
-        'billAmount' => 'number',
+        'billAmount' => 'float',
         '_info' => 'Spinen\ConnectWise\Models\v2019_2\Expense\Metadata',
         'customFields' => 'array',
     ];

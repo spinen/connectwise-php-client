@@ -12,7 +12,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $id
  * @property string $glClass
  * @property string $glTypeId
- * @property string $documentDate
+ * @property Carbon\Carbon $documentDate
  * @property string $documentNumber
  * @property string $documentType
  * @property string $memo
@@ -26,7 +26,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\BillingTermsReference $billingTerms
  * @property string $billingTermsXref
  * @property integer $dueDays
- * @property string $dueDate
+ * @property Carbon\Carbon $dueDate
  * @property boolean $emailDeliveryFlag
  * @property boolean $printDeliveryFlag
  * @property boolean $agreementPrePaymentFlag
@@ -36,24 +36,24 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\PurchaseOrderReference $purchaseOrder
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\ProjectReference $project
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\CurrencyReference $currency
- * @property number $total
+ * @property float $total
  * @property string $salesRepId
  * @property string $salesRepName
  * @property boolean $taxable
- * @property number $taxableTotal
+ * @property float $taxableTotal
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\TaxCodeReference $taxCode
- * @property number $taxGroupRate
+ * @property float $taxGroupRate
  * @property boolean $piggyBackFlag
  * @property string $taxAccountNumber
- * @property number $salesTax
- * @property number $stateTax
- * @property number $countyTax
- * @property number $cityTax
- * @property number $taxableAmount1
- * @property number $taxableAmount2
- * @property number $taxableAmount3
- * @property number $taxableAmount4
- * @property number $taxableAmount5
+ * @property float $salesTax
+ * @property float $stateTax
+ * @property float $countyTax
+ * @property float $cityTax
+ * @property float $taxableAmount1
+ * @property float $taxableAmount2
+ * @property float $taxableAmount3
+ * @property float $taxableAmount4
+ * @property float $taxableAmount5
  * @property string $taxAgencyXref
  * @property string $stateTaxXref
  * @property string $countyTaxXref
@@ -81,7 +81,7 @@ class GLExportTransaction extends Model
         'id' => 'integer',
         'glClass' => 'string',
         'glTypeId' => 'string',
-        'documentDate' => 'string',
+        'documentDate' => 'Carbon\Carbon',
         'documentNumber' => 'string',
         'documentType' => 'string',
         'memo' => 'string',
@@ -95,7 +95,7 @@ class GLExportTransaction extends Model
         'billingTerms' => 'Spinen\ConnectWise\Models\v2018_5\Finance\BillingTermsReference',
         'billingTermsXref' => 'string',
         'dueDays' => 'integer',
-        'dueDate' => 'string',
+        'dueDate' => 'Carbon\Carbon',
         'emailDeliveryFlag' => 'boolean',
         'printDeliveryFlag' => 'boolean',
         'agreementPrePaymentFlag' => 'boolean',
@@ -105,24 +105,24 @@ class GLExportTransaction extends Model
         'purchaseOrder' => 'Spinen\ConnectWise\Models\v2018_5\Finance\PurchaseOrderReference',
         'project' => 'Spinen\ConnectWise\Models\v2018_5\Finance\ProjectReference',
         'currency' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CurrencyReference',
-        'total' => 'number',
+        'total' => 'float',
         'salesRepId' => 'string',
         'salesRepName' => 'string',
         'taxable' => 'boolean',
-        'taxableTotal' => 'number',
+        'taxableTotal' => 'float',
         'taxCode' => 'Spinen\ConnectWise\Models\v2018_5\Finance\TaxCodeReference',
-        'taxGroupRate' => 'number',
+        'taxGroupRate' => 'float',
         'piggyBackFlag' => 'boolean',
         'taxAccountNumber' => 'string',
-        'salesTax' => 'number',
-        'stateTax' => 'number',
-        'countyTax' => 'number',
-        'cityTax' => 'number',
-        'taxableAmount1' => 'number',
-        'taxableAmount2' => 'number',
-        'taxableAmount3' => 'number',
-        'taxableAmount4' => 'number',
-        'taxableAmount5' => 'number',
+        'salesTax' => 'float',
+        'stateTax' => 'float',
+        'countyTax' => 'float',
+        'cityTax' => 'float',
+        'taxableAmount1' => 'float',
+        'taxableAmount2' => 'float',
+        'taxableAmount3' => 'float',
+        'taxableAmount4' => 'float',
+        'taxableAmount5' => 'float',
         'taxAgencyXref' => 'string',
         'stateTaxXref' => 'string',
         'countyTaxXref' => 'string',

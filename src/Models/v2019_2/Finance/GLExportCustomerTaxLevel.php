@@ -9,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  * 
  * Model for GLExportCustomerTaxLevel
  *
- * @property number $taxRate
+ * @property float $taxRate
  * @property string $taxCodeXref
  * @property string $agencyXref
  * @property integer $taxLevel
@@ -22,7 +22,7 @@ class GLExportCustomerTaxLevel extends Model
      * @var array
      */
     protected $casts = [
-        'taxRate' => 'number',
+        'taxRate' => 'float',
         'taxCodeXref' => 'string',
         'agencyXref' => 'string',
         'taxLevel' => 'integer',

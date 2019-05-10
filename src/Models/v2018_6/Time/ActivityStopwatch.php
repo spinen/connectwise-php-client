@@ -15,15 +15,15 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_6\Time\AgreementReference $agreement
  * @property string $billableOption
  * @property integer $businessUnitId
- * @property string $dateEntered
- * @property string $endTime
+ * @property Carbon\Carbon $dateEntered
+ * @property Carbon\Carbon $endTime
  * @property integer $id
  * @property string $internalNotes
  * @property integer $locationId
  * @property Spinen\ConnectWise\Models\v2018_6\Time\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2018_6\Time\Guid $mobileGuid
  * @property string $notes
- * @property string $startTime
+ * @property Carbon\Carbon $startTime
  * @property string $status
  * @property integer $totalPauseTime
  * @property Spinen\ConnectWise\Models\v2018_6\Time\WorkRoleReference $workRole
@@ -43,15 +43,15 @@ class ActivityStopwatch extends Model
         'agreement' => 'Spinen\ConnectWise\Models\v2018_6\Time\AgreementReference',
         'billableOption' => 'string',
         'businessUnitId' => 'integer',
-        'dateEntered' => 'string',
-        'endTime' => 'string',
+        'dateEntered' => 'Carbon\Carbon',
+        'endTime' => 'Carbon\Carbon',
         'id' => 'integer',
         'internalNotes' => 'string',
         'locationId' => 'integer',
         'member' => 'Spinen\ConnectWise\Models\v2018_6\Time\MemberReference',
         'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_6\Time\Guid',
         'notes' => 'string',
-        'startTime' => 'string',
+        'startTime' => 'Carbon\Carbon',
         'status' => 'string',
         'totalPauseTime' => 'integer',
         'workRole' => 'Spinen\ConnectWise\Models\v2018_6\Time\WorkRoleReference',

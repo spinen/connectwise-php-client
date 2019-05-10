@@ -12,7 +12,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $id
  * @property string $name
  * @property Spinen\ConnectWise\Models\v2018_4\System\TimeZoneReference $timeZone
- * @property number $offset
+ * @property float $offset
  * @property boolean $defaultFlag
  * @property boolean $daylightSavingsFlag
  * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
@@ -28,7 +28,7 @@ class TimeZoneSetup extends Model
         'id' => 'integer',
         'name' => 'string',
         'timeZone' => 'Spinen\ConnectWise\Models\v2018_4\System\TimeZoneReference',
-        'offset' => 'number',
+        'offset' => 'float',
         'defaultFlag' => 'boolean',
         'daylightSavingsFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',

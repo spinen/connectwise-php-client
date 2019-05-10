@@ -27,7 +27,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property integer $templateSetupId
  * @property integer $emailTemplateId
  * @property boolean $addToBatchEmailList
- * @property string $date
+ * @property Carbon\Carbon $date
  * @property boolean $restrictDownpaymentFlag
  * @property integer $locationId
  * @property integer $departmentId
@@ -38,24 +38,24 @@ use Spinen\ConnectWise\Support\Model;
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\TaxCodeReference $taxCode
  * @property string $internalNotes
  * @property boolean $downpaymentPreviouslyTaxedFlag
- * @property number $serviceTotal
+ * @property float $serviceTotal
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\CurrencyReference $currency
- * @property string $dueDate
- * @property number $expenseTotal
- * @property number $productTotal
- * @property number $previousProgressApplied
- * @property number $serviceAdjustmentAmount
- * @property number $agreementAmount
- * @property number $downpaymentApplied
- * @property number $subtotal
- * @property number $total
- * @property number $remainingDownpayment
- * @property number $salesTax
+ * @property Carbon\Carbon $dueDate
+ * @property float $expenseTotal
+ * @property float $productTotal
+ * @property float $previousProgressApplied
+ * @property float $serviceAdjustmentAmount
+ * @property float $agreementAmount
+ * @property float $downpaymentApplied
+ * @property float $subtotal
+ * @property float $total
+ * @property float $remainingDownpayment
+ * @property float $salesTax
  * @property string $adjustmentReason
  * @property string $adjustedBy
- * @property number $payments
- * @property number $credits
- * @property number $balance
+ * @property float $payments
+ * @property float $credits
+ * @property float $balance
  * @property boolean $specialInvoiceFlag
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\Metadata $_info
  * @property array $customFields
@@ -86,7 +86,7 @@ class Invoice extends Model
         'templateSetupId' => 'integer',
         'emailTemplateId' => 'integer',
         'addToBatchEmailList' => 'boolean',
-        'date' => 'string',
+        'date' => 'Carbon\Carbon',
         'restrictDownpaymentFlag' => 'boolean',
         'locationId' => 'integer',
         'departmentId' => 'integer',
@@ -97,24 +97,24 @@ class Invoice extends Model
         'taxCode' => 'Spinen\ConnectWise\Models\v2018_6\Finance\TaxCodeReference',
         'internalNotes' => 'string',
         'downpaymentPreviouslyTaxedFlag' => 'boolean',
-        'serviceTotal' => 'number',
+        'serviceTotal' => 'float',
         'currency' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CurrencyReference',
-        'dueDate' => 'string',
-        'expenseTotal' => 'number',
-        'productTotal' => 'number',
-        'previousProgressApplied' => 'number',
-        'serviceAdjustmentAmount' => 'number',
-        'agreementAmount' => 'number',
-        'downpaymentApplied' => 'number',
-        'subtotal' => 'number',
-        'total' => 'number',
-        'remainingDownpayment' => 'number',
-        'salesTax' => 'number',
+        'dueDate' => 'Carbon\Carbon',
+        'expenseTotal' => 'float',
+        'productTotal' => 'float',
+        'previousProgressApplied' => 'float',
+        'serviceAdjustmentAmount' => 'float',
+        'agreementAmount' => 'float',
+        'downpaymentApplied' => 'float',
+        'subtotal' => 'float',
+        'total' => 'float',
+        'remainingDownpayment' => 'float',
+        'salesTax' => 'float',
         'adjustmentReason' => 'string',
         'adjustedBy' => 'string',
-        'payments' => 'number',
-        'credits' => 'number',
-        'balance' => 'number',
+        'payments' => 'float',
+        'credits' => 'float',
+        'balance' => 'float',
         'specialInvoiceFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
         'customFields' => 'array',

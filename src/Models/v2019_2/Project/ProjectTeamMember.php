@@ -11,12 +11,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property integer $id
  * @property integer $projectId
- * @property number $hours
+ * @property float $hours
  * @property Spinen\ConnectWise\Models\v2019_2\Project\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2019_2\Project\ProjectRoleReference $projectRole
  * @property Spinen\ConnectWise\Models\v2019_2\Project\WorkRoleReference $workRole
- * @property string $startDate
- * @property string $endDate
+ * @property Carbon\Carbon $startDate
+ * @property Carbon\Carbon $endDate
  * @property Spinen\ConnectWise\Models\v2019_2\Project\Metadata $_info
  */
 class ProjectTeamMember extends Model
@@ -29,12 +29,12 @@ class ProjectTeamMember extends Model
     protected $casts = [
         'id' => 'integer',
         'projectId' => 'integer',
-        'hours' => 'number',
+        'hours' => 'float',
         'member' => 'Spinen\ConnectWise\Models\v2019_2\Project\MemberReference',
         'projectRole' => 'Spinen\ConnectWise\Models\v2019_2\Project\ProjectRoleReference',
         'workRole' => 'Spinen\ConnectWise\Models\v2019_2\Project\WorkRoleReference',
-        'startDate' => 'string',
-        'endDate' => 'string',
+        'startDate' => 'Carbon\Carbon',
+        'endDate' => 'Carbon\Carbon',
         '_info' => 'Spinen\ConnectWise\Models\v2019_2\Project\Metadata',
     ];
 }

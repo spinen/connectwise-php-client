@@ -14,8 +14,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $memo
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\IvItemReference $item
  * @property integer $quantity
- * @property number $total
- * @property number $cost
+ * @property float $total
+ * @property float $cost
  * @property string $costAccountNumber
  * @property string $inventoryAccountNumber
  * @property string $accountNumber
@@ -34,8 +34,8 @@ class GLExportAdjustmentTransactionDetail extends Model
         'memo' => 'string',
         'item' => 'Spinen\ConnectWise\Models\v2019_3\Finance\IvItemReference',
         'quantity' => 'integer',
-        'total' => 'number',
-        'cost' => 'number',
+        'total' => 'float',
+        'cost' => 'float',
         'costAccountNumber' => 'string',
         'inventoryAccountNumber' => 'string',
         'accountNumber' => 'string',

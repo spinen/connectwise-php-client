@@ -11,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property integer $id
  * @property integer $taxLevel
- * @property number $taxRate
+ * @property float $taxRate
  * @property string $rateType
- * @property number $taxableMax
+ * @property float $taxableMax
  * @property string $caption
  * @property string $taxCodeXref
  * @property string $agencyXref
@@ -21,8 +21,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property boolean $taxExpensesFlag
  * @property boolean $taxProductsFlag
  * @property boolean $singleUnitFlag
- * @property number $singleUnitMinimum
- * @property number $singleUnitMaximum
+ * @property float $singleUnitMinimum
+ * @property float $singleUnitMaximum
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
  */
 class TaxCodeLevel extends Model
@@ -35,9 +35,9 @@ class TaxCodeLevel extends Model
     protected $casts = [
         'id' => 'integer',
         'taxLevel' => 'integer',
-        'taxRate' => 'number',
+        'taxRate' => 'float',
         'rateType' => 'string',
-        'taxableMax' => 'number',
+        'taxableMax' => 'float',
         'caption' => 'string',
         'taxCodeXref' => 'string',
         'agencyXref' => 'string',
@@ -45,8 +45,8 @@ class TaxCodeLevel extends Model
         'taxExpensesFlag' => 'boolean',
         'taxProductsFlag' => 'boolean',
         'singleUnitFlag' => 'boolean',
-        'singleUnitMinimum' => 'number',
-        'singleUnitMaximum' => 'number',
+        'singleUnitMinimum' => 'float',
+        'singleUnitMaximum' => 'float',
         '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
     ];
 }

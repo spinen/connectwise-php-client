@@ -11,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property integer $id
  * @property integer $detailId
- * @property number $amount
- * @property number $quantityStart
- * @property number $quantityEnd
+ * @property float $amount
+ * @property float $quantityStart
+ * @property float $quantityEnd
  * @property boolean $unlimited
  * @property string $priceMethod
  * @property Spinen\ConnectWise\Models\v2019_1\Procurement\Metadata $_info
@@ -28,9 +28,9 @@ class PricingBreak extends Model
     protected $casts = [
         'id' => 'integer',
         'detailId' => 'integer',
-        'amount' => 'number',
-        'quantityStart' => 'number',
-        'quantityEnd' => 'number',
+        'amount' => 'float',
+        'quantityStart' => 'float',
+        'quantityEnd' => 'float',
         'unlimited' => 'boolean',
         'priceMethod' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\Metadata',
