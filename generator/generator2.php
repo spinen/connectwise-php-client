@@ -214,29 +214,28 @@ $loader = new Loader();
 foreach (glob(__DIR__ . "/swagger/*") as $version) {
     $version = basename($version);
 
+    echo "Working on version ${version}\n";
+
     $loader->loadVersion($version)
            ->process()->swaggers->each(function (Swagger $swagger) use ($version) {
-                $directory = __DIR__ . '/Generated/' . $version . '/' . $swagger->getTitle();
+                $directory = __DIR__ . '/Generated/' . $version;
 
-                mkdir($directory, 0755, true);
+                echo "Writing " . $swagger->getTitle() . "\n";
 
-                $swagger->models->each(function ($contents, $model) use ($directory) {
-                        file_put_contents($directory . '/' . $model . '.php', $contents);
+                mkdir($directory . '/' . $swagger->getTitle(), 0755, true);
+
+                $swagger->models->each(function ($contents, $model) use ($directory, $swagger) {
+                    file_put_contents($directory . '/' . $swagger->getTitle() . '/' . $model . '.php', $contents);
                 });
-            });
 
-    $loader->swaggers->last(
-        function (Swagger $swagger) use ($version) {
-            $directory = __DIR__ . '/Generated/' . $version;
+                echo "Appending map\n";
 
-            // TODO: Deal with file being empty for first run
-            $map = collect(json_decode(file_get_contents($directory . '/map.json'), true))
-                ->merge($swagger->map)
-                ->sort();
+                $map = collect(json_decode(@ file_get_contents($directory . '/map.json'), true))
+                    ->merge($swagger->map)
+                    ->sort();
 
-            file_put_contents($directory . '/map.json', $map->toJson());
-        }
-    );
+                file_put_contents($directory . '/map.json', $map->toJson());
+           });
 }
 
 
