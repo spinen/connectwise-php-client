@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AdjustmentType
  *
+ * @property Carbon\Carbon $dateCreated
+ * @property Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata $_info
+ * @property boolean $auditTrailFlag
  * @property integer $id
+ * @property string $createdBy
  * @property string $identifier
  * @property string $name
- * @property boolean $auditTrailFlag
- * @property Carbon\Carbon $dateCreated
- * @property string $createdBy
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata $_info
  */
 class AdjustmentType extends Model
 {
@@ -25,12 +25,12 @@ class AdjustmentType extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata',
+        'auditTrailFlag' => 'boolean',
+        'createdBy' => 'string',
+        'dateCreated' => 'Carbon\Carbon',
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',
-        'auditTrailFlag' => 'boolean',
-        'dateCreated' => 'Carbon\Carbon',
-        'createdBy' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata',
     ];
 }

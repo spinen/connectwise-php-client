@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ScheduleType
  *
- * @property integer $id
- * @property string $name
- * @property string $identifier
  * @property Spinen\ConnectWise\Models\v2018_6\Schedule\ChargeCodeReference $chargeCode
+ * @property Spinen\ConnectWise\Models\v2018_6\Schedule\Metadata $_info
  * @property Spinen\ConnectWise\Models\v2018_6\Schedule\ServiceLocationReference $where
  * @property boolean $systemFlag
- * @property Spinen\ConnectWise\Models\v2018_6\Schedule\Metadata $_info
+ * @property integer $id
+ * @property string $identifier
+ * @property string $name
  */
 class ScheduleType extends Model
 {
@@ -25,12 +25,12 @@ class ScheduleType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'identifier' => 'string',
-        'chargeCode' => 'Spinen\ConnectWise\Models\v2018_6\Schedule\ChargeCodeReference',
-        'where' => 'Spinen\ConnectWise\Models\v2018_6\Schedule\ServiceLocationReference',
-        'systemFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Schedule\Metadata',
+        'chargeCode' => 'Spinen\ConnectWise\Models\v2018_6\Schedule\ChargeCodeReference',
+        'id' => 'integer',
+        'identifier' => 'string',
+        'name' => 'string',
+        'systemFlag' => 'boolean',
+        'where' => 'Spinen\ConnectWise\Models\v2018_6\Schedule\ServiceLocationReference',
     ];
 }

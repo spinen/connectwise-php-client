@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CompanyCustomNote
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\Company\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2019_3\Company\CompanyStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
  * @property integer $id
  * @property string $customNote
- * @property Spinen\ConnectWise\Models\v2019_3\Company\CompanyStatusReference $status
- * @property Spinen\ConnectWise\Models\v2019_3\Company\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
  */
 class CompanyCustomNote extends Model
 {
@@ -23,10 +23,10 @@ class CompanyCustomNote extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'customNote' => 'string',
-        'status' => 'Spinen\ConnectWise\Models\v2019_3\Company\CompanyStatusReference',
-        'company' => 'Spinen\ConnectWise\Models\v2019_3\Company\CompanyReference',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
+        'company' => 'Spinen\ConnectWise\Models\v2019_3\Company\CompanyReference',
+        'customNote' => 'string',
+        'id' => 'integer',
+        'status' => 'Spinen\ConnectWise\Models\v2019_3\Company\CompanyStatusReference',
     ];
 }

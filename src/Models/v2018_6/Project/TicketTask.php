@@ -9,17 +9,17 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TicketTask
  *
- * @property integer $id
- * @property integer $ticketId
- * @property string $notes
- * @property boolean $closedFlag
- * @property integer $priority
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\Metadata $_info
  * @property Spinen\ConnectWise\Models\v2018_6\Project\ScheduleEntryReference $schedule
  * @property Spinen\ConnectWise\Models\v2018_6\Project\ServiceCodeReference $code
- * @property string $resolution
- * @property string $childScheduleAction
+ * @property boolean $closedFlag
  * @property integer $childTicketId
- * @property Spinen\ConnectWise\Models\v2018_6\Project\Metadata $_info
+ * @property integer $id
+ * @property integer $priority
+ * @property integer $ticketId
+ * @property string $childScheduleAction
+ * @property string $notes
+ * @property string $resolution
  */
 class TicketTask extends Model
 {
@@ -29,16 +29,16 @@ class TicketTask extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'ticketId' => 'integer',
-        'notes' => 'string',
-        'closedFlag' => 'boolean',
-        'priority' => 'integer',
-        'schedule' => 'Spinen\ConnectWise\Models\v2018_6\Project\ScheduleEntryReference',
-        'code' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceCodeReference',
-        'resolution' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Project\Metadata',
         'childScheduleAction' => 'string',
         'childTicketId' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Project\Metadata',
+        'closedFlag' => 'boolean',
+        'code' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceCodeReference',
+        'id' => 'integer',
+        'notes' => 'string',
+        'priority' => 'integer',
+        'resolution' => 'string',
+        'schedule' => 'Spinen\ConnectWise\Models\v2018_6\Project\ScheduleEntryReference',
+        'ticketId' => 'integer',
     ];
 }

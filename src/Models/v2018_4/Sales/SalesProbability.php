@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SalesProbability
  *
+ * @property Spinen\ConnectWise\Models\v2018_4\Sales\Metadata $_info
  * @property integer $id
  * @property integer $probability
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\Metadata $_info
  */
 class SalesProbability extends Model
 {
@@ -21,8 +21,8 @@ class SalesProbability extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Sales\Metadata',
         'id' => 'integer',
         'probability' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Sales\Metadata',
     ];
 }

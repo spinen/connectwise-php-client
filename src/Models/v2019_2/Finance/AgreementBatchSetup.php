@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AgreementBatchSetup
  *
- * @property integer $id
  * @property Carbon\Carbon $nextRunDate
- * @property integer $daysInAdvance
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
+ * @property integer $daysInAdvance
+ * @property integer $id
  */
 class AgreementBatchSetup extends Model
 {
@@ -22,9 +22,9 @@ class AgreementBatchSetup extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
+        'daysInAdvance' => 'integer',
         'id' => 'integer',
         'nextRunDate' => 'Carbon\Carbon',
-        'daysInAdvance' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
     ];
 }

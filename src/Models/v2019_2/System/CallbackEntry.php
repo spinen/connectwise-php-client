@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CallbackEntry
  *
- * @property integer $id
- * @property string $description
- * @property string $url
- * @property integer $objectId
- * @property string $type
- * @property string $level
- * @property integer $memberId
+ * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  * @property boolean $inactiveFlag
  * @property boolean $isSoapCallbackFlag
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
+ * @property integer $id
+ * @property integer $memberId
+ * @property integer $objectId
+ * @property string $description
+ * @property string $level
+ * @property string $type
+ * @property string $url
  */
 class CallbackEntry extends Model
 {
@@ -28,15 +28,15 @@ class CallbackEntry extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
         'description' => 'string',
-        'url' => 'string',
-        'objectId' => 'integer',
-        'type' => 'string',
-        'level' => 'string',
-        'memberId' => 'integer',
+        'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'isSoapCallbackFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        'level' => 'string',
+        'memberId' => 'integer',
+        'objectId' => 'integer',
+        'type' => 'string',
+        'url' => 'string',
     ];
 }

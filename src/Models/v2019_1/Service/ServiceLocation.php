@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ServiceLocation
  *
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
+ * @property boolean $defaultFlag
  * @property integer $id
  * @property string $name
  * @property string $where
- * @property boolean $defaultFlag
- * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
  */
 class ServiceLocation extends Model
 {
@@ -23,10 +23,10 @@ class ServiceLocation extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
+        'defaultFlag' => 'boolean',
         'id' => 'integer',
         'name' => 'string',
         'where' => 'string',
-        'defaultFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
     ];
 }

@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MemberDeactivationStatusWorkflow
  *
+ * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $reAssignToMember
  * @property integer $count
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $reAssignToMember
  */
 class MemberDeactivationStatusWorkflow extends Model
 {

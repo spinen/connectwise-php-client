@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * A list of AuditTrailObject to which the text will be applied. List Cannot Be Empty.
  *
- * @property string $type
  * @property array $ids
+ * @property string $type
  */
 class AuditTrailObjects extends Model
 {
@@ -20,7 +20,7 @@ class AuditTrailObjects extends Model
      * @var array
      */
     protected $casts = [
-        'type' => 'string',
         'ids' => 'array',
+        'type' => 'string',
     ];
 }

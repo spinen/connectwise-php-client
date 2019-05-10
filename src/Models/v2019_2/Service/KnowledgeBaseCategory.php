@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for KnowledgeBaseCategory
  *
- * @property integer $id
- * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_2\Service\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2019_2\Service\SystemDepartmentReference $department
  * @property Spinen\ConnectWise\Models\v2019_2\Service\MemberReference $approver
  * @property Spinen\ConnectWise\Models\v2019_2\Service\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\SystemDepartmentReference $department
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\SystemLocationReference $location
+ * @property integer $id
+ * @property string $name
  */
 class KnowledgeBaseCategory extends Model
 {
@@ -24,11 +24,11 @@ class KnowledgeBaseCategory extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'location' => 'Spinen\ConnectWise\Models\v2019_2\Service\SystemLocationReference',
-        'department' => 'Spinen\ConnectWise\Models\v2019_2\Service\SystemDepartmentReference',
-        'approver' => 'Spinen\ConnectWise\Models\v2019_2\Service\MemberReference',
         '_info' => 'Spinen\ConnectWise\Models\v2019_2\Service\Metadata',
+        'approver' => 'Spinen\ConnectWise\Models\v2019_2\Service\MemberReference',
+        'department' => 'Spinen\ConnectWise\Models\v2019_2\Service\SystemDepartmentReference',
+        'id' => 'integer',
+        'location' => 'Spinen\ConnectWise\Models\v2019_2\Service\SystemLocationReference',
+        'name' => 'string',
     ];
 }

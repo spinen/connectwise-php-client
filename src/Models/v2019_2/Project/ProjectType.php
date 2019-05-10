@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProjectType
  *
- * @property integer $id
- * @property string $name
+ * @property Spinen\ConnectWise\Models\v2019_2\Project\Metadata $_info
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
+ * @property integer $id
  * @property string $integrationXref
- * @property Spinen\ConnectWise\Models\v2019_2\Project\Metadata $_info
+ * @property string $name
  */
 class ProjectType extends Model
 {
@@ -24,11 +24,11 @@ class ProjectType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Project\Metadata',
         'defaultFlag' => 'boolean',
+        'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'integrationXref' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Project\Metadata',
+        'name' => 'string',
     ];
 }

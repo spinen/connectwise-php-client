@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for UserDefinedFieldOption
  *
- * @property integer $id
- * @property string $optionValue
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
+ * @property integer $id
  * @property integer $sortOrder
+ * @property string $optionValue
  */
 class UserDefinedFieldOption extends Model
 {
@@ -23,10 +23,10 @@ class UserDefinedFieldOption extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'optionValue' => 'string',
         'defaultFlag' => 'boolean',
+        'id' => 'integer',
         'inactiveFlag' => 'boolean',
+        'optionValue' => 'string',
         'sortOrder' => 'integer',
     ];
 }

@@ -20,7 +20,7 @@ class SuccessResponse extends Model
      * @var array
      */
     protected $casts = [
-        'success' => 'boolean',
         'message' => 'string',
+        'success' => 'boolean',
     ];
 }

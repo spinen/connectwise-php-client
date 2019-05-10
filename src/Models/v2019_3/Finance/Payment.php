@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Payment
  *
- * @property integer $id
- * @property string $type
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\InvoiceReference $invoice
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\InvoiceReference $credit
- * @property float $amount
  * @property Carbon\Carbon $paymentDate
- * @property string $appliedBy
+ * @property Spinen\ConnectWise\Models\v2019_3\Finance\InvoiceReference $credit
+ * @property Spinen\ConnectWise\Models\v2019_3\Finance\InvoiceReference $invoice
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\Metadata $_info
+ * @property float $amount
+ * @property integer $id
+ * @property string $appliedBy
+ * @property string $type
  */
 class Payment extends Model
 {
@@ -26,13 +26,13 @@ class Payment extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'type' => 'string',
-        'invoice' => 'Spinen\ConnectWise\Models\v2019_3\Finance\InvoiceReference',
-        'credit' => 'Spinen\ConnectWise\Models\v2019_3\Finance\InvoiceReference',
-        'amount' => 'float',
-        'paymentDate' => 'Carbon\Carbon',
-        'appliedBy' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Finance\Metadata',
+        'amount' => 'float',
+        'appliedBy' => 'string',
+        'credit' => 'Spinen\ConnectWise\Models\v2019_3\Finance\InvoiceReference',
+        'id' => 'integer',
+        'invoice' => 'Spinen\ConnectWise\Models\v2019_3\Finance\InvoiceReference',
+        'paymentDate' => 'Carbon\Carbon',
+        'type' => 'string',
     ];
 }

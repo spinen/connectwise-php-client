@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ConfigurationTypeQuestion
  *
- * @property integer $id
  * @property Spinen\ConnectWise\Models\v2019_3\Company\ConfigurationTypeReference $configurationType
- * @property string $fieldType
- * @property string $entryType
- * @property float $sequenceNumber
- * @property string $question
- * @property integer $numberOfDecimals
- * @property boolean $requiredFlag
- * @property boolean $inactiveFlag
  * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
+ * @property boolean $inactiveFlag
+ * @property boolean $requiredFlag
+ * @property float $sequenceNumber
+ * @property integer $id
+ * @property integer $numberOfDecimals
+ * @property string $entryType
+ * @property string $fieldType
+ * @property string $question
  */
 class ConfigurationTypeQuestion extends Model
 {
@@ -28,15 +28,15 @@ class ConfigurationTypeQuestion extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'configurationType' => 'Spinen\ConnectWise\Models\v2019_3\Company\ConfigurationTypeReference',
-        'fieldType' => 'string',
-        'entryType' => 'string',
-        'sequenceNumber' => 'float',
-        'question' => 'string',
-        'numberOfDecimals' => 'integer',
-        'requiredFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
+        'configurationType' => 'Spinen\ConnectWise\Models\v2019_3\Company\ConfigurationTypeReference',
+        'entryType' => 'string',
+        'fieldType' => 'string',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'numberOfDecimals' => 'integer',
+        'question' => 'string',
+        'requiredFlag' => 'boolean',
+        'sequenceNumber' => 'float',
     ];
 }

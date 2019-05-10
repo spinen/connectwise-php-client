@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AutoSyncTime
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_3\System\TimeZoneSetupReference $timeZone
  * @property integer $id
  * @property string $syncTime
- * @property Spinen\ConnectWise\Models\v2019_3\System\TimeZoneSetupReference $timeZone
- * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
  */
 class AutoSyncTime extends Model
 {
@@ -22,9 +22,9 @@ class AutoSyncTime extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
         'id' => 'integer',
         'syncTime' => 'string',
         'timeZone' => 'Spinen\ConnectWise\Models\v2019_3\System\TimeZoneSetupReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
     ];
 }

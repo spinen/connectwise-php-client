@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for WorkflowTrigger
  *
- * @property integer $id
- * @property string $name
- * @property string $description
- * @property boolean $hasOptionsFlag
- * @property boolean $hasOperatorFlag
- * @property Spinen\ConnectWise\Models\v2018_5\System\UserDefinedFieldReference $customField
- * @property string $expectedType
  * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_5\System\UserDefinedFieldReference $customField
+ * @property boolean $hasOperatorFlag
+ * @property boolean $hasOptionsFlag
+ * @property integer $id
+ * @property string $description
+ * @property string $expectedType
+ * @property string $name
  */
 class WorkflowTrigger extends Model
 {
@@ -26,13 +26,13 @@ class WorkflowTrigger extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
+        'customField' => 'Spinen\ConnectWise\Models\v2018_5\System\UserDefinedFieldReference',
+        'description' => 'string',
+        'expectedType' => 'string',
+        'hasOperatorFlag' => 'boolean',
+        'hasOptionsFlag' => 'boolean',
         'id' => 'integer',
         'name' => 'string',
-        'description' => 'string',
-        'hasOptionsFlag' => 'boolean',
-        'hasOperatorFlag' => 'boolean',
-        'customField' => 'Spinen\ConnectWise\Models\v2018_5\System\UserDefinedFieldReference',
-        'expectedType' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
     ];
 }

@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CreateAccountingBatchRequest
  *
+ * @property array $processedRecordIds
+ * @property boolean $exportExpensesFlag
+ * @property boolean $exportInvoicesFlag
+ * @property boolean $exportProductsFlag
+ * @property boolean $summarizeExpenses
  * @property integer $id
  * @property string $batchIdentifier
  * @property string $glInterfaceIdentifier
- * @property boolean $exportInvoicesFlag
- * @property boolean $exportExpensesFlag
- * @property boolean $exportProductsFlag
- * @property array $processedRecordIds
- * @property boolean $summarizeExpenses
  */
 class CreateAccountingBatchRequest extends Model
 {
@@ -26,12 +26,12 @@ class CreateAccountingBatchRequest extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
         'batchIdentifier' => 'string',
-        'glInterfaceIdentifier' => 'string',
-        'exportInvoicesFlag' => 'boolean',
         'exportExpensesFlag' => 'boolean',
+        'exportInvoicesFlag' => 'boolean',
         'exportProductsFlag' => 'boolean',
+        'glInterfaceIdentifier' => 'string',
+        'id' => 'integer',
         'processedRecordIds' => 'array',
         'summarizeExpenses' => 'boolean',
     ];

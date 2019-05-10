@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ConfigurationTypeQuestionValue
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2018_4\Company\ConfigurationTypeReference $configurationType
  * @property Spinen\ConnectWise\Models\v2018_4\Company\ConfigurationTypeQuestionReference $question
- * @property string $value
+ * @property Spinen\ConnectWise\Models\v2018_4\Company\ConfigurationTypeReference $configurationType
+ * @property Spinen\ConnectWise\Models\v2018_4\Company\Metadata $_info
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
- * @property Spinen\ConnectWise\Models\v2018_4\Company\Metadata $_info
+ * @property integer $id
+ * @property string $value
  */
 class ConfigurationTypeQuestionValue extends Model
 {
@@ -25,12 +25,12 @@ class ConfigurationTypeQuestionValue extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Company\Metadata',
         'configurationType' => 'Spinen\ConnectWise\Models\v2018_4\Company\ConfigurationTypeReference',
+        'defaultFlag' => 'boolean',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
         'question' => 'Spinen\ConnectWise\Models\v2018_4\Company\ConfigurationTypeQuestionReference',
         'value' => 'string',
-        'defaultFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Company\Metadata',
     ];
 }

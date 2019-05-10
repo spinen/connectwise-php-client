@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Session
  *
- * @property integer $id
- * @property integer $configurationId
  * @property Spinen\ConnectWise\Models\v2019_2\Internal\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2019_2\Internal\TicketReference $ticket
+ * @property integer $configurationId
+ * @property integer $id
  * @property string $sessionGuid
  */
 class Session extends Model
@@ -23,10 +23,10 @@ class Session extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
         'configurationId' => 'integer',
+        'id' => 'integer',
         'member' => 'Spinen\ConnectWise\Models\v2019_2\Internal\MemberReference',
-        'ticket' => 'Spinen\ConnectWise\Models\v2019_2\Internal\TicketReference',
         'sessionGuid' => 'string',
+        'ticket' => 'Spinen\ConnectWise\Models\v2019_2\Internal\TicketReference',
     ];
 }

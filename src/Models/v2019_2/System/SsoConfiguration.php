@@ -9,26 +9,26 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SsoConfiguration
  *
- * @property integer $id
- * @property string $name
- * @property string $ssoType
- * @property boolean $inactiveFlag
- * @property string $samlEntityId
- * @property string $samlSignInUrl
- * @property string $samlIdpCertificate
- * @property string $samlCertificateName
- * @property string $samlCertificateIssuedTo
- * @property string $samlCertificateThumbprint
  * @property Carbon\Carbon $samlCertificateValidFrom
  * @property Carbon\Carbon $samlCertificateValidTo
+ * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  * @property array $locationIds
+ * @property boolean $allMembersSubmitted
+ * @property boolean $inactiveFlag
+ * @property integer $id
+ * @property integer $submittedMemberCount
  * @property string $clientId
+ * @property string $name
+ * @property string $samlCertificateIssuedTo
+ * @property string $samlCertificateName
+ * @property string $samlCertificateThumbprint
+ * @property string $samlEntityId
+ * @property string $samlIdpCertificate
+ * @property string $samlSignInUrl
+ * @property string $ssoType
  * @property string $stsBaseUrl
  * @property string $stsUserAdminUrl
  * @property string $token
- * @property integer $submittedMemberCount
- * @property boolean $allMembersSubmitted
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  */
 class SsoConfiguration extends Model
 {
@@ -38,25 +38,25 @@ class SsoConfiguration extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        'allMembersSubmitted' => 'boolean',
+        'clientId' => 'string',
         'id' => 'integer',
-        'name' => 'string',
-        'ssoType' => 'string',
         'inactiveFlag' => 'boolean',
-        'samlEntityId' => 'string',
-        'samlSignInUrl' => 'string',
-        'samlIdpCertificate' => 'string',
-        'samlCertificateName' => 'string',
+        'locationIds' => 'array',
+        'name' => 'string',
         'samlCertificateIssuedTo' => 'string',
+        'samlCertificateName' => 'string',
         'samlCertificateThumbprint' => 'string',
         'samlCertificateValidFrom' => 'Carbon\Carbon',
         'samlCertificateValidTo' => 'Carbon\Carbon',
-        'locationIds' => 'array',
-        'clientId' => 'string',
+        'samlEntityId' => 'string',
+        'samlIdpCertificate' => 'string',
+        'samlSignInUrl' => 'string',
+        'ssoType' => 'string',
         'stsBaseUrl' => 'string',
         'stsUserAdminUrl' => 'string',
-        'token' => 'string',
         'submittedMemberCount' => 'integer',
-        'allMembersSubmitted' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        'token' => 'string',
     ];
 }

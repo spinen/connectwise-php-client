@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for EmailExclusion
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
  * @property integer $id
  * @property string $description
- * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
  */
 class EmailExclusion extends Model
 {
@@ -21,8 +21,8 @@ class EmailExclusion extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'description' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
+        'description' => 'string',
+        'id' => 'integer',
     ];
 }

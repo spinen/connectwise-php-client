@@ -9,17 +9,17 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CompanyStatus
  *
- * @property integer $id
- * @property string $name
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\TrackReference $track
+ * @property boolean $cancelOpenTracksFlag
+ * @property boolean $customNoteFlag
  * @property boolean $defaultFlag
+ * @property boolean $disallowSavingFlag
  * @property boolean $inactiveFlag
  * @property boolean $notifyFlag
- * @property boolean $disallowSavingFlag
+ * @property integer $id
+ * @property string $name
  * @property string $notificationMessage
- * @property boolean $customNoteFlag
- * @property boolean $cancelOpenTracksFlag
- * @property Spinen\ConnectWise\Models\v2018_6\Company\TrackReference $track
- * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
  */
 class CompanyStatus extends Model
 {
@@ -29,16 +29,16 @@ class CompanyStatus extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'defaultFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
-        'notifyFlag' => 'boolean',
-        'disallowSavingFlag' => 'boolean',
-        'notificationMessage' => 'string',
-        'customNoteFlag' => 'boolean',
-        'cancelOpenTracksFlag' => 'boolean',
-        'track' => 'Spinen\ConnectWise\Models\v2018_6\Company\TrackReference',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
+        'cancelOpenTracksFlag' => 'boolean',
+        'customNoteFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'disallowSavingFlag' => 'boolean',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
+        'notificationMessage' => 'string',
+        'notifyFlag' => 'boolean',
+        'track' => 'Spinen\ConnectWise\Models\v2018_6\Company\TrackReference',
     ];
 }

@@ -9,62 +9,62 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProductItem
  *
- * @property integer $id
+ * @property Carbon\Carbon $cancelledDate
+ * @property Carbon\Carbon $purchaseDate
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\AgreementReference $agreement
  * @property Spinen\ConnectWise\Models\v2019_1\Procurement\CatalogItemReference $catalogItem
- * @property string $description
- * @property float $sequenceNumber
- * @property float $quantity
- * @property float $price
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\CompanyReference $vendor
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\EntityTypeReference $entityType
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\InvoiceReference $invoice
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\OpportunityReference $opportunity
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\OpportunityStatusReference $forecastStatus
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\ProductRecurring $recurring
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\ProjectReference $project
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\SLAReference $sla
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\SalesOrderReference $salesOrder
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\TicketReference $ticket
+ * @property array $customFields
+ * @property array $serialNumberIds
+ * @property boolean $addComponentsFlag
+ * @property boolean $bypassForecastUpdate
+ * @property boolean $cancelledFlag
+ * @property boolean $dropshipFlag
+ * @property boolean $minimumStockFlag
+ * @property boolean $needToPurchaseFlag
+ * @property boolean $phaseProductFlag
+ * @property boolean $productSuppliedFlag
+ * @property boolean $specialOrderFlag
+ * @property boolean $taxableFlag
  * @property float $cost
  * @property float $discount
- * @property string $priceMethod
- * @property string $billableOption
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\AgreementReference $agreement
- * @property integer $locationId
- * @property integer $businessUnitId
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\CompanyReference $vendor
- * @property string $vendorSku
- * @property boolean $taxableFlag
- * @property boolean $dropshipFlag
- * @property boolean $specialOrderFlag
- * @property boolean $phaseProductFlag
- * @property boolean $cancelledFlag
+ * @property float $listPrice
+ * @property float $price
+ * @property float $quantity
  * @property float $quantityCancelled
+ * @property float $sequenceNumber
+ * @property float $subContractorAmountLimit
+ * @property integer $businessUnitId
+ * @property integer $cancelledBy
+ * @property integer $forecastDetailId
+ * @property integer $id
+ * @property integer $locationId
+ * @property integer $needToOrderQuantity
+ * @property integer $subContractorShipToId
+ * @property integer $warehouseBinId
+ * @property integer $warehouseId
+ * @property string $billableOption
  * @property string $cancelledReason
  * @property string $customerDescription
+ * @property string $description
+ * @property string $integrationXRef
  * @property string $internalNotes
- * @property boolean $productSuppliedFlag
- * @property integer $subContractorShipToId
- * @property float $subContractorAmountLimit
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\ProductRecurring $recurring
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\SLAReference $sla
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\EntityTypeReference $entityType
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\TicketReference $ticket
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\ProjectReference $project
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\SalesOrderReference $salesOrder
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\OpportunityReference $opportunity
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\InvoiceReference $invoice
- * @property integer $warehouseId
- * @property integer $warehouseBinId
- * @property integer $forecastDetailId
- * @property integer $cancelledBy
- * @property Carbon\Carbon $cancelledDate
+ * @property string $priceMethod
+ * @property string $productClass
+ * @property string $vendorSku
  * @property string $warehouse
  * @property string $warehouseBin
- * @property Carbon\Carbon $purchaseDate
- * @property string $integrationXRef
- * @property float $listPrice
- * @property array $serialNumberIds
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\OpportunityStatusReference $forecastStatus
- * @property string $productClass
- * @property boolean $needToPurchaseFlag
- * @property integer $needToOrderQuantity
- * @property boolean $minimumStockFlag
- * @property boolean $addComponentsFlag
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\Metadata $_info
- * @property boolean $bypassForecastUpdate
- * @property array $customFields
  */
 class ProductItem extends Model
 {
@@ -74,61 +74,61 @@ class ProductItem extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'catalogItem' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\CatalogItemReference',
-        'description' => 'string',
-        'sequenceNumber' => 'float',
-        'quantity' => 'float',
-        'price' => 'float',
-        'cost' => 'float',
-        'discount' => 'float',
-        'priceMethod' => 'string',
-        'billableOption' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\Metadata',
+        'addComponentsFlag' => 'boolean',
         'agreement' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\AgreementReference',
-        'locationId' => 'integer',
+        'billableOption' => 'string',
         'businessUnitId' => 'integer',
-        'vendor' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\CompanyReference',
-        'vendorSku' => 'string',
-        'taxableFlag' => 'boolean',
-        'dropshipFlag' => 'boolean',
-        'specialOrderFlag' => 'boolean',
-        'phaseProductFlag' => 'boolean',
-        'cancelledFlag' => 'boolean',
-        'quantityCancelled' => 'float',
-        'cancelledReason' => 'string',
-        'customerDescription' => 'string',
-        'internalNotes' => 'string',
-        'productSuppliedFlag' => 'boolean',
-        'subContractorShipToId' => 'integer',
-        'subContractorAmountLimit' => 'float',
-        'recurring' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\ProductRecurring',
-        'sla' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\SLAReference',
-        'entityType' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\EntityTypeReference',
-        'ticket' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\TicketReference',
-        'project' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\ProjectReference',
-        'salesOrder' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\SalesOrderReference',
-        'opportunity' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\OpportunityReference',
-        'invoice' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\InvoiceReference',
-        'warehouseId' => 'integer',
-        'warehouseBinId' => 'integer',
-        'forecastDetailId' => 'integer',
+        'bypassForecastUpdate' => 'boolean',
         'cancelledBy' => 'integer',
         'cancelledDate' => 'Carbon\Carbon',
+        'cancelledFlag' => 'boolean',
+        'cancelledReason' => 'string',
+        'catalogItem' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\CatalogItemReference',
+        'company' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\CompanyReference',
+        'cost' => 'float',
+        'customFields' => 'array',
+        'customerDescription' => 'string',
+        'description' => 'string',
+        'discount' => 'float',
+        'dropshipFlag' => 'boolean',
+        'entityType' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\EntityTypeReference',
+        'forecastDetailId' => 'integer',
+        'forecastStatus' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\OpportunityStatusReference',
+        'id' => 'integer',
+        'integrationXRef' => 'string',
+        'internalNotes' => 'string',
+        'invoice' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\InvoiceReference',
+        'listPrice' => 'float',
+        'locationId' => 'integer',
+        'minimumStockFlag' => 'boolean',
+        'needToOrderQuantity' => 'integer',
+        'needToPurchaseFlag' => 'boolean',
+        'opportunity' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\OpportunityReference',
+        'phaseProductFlag' => 'boolean',
+        'price' => 'float',
+        'priceMethod' => 'string',
+        'productClass' => 'string',
+        'productSuppliedFlag' => 'boolean',
+        'project' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\ProjectReference',
+        'purchaseDate' => 'Carbon\Carbon',
+        'quantity' => 'float',
+        'quantityCancelled' => 'float',
+        'recurring' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\ProductRecurring',
+        'salesOrder' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\SalesOrderReference',
+        'sequenceNumber' => 'float',
+        'serialNumberIds' => 'array',
+        'sla' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\SLAReference',
+        'specialOrderFlag' => 'boolean',
+        'subContractorAmountLimit' => 'float',
+        'subContractorShipToId' => 'integer',
+        'taxableFlag' => 'boolean',
+        'ticket' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\TicketReference',
+        'vendor' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\CompanyReference',
+        'vendorSku' => 'string',
         'warehouse' => 'string',
         'warehouseBin' => 'string',
-        'purchaseDate' => 'Carbon\Carbon',
-        'integrationXRef' => 'string',
-        'listPrice' => 'float',
-        'serialNumberIds' => 'array',
-        'company' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\CompanyReference',
-        'forecastStatus' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\OpportunityStatusReference',
-        'productClass' => 'string',
-        'needToPurchaseFlag' => 'boolean',
-        'needToOrderQuantity' => 'integer',
-        'minimumStockFlag' => 'boolean',
-        'addComponentsFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\Metadata',
-        'bypassForecastUpdate' => 'boolean',
-        'customFields' => 'array',
+        'warehouseBinId' => 'integer',
+        'warehouseId' => 'integer',
     ];
 }

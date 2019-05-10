@@ -9,35 +9,35 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportCustomer
  *
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\BillingTermsReference $billingTerms
  * @property Spinen\ConnectWise\Models\v2019_1\Finance\CompanyReference $company
  * @property Spinen\ConnectWise\Models\v2019_1\Finance\CompanyTypeReference $companyType
  * @property Spinen\ConnectWise\Models\v2019_1\Finance\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\SiteReference $site
- * @property string $accountNumber
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\BillingTermsReference $billingTerms
- * @property string $billingTermsXref
- * @property integer $dueDays
- * @property boolean $taxable
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\TaxCodeReference $taxCode
  * @property Spinen\ConnectWise\Models\v2019_1\Finance\CurrencyReference $currency
- * @property string $stateTaxXref
- * @property string $countyTaxXref
- * @property string $cityTaxXref
- * @property string $countryTaxXref
- * @property string $compositeTaxXref
- * @property float $stateTaxRate
- * @property float $countyTaxRate
- * @property float $cityTaxRate
- * @property float $countryTaxRate
- * @property float $compositeTaxRate
- * @property float $taxGroupRate
- * @property string $taxAgencyXref
- * @property string $stateTaxAgencyXref
- * @property string $countyTaxAgencyXref
- * @property string $cityTaxAgencyXref
- * @property string $countryTaxAgencyXref
- * @property string $compositeTaxAgencyXref
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\SiteReference $site
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\TaxCodeReference $taxCode
  * @property array $taxLevels
+ * @property boolean $taxable
+ * @property float $cityTaxRate
+ * @property float $compositeTaxRate
+ * @property float $countryTaxRate
+ * @property float $countyTaxRate
+ * @property float $stateTaxRate
+ * @property float $taxGroupRate
+ * @property integer $dueDays
+ * @property string $accountNumber
+ * @property string $billingTermsXref
+ * @property string $cityTaxAgencyXref
+ * @property string $cityTaxXref
+ * @property string $compositeTaxAgencyXref
+ * @property string $compositeTaxXref
+ * @property string $countryTaxAgencyXref
+ * @property string $countryTaxXref
+ * @property string $countyTaxAgencyXref
+ * @property string $countyTaxXref
+ * @property string $stateTaxAgencyXref
+ * @property string $stateTaxXref
+ * @property string $taxAgencyXref
  */
 class GLExportCustomer extends Model
 {
@@ -47,34 +47,34 @@ class GLExportCustomer extends Model
      * @var array
      */
     protected $casts = [
-        'company' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CompanyReference',
-        'companyType' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CompanyTypeReference',
-        'contact' => 'Spinen\ConnectWise\Models\v2019_1\Finance\ContactReference',
-        'site' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SiteReference',
         'accountNumber' => 'string',
         'billingTerms' => 'Spinen\ConnectWise\Models\v2019_1\Finance\BillingTermsReference',
         'billingTermsXref' => 'string',
-        'dueDays' => 'integer',
-        'taxable' => 'boolean',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2019_1\Finance\TaxCodeReference',
-        'currency' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CurrencyReference',
-        'stateTaxXref' => 'string',
-        'countyTaxXref' => 'string',
-        'cityTaxXref' => 'string',
-        'countryTaxXref' => 'string',
-        'compositeTaxXref' => 'string',
-        'stateTaxRate' => 'float',
-        'countyTaxRate' => 'float',
-        'cityTaxRate' => 'float',
-        'countryTaxRate' => 'float',
-        'compositeTaxRate' => 'float',
-        'taxGroupRate' => 'float',
-        'taxAgencyXref' => 'string',
-        'stateTaxAgencyXref' => 'string',
-        'countyTaxAgencyXref' => 'string',
         'cityTaxAgencyXref' => 'string',
-        'countryTaxAgencyXref' => 'string',
+        'cityTaxRate' => 'float',
+        'cityTaxXref' => 'string',
+        'company' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CompanyReference',
+        'companyType' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CompanyTypeReference',
         'compositeTaxAgencyXref' => 'string',
+        'compositeTaxRate' => 'float',
+        'compositeTaxXref' => 'string',
+        'contact' => 'Spinen\ConnectWise\Models\v2019_1\Finance\ContactReference',
+        'countryTaxAgencyXref' => 'string',
+        'countryTaxRate' => 'float',
+        'countryTaxXref' => 'string',
+        'countyTaxAgencyXref' => 'string',
+        'countyTaxRate' => 'float',
+        'countyTaxXref' => 'string',
+        'currency' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CurrencyReference',
+        'dueDays' => 'integer',
+        'site' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SiteReference',
+        'stateTaxAgencyXref' => 'string',
+        'stateTaxRate' => 'float',
+        'stateTaxXref' => 'string',
+        'taxAgencyXref' => 'string',
+        'taxCode' => 'Spinen\ConnectWise\Models\v2019_1\Finance\TaxCodeReference',
+        'taxGroupRate' => 'float',
         'taxLevels' => 'array',
+        'taxable' => 'boolean',
     ];
 }

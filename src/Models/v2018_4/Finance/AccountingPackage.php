@@ -9,28 +9,28 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AccountingPackage
  *
- * @property integer $id
- * @property string $identifier
- * @property string $name
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\Metadata $_info
+ * @property boolean $activeFlag
  * @property boolean $directTransferFlag
- * @property boolean $includeInvoicesFlag
- * @property string $invoiceFormat
- * @property boolean $includeExpenseFlag
- * @property boolean $transferExpenseAsBillFlag
- * @property string $expenseFormat
- * @property boolean $suppressMemoFlag
- * @property boolean $syncPaymentInfoFlag
- * @property boolean $includeSalesTaxFlag
  * @property boolean $enableTaxGroupsFlag
- * @property boolean $zeroDollarTaxAmountsFlag
+ * @property boolean $includeCogsDropShipFlag
+ * @property boolean $includeCogsEntriesFlag
+ * @property boolean $includeExpenseFlag
+ * @property boolean $includeInvoicesFlag
  * @property boolean $includeItemsFlag
+ * @property boolean $includeSalesTaxFlag
  * @property boolean $inventorySOHFlag
  * @property boolean $sendComponentAmountFlag
  * @property boolean $sendUomFlag
- * @property boolean $includeCogsEntriesFlag
- * @property boolean $includeCogsDropShipFlag
- * @property boolean $activeFlag
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\Metadata $_info
+ * @property boolean $suppressMemoFlag
+ * @property boolean $syncPaymentInfoFlag
+ * @property boolean $transferExpenseAsBillFlag
+ * @property boolean $zeroDollarTaxAmountsFlag
+ * @property integer $id
+ * @property string $expenseFormat
+ * @property string $identifier
+ * @property string $invoiceFormat
+ * @property string $name
  */
 class AccountingPackage extends Model
 {
@@ -40,27 +40,27 @@ class AccountingPackage extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Finance\Metadata',
+        'activeFlag' => 'boolean',
+        'directTransferFlag' => 'boolean',
+        'enableTaxGroupsFlag' => 'boolean',
+        'expenseFormat' => 'string',
         'id' => 'integer',
         'identifier' => 'string',
-        'name' => 'string',
-        'directTransferFlag' => 'boolean',
-        'includeInvoicesFlag' => 'boolean',
-        'invoiceFormat' => 'string',
+        'includeCogsDropShipFlag' => 'boolean',
+        'includeCogsEntriesFlag' => 'boolean',
         'includeExpenseFlag' => 'boolean',
-        'transferExpenseAsBillFlag' => 'boolean',
-        'expenseFormat' => 'string',
-        'suppressMemoFlag' => 'boolean',
-        'syncPaymentInfoFlag' => 'boolean',
-        'includeSalesTaxFlag' => 'boolean',
-        'enableTaxGroupsFlag' => 'boolean',
-        'zeroDollarTaxAmountsFlag' => 'boolean',
+        'includeInvoicesFlag' => 'boolean',
         'includeItemsFlag' => 'boolean',
+        'includeSalesTaxFlag' => 'boolean',
         'inventorySOHFlag' => 'boolean',
+        'invoiceFormat' => 'string',
+        'name' => 'string',
         'sendComponentAmountFlag' => 'boolean',
         'sendUomFlag' => 'boolean',
-        'includeCogsEntriesFlag' => 'boolean',
-        'includeCogsDropShipFlag' => 'boolean',
-        'activeFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Finance\Metadata',
+        'suppressMemoFlag' => 'boolean',
+        'syncPaymentInfoFlag' => 'boolean',
+        'transferExpenseAsBillFlag' => 'boolean',
+        'zeroDollarTaxAmountsFlag' => 'boolean',
     ];
 }

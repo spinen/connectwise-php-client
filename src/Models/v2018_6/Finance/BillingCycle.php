@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BillingCycle
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\Metadata $_info
+ * @property boolean $defaultFlag
  * @property integer $id
+ * @property string $billingOptions
  * @property string $identifier
  * @property string $name
- * @property boolean $defaultFlag
- * @property string $billingOptions
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\Metadata $_info
  */
 class BillingCycle extends Model
 {
@@ -24,11 +24,11 @@ class BillingCycle extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
+        'billingOptions' => 'string',
+        'defaultFlag' => 'boolean',
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',
-        'defaultFlag' => 'boolean',
-        'billingOptions' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
     ];
 }

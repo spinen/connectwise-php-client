@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportVendor
  *
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference $vendor
- * @property string $vendorNumber
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\ContactReference $contact
- * @property string $accountNumber
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\BillingTermsReference $billingTerms
- * @property integer $dueDays
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference $vendor
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\ContactReference $contact
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\SiteReference $site
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\TaxCodeReference $taxCode
+ * @property integer $dueDays
+ * @property string $accountNumber
+ * @property string $vendorNumber
  */
 class GLExportVendor extends Model
 {
@@ -28,15 +28,15 @@ class GLExportVendor extends Model
      * @var array
      */
     protected $casts = [
-        'member' => 'Spinen\ConnectWise\Models\v2018_5\Finance\MemberReference',
-        'vendor' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference',
-        'vendorNumber' => 'string',
-        'company' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference',
-        'contact' => 'Spinen\ConnectWise\Models\v2018_5\Finance\ContactReference',
         'accountNumber' => 'string',
         'billingTerms' => 'Spinen\ConnectWise\Models\v2018_5\Finance\BillingTermsReference',
+        'company' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference',
+        'contact' => 'Spinen\ConnectWise\Models\v2018_5\Finance\ContactReference',
         'dueDays' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2018_5\Finance\MemberReference',
         'site' => 'Spinen\ConnectWise\Models\v2018_5\Finance\SiteReference',
         'taxCode' => 'Spinen\ConnectWise\Models\v2018_5\Finance\TaxCodeReference',
+        'vendor' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference',
+        'vendorNumber' => 'string',
     ];
 }

@@ -9,23 +9,23 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TaxIntegration
  *
- * @property string $taxIntegrationType
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\Metadata $_info
+ * @property boolean $accountingIntegrationFlag
+ * @property boolean $commitTransactionsFlag
+ * @property boolean $enabledFlag
+ * @property boolean $salesInvoiceFlag
+ * @property boolean $taxLineFlag
  * @property integer $id
  * @property string $accountNumber
- * @property string $licenseKey
- * @property string $serviceUrl
  * @property string $companyCode
- * @property string $timeTaxCode
  * @property string $expenseTaxCode
- * @property string $productTaxCode
- * @property string $invoiceAmountTaxCode
- * @property boolean $enabledFlag
- * @property boolean $commitTransactionsFlag
- * @property boolean $salesInvoiceFlag
  * @property string $freightTaxCode
- * @property boolean $accountingIntegrationFlag
- * @property boolean $taxLineFlag
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\Metadata $_info
+ * @property string $invoiceAmountTaxCode
+ * @property string $licenseKey
+ * @property string $productTaxCode
+ * @property string $serviceUrl
+ * @property string $taxIntegrationType
+ * @property string $timeTaxCode
  */
 class TaxIntegration extends Model
 {
@@ -35,22 +35,22 @@ class TaxIntegration extends Model
      * @var array
      */
     protected $casts = [
-        'taxIntegrationType' => 'string',
-        'id' => 'integer',
-        'accountNumber' => 'string',
-        'licenseKey' => 'string',
-        'serviceUrl' => 'string',
-        'companyCode' => 'string',
-        'timeTaxCode' => 'string',
-        'expenseTaxCode' => 'string',
-        'productTaxCode' => 'string',
-        'invoiceAmountTaxCode' => 'string',
-        'enabledFlag' => 'boolean',
-        'commitTransactionsFlag' => 'boolean',
-        'salesInvoiceFlag' => 'boolean',
-        'freightTaxCode' => 'string',
-        'accountingIntegrationFlag' => 'boolean',
-        'taxLineFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2018_4\Finance\Metadata',
+        'accountNumber' => 'string',
+        'accountingIntegrationFlag' => 'boolean',
+        'commitTransactionsFlag' => 'boolean',
+        'companyCode' => 'string',
+        'enabledFlag' => 'boolean',
+        'expenseTaxCode' => 'string',
+        'freightTaxCode' => 'string',
+        'id' => 'integer',
+        'invoiceAmountTaxCode' => 'string',
+        'licenseKey' => 'string',
+        'productTaxCode' => 'string',
+        'salesInvoiceFlag' => 'boolean',
+        'serviceUrl' => 'string',
+        'taxIntegrationType' => 'string',
+        'taxLineFlag' => 'boolean',
+        'timeTaxCode' => 'string',
     ];
 }

@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for DocumentSetup
  *
- * @property integer $id
- * @property boolean $uploadAsLinkFlag
- * @property boolean $isPublicFlag
- * @property string $docPath
- * @property string $templatePath
- * @property string $templateOutputPath
  * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
+ * @property boolean $isPublicFlag
+ * @property boolean $uploadAsLinkFlag
+ * @property integer $id
+ * @property string $docPath
+ * @property string $templateOutputPath
+ * @property string $templatePath
  */
 class DocumentSetup extends Model
 {
@@ -25,12 +25,12 @@ class DocumentSetup extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'uploadAsLinkFlag' => 'boolean',
-        'isPublicFlag' => 'boolean',
-        'docPath' => 'string',
-        'templatePath' => 'string',
-        'templateOutputPath' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
+        'docPath' => 'string',
+        'id' => 'integer',
+        'isPublicFlag' => 'boolean',
+        'templateOutputPath' => 'string',
+        'templatePath' => 'string',
+        'uploadAsLinkFlag' => 'boolean',
     ];
 }

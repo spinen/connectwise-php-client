@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for EmailConnectorParsingTypeReference
  *
+ * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  */
 class EmailConnectorParsingTypeReference extends Model
 {
@@ -21,8 +21,8 @@ class EmailConnectorParsingTypeReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
         'id' => 'integer',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
     ];
 }

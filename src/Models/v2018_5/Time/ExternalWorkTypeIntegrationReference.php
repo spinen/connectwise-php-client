@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ExternalWorkTypeIntegrationReference
  *
+ * @property Spinen\ConnectWise\Models\v2018_5\Time\Metadata $_info
  * @property integer $id
  * @property string $identifier
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_5\Time\Metadata $_info
  */
 class ExternalWorkTypeIntegrationReference extends Model
 {
@@ -22,9 +22,9 @@ class ExternalWorkTypeIntegrationReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Time\Metadata',
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Time\Metadata',
     ];
 }

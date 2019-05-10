@@ -10,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for LocaleInfo
  *
  * @property integer $id
- * @property string $name
  * @property string $localeCode
+ * @property string $name
  */
 class LocaleInfo extends Model
 {
@@ -22,7 +22,7 @@ class LocaleInfo extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'name' => 'string',
         'localeCode' => 'string',
+        'name' => 'string',
     ];
 }

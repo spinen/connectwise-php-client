@@ -9,57 +9,57 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PurchaseOrder
  *
- * @property integer $id
- * @property integer $businessUnitId
- * @property string $cancelReason
- * @property boolean $closedFlag
- * @property string $customerCity
+ * @property Carbon\Carbon $dateClosed
+ * @property Carbon\Carbon $poDate
+ * @property Carbon\Carbon $shipmentDate
+ * @property Carbon\Carbon $vendorInvoiceDate
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\BillingTermsReference $terms
  * @property Spinen\ConnectWise\Models\v2019_1\Procurement\CompanyReference $customerCompany
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\CompanyReference $vendorCompany
  * @property Spinen\ConnectWise\Models\v2019_1\Procurement\ContactReference $customerContact
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\ContactReference $vendorContact
  * @property Spinen\ConnectWise\Models\v2019_1\Procurement\CountryReference $customerCountry
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\CurrencyReference $currency
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\PurchaseOrderStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\ShipmentMethodReference $shipmentMethod
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\SiteReference $customerSite
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\SiteReference $vendorSite
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\TaxCodeReference $taxCode
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\WarehouseReference $warehouse
+ * @property array $customFields
+ * @property boolean $closedFlag
+ * @property boolean $dropShipCustomerFlag
+ * @property boolean $taxFreightFlag
+ * @property boolean $taxPoFlag
+ * @property boolean $updateShipmentInfo
+ * @property boolean $updateVendorOrderNumber
+ * @property float $freightCost
+ * @property float $freightTaxTotal
+ * @property float $salesTax
+ * @property float $subTotal
+ * @property float $total
+ * @property integer $businessUnitId
+ * @property integer $id
+ * @property integer $locationId
+ * @property string $cancelReason
+ * @property string $customerCity
  * @property string $customerExtension
  * @property string $customerName
  * @property string $customerPhone
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\SiteReference $customerSite
  * @property string $customerSiteName
  * @property string $customerState
  * @property string $customerStreetLine1
  * @property string $customerStreetLine2
  * @property string $customerZip
- * @property Carbon\Carbon $dateClosed
- * @property boolean $dropShipCustomerFlag
  * @property string $enteredBy
- * @property float $freightCost
  * @property string $freightPackingSlip
- * @property float $freightTaxTotal
  * @property string $internalNotes
- * @property integer $locationId
- * @property Carbon\Carbon $poDate
  * @property string $poNumber
- * @property float $salesTax
- * @property Carbon\Carbon $shipmentDate
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\ShipmentMethodReference $shipmentMethod
  * @property string $shippingInstructions
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\PurchaseOrderStatusReference $status
- * @property float $subTotal
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\TaxCodeReference $taxCode
- * @property boolean $taxFreightFlag
- * @property boolean $taxPoFlag
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\BillingTermsReference $terms
- * @property float $total
  * @property string $trackingNumber
- * @property boolean $updateShipmentInfo
- * @property boolean $updateVendorOrderNumber
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\CompanyReference $vendorCompany
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\ContactReference $vendorContact
- * @property Carbon\Carbon $vendorInvoiceDate
  * @property string $vendorInvoiceNumber
  * @property string $vendorOrderNumber
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\SiteReference $vendorSite
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\WarehouseReference $warehouse
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\Metadata $_info
- * @property array $customFields
  */
 class PurchaseOrder extends Model
 {
@@ -69,10 +69,12 @@ class PurchaseOrder extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\Metadata',
         'businessUnitId' => 'integer',
         'cancelReason' => 'string',
         'closedFlag' => 'boolean',
+        'currency' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\CurrencyReference',
+        'customFields' => 'array',
         'customerCity' => 'string',
         'customerCompany' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\CompanyReference',
         'customerContact' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\ContactReference',
@@ -92,6 +94,7 @@ class PurchaseOrder extends Model
         'freightCost' => 'float',
         'freightPackingSlip' => 'string',
         'freightTaxTotal' => 'float',
+        'id' => 'integer',
         'internalNotes' => 'string',
         'locationId' => 'integer',
         'poDate' => 'Carbon\Carbon',
@@ -117,8 +120,5 @@ class PurchaseOrder extends Model
         'vendorOrderNumber' => 'string',
         'vendorSite' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\SiteReference',
         'warehouse' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\WarehouseReference',
-        'currency' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\CurrencyReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\Metadata',
-        'customFields' => 'array',
     ];
 }

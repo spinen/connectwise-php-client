@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OpportunityToServiceTicketConversion
  *
+ * @property array $includeDocumentIds
+ * @property array $includeNoteIds
+ * @property array $includeProductIds
+ * @property boolean $includeAllDocumentsFlag
+ * @property boolean $includeAllNotesFlag
+ * @property boolean $includeAllProductsFlag
  * @property integer $ticketId
  * @property string $summary
- * @property boolean $includeAllNotesFlag
- * @property boolean $includeAllDocumentsFlag
- * @property boolean $includeAllProductsFlag
- * @property array $includeNoteIds
- * @property array $includeDocumentIds
- * @property array $includeProductIds
  */
 class OpportunityToServiceTicketConversion extends Model
 {
@@ -26,13 +26,13 @@ class OpportunityToServiceTicketConversion extends Model
      * @var array
      */
     protected $casts = [
-        'ticketId' => 'integer',
-        'summary' => 'string',
-        'includeAllNotesFlag' => 'boolean',
         'includeAllDocumentsFlag' => 'boolean',
+        'includeAllNotesFlag' => 'boolean',
         'includeAllProductsFlag' => 'boolean',
-        'includeNoteIds' => 'array',
         'includeDocumentIds' => 'array',
+        'includeNoteIds' => 'array',
         'includeProductIds' => 'array',
+        'summary' => 'string',
+        'ticketId' => 'integer',
     ];
 }

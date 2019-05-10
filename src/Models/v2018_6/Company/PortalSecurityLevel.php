@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PortalSecurityLevel
  *
- * @property integer $id
- * @property string $captionIdentifier
- * @property boolean $isDefaultFlag
- * @property string $caption
  * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
+ * @property boolean $isDefaultFlag
+ * @property integer $id
+ * @property string $caption
+ * @property string $captionIdentifier
  */
 class PortalSecurityLevel extends Model
 {
@@ -23,10 +23,10 @@ class PortalSecurityLevel extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'captionIdentifier' => 'string',
-        'isDefaultFlag' => 'boolean',
-        'caption' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
+        'caption' => 'string',
+        'captionIdentifier' => 'string',
+        'id' => 'integer',
+        'isDefaultFlag' => 'boolean',
     ];
 }

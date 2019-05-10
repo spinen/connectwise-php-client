@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for LdapConfigurationReference
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  * @property integer $id
  * @property string $name
  * @property string $server
- * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  */
 class LdapConfigurationReference extends Model
 {
@@ -22,9 +22,9 @@ class LdapConfigurationReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
         'id' => 'integer',
         'name' => 'string',
         'server' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
     ];
 }

@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ChargeToReference
  *
+ * @property Spinen\ConnectWise\Models\v2019_1\Internal\Metadata $_info
  * @property integer $id
  * @property string $name
  * @property string $type
- * @property Spinen\ConnectWise\Models\v2019_1\Internal\Metadata $_info
  */
 class ChargeToReference extends Model
 {
@@ -22,9 +22,9 @@ class ChargeToReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Internal\Metadata',
         'id' => 'integer',
         'name' => 'string',
         'type' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Internal\Metadata',
     ];
 }

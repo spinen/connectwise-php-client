@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CompanyType
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
+ * @property boolean $defaultFlag
+ * @property boolean $serviceAlertFlag
+ * @property boolean $vendorFlag
  * @property integer $id
  * @property string $name
- * @property boolean $defaultFlag
- * @property boolean $vendorFlag
- * @property boolean $serviceAlertFlag
  * @property string $serviceAlertMessage
- * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
  */
 class CompanyType extends Model
 {
@@ -25,12 +25,12 @@ class CompanyType extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
+        'defaultFlag' => 'boolean',
         'id' => 'integer',
         'name' => 'string',
-        'defaultFlag' => 'boolean',
-        'vendorFlag' => 'boolean',
         'serviceAlertFlag' => 'boolean',
         'serviceAlertMessage' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
+        'vendorFlag' => 'boolean',
     ];
 }

@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OpportunityToSalesOrderConversion
  *
+ * @property array $includeDocumentIds
+ * @property array $includeNoteIds
+ * @property array $includeProductIds
+ * @property boolean $includeAllDocumentsFlag
+ * @property boolean $includeAllNotesFlag
+ * @property boolean $includeAllProductsFlag
  * @property integer $salesOrderId
  * @property string $name
- * @property boolean $includeAllNotesFlag
- * @property boolean $includeAllDocumentsFlag
- * @property boolean $includeAllProductsFlag
- * @property array $includeNoteIds
- * @property array $includeDocumentIds
- * @property array $includeProductIds
  */
 class OpportunityToSalesOrderConversion extends Model
 {
@@ -26,13 +26,13 @@ class OpportunityToSalesOrderConversion extends Model
      * @var array
      */
     protected $casts = [
-        'salesOrderId' => 'integer',
-        'name' => 'string',
-        'includeAllNotesFlag' => 'boolean',
         'includeAllDocumentsFlag' => 'boolean',
+        'includeAllNotesFlag' => 'boolean',
         'includeAllProductsFlag' => 'boolean',
-        'includeNoteIds' => 'array',
         'includeDocumentIds' => 'array',
+        'includeNoteIds' => 'array',
         'includeProductIds' => 'array',
+        'name' => 'string',
+        'salesOrderId' => 'integer',
     ];
 }

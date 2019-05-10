@@ -9,6 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for UploadToMarketplaceRequest
  *
+
  */
 class UploadToMarketplaceRequest extends Model
 {
@@ -18,5 +19,6 @@ class UploadToMarketplaceRequest extends Model
      * @var array
      */
     protected $casts = [
+,
     ];
 }

@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CentralServiceEula
  *
+ * @property Carbon\Carbon $signedDate
+ * @property Spinen\ConnectWise\Models\v2019_3\Internal\MemberReference $signedMember
+ * @property Spinen\ConnectWise\Models\v2019_3\Internal\Metadata $_info
+ * @property boolean $acceptedFlag
  * @property integer $id
  * @property string $eulaKey
- * @property boolean $acceptedFlag
  * @property string $eulaServiceLink
  * @property string $eulaUiLink
- * @property Spinen\ConnectWise\Models\v2019_3\Internal\MemberReference $signedMember
- * @property Carbon\Carbon $signedDate
- * @property Spinen\ConnectWise\Models\v2019_3\Internal\Metadata $_info
  */
 class CentralServiceEula extends Model
 {
@@ -26,13 +26,13 @@ class CentralServiceEula extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'eulaKey' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Internal\Metadata',
         'acceptedFlag' => 'boolean',
+        'eulaKey' => 'string',
         'eulaServiceLink' => 'string',
         'eulaUiLink' => 'string',
-        'signedMember' => 'Spinen\ConnectWise\Models\v2019_3\Internal\MemberReference',
+        'id' => 'integer',
         'signedDate' => 'Carbon\Carbon',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Internal\Metadata',
+        'signedMember' => 'Spinen\ConnectWise\Models\v2019_3\Internal\MemberReference',
     ];
 }

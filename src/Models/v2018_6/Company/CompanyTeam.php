@@ -9,17 +9,17 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CompanyTeam
  *
- * @property integer $id
  * @property Spinen\ConnectWise\Models\v2018_6\Company\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_6\Company\TeamRoleReference $teamRole
- * @property integer $locationId
- * @property integer $businessUnitId
  * @property Spinen\ConnectWise\Models\v2018_6\Company\ContactReference $contact
  * @property Spinen\ConnectWise\Models\v2018_6\Company\MemberReference $member
- * @property boolean $accountManagerFlag
- * @property boolean $techFlag
- * @property boolean $salesFlag
  * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\TeamRoleReference $teamRole
+ * @property boolean $accountManagerFlag
+ * @property boolean $salesFlag
+ * @property boolean $techFlag
+ * @property integer $businessUnitId
+ * @property integer $id
+ * @property integer $locationId
  */
 class CompanyTeam extends Model
 {
@@ -29,16 +29,16 @@ class CompanyTeam extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'company' => 'Spinen\ConnectWise\Models\v2018_6\Company\CompanyReference',
-        'teamRole' => 'Spinen\ConnectWise\Models\v2018_6\Company\TeamRoleReference',
-        'locationId' => 'integer',
-        'businessUnitId' => 'integer',
-        'contact' => 'Spinen\ConnectWise\Models\v2018_6\Company\ContactReference',
-        'member' => 'Spinen\ConnectWise\Models\v2018_6\Company\MemberReference',
-        'accountManagerFlag' => 'boolean',
-        'techFlag' => 'boolean',
-        'salesFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
+        'accountManagerFlag' => 'boolean',
+        'businessUnitId' => 'integer',
+        'company' => 'Spinen\ConnectWise\Models\v2018_6\Company\CompanyReference',
+        'contact' => 'Spinen\ConnectWise\Models\v2018_6\Company\ContactReference',
+        'id' => 'integer',
+        'locationId' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2018_6\Company\MemberReference',
+        'salesFlag' => 'boolean',
+        'teamRole' => 'Spinen\ConnectWise\Models\v2018_6\Company\TeamRoleReference',
+        'techFlag' => 'boolean',
     ];
 }

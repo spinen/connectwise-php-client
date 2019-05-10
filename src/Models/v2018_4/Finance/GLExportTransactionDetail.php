@@ -9,57 +9,57 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportTransactionDetail
  *
- * @property integer $id
  * @property Carbon\Carbon $documentDate
- * @property string $documentType
- * @property string $accountNumber
- * @property string $glClass
- * @property string $glTypeId
- * @property string $glItemId
- * @property integer $invoiceSummaryOption
- * @property float $cost
- * @property string $salesCode
- * @property string $memo
- * @property string $description
- * @property float $quantity
- * @property float $total
  * @property Spinen\ConnectWise\Models\v2018_4\Finance\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\TimeEntryReference $timeEntry
- * @property string $costAccountNumber
- * @property string $inventoryAccountNumber
- * @property string $productAccountNumber
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\IvItemReference $item
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\ProductReference $product
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\ProductSubCategoryReference $subCategory
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\ShipmentMethodReference $shipmentMethod
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\SiteReference $warehouseSite
  * @property Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference $taxCode
- * @property string $taxCodeXref
- * @property string $taxAgencyXref
- * @property string $taxNote
- * @property float $taxRate
- * @property float $taxRatePercent
- * @property boolean $taxableFlag
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\TimeEntryReference $timeEntry
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\UnitOfMeasureReference $unitOfMeasure
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\WarehouseBinReference $warehouseBin
+ * @property boolean $dropShippedFlag
+ * @property boolean $itemTaxableFlag
+ * @property boolean $serializedFlag
  * @property boolean $taxable2Flag
  * @property boolean $taxable3Flag
  * @property boolean $taxable4Flag
  * @property boolean $taxable5Flag
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\IvItemReference $item
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\ProductReference $product
- * @property boolean $itemTaxableFlag
- * @property float $itemPrice
+ * @property boolean $taxableFlag
+ * @property float $cost
  * @property float $itemCost
- * @property string $itemDescription
- * @property string $salesDescription
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\UnitOfMeasureReference $unitOfMeasure
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\ProductSubCategoryReference $subCategory
- * @property boolean $serializedFlag
- * @property string $serialNumbers
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\SiteReference $warehouseSite
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\WarehouseBinReference $warehouseBin
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\ShipmentMethodReference $shipmentMethod
- * @property boolean $dropShippedFlag
- * @property string $itemTypeXref
- * @property string $inventoryXref
+ * @property float $itemPrice
+ * @property float $quantity
+ * @property float $taxRate
+ * @property float $taxRatePercent
+ * @property float $total
+ * @property integer $id
+ * @property integer $invoiceSummaryOption
+ * @property string $accountNumber
  * @property string $cogsXref
- * @property string $uomScheduleXref
- * @property string $priceLevelXref
+ * @property string $costAccountNumber
+ * @property string $description
+ * @property string $documentType
+ * @property string $glClass
+ * @property string $glItemId
+ * @property string $glTypeId
+ * @property string $inventoryAccountNumber
+ * @property string $inventoryXref
+ * @property string $itemDescription
+ * @property string $itemTypeXref
  * @property string $locationXref
+ * @property string $memo
+ * @property string $priceLevelXref
+ * @property string $productAccountNumber
+ * @property string $salesCode
+ * @property string $salesDescription
+ * @property string $serialNumbers
+ * @property string $taxAgencyXref
+ * @property string $taxCodeXref
+ * @property string $taxNote
+ * @property string $uomScheduleXref
  */
 class GLExportTransactionDetail extends Model
 {
@@ -69,56 +69,56 @@ class GLExportTransactionDetail extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        'accountNumber' => 'string',
+        'cogsXref' => 'string',
+        'cost' => 'float',
+        'costAccountNumber' => 'string',
+        'currency' => 'Spinen\ConnectWise\Models\v2018_4\Finance\CurrencyReference',
+        'description' => 'string',
         'documentDate' => 'Carbon\Carbon',
         'documentType' => 'string',
-        'accountNumber' => 'string',
+        'dropShippedFlag' => 'boolean',
         'glClass' => 'string',
-        'glTypeId' => 'string',
         'glItemId' => 'string',
-        'invoiceSummaryOption' => 'integer',
-        'cost' => 'float',
-        'salesCode' => 'string',
-        'memo' => 'string',
-        'description' => 'string',
-        'quantity' => 'float',
-        'total' => 'float',
-        'currency' => 'Spinen\ConnectWise\Models\v2018_4\Finance\CurrencyReference',
-        'timeEntry' => 'Spinen\ConnectWise\Models\v2018_4\Finance\TimeEntryReference',
-        'costAccountNumber' => 'string',
+        'glTypeId' => 'string',
+        'id' => 'integer',
         'inventoryAccountNumber' => 'string',
+        'inventoryXref' => 'string',
+        'invoiceSummaryOption' => 'integer',
+        'item' => 'Spinen\ConnectWise\Models\v2018_4\Finance\IvItemReference',
+        'itemCost' => 'float',
+        'itemDescription' => 'string',
+        'itemPrice' => 'float',
+        'itemTaxableFlag' => 'boolean',
+        'itemTypeXref' => 'string',
+        'locationXref' => 'string',
+        'memo' => 'string',
+        'priceLevelXref' => 'string',
+        'product' => 'Spinen\ConnectWise\Models\v2018_4\Finance\ProductReference',
         'productAccountNumber' => 'string',
+        'quantity' => 'float',
+        'salesCode' => 'string',
+        'salesDescription' => 'string',
+        'serialNumbers' => 'string',
+        'serializedFlag' => 'boolean',
+        'shipmentMethod' => 'Spinen\ConnectWise\Models\v2018_4\Finance\ShipmentMethodReference',
+        'subCategory' => 'Spinen\ConnectWise\Models\v2018_4\Finance\ProductSubCategoryReference',
+        'taxAgencyXref' => 'string',
         'taxCode' => 'Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference',
         'taxCodeXref' => 'string',
-        'taxAgencyXref' => 'string',
         'taxNote' => 'string',
         'taxRate' => 'float',
         'taxRatePercent' => 'float',
-        'taxableFlag' => 'boolean',
         'taxable2Flag' => 'boolean',
         'taxable3Flag' => 'boolean',
         'taxable4Flag' => 'boolean',
         'taxable5Flag' => 'boolean',
-        'item' => 'Spinen\ConnectWise\Models\v2018_4\Finance\IvItemReference',
-        'product' => 'Spinen\ConnectWise\Models\v2018_4\Finance\ProductReference',
-        'itemTaxableFlag' => 'boolean',
-        'itemPrice' => 'float',
-        'itemCost' => 'float',
-        'itemDescription' => 'string',
-        'salesDescription' => 'string',
+        'taxableFlag' => 'boolean',
+        'timeEntry' => 'Spinen\ConnectWise\Models\v2018_4\Finance\TimeEntryReference',
+        'total' => 'float',
         'unitOfMeasure' => 'Spinen\ConnectWise\Models\v2018_4\Finance\UnitOfMeasureReference',
-        'subCategory' => 'Spinen\ConnectWise\Models\v2018_4\Finance\ProductSubCategoryReference',
-        'serializedFlag' => 'boolean',
-        'serialNumbers' => 'string',
-        'warehouseSite' => 'Spinen\ConnectWise\Models\v2018_4\Finance\SiteReference',
-        'warehouseBin' => 'Spinen\ConnectWise\Models\v2018_4\Finance\WarehouseBinReference',
-        'shipmentMethod' => 'Spinen\ConnectWise\Models\v2018_4\Finance\ShipmentMethodReference',
-        'dropShippedFlag' => 'boolean',
-        'itemTypeXref' => 'string',
-        'inventoryXref' => 'string',
-        'cogsXref' => 'string',
         'uomScheduleXref' => 'string',
-        'priceLevelXref' => 'string',
-        'locationXref' => 'string',
+        'warehouseBin' => 'Spinen\ConnectWise\Models\v2018_4\Finance\WarehouseBinReference',
+        'warehouseSite' => 'Spinen\ConnectWise\Models\v2018_4\Finance\SiteReference',
     ];
 }

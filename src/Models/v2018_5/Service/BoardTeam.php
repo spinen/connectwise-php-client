@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BoardTeam
  *
- * @property integer $id
- * @property string $name
  * @property Spinen\ConnectWise\Models\v2018_5\Service\MemberReference $teamLeader
+ * @property Spinen\ConnectWise\Models\v2018_5\Service\Metadata $_info
  * @property array $members
  * @property boolean $defaultFlag
  * @property boolean $notifyOnTicketDelete
  * @property integer $boardId
- * @property integer $locationId
  * @property integer $businessUnitId
- * @property Spinen\ConnectWise\Models\v2018_5\Service\Metadata $_info
+ * @property integer $id
+ * @property integer $locationId
+ * @property string $name
  */
 class BoardTeam extends Model
 {
@@ -28,15 +28,15 @@ class BoardTeam extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'teamLeader' => 'Spinen\ConnectWise\Models\v2018_5\Service\MemberReference',
-        'members' => 'array',
-        'defaultFlag' => 'boolean',
-        'notifyOnTicketDelete' => 'boolean',
-        'boardId' => 'integer',
-        'locationId' => 'integer',
-        'businessUnitId' => 'integer',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Service\Metadata',
+        'boardId' => 'integer',
+        'businessUnitId' => 'integer',
+        'defaultFlag' => 'boolean',
+        'id' => 'integer',
+        'locationId' => 'integer',
+        'members' => 'array',
+        'name' => 'string',
+        'notifyOnTicketDelete' => 'boolean',
+        'teamLeader' => 'Spinen\ConnectWise\Models\v2018_5\Service\MemberReference',
     ];
 }

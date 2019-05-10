@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PortalSecuritySetting
  *
- * @property integer $id
- * @property string $functionIdentifier
- * @property string $functionDescription
- * @property boolean $levelOne
- * @property boolean $levelTwo
- * @property boolean $levelThree
- * @property boolean $levelFour
- * @property boolean $levelFive
- * @property boolean $levelSix
  * @property Spinen\ConnectWise\Models\v2019_2\Company\Metadata $_info
+ * @property boolean $levelFive
+ * @property boolean $levelFour
+ * @property boolean $levelOne
+ * @property boolean $levelSix
+ * @property boolean $levelThree
+ * @property boolean $levelTwo
+ * @property integer $id
+ * @property string $functionDescription
+ * @property string $functionIdentifier
  */
 class PortalSecuritySetting extends Model
 {
@@ -28,15 +28,15 @@ class PortalSecuritySetting extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'functionIdentifier' => 'string',
-        'functionDescription' => 'string',
-        'levelOne' => 'boolean',
-        'levelTwo' => 'boolean',
-        'levelThree' => 'boolean',
-        'levelFour' => 'boolean',
-        'levelFive' => 'boolean',
-        'levelSix' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2019_2\Company\Metadata',
+        'functionDescription' => 'string',
+        'functionIdentifier' => 'string',
+        'id' => 'integer',
+        'levelFive' => 'boolean',
+        'levelFour' => 'boolean',
+        'levelOne' => 'boolean',
+        'levelSix' => 'boolean',
+        'levelThree' => 'boolean',
+        'levelTwo' => 'boolean',
     ];
 }

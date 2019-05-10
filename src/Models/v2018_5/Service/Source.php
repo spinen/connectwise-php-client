@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Source
  *
- * @property integer $id
- * @property string $name
- * @property boolean $defaultFlag
- * @property Spinen\ConnectWise\Models\v2018_5\Service\Metadata $_info
- * @property string $enteredBy
  * @property Carbon\Carbon $dateEntered
+ * @property Spinen\ConnectWise\Models\v2018_5\Service\Metadata $_info
+ * @property boolean $defaultFlag
+ * @property integer $id
+ * @property string $enteredBy
+ * @property string $name
  */
 class Source extends Model
 {
@@ -24,11 +24,11 @@ class Source extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Service\Metadata',
+        'dateEntered' => 'Carbon\Carbon',
+        'defaultFlag' => 'boolean',
+        'enteredBy' => 'string',
         'id' => 'integer',
         'name' => 'string',
-        'defaultFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Service\Metadata',
-        'enteredBy' => 'string',
-        'dateEntered' => 'Carbon\Carbon',
     ];
 }

@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CampaignType
  *
+ * @property Spinen\ConnectWise\Models\v2019_2\Marketing\Metadata $_info
+ * @property boolean $defaultFlag
  * @property integer $id
  * @property string $name
- * @property boolean $defaultFlag
- * @property Spinen\ConnectWise\Models\v2019_2\Marketing\Metadata $_info
  */
 class CampaignType extends Model
 {
@@ -22,9 +22,9 @@ class CampaignType extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Marketing\Metadata',
+        'defaultFlag' => 'boolean',
         'id' => 'integer',
         'name' => 'string',
-        'defaultFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Marketing\Metadata',
     ];
 }

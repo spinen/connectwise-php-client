@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MinimumStockByWarehouse
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\WarehouseReference $warehouse
- * @property integer $minimumStock
  * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\WarehouseReference $warehouse
+ * @property integer $id
+ * @property integer $minimumStock
  */
 class MinimumStockByWarehouse extends Model
 {
@@ -22,9 +22,9 @@ class MinimumStockByWarehouse extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'warehouse' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\WarehouseReference',
-        'minimumStock' => 'integer',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
+        'id' => 'integer',
+        'minimumStock' => 'integer',
+        'warehouse' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\WarehouseReference',
     ];
 }

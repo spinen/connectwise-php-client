@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BatchResponse
  *
- * @property string $id
  * @property array $responses
+ * @property string $id
  */
 class BatchResponse extends Model
 {

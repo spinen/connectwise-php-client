@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Track
  *
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
+ * @property array $notifyActionIds
+ * @property boolean $inactiveFlag
  * @property integer $id
  * @property string $name
- * @property boolean $inactiveFlag
- * @property array $notifyActionIds
- * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
  */
 class Track extends Model
 {
@@ -23,10 +23,10 @@ class Track extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'inactiveFlag' => 'boolean',
-        'notifyActionIds' => 'array',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
+        'notifyActionIds' => 'array',
     ];
 }

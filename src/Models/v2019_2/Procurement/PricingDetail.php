@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PricingDetail
  *
- * @property integer $id
+ * @property Carbon\Carbon $endDate
+ * @property Carbon\Carbon $startDate
  * @property Spinen\ConnectWise\Models\v2019_2\Procurement\CatalogItemReference $product
+ * @property Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata $_info
  * @property Spinen\ConnectWise\Models\v2019_2\Procurement\ProductCategoryReference $category
  * @property Spinen\ConnectWise\Models\v2019_2\Procurement\ProductSubCategoryReference $subCategory
- * @property Carbon\Carbon $startDate
- * @property Carbon\Carbon $endDate
  * @property boolean $noEndDate
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata $_info
+ * @property integer $id
  */
 class PricingDetail extends Model
 {
@@ -26,13 +26,13 @@ class PricingDetail extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'product' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\CatalogItemReference',
-        'category' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\ProductCategoryReference',
-        'subCategory' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\ProductSubCategoryReference',
-        'startDate' => 'Carbon\Carbon',
-        'endDate' => 'Carbon\Carbon',
-        'noEndDate' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata',
+        'category' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\ProductCategoryReference',
+        'endDate' => 'Carbon\Carbon',
+        'id' => 'integer',
+        'noEndDate' => 'boolean',
+        'product' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\CatalogItemReference',
+        'startDate' => 'Carbon\Carbon',
+        'subCategory' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\ProductSubCategoryReference',
     ];
 }

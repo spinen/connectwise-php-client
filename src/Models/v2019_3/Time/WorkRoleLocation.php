@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for WorkRoleLocation
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2019_3\Time\SystemLocationReference $location
- * @property float $hourlyRate
- * @property Spinen\ConnectWise\Models\v2019_3\Time\WorkRoleReference $workRole
  * @property Spinen\ConnectWise\Models\v2019_3\Time\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_3\Time\SystemLocationReference $location
+ * @property Spinen\ConnectWise\Models\v2019_3\Time\WorkRoleReference $workRole
+ * @property float $hourlyRate
+ * @property integer $id
  */
 class WorkRoleLocation extends Model
 {
@@ -23,10 +23,10 @@ class WorkRoleLocation extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Time\Metadata',
+        'hourlyRate' => 'float',
         'id' => 'integer',
         'location' => 'Spinen\ConnectWise\Models\v2019_3\Time\SystemLocationReference',
-        'hourlyRate' => 'float',
         'workRole' => 'Spinen\ConnectWise\Models\v2019_3\Time\WorkRoleReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Time\Metadata',
     ];
 }

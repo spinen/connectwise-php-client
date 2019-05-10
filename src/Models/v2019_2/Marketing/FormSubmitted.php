@@ -9,17 +9,17 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for FormSubmitted
  *
- * @property integer $id
+ * @property Carbon\Carbon $dateSubmitted
  * @property integer $campaignId
  * @property integer $contactId
- * @property Carbon\Carbon $dateSubmitted
- * @property string $url
- * @property string $queryString
- * @property string $pageType
+ * @property integer $id
  * @property string $pageSubType
- * @property string $topic
- * @property string $version
+ * @property string $pageType
+ * @property string $queryString
  * @property string $status
+ * @property string $topic
+ * @property string $url
+ * @property string $version
  */
 class FormSubmitted extends Model
 {
@@ -29,16 +29,16 @@ class FormSubmitted extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
         'campaignId' => 'integer',
         'contactId' => 'integer',
         'dateSubmitted' => 'Carbon\Carbon',
-        'url' => 'string',
-        'queryString' => 'string',
-        'pageType' => 'string',
+        'id' => 'integer',
         'pageSubType' => 'string',
-        'topic' => 'string',
-        'version' => 'string',
+        'pageType' => 'string',
+        'queryString' => 'string',
         'status' => 'string',
+        'topic' => 'string',
+        'url' => 'string',
+        'version' => 'string',
     ];
 }

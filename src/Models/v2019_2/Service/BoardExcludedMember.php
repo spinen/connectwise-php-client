@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BoardExcludedMember
  *
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\Metadata $_info
+ * @property integer $boardId
  * @property integer $id
  * @property integer $memberId
- * @property integer $boardId
- * @property Spinen\ConnectWise\Models\v2019_2\Service\Metadata $_info
  */
 class BoardExcludedMember extends Model
 {
@@ -22,9 +22,9 @@ class BoardExcludedMember extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Service\Metadata',
+        'boardId' => 'integer',
         'id' => 'integer',
         'memberId' => 'integer',
-        'boardId' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Service\Metadata',
     ];
 }

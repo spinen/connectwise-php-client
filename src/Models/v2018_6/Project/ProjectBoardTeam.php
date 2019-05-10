@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProjectBoardTeam
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\SystemDepartmentReference $department
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\SystemLocationReference $location
+ * @property boolean $defaultFlag
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_6\Project\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2018_6\Project\SystemDepartmentReference $department
- * @property boolean $defaultFlag
- * @property Spinen\ConnectWise\Models\v2018_6\Project\Metadata $_info
  */
 class ProjectBoardTeam extends Model
 {
@@ -24,11 +24,11 @@ class ProjectBoardTeam extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'location' => 'Spinen\ConnectWise\Models\v2018_6\Project\SystemLocationReference',
-        'department' => 'Spinen\ConnectWise\Models\v2018_6\Project\SystemDepartmentReference',
-        'defaultFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Project\Metadata',
+        'defaultFlag' => 'boolean',
+        'department' => 'Spinen\ConnectWise\Models\v2018_6\Project\SystemDepartmentReference',
+        'id' => 'integer',
+        'location' => 'Spinen\ConnectWise\Models\v2018_6\Project\SystemLocationReference',
+        'name' => 'string',
     ];
 }

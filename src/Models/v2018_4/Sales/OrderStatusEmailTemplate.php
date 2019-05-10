@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OrderStatusEmailTemplate
  *
- * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_4\Sales\Metadata $_info
  * @property Spinen\ConnectWise\Models\v2018_4\Sales\OrderStatusReference $status
+ * @property boolean $copySenderFlag
  * @property boolean $useSenderFlag
+ * @property integer $id
+ * @property string $body
+ * @property string $emailAddress
  * @property string $firstName
  * @property string $lastName
- * @property string $emailAddress
  * @property string $subject
- * @property string $body
- * @property boolean $copySenderFlag
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\Metadata $_info
  */
 class OrderStatusEmailTemplate extends Model
 {
@@ -28,15 +28,15 @@ class OrderStatusEmailTemplate extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'status' => 'Spinen\ConnectWise\Models\v2018_4\Sales\OrderStatusReference',
-        'useSenderFlag' => 'boolean',
-        'firstName' => 'string',
-        'lastName' => 'string',
-        'emailAddress' => 'string',
-        'subject' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Sales\Metadata',
         'body' => 'string',
         'copySenderFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Sales\Metadata',
+        'emailAddress' => 'string',
+        'firstName' => 'string',
+        'id' => 'integer',
+        'lastName' => 'string',
+        'status' => 'Spinen\ConnectWise\Models\v2018_4\Sales\OrderStatusReference',
+        'subject' => 'string',
+        'useSenderFlag' => 'boolean',
     ];
 }

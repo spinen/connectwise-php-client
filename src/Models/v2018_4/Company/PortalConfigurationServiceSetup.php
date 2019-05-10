@@ -9,29 +9,29 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PortalConfigurationServiceSetup
  *
- * @property integer $id
- * @property boolean $serviceTypeFlag
- * @property boolean $serviceSubTypeFlag
- * @property boolean $serviceSubTypeItemFlag
- * @property boolean $statusFlag
- * @property boolean $siteNameFlag
- * @property boolean $enteredDateFlag
- * @property boolean $lastUpdateFlag
- * @property boolean $requiredDateFlag
- * @property boolean $contactFlag
- * @property boolean $assignedResourcesFlag
- * @property boolean $slaInfoFlag
- * @property boolean $serviceBoardFlag
- * @property boolean $budgetHoursFlag
+ * @property Spinen\ConnectWise\Models\v2018_4\Company\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_4\Company\ServiceSignoffReference $fixedFeeTicketTemplate
+ * @property Spinen\ConnectWise\Models\v2018_4\Company\ServiceSignoffReference $timeMaterialsTicketTemplate
  * @property boolean $actualHoursFlag
  * @property boolean $approvalStatusFlag
- * @property boolean $openTasksFlag
+ * @property boolean $assignedResourcesFlag
+ * @property boolean $budgetHoursFlag
  * @property boolean $closedTasksFlag
+ * @property boolean $contactFlag
  * @property boolean $enableChatAssistFlag
+ * @property boolean $enteredDateFlag
+ * @property boolean $lastUpdateFlag
+ * @property boolean $openTasksFlag
+ * @property boolean $requiredDateFlag
+ * @property boolean $serviceBoardFlag
+ * @property boolean $serviceSubTypeFlag
+ * @property boolean $serviceSubTypeItemFlag
+ * @property boolean $serviceTypeFlag
+ * @property boolean $siteNameFlag
+ * @property boolean $slaInfoFlag
+ * @property boolean $statusFlag
+ * @property integer $id
  * @property string $displayClosedTicketsOption
- * @property Spinen\ConnectWise\Models\v2018_4\Company\ServiceSignoffReference $timeMaterialsTicketTemplate
- * @property Spinen\ConnectWise\Models\v2018_4\Company\ServiceSignoffReference $fixedFeeTicketTemplate
- * @property Spinen\ConnectWise\Models\v2018_4\Company\Metadata $_info
  */
 class PortalConfigurationServiceSetup extends Model
 {
@@ -41,28 +41,28 @@ class PortalConfigurationServiceSetup extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'serviceTypeFlag' => 'boolean',
-        'serviceSubTypeFlag' => 'boolean',
-        'serviceSubTypeItemFlag' => 'boolean',
-        'statusFlag' => 'boolean',
-        'siteNameFlag' => 'boolean',
-        'enteredDateFlag' => 'boolean',
-        'lastUpdateFlag' => 'boolean',
-        'requiredDateFlag' => 'boolean',
-        'contactFlag' => 'boolean',
-        'assignedResourcesFlag' => 'boolean',
-        'slaInfoFlag' => 'boolean',
-        'serviceBoardFlag' => 'boolean',
-        'budgetHoursFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Company\Metadata',
         'actualHoursFlag' => 'boolean',
         'approvalStatusFlag' => 'boolean',
-        'openTasksFlag' => 'boolean',
+        'assignedResourcesFlag' => 'boolean',
+        'budgetHoursFlag' => 'boolean',
         'closedTasksFlag' => 'boolean',
-        'enableChatAssistFlag' => 'boolean',
+        'contactFlag' => 'boolean',
         'displayClosedTicketsOption' => 'string',
-        'timeMaterialsTicketTemplate' => 'Spinen\ConnectWise\Models\v2018_4\Company\ServiceSignoffReference',
+        'enableChatAssistFlag' => 'boolean',
+        'enteredDateFlag' => 'boolean',
         'fixedFeeTicketTemplate' => 'Spinen\ConnectWise\Models\v2018_4\Company\ServiceSignoffReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Company\Metadata',
+        'id' => 'integer',
+        'lastUpdateFlag' => 'boolean',
+        'openTasksFlag' => 'boolean',
+        'requiredDateFlag' => 'boolean',
+        'serviceBoardFlag' => 'boolean',
+        'serviceSubTypeFlag' => 'boolean',
+        'serviceSubTypeItemFlag' => 'boolean',
+        'serviceTypeFlag' => 'boolean',
+        'siteNameFlag' => 'boolean',
+        'slaInfoFlag' => 'boolean',
+        'statusFlag' => 'boolean',
+        'timeMaterialsTicketTemplate' => 'Spinen\ConnectWise\Models\v2018_4\Company\ServiceSignoffReference',
     ];
 }

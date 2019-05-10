@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PortalSecurity
  *
- * @property string $identifier
  * @property boolean $enabled
+ * @property string $identifier
  */
 class PortalSecurity extends Model
 {
@@ -20,7 +20,7 @@ class PortalSecurity extends Model
      * @var array
      */
     protected $casts = [
-        'identifier' => 'string',
         'enabled' => 'boolean',
+        'identifier' => 'string',
     ];
 }

@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ScheduleDetail
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2018_6\Schedule\ScheduleEntryReference $scheduleEntry
- * @property Carbon\Carbon $dateStart
  * @property Carbon\Carbon $dateEnd
+ * @property Carbon\Carbon $dateStart
  * @property Spinen\ConnectWise\Models\v2018_6\Schedule\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2018_6\Schedule\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\Schedule\ScheduleEntryReference $scheduleEntry
+ * @property integer $id
  */
 class ScheduleDetail extends Model
 {
@@ -24,11 +24,11 @@ class ScheduleDetail extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'scheduleEntry' => 'Spinen\ConnectWise\Models\v2018_6\Schedule\ScheduleEntryReference',
-        'dateStart' => 'Carbon\Carbon',
-        'dateEnd' => 'Carbon\Carbon',
-        'member' => 'Spinen\ConnectWise\Models\v2018_6\Schedule\MemberReference',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Schedule\Metadata',
+        'dateEnd' => 'Carbon\Carbon',
+        'dateStart' => 'Carbon\Carbon',
+        'id' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2018_6\Schedule\MemberReference',
+        'scheduleEntry' => 'Spinen\ConnectWise\Models\v2018_6\Schedule\ScheduleEntryReference',
     ];
 }

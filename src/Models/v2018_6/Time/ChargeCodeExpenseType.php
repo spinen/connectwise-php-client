@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ChargeCodeExpenseType
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2018_6\Time\ExpenseTypeReference $type
  * @property Spinen\ConnectWise\Models\v2018_6\Time\ChargeCodeReference $chargeCode
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\ExpenseTypeReference $type
  * @property Spinen\ConnectWise\Models\v2018_6\Time\Metadata $_info
+ * @property integer $id
  */
 class ChargeCodeExpenseType extends Model
 {
@@ -22,9 +22,9 @@ class ChargeCodeExpenseType extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Time\Metadata',
+        'chargeCode' => 'Spinen\ConnectWise\Models\v2018_6\Time\ChargeCodeReference',
         'id' => 'integer',
         'type' => 'Spinen\ConnectWise\Models\v2018_6\Time\ExpenseTypeReference',
-        'chargeCode' => 'Spinen\ConnectWise\Models\v2018_6\Time\ChargeCodeReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Time\Metadata',
     ];
 }

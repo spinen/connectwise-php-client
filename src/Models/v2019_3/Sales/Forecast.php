@@ -9,20 +9,20 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Forecast
  *
- * @property integer $id
- * @property string $name
- * @property float $revenue
- * @property float $cost
- * @property string $type
- * @property Spinen\ConnectWise\Models\v2019_3\Sales\OpportunityStatusReference $status
- * @property boolean $includedFlag
- * @property Spinen\ConnectWise\Models\v2019_3\Sales\ProductRecurring $recurring
- * @property float $percent
- * @property float $margin
- * @property integer $opportunityId
- * @property string $QuoteNumber
- * @property string $QuoteName
  * @property Spinen\ConnectWise\Models\v2019_3\Sales\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_3\Sales\OpportunityStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2019_3\Sales\ProductRecurring $recurring
+ * @property boolean $includedFlag
+ * @property float $cost
+ * @property float $margin
+ * @property float $percent
+ * @property float $revenue
+ * @property integer $id
+ * @property integer $opportunityId
+ * @property string $QuoteName
+ * @property string $QuoteNumber
+ * @property string $name
+ * @property string $type
  */
 class Forecast extends Model
 {
@@ -32,19 +32,19 @@ class Forecast extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'revenue' => 'float',
-        'cost' => 'float',
-        'type' => 'string',
-        'status' => 'Spinen\ConnectWise\Models\v2019_3\Sales\OpportunityStatusReference',
-        'includedFlag' => 'boolean',
-        'recurring' => 'Spinen\ConnectWise\Models\v2019_3\Sales\ProductRecurring',
-        'percent' => 'float',
-        'margin' => 'float',
-        'opportunityId' => 'integer',
-        'QuoteNumber' => 'string',
         'QuoteName' => 'string',
+        'QuoteNumber' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Sales\Metadata',
+        'cost' => 'float',
+        'id' => 'integer',
+        'includedFlag' => 'boolean',
+        'margin' => 'float',
+        'name' => 'string',
+        'opportunityId' => 'integer',
+        'percent' => 'float',
+        'recurring' => 'Spinen\ConnectWise\Models\v2019_3\Sales\ProductRecurring',
+        'revenue' => 'float',
+        'status' => 'Spinen\ConnectWise\Models\v2019_3\Sales\OpportunityStatusReference',
+        'type' => 'string',
     ];
 }

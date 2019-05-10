@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SubCategory
  *
- * @property integer $id
- * @property string $name
- * @property boolean $inactiveFlag
- * @property string $integrationXref
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\ProductCategoryReference $category
  * @property Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_2\Procurement\ProductCategoryReference $category
+ * @property boolean $inactiveFlag
+ * @property integer $id
+ * @property string $integrationXref
+ * @property string $name
  */
 class SubCategory extends Model
 {
@@ -24,11 +24,11 @@ class SubCategory extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata',
+        'category' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\ProductCategoryReference',
         'id' => 'integer',
-        'name' => 'string',
         'inactiveFlag' => 'boolean',
         'integrationXref' => 'string',
-        'category' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\ProductCategoryReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata',
+        'name' => 'string',
     ];
 }

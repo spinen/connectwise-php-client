@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AgreementWorkRoleExclusion
  *
- * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_3\Finance\Metadata $_info
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\WorkRoleReference $workRole
  * @property integer $agreementId
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\Metadata $_info
+ * @property integer $id
  */
 class AgreementWorkRoleExclusion extends Model
 {
@@ -22,9 +22,9 @@ class AgreementWorkRoleExclusion extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Finance\Metadata',
+        'agreementId' => 'integer',
         'id' => 'integer',
         'workRole' => 'Spinen\ConnectWise\Models\v2019_3\Finance\WorkRoleReference',
-        'agreementId' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Finance\Metadata',
     ];
 }

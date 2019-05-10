@@ -9,15 +9,15 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CompanyGroup
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2018_4\Company\GroupReference $group
  * @property Spinen\ConnectWise\Models\v2018_4\Company\CompanyReference $company
- * @property boolean $defaultContactFlag
+ * @property Spinen\ConnectWise\Models\v2018_4\Company\GroupReference $group
+ * @property Spinen\ConnectWise\Models\v2018_4\Company\Metadata $_info
+ * @property array $contactIds
  * @property boolean $allContactsFlag
+ * @property boolean $defaultContactFlag
  * @property boolean $removeAllContactsFlag
  * @property boolean $unsubscribeFlag
- * @property array $contactIds
- * @property Spinen\ConnectWise\Models\v2018_4\Company\Metadata $_info
+ * @property integer $id
  */
 class CompanyGroup extends Model
 {
@@ -27,14 +27,14 @@ class CompanyGroup extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'group' => 'Spinen\ConnectWise\Models\v2018_4\Company\GroupReference',
-        'company' => 'Spinen\ConnectWise\Models\v2018_4\Company\CompanyReference',
-        'defaultContactFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Company\Metadata',
         'allContactsFlag' => 'boolean',
+        'company' => 'Spinen\ConnectWise\Models\v2018_4\Company\CompanyReference',
+        'contactIds' => 'array',
+        'defaultContactFlag' => 'boolean',
+        'group' => 'Spinen\ConnectWise\Models\v2018_4\Company\GroupReference',
+        'id' => 'integer',
         'removeAllContactsFlag' => 'boolean',
         'unsubscribeFlag' => 'boolean',
-        'contactIds' => 'array',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Company\Metadata',
     ];
 }

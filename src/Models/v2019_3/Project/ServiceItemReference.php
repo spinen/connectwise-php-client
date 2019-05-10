@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ServiceItemReference
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\Metadata $_info
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_3\Project\Metadata $_info
  */
 class ServiceItemReference extends Model
 {
@@ -21,8 +21,8 @@ class ServiceItemReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Project\Metadata',
         'id' => 'integer',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Project\Metadata',
     ];
 }

@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ScheduleEntryDetail
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2018_6\Schedule\ScheduleEntryReference $scheduleEntry
- * @property Carbon\Carbon $dateStart
  * @property Carbon\Carbon $dateEnd
- * @property float $hoursScheduled
+ * @property Carbon\Carbon $dateStart
  * @property Spinen\ConnectWise\Models\v2018_6\Schedule\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\Schedule\ScheduleEntryReference $scheduleEntry
+ * @property float $hoursScheduled
+ * @property integer $id
  */
 class ScheduleEntryDetail extends Model
 {
@@ -24,11 +24,11 @@ class ScheduleEntryDetail extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Schedule\Metadata',
+        'dateEnd' => 'Carbon\Carbon',
+        'dateStart' => 'Carbon\Carbon',
+        'hoursScheduled' => 'float',
         'id' => 'integer',
         'scheduleEntry' => 'Spinen\ConnectWise\Models\v2018_6\Schedule\ScheduleEntryReference',
-        'dateStart' => 'Carbon\Carbon',
-        'dateEnd' => 'Carbon\Carbon',
-        'hoursScheduled' => 'float',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Schedule\Metadata',
     ];
 }

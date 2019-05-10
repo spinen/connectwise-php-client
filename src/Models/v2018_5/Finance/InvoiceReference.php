@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for InvoiceReference
  *
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
  * @property integer $id
  * @property string $identifier
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
  */
 class InvoiceReference extends Model
 {
@@ -21,8 +21,8 @@ class InvoiceReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
         'id' => 'integer',
         'identifier' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
     ];
 }

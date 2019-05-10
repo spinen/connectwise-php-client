@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Adjustment
  *
- * @property integer $id
- * @property float $amount
- * @property string $description
  * @property Carbon\Carbon $effectiveDate
- * @property integer $agreementId
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
  * @property array $customFields
+ * @property float $amount
+ * @property integer $agreementId
+ * @property integer $id
+ * @property string $description
  */
 class Adjustment extends Model
 {
@@ -25,12 +25,12 @@ class Adjustment extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
+        'agreementId' => 'integer',
         'amount' => 'float',
+        'customFields' => 'array',
         'description' => 'string',
         'effectiveDate' => 'Carbon\Carbon',
-        'agreementId' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
-        'customFields' => 'array',
+        'id' => 'integer',
     ];
 }

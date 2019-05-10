@@ -9,21 +9,21 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OpportunityToProjectConversion
  *
- * @property integer $projectId
- * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\ProjectStatusReference $status
- * @property integer $locationId
- * @property integer $businessUnitId
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\ProjectBoardReference $board
  * @property Spinen\ConnectWise\Models\v2019_2\Sales\MemberReference $manager
- * @property string $estimatedStart
- * @property string $estimatedEnd
- * @property boolean $includeAllNotesFlag
- * @property boolean $includeAllDocumentsFlag
- * @property boolean $includeAllProductsFlag
- * @property array $includeNoteIds
+ * @property Spinen\ConnectWise\Models\v2019_2\Sales\ProjectBoardReference $board
+ * @property Spinen\ConnectWise\Models\v2019_2\Sales\ProjectStatusReference $status
  * @property array $includeDocumentIds
+ * @property array $includeNoteIds
  * @property array $includeProductIds
+ * @property boolean $includeAllDocumentsFlag
+ * @property boolean $includeAllNotesFlag
+ * @property boolean $includeAllProductsFlag
+ * @property integer $businessUnitId
+ * @property integer $locationId
+ * @property integer $projectId
+ * @property string $estimatedEnd
+ * @property string $estimatedStart
+ * @property string $name
  */
 class OpportunityToProjectConversion extends Model
 {
@@ -33,20 +33,20 @@ class OpportunityToProjectConversion extends Model
      * @var array
      */
     protected $casts = [
-        'projectId' => 'integer',
-        'name' => 'string',
-        'status' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ProjectStatusReference',
-        'locationId' => 'integer',
-        'businessUnitId' => 'integer',
         'board' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ProjectBoardReference',
-        'manager' => 'Spinen\ConnectWise\Models\v2019_2\Sales\MemberReference',
-        'estimatedStart' => 'string',
+        'businessUnitId' => 'integer',
         'estimatedEnd' => 'string',
-        'includeAllNotesFlag' => 'boolean',
+        'estimatedStart' => 'string',
         'includeAllDocumentsFlag' => 'boolean',
+        'includeAllNotesFlag' => 'boolean',
         'includeAllProductsFlag' => 'boolean',
-        'includeNoteIds' => 'array',
         'includeDocumentIds' => 'array',
+        'includeNoteIds' => 'array',
         'includeProductIds' => 'array',
+        'locationId' => 'integer',
+        'manager' => 'Spinen\ConnectWise\Models\v2019_2\Sales\MemberReference',
+        'name' => 'string',
+        'projectId' => 'integer',
+        'status' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ProjectStatusReference',
     ];
 }

@@ -9,6 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TimePeriodSetupDefaults
  *
+
  */
 class TimePeriodSetupDefaults extends Model
 {
@@ -18,5 +19,6 @@ class TimePeriodSetupDefaults extends Model
      * @var array
      */
     protected $casts = [
+,
     ];
 }

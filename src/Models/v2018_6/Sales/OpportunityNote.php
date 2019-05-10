@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OpportunityNote
  *
- * @property integer $id
- * @property integer $opportunityId
- * @property Spinen\ConnectWise\Models\v2018_6\Sales\NoteTypeReference $type
- * @property string $text
- * @property boolean $flagged
- * @property string $enteredBy
  * @property Spinen\ConnectWise\Models\v2018_6\Sales\Guid $mobileGuid
  * @property Spinen\ConnectWise\Models\v2018_6\Sales\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\Sales\NoteTypeReference $type
+ * @property boolean $flagged
+ * @property integer $id
+ * @property integer $opportunityId
+ * @property string $enteredBy
+ * @property string $text
  */
 class OpportunityNote extends Model
 {
@@ -26,13 +26,13 @@ class OpportunityNote extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'opportunityId' => 'integer',
-        'type' => 'Spinen\ConnectWise\Models\v2018_6\Sales\NoteTypeReference',
-        'text' => 'string',
-        'flagged' => 'boolean',
-        'enteredBy' => 'string',
-        'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_6\Sales\Guid',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Sales\Metadata',
+        'enteredBy' => 'string',
+        'flagged' => 'boolean',
+        'id' => 'integer',
+        'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_6\Sales\Guid',
+        'opportunityId' => 'integer',
+        'text' => 'string',
+        'type' => 'Spinen\ConnectWise\Models\v2018_6\Sales\NoteTypeReference',
     ];
 }

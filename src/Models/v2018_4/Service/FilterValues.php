@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for FilterValues
  *
- * @property string $conditions
- * @property string $orderBy
  * @property string $childconditions
+ * @property string $conditions
  * @property string $customfieldconditions
+ * @property string $orderBy
  */
 class FilterValues extends Model
 {
@@ -22,9 +22,9 @@ class FilterValues extends Model
      * @var array
      */
     protected $casts = [
-        'conditions' => 'string',
-        'orderBy' => 'string',
         'childconditions' => 'string',
+        'conditions' => 'string',
         'customfieldconditions' => 'string',
+        'orderBy' => 'string',
     ];
 }

@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for KPI
  *
- * @property integer $id
- * @property string $name
  * @property Spinen\ConnectWise\Models\v2019_2\System\KPICategoryReference $category
- * @property string $dateFilter
- * @property integer $sortOrder
  * @property boolean $inactiveFlag
+ * @property integer $id
+ * @property integer $sortOrder
+ * @property string $dateFilter
+ * @property string $name
  */
 class KPI extends Model
 {
@@ -24,11 +24,11 @@ class KPI extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
         'category' => 'Spinen\ConnectWise\Models\v2019_2\System\KPICategoryReference',
         'dateFilter' => 'string',
-        'sortOrder' => 'integer',
+        'id' => 'integer',
         'inactiveFlag' => 'boolean',
+        'name' => 'string',
+        'sortOrder' => 'integer',
     ];
 }

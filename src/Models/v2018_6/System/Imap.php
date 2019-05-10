@@ -9,17 +9,17 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Imap
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\System\EmailConnectorReference $emailConnector
+ * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
+ * @property boolean $sslFlag
  * @property integer $id
- * @property string $name
+ * @property integer $port
  * @property string $imapName
+ * @property string $name
+ * @property string $password
  * @property string $processedName
  * @property string $server
  * @property string $userName
- * @property string $password
- * @property integer $port
- * @property boolean $sslFlag
- * @property Spinen\ConnectWise\Models\v2018_6\System\EmailConnectorReference $emailConnector
- * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  */
 class Imap extends Model
 {
@@ -29,16 +29,16 @@ class Imap extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
+        'emailConnector' => 'Spinen\ConnectWise\Models\v2018_6\System\EmailConnectorReference',
         'id' => 'integer',
-        'name' => 'string',
         'imapName' => 'string',
-        'processedName' => 'string',
-        'server' => 'string',
-        'userName' => 'string',
+        'name' => 'string',
         'password' => 'string',
         'port' => 'integer',
+        'processedName' => 'string',
+        'server' => 'string',
         'sslFlag' => 'boolean',
-        'emailConnector' => 'Spinen\ConnectWise\Models\v2018_6\System\EmailConnectorReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
+        'userName' => 'string',
     ];
 }

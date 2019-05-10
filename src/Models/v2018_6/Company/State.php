@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for State
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\CountryReference $country
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
  * @property integer $id
  * @property string $identifier
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_6\Company\CountryReference $country
- * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
  */
 class State extends Model
 {
@@ -23,10 +23,10 @@ class State extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
+        'country' => 'Spinen\ConnectWise\Models\v2018_6\Company\CountryReference',
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',
-        'country' => 'Spinen\ConnectWise\Models\v2018_6\Company\CountryReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
     ];
 }

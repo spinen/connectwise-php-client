@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OpportunitySalesRoleReference
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\Sales\Metadata $_info
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_3\Sales\Metadata $_info
  */
 class OpportunitySalesRoleReference extends Model
 {
@@ -21,8 +21,8 @@ class OpportunitySalesRoleReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Sales\Metadata',
         'id' => 'integer',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Sales\Metadata',
     ];
 }

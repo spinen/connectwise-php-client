@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BillingStatus
  *
- * @property integer $id
- * @property string $name
- * @property integer $sortOrder
- * @property boolean $defaultFlag
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\Metadata $_info
  * @property boolean $closedFlag
+ * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
  * @property boolean $sentFlag
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\Metadata $_info
+ * @property integer $id
+ * @property integer $sortOrder
+ * @property string $name
  */
 class BillingStatus extends Model
 {
@@ -26,13 +26,13 @@ class BillingStatus extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'sortOrder' => 'integer',
-        'defaultFlag' => 'boolean',
-        'closedFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
-        'sentFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2018_4\Finance\Metadata',
+        'closedFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
+        'sentFlag' => 'boolean',
+        'sortOrder' => 'integer',
     ];
 }

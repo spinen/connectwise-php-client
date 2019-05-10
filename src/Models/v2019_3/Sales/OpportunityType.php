@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OpportunityType
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\Sales\Metadata $_info
+ * @property boolean $inactiveFlag
  * @property integer $id
  * @property string $description
- * @property boolean $inactiveFlag
- * @property Spinen\ConnectWise\Models\v2019_3\Sales\Metadata $_info
  */
 class OpportunityType extends Model
 {
@@ -22,9 +22,9 @@ class OpportunityType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'description' => 'string',
-        'inactiveFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Sales\Metadata',
+        'description' => 'string',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
     ];
 }

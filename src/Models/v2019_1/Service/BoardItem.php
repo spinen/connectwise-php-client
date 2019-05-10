@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BoardItem
  *
- * @property integer $id
- * @property string $name
- * @property boolean $inactiveFlag
  * @property Spinen\ConnectWise\Models\v2019_1\Service\BoardReference $board
  * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
+ * @property boolean $inactiveFlag
+ * @property integer $id
+ * @property string $name
  */
 class BoardItem extends Model
 {
@@ -23,10 +23,10 @@ class BoardItem extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'inactiveFlag' => 'boolean',
-        'board' => 'Spinen\ConnectWise\Models\v2019_1\Service\BoardReference',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
+        'board' => 'Spinen\ConnectWise\Models\v2019_1\Service\BoardReference',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
     ];
 }

@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for LegacySubCategory
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
+ * @property boolean $inactiveFlag
  * @property integer $id
  * @property string $name
- * @property boolean $inactiveFlag
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
  */
 class LegacySubCategory extends Model
 {
@@ -22,9 +22,9 @@ class LegacySubCategory extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'inactiveFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
     ];
 }

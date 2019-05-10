@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ConfigurationStatusReference
  *
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
  */
 class ConfigurationStatusReference extends Model
 {
@@ -21,8 +21,8 @@ class ConfigurationStatusReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
         'id' => 'integer',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
     ];
 }

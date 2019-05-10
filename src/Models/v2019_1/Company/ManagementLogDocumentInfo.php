@@ -9,6 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ManagementLogDocumentInfo
  *
+
  */
 class ManagementLogDocumentInfo extends Model
 {
@@ -18,5 +19,6 @@ class ManagementLogDocumentInfo extends Model
      * @var array
      */
     protected $casts = [
+,
     ];
 }

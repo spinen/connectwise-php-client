@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ConfigurationQuestion
  *
- * @property integer $answerId
- * @property integer $questionId
- * @property string $question
- * @property string $answer
- * @property float $sequenceNumber
- * @property integer $numberOfDecimals
- * @property string $fieldType
  * @property boolean $requiredFlag
+ * @property float $sequenceNumber
+ * @property integer $answerId
+ * @property integer $numberOfDecimals
+ * @property integer $questionId
+ * @property string $answer
+ * @property string $fieldType
+ * @property string $question
  */
 class ConfigurationQuestion extends Model
 {
@@ -26,13 +26,13 @@ class ConfigurationQuestion extends Model
      * @var array
      */
     protected $casts = [
-        'answerId' => 'integer',
-        'questionId' => 'integer',
-        'question' => 'string',
         'answer' => 'string',
-        'sequenceNumber' => 'float',
-        'numberOfDecimals' => 'integer',
+        'answerId' => 'integer',
         'fieldType' => 'string',
+        'numberOfDecimals' => 'integer',
+        'question' => 'string',
+        'questionId' => 'integer',
         'requiredFlag' => 'boolean',
+        'sequenceNumber' => 'float',
     ];
 }

@@ -9,20 +9,20 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TimePeriodSetup
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\Metadata $_info
+ * @property boolean $lastDayFlag
+ * @property boolean $semiMonthlyLastDayFlag
+ * @property integer $daysPastEndDate
  * @property integer $id
- * @property string $periodApplyTo
- * @property integer $year
- * @property integer $numberFuturePeriods
- * @property string $type
- * @property string $description
- * @property string $firstPeriodEndDate
  * @property integer $monthlyPeriodEnds
+ * @property integer $numberFuturePeriods
  * @property integer $semiMonthlyFirstPeriod
  * @property integer $semiMonthlySecondPeriod
- * @property boolean $semiMonthlyLastDayFlag
- * @property boolean $lastDayFlag
- * @property integer $daysPastEndDate
- * @property Spinen\ConnectWise\Models\v2018_6\Time\Metadata $_info
+ * @property integer $year
+ * @property string $description
+ * @property string $firstPeriodEndDate
+ * @property string $periodApplyTo
+ * @property string $type
  */
 class TimePeriodSetup extends Model
 {
@@ -32,19 +32,19 @@ class TimePeriodSetup extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'periodApplyTo' => 'string',
-        'year' => 'integer',
-        'numberFuturePeriods' => 'integer',
-        'type' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Time\Metadata',
+        'daysPastEndDate' => 'integer',
         'description' => 'string',
         'firstPeriodEndDate' => 'string',
-        'monthlyPeriodEnds' => 'integer',
-        'semiMonthlyFirstPeriod' => 'integer',
-        'semiMonthlySecondPeriod' => 'integer',
-        'semiMonthlyLastDayFlag' => 'boolean',
+        'id' => 'integer',
         'lastDayFlag' => 'boolean',
-        'daysPastEndDate' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Time\Metadata',
+        'monthlyPeriodEnds' => 'integer',
+        'numberFuturePeriods' => 'integer',
+        'periodApplyTo' => 'string',
+        'semiMonthlyFirstPeriod' => 'integer',
+        'semiMonthlyLastDayFlag' => 'boolean',
+        'semiMonthlySecondPeriod' => 'integer',
+        'type' => 'string',
+        'year' => 'integer',
     ];
 }

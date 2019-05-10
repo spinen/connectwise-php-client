@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AgreementTypeBoardDefault
  *
- * @property integer $id
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\AgreementTypeReference $type
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\SystemDepartmentReference $department
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\ServiceTypeReference $serviceType
- * @property boolean $defaultFlag
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_3\Finance\ServiceTypeReference $serviceType
+ * @property Spinen\ConnectWise\Models\v2019_3\Finance\SystemDepartmentReference $department
+ * @property Spinen\ConnectWise\Models\v2019_3\Finance\SystemLocationReference $location
+ * @property boolean $defaultFlag
+ * @property integer $id
  */
 class AgreementTypeBoardDefault extends Model
 {
@@ -26,13 +26,13 @@ class AgreementTypeBoardDefault extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'type' => 'Spinen\ConnectWise\Models\v2019_3\Finance\AgreementTypeReference',
-        'location' => 'Spinen\ConnectWise\Models\v2019_3\Finance\SystemLocationReference',
-        'department' => 'Spinen\ConnectWise\Models\v2019_3\Finance\SystemDepartmentReference',
-        'board' => 'Spinen\ConnectWise\Models\v2019_3\Finance\BoardReference',
-        'serviceType' => 'Spinen\ConnectWise\Models\v2019_3\Finance\ServiceTypeReference',
-        'defaultFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Finance\Metadata',
+        'board' => 'Spinen\ConnectWise\Models\v2019_3\Finance\BoardReference',
+        'defaultFlag' => 'boolean',
+        'department' => 'Spinen\ConnectWise\Models\v2019_3\Finance\SystemDepartmentReference',
+        'id' => 'integer',
+        'location' => 'Spinen\ConnectWise\Models\v2019_3\Finance\SystemLocationReference',
+        'serviceType' => 'Spinen\ConnectWise\Models\v2019_3\Finance\ServiceTypeReference',
+        'type' => 'Spinen\ConnectWise\Models\v2019_3\Finance\AgreementTypeReference',
     ];
 }

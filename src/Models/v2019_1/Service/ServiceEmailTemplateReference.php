@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ServiceEmailTemplateReference
  *
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
  * @property integer $id
  * @property string $identifier
  * @property string $name
  * @property string $type
- * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
  */
 class ServiceEmailTemplateReference extends Model
 {
@@ -23,10 +23,10 @@ class ServiceEmailTemplateReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',
         'type' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
     ];
 }

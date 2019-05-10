@@ -9,23 +9,23 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BoardStatus
  *
- * @property integer $id
- * @property string $name
  * @property Spinen\ConnectWise\Models\v2019_2\Service\BoardReference $board
  * @property Spinen\ConnectWise\Models\v2019_2\Service\ExternalIntegrationStatusReference $externalIntegrationXref
- * @property integer $sortOrder
- * @property boolean $displayOnBoard
- * @property boolean $inactive
- * @property boolean $closedStatus
- * @property boolean $timeEntryNotAllowed
- * @property boolean $defaultFlag
- * @property string $escalationStatus
- * @property string $customerPortalDescription
- * @property boolean $customerPortalFlag
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\Metadata $_info
  * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceEmailTemplateReference $emailTemplate
  * @property Spinen\ConnectWise\Models\v2019_2\Service\StatusIndicatorReference $statusIndicator
+ * @property boolean $closedStatus
+ * @property boolean $customerPortalFlag
+ * @property boolean $defaultFlag
+ * @property boolean $displayOnBoard
+ * @property boolean $inactive
+ * @property boolean $timeEntryNotAllowed
+ * @property integer $id
+ * @property integer $sortOrder
  * @property string $customStatusIndicatorName
- * @property Spinen\ConnectWise\Models\v2019_2\Service\Metadata $_info
+ * @property string $customerPortalDescription
+ * @property string $escalationStatus
+ * @property string $name
  */
 class BoardStatus extends Model
 {
@@ -35,22 +35,22 @@ class BoardStatus extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Service\Metadata',
         'board' => 'Spinen\ConnectWise\Models\v2019_2\Service\BoardReference',
-        'externalIntegrationXref' => 'Spinen\ConnectWise\Models\v2019_2\Service\ExternalIntegrationStatusReference',
-        'sortOrder' => 'integer',
-        'displayOnBoard' => 'boolean',
-        'inactive' => 'boolean',
         'closedStatus' => 'boolean',
-        'timeEntryNotAllowed' => 'boolean',
-        'defaultFlag' => 'boolean',
-        'escalationStatus' => 'string',
+        'customStatusIndicatorName' => 'string',
         'customerPortalDescription' => 'string',
         'customerPortalFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'displayOnBoard' => 'boolean',
         'emailTemplate' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceEmailTemplateReference',
+        'escalationStatus' => 'string',
+        'externalIntegrationXref' => 'Spinen\ConnectWise\Models\v2019_2\Service\ExternalIntegrationStatusReference',
+        'id' => 'integer',
+        'inactive' => 'boolean',
+        'name' => 'string',
+        'sortOrder' => 'integer',
         'statusIndicator' => 'Spinen\ConnectWise\Models\v2019_2\Service\StatusIndicatorReference',
-        'customStatusIndicatorName' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Service\Metadata',
+        'timeEntryNotAllowed' => 'boolean',
     ];
 }

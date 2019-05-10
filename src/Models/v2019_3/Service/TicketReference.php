@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TicketReference
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\Service\Metadata $_info
  * @property integer $id
  * @property string $summary
- * @property Spinen\ConnectWise\Models\v2019_3\Service\Metadata $_info
  */
 class TicketReference extends Model
 {
@@ -21,8 +21,8 @@ class TicketReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Service\Metadata',
         'id' => 'integer',
         'summary' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Service\Metadata',
     ];
 }

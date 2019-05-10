@@ -9,24 +9,24 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Other
  *
- * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_3\System\AddressFormatReference $defaultAddressFormat
+ * @property Spinen\ConnectWise\Models\v2019_3\System\CalendarReference $defaultCalendar
  * @property Spinen\ConnectWise\Models\v2019_3\System\LdapConfigurationReference $defaultLdap
+ * @property Spinen\ConnectWise\Models\v2019_3\System\LocaleReference $locale
+ * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_3\System\TimeZoneSetupReference $serverTimeZone
+ * @property boolean $includePortalLinkFlag
+ * @property boolean $syncLeadsFlag
+ * @property boolean $updateMemberTimeZonesFlag
+ * @property boolean $useExpandedFormatActivityFlag
+ * @property boolean $useExpandedFormatTimeFlag
+ * @property boolean $useSslFlag
+ * @property integer $id
+ * @property string $contactSync
  * @property string $defaultFromAddress
+ * @property string $logoPath
  * @property string $portalUrlOverride
  * @property string $siteUrl
- * @property string $logoPath
- * @property string $contactSync
- * @property Spinen\ConnectWise\Models\v2019_3\System\TimeZoneSetupReference $serverTimeZone
- * @property Spinen\ConnectWise\Models\v2019_3\System\CalendarReference $defaultCalendar
- * @property Spinen\ConnectWise\Models\v2019_3\System\AddressFormatReference $defaultAddressFormat
- * @property boolean $useSslFlag
- * @property boolean $syncLeadsFlag
- * @property boolean $includePortalLinkFlag
- * @property boolean $useExpandedFormatTimeFlag
- * @property boolean $useExpandedFormatActivityFlag
- * @property Spinen\ConnectWise\Models\v2019_3\System\LocaleReference $locale
- * @property boolean $updateMemberTimeZonesFlag
- * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
  */
 class Other extends Model
 {
@@ -36,23 +36,23 @@ class Other extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'defaultLdap' => 'Spinen\ConnectWise\Models\v2019_3\System\LdapConfigurationReference',
-        'defaultFromAddress' => 'string',
-        'portalUrlOverride' => 'string',
-        'siteUrl' => 'string',
-        'logoPath' => 'string',
-        'contactSync' => 'string',
-        'serverTimeZone' => 'Spinen\ConnectWise\Models\v2019_3\System\TimeZoneSetupReference',
-        'defaultCalendar' => 'Spinen\ConnectWise\Models\v2019_3\System\CalendarReference',
-        'defaultAddressFormat' => 'Spinen\ConnectWise\Models\v2019_3\System\AddressFormatReference',
-        'useSslFlag' => 'boolean',
-        'syncLeadsFlag' => 'boolean',
-        'includePortalLinkFlag' => 'boolean',
-        'useExpandedFormatTimeFlag' => 'boolean',
-        'useExpandedFormatActivityFlag' => 'boolean',
-        'locale' => 'Spinen\ConnectWise\Models\v2019_3\System\LocaleReference',
-        'updateMemberTimeZonesFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
+        'contactSync' => 'string',
+        'defaultAddressFormat' => 'Spinen\ConnectWise\Models\v2019_3\System\AddressFormatReference',
+        'defaultCalendar' => 'Spinen\ConnectWise\Models\v2019_3\System\CalendarReference',
+        'defaultFromAddress' => 'string',
+        'defaultLdap' => 'Spinen\ConnectWise\Models\v2019_3\System\LdapConfigurationReference',
+        'id' => 'integer',
+        'includePortalLinkFlag' => 'boolean',
+        'locale' => 'Spinen\ConnectWise\Models\v2019_3\System\LocaleReference',
+        'logoPath' => 'string',
+        'portalUrlOverride' => 'string',
+        'serverTimeZone' => 'Spinen\ConnectWise\Models\v2019_3\System\TimeZoneSetupReference',
+        'siteUrl' => 'string',
+        'syncLeadsFlag' => 'boolean',
+        'updateMemberTimeZonesFlag' => 'boolean',
+        'useExpandedFormatActivityFlag' => 'boolean',
+        'useExpandedFormatTimeFlag' => 'boolean',
+        'useSslFlag' => 'boolean',
     ];
 }

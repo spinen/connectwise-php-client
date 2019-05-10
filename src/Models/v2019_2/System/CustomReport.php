@@ -9,81 +9,81 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CustomReport
  *
- * @property integer $id
- * @property string $reportLink
- * @property string $name
- * @property string $module
- * @property string $description
+ * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
+ * @property boolean $agreementFlag
+ * @property boolean $agreementTypeFlag
+ * @property boolean $companyFlag
+ * @property boolean $departmentDefaultFlag
+ * @property boolean $departmentFlag
+ * @property boolean $endDateFlag
  * @property boolean $generatedFlag
+ * @property boolean $invoiceFlag
+ * @property boolean $locationDefaultFlag
+ * @property boolean $locationFlag
+ * @property boolean $marketingCampaignFlag
+ * @property boolean $memberFlag
+ * @property boolean $oppTypeFlag
+ * @property boolean $opportunityFlag
+ * @property boolean $projectFlag
+ * @property boolean $projectTypeFlag
+ * @property boolean $serviceBoardDefaultFlag
+ * @property boolean $serviceBoardFlag
+ * @property boolean $serviceStatusFlag
+ * @property boolean $serviceTypeFlag
+ * @property boolean $startDateFlag
+ * @property boolean $territoryDefaultFlag
+ * @property boolean $territoryFlag
+ * @property boolean $workRoleFlag
+ * @property boolean $workTypeFlag
+ * @property integer $agreementParamId
+ * @property integer $agreementTypeParamId
+ * @property integer $companyParamId
+ * @property integer $departmentParamId
+ * @property integer $endDateParamId
+ * @property integer $id
+ * @property integer $invoiceParamId
+ * @property integer $locationParamId
+ * @property integer $marketingCampaignParamId
+ * @property integer $memberParamId
+ * @property integer $oppTypeParamId
+ * @property integer $opportunityParamId
+ * @property integer $projectParamId
+ * @property integer $projectTypeParamId
+ * @property integer $serviceBoardParamId
+ * @property integer $serviceStatusParamId
+ * @property integer $serviceTypeParamId
+ * @property integer $startDateParamId
+ * @property integer $territoryParamId
+ * @property integer $workRoleParamId
+ * @property integer $workTypeParamId
+ * @property string $agreementOverride
+ * @property string $agreementTypeOverride
+ * @property string $companyOverride
+ * @property string $departmentOverride
+ * @property string $description
+ * @property string $endDateOverride
+ * @property string $invoiceOverride
+ * @property string $locationOverride
+ * @property string $marketingCampaignOverride
+ * @property string $memberOverride
+ * @property string $module
+ * @property string $name
+ * @property string $oppTypeOverride
+ * @property string $opportunityOverride
+ * @property string $parameterNameSeparator
  * @property string $parameterPrefix
  * @property string $parameterSeparator
- * @property string $parameterNameSeparator
  * @property string $parameterSuffix
- * @property boolean $locationFlag
- * @property integer $locationParamId
- * @property boolean $locationDefaultFlag
- * @property string $locationOverride
- * @property boolean $departmentFlag
- * @property integer $departmentParamId
- * @property boolean $departmentDefaultFlag
- * @property string $departmentOverride
- * @property boolean $territoryFlag
- * @property integer $territoryParamId
- * @property boolean $territoryDefaultFlag
- * @property string $territoryOverride
- * @property boolean $companyFlag
- * @property integer $companyParamId
- * @property string $companyOverride
- * @property boolean $memberFlag
- * @property integer $memberParamId
- * @property string $memberOverride
- * @property boolean $startDateFlag
- * @property integer $startDateParamId
- * @property string $startDateOverride
- * @property boolean $endDateFlag
- * @property integer $endDateParamId
- * @property string $endDateOverride
- * @property boolean $oppTypeFlag
- * @property integer $oppTypeParamId
- * @property string $oppTypeOverride
- * @property boolean $opportunityFlag
- * @property integer $opportunityParamId
- * @property string $opportunityOverride
- * @property boolean $marketingCampaignFlag
- * @property integer $marketingCampaignParamId
- * @property string $marketingCampaignOverride
- * @property boolean $serviceBoardFlag
- * @property integer $serviceBoardParamId
- * @property boolean $serviceBoardDefaultFlag
- * @property string $serviceBoardOverride
- * @property boolean $serviceTypeFlag
- * @property integer $serviceTypeParamId
- * @property string $serviceTypeOverride
- * @property boolean $serviceStatusFlag
- * @property integer $serviceStatusParamId
- * @property string $serviceStatusOverride
- * @property boolean $agreementTypeFlag
- * @property integer $agreementTypeParamId
- * @property string $agreementTypeOverride
- * @property boolean $agreementFlag
- * @property integer $agreementParamId
- * @property string $agreementOverride
- * @property boolean $projectTypeFlag
- * @property integer $projectTypeParamId
- * @property string $projectTypeOverride
- * @property boolean $projectFlag
- * @property integer $projectParamId
  * @property string $projectOverride
- * @property boolean $workRoleFlag
- * @property integer $workRoleParamId
+ * @property string $projectTypeOverride
+ * @property string $reportLink
+ * @property string $serviceBoardOverride
+ * @property string $serviceStatusOverride
+ * @property string $serviceTypeOverride
+ * @property string $startDateOverride
+ * @property string $territoryOverride
  * @property string $workRoleOverride
- * @property boolean $workTypeFlag
- * @property integer $workTypeParamId
  * @property string $workTypeOverride
- * @property boolean $invoiceFlag
- * @property integer $invoiceParamId
- * @property string $invoiceOverride
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  */
 class CustomReport extends Model
 {
@@ -93,80 +93,80 @@ class CustomReport extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'reportLink' => 'string',
-        'name' => 'string',
-        'module' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        'agreementFlag' => 'boolean',
+        'agreementOverride' => 'string',
+        'agreementParamId' => 'integer',
+        'agreementTypeFlag' => 'boolean',
+        'agreementTypeOverride' => 'string',
+        'agreementTypeParamId' => 'integer',
+        'companyFlag' => 'boolean',
+        'companyOverride' => 'string',
+        'companyParamId' => 'integer',
+        'departmentDefaultFlag' => 'boolean',
+        'departmentFlag' => 'boolean',
+        'departmentOverride' => 'string',
+        'departmentParamId' => 'integer',
         'description' => 'string',
+        'endDateFlag' => 'boolean',
+        'endDateOverride' => 'string',
+        'endDateParamId' => 'integer',
         'generatedFlag' => 'boolean',
+        'id' => 'integer',
+        'invoiceFlag' => 'boolean',
+        'invoiceOverride' => 'string',
+        'invoiceParamId' => 'integer',
+        'locationDefaultFlag' => 'boolean',
+        'locationFlag' => 'boolean',
+        'locationOverride' => 'string',
+        'locationParamId' => 'integer',
+        'marketingCampaignFlag' => 'boolean',
+        'marketingCampaignOverride' => 'string',
+        'marketingCampaignParamId' => 'integer',
+        'memberFlag' => 'boolean',
+        'memberOverride' => 'string',
+        'memberParamId' => 'integer',
+        'module' => 'string',
+        'name' => 'string',
+        'oppTypeFlag' => 'boolean',
+        'oppTypeOverride' => 'string',
+        'oppTypeParamId' => 'integer',
+        'opportunityFlag' => 'boolean',
+        'opportunityOverride' => 'string',
+        'opportunityParamId' => 'integer',
+        'parameterNameSeparator' => 'string',
         'parameterPrefix' => 'string',
         'parameterSeparator' => 'string',
-        'parameterNameSeparator' => 'string',
         'parameterSuffix' => 'string',
-        'locationFlag' => 'boolean',
-        'locationParamId' => 'integer',
-        'locationDefaultFlag' => 'boolean',
-        'locationOverride' => 'string',
-        'departmentFlag' => 'boolean',
-        'departmentParamId' => 'integer',
-        'departmentDefaultFlag' => 'boolean',
-        'departmentOverride' => 'string',
-        'territoryFlag' => 'boolean',
-        'territoryParamId' => 'integer',
-        'territoryDefaultFlag' => 'boolean',
-        'territoryOverride' => 'string',
-        'companyFlag' => 'boolean',
-        'companyParamId' => 'integer',
-        'companyOverride' => 'string',
-        'memberFlag' => 'boolean',
-        'memberParamId' => 'integer',
-        'memberOverride' => 'string',
-        'startDateFlag' => 'boolean',
-        'startDateParamId' => 'integer',
-        'startDateOverride' => 'string',
-        'endDateFlag' => 'boolean',
-        'endDateParamId' => 'integer',
-        'endDateOverride' => 'string',
-        'oppTypeFlag' => 'boolean',
-        'oppTypeParamId' => 'integer',
-        'oppTypeOverride' => 'string',
-        'opportunityFlag' => 'boolean',
-        'opportunityParamId' => 'integer',
-        'opportunityOverride' => 'string',
-        'marketingCampaignFlag' => 'boolean',
-        'marketingCampaignParamId' => 'integer',
-        'marketingCampaignOverride' => 'string',
-        'serviceBoardFlag' => 'boolean',
-        'serviceBoardParamId' => 'integer',
-        'serviceBoardDefaultFlag' => 'boolean',
-        'serviceBoardOverride' => 'string',
-        'serviceTypeFlag' => 'boolean',
-        'serviceTypeParamId' => 'integer',
-        'serviceTypeOverride' => 'string',
-        'serviceStatusFlag' => 'boolean',
-        'serviceStatusParamId' => 'integer',
-        'serviceStatusOverride' => 'string',
-        'agreementTypeFlag' => 'boolean',
-        'agreementTypeParamId' => 'integer',
-        'agreementTypeOverride' => 'string',
-        'agreementFlag' => 'boolean',
-        'agreementParamId' => 'integer',
-        'agreementOverride' => 'string',
-        'projectTypeFlag' => 'boolean',
-        'projectTypeParamId' => 'integer',
-        'projectTypeOverride' => 'string',
         'projectFlag' => 'boolean',
-        'projectParamId' => 'integer',
         'projectOverride' => 'string',
+        'projectParamId' => 'integer',
+        'projectTypeFlag' => 'boolean',
+        'projectTypeOverride' => 'string',
+        'projectTypeParamId' => 'integer',
+        'reportLink' => 'string',
+        'serviceBoardDefaultFlag' => 'boolean',
+        'serviceBoardFlag' => 'boolean',
+        'serviceBoardOverride' => 'string',
+        'serviceBoardParamId' => 'integer',
+        'serviceStatusFlag' => 'boolean',
+        'serviceStatusOverride' => 'string',
+        'serviceStatusParamId' => 'integer',
+        'serviceTypeFlag' => 'boolean',
+        'serviceTypeOverride' => 'string',
+        'serviceTypeParamId' => 'integer',
+        'startDateFlag' => 'boolean',
+        'startDateOverride' => 'string',
+        'startDateParamId' => 'integer',
+        'territoryDefaultFlag' => 'boolean',
+        'territoryFlag' => 'boolean',
+        'territoryOverride' => 'string',
+        'territoryParamId' => 'integer',
         'workRoleFlag' => 'boolean',
-        'workRoleParamId' => 'integer',
         'workRoleOverride' => 'string',
+        'workRoleParamId' => 'integer',
         'workTypeFlag' => 'boolean',
-        'workTypeParamId' => 'integer',
         'workTypeOverride' => 'string',
-        'invoiceFlag' => 'boolean',
-        'invoiceParamId' => 'integer',
-        'invoiceOverride' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        'workTypeParamId' => 'integer',
     ];
 }

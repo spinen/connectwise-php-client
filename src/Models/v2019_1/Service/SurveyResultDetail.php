@@ -20,7 +20,7 @@ class SurveyResultDetail extends Model
      * @var array
      */
     protected $casts = [
-        'questionId' => 'integer',
         'answer' => 'string',
+        'questionId' => 'integer',
     ];
 }

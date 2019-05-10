@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Holiday
  *
- * @property integer $id
- * @property string $name
- * @property boolean $allDayFlag
- * @property string $date
- * @property string $timeStart
- * @property string $timeEnd
  * @property Spinen\ConnectWise\Models\v2019_1\Schedule\HolidayListReference $holidayList
  * @property Spinen\ConnectWise\Models\v2019_1\Schedule\Metadata $_info
+ * @property boolean $allDayFlag
+ * @property integer $id
+ * @property string $date
+ * @property string $name
+ * @property string $timeEnd
+ * @property string $timeStart
  */
 class Holiday extends Model
 {
@@ -26,13 +26,13 @@ class Holiday extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Schedule\Metadata',
         'allDayFlag' => 'boolean',
         'date' => 'string',
-        'timeStart' => 'string',
-        'timeEnd' => 'string',
         'holidayList' => 'Spinen\ConnectWise\Models\v2019_1\Schedule\HolidayListReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Schedule\Metadata',
+        'id' => 'integer',
+        'name' => 'string',
+        'timeEnd' => 'string',
+        'timeStart' => 'string',
     ];
 }

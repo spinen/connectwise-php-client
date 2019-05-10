@@ -9,18 +9,18 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportExpenseBillDetail
  *
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\ClassificationReference $expenseClass
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\CurrencyReference $currency
+ * @property boolean $billable
+ * @property boolean $companyAdvance
+ * @property boolean $reimbursable
+ * @property float $total
  * @property integer $id
+ * @property string $accountNumber
  * @property string $documentDate
  * @property string $glTypeId
  * @property string $memo
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference $company
- * @property string $accountNumber
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\ClassificationReference $expenseClass
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\CurrencyReference $currency
- * @property float $total
- * @property boolean $billable
- * @property boolean $reimbursable
- * @property boolean $companyAdvance
  */
 class GLExportExpenseBillDetail extends Model
 {
@@ -30,17 +30,17 @@ class GLExportExpenseBillDetail extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'documentDate' => 'string',
-        'glTypeId' => 'string',
-        'memo' => 'string',
-        'company' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference',
         'accountNumber' => 'string',
-        'expenseClass' => 'Spinen\ConnectWise\Models\v2018_5\Finance\ClassificationReference',
-        'currency' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CurrencyReference',
-        'total' => 'float',
         'billable' => 'boolean',
-        'reimbursable' => 'boolean',
+        'company' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference',
         'companyAdvance' => 'boolean',
+        'currency' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CurrencyReference',
+        'documentDate' => 'string',
+        'expenseClass' => 'Spinen\ConnectWise\Models\v2018_5\Finance\ClassificationReference',
+        'glTypeId' => 'string',
+        'id' => 'integer',
+        'memo' => 'string',
+        'reimbursable' => 'boolean',
+        'total' => 'float',
     ];
 }

@@ -10,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for KPICategory
  *
  * @property integer $id
- * @property string $name
  * @property integer $sortOrder
+ * @property string $name
  */
 class KPICategory extends Model
 {

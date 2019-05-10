@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ExternalIntegrationStatusReference
  *
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
  * @property integer $id
  * @property string $identifier
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
  */
 class ExternalIntegrationStatusReference extends Model
 {
@@ -22,9 +22,9 @@ class ExternalIntegrationStatusReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
     ];
 }

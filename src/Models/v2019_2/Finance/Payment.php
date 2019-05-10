@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Payment
  *
- * @property integer $id
- * @property string $type
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\InvoiceReference $invoice
- * @property float $amount
  * @property Carbon\Carbon $paymentDate
- * @property string $appliedBy
+ * @property Spinen\ConnectWise\Models\v2019_2\Finance\InvoiceReference $invoice
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
+ * @property float $amount
+ * @property integer $id
+ * @property string $appliedBy
+ * @property string $type
  */
 class Payment extends Model
 {
@@ -25,12 +25,12 @@ class Payment extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'type' => 'string',
-        'invoice' => 'Spinen\ConnectWise\Models\v2019_2\Finance\InvoiceReference',
-        'amount' => 'float',
-        'paymentDate' => 'Carbon\Carbon',
-        'appliedBy' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
+        'amount' => 'float',
+        'appliedBy' => 'string',
+        'id' => 'integer',
+        'invoice' => 'Spinen\ConnectWise\Models\v2019_2\Finance\InvoiceReference',
+        'paymentDate' => 'Carbon\Carbon',
+        'type' => 'string',
     ];
 }

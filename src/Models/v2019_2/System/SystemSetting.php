@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SystemSetting
  *
+ * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  * @property integer $id
  * @property string $description
  * @property string $value
  * @property string $valueType
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  */
 class SystemSetting extends Model
 {
@@ -23,10 +23,10 @@ class SystemSetting extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
         'description' => 'string',
+        'id' => 'integer',
         'value' => 'string',
         'valueType' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
     ];
 }

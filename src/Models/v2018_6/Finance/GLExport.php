@@ -10,14 +10,14 @@ use Spinen\ConnectWise\Support\Model;
  * Model for GLExport
  *
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\GLExportSettings $exportSettings
- * @property array $vendors
- * @property array $customers
- * @property array $transactions
- * @property array $expenses
- * @property array $expenseBills
- * @property array $purchaseTransactions
  * @property array $adjustmentTransactions
+ * @property array $customers
+ * @property array $expenseBills
+ * @property array $expenses
  * @property array $inventoryTransfers
+ * @property array $purchaseTransactions
+ * @property array $transactions
+ * @property array $vendors
  */
 class GLExport extends Model
 {
@@ -27,14 +27,14 @@ class GLExport extends Model
      * @var array
      */
     protected $casts = [
-        'exportSettings' => 'Spinen\ConnectWise\Models\v2018_6\Finance\GLExportSettings',
-        'vendors' => 'array',
-        'customers' => 'array',
-        'transactions' => 'array',
-        'expenses' => 'array',
-        'expenseBills' => 'array',
-        'purchaseTransactions' => 'array',
         'adjustmentTransactions' => 'array',
+        'customers' => 'array',
+        'expenseBills' => 'array',
+        'expenses' => 'array',
+        'exportSettings' => 'Spinen\ConnectWise\Models\v2018_6\Finance\GLExportSettings',
         'inventoryTransfers' => 'array',
+        'purchaseTransactions' => 'array',
+        'transactions' => 'array',
+        'vendors' => 'array',
     ];
 }

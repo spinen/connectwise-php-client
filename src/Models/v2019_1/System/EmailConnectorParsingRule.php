@@ -9,18 +9,18 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for EmailConnectorParsingRule
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2019_1\System\EmailConnectorParsingStyleReference $parsingStyle
- * @property integer $priority
- * @property Spinen\ConnectWise\Models\v2019_1\System\EmailConnectorParsingVariableReference $parsingVariable
- * @property string $searchTerm
- * @property Spinen\ConnectWise\Models\v2019_1\System\PriorityReference $servicePriority
- * @property Spinen\ConnectWise\Models\v2019_1\System\ServiceStatusReference $serviceStatus
- * @property Spinen\ConnectWise\Models\v2019_1\System\ServiceTypeReference $serviceType
- * @property Spinen\ConnectWise\Models\v2019_1\System\ServiceSubTypeReference $serviceSubType
- * @property Spinen\ConnectWise\Models\v2019_1\System\ServiceItemReference $serviceItem
  * @property Spinen\ConnectWise\Models\v2019_1\System\BoardReference $serviceBoard
+ * @property Spinen\ConnectWise\Models\v2019_1\System\EmailConnectorParsingStyleReference $parsingStyle
+ * @property Spinen\ConnectWise\Models\v2019_1\System\EmailConnectorParsingVariableReference $parsingVariable
  * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_1\System\PriorityReference $servicePriority
+ * @property Spinen\ConnectWise\Models\v2019_1\System\ServiceItemReference $serviceItem
+ * @property Spinen\ConnectWise\Models\v2019_1\System\ServiceStatusReference $serviceStatus
+ * @property Spinen\ConnectWise\Models\v2019_1\System\ServiceSubTypeReference $serviceSubType
+ * @property Spinen\ConnectWise\Models\v2019_1\System\ServiceTypeReference $serviceType
+ * @property integer $id
+ * @property integer $priority
+ * @property string $searchTerm
  */
 class EmailConnectorParsingRule extends Model
 {
@@ -30,17 +30,17 @@ class EmailConnectorParsingRule extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
         'id' => 'integer',
         'parsingStyle' => 'Spinen\ConnectWise\Models\v2019_1\System\EmailConnectorParsingStyleReference',
-        'priority' => 'integer',
         'parsingVariable' => 'Spinen\ConnectWise\Models\v2019_1\System\EmailConnectorParsingVariableReference',
+        'priority' => 'integer',
         'searchTerm' => 'string',
+        'serviceBoard' => 'Spinen\ConnectWise\Models\v2019_1\System\BoardReference',
+        'serviceItem' => 'Spinen\ConnectWise\Models\v2019_1\System\ServiceItemReference',
         'servicePriority' => 'Spinen\ConnectWise\Models\v2019_1\System\PriorityReference',
         'serviceStatus' => 'Spinen\ConnectWise\Models\v2019_1\System\ServiceStatusReference',
-        'serviceType' => 'Spinen\ConnectWise\Models\v2019_1\System\ServiceTypeReference',
         'serviceSubType' => 'Spinen\ConnectWise\Models\v2019_1\System\ServiceSubTypeReference',
-        'serviceItem' => 'Spinen\ConnectWise\Models\v2019_1\System\ServiceItemReference',
-        'serviceBoard' => 'Spinen\ConnectWise\Models\v2019_1\System\BoardReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
+        'serviceType' => 'Spinen\ConnectWise\Models\v2019_1\System\ServiceTypeReference',
     ];
 }

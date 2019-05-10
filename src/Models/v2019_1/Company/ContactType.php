@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ContactType
  *
- * @property integer $id
- * @property string $description
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
  * @property boolean $defaultFlag
  * @property boolean $serviceAlertFlag
+ * @property integer $id
+ * @property string $description
  * @property string $serviceAlertMessage
- * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
  */
 class ContactType extends Model
 {
@@ -24,11 +24,11 @@ class ContactType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'description' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
         'defaultFlag' => 'boolean',
+        'description' => 'string',
+        'id' => 'integer',
         'serviceAlertFlag' => 'boolean',
         'serviceAlertMessage' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
     ];
 }

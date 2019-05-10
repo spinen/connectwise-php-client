@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * A list of knowledge base articles that the member is the approver
  *
- * @property integer $count
  * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $reAssignToMember
+ * @property integer $count
  */
 class MemberDeactivationKnowledgebaseArticle extends Model
 {

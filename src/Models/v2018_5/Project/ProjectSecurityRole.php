@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProjectSecurityRole
  *
+ * @property Spinen\ConnectWise\Models\v2018_5\Project\Metadata $_info
+ * @property boolean $defaultContactFlag
+ * @property boolean $managerRoleFlag
  * @property integer $id
  * @property string $name
- * @property boolean $managerRoleFlag
- * @property boolean $defaultContactFlag
- * @property Spinen\ConnectWise\Models\v2018_5\Project\Metadata $_info
  */
 class ProjectSecurityRole extends Model
 {
@@ -23,10 +23,10 @@ class ProjectSecurityRole extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'managerRoleFlag' => 'boolean',
-        'defaultContactFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Project\Metadata',
+        'defaultContactFlag' => 'boolean',
+        'id' => 'integer',
+        'managerRoleFlag' => 'boolean',
+        'name' => 'string',
     ];
 }

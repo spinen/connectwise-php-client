@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Lab
  *
+ * @property Spinen\ConnectWise\Models\v2019_2\Internal\Metadata $_info
+ * @property boolean $adminLock
+ * @property boolean $inactiveFlag
  * @property integer $id
  * @property string $identifier
- * @property boolean $inactiveFlag
- * @property boolean $adminLock
- * @property Spinen\ConnectWise\Models\v2019_2\Internal\Metadata $_info
  */
 class Lab extends Model
 {
@@ -23,10 +23,10 @@ class Lab extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Internal\Metadata',
+        'adminLock' => 'boolean',
         'id' => 'integer',
         'identifier' => 'string',
         'inactiveFlag' => 'boolean',
-        'adminLock' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Internal\Metadata',
     ];
 }

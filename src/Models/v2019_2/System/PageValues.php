@@ -10,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for PageValues
  *
  * @property integer $page
- * @property integer $pageSize
  * @property integer $pageId
+ * @property integer $pageSize
  */
 class PageValues extends Model
 {
@@ -22,7 +22,7 @@ class PageValues extends Model
      */
     protected $casts = [
         'page' => 'integer',
-        'pageSize' => 'integer',
         'pageId' => 'integer',
+        'pageSize' => 'integer',
     ];
 }

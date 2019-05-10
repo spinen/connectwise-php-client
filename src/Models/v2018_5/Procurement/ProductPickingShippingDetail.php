@@ -9,19 +9,19 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProductPickingShippingDetail
  *
- * @property integer $id
- * @property integer $pickedQuantity
- * @property integer $shippedQuantity
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\WarehouseReference $warehouse
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\WarehouseBinReference $warehouseBin
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\ShipmentMethodReference $shipmentMethod
- * @property string $serialNumber
- * @property array $serialNumberIds
- * @property string $trackingNumber
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\ProductItemReference $productItem
- * @property integer $lineNumber
- * @property integer $quantity
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_5\Procurement\ProductItemReference $productItem
+ * @property Spinen\ConnectWise\Models\v2018_5\Procurement\ShipmentMethodReference $shipmentMethod
+ * @property Spinen\ConnectWise\Models\v2018_5\Procurement\WarehouseBinReference $warehouseBin
+ * @property Spinen\ConnectWise\Models\v2018_5\Procurement\WarehouseReference $warehouse
+ * @property array $serialNumberIds
+ * @property integer $id
+ * @property integer $lineNumber
+ * @property integer $pickedQuantity
+ * @property integer $quantity
+ * @property integer $shippedQuantity
+ * @property string $serialNumber
+ * @property string $trackingNumber
  */
 class ProductPickingShippingDetail extends Model
 {
@@ -31,18 +31,18 @@ class ProductPickingShippingDetail extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata',
         'id' => 'integer',
+        'lineNumber' => 'integer',
         'pickedQuantity' => 'integer',
-        'shippedQuantity' => 'integer',
-        'warehouse' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\WarehouseReference',
-        'warehouseBin' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\WarehouseBinReference',
-        'shipmentMethod' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\ShipmentMethodReference',
+        'productItem' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\ProductItemReference',
+        'quantity' => 'integer',
         'serialNumber' => 'string',
         'serialNumberIds' => 'array',
+        'shipmentMethod' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\ShipmentMethodReference',
+        'shippedQuantity' => 'integer',
         'trackingNumber' => 'string',
-        'productItem' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\ProductItemReference',
-        'lineNumber' => 'integer',
-        'quantity' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata',
+        'warehouse' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\WarehouseReference',
+        'warehouseBin' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\WarehouseBinReference',
     ];
 }

@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ApiRequest
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\System\FilterValues $Filters
+ * @property Spinen\ConnectWise\Models\v2019_3\System\IRestIdentifiedItem $Entity
+ * @property Spinen\ConnectWise\Models\v2019_3\System\PageValues $Page
+ * @property integer $GrandParentId
  * @property integer $Id
  * @property integer $ParentId
- * @property integer $GrandParentId
- * @property Spinen\ConnectWise\Models\v2019_3\System\IRestIdentifiedItem $Entity
- * @property Spinen\ConnectWise\Models\v2019_3\System\FilterValues $Filters
- * @property Spinen\ConnectWise\Models\v2019_3\System\PageValues $Page
  * @property string $Format
  */
 class ApiRequest extends Model
@@ -25,12 +25,12 @@ class ApiRequest extends Model
      * @var array
      */
     protected $casts = [
-        'Id' => 'integer',
-        'ParentId' => 'integer',
-        'GrandParentId' => 'integer',
         'Entity' => 'Spinen\ConnectWise\Models\v2019_3\System\IRestIdentifiedItem',
         'Filters' => 'Spinen\ConnectWise\Models\v2019_3\System\FilterValues',
-        'Page' => 'Spinen\ConnectWise\Models\v2019_3\System\PageValues',
         'Format' => 'string',
+        'GrandParentId' => 'integer',
+        'Id' => 'integer',
+        'Page' => 'Spinen\ConnectWise\Models\v2019_3\System\PageValues',
+        'ParentId' => 'integer',
     ];
 }

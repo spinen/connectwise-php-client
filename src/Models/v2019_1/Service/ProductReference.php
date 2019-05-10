@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProductReference
  *
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
  * @property integer $id
  * @property string $description
- * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
  */
 class ProductReference extends Model
 {
@@ -21,8 +21,8 @@ class ProductReference extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'description' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
+        'description' => 'string',
+        'id' => 'integer',
     ];
 }

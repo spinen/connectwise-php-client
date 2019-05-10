@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportAdjustmentTransactionDetail
  *
- * @property string $glClass
- * @property string $description
- * @property string $memo
  * @property Spinen\ConnectWise\Models\v2019_3\Finance\IvItemReference $item
- * @property integer $quantity
- * @property float $total
  * @property float $cost
- * @property string $costAccountNumber
- * @property string $inventoryAccountNumber
+ * @property float $total
+ * @property integer $quantity
  * @property string $accountNumber
+ * @property string $costAccountNumber
+ * @property string $description
+ * @property string $glClass
+ * @property string $inventoryAccountNumber
+ * @property string $memo
  * @property string $productAccountNumber
  */
 class GLExportAdjustmentTransactionDetail extends Model
@@ -29,16 +29,16 @@ class GLExportAdjustmentTransactionDetail extends Model
      * @var array
      */
     protected $casts = [
-        'glClass' => 'string',
-        'description' => 'string',
-        'memo' => 'string',
-        'item' => 'Spinen\ConnectWise\Models\v2019_3\Finance\IvItemReference',
-        'quantity' => 'integer',
-        'total' => 'float',
+        'accountNumber' => 'string',
         'cost' => 'float',
         'costAccountNumber' => 'string',
+        'description' => 'string',
+        'glClass' => 'string',
         'inventoryAccountNumber' => 'string',
-        'accountNumber' => 'string',
+        'item' => 'Spinen\ConnectWise\Models\v2019_3\Finance\IvItemReference',
+        'memo' => 'string',
         'productAccountNumber' => 'string',
+        'quantity' => 'integer',
+        'total' => 'float',
     ];
 }

@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * The Workflows to which the member is assigned
  *
- * @property integer $count
  * @property Spinen\ConnectWise\Models\v2019_3\System\MemberReference $reAssignToMember
+ * @property integer $count
  */
 class MemberDeactivationWorkflow extends Model
 {

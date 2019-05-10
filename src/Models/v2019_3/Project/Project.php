@@ -9,70 +9,70 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Project
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2019_3\Project\Metadata $_info
  * @property Carbon\Carbon $actualEnd
- * @property float $actualHours
  * @property Carbon\Carbon $actualStart
+ * @property Carbon\Carbon $billingStartDate
+ * @property Carbon\Carbon $estimatedEnd
+ * @property Carbon\Carbon $estimatedStart
+ * @property Carbon\Carbon $scheduledEnd
+ * @property Carbon\Carbon $scheduledStart
  * @property Spinen\ConnectWise\Models\v2019_3\Project\AgreementReference $agreement
- * @property string $billExpenses
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\BillingTermsReference $billingTerms
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\CompanyReference $billToCompany
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\CompanyReference $shipToCompany
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\ContactReference $billToContact
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\ContactReference $contact
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\ContactReference $shipToContact
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\CurrencyReference $currency
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\MemberReference $expenseApprover
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\MemberReference $manager
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\MemberReference $timeApprover
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\OpportunityReference $opportunity
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\ProjectBoardReference $board
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\ProjectStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\ProjectTypeReference $type
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\SiteReference $billToSite
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\SiteReference $shipToSite
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\SiteReference $site
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\SystemDepartmentReference $department
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\SystemLocationReference $companyLocation
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\SystemLocationReference $location
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\TaxCodeReference $taxCode
+ * @property array $customFields
+ * @property boolean $billProjectAfterClosedFlag
+ * @property boolean $billUnapprovedTimeAndExpense
+ * @property boolean $budgetFlag
+ * @property boolean $doNotDisplayInPortalFlag
+ * @property boolean $includeDependenciesFlag
+ * @property boolean $includeEstimatesFlag
+ * @property boolean $restrictDownPaymentFlag
+ * @property float $actualHours
  * @property float $billingAmount
+ * @property float $budgetHours
+ * @property float $downpayment
+ * @property float $estimatedExpenseCost
+ * @property float $estimatedExpenseRevenue
+ * @property float $estimatedHours
+ * @property float $estimatedProductCost
+ * @property float $estimatedProductRevenue
+ * @property float $estimatedTimeCost
+ * @property float $estimatedTimeRevenue
+ * @property float $percentComplete
+ * @property float $scheduledHours
+ * @property integer $id
+ * @property integer $projectTemplateId
+ * @property string $billExpenses
+ * @property string $billProducts
+ * @property string $billTime
  * @property string $billingAttention
  * @property string $billingMethod
  * @property string $billingRateType
- * @property Spinen\ConnectWise\Models\v2019_3\Project\BillingTermsReference $billingTerms
- * @property string $billProducts
- * @property boolean $billProjectAfterClosedFlag
- * @property string $billTime
- * @property Spinen\ConnectWise\Models\v2019_3\Project\CompanyReference $billToCompany
- * @property Spinen\ConnectWise\Models\v2019_3\Project\ContactReference $billToContact
- * @property Spinen\ConnectWise\Models\v2019_3\Project\SiteReference $billToSite
- * @property boolean $billUnapprovedTimeAndExpense
- * @property Spinen\ConnectWise\Models\v2019_3\Project\ProjectBoardReference $board
  * @property string $budgetAnalysis
- * @property boolean $budgetFlag
- * @property float $budgetHours
- * @property Spinen\ConnectWise\Models\v2019_3\Project\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_3\Project\ContactReference $contact
  * @property string $customerPO
  * @property string $description
- * @property Spinen\ConnectWise\Models\v2019_3\Project\CurrencyReference $currency
- * @property float $downpayment
- * @property Carbon\Carbon $estimatedEnd
- * @property float $percentComplete
- * @property float $estimatedExpenseRevenue
- * @property float $estimatedHours
- * @property float $estimatedProductRevenue
- * @property Carbon\Carbon $estimatedStart
- * @property float $estimatedTimeRevenue
- * @property Spinen\ConnectWise\Models\v2019_3\Project\MemberReference $expenseApprover
- * @property boolean $includeDependenciesFlag
- * @property boolean $includeEstimatesFlag
- * @property Spinen\ConnectWise\Models\v2019_3\Project\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2019_3\Project\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2019_3\Project\MemberReference $manager
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_3\Project\OpportunityReference $opportunity
- * @property integer $projectTemplateId
- * @property boolean $restrictDownPaymentFlag
- * @property Carbon\Carbon $scheduledEnd
- * @property float $scheduledHours
- * @property Carbon\Carbon $scheduledStart
- * @property Spinen\ConnectWise\Models\v2019_3\Project\CompanyReference $shipToCompany
- * @property Spinen\ConnectWise\Models\v2019_3\Project\ContactReference $shipToContact
- * @property Spinen\ConnectWise\Models\v2019_3\Project\SiteReference $shipToSite
- * @property Spinen\ConnectWise\Models\v2019_3\Project\SiteReference $site
- * @property Spinen\ConnectWise\Models\v2019_3\Project\ProjectStatusReference $status
- * @property Spinen\ConnectWise\Models\v2019_3\Project\MemberReference $timeApprover
- * @property Spinen\ConnectWise\Models\v2019_3\Project\ProjectTypeReference $type
- * @property boolean $doNotDisplayInPortalFlag
- * @property Carbon\Carbon $billingStartDate
- * @property float $estimatedTimeCost
- * @property float $estimatedExpenseCost
- * @property float $estimatedProductCost
- * @property Spinen\ConnectWise\Models\v2019_3\Project\TaxCodeReference $taxCode
- * @property Spinen\ConnectWise\Models\v2019_3\Project\SystemLocationReference $companyLocation
- * @property array $customFields
  */
 class Project extends Model
 {
@@ -82,18 +82,12 @@ class Project extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Project\Metadata',
         'actualEnd' => 'Carbon\Carbon',
         'actualHours' => 'float',
         'actualStart' => 'Carbon\Carbon',
         'agreement' => 'Spinen\ConnectWise\Models\v2019_3\Project\AgreementReference',
         'billExpenses' => 'string',
-        'billingAmount' => 'float',
-        'billingAttention' => 'string',
-        'billingMethod' => 'string',
-        'billingRateType' => 'string',
-        'billingTerms' => 'Spinen\ConnectWise\Models\v2019_3\Project\BillingTermsReference',
         'billProducts' => 'string',
         'billProjectAfterClosedFlag' => 'boolean',
         'billTime' => 'string',
@@ -101,31 +95,44 @@ class Project extends Model
         'billToContact' => 'Spinen\ConnectWise\Models\v2019_3\Project\ContactReference',
         'billToSite' => 'Spinen\ConnectWise\Models\v2019_3\Project\SiteReference',
         'billUnapprovedTimeAndExpense' => 'boolean',
+        'billingAmount' => 'float',
+        'billingAttention' => 'string',
+        'billingMethod' => 'string',
+        'billingRateType' => 'string',
+        'billingStartDate' => 'Carbon\Carbon',
+        'billingTerms' => 'Spinen\ConnectWise\Models\v2019_3\Project\BillingTermsReference',
         'board' => 'Spinen\ConnectWise\Models\v2019_3\Project\ProjectBoardReference',
         'budgetAnalysis' => 'string',
         'budgetFlag' => 'boolean',
         'budgetHours' => 'float',
         'company' => 'Spinen\ConnectWise\Models\v2019_3\Project\CompanyReference',
+        'companyLocation' => 'Spinen\ConnectWise\Models\v2019_3\Project\SystemLocationReference',
         'contact' => 'Spinen\ConnectWise\Models\v2019_3\Project\ContactReference',
-        'customerPO' => 'string',
-        'description' => 'string',
         'currency' => 'Spinen\ConnectWise\Models\v2019_3\Project\CurrencyReference',
+        'customFields' => 'array',
+        'customerPO' => 'string',
+        'department' => 'Spinen\ConnectWise\Models\v2019_3\Project\SystemDepartmentReference',
+        'description' => 'string',
+        'doNotDisplayInPortalFlag' => 'boolean',
         'downpayment' => 'float',
         'estimatedEnd' => 'Carbon\Carbon',
-        'percentComplete' => 'float',
+        'estimatedExpenseCost' => 'float',
         'estimatedExpenseRevenue' => 'float',
         'estimatedHours' => 'float',
+        'estimatedProductCost' => 'float',
         'estimatedProductRevenue' => 'float',
         'estimatedStart' => 'Carbon\Carbon',
+        'estimatedTimeCost' => 'float',
         'estimatedTimeRevenue' => 'float',
         'expenseApprover' => 'Spinen\ConnectWise\Models\v2019_3\Project\MemberReference',
+        'id' => 'integer',
         'includeDependenciesFlag' => 'boolean',
         'includeEstimatesFlag' => 'boolean',
         'location' => 'Spinen\ConnectWise\Models\v2019_3\Project\SystemLocationReference',
-        'department' => 'Spinen\ConnectWise\Models\v2019_3\Project\SystemDepartmentReference',
         'manager' => 'Spinen\ConnectWise\Models\v2019_3\Project\MemberReference',
         'name' => 'string',
         'opportunity' => 'Spinen\ConnectWise\Models\v2019_3\Project\OpportunityReference',
+        'percentComplete' => 'float',
         'projectTemplateId' => 'integer',
         'restrictDownPaymentFlag' => 'boolean',
         'scheduledEnd' => 'Carbon\Carbon',
@@ -136,15 +143,8 @@ class Project extends Model
         'shipToSite' => 'Spinen\ConnectWise\Models\v2019_3\Project\SiteReference',
         'site' => 'Spinen\ConnectWise\Models\v2019_3\Project\SiteReference',
         'status' => 'Spinen\ConnectWise\Models\v2019_3\Project\ProjectStatusReference',
+        'taxCode' => 'Spinen\ConnectWise\Models\v2019_3\Project\TaxCodeReference',
         'timeApprover' => 'Spinen\ConnectWise\Models\v2019_3\Project\MemberReference',
         'type' => 'Spinen\ConnectWise\Models\v2019_3\Project\ProjectTypeReference',
-        'doNotDisplayInPortalFlag' => 'boolean',
-        'billingStartDate' => 'Carbon\Carbon',
-        'estimatedTimeCost' => 'float',
-        'estimatedExpenseCost' => 'float',
-        'estimatedProductCost' => 'float',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2019_3\Project\TaxCodeReference',
-        'companyLocation' => 'Spinen\ConnectWise\Models\v2019_3\Project\SystemLocationReference',
-        'customFields' => 'array',
     ];
 }

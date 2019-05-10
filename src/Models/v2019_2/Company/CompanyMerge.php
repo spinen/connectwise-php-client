@@ -10,25 +10,38 @@ use Spinen\ConnectWise\Support\Model;
  * Model for CompanyMerge
  *
  * @property integer $toCompanyId
- * @property string $name
+ * @property string $accountNumber
+ * @property string $activities
+ * @property string $billingAddress
+ * @property string $billingContact
+ * @property string $billingTerms
+ * @property string $contacts
+ * @property string $dateAcquired
+ * @property string $documents
+ * @property string $fax
  * @property string $identifier
- * @property string $status
- * @property string $type
+ * @property string $market
+ * @property string $name
+ * @property string $notes
+ * @property string $numberOfEmployees
+ * @property string $opportunities
+ * @property string $phone
  * @property string $primaryAddress
  * @property string $primaryContact
- * @property string $phone
- * @property string $fax
- * @property string $website
- * @property string $market
- * @property string $territory
+ * @property string $projects
  * @property string $revenue
  * @property string $revenueYear
- * @property string $numberOfEmployees
+ * @property string $services
  * @property string $sicCode
- * @property string $dateAcquired
- * @property string $timeZone
+ * @property string $sites
  * @property string $sourceList
+ * @property string $status
+ * @property string $taxCode
+ * @property string $territory
+ * @property string $timeZone
+ * @property string $type
  * @property string $userDefinedField1
+ * @property string $userDefinedField10
  * @property string $userDefinedField2
  * @property string $userDefinedField3
  * @property string $userDefinedField4
@@ -37,20 +50,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property string $userDefinedField7
  * @property string $userDefinedField8
  * @property string $userDefinedField9
- * @property string $userDefinedField10
- * @property string $billingAddress
- * @property string $billingContact
- * @property string $taxCode
- * @property string $accountNumber
- * @property string $billingTerms
- * @property string $notes
- * @property string $sites
- * @property string $activities
- * @property string $opportunities
- * @property string $services
- * @property string $projects
- * @property string $contacts
- * @property string $documents
+ * @property string $website
  */
 class CompanyMerge extends Model
 {
@@ -60,26 +60,39 @@ class CompanyMerge extends Model
      * @var array
      */
     protected $casts = [
-        'toCompanyId' => 'integer',
-        'name' => 'string',
+        'accountNumber' => 'string',
+        'activities' => 'string',
+        'billingAddress' => 'string',
+        'billingContact' => 'string',
+        'billingTerms' => 'string',
+        'contacts' => 'string',
+        'dateAcquired' => 'string',
+        'documents' => 'string',
+        'fax' => 'string',
         'identifier' => 'string',
-        'status' => 'string',
-        'type' => 'string',
+        'market' => 'string',
+        'name' => 'string',
+        'notes' => 'string',
+        'numberOfEmployees' => 'string',
+        'opportunities' => 'string',
+        'phone' => 'string',
         'primaryAddress' => 'string',
         'primaryContact' => 'string',
-        'phone' => 'string',
-        'fax' => 'string',
-        'website' => 'string',
-        'market' => 'string',
-        'territory' => 'string',
+        'projects' => 'string',
         'revenue' => 'string',
         'revenueYear' => 'string',
-        'numberOfEmployees' => 'string',
+        'services' => 'string',
         'sicCode' => 'string',
-        'dateAcquired' => 'string',
-        'timeZone' => 'string',
+        'sites' => 'string',
         'sourceList' => 'string',
+        'status' => 'string',
+        'taxCode' => 'string',
+        'territory' => 'string',
+        'timeZone' => 'string',
+        'toCompanyId' => 'integer',
+        'type' => 'string',
         'userDefinedField1' => 'string',
+        'userDefinedField10' => 'string',
         'userDefinedField2' => 'string',
         'userDefinedField3' => 'string',
         'userDefinedField4' => 'string',
@@ -88,19 +101,6 @@ class CompanyMerge extends Model
         'userDefinedField7' => 'string',
         'userDefinedField8' => 'string',
         'userDefinedField9' => 'string',
-        'userDefinedField10' => 'string',
-        'billingAddress' => 'string',
-        'billingContact' => 'string',
-        'taxCode' => 'string',
-        'accountNumber' => 'string',
-        'billingTerms' => 'string',
-        'notes' => 'string',
-        'sites' => 'string',
-        'activities' => 'string',
-        'opportunities' => 'string',
-        'services' => 'string',
-        'projects' => 'string',
-        'contacts' => 'string',
-        'documents' => 'string',
+        'website' => 'string',
     ];
 }

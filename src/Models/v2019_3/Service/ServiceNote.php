@@ -9,21 +9,21 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ServiceNote
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\Service\ContactReference $contact
+ * @property Spinen\ConnectWise\Models\v2019_3\Service\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2019_3\Service\Metadata $_info
+ * @property boolean $customerUpdatedFlag
+ * @property boolean $detailDescriptionFlag
+ * @property boolean $externalFlag
+ * @property boolean $internalAnalysisFlag
+ * @property boolean $internalFlag
+ * @property boolean $processNotifications
+ * @property boolean $resolutionFlag
  * @property integer $id
  * @property integer $ticketId
- * @property string $text
- * @property boolean $detailDescriptionFlag
- * @property boolean $internalAnalysisFlag
- * @property boolean $resolutionFlag
- * @property Spinen\ConnectWise\Models\v2019_3\Service\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2019_3\Service\ContactReference $contact
- * @property boolean $customerUpdatedFlag
- * @property boolean $processNotifications
- * @property string $dateCreated
  * @property string $createdBy
- * @property boolean $internalFlag
- * @property boolean $externalFlag
- * @property Spinen\ConnectWise\Models\v2019_3\Service\Metadata $_info
+ * @property string $dateCreated
+ * @property string $text
  */
 class ServiceNote extends Model
 {
@@ -33,20 +33,20 @@ class ServiceNote extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'ticketId' => 'integer',
-        'text' => 'string',
-        'detailDescriptionFlag' => 'boolean',
-        'internalAnalysisFlag' => 'boolean',
-        'resolutionFlag' => 'boolean',
-        'member' => 'Spinen\ConnectWise\Models\v2019_3\Service\MemberReference',
-        'contact' => 'Spinen\ConnectWise\Models\v2019_3\Service\ContactReference',
-        'customerUpdatedFlag' => 'boolean',
-        'processNotifications' => 'boolean',
-        'dateCreated' => 'string',
-        'createdBy' => 'string',
-        'internalFlag' => 'boolean',
-        'externalFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Service\Metadata',
+        'contact' => 'Spinen\ConnectWise\Models\v2019_3\Service\ContactReference',
+        'createdBy' => 'string',
+        'customerUpdatedFlag' => 'boolean',
+        'dateCreated' => 'string',
+        'detailDescriptionFlag' => 'boolean',
+        'externalFlag' => 'boolean',
+        'id' => 'integer',
+        'internalAnalysisFlag' => 'boolean',
+        'internalFlag' => 'boolean',
+        'member' => 'Spinen\ConnectWise\Models\v2019_3\Service\MemberReference',
+        'processNotifications' => 'boolean',
+        'resolutionFlag' => 'boolean',
+        'text' => 'string',
+        'ticketId' => 'integer',
     ];
 }

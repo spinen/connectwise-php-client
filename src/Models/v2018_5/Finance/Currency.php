@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Currency
  *
- * @property integer $id
- * @property string $currencyIdentifier
- * @property string $name
- * @property string $symbol
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
  * @property boolean $displayIdFlag
  * @property boolean $displaySymbolFlag
+ * @property integer $id
+ * @property string $currencyIdentifier
  * @property string $isoCode
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
+ * @property string $name
+ * @property string $symbol
  */
 class Currency extends Model
 {
@@ -26,13 +26,13 @@ class Currency extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
         'currencyIdentifier' => 'string',
-        'name' => 'string',
-        'symbol' => 'string',
         'displayIdFlag' => 'boolean',
         'displaySymbolFlag' => 'boolean',
+        'id' => 'integer',
         'isoCode' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
+        'name' => 'string',
+        'symbol' => 'string',
     ];
 }

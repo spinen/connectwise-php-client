@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for InOutBoard
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2019_1\System\InOutTypeReference $inOutType
- * @property string $additionalInfo
  * @property Carbon\Carbon $dateBack
+ * @property Spinen\ConnectWise\Models\v2019_1\System\InOutTypeReference $inOutType
+ * @property Spinen\ConnectWise\Models\v2019_1\System\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
+ * @property integer $id
+ * @property string $additionalInfo
  */
 class InOutBoard extends Model
 {
@@ -24,11 +24,11 @@ class InOutBoard extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberReference',
-        'inOutType' => 'Spinen\ConnectWise\Models\v2019_1\System\InOutTypeReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
         'additionalInfo' => 'string',
         'dateBack' => 'Carbon\Carbon',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
+        'id' => 'integer',
+        'inOutType' => 'Spinen\ConnectWise\Models\v2019_1\System\InOutTypeReference',
+        'member' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberReference',
     ];
 }

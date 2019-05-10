@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Management
  *
- * @property integer $id
  * @property Carbon\Carbon $runTime
  * @property Spinen\ConnectWise\Models\v2019_1\Company\ConfigurationStatusReference $addedConfigurationStatus
  * @property Spinen\ConnectWise\Models\v2019_1\Company\ConfigurationStatusReference $deletedConfigurationStatus
  * @property Spinen\ConnectWise\Models\v2019_1\Company\IntegratorLoginReference $integratorLogin
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
  * @property boolean $scheduleExecutiveSummaryReportFlag
  * @property integer $executiveSummaryReportScheduleDay
  * @property integer $executiveSummaryReportScheduleHour
  * @property integer $executiveSummaryReportScheduleMinute
- * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
+ * @property integer $id
  */
 class Management extends Model
 {
@@ -28,15 +28,15 @@ class Management extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'runTime' => 'Carbon\Carbon',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
         'addedConfigurationStatus' => 'Spinen\ConnectWise\Models\v2019_1\Company\ConfigurationStatusReference',
         'deletedConfigurationStatus' => 'Spinen\ConnectWise\Models\v2019_1\Company\ConfigurationStatusReference',
-        'integratorLogin' => 'Spinen\ConnectWise\Models\v2019_1\Company\IntegratorLoginReference',
-        'scheduleExecutiveSummaryReportFlag' => 'boolean',
         'executiveSummaryReportScheduleDay' => 'integer',
         'executiveSummaryReportScheduleHour' => 'integer',
         'executiveSummaryReportScheduleMinute' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
+        'id' => 'integer',
+        'integratorLogin' => 'Spinen\ConnectWise\Models\v2019_1\Company\IntegratorLoginReference',
+        'runTime' => 'Carbon\Carbon',
+        'scheduleExecutiveSummaryReportFlag' => 'boolean',
     ];
 }

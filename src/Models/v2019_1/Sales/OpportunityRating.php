@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OpportunityRating
  *
- * @property integer $id
- * @property string $name
- * @property integer $sortOrder
  * @property Spinen\ConnectWise\Models\v2019_1\Sales\Metadata $_info
+ * @property integer $id
+ * @property integer $sortOrder
+ * @property string $name
  */
 class OpportunityRating extends Model
 {
@@ -22,9 +22,9 @@ class OpportunityRating extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Sales\Metadata',
         'id' => 'integer',
         'name' => 'string',
         'sortOrder' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Sales\Metadata',
     ];
 }

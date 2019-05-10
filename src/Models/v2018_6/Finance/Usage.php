@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Usage
  *
- * @property string $type
  * @property integer $count
  * @property integer $id
  * @property string $description
  * @property string $hyperlink
+ * @property string $type
  */
 class Usage extends Model
 {
@@ -23,10 +23,10 @@ class Usage extends Model
      * @var array
      */
     protected $casts = [
-        'type' => 'string',
         'count' => 'integer',
-        'id' => 'integer',
         'description' => 'string',
         'hyperlink' => 'string',
+        'id' => 'integer',
+        'type' => 'string',
     ];
 }

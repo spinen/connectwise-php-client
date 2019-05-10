@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ActivityStatus
  *
- * @property integer $id
- * @property string $name
+ * @property Spinen\ConnectWise\Models\v2018_4\Sales\Metadata $_info
+ * @property boolean $closedFlag
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
  * @property boolean $spawnFollowupFlag
- * @property boolean $closedFlag
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\Metadata $_info
+ * @property integer $id
+ * @property string $name
  */
 class ActivityStatus extends Model
 {
@@ -25,12 +25,12 @@ class ActivityStatus extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'defaultFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
-        'spawnFollowupFlag' => 'boolean',
-        'closedFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2018_4\Sales\Metadata',
+        'closedFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
+        'spawnFollowupFlag' => 'boolean',
     ];
 }

@@ -9,18 +9,18 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Workflow
  *
- * @property integer $id
- * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_5\System\WorkflowTableTypeReference $tableType
- * @property Spinen\ConnectWise\Models\v2018_5\System\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2018_5\System\SystemDepartmentReference $department
- * @property boolean $activateFlag
- * @property integer $batchInterval
- * @property string $batchFrequencyUnit
  * @property Carbon\Carbon $batchLastRan
- * @property string $batchSchedule
  * @property Spinen\ConnectWise\Models\v2018_5\System\BoardReference $board
  * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_5\System\SystemDepartmentReference $department
+ * @property Spinen\ConnectWise\Models\v2018_5\System\SystemLocationReference $location
+ * @property Spinen\ConnectWise\Models\v2018_5\System\WorkflowTableTypeReference $tableType
+ * @property boolean $activateFlag
+ * @property integer $batchInterval
+ * @property integer $id
+ * @property string $batchFrequencyUnit
+ * @property string $batchSchedule
+ * @property string $name
  */
 class Workflow extends Model
 {
@@ -30,17 +30,17 @@ class Workflow extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'tableType' => 'Spinen\ConnectWise\Models\v2018_5\System\WorkflowTableTypeReference',
-        'location' => 'Spinen\ConnectWise\Models\v2018_5\System\SystemLocationReference',
-        'department' => 'Spinen\ConnectWise\Models\v2018_5\System\SystemDepartmentReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
         'activateFlag' => 'boolean',
-        'batchInterval' => 'integer',
         'batchFrequencyUnit' => 'string',
+        'batchInterval' => 'integer',
         'batchLastRan' => 'Carbon\Carbon',
         'batchSchedule' => 'string',
         'board' => 'Spinen\ConnectWise\Models\v2018_5\System\BoardReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
+        'department' => 'Spinen\ConnectWise\Models\v2018_5\System\SystemDepartmentReference',
+        'id' => 'integer',
+        'location' => 'Spinen\ConnectWise\Models\v2018_5\System\SystemLocationReference',
+        'name' => 'string',
+        'tableType' => 'Spinen\ConnectWise\Models\v2018_5\System\WorkflowTableTypeReference',
     ];
 }

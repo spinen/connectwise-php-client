@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for LinkClicked
  *
- * @property integer $id
+ * @property Carbon\Carbon $dateClicked
  * @property integer $campaignId
  * @property integer $contactId
- * @property Carbon\Carbon $dateClicked
- * @property string $url
+ * @property integer $id
  * @property string $queryString
+ * @property string $url
  */
 class LinkClicked extends Model
 {
@@ -24,11 +24,11 @@ class LinkClicked extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
         'campaignId' => 'integer',
         'contactId' => 'integer',
         'dateClicked' => 'Carbon\Carbon',
-        'url' => 'string',
+        'id' => 'integer',
         'queryString' => 'string',
+        'url' => 'string',
     ];
 }

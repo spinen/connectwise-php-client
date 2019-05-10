@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportPurchaseTransactionTaxLevel
  *
- * @property string $taxCodeXref
  * @property integer $taxLevel
+ * @property string $taxCodeXref
  */
 class GLExportPurchaseTransactionTaxLevel extends Model
 {

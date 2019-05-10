@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for UnitOfMeasureReference
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
  */
 class UnitOfMeasureReference extends Model
 {
@@ -21,8 +21,8 @@ class UnitOfMeasureReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
         'id' => 'integer',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
     ];
 }

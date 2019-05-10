@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for WorkflowEvent
  *
- * @property integer $id
- * @property string $name
- * @property string $eventCondition
- * @property string $frequencyUnit
- * @property integer $frequencyOfExecution
- * @property integer $maxNumberOfExecution
- * @property string $executionTime
  * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
+ * @property integer $frequencyOfExecution
+ * @property integer $id
+ * @property integer $maxNumberOfExecution
+ * @property string $eventCondition
+ * @property string $executionTime
+ * @property string $frequencyUnit
+ * @property string $name
  */
 class WorkflowEvent extends Model
 {
@@ -26,13 +26,13 @@ class WorkflowEvent extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'eventCondition' => 'string',
-        'frequencyUnit' => 'string',
-        'frequencyOfExecution' => 'integer',
-        'maxNumberOfExecution' => 'integer',
-        'executionTime' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
+        'eventCondition' => 'string',
+        'executionTime' => 'string',
+        'frequencyOfExecution' => 'integer',
+        'frequencyUnit' => 'string',
+        'id' => 'integer',
+        'maxNumberOfExecution' => 'integer',
+        'name' => 'string',
     ];
 }

@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TeamMember
  *
- * @property integer $id
  * @property Spinen\ConnectWise\Models\v2018_6\Service\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2018_6\Service\ServiceTeamReference $team
  * @property Spinen\ConnectWise\Models\v2018_6\Service\MemberReference $member
- * @property boolean $teamLeaderFlag
  * @property Spinen\ConnectWise\Models\v2018_6\Service\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\ServiceTeamReference $team
+ * @property boolean $teamLeaderFlag
+ * @property integer $id
  */
 class TeamMember extends Model
 {
@@ -24,11 +24,11 @@ class TeamMember extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'board' => 'Spinen\ConnectWise\Models\v2018_6\Service\BoardReference',
-        'team' => 'Spinen\ConnectWise\Models\v2018_6\Service\ServiceTeamReference',
-        'member' => 'Spinen\ConnectWise\Models\v2018_6\Service\MemberReference',
-        'teamLeaderFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Service\Metadata',
+        'board' => 'Spinen\ConnectWise\Models\v2018_6\Service\BoardReference',
+        'id' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2018_6\Service\MemberReference',
+        'team' => 'Spinen\ConnectWise\Models\v2018_6\Service\ServiceTeamReference',
+        'teamLeaderFlag' => 'boolean',
     ];
 }

@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MarketingContact
  *
- * @property integer $id
- * @property integer $groupId
- * @property string $note
- * @property boolean $unsubscribeFlag
  * @property Spinen\ConnectWise\Models\v2019_1\Marketing\Metadata $_info
+ * @property boolean $unsubscribeFlag
+ * @property integer $groupId
+ * @property integer $id
+ * @property string $note
  */
 class MarketingContact extends Model
 {
@@ -23,10 +23,10 @@ class MarketingContact extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Marketing\Metadata',
         'groupId' => 'integer',
+        'id' => 'integer',
         'note' => 'string',
         'unsubscribeFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Marketing\Metadata',
     ];
 }

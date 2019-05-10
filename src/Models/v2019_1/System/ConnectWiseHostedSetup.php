@@ -9,24 +9,24 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ConnectWiseHostedSetup
  *
+ * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
+ * @property array $locationIds
+ * @property boolean $disabledFlag
+ * @property boolean $locationsEnabledFlag
  * @property integer $id
- * @property integer $screenId
- * @property string $description
- * @property string $url
- * @property string $type
- * @property string $origin
  * @property integer $podHeight
+ * @property integer $screenId
  * @property integer $toolbarButtonDialogHeight
  * @property integer $toolbarButtonDialogWidth
- * @property string $toolbarButtonText
- * @property string $toolbarButtonToolTip
  * @property integer $toolbarButtonIconDocumentId
- * @property boolean $disabledFlag
- * @property array $locationIds
- * @property boolean $locationsEnabledFlag
  * @property string $createdBy
  * @property string $dateCreated
- * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
+ * @property string $description
+ * @property string $origin
+ * @property string $toolbarButtonText
+ * @property string $toolbarButtonToolTip
+ * @property string $type
+ * @property string $url
  */
 class ConnectWiseHostedSetup extends Model
 {
@@ -36,23 +36,23 @@ class ConnectWiseHostedSetup extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'screenId' => 'integer',
-        'description' => 'string',
-        'url' => 'string',
-        'type' => 'string',
-        'origin' => 'string',
-        'podHeight' => 'integer',
-        'toolbarButtonDialogHeight' => 'integer',
-        'toolbarButtonDialogWidth' => 'integer',
-        'toolbarButtonText' => 'string',
-        'toolbarButtonToolTip' => 'string',
-        'toolbarButtonIconDocumentId' => 'integer',
-        'disabledFlag' => 'boolean',
-        'locationIds' => 'array',
-        'locationsEnabledFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
         'createdBy' => 'string',
         'dateCreated' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
+        'description' => 'string',
+        'disabledFlag' => 'boolean',
+        'id' => 'integer',
+        'locationIds' => 'array',
+        'locationsEnabledFlag' => 'boolean',
+        'origin' => 'string',
+        'podHeight' => 'integer',
+        'screenId' => 'integer',
+        'toolbarButtonDialogHeight' => 'integer',
+        'toolbarButtonDialogWidth' => 'integer',
+        'toolbarButtonIconDocumentId' => 'integer',
+        'toolbarButtonText' => 'string',
+        'toolbarButtonToolTip' => 'string',
+        'type' => 'string',
+        'url' => 'string',
     ];
 }

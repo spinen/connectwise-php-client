@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for NotificationRecipientReference
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
  * @property integer $id
  * @property string $identifier
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
  */
 class NotificationRecipientReference extends Model
 {
@@ -22,9 +22,9 @@ class NotificationRecipientReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
     ];
 }

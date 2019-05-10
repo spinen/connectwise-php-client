@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AddressFormat
  *
- * @property integer $id
- * @property string $name
- * @property string $format
- * @property boolean $defaultFlag
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
  * @property array $countryIds
  * @property boolean $addAllCountries
+ * @property boolean $defaultFlag
  * @property boolean $removeAllCountries
- * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
+ * @property integer $id
+ * @property string $format
+ * @property string $name
  */
 class AddressFormat extends Model
 {
@@ -26,13 +26,13 @@ class AddressFormat extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
+        'addAllCountries' => 'boolean',
+        'countryIds' => 'array',
+        'defaultFlag' => 'boolean',
+        'format' => 'string',
         'id' => 'integer',
         'name' => 'string',
-        'format' => 'string',
-        'defaultFlag' => 'boolean',
-        'countryIds' => 'array',
-        'addAllCountries' => 'boolean',
         'removeAllCountries' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
     ];
 }

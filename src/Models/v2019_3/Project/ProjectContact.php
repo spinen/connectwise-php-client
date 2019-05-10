@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProjectContact
  *
- * @property integer $id
- * @property integer $projectId
  * @property Spinen\ConnectWise\Models\v2019_3\Project\ContactReference $contact
  * @property Spinen\ConnectWise\Models\v2019_3\Project\Metadata $_info
+ * @property integer $id
+ * @property integer $projectId
  */
 class ProjectContact extends Model
 {
@@ -22,9 +22,9 @@ class ProjectContact extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Project\Metadata',
+        'contact' => 'Spinen\ConnectWise\Models\v2019_3\Project\ContactReference',
         'id' => 'integer',
         'projectId' => 'integer',
-        'contact' => 'Spinen\ConnectWise\Models\v2019_3\Project\ContactReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Project\Metadata',
     ];
 }

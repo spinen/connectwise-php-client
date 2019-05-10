@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TaxIntegrationInfo
  *
- * @property integer $id
- * @property boolean $enabledFlag
- * @property string $taxIntegrationType
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
+ * @property boolean $enabledFlag
+ * @property integer $id
+ * @property string $taxIntegrationType
  */
 class TaxIntegrationInfo extends Model
 {
@@ -22,9 +22,9 @@ class TaxIntegrationInfo extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'enabledFlag' => 'boolean',
-        'taxIntegrationType' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
+        'enabledFlag' => 'boolean',
+        'id' => 'integer',
+        'taxIntegrationType' => 'string',
     ];
 }

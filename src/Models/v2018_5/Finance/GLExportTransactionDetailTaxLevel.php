@@ -20,7 +20,7 @@ class GLExportTransactionDetailTaxLevel extends Model
      * @var array
      */
     protected $casts = [
-        'taxableFlag' => 'boolean',
         'taxLevel' => 'integer',
+        'taxableFlag' => 'boolean',
     ];
 }

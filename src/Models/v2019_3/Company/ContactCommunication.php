@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ContactCommunication
  *
- * @property integer $id
- * @property integer $contactId
  * @property Spinen\ConnectWise\Models\v2019_3\Company\CommunicationTypeReference $type
- * @property string $value
- * @property string $extension
- * @property boolean $defaultFlag
  * @property Spinen\ConnectWise\Models\v2019_3\Company\Guid $mobileGuid
+ * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
+ * @property boolean $defaultFlag
+ * @property integer $contactId
+ * @property integer $id
  * @property string $communicationType
  * @property string $domain
- * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
+ * @property string $extension
+ * @property string $value
  */
 class ContactCommunication extends Model
 {
@@ -28,15 +28,15 @@ class ContactCommunication extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
+        'communicationType' => 'string',
         'contactId' => 'integer',
+        'defaultFlag' => 'boolean',
+        'domain' => 'string',
+        'extension' => 'string',
+        'id' => 'integer',
+        'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_3\Company\Guid',
         'type' => 'Spinen\ConnectWise\Models\v2019_3\Company\CommunicationTypeReference',
         'value' => 'string',
-        'extension' => 'string',
-        'defaultFlag' => 'boolean',
-        'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_3\Company\Guid',
-        'communicationType' => 'string',
-        'domain' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
     ];
 }

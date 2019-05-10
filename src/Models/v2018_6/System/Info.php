@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Info
  *
- * @property string $version
- * @property boolean $isCloud
- * @property string $serverTimeZone
  * @property array $licenseBits
+ * @property boolean $isCloud
  * @property string $cloudRegion
+ * @property string $serverTimeZone
+ * @property string $version
  */
 class Info extends Model
 {
@@ -23,10 +23,10 @@ class Info extends Model
      * @var array
      */
     protected $casts = [
-        'version' => 'string',
-        'isCloud' => 'boolean',
-        'serverTimeZone' => 'string',
-        'licenseBits' => 'array',
         'cloudRegion' => 'string',
+        'isCloud' => 'boolean',
+        'licenseBits' => 'array',
+        'serverTimeZone' => 'string',
+        'version' => 'string',
     ];
 }

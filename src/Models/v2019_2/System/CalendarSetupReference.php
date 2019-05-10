@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CalendarSetupReference
  *
+ * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  * @property integer $id
  * @property integer $ownerId
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  */
 class CalendarSetupReference extends Model
 {
@@ -21,8 +21,8 @@ class CalendarSetupReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
         'id' => 'integer',
         'ownerId' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
     ];
 }

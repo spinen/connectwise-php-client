@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for DeliveryMethod
  *
- * @property integer $id
- * @property string $name
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
  * @property boolean $defaultFlag
  * @property boolean $emailFlag
+ * @property boolean $integrationActiveFlag
  * @property boolean $integrationEmailFlag
  * @property boolean $integrationPrintFlag
- * @property boolean $integrationActiveFlag
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
+ * @property integer $id
+ * @property string $name
  */
 class DeliveryMethod extends Model
 {
@@ -26,13 +26,13 @@ class DeliveryMethod extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
         'defaultFlag' => 'boolean',
         'emailFlag' => 'boolean',
+        'id' => 'integer',
+        'integrationActiveFlag' => 'boolean',
         'integrationEmailFlag' => 'boolean',
         'integrationPrintFlag' => 'boolean',
-        'integrationActiveFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
+        'name' => 'string',
     ];
 }

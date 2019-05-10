@@ -9,17 +9,17 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AdjustmentDetail
  *
- * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_2\Procurement\AdjustmentReference $adjustment
  * @property Spinen\ConnectWise\Models\v2019_2\Procurement\CatalogItemReference $catalogItem
- * @property string $description
+ * @property Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_2\Procurement\WarehouseBinReference $warehouseBin
+ * @property Spinen\ConnectWise\Models\v2019_2\Procurement\WarehouseReference $warehouse
  * @property float $quantityOnHand
  * @property float $unitCost
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\WarehouseReference $warehouse
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\WarehouseBinReference $warehouseBin
+ * @property integer $id
  * @property integer $quantityAdjusted
+ * @property string $description
  * @property string $serialNumber
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\AdjustmentReference $adjustment
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata $_info
  */
 class AdjustmentDetail extends Model
 {
@@ -29,16 +29,16 @@ class AdjustmentDetail extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata',
+        'adjustment' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\AdjustmentReference',
         'catalogItem' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\CatalogItemReference',
         'description' => 'string',
+        'id' => 'integer',
+        'quantityAdjusted' => 'integer',
         'quantityOnHand' => 'float',
+        'serialNumber' => 'string',
         'unitCost' => 'float',
         'warehouse' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\WarehouseReference',
         'warehouseBin' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\WarehouseBinReference',
-        'quantityAdjusted' => 'integer',
-        'serialNumber' => 'string',
-        'adjustment' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\AdjustmentReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\Metadata',
     ];
 }

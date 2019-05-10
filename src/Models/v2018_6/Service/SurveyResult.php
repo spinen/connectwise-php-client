@@ -9,17 +9,17 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SurveyResult
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\ContactReference $contact
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\Metadata $_info
+ * @property array $results
+ * @property boolean $contactMeFlag
  * @property integer $id
+ * @property integer $surveyId
  * @property integer $ticketId
+ * @property integer $totalPoints
  * @property string $emailAddress
  * @property string $footerResponse
- * @property boolean $contactMeFlag
- * @property Spinen\ConnectWise\Models\v2018_6\Service\ContactReference $contact
- * @property array $results
- * @property integer $totalPoints
- * @property Spinen\ConnectWise\Models\v2018_6\Service\CompanyReference $company
- * @property integer $surveyId
- * @property Spinen\ConnectWise\Models\v2018_6\Service\Metadata $_info
  */
 class SurveyResult extends Model
 {
@@ -29,16 +29,16 @@ class SurveyResult extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'ticketId' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Service\Metadata',
+        'company' => 'Spinen\ConnectWise\Models\v2018_6\Service\CompanyReference',
+        'contact' => 'Spinen\ConnectWise\Models\v2018_6\Service\ContactReference',
+        'contactMeFlag' => 'boolean',
         'emailAddress' => 'string',
         'footerResponse' => 'string',
-        'contactMeFlag' => 'boolean',
-        'contact' => 'Spinen\ConnectWise\Models\v2018_6\Service\ContactReference',
+        'id' => 'integer',
         'results' => 'array',
-        'totalPoints' => 'integer',
-        'company' => 'Spinen\ConnectWise\Models\v2018_6\Service\CompanyReference',
         'surveyId' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Service\Metadata',
+        'ticketId' => 'integer',
+        'totalPoints' => 'integer',
     ];
 }

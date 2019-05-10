@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for EPayConfiguration
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2019_3\System\SystemLocationReference $location
  * @property Spinen\ConnectWise\Models\v2019_3\System\CurrencyReference $currency
- * @property string $url
- * @property string $storeIdentifier
+ * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_3\System\SystemLocationReference $location
+ * @property integer $id
  * @property string $encryptionKey
  * @property string $initializationVector
- * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
+ * @property string $storeIdentifier
+ * @property string $url
  */
 class EPayConfiguration extends Model
 {
@@ -26,13 +26,13 @@ class EPayConfiguration extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'location' => 'Spinen\ConnectWise\Models\v2019_3\System\SystemLocationReference',
-        'currency' => 'Spinen\ConnectWise\Models\v2019_3\System\CurrencyReference',
-        'url' => 'string',
-        'storeIdentifier' => 'string',
-        'encryptionKey' => 'string',
-        'initializationVector' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
+        'currency' => 'Spinen\ConnectWise\Models\v2019_3\System\CurrencyReference',
+        'encryptionKey' => 'string',
+        'id' => 'integer',
+        'initializationVector' => 'string',
+        'location' => 'Spinen\ConnectWise\Models\v2019_3\System\SystemLocationReference',
+        'storeIdentifier' => 'string',
+        'url' => 'string',
     ];
 }

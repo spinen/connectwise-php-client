@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ManagementItSolutionAgreementInterfaceParameter
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2018_4\Company\ManagedDevicesIntegrationReference $managedDevicesIntegration
  * @property Spinen\ConnectWise\Models\v2018_4\Company\AgreementTypeReference $agreementType
  * @property Spinen\ConnectWise\Models\v2018_4\Company\IvItemReference $serverProduct
- * @property Spinen\ConnectWise\Models\v2018_4\Company\IvItemReference $workstationProduct
  * @property Spinen\ConnectWise\Models\v2018_4\Company\IvItemReference $spamStatsProduct
+ * @property Spinen\ConnectWise\Models\v2018_4\Company\IvItemReference $workstationProduct
+ * @property Spinen\ConnectWise\Models\v2018_4\Company\ManagedDevicesIntegrationReference $managedDevicesIntegration
  * @property Spinen\ConnectWise\Models\v2018_4\Company\Metadata $_info
+ * @property integer $id
  */
 class ManagementItSolutionAgreementInterfaceParameter extends Model
 {
@@ -25,12 +25,12 @@ class ManagementItSolutionAgreementInterfaceParameter extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Company\Metadata',
+        'agreementType' => 'Spinen\ConnectWise\Models\v2018_4\Company\AgreementTypeReference',
         'id' => 'integer',
         'managedDevicesIntegration' => 'Spinen\ConnectWise\Models\v2018_4\Company\ManagedDevicesIntegrationReference',
-        'agreementType' => 'Spinen\ConnectWise\Models\v2018_4\Company\AgreementTypeReference',
         'serverProduct' => 'Spinen\ConnectWise\Models\v2018_4\Company\IvItemReference',
-        'workstationProduct' => 'Spinen\ConnectWise\Models\v2018_4\Company\IvItemReference',
         'spamStatsProduct' => 'Spinen\ConnectWise\Models\v2018_4\Company\IvItemReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Company\Metadata',
+        'workstationProduct' => 'Spinen\ConnectWise\Models\v2018_4\Company\IvItemReference',
     ];
 }

@@ -9,18 +9,18 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for InvoiceEmailTemplate
  *
- * @property integer $id
- * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\ServiceSurveyReference $serviceSurvey
- * @property boolean $useSenderFlag
- * @property string $firstName
- * @property string $lastName
- * @property string $emailAddress
- * @property string $subject
- * @property string $body
- * @property boolean $copySenderFlag
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\BillingStatusReference $invoiceStatus
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\ServiceSurveyReference $serviceSurvey
+ * @property boolean $copySenderFlag
+ * @property boolean $useSenderFlag
+ * @property integer $id
+ * @property string $body
+ * @property string $emailAddress
+ * @property string $firstName
+ * @property string $lastName
+ * @property string $name
+ * @property string $subject
  */
 class InvoiceEmailTemplate extends Model
 {
@@ -30,17 +30,17 @@ class InvoiceEmailTemplate extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'serviceSurvey' => 'Spinen\ConnectWise\Models\v2018_6\Finance\ServiceSurveyReference',
-        'useSenderFlag' => 'boolean',
-        'firstName' => 'string',
-        'lastName' => 'string',
-        'emailAddress' => 'string',
-        'subject' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
         'body' => 'string',
         'copySenderFlag' => 'boolean',
+        'emailAddress' => 'string',
+        'firstName' => 'string',
+        'id' => 'integer',
         'invoiceStatus' => 'Spinen\ConnectWise\Models\v2018_6\Finance\BillingStatusReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
+        'lastName' => 'string',
+        'name' => 'string',
+        'serviceSurvey' => 'Spinen\ConnectWise\Models\v2018_6\Finance\ServiceSurveyReference',
+        'subject' => 'string',
+        'useSenderFlag' => 'boolean',
     ];
 }

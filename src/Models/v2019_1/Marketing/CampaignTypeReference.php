@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CampaignTypeReference
  *
+ * @property Spinen\ConnectWise\Models\v2019_1\Marketing\Metadata $_info
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_1\Marketing\Metadata $_info
  */
 class CampaignTypeReference extends Model
 {
@@ -21,8 +21,8 @@ class CampaignTypeReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Marketing\Metadata',
         'id' => 'integer',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Marketing\Metadata',
     ];
 }

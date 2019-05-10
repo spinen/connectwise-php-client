@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for StatusWorkflow
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $reAssignToMember
  * @property integer $count
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $reAssignToMember
  */
 class StatusWorkflow extends Model
 {

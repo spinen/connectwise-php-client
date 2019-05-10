@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ContactType
  *
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
+ * @property boolean $defaultFlag
  * @property integer $id
  * @property string $description
- * @property boolean $defaultFlag
- * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
  */
 class ContactType extends Model
 {
@@ -22,9 +22,9 @@ class ContactType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'description' => 'string',
-        'defaultFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
+        'defaultFlag' => 'boolean',
+        'description' => 'string',
+        'id' => 'integer',
     ];
 }

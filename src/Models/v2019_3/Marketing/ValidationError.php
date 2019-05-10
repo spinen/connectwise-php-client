@@ -10,10 +10,10 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ValidationError
  *
  * @property string $code
+ * @property string $details
+ * @property string $field
  * @property string $message
  * @property string $resource
- * @property string $field
- * @property string $details
  */
 class ValidationError extends Model
 {
@@ -24,9 +24,9 @@ class ValidationError extends Model
      */
     protected $casts = [
         'code' => 'string',
+        'details' => 'string',
+        'field' => 'string',
         'message' => 'string',
         'resource' => 'string',
-        'field' => 'string',
-        'details' => 'string',
     ];
 }

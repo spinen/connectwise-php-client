@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Product
  *
+ * @property Spinen\ConnectWise\Models\v2018_5\Internal\Metadata $_info
+ * @property boolean $installedFlag
  * @property string $identifier
  * @property string $password
- * @property boolean $installedFlag
- * @property Spinen\ConnectWise\Models\v2018_5\Internal\Metadata $_info
  */
 class Product extends Model
 {
@@ -22,9 +22,9 @@ class Product extends Model
      * @var array
      */
     protected $casts = [
-        'identifier' => 'string',
-        'password' => 'string',
-        'installedFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Internal\Metadata',
+        'identifier' => 'string',
+        'installedFlag' => 'boolean',
+        'password' => 'string',
     ];
 }

@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ResultInfo
  *
+ * @property Spinen\ConnectWise\Models\v2019_2\Procurement\ErrorResponseMessage $error
+ * @property Spinen\ConnectWise\Models\v2019_2\Procurement\IRestIdentifiedItem $data
  * @property boolean $success
  * @property integer $originalIndex
  * @property integer $statusCode
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\IRestIdentifiedItem $data
- * @property Spinen\ConnectWise\Models\v2019_2\Procurement\ErrorResponseMessage $error
  */
 class ResultInfo extends Model
 {
@@ -23,10 +23,10 @@ class ResultInfo extends Model
      * @var array
      */
     protected $casts = [
-        'success' => 'boolean',
-        'originalIndex' => 'integer',
-        'statusCode' => 'integer',
         'data' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\IRestIdentifiedItem',
         'error' => 'Spinen\ConnectWise\Models\v2019_2\Procurement\ErrorResponseMessage',
+        'originalIndex' => 'integer',
+        'statusCode' => 'integer',
+        'success' => 'boolean',
     ];
 }

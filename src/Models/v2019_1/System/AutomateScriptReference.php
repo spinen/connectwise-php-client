@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Required when notifyType is set to: "Run Connectwise Automate Script"
  *
+ * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  */
 class AutomateScriptReference extends Model
 {
@@ -21,8 +21,8 @@ class AutomateScriptReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
         'id' => 'integer',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
     ];
 }

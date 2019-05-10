@@ -9,24 +9,24 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Calendar
  *
- * @property integer $id
- * @property string $name
  * @property Spinen\ConnectWise\Models\v2019_2\Schedule\HolidayListReference $holidayList
- * @property string $mondayStartTime
- * @property string $mondayEndTime
- * @property string $tuesdayStartTime
- * @property string $tuesdayEndTime
- * @property string $wednesdayStartTime
- * @property string $wednesdayEndTime
- * @property string $thursdayStartTime
- * @property string $thursdayEndTime
- * @property string $fridayStartTime
- * @property string $fridayEndTime
- * @property string $saturdayStartTime
- * @property string $saturdayEndTime
- * @property string $sundayStartTime
- * @property string $sundayEndTime
  * @property Spinen\ConnectWise\Models\v2019_2\Schedule\Metadata $_info
+ * @property integer $id
+ * @property string $fridayEndTime
+ * @property string $fridayStartTime
+ * @property string $mondayEndTime
+ * @property string $mondayStartTime
+ * @property string $name
+ * @property string $saturdayEndTime
+ * @property string $saturdayStartTime
+ * @property string $sundayEndTime
+ * @property string $sundayStartTime
+ * @property string $thursdayEndTime
+ * @property string $thursdayStartTime
+ * @property string $tuesdayEndTime
+ * @property string $tuesdayStartTime
+ * @property string $wednesdayEndTime
+ * @property string $wednesdayStartTime
  */
 class Calendar extends Model
 {
@@ -36,23 +36,23 @@ class Calendar extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'holidayList' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\HolidayListReference',
-        'mondayStartTime' => 'string',
-        'mondayEndTime' => 'string',
-        'tuesdayStartTime' => 'string',
-        'tuesdayEndTime' => 'string',
-        'wednesdayStartTime' => 'string',
-        'wednesdayEndTime' => 'string',
-        'thursdayStartTime' => 'string',
-        'thursdayEndTime' => 'string',
-        'fridayStartTime' => 'string',
-        'fridayEndTime' => 'string',
-        'saturdayStartTime' => 'string',
-        'saturdayEndTime' => 'string',
-        'sundayStartTime' => 'string',
-        'sundayEndTime' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\Metadata',
+        'fridayEndTime' => 'string',
+        'fridayStartTime' => 'string',
+        'holidayList' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\HolidayListReference',
+        'id' => 'integer',
+        'mondayEndTime' => 'string',
+        'mondayStartTime' => 'string',
+        'name' => 'string',
+        'saturdayEndTime' => 'string',
+        'saturdayStartTime' => 'string',
+        'sundayEndTime' => 'string',
+        'sundayStartTime' => 'string',
+        'thursdayEndTime' => 'string',
+        'thursdayStartTime' => 'string',
+        'tuesdayEndTime' => 'string',
+        'tuesdayStartTime' => 'string',
+        'wednesdayEndTime' => 'string',
+        'wednesdayStartTime' => 'string',
     ];
 }

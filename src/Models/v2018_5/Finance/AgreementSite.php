@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AgreementSite
  *
- * @property integer $id
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\SiteReference $site
- * @property integer $agreementId
  * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\SiteReference $site
  * @property array $customFields
+ * @property integer $agreementId
+ * @property integer $id
  */
 class AgreementSite extends Model
 {
@@ -24,11 +24,11 @@ class AgreementSite extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'company' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference',
-        'site' => 'Spinen\ConnectWise\Models\v2018_5\Finance\SiteReference',
-        'agreementId' => 'integer',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
+        'agreementId' => 'integer',
+        'company' => 'Spinen\ConnectWise\Models\v2018_5\Finance\CompanyReference',
         'customFields' => 'array',
+        'id' => 'integer',
+        'site' => 'Spinen\ConnectWise\Models\v2018_5\Finance\SiteReference',
     ];
 }

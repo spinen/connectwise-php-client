@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BundleRequest
  *
+ * @property Spinen\ConnectWise\Models\v2019_2\System\ApiRequest $ApiRequest
  * @property integer $SequenceNumber
  * @property string $ResourceType
  * @property string $Version
- * @property Spinen\ConnectWise\Models\v2019_2\System\ApiRequest $ApiRequest
  */
 class BundleRequest extends Model
 {
@@ -22,9 +22,9 @@ class BundleRequest extends Model
      * @var array
      */
     protected $casts = [
-        'SequenceNumber' => 'integer',
-        'ResourceType' => 'string',
-        'Version' => 'string',
         'ApiRequest' => 'Spinen\ConnectWise\Models\v2019_2\System\ApiRequest',
+        'ResourceType' => 'string',
+        'SequenceNumber' => 'integer',
+        'Version' => 'string',
     ];
 }

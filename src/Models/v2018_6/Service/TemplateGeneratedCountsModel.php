@@ -9,6 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TemplateGeneratedCountsModel
  *
+
  */
 class TemplateGeneratedCountsModel extends Model
 {
@@ -18,5 +19,6 @@ class TemplateGeneratedCountsModel extends Model
      * @var array
      */
     protected $casts = [
+,
     ];
 }

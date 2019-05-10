@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PatchOperation
  *
+ * @property object $value
  * @property string $op
  * @property string $path
- * @property object $value
  */
 class PatchOperation extends Model
 {

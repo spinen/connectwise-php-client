@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Required when notifyType is set to: "Attach Track"
  *
+ * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  */
 class TrackReference extends Model
 {
@@ -21,8 +21,8 @@ class TrackReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
         'id' => 'integer',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
     ];
 }

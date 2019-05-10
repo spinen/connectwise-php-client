@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProjectNote
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\NoteTypeReference $type
+ * @property boolean $flagged
  * @property integer $id
  * @property integer $projectId
  * @property string $text
- * @property Spinen\ConnectWise\Models\v2019_3\Project\NoteTypeReference $type
- * @property boolean $flagged
- * @property Spinen\ConnectWise\Models\v2019_3\Project\Metadata $_info
  */
 class ProjectNote extends Model
 {
@@ -24,11 +24,11 @@ class ProjectNote extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Project\Metadata',
+        'flagged' => 'boolean',
         'id' => 'integer',
         'projectId' => 'integer',
         'text' => 'string',
         'type' => 'Spinen\ConnectWise\Models\v2019_3\Project\NoteTypeReference',
-        'flagged' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Project\Metadata',
     ];
 }

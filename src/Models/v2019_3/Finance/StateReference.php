@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for StateReference
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\Finance\Metadata $_info
  * @property integer $id
  * @property string $identifier
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_3\Finance\Metadata $_info
  */
 class StateReference extends Model
 {
@@ -22,9 +22,9 @@ class StateReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Finance\Metadata',
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Finance\Metadata',
     ];
 }

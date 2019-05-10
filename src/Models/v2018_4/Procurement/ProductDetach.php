@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProductDetach
  *
- * @property boolean $removeFromTicket
  * @property boolean $removeFromInvoice
  * @property boolean $removeFromOpportunity
- * @property boolean $removeFromSalesOrder
  * @property boolean $removeFromProject
+ * @property boolean $removeFromSalesOrder
+ * @property boolean $removeFromTicket
  */
 class ProductDetach extends Model
 {
@@ -23,10 +23,10 @@ class ProductDetach extends Model
      * @var array
      */
     protected $casts = [
-        'removeFromTicket' => 'boolean',
         'removeFromInvoice' => 'boolean',
         'removeFromOpportunity' => 'boolean',
-        'removeFromSalesOrder' => 'boolean',
         'removeFromProject' => 'boolean',
+        'removeFromSalesOrder' => 'boolean',
+        'removeFromTicket' => 'boolean',
     ];
 }

@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ScheduleTypeReference
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\Schedule\Metadata $_info
  * @property integer $id
  * @property string $identifier
- * @property Spinen\ConnectWise\Models\v2019_3\Schedule\Metadata $_info
  */
 class ScheduleTypeReference extends Model
 {
@@ -21,8 +21,8 @@ class ScheduleTypeReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\Metadata',
         'id' => 'integer',
         'identifier' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\Metadata',
     ];
 }

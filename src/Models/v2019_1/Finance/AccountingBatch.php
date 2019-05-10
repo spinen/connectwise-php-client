@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AccountingBatch
  *
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
+ * @property boolean $closedFlag
+ * @property boolean $exportExpensesFlag
+ * @property boolean $exportInvoicesFlag
+ * @property boolean $exportProductsFlag
  * @property integer $id
  * @property string $batchIdentifier
- * @property boolean $exportInvoicesFlag
- * @property boolean $exportExpensesFlag
- * @property boolean $exportProductsFlag
- * @property boolean $closedFlag
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
  */
 class AccountingBatch extends Model
 {
@@ -25,12 +25,12 @@ class AccountingBatch extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'batchIdentifier' => 'string',
-        'exportInvoicesFlag' => 'boolean',
-        'exportExpensesFlag' => 'boolean',
-        'exportProductsFlag' => 'boolean',
-        'closedFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
+        'batchIdentifier' => 'string',
+        'closedFlag' => 'boolean',
+        'exportExpensesFlag' => 'boolean',
+        'exportInvoicesFlag' => 'boolean',
+        'exportProductsFlag' => 'boolean',
+        'id' => 'integer',
     ];
 }

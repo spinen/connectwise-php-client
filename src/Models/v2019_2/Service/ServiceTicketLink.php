@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ServiceTicketLink
  *
- * @property integer $id
- * @property string $name
- * @property boolean $enabledFlag
- * @property string $linkText
- * @property string $url
  * @property Spinen\ConnectWise\Models\v2019_2\Service\Metadata $_info
+ * @property boolean $enabledFlag
+ * @property integer $id
+ * @property string $linkText
+ * @property string $name
+ * @property string $url
  */
 class ServiceTicketLink extends Model
 {
@@ -24,11 +24,11 @@ class ServiceTicketLink extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'enabledFlag' => 'boolean',
-        'linkText' => 'string',
-        'url' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2019_2\Service\Metadata',
+        'enabledFlag' => 'boolean',
+        'id' => 'integer',
+        'linkText' => 'string',
+        'name' => 'string',
+        'url' => 'string',
     ];
 }

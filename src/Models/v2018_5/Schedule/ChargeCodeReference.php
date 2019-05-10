@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ChargeCodeReference
  *
+ * @property Spinen\ConnectWise\Models\v2018_5\Schedule\Metadata $_info
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_5\Schedule\Metadata $_info
  */
 class ChargeCodeReference extends Model
 {
@@ -21,8 +21,8 @@ class ChargeCodeReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Schedule\Metadata',
         'id' => 'integer',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Schedule\Metadata',
     ];
 }

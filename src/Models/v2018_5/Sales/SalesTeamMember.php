@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SalesTeamMember
  *
- * @property integer $id
  * @property Spinen\ConnectWise\Models\v2018_5\Sales\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_5\Sales\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2018_5\Sales\SystemDepartmentReference $department
- * @property boolean $allowAccessFlag
  * @property Spinen\ConnectWise\Models\v2018_5\Sales\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_5\Sales\SystemDepartmentReference $department
+ * @property Spinen\ConnectWise\Models\v2018_5\Sales\SystemLocationReference $location
+ * @property boolean $allowAccessFlag
+ * @property integer $id
  */
 class SalesTeamMember extends Model
 {
@@ -24,11 +24,11 @@ class SalesTeamMember extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2018_5\Sales\MemberReference',
-        'location' => 'Spinen\ConnectWise\Models\v2018_5\Sales\SystemLocationReference',
-        'department' => 'Spinen\ConnectWise\Models\v2018_5\Sales\SystemDepartmentReference',
-        'allowAccessFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Sales\Metadata',
+        'allowAccessFlag' => 'boolean',
+        'department' => 'Spinen\ConnectWise\Models\v2018_5\Sales\SystemDepartmentReference',
+        'id' => 'integer',
+        'location' => 'Spinen\ConnectWise\Models\v2018_5\Sales\SystemLocationReference',
+        'member' => 'Spinen\ConnectWise\Models\v2018_5\Sales\MemberReference',
     ];
 }

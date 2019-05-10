@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SystemDepartmentReference
  *
+ * @property Spinen\ConnectWise\Models\v2018_4\Time\Metadata $_info
  * @property integer $id
  * @property string $identifier
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_4\Time\Metadata $_info
  */
 class SystemDepartmentReference extends Model
 {
@@ -22,9 +22,9 @@ class SystemDepartmentReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Time\Metadata',
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Time\Metadata',
     ];
 }

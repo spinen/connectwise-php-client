@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ContactNote
  *
- * @property integer $id
- * @property integer $contactId
- * @property string $text
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
  * @property Spinen\ConnectWise\Models\v2018_5\Company\NoteTypeReference $type
  * @property boolean $flagged
+ * @property integer $contactId
+ * @property integer $id
  * @property string $enteredBy
- * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
+ * @property string $text
  */
 class ContactNote extends Model
 {
@@ -25,12 +25,12 @@ class ContactNote extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
         'contactId' => 'integer',
+        'enteredBy' => 'string',
+        'flagged' => 'boolean',
+        'id' => 'integer',
         'text' => 'string',
         'type' => 'Spinen\ConnectWise\Models\v2018_5\Company\NoteTypeReference',
-        'flagged' => 'boolean',
-        'enteredBy' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
     ];
 }

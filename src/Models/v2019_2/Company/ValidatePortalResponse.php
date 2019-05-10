@@ -20,7 +20,7 @@ class ValidatePortalResponse extends Model
      * @var array
      */
     protected $casts = [
-        'success' => 'boolean',
         'contactId' => 'integer',
+        'success' => 'boolean',
     ];
 }

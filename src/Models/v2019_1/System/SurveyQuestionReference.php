@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SurveyQuestionReference
  *
+ * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  * @property integer $id
  * @property string $question
- * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  */
 class SurveyQuestionReference extends Model
 {
@@ -21,8 +21,8 @@ class SurveyQuestionReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
         'id' => 'integer',
         'question' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
     ];
 }

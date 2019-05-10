@@ -9,58 +9,58 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Configuration
  *
- * @property integer $id
- * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_2\Company\ConfigurationTypeReference $type
- * @property Spinen\ConnectWise\Models\v2019_2\Company\ConfigurationStatusReference $status
- * @property Spinen\ConnectWise\Models\v2019_2\Company\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_2\Company\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2019_2\Company\SiteReference $site
- * @property integer $locationId
- * @property integer $businessUnitId
- * @property string $deviceIdentifier
- * @property string $serialNumber
- * @property string $modelNumber
- * @property string $tagNumber
- * @property Carbon\Carbon $purchaseDate
  * @property Carbon\Carbon $installationDate
- * @property Spinen\ConnectWise\Models\v2019_2\Company\MemberReference $installedBy
- * @property Carbon\Carbon $warrantyExpirationDate
- * @property string $vendorNotes
- * @property string $notes
- * @property string $macAddress
- * @property string $lastLoginName
- * @property boolean $billFlag
- * @property integer $backupSuccesses
- * @property integer $backupIncomplete
- * @property integer $backupFailed
- * @property integer $backupRestores
  * @property Carbon\Carbon $lastBackupDate
- * @property string $backupServerName
- * @property float $backupBillableSpaceGb
- * @property string $backupProtectedDeviceList
- * @property integer $backupYear
- * @property integer $backupMonth
- * @property string $ipAddress
- * @property string $defaultGateway
- * @property string $osType
- * @property string $osInfo
- * @property string $cpuSpeed
- * @property string $ram
- * @property string $localHardDrives
- * @property integer $parentConfigurationId
+ * @property Carbon\Carbon $purchaseDate
+ * @property Carbon\Carbon $warrantyExpirationDate
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\CompanyReference $company
  * @property Spinen\ConnectWise\Models\v2019_2\Company\CompanyReference $vendor
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\ConfigurationStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\ConfigurationTypeReference $type
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\ContactReference $contact
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\Guid $mobileGuid
  * @property Spinen\ConnectWise\Models\v2019_2\Company\ManufacturerReference $manufacturer
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\MemberReference $installedBy
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\SLAReference $sla
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\SiteReference $site
+ * @property array $customFields
  * @property array $questions
  * @property boolean $activeFlag
- * @property string $managementLink
- * @property string $remoteLink
- * @property Spinen\ConnectWise\Models\v2019_2\Company\SLAReference $sla
- * @property Spinen\ConnectWise\Models\v2019_2\Company\Guid $mobileGuid
- * @property Spinen\ConnectWise\Models\v2019_2\Company\Metadata $_info
+ * @property boolean $billFlag
  * @property boolean $displayVendorFlag
+ * @property float $backupBillableSpaceGb
+ * @property integer $backupFailed
+ * @property integer $backupIncomplete
+ * @property integer $backupMonth
+ * @property integer $backupRestores
+ * @property integer $backupSuccesses
+ * @property integer $backupYear
+ * @property integer $businessUnitId
  * @property integer $companyLocationId
- * @property array $customFields
+ * @property integer $id
+ * @property integer $locationId
+ * @property integer $parentConfigurationId
+ * @property string $backupProtectedDeviceList
+ * @property string $backupServerName
+ * @property string $cpuSpeed
+ * @property string $defaultGateway
+ * @property string $deviceIdentifier
+ * @property string $ipAddress
+ * @property string $lastLoginName
+ * @property string $localHardDrives
+ * @property string $macAddress
+ * @property string $managementLink
+ * @property string $modelNumber
+ * @property string $name
+ * @property string $notes
+ * @property string $osInfo
+ * @property string $osType
+ * @property string $ram
+ * @property string $remoteLink
+ * @property string $serialNumber
+ * @property string $tagNumber
+ * @property string $vendorNotes
  */
 class Configuration extends Model
 {
@@ -70,57 +70,57 @@ class Configuration extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'type' => 'Spinen\ConnectWise\Models\v2019_2\Company\ConfigurationTypeReference',
-        'status' => 'Spinen\ConnectWise\Models\v2019_2\Company\ConfigurationStatusReference',
-        'company' => 'Spinen\ConnectWise\Models\v2019_2\Company\CompanyReference',
-        'contact' => 'Spinen\ConnectWise\Models\v2019_2\Company\ContactReference',
-        'site' => 'Spinen\ConnectWise\Models\v2019_2\Company\SiteReference',
-        'locationId' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Company\Metadata',
+        'activeFlag' => 'boolean',
+        'backupBillableSpaceGb' => 'float',
+        'backupFailed' => 'integer',
+        'backupIncomplete' => 'integer',
+        'backupMonth' => 'integer',
+        'backupProtectedDeviceList' => 'string',
+        'backupRestores' => 'integer',
+        'backupServerName' => 'string',
+        'backupSuccesses' => 'integer',
+        'backupYear' => 'integer',
+        'billFlag' => 'boolean',
         'businessUnitId' => 'integer',
+        'company' => 'Spinen\ConnectWise\Models\v2019_2\Company\CompanyReference',
+        'companyLocationId' => 'integer',
+        'contact' => 'Spinen\ConnectWise\Models\v2019_2\Company\ContactReference',
+        'cpuSpeed' => 'string',
+        'customFields' => 'array',
+        'defaultGateway' => 'string',
         'deviceIdentifier' => 'string',
-        'serialNumber' => 'string',
-        'modelNumber' => 'string',
-        'tagNumber' => 'string',
-        'purchaseDate' => 'Carbon\Carbon',
+        'displayVendorFlag' => 'boolean',
+        'id' => 'integer',
         'installationDate' => 'Carbon\Carbon',
         'installedBy' => 'Spinen\ConnectWise\Models\v2019_2\Company\MemberReference',
-        'warrantyExpirationDate' => 'Carbon\Carbon',
-        'vendorNotes' => 'string',
-        'notes' => 'string',
-        'macAddress' => 'string',
-        'lastLoginName' => 'string',
-        'billFlag' => 'boolean',
-        'backupSuccesses' => 'integer',
-        'backupIncomplete' => 'integer',
-        'backupFailed' => 'integer',
-        'backupRestores' => 'integer',
-        'lastBackupDate' => 'Carbon\Carbon',
-        'backupServerName' => 'string',
-        'backupBillableSpaceGb' => 'float',
-        'backupProtectedDeviceList' => 'string',
-        'backupYear' => 'integer',
-        'backupMonth' => 'integer',
         'ipAddress' => 'string',
-        'defaultGateway' => 'string',
-        'osType' => 'string',
-        'osInfo' => 'string',
-        'cpuSpeed' => 'string',
-        'ram' => 'string',
+        'lastBackupDate' => 'Carbon\Carbon',
+        'lastLoginName' => 'string',
         'localHardDrives' => 'string',
-        'parentConfigurationId' => 'integer',
-        'vendor' => 'Spinen\ConnectWise\Models\v2019_2\Company\CompanyReference',
-        'manufacturer' => 'Spinen\ConnectWise\Models\v2019_2\Company\ManufacturerReference',
-        'questions' => 'array',
-        'activeFlag' => 'boolean',
+        'locationId' => 'integer',
+        'macAddress' => 'string',
         'managementLink' => 'string',
-        'remoteLink' => 'string',
-        'sla' => 'Spinen\ConnectWise\Models\v2019_2\Company\SLAReference',
+        'manufacturer' => 'Spinen\ConnectWise\Models\v2019_2\Company\ManufacturerReference',
         'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_2\Company\Guid',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Company\Metadata',
-        'displayVendorFlag' => 'boolean',
-        'companyLocationId' => 'integer',
-        'customFields' => 'array',
+        'modelNumber' => 'string',
+        'name' => 'string',
+        'notes' => 'string',
+        'osInfo' => 'string',
+        'osType' => 'string',
+        'parentConfigurationId' => 'integer',
+        'purchaseDate' => 'Carbon\Carbon',
+        'questions' => 'array',
+        'ram' => 'string',
+        'remoteLink' => 'string',
+        'serialNumber' => 'string',
+        'site' => 'Spinen\ConnectWise\Models\v2019_2\Company\SiteReference',
+        'sla' => 'Spinen\ConnectWise\Models\v2019_2\Company\SLAReference',
+        'status' => 'Spinen\ConnectWise\Models\v2019_2\Company\ConfigurationStatusReference',
+        'tagNumber' => 'string',
+        'type' => 'Spinen\ConnectWise\Models\v2019_2\Company\ConfigurationTypeReference',
+        'vendor' => 'Spinen\ConnectWise\Models\v2019_2\Company\CompanyReference',
+        'vendorNotes' => 'string',
+        'warrantyExpirationDate' => 'Carbon\Carbon',
     ];
 }

@@ -9,17 +9,17 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BoardType
  *
- * @property integer $id
- * @property string $name
- * @property string $category
+ * @property Spinen\ConnectWise\Models\v2019_3\Service\BoardReference $board
+ * @property Spinen\ConnectWise\Models\v2019_3\Service\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_3\Service\SystemDepartmentReference $department
+ * @property Spinen\ConnectWise\Models\v2019_3\Service\SystemLocationReference $location
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
  * @property boolean $requestForChangeFlag
+ * @property integer $id
+ * @property string $category
  * @property string $integrationXref
- * @property Spinen\ConnectWise\Models\v2019_3\Service\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2019_3\Service\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2019_3\Service\SystemDepartmentReference $department
- * @property Spinen\ConnectWise\Models\v2019_3\Service\Metadata $_info
+ * @property string $name
  */
 class BoardType extends Model
 {
@@ -29,16 +29,16 @@ class BoardType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Service\Metadata',
+        'board' => 'Spinen\ConnectWise\Models\v2019_3\Service\BoardReference',
         'category' => 'string',
         'defaultFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
-        'requestForChangeFlag' => 'boolean',
-        'integrationXref' => 'string',
-        'board' => 'Spinen\ConnectWise\Models\v2019_3\Service\BoardReference',
-        'location' => 'Spinen\ConnectWise\Models\v2019_3\Service\SystemLocationReference',
         'department' => 'Spinen\ConnectWise\Models\v2019_3\Service\SystemDepartmentReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Service\Metadata',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'integrationXref' => 'string',
+        'location' => 'Spinen\ConnectWise\Models\v2019_3\Service\SystemLocationReference',
+        'name' => 'string',
+        'requestForChangeFlag' => 'boolean',
     ];
 }

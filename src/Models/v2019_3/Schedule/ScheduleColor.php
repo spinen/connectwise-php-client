@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ScheduleColor
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\Schedule\Metadata $_info
+ * @property integer $endPercent
  * @property integer $id
  * @property integer $startPercent
- * @property integer $endPercent
  * @property string $color
- * @property Spinen\ConnectWise\Models\v2019_3\Schedule\Metadata $_info
  */
 class ScheduleColor extends Model
 {
@@ -23,10 +23,10 @@ class ScheduleColor extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\Metadata',
+        'color' => 'string',
+        'endPercent' => 'integer',
         'id' => 'integer',
         'startPercent' => 'integer',
-        'endPercent' => 'integer',
-        'color' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\Metadata',
     ];
 }

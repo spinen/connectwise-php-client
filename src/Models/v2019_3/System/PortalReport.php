@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PortalReport
  *
- * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
  * @property Spinen\ConnectWise\Models\v2019_3\System\PortalConfigurationReference $portalConfiguration
- * @property string $name
- * @property string $url
- * @property boolean $openSameWindowFlag
  * @property boolean $customFlag
  * @property boolean $displayFlag
- * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
+ * @property boolean $openSameWindowFlag
+ * @property integer $id
+ * @property string $name
+ * @property string $url
  */
 class PortalReport extends Model
 {
@@ -26,13 +26,13 @@ class PortalReport extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'portalConfiguration' => 'Spinen\ConnectWise\Models\v2019_3\System\PortalConfigurationReference',
-        'name' => 'string',
-        'url' => 'string',
-        'openSameWindowFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
         'customFlag' => 'boolean',
         'displayFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
+        'id' => 'integer',
+        'name' => 'string',
+        'openSameWindowFlag' => 'boolean',
+        'portalConfiguration' => 'Spinen\ConnectWise\Models\v2019_3\System\PortalConfigurationReference',
+        'url' => 'string',
     ];
 }

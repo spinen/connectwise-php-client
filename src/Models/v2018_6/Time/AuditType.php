@@ -9,6 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AuditType
  *
+
  */
 class AuditType extends Model
 {
@@ -18,5 +19,6 @@ class AuditType extends Model
      * @var array
      */
     protected $casts = [
+,
     ];
 }

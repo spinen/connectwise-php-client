@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AgreementTypeWorkRole
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\AgreementTypeReference $type
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\WorkRoleReference $workRole
  * @property Carbon\Carbon $effectiveDate
  * @property Carbon\Carbon $endingDate
- * @property float $rate
- * @property string $rateType
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\AgreementTypeReference $type
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\WorkRoleReference $workRole
+ * @property float $rate
+ * @property integer $id
+ * @property string $rateType
  */
 class AgreementTypeWorkRole extends Model
 {
@@ -26,13 +26,13 @@ class AgreementTypeWorkRole extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'type' => 'Spinen\ConnectWise\Models\v2018_6\Finance\AgreementTypeReference',
-        'workRole' => 'Spinen\ConnectWise\Models\v2018_6\Finance\WorkRoleReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
         'effectiveDate' => 'Carbon\Carbon',
         'endingDate' => 'Carbon\Carbon',
+        'id' => 'integer',
         'rate' => 'float',
         'rateType' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
+        'type' => 'Spinen\ConnectWise\Models\v2018_6\Finance\AgreementTypeReference',
+        'workRole' => 'Spinen\ConnectWise\Models\v2018_6\Finance\WorkRoleReference',
     ];
 }

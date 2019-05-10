@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PaymentType
  *
+ * @property Spinen\ConnectWise\Models\v2018_5\Expense\ClassificationReference $classification
+ * @property Spinen\ConnectWise\Models\v2018_5\Expense\Metadata $_info
+ * @property boolean $companyFlag
+ * @property boolean $defaultFlag
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_5\Expense\ClassificationReference $classification
- * @property boolean $defaultFlag
- * @property boolean $companyFlag
- * @property Spinen\ConnectWise\Models\v2018_5\Expense\Metadata $_info
  */
 class PaymentType extends Model
 {
@@ -24,11 +24,11 @@ class PaymentType extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Expense\Metadata',
+        'classification' => 'Spinen\ConnectWise\Models\v2018_5\Expense\ClassificationReference',
+        'companyFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
         'id' => 'integer',
         'name' => 'string',
-        'classification' => 'Spinen\ConnectWise\Models\v2018_5\Expense\ClassificationReference',
-        'defaultFlag' => 'boolean',
-        'companyFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Expense\Metadata',
     ];
 }

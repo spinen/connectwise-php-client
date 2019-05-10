@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ExpenseReport
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2018_5\Expense\MemberReference $member
- * @property integer $year
- * @property integer $period
- * @property Carbon\Carbon $dateStart
  * @property Carbon\Carbon $dateEnd
- * @property string $status
- * @property float $total
+ * @property Carbon\Carbon $dateStart
  * @property Carbon\Carbon $dueDate
+ * @property Spinen\ConnectWise\Models\v2018_5\Expense\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2018_5\Expense\Metadata $_info
+ * @property float $total
+ * @property integer $id
+ * @property integer $period
+ * @property integer $year
+ * @property string $status
  */
 class ExpenseReport extends Model
 {
@@ -28,15 +28,15 @@ class ExpenseReport extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Expense\Metadata',
+        'dateEnd' => 'Carbon\Carbon',
+        'dateStart' => 'Carbon\Carbon',
+        'dueDate' => 'Carbon\Carbon',
         'id' => 'integer',
         'member' => 'Spinen\ConnectWise\Models\v2018_5\Expense\MemberReference',
-        'year' => 'integer',
         'period' => 'integer',
-        'dateStart' => 'Carbon\Carbon',
-        'dateEnd' => 'Carbon\Carbon',
         'status' => 'string',
         'total' => 'float',
-        'dueDate' => 'Carbon\Carbon',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Expense\Metadata',
+        'year' => 'integer',
     ];
 }

@@ -9,45 +9,45 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PortalConfigurationOpportunitySetup
  *
- * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\ActivityTypeReference $acceptanceEmailActivityType
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\ActivityTypeReference $rejectionEmailActivityType
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\MemberReference $acceptanceEmailAssignedByMember
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\MemberReference $rejectionEmailAssignedByMember
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\OpportunityStatusReference $acceptanceOpportunityStatus
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\OpportunityStatusReference $rejectionOpportunityStatus
  * @property array $opportunityStatusRecIDs
- * @property boolean $addAllOpportunityStatuses
- * @property boolean $removeAllOpportunityStatuses
  * @property array $opportunityTypeRecIDs
+ * @property boolean $acceptanceChangeStatusFlag
+ * @property boolean $acceptanceCreateActivityFlag
+ * @property boolean $acceptanceSendEmailFlag
+ * @property boolean $addAllOpportunityStatuses
  * @property boolean $addAllOpportunityTypes
+ * @property boolean $confirmationEmailUseDefaultCompanyEmailAddressFlag
+ * @property boolean $confirmationSendEmailFlag
+ * @property boolean $rejectionChangeStatusFlag
+ * @property boolean $rejectionCreateActivityFlag
+ * @property boolean $rejectionSendEmailFlag
+ * @property boolean $removeAllOpportunityStatuses
  * @property boolean $removeAllOpportunityTypes
  * @property boolean $restrictViewByOpportunityStatusFlag
  * @property boolean $restrictViewByOpportunityTypeFlag
- * @property boolean $acceptanceChangeStatusFlag
- * @property boolean $acceptanceCreateActivityFlag
- * @property Spinen\ConnectWise\Models\v2018_5\Company\OpportunityStatusReference $acceptanceOpportunityStatus
- * @property boolean $acceptanceSendEmailFlag
+ * @property integer $id
+ * @property string $acceptanceEmailBody
  * @property string $acceptanceEmailFromFirstName
  * @property string $acceptanceEmailFromLastName
  * @property string $acceptanceEmailSubject
- * @property string $acceptanceEmailBody
  * @property string $acceptanceFromEmail
- * @property Spinen\ConnectWise\Models\v2018_5\Company\ActivityTypeReference $acceptanceEmailActivityType
- * @property Spinen\ConnectWise\Models\v2018_5\Company\MemberReference $acceptanceEmailAssignedByMember
- * @property boolean $rejectionChangeStatusFlag
- * @property boolean $rejectionCreateActivityFlag
- * @property Spinen\ConnectWise\Models\v2018_5\Company\OpportunityStatusReference $rejectionOpportunityStatus
- * @property boolean $rejectionSendEmailFlag
- * @property string $rejectionEmailFromFirstName
- * @property string $rejectionEmailFromLastName
- * @property string $rejectionFromEmail
- * @property string $rejectionEmailSubject
- * @property string $rejectionEmailBody
- * @property Spinen\ConnectWise\Models\v2018_5\Company\ActivityTypeReference $rejectionEmailActivityType
- * @property Spinen\ConnectWise\Models\v2018_5\Company\MemberReference $rejectionEmailAssignedByMember
- * @property boolean $confirmationSendEmailFlag
- * @property boolean $confirmationEmailUseDefaultCompanyEmailAddressFlag
+ * @property string $confirmationEmailBody
  * @property string $confirmationEmailFromFirstName
  * @property string $confirmationEmailFromLastName
- * @property string $confirmationFromEmail
  * @property string $confirmationEmailSubject
- * @property string $confirmationEmailBody
- * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
+ * @property string $confirmationFromEmail
+ * @property string $rejectionEmailBody
+ * @property string $rejectionEmailFromFirstName
+ * @property string $rejectionEmailFromLastName
+ * @property string $rejectionEmailSubject
+ * @property string $rejectionFromEmail
  */
 class PortalConfigurationOpportunitySetup extends Model
 {
@@ -57,44 +57,44 @@ class PortalConfigurationOpportunitySetup extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'opportunityStatusRecIDs' => 'array',
-        'addAllOpportunityStatuses' => 'boolean',
-        'removeAllOpportunityStatuses' => 'boolean',
-        'opportunityTypeRecIDs' => 'array',
-        'addAllOpportunityTypes' => 'boolean',
-        'removeAllOpportunityTypes' => 'boolean',
-        'restrictViewByOpportunityStatusFlag' => 'boolean',
-        'restrictViewByOpportunityTypeFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
         'acceptanceChangeStatusFlag' => 'boolean',
         'acceptanceCreateActivityFlag' => 'boolean',
-        'acceptanceOpportunityStatus' => 'Spinen\ConnectWise\Models\v2018_5\Company\OpportunityStatusReference',
-        'acceptanceSendEmailFlag' => 'boolean',
+        'acceptanceEmailActivityType' => 'Spinen\ConnectWise\Models\v2018_5\Company\ActivityTypeReference',
+        'acceptanceEmailAssignedByMember' => 'Spinen\ConnectWise\Models\v2018_5\Company\MemberReference',
+        'acceptanceEmailBody' => 'string',
         'acceptanceEmailFromFirstName' => 'string',
         'acceptanceEmailFromLastName' => 'string',
         'acceptanceEmailSubject' => 'string',
-        'acceptanceEmailBody' => 'string',
         'acceptanceFromEmail' => 'string',
-        'acceptanceEmailActivityType' => 'Spinen\ConnectWise\Models\v2018_5\Company\ActivityTypeReference',
-        'acceptanceEmailAssignedByMember' => 'Spinen\ConnectWise\Models\v2018_5\Company\MemberReference',
-        'rejectionChangeStatusFlag' => 'boolean',
-        'rejectionCreateActivityFlag' => 'boolean',
-        'rejectionOpportunityStatus' => 'Spinen\ConnectWise\Models\v2018_5\Company\OpportunityStatusReference',
-        'rejectionSendEmailFlag' => 'boolean',
-        'rejectionEmailFromFirstName' => 'string',
-        'rejectionEmailFromLastName' => 'string',
-        'rejectionFromEmail' => 'string',
-        'rejectionEmailSubject' => 'string',
-        'rejectionEmailBody' => 'string',
-        'rejectionEmailActivityType' => 'Spinen\ConnectWise\Models\v2018_5\Company\ActivityTypeReference',
-        'rejectionEmailAssignedByMember' => 'Spinen\ConnectWise\Models\v2018_5\Company\MemberReference',
-        'confirmationSendEmailFlag' => 'boolean',
-        'confirmationEmailUseDefaultCompanyEmailAddressFlag' => 'boolean',
+        'acceptanceOpportunityStatus' => 'Spinen\ConnectWise\Models\v2018_5\Company\OpportunityStatusReference',
+        'acceptanceSendEmailFlag' => 'boolean',
+        'addAllOpportunityStatuses' => 'boolean',
+        'addAllOpportunityTypes' => 'boolean',
+        'confirmationEmailBody' => 'string',
         'confirmationEmailFromFirstName' => 'string',
         'confirmationEmailFromLastName' => 'string',
-        'confirmationFromEmail' => 'string',
         'confirmationEmailSubject' => 'string',
-        'confirmationEmailBody' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
+        'confirmationEmailUseDefaultCompanyEmailAddressFlag' => 'boolean',
+        'confirmationFromEmail' => 'string',
+        'confirmationSendEmailFlag' => 'boolean',
+        'id' => 'integer',
+        'opportunityStatusRecIDs' => 'array',
+        'opportunityTypeRecIDs' => 'array',
+        'rejectionChangeStatusFlag' => 'boolean',
+        'rejectionCreateActivityFlag' => 'boolean',
+        'rejectionEmailActivityType' => 'Spinen\ConnectWise\Models\v2018_5\Company\ActivityTypeReference',
+        'rejectionEmailAssignedByMember' => 'Spinen\ConnectWise\Models\v2018_5\Company\MemberReference',
+        'rejectionEmailBody' => 'string',
+        'rejectionEmailFromFirstName' => 'string',
+        'rejectionEmailFromLastName' => 'string',
+        'rejectionEmailSubject' => 'string',
+        'rejectionFromEmail' => 'string',
+        'rejectionOpportunityStatus' => 'Spinen\ConnectWise\Models\v2018_5\Company\OpportunityStatusReference',
+        'rejectionSendEmailFlag' => 'boolean',
+        'removeAllOpportunityStatuses' => 'boolean',
+        'removeAllOpportunityTypes' => 'boolean',
+        'restrictViewByOpportunityStatusFlag' => 'boolean',
+        'restrictViewByOpportunityTypeFlag' => 'boolean',
     ];
 }

@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BoardTypeInfo
  *
- * @property integer $id
- * @property string $name
  * @property Spinen\ConnectWise\Models\v2019_1\Service\BoardReference $board
  * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
+ * @property integer $id
+ * @property string $name
  */
 class BoardTypeInfo extends Model
 {
@@ -22,9 +22,9 @@ class BoardTypeInfo extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
+        'board' => 'Spinen\ConnectWise\Models\v2019_1\Service\BoardReference',
         'id' => 'integer',
         'name' => 'string',
-        'board' => 'Spinen\ConnectWise\Models\v2019_1\Service\BoardReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
     ];
 }

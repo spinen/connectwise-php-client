@@ -10,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ServiceSurveyQuestionOption
  *
  * @property boolean $includeFlag
- * @property string $caption
  * @property integer $points
+ * @property string $caption
  */
 class ServiceSurveyQuestionOption extends Model
 {
@@ -21,8 +21,8 @@ class ServiceSurveyQuestionOption extends Model
      * @var array
      */
     protected $casts = [
-        'includeFlag' => 'boolean',
         'caption' => 'string',
+        'includeFlag' => 'boolean',
         'points' => 'integer',
     ];
 }

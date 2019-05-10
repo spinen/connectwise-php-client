@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CountryReference
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\Sales\Metadata $_info
  * @property integer $id
  * @property string $identifier
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_3\Sales\Metadata $_info
  */
 class CountryReference extends Model
 {
@@ -22,9 +22,9 @@ class CountryReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Sales\Metadata',
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Sales\Metadata',
     ];
 }

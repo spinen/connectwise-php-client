@@ -9,19 +9,19 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PortalConfigurationInvoiceSetup
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2018_4\Company\PortalConfigurationReference $portalConfiguration
- * @property boolean $displayInvPmtFlag
- * @property boolean $allowInvPmtFlag
- * @property Spinen\ConnectWise\Models\v2018_4\Company\SystemLocationReference $location
+ * @property Spinen\ConnectWise\Models\v2018_4\Company\Metadata $_info
  * @property Spinen\ConnectWise\Models\v2018_4\Company\PortalConfigurationPaymentProcessorReference $paymentProcessor
+ * @property Spinen\ConnectWise\Models\v2018_4\Company\PortalConfigurationReference $portalConfiguration
+ * @property Spinen\ConnectWise\Models\v2018_4\Company\SystemLocationReference $location
+ * @property array $billingStatusIds
+ * @property boolean $addAllStatuses
+ * @property boolean $allowInvPmtFlag
+ * @property boolean $displayInvPmtFlag
+ * @property boolean $removeAllStatuses
+ * @property integer $id
  * @property string $login
  * @property string $password
  * @property string $urlOverride
- * @property array $billingStatusIds
- * @property boolean $addAllStatuses
- * @property boolean $removeAllStatuses
- * @property Spinen\ConnectWise\Models\v2018_4\Company\Metadata $_info
  */
 class PortalConfigurationInvoiceSetup extends Model
 {
@@ -31,18 +31,18 @@ class PortalConfigurationInvoiceSetup extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'portalConfiguration' => 'Spinen\ConnectWise\Models\v2018_4\Company\PortalConfigurationReference',
-        'displayInvPmtFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Company\Metadata',
+        'addAllStatuses' => 'boolean',
         'allowInvPmtFlag' => 'boolean',
+        'billingStatusIds' => 'array',
+        'displayInvPmtFlag' => 'boolean',
+        'id' => 'integer',
         'location' => 'Spinen\ConnectWise\Models\v2018_4\Company\SystemLocationReference',
-        'paymentProcessor' => 'Spinen\ConnectWise\Models\v2018_4\Company\PortalConfigurationPaymentProcessorReference',
         'login' => 'string',
         'password' => 'string',
-        'urlOverride' => 'string',
-        'billingStatusIds' => 'array',
-        'addAllStatuses' => 'boolean',
+        'paymentProcessor' => 'Spinen\ConnectWise\Models\v2018_4\Company\PortalConfigurationPaymentProcessorReference',
+        'portalConfiguration' => 'Spinen\ConnectWise\Models\v2018_4\Company\PortalConfigurationReference',
         'removeAllStatuses' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Company\Metadata',
+        'urlOverride' => 'string',
     ];
 }

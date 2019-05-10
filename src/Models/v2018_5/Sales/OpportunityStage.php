@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OpportunityStage
  *
- * @property integer $id
- * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_5\Sales\OpportunityProbabilityReference $probability
- * @property string $color
- * @property integer $sequenceNumber
  * @property Spinen\ConnectWise\Models\v2018_5\Sales\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_5\Sales\OpportunityProbabilityReference $probability
+ * @property integer $id
+ * @property integer $sequenceNumber
+ * @property string $color
+ * @property string $name
  */
 class OpportunityStage extends Model
 {
@@ -24,11 +24,11 @@ class OpportunityStage extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Sales\Metadata',
+        'color' => 'string',
         'id' => 'integer',
         'name' => 'string',
         'probability' => 'Spinen\ConnectWise\Models\v2018_5\Sales\OpportunityProbabilityReference',
-        'color' => 'string',
         'sequenceNumber' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Sales\Metadata',
     ];
 }

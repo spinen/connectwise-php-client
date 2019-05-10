@@ -9,50 +9,50 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for UnpostedProcurement
  *
- * @property integer $id
- * @property string $description
- * @property integer $locationId
- * @property integer $departmentId
- * @property string $procurementType
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\PurchaseOrderReference $purchaseOrder
+ * @property Carbon\Carbon $dateClosed
  * @property Carbon\Carbon $purchaseDate
- * @property string $trackingNumber
+ * @property Carbon\Carbon $vendorInvoiceDate
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\BillingTermsReference $billingTerms
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference $currency
- * @property float $total
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\TaxCodeReference $taxCode
- * @property boolean $avalaraTaxFlag
- * @property boolean $itemTaxableFlag
- * @property boolean $purchaseOrderTaxableFlag
- * @property boolean $stateTaxFlag
- * @property string $stateTaxXref
- * @property float $stateTaxAmount
- * @property boolean $countyTaxFlag
- * @property string $countyTaxXref
- * @property float $countyTaxAmount
- * @property boolean $cityTaxFlag
- * @property string $cityTaxXref
- * @property float $cityTaxAmount
- * @property boolean $countryTaxFlag
- * @property string $countryTaxXref
- * @property float $countryTaxAmount
- * @property boolean $compositeTaxFlag
- * @property string $compositeTaxXref
- * @property float $compositeTaxAmount
- * @property boolean $levelSixTaxFlag
- * @property string $levelSixTaxXref
- * @property float $levelSixTaxAmount
- * @property float $taxTotal
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference $customer
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference $vendor
+ * @property Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference $currency
+ * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_2\Finance\PurchaseOrderReference $purchaseOrder
+ * @property Spinen\ConnectWise\Models\v2019_2\Finance\TaxCodeReference $taxCode
+ * @property boolean $avalaraTaxFlag
+ * @property boolean $cityTaxFlag
+ * @property boolean $compositeTaxFlag
+ * @property boolean $countryTaxFlag
+ * @property boolean $countyTaxFlag
+ * @property boolean $itemTaxableFlag
+ * @property boolean $levelSixTaxFlag
+ * @property boolean $purchaseOrderTaxableFlag
+ * @property boolean $stateTaxFlag
+ * @property boolean $taxFreightFlag
+ * @property float $cityTaxAmount
+ * @property float $compositeTaxAmount
+ * @property float $countryTaxAmount
+ * @property float $countyTaxAmount
+ * @property float $freightCost
+ * @property float $freightTaxTotal
+ * @property float $levelSixTaxAmount
+ * @property float $stateTaxAmount
+ * @property float $taxTotal
+ * @property float $total
+ * @property integer $departmentId
+ * @property integer $id
+ * @property integer $locationId
+ * @property string $cityTaxXref
+ * @property string $compositeTaxXref
+ * @property string $countryTaxXref
+ * @property string $countyTaxXref
+ * @property string $description
+ * @property string $levelSixTaxXref
+ * @property string $procurementType
+ * @property string $stateTaxXref
+ * @property string $trackingNumber
  * @property string $vendorAccountNumber
  * @property string $vendorInvoiceNumber
- * @property Carbon\Carbon $vendorInvoiceDate
- * @property boolean $taxFreightFlag
- * @property float $freightTaxTotal
- * @property float $freightCost
- * @property Carbon\Carbon $dateClosed
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
  */
 class UnpostedProcurement extends Model
 {
@@ -62,49 +62,49 @@ class UnpostedProcurement extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'description' => 'string',
-        'locationId' => 'integer',
-        'departmentId' => 'integer',
-        'procurementType' => 'string',
-        'purchaseOrder' => 'Spinen\ConnectWise\Models\v2019_2\Finance\PurchaseOrderReference',
-        'purchaseDate' => 'Carbon\Carbon',
-        'trackingNumber' => 'string',
-        'billingTerms' => 'Spinen\ConnectWise\Models\v2019_2\Finance\BillingTermsReference',
-        'currency' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference',
-        'total' => 'float',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2019_2\Finance\TaxCodeReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
         'avalaraTaxFlag' => 'boolean',
-        'itemTaxableFlag' => 'boolean',
-        'purchaseOrderTaxableFlag' => 'boolean',
-        'stateTaxFlag' => 'boolean',
-        'stateTaxXref' => 'string',
-        'stateTaxAmount' => 'float',
-        'countyTaxFlag' => 'boolean',
-        'countyTaxXref' => 'string',
-        'countyTaxAmount' => 'float',
+        'billingTerms' => 'Spinen\ConnectWise\Models\v2019_2\Finance\BillingTermsReference',
+        'cityTaxAmount' => 'float',
         'cityTaxFlag' => 'boolean',
         'cityTaxXref' => 'string',
-        'cityTaxAmount' => 'float',
-        'countryTaxFlag' => 'boolean',
-        'countryTaxXref' => 'string',
-        'countryTaxAmount' => 'float',
+        'compositeTaxAmount' => 'float',
         'compositeTaxFlag' => 'boolean',
         'compositeTaxXref' => 'string',
-        'compositeTaxAmount' => 'float',
+        'countryTaxAmount' => 'float',
+        'countryTaxFlag' => 'boolean',
+        'countryTaxXref' => 'string',
+        'countyTaxAmount' => 'float',
+        'countyTaxFlag' => 'boolean',
+        'countyTaxXref' => 'string',
+        'currency' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference',
+        'customer' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference',
+        'dateClosed' => 'Carbon\Carbon',
+        'departmentId' => 'integer',
+        'description' => 'string',
+        'freightCost' => 'float',
+        'freightTaxTotal' => 'float',
+        'id' => 'integer',
+        'itemTaxableFlag' => 'boolean',
+        'levelSixTaxAmount' => 'float',
         'levelSixTaxFlag' => 'boolean',
         'levelSixTaxXref' => 'string',
-        'levelSixTaxAmount' => 'float',
+        'locationId' => 'integer',
+        'procurementType' => 'string',
+        'purchaseDate' => 'Carbon\Carbon',
+        'purchaseOrder' => 'Spinen\ConnectWise\Models\v2019_2\Finance\PurchaseOrderReference',
+        'purchaseOrderTaxableFlag' => 'boolean',
+        'stateTaxAmount' => 'float',
+        'stateTaxFlag' => 'boolean',
+        'stateTaxXref' => 'string',
+        'taxCode' => 'Spinen\ConnectWise\Models\v2019_2\Finance\TaxCodeReference',
+        'taxFreightFlag' => 'boolean',
         'taxTotal' => 'float',
-        'customer' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference',
+        'total' => 'float',
+        'trackingNumber' => 'string',
         'vendor' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CompanyReference',
         'vendorAccountNumber' => 'string',
-        'vendorInvoiceNumber' => 'string',
         'vendorInvoiceDate' => 'Carbon\Carbon',
-        'taxFreightFlag' => 'boolean',
-        'freightTaxTotal' => 'float',
-        'freightCost' => 'float',
-        'dateClosed' => 'Carbon\Carbon',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
+        'vendorInvoiceNumber' => 'string',
     ];
 }

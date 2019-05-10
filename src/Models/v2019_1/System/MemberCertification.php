@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MemberCertification
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2019_1\System\CertificationReference $certification
- * @property integer $percentComplete
- * @property Carbon\Carbon $dateReceived
  * @property Carbon\Carbon $dateExpires
+ * @property Carbon\Carbon $dateReceived
+ * @property Spinen\ConnectWise\Models\v2019_1\System\CertificationReference $certification
+ * @property Spinen\ConnectWise\Models\v2019_1\System\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2019_1\System\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
+ * @property integer $id
+ * @property integer $percentComplete
  * @property string $certificationNumber
  * @property string $notes
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2019_1\System\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  */
 class MemberCertification extends Model
 {
@@ -28,15 +28,15 @@ class MemberCertification extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'certification' => 'Spinen\ConnectWise\Models\v2019_1\System\CertificationReference',
-        'percentComplete' => 'integer',
-        'dateReceived' => 'Carbon\Carbon',
-        'dateExpires' => 'Carbon\Carbon',
-        'certificationNumber' => 'string',
-        'notes' => 'string',
-        'member' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberReference',
-        'company' => 'Spinen\ConnectWise\Models\v2019_1\System\CompanyReference',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
+        'certification' => 'Spinen\ConnectWise\Models\v2019_1\System\CertificationReference',
+        'certificationNumber' => 'string',
+        'company' => 'Spinen\ConnectWise\Models\v2019_1\System\CompanyReference',
+        'dateExpires' => 'Carbon\Carbon',
+        'dateReceived' => 'Carbon\Carbon',
+        'id' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberReference',
+        'notes' => 'string',
+        'percentComplete' => 'integer',
     ];
 }

@@ -9,18 +9,18 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for KnowledgeBaseArticle
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\Service\BoardReference $board
+ * @property Spinen\ConnectWise\Models\v2019_3\Service\Metadata $_info
+ * @property integer $businessUnitId
+ * @property integer $categoryId
  * @property integer $id
- * @property string $title
+ * @property integer $locationId
+ * @property integer $subCategoryId
+ * @property string $createdBy
+ * @property string $dateCreated
  * @property string $issue
  * @property string $resolution
- * @property integer $locationId
- * @property integer $businessUnitId
- * @property Spinen\ConnectWise\Models\v2019_3\Service\BoardReference $board
- * @property integer $categoryId
- * @property integer $subCategoryId
- * @property string $dateCreated
- * @property string $createdBy
- * @property Spinen\ConnectWise\Models\v2019_3\Service\Metadata $_info
+ * @property string $title
  */
 class KnowledgeBaseArticle extends Model
 {
@@ -30,17 +30,17 @@ class KnowledgeBaseArticle extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'title' => 'string',
-        'issue' => 'string',
-        'resolution' => 'string',
-        'locationId' => 'integer',
-        'businessUnitId' => 'integer',
-        'board' => 'Spinen\ConnectWise\Models\v2019_3\Service\BoardReference',
-        'categoryId' => 'integer',
-        'subCategoryId' => 'integer',
-        'dateCreated' => 'string',
-        'createdBy' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Service\Metadata',
+        'board' => 'Spinen\ConnectWise\Models\v2019_3\Service\BoardReference',
+        'businessUnitId' => 'integer',
+        'categoryId' => 'integer',
+        'createdBy' => 'string',
+        'dateCreated' => 'string',
+        'id' => 'integer',
+        'issue' => 'string',
+        'locationId' => 'integer',
+        'resolution' => 'string',
+        'subCategoryId' => 'integer',
+        'title' => 'string',
     ];
 }

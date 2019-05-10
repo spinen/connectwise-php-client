@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TaxableExpenseTypeLevel
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\TaxCodeLevelReference $taxCodeLevel
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\TaxCodeLevelReference $taxCodeLevel
+ * @property integer $id
  */
 class TaxableExpenseTypeLevel extends Model
 {
@@ -21,8 +21,8 @@ class TaxableExpenseTypeLevel extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
         'id' => 'integer',
         'taxCodeLevel' => 'Spinen\ConnectWise\Models\v2018_6\Finance\TaxCodeLevelReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
     ];
 }

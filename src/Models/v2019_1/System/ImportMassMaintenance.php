@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ImportMassMaintenance
  *
- * @property integer $deletedContactCount
- * @property integer $deletedCompanyCount
- * @property string $message
  * @property boolean $success
+ * @property integer $deletedCompanyCount
+ * @property integer $deletedContactCount
+ * @property string $message
  */
 class ImportMassMaintenance extends Model
 {
@@ -22,8 +22,8 @@ class ImportMassMaintenance extends Model
      * @var array
      */
     protected $casts = [
-        'deletedContactCount' => 'integer',
         'deletedCompanyCount' => 'integer',
+        'deletedContactCount' => 'integer',
         'message' => 'string',
         'success' => 'boolean',
     ];

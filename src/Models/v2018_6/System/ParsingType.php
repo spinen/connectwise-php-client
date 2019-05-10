@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ParsingType
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
+ * @property boolean $defaultFlag
  * @property integer $id
  * @property string $name
  * @property string $parseRule
- * @property boolean $defaultFlag
- * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  */
 class ParsingType extends Model
 {
@@ -23,10 +23,10 @@ class ParsingType extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
+        'defaultFlag' => 'boolean',
         'id' => 'integer',
         'name' => 'string',
         'parseRule' => 'string',
-        'defaultFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
     ];
 }

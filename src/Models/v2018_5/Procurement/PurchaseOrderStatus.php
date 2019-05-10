@@ -9,15 +9,15 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PurchaseOrderStatus
  *
- * @property integer $id
- * @property string $name
- * @property boolean $defaultFlag
- * @property boolean $closedFlag
- * @property boolean $inactiveFlag
- * @property boolean $defaultClosedFlag
- * @property integer $sortOrder
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\PurchaseOrderStatusEmailTemplateReference $emailTemplate
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_5\Procurement\PurchaseOrderStatusEmailTemplateReference $emailTemplate
+ * @property boolean $closedFlag
+ * @property boolean $defaultClosedFlag
+ * @property boolean $defaultFlag
+ * @property boolean $inactiveFlag
+ * @property integer $id
+ * @property integer $sortOrder
+ * @property string $name
  */
 class PurchaseOrderStatus extends Model
 {
@@ -27,14 +27,14 @@ class PurchaseOrderStatus extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'defaultFlag' => 'boolean',
-        'closedFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
-        'defaultClosedFlag' => 'boolean',
-        'sortOrder' => 'integer',
-        'emailTemplate' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\PurchaseOrderStatusEmailTemplateReference',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata',
+        'closedFlag' => 'boolean',
+        'defaultClosedFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'emailTemplate' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\PurchaseOrderStatusEmailTemplateReference',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
+        'sortOrder' => 'integer',
     ];
 }

@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * The List of Activities Assigned to the Member
  *
- * @property integer $count
  * @property Spinen\ConnectWise\Models\v2018_5\System\MemberReference $reAssignToMember
+ * @property integer $count
  */
 class SalesActivity extends Model
 {

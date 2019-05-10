@@ -10,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ConnectWiseHostedScreen
  *
  * @property integer $id
- * @property string $screenId
  * @property string $name
+ * @property string $screenId
  */
 class ConnectWiseHostedScreen extends Model
 {
@@ -22,7 +22,7 @@ class ConnectWiseHostedScreen extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'screenId' => 'string',
         'name' => 'string',
+        'screenId' => 'string',
     ];
 }

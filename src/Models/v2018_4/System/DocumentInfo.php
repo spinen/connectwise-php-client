@@ -9,18 +9,18 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for DocumentInfo
  *
- * @property integer $id
- * @property string $title
- * @property string $fileName
- * @property string $serverFileName
- * @property string $owner
- * @property boolean $linkFlag
- * @property boolean $imageFlag
- * @property boolean $publicFlag
- * @property boolean $htmlTemplateFlag
- * @property boolean $readOnlyFlag
- * @property integer $size
  * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
+ * @property boolean $htmlTemplateFlag
+ * @property boolean $imageFlag
+ * @property boolean $linkFlag
+ * @property boolean $publicFlag
+ * @property boolean $readOnlyFlag
+ * @property integer $id
+ * @property integer $size
+ * @property string $fileName
+ * @property string $owner
+ * @property string $serverFileName
+ * @property string $title
  */
 class DocumentInfo extends Model
 {
@@ -30,17 +30,17 @@ class DocumentInfo extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'title' => 'string',
-        'fileName' => 'string',
-        'serverFileName' => 'string',
-        'owner' => 'string',
-        'linkFlag' => 'boolean',
-        'imageFlag' => 'boolean',
-        'publicFlag' => 'boolean',
-        'htmlTemplateFlag' => 'boolean',
-        'readOnlyFlag' => 'boolean',
-        'size' => 'integer',
         '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
+        'fileName' => 'string',
+        'htmlTemplateFlag' => 'boolean',
+        'id' => 'integer',
+        'imageFlag' => 'boolean',
+        'linkFlag' => 'boolean',
+        'owner' => 'string',
+        'publicFlag' => 'boolean',
+        'readOnlyFlag' => 'boolean',
+        'serverFileName' => 'string',
+        'size' => 'integer',
+        'title' => 'string',
     ];
 }

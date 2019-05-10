@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TimeZone
  *
+ * @property Carbon\Carbon $endDate
+ * @property Carbon\Carbon $startDate
+ * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
+ * @property boolean $daylightSavingsFlag
+ * @property float $offset
  * @property integer $id
  * @property string $name
- * @property float $offset
- * @property Carbon\Carbon $startDate
- * @property Carbon\Carbon $endDate
- * @property boolean $daylightSavingsFlag
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  */
 class TimeZone extends Model
 {
@@ -25,12 +25,12 @@ class TimeZone extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        'daylightSavingsFlag' => 'boolean',
+        'endDate' => 'Carbon\Carbon',
         'id' => 'integer',
         'name' => 'string',
         'offset' => 'float',
         'startDate' => 'Carbon\Carbon',
-        'endDate' => 'Carbon\Carbon',
-        'daylightSavingsFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
     ];
 }

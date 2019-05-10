@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for RmaStatusEmailTemplateReference
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
  */
 class RmaStatusEmailTemplateReference extends Model
 {
@@ -21,8 +21,8 @@ class RmaStatusEmailTemplateReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
         'id' => 'integer',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
     ];
 }

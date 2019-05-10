@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProjectBoardReference
  *
+ * @property Spinen\ConnectWise\Models\v2018_5\Sales\Metadata $_info
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_5\Sales\Metadata $_info
  */
 class ProjectBoardReference extends Model
 {
@@ -21,8 +21,8 @@ class ProjectBoardReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Sales\Metadata',
         'id' => 'integer',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Sales\Metadata',
     ];
 }

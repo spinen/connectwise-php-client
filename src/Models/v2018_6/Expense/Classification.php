@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Classification
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\Expense\Metadata $_info
+ * @property boolean $companyFlag
+ * @property boolean $defaultFlag
+ * @property boolean $employeeFlag
+ * @property float $multiplier
  * @property integer $id
  * @property string $name
- * @property float $multiplier
- * @property boolean $defaultFlag
- * @property boolean $companyFlag
- * @property boolean $employeeFlag
- * @property Spinen\ConnectWise\Models\v2018_6\Expense\Metadata $_info
  */
 class Classification extends Model
 {
@@ -25,12 +25,12 @@ class Classification extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'multiplier' => 'float',
-        'defaultFlag' => 'boolean',
-        'companyFlag' => 'boolean',
-        'employeeFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Expense\Metadata',
+        'companyFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'employeeFlag' => 'boolean',
+        'id' => 'integer',
+        'multiplier' => 'float',
+        'name' => 'string',
     ];
 }

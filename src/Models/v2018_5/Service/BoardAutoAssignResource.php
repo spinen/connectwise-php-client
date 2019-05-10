@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BoardAutoAssignResource
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2018_5\Service\NotificationRecipientReference $notifyWho
  * @property Spinen\ConnectWise\Models\v2018_5\Service\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2018_5\Service\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_5\Service\NotificationRecipientReference $notifyWho
+ * @property integer $id
  */
 class BoardAutoAssignResource extends Model
 {
@@ -22,9 +22,9 @@ class BoardAutoAssignResource extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'notifyWho' => 'Spinen\ConnectWise\Models\v2018_5\Service\NotificationRecipientReference',
-        'member' => 'Spinen\ConnectWise\Models\v2018_5\Service\MemberReference',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Service\Metadata',
+        'id' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2018_5\Service\MemberReference',
+        'notifyWho' => 'Spinen\ConnectWise\Models\v2018_5\Service\NotificationRecipientReference',
     ];
 }

@@ -9,18 +9,18 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MenuEntry
  *
- * @property integer $id
  * @property Spinen\ConnectWise\Models\v2019_1\System\MenuLocationReference $menuLocation
+ * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
+ * @property array $locationIds
+ * @property boolean $addAllLocations
+ * @property boolean $newWindowFlag
+ * @property boolean $removeAllLocations
+ * @property integer $id
+ * @property integer $largeMenuIconId
+ * @property integer $smallMenuIconId
  * @property string $caption
  * @property string $link
- * @property boolean $newWindowFlag
- * @property array $locationIds
  * @property string $origin
- * @property boolean $addAllLocations
- * @property boolean $removeAllLocations
- * @property integer $smallMenuIconId
- * @property integer $largeMenuIconId
- * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  */
 class MenuEntry extends Model
 {
@@ -30,17 +30,17 @@ class MenuEntry extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'menuLocation' => 'Spinen\ConnectWise\Models\v2019_1\System\MenuLocationReference',
-        'caption' => 'string',
-        'link' => 'string',
-        'newWindowFlag' => 'boolean',
-        'locationIds' => 'array',
-        'origin' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
         'addAllLocations' => 'boolean',
+        'caption' => 'string',
+        'id' => 'integer',
+        'largeMenuIconId' => 'integer',
+        'link' => 'string',
+        'locationIds' => 'array',
+        'menuLocation' => 'Spinen\ConnectWise\Models\v2019_1\System\MenuLocationReference',
+        'newWindowFlag' => 'boolean',
+        'origin' => 'string',
         'removeAllLocations' => 'boolean',
         'smallMenuIconId' => 'integer',
-        'largeMenuIconId' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
     ];
 }

@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BillingSetupRouting
  *
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
  * @property integer $id
  * @property integer $sequenceNumber
  * @property string $invoiceRule
  * @property string $routingRule
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
  */
 class BillingSetupRouting extends Model
 {
@@ -24,11 +24,11 @@ class BillingSetupRouting extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'sequenceNumber' => 'integer',
-        'invoiceRule' => 'string',
-        'routingRule' => 'string',
-        'member' => 'Spinen\ConnectWise\Models\v2018_5\Finance\MemberReference',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
+        'id' => 'integer',
+        'invoiceRule' => 'string',
+        'member' => 'Spinen\ConnectWise\Models\v2018_5\Finance\MemberReference',
+        'routingRule' => 'string',
+        'sequenceNumber' => 'integer',
     ];
 }

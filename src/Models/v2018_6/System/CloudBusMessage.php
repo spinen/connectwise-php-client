@@ -10,12 +10,12 @@ use Spinen\ConnectWise\Support\Model;
  * Model for CloudBusMessage
  *
  * @property integer $id
- * @property string $messageType
- * @property string $version
- * @property string $payload
- * @property string $source
  * @property integer $timestamp
  * @property string $messageGuid
+ * @property string $messageType
+ * @property string $payload
+ * @property string $source
+ * @property string $version
  */
 class CloudBusMessage extends Model
 {
@@ -26,11 +26,11 @@ class CloudBusMessage extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'messageGuid' => 'string',
         'messageType' => 'string',
-        'version' => 'string',
         'payload' => 'string',
         'source' => 'string',
         'timestamp' => 'integer',
-        'messageGuid' => 'string',
+        'version' => 'string',
     ];
 }

@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ScheduleReminderTime
  *
+ * @property Spinen\ConnectWise\Models\v2019_1\Schedule\Metadata $_info
+ * @property boolean $defaultFlag
  * @property integer $id
  * @property integer $time
  * @property string $name
- * @property boolean $defaultFlag
- * @property Spinen\ConnectWise\Models\v2019_1\Schedule\Metadata $_info
  */
 class ScheduleReminderTime extends Model
 {
@@ -23,10 +23,10 @@ class ScheduleReminderTime extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'time' => 'integer',
-        'name' => 'string',
-        'defaultFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\Schedule\Metadata',
+        'defaultFlag' => 'boolean',
+        'id' => 'integer',
+        'name' => 'string',
+        'time' => 'integer',
     ];
 }

@@ -9,54 +9,54 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ServiceTemplate
  *
- * @property integer $id
- * @property string $name
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\AgreementReference $agreement
  * @property Spinen\ConnectWise\Models\v2019_2\Service\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceTypeReference $type
- * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceItemReference $item
- * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceSubTypeReference $subtype
- * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceLocationReference $serviceLocation
- * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceStatusReference $status
- * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceSourceReference $source
- * @property Spinen\ConnectWise\Models\v2019_2\Service\PriorityReference $priority
- * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceTeamReference $team
  * @property Spinen\ConnectWise\Models\v2019_2\Service\CompanyReference $company
  * @property Spinen\ConnectWise\Models\v2019_2\Service\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2019_2\Service\SiteReference $site
- * @property boolean $assignedNotifyFlag
- * @property Spinen\ConnectWise\Models\v2019_2\Service\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2019_2\Service\SystemDepartmentReference $department
- * @property string $summary
- * @property string $problem
- * @property float $hoursBudget
- * @property string $internalAnalysis
- * @property boolean $timeBillableFlag
- * @property boolean $expenseBillableFlag
- * @property string $purchaseOrderNumber
- * @property string $reference
- * @property boolean $BillComplete_Flag
- * @property boolean $billServiceSeparatelyFlag
- * @property float $billingAmount
- * @property boolean $billUnapprovedTimeAndExpensesFlag
- * @property boolean $overrideFlag
- * @property boolean $timeInvoiceFlag
- * @property boolean $expenseInvoiceFlag
- * @property boolean $productInvoiceFlag
- * @property Spinen\ConnectWise\Models\v2019_2\Service\AgreementReference $agreement
- * @property string $billingMethod
- * @property string $severity
- * @property string $impact
  * @property Spinen\ConnectWise\Models\v2019_2\Service\MemberReference $assignedBy
- * @property integer $scheduleDaysBefore
- * @property integer $serviceDaysBefore
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\PriorityReference $priority
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceItemReference $item
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceLocationReference $serviceLocation
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceSourceReference $source
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceSubTypeReference $subtype
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceTeamReference $team
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\ServiceTypeReference $type
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\SiteReference $site
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\SystemDepartmentReference $department
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\SystemLocationReference $location
+ * @property boolean $BillComplete_Flag
+ * @property boolean $assignedNotifyFlag
  * @property boolean $attachScheduleToNewServiceFlag
- * @property boolean $templateFlag
+ * @property boolean $billServiceSeparatelyFlag
+ * @property boolean $billUnapprovedTimeAndExpensesFlag
+ * @property boolean $emailCCFlag
  * @property boolean $emailContactFlag
  * @property boolean $emailResourceFlag
- * @property boolean $emailCCFlag
- * @property string $emailCC
+ * @property boolean $expenseBillableFlag
+ * @property boolean $expenseInvoiceFlag
+ * @property boolean $overrideFlag
+ * @property boolean $productInvoiceFlag
  * @property boolean $restrictDownpaymentFlag
- * @property Spinen\ConnectWise\Models\v2019_2\Service\Metadata $_info
+ * @property boolean $templateFlag
+ * @property boolean $timeBillableFlag
+ * @property boolean $timeInvoiceFlag
+ * @property float $billingAmount
+ * @property float $hoursBudget
+ * @property integer $id
+ * @property integer $scheduleDaysBefore
+ * @property integer $serviceDaysBefore
+ * @property string $billingMethod
+ * @property string $emailCC
+ * @property string $impact
+ * @property string $internalAnalysis
+ * @property string $name
+ * @property string $problem
+ * @property string $purchaseOrderNumber
+ * @property string $reference
+ * @property string $severity
+ * @property string $summary
  */
 class ServiceTemplate extends Model
 {
@@ -66,53 +66,53 @@ class ServiceTemplate extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        'BillComplete_Flag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Service\Metadata',
+        'agreement' => 'Spinen\ConnectWise\Models\v2019_2\Service\AgreementReference',
+        'assignedBy' => 'Spinen\ConnectWise\Models\v2019_2\Service\MemberReference',
+        'assignedNotifyFlag' => 'boolean',
+        'attachScheduleToNewServiceFlag' => 'boolean',
+        'billServiceSeparatelyFlag' => 'boolean',
+        'billUnapprovedTimeAndExpensesFlag' => 'boolean',
+        'billingAmount' => 'float',
+        'billingMethod' => 'string',
         'board' => 'Spinen\ConnectWise\Models\v2019_2\Service\BoardReference',
-        'type' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceTypeReference',
-        'item' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceItemReference',
-        'subtype' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceSubTypeReference',
-        'serviceLocation' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceLocationReference',
-        'status' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceStatusReference',
-        'source' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceSourceReference',
-        'priority' => 'Spinen\ConnectWise\Models\v2019_2\Service\PriorityReference',
-        'team' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceTeamReference',
         'company' => 'Spinen\ConnectWise\Models\v2019_2\Service\CompanyReference',
         'contact' => 'Spinen\ConnectWise\Models\v2019_2\Service\ContactReference',
-        'site' => 'Spinen\ConnectWise\Models\v2019_2\Service\SiteReference',
-        'assignedNotifyFlag' => 'boolean',
-        'location' => 'Spinen\ConnectWise\Models\v2019_2\Service\SystemLocationReference',
         'department' => 'Spinen\ConnectWise\Models\v2019_2\Service\SystemDepartmentReference',
-        'summary' => 'string',
-        'problem' => 'string',
-        'hoursBudget' => 'float',
-        'internalAnalysis' => 'string',
-        'timeBillableFlag' => 'boolean',
-        'expenseBillableFlag' => 'boolean',
-        'purchaseOrderNumber' => 'string',
-        'reference' => 'string',
-        'BillComplete_Flag' => 'boolean',
-        'billServiceSeparatelyFlag' => 'boolean',
-        'billingAmount' => 'float',
-        'billUnapprovedTimeAndExpensesFlag' => 'boolean',
-        'overrideFlag' => 'boolean',
-        'timeInvoiceFlag' => 'boolean',
-        'expenseInvoiceFlag' => 'boolean',
-        'productInvoiceFlag' => 'boolean',
-        'agreement' => 'Spinen\ConnectWise\Models\v2019_2\Service\AgreementReference',
-        'billingMethod' => 'string',
-        'severity' => 'string',
-        'impact' => 'string',
-        'assignedBy' => 'Spinen\ConnectWise\Models\v2019_2\Service\MemberReference',
-        'scheduleDaysBefore' => 'integer',
-        'serviceDaysBefore' => 'integer',
-        'attachScheduleToNewServiceFlag' => 'boolean',
-        'templateFlag' => 'boolean',
+        'emailCC' => 'string',
+        'emailCCFlag' => 'boolean',
         'emailContactFlag' => 'boolean',
         'emailResourceFlag' => 'boolean',
-        'emailCCFlag' => 'boolean',
-        'emailCC' => 'string',
+        'expenseBillableFlag' => 'boolean',
+        'expenseInvoiceFlag' => 'boolean',
+        'hoursBudget' => 'float',
+        'id' => 'integer',
+        'impact' => 'string',
+        'internalAnalysis' => 'string',
+        'item' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceItemReference',
+        'location' => 'Spinen\ConnectWise\Models\v2019_2\Service\SystemLocationReference',
+        'name' => 'string',
+        'overrideFlag' => 'boolean',
+        'priority' => 'Spinen\ConnectWise\Models\v2019_2\Service\PriorityReference',
+        'problem' => 'string',
+        'productInvoiceFlag' => 'boolean',
+        'purchaseOrderNumber' => 'string',
+        'reference' => 'string',
         'restrictDownpaymentFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Service\Metadata',
+        'scheduleDaysBefore' => 'integer',
+        'serviceDaysBefore' => 'integer',
+        'serviceLocation' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceLocationReference',
+        'severity' => 'string',
+        'site' => 'Spinen\ConnectWise\Models\v2019_2\Service\SiteReference',
+        'source' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceSourceReference',
+        'status' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceStatusReference',
+        'subtype' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceSubTypeReference',
+        'summary' => 'string',
+        'team' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceTeamReference',
+        'templateFlag' => 'boolean',
+        'timeBillableFlag' => 'boolean',
+        'timeInvoiceFlag' => 'boolean',
+        'type' => 'Spinen\ConnectWise\Models\v2019_2\Service\ServiceTypeReference',
     ];
 }

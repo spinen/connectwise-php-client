@@ -9,15 +9,15 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Category
  *
- * @property integer $id
- * @property string $name
- * @property boolean $inactiveFlag
- * @property string $priceLevelXref
- * @property string $integrationXref
+ * @property Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata $_info
  * @property array $locationIds
  * @property boolean $addAllLocations
+ * @property boolean $inactiveFlag
  * @property boolean $removeAllLocations
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata $_info
+ * @property integer $id
+ * @property string $integrationXref
+ * @property string $name
+ * @property string $priceLevelXref
  */
 class Category extends Model
 {
@@ -27,14 +27,14 @@ class Category extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata',
+        'addAllLocations' => 'boolean',
         'id' => 'integer',
-        'name' => 'string',
         'inactiveFlag' => 'boolean',
-        'priceLevelXref' => 'string',
         'integrationXref' => 'string',
         'locationIds' => 'array',
-        'addAllLocations' => 'boolean',
+        'name' => 'string',
+        'priceLevelXref' => 'string',
         'removeAllLocations' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata',
     ];
 }

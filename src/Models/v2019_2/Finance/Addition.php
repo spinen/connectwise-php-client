@@ -9,36 +9,36 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Addition
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\IvItemReference $product
- * @property float $quantity
- * @property float $lessIncluded
- * @property float $unitPrice
- * @property float $unitCost
- * @property string $billCustomer
- * @property Carbon\Carbon $effectiveDate
  * @property Carbon\Carbon $cancelledDate
- * @property boolean $taxableFlag
- * @property string $serialNumber
- * @property string $invoiceDescription
+ * @property Carbon\Carbon $effectiveDate
+ * @property Spinen\ConnectWise\Models\v2019_2\Finance\IvItemReference $product
+ * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_2\Finance\OpportunityReference $opportunity
+ * @property array $customFields
+ * @property boolean $prorateCurrentPeriodFlag
  * @property boolean $purchaseItemFlag
  * @property boolean $specialOrderFlag
- * @property integer $agreementId
- * @property string $description
+ * @property boolean $taxableFlag
  * @property float $billedQuantity
- * @property string $uom
- * @property float $extPrice
  * @property float $extCost
- * @property float $sequenceNumber
+ * @property float $extPrice
+ * @property float $extendedProrateCost
+ * @property float $extendedProratePrice
+ * @property float $lessIncluded
  * @property float $margin
  * @property float $prorateCost
  * @property float $proratePrice
- * @property float $extendedProrateCost
- * @property float $extendedProratePrice
- * @property boolean $prorateCurrentPeriodFlag
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\OpportunityReference $opportunity
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
- * @property array $customFields
+ * @property float $quantity
+ * @property float $sequenceNumber
+ * @property float $unitCost
+ * @property float $unitPrice
+ * @property integer $agreementId
+ * @property integer $id
+ * @property string $billCustomer
+ * @property string $description
+ * @property string $invoiceDescription
+ * @property string $serialNumber
+ * @property string $uom
  */
 class Addition extends Model
 {
@@ -48,35 +48,35 @@ class Addition extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'product' => 'Spinen\ConnectWise\Models\v2019_2\Finance\IvItemReference',
-        'quantity' => 'float',
-        'lessIncluded' => 'float',
-        'unitPrice' => 'float',
-        'unitCost' => 'float',
-        'billCustomer' => 'string',
-        'effectiveDate' => 'Carbon\Carbon',
-        'cancelledDate' => 'Carbon\Carbon',
-        'taxableFlag' => 'boolean',
-        'serialNumber' => 'string',
-        'invoiceDescription' => 'string',
-        'purchaseItemFlag' => 'boolean',
-        'specialOrderFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
         'agreementId' => 'integer',
-        'description' => 'string',
+        'billCustomer' => 'string',
         'billedQuantity' => 'float',
-        'uom' => 'string',
-        'extPrice' => 'float',
+        'cancelledDate' => 'Carbon\Carbon',
+        'customFields' => 'array',
+        'description' => 'string',
+        'effectiveDate' => 'Carbon\Carbon',
         'extCost' => 'float',
-        'sequenceNumber' => 'float',
-        'margin' => 'float',
-        'prorateCost' => 'float',
-        'proratePrice' => 'float',
+        'extPrice' => 'float',
         'extendedProrateCost' => 'float',
         'extendedProratePrice' => 'float',
-        'prorateCurrentPeriodFlag' => 'boolean',
+        'id' => 'integer',
+        'invoiceDescription' => 'string',
+        'lessIncluded' => 'float',
+        'margin' => 'float',
         'opportunity' => 'Spinen\ConnectWise\Models\v2019_2\Finance\OpportunityReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
-        'customFields' => 'array',
+        'product' => 'Spinen\ConnectWise\Models\v2019_2\Finance\IvItemReference',
+        'prorateCost' => 'float',
+        'prorateCurrentPeriodFlag' => 'boolean',
+        'proratePrice' => 'float',
+        'purchaseItemFlag' => 'boolean',
+        'quantity' => 'float',
+        'sequenceNumber' => 'float',
+        'serialNumber' => 'string',
+        'specialOrderFlag' => 'boolean',
+        'taxableFlag' => 'boolean',
+        'unitCost' => 'float',
+        'unitPrice' => 'float',
+        'uom' => 'string',
     ];
 }

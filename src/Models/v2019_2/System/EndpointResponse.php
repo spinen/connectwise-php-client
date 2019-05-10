@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for EndpointResponse
  *
- * @property string $id
  * @property integer $code
- * @property string $message
  * @property integer $sort
+ * @property string $id
+ * @property string $message
  */
 class EndpointResponse extends Model
 {
@@ -22,8 +22,8 @@ class EndpointResponse extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'string',
         'code' => 'integer',
+        'id' => 'string',
         'message' => 'string',
         'sort' => 'integer',
     ];

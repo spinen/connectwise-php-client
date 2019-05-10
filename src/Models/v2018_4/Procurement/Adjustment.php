@@ -9,15 +9,15 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Adjustment
  *
- * @property integer $id
- * @property string $identifier
- * @property Spinen\ConnectWise\Models\v2018_4\Procurement\AdjustmentTypeReference $type
- * @property string $reason
- * @property string $notes
- * @property boolean $closedFlag
- * @property string $closedBy
  * @property Carbon\Carbon $closedDate
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\AdjustmentTypeReference $type
  * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
+ * @property boolean $closedFlag
+ * @property integer $id
+ * @property string $closedBy
+ * @property string $identifier
+ * @property string $notes
+ * @property string $reason
  */
 class Adjustment extends Model
 {
@@ -27,14 +27,14 @@ class Adjustment extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'identifier' => 'string',
-        'type' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\AdjustmentTypeReference',
-        'reason' => 'string',
-        'notes' => 'string',
-        'closedFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
         'closedBy' => 'string',
         'closedDate' => 'Carbon\Carbon',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
+        'closedFlag' => 'boolean',
+        'id' => 'integer',
+        'identifier' => 'string',
+        'notes' => 'string',
+        'reason' => 'string',
+        'type' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\AdjustmentTypeReference',
     ];
 }

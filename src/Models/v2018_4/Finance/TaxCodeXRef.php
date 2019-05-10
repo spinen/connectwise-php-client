@@ -9,17 +9,17 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TaxCodeXRef
  *
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference $taxCode
+ * @property boolean $defaultFlag
  * @property integer $id
  * @property string $description
- * @property boolean $defaultFlag
- * @property string $levelOne
- * @property string $levelTwo
- * @property string $levelThree
- * @property string $levelFour
  * @property string $levelFive
+ * @property string $levelFour
+ * @property string $levelOne
  * @property string $levelSix
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference $taxCode
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\Metadata $_info
+ * @property string $levelThree
+ * @property string $levelTwo
  */
 class TaxCodeXRef extends Model
 {
@@ -29,16 +29,16 @@ class TaxCodeXRef extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'description' => 'string',
-        'defaultFlag' => 'boolean',
-        'levelOne' => 'string',
-        'levelTwo' => 'string',
-        'levelThree' => 'string',
-        'levelFour' => 'string',
-        'levelFive' => 'string',
-        'levelSix' => 'string',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference',
         '_info' => 'Spinen\ConnectWise\Models\v2018_4\Finance\Metadata',
+        'defaultFlag' => 'boolean',
+        'description' => 'string',
+        'id' => 'integer',
+        'levelFive' => 'string',
+        'levelFour' => 'string',
+        'levelOne' => 'string',
+        'levelSix' => 'string',
+        'levelThree' => 'string',
+        'levelTwo' => 'string',
+        'taxCode' => 'Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference',
     ];
 }

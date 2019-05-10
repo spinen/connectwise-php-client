@@ -9,17 +9,17 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ContactTrack
  *
- * @property integer $id
- * @property integer $trackId
- * @property string $name
- * @property string $startDate
- * @property string $endDate
- * @property integer $actionTaken
- * @property integer $actionRemaining
- * @property string $startedBy
  * @property Spinen\ConnectWise\Models\v2019_3\Company\CompanyReference $company
  * @property Spinen\ConnectWise\Models\v2019_3\Company\ContactReference $contact
  * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
+ * @property integer $actionRemaining
+ * @property integer $actionTaken
+ * @property integer $id
+ * @property integer $trackId
+ * @property string $endDate
+ * @property string $name
+ * @property string $startDate
+ * @property string $startedBy
  */
 class ContactTrack extends Model
 {
@@ -29,16 +29,16 @@ class ContactTrack extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'trackId' => 'integer',
-        'name' => 'string',
-        'startDate' => 'string',
-        'endDate' => 'string',
-        'actionTaken' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
         'actionRemaining' => 'integer',
-        'startedBy' => 'string',
+        'actionTaken' => 'integer',
         'company' => 'Spinen\ConnectWise\Models\v2019_3\Company\CompanyReference',
         'contact' => 'Spinen\ConnectWise\Models\v2019_3\Company\ContactReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
+        'endDate' => 'string',
+        'id' => 'integer',
+        'name' => 'string',
+        'startDate' => 'string',
+        'startedBy' => 'string',
+        'trackId' => 'integer',
     ];
 }

@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProductType
  *
+ * @property Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata $_info
+ * @property boolean $inactiveFlag
  * @property integer $id
  * @property string $name
- * @property boolean $inactiveFlag
  * @property string $typeXref
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata $_info
  */
 class ProductType extends Model
 {
@@ -23,10 +23,10 @@ class ProductType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'inactiveFlag' => 'boolean',
-        'typeXref' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
+        'typeXref' => 'string',
     ];
 }

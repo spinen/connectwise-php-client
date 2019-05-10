@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GenericBoardTeamReference
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
+ * @property boolean $isProjectTeamFlag
  * @property integer $id
  * @property string $name
- * @property boolean $isProjectTeamFlag
- * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
  */
 class GenericBoardTeamReference extends Model
 {
@@ -22,9 +22,9 @@ class GenericBoardTeamReference extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'isProjectTeamFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
+        'id' => 'integer',
+        'isProjectTeamFlag' => 'boolean',
+        'name' => 'string',
     ];
 }

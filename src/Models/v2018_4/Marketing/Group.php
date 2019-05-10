@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Group
  *
+ * @property Spinen\ConnectWise\Models\v2018_4\Marketing\Metadata $_info
+ * @property boolean $inactiveFlag
+ * @property boolean $publicFlag
  * @property integer $id
  * @property string $name
  * @property string $publicDescription
- * @property boolean $publicFlag
- * @property boolean $inactiveFlag
- * @property Spinen\ConnectWise\Models\v2018_4\Marketing\Metadata $_info
  */
 class Group extends Model
 {
@@ -24,11 +24,11 @@ class Group extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Marketing\Metadata',
         'id' => 'integer',
+        'inactiveFlag' => 'boolean',
         'name' => 'string',
         'publicDescription' => 'string',
         'publicFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Marketing\Metadata',
     ];
 }

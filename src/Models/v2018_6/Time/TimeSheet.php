@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TimeSheet
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2018_6\Time\MemberReference $member
- * @property integer $year
- * @property integer $period
- * @property Carbon\Carbon $dateStart
  * @property Carbon\Carbon $dateEnd
- * @property string $status
- * @property float $hours
+ * @property Carbon\Carbon $dateStart
  * @property Carbon\Carbon $deadline
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2018_6\Time\Metadata $_info
+ * @property float $hours
+ * @property integer $id
+ * @property integer $period
+ * @property integer $year
+ * @property string $status
  */
 class TimeSheet extends Model
 {
@@ -28,15 +28,15 @@ class TimeSheet extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Time\Metadata',
+        'dateEnd' => 'Carbon\Carbon',
+        'dateStart' => 'Carbon\Carbon',
+        'deadline' => 'Carbon\Carbon',
+        'hours' => 'float',
         'id' => 'integer',
         'member' => 'Spinen\ConnectWise\Models\v2018_6\Time\MemberReference',
-        'year' => 'integer',
         'period' => 'integer',
-        'dateStart' => 'Carbon\Carbon',
-        'dateEnd' => 'Carbon\Carbon',
         'status' => 'string',
-        'hours' => 'float',
-        'deadline' => 'Carbon\Carbon',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Time\Metadata',
+        'year' => 'integer',
     ];
 }

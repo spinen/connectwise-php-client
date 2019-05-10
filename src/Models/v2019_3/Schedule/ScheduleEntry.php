@@ -9,29 +9,29 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ScheduleEntry
  *
- * @property integer $id
- * @property integer $objectId
- * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_3\Schedule\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2019_3\Schedule\ServiceLocationReference $where
- * @property Carbon\Carbon $dateStart
- * @property Carbon\Carbon $dateEnd
- * @property Spinen\ConnectWise\Models\v2019_3\Schedule\ReminderReference $reminder
- * @property Spinen\ConnectWise\Models\v2019_3\Schedule\ScheduleStatusReference $status
- * @property Spinen\ConnectWise\Models\v2019_3\Schedule\ScheduleTypeReference $type
- * @property Spinen\ConnectWise\Models\v2019_3\Schedule\ScheduleSpanReference $span
- * @property boolean $doneFlag
- * @property boolean $acknowledgedFlag
- * @property boolean $ownerFlag
- * @property boolean $meetingFlag
- * @property boolean $allowScheduleConflictsFlag
- * @property boolean $addMemberToProjectFlag
- * @property integer $projectRoleId
- * @property Spinen\ConnectWise\Models\v2019_3\Schedule\Guid $mobileGuid
  * @property Carbon\Carbon $acknowledgedDate
  * @property Carbon\Carbon $closeDate
- * @property float $hours
+ * @property Carbon\Carbon $dateEnd
+ * @property Carbon\Carbon $dateStart
+ * @property Spinen\ConnectWise\Models\v2019_3\Schedule\Guid $mobileGuid
+ * @property Spinen\ConnectWise\Models\v2019_3\Schedule\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2019_3\Schedule\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_3\Schedule\ReminderReference $reminder
+ * @property Spinen\ConnectWise\Models\v2019_3\Schedule\ScheduleSpanReference $span
+ * @property Spinen\ConnectWise\Models\v2019_3\Schedule\ScheduleStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2019_3\Schedule\ScheduleTypeReference $type
+ * @property Spinen\ConnectWise\Models\v2019_3\Schedule\ServiceLocationReference $where
+ * @property boolean $acknowledgedFlag
+ * @property boolean $addMemberToProjectFlag
+ * @property boolean $allowScheduleConflictsFlag
+ * @property boolean $doneFlag
+ * @property boolean $meetingFlag
+ * @property boolean $ownerFlag
+ * @property float $hours
+ * @property integer $id
+ * @property integer $objectId
+ * @property integer $projectRoleId
+ * @property string $name
  */
 class ScheduleEntry extends Model
 {
@@ -41,28 +41,28 @@ class ScheduleEntry extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'objectId' => 'integer',
-        'name' => 'string',
-        'member' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\MemberReference',
-        'where' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\ServiceLocationReference',
-        'dateStart' => 'Carbon\Carbon',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\Metadata',
+        'acknowledgedDate' => 'Carbon\Carbon',
+        'acknowledgedFlag' => 'boolean',
+        'addMemberToProjectFlag' => 'boolean',
+        'allowScheduleConflictsFlag' => 'boolean',
+        'closeDate' => 'Carbon\Carbon',
         'dateEnd' => 'Carbon\Carbon',
+        'dateStart' => 'Carbon\Carbon',
+        'doneFlag' => 'boolean',
+        'hours' => 'float',
+        'id' => 'integer',
+        'meetingFlag' => 'boolean',
+        'member' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\MemberReference',
+        'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\Guid',
+        'name' => 'string',
+        'objectId' => 'integer',
+        'ownerFlag' => 'boolean',
+        'projectRoleId' => 'integer',
         'reminder' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\ReminderReference',
+        'span' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\ScheduleSpanReference',
         'status' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\ScheduleStatusReference',
         'type' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\ScheduleTypeReference',
-        'span' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\ScheduleSpanReference',
-        'doneFlag' => 'boolean',
-        'acknowledgedFlag' => 'boolean',
-        'ownerFlag' => 'boolean',
-        'meetingFlag' => 'boolean',
-        'allowScheduleConflictsFlag' => 'boolean',
-        'addMemberToProjectFlag' => 'boolean',
-        'projectRoleId' => 'integer',
-        'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\Guid',
-        'acknowledgedDate' => 'Carbon\Carbon',
-        'closeDate' => 'Carbon\Carbon',
-        'hours' => 'float',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\Metadata',
+        'where' => 'Spinen\ConnectWise\Models\v2019_3\Schedule\ServiceLocationReference',
     ];
 }

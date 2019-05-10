@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProjectPhaseReference
  *
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
  */
 class ProjectPhaseReference extends Model
 {
@@ -21,8 +21,8 @@ class ProjectPhaseReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
         'id' => 'integer',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
     ];
 }

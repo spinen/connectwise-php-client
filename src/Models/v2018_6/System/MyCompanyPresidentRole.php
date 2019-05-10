@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MyCompanyPresidentRole
  *
- * @property integer $count
  * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $reAssignToMember
+ * @property integer $count
  */
 class MyCompanyPresidentRole extends Model
 {

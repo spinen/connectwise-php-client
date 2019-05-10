@@ -9,22 +9,22 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Service
  *
- * @property integer $id
- * @property string $srNotify
- * @property string $scheduleSpan
- * @property boolean $hideDelimiterFlag
+ * @property Spinen\ConnectWise\Models\v2018_4\System\CalendarSetupReference $calendarSetup
+ * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
  * @property boolean $allowCCFlag
  * @property boolean $allowTOFlag
+ * @property boolean $contactColorDisableFlag
+ * @property boolean $headerColorDisableFlag
+ * @property boolean $hideDelimiterFlag
+ * @property boolean $memberColorDisableFlag
+ * @property boolean $unknownColorDisableFlag
+ * @property integer $id
+ * @property string $contactColor
  * @property string $headerColor
  * @property string $memberColor
- * @property string $contactColor
+ * @property string $scheduleSpan
+ * @property string $srNotify
  * @property string $unknownColor
- * @property Spinen\ConnectWise\Models\v2018_4\System\CalendarSetupReference $calendarSetup
- * @property boolean $headerColorDisableFlag
- * @property boolean $memberColorDisableFlag
- * @property boolean $contactColorDisableFlag
- * @property boolean $unknownColorDisableFlag
- * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
  */
 class Service extends Model
 {
@@ -34,21 +34,21 @@ class Service extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'srNotify' => 'string',
-        'scheduleSpan' => 'string',
-        'hideDelimiterFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
         'allowCCFlag' => 'boolean',
         'allowTOFlag' => 'boolean',
-        'headerColor' => 'string',
-        'memberColor' => 'string',
-        'contactColor' => 'string',
-        'unknownColor' => 'string',
         'calendarSetup' => 'Spinen\ConnectWise\Models\v2018_4\System\CalendarSetupReference',
-        'headerColorDisableFlag' => 'boolean',
-        'memberColorDisableFlag' => 'boolean',
+        'contactColor' => 'string',
         'contactColorDisableFlag' => 'boolean',
+        'headerColor' => 'string',
+        'headerColorDisableFlag' => 'boolean',
+        'hideDelimiterFlag' => 'boolean',
+        'id' => 'integer',
+        'memberColor' => 'string',
+        'memberColorDisableFlag' => 'boolean',
+        'scheduleSpan' => 'string',
+        'srNotify' => 'string',
+        'unknownColor' => 'string',
         'unknownColorDisableFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
     ];
 }

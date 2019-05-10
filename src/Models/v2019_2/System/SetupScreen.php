@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SetupScreen
  *
+ * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  * @property integer $id
- * @property string $category
- * @property string $name
  * @property string $Description
+ * @property string $category
  * @property string $moduleDescription
  * @property string $moduleIdentifier
  * @property string $moduleName
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
+ * @property string $name
  */
 class SetupScreen extends Model
 {
@@ -26,13 +26,13 @@ class SetupScreen extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'category' => 'string',
-        'name' => 'string',
         'Description' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        'category' => 'string',
+        'id' => 'integer',
         'moduleDescription' => 'string',
         'moduleIdentifier' => 'string',
         'moduleName' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        'name' => 'string',
     ];
 }

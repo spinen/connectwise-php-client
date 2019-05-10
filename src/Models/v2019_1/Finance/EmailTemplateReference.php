@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for EmailTemplateReference
  *
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
  */
 class EmailTemplateReference extends Model
 {
@@ -21,8 +21,8 @@ class EmailTemplateReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
         'id' => 'integer',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
     ];
 }

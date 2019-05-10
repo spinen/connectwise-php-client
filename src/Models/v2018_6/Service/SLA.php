@@ -9,28 +9,28 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SLA
  *
- * @property integer $id
- * @property string $name
- * @property string $basedOn
  * @property Spinen\ConnectWise\Models\v2018_6\Service\CalendarReference $customCalendar
- * @property boolean $defaultFlag
- * @property integer $applicationOrder
- * @property Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference $hiImpactHiUrgency
- * @property Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference $hiImpactMedUrgency
- * @property Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference $hiImpactLowUrgency
- * @property Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference $medImpactHiUrgency
- * @property Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference $medImpactMedUrgency
- * @property Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference $medImpactLowUrgency
- * @property Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference $lowImpactHiUrgency
- * @property Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference $lowImpactMedUrgency
- * @property Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference $lowImpactLowUrgency
- * @property float $respondHours
- * @property integer $respondPercent
- * @property float $planWithin
- * @property integer $planWithinPercent
- * @property float $resolutionHours
- * @property integer $resolutionPercent
  * @property Spinen\ConnectWise\Models\v2018_6\Service\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference $hiImpactHiUrgency
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference $hiImpactLowUrgency
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference $hiImpactMedUrgency
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference $lowImpactHiUrgency
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference $lowImpactLowUrgency
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference $lowImpactMedUrgency
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference $medImpactHiUrgency
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference $medImpactLowUrgency
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference $medImpactMedUrgency
+ * @property boolean $defaultFlag
+ * @property float $planWithin
+ * @property float $resolutionHours
+ * @property float $respondHours
+ * @property integer $applicationOrder
+ * @property integer $id
+ * @property integer $planWithinPercent
+ * @property integer $resolutionPercent
+ * @property integer $respondPercent
+ * @property string $basedOn
+ * @property string $name
  */
 class SLA extends Model
 {
@@ -40,27 +40,27 @@ class SLA extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Service\Metadata',
+        'applicationOrder' => 'integer',
         'basedOn' => 'string',
         'customCalendar' => 'Spinen\ConnectWise\Models\v2018_6\Service\CalendarReference',
         'defaultFlag' => 'boolean',
-        'applicationOrder' => 'integer',
         'hiImpactHiUrgency' => 'Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference',
-        'hiImpactMedUrgency' => 'Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference',
         'hiImpactLowUrgency' => 'Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference',
-        'medImpactHiUrgency' => 'Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference',
-        'medImpactMedUrgency' => 'Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference',
-        'medImpactLowUrgency' => 'Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference',
+        'hiImpactMedUrgency' => 'Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference',
+        'id' => 'integer',
         'lowImpactHiUrgency' => 'Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference',
-        'lowImpactMedUrgency' => 'Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference',
         'lowImpactLowUrgency' => 'Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference',
-        'respondHours' => 'float',
-        'respondPercent' => 'integer',
+        'lowImpactMedUrgency' => 'Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference',
+        'medImpactHiUrgency' => 'Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference',
+        'medImpactLowUrgency' => 'Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference',
+        'medImpactMedUrgency' => 'Spinen\ConnectWise\Models\v2018_6\Service\PriorityReference',
+        'name' => 'string',
         'planWithin' => 'float',
         'planWithinPercent' => 'integer',
         'resolutionHours' => 'float',
         'resolutionPercent' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Service\Metadata',
+        'respondHours' => 'float',
+        'respondPercent' => 'integer',
     ];
 }

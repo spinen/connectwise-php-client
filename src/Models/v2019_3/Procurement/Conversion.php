@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Conversion
  *
- * @property integer $id
- * @property float $quantity
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\UnitOfMeasureReference $uomType
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\UnitOfMeasureReference $parentUOM
  * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\UnitOfMeasureReference $parentUOM
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\UnitOfMeasureReference $uomType
+ * @property float $quantity
+ * @property integer $id
  */
 class Conversion extends Model
 {
@@ -23,10 +23,10 @@ class Conversion extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
         'id' => 'integer',
+        'parentUOM' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\UnitOfMeasureReference',
         'quantity' => 'float',
         'uomType' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\UnitOfMeasureReference',
-        'parentUOM' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\UnitOfMeasureReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
     ];
 }

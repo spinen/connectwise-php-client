@@ -9,15 +9,15 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CallbackEntry
  *
- * @property integer $id
- * @property string $description
- * @property string $url
- * @property integer $objectId
- * @property string $type
- * @property string $level
- * @property integer $memberId
- * @property boolean $inactiveFlag
  * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
+ * @property boolean $inactiveFlag
+ * @property integer $id
+ * @property integer $memberId
+ * @property integer $objectId
+ * @property string $description
+ * @property string $level
+ * @property string $type
+ * @property string $url
  */
 class CallbackEntry extends Model
 {
@@ -27,14 +27,14 @@ class CallbackEntry extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
         'description' => 'string',
-        'url' => 'string',
-        'objectId' => 'integer',
-        'type' => 'string',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
         'level' => 'string',
         'memberId' => 'integer',
-        'inactiveFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
+        'objectId' => 'integer',
+        'type' => 'string',
+        'url' => 'string',
     ];
 }

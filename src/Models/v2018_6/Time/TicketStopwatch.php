@@ -9,31 +9,31 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TicketStopwatch
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Time\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_6\Time\AgreementReference $agreement
- * @property string $billableOption
- * @property integer $businessUnitId
  * @property Carbon\Carbon $dateEntered
  * @property Carbon\Carbon $endTime
- * @property integer $id
- * @property string $internalNotes
- * @property integer $locationId
- * @property Spinen\ConnectWise\Models\v2018_6\Time\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_6\Time\Guid $mobileGuid
- * @property string $notes
- * @property Spinen\ConnectWise\Models\v2018_6\Time\ServiceStatusReference $serviceStatus
  * @property Carbon\Carbon $startTime
- * @property string $status
- * @property Spinen\ConnectWise\Models\v2018_6\Time\TicketReference $ticket
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\AgreementReference $agreement
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\Guid $mobileGuid
  * @property Spinen\ConnectWise\Models\v2018_6\Time\Guid $ticketMobileGuid
- * @property integer $totalPauseTime
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\ServiceStatusReference $serviceStatus
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\TicketReference $ticket
  * @property Spinen\ConnectWise\Models\v2018_6\Time\WorkRoleReference $workRole
  * @property Spinen\ConnectWise\Models\v2018_6\Time\WorkTypeReference $workType
+ * @property boolean $emailNotesToContactFlag
+ * @property boolean $emailNotesToResourcesFlag
  * @property boolean $showNotesInDiscussionFlag
  * @property boolean $showNotesInInternalFlag
  * @property boolean $showNotesInResolutionFlag
- * @property boolean $emailNotesToContactFlag
- * @property boolean $emailNotesToResourcesFlag
+ * @property integer $businessUnitId
+ * @property integer $id
+ * @property integer $locationId
+ * @property integer $totalPauseTime
+ * @property string $billableOption
+ * @property string $internalNotes
+ * @property string $notes
+ * @property string $status
  */
 class TicketStopwatch extends Model
 {
@@ -48,6 +48,8 @@ class TicketStopwatch extends Model
         'billableOption' => 'string',
         'businessUnitId' => 'integer',
         'dateEntered' => 'Carbon\Carbon',
+        'emailNotesToContactFlag' => 'boolean',
+        'emailNotesToResourcesFlag' => 'boolean',
         'endTime' => 'Carbon\Carbon',
         'id' => 'integer',
         'internalNotes' => 'string',
@@ -56,6 +58,9 @@ class TicketStopwatch extends Model
         'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_6\Time\Guid',
         'notes' => 'string',
         'serviceStatus' => 'Spinen\ConnectWise\Models\v2018_6\Time\ServiceStatusReference',
+        'showNotesInDiscussionFlag' => 'boolean',
+        'showNotesInInternalFlag' => 'boolean',
+        'showNotesInResolutionFlag' => 'boolean',
         'startTime' => 'Carbon\Carbon',
         'status' => 'string',
         'ticket' => 'Spinen\ConnectWise\Models\v2018_6\Time\TicketReference',
@@ -63,10 +68,5 @@ class TicketStopwatch extends Model
         'totalPauseTime' => 'integer',
         'workRole' => 'Spinen\ConnectWise\Models\v2018_6\Time\WorkRoleReference',
         'workType' => 'Spinen\ConnectWise\Models\v2018_6\Time\WorkTypeReference',
-        'showNotesInDiscussionFlag' => 'boolean',
-        'showNotesInInternalFlag' => 'boolean',
-        'showNotesInResolutionFlag' => 'boolean',
-        'emailNotesToContactFlag' => 'boolean',
-        'emailNotesToResourcesFlag' => 'boolean',
     ];
 }

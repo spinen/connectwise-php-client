@@ -9,18 +9,18 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportExpenseBill
  *
- * @property integer $id
- * @property string $documentDate
- * @property string $documentType
- * @property string $documentNumber
- * @property string $memo
- * @property string $glClass
- * @property string $apAccountNumber
- * @property Spinen\ConnectWise\Models\v2019_2\Finance\MemberReference $member
- * @property string $vendorNumber
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference $currency
- * @property float $total
+ * @property Spinen\ConnectWise\Models\v2019_2\Finance\MemberReference $member
  * @property array $detail
+ * @property float $total
+ * @property integer $id
+ * @property string $apAccountNumber
+ * @property string $documentDate
+ * @property string $documentNumber
+ * @property string $documentType
+ * @property string $glClass
+ * @property string $memo
+ * @property string $vendorNumber
  */
 class GLExportExpenseBill extends Model
 {
@@ -30,17 +30,17 @@ class GLExportExpenseBill extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'documentDate' => 'string',
-        'documentType' => 'string',
-        'documentNumber' => 'string',
-        'memo' => 'string',
-        'glClass' => 'string',
         'apAccountNumber' => 'string',
-        'member' => 'Spinen\ConnectWise\Models\v2019_2\Finance\MemberReference',
-        'vendorNumber' => 'string',
         'currency' => 'Spinen\ConnectWise\Models\v2019_2\Finance\CurrencyReference',
-        'total' => 'float',
         'detail' => 'array',
+        'documentDate' => 'string',
+        'documentNumber' => 'string',
+        'documentType' => 'string',
+        'glClass' => 'string',
+        'id' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2019_2\Finance\MemberReference',
+        'memo' => 'string',
+        'total' => 'float',
+        'vendorNumber' => 'string',
     ];
 }

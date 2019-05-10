@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OrderStatusNotification
  *
- * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_5\Sales\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2018_5\Sales\Metadata $_info
  * @property Spinen\ConnectWise\Models\v2018_5\Sales\NotificationRecipientReference $notifyWho
  * @property Spinen\ConnectWise\Models\v2018_5\Sales\OrderStatusReference $status
- * @property Spinen\ConnectWise\Models\v2018_5\Sales\MemberReference $member
- * @property string $email
+ * @property integer $id
  * @property integer $workflowStep
- * @property Spinen\ConnectWise\Models\v2018_5\Sales\Metadata $_info
+ * @property string $email
  */
 class OrderStatusNotification extends Model
 {
@@ -25,12 +25,12 @@ class OrderStatusNotification extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Sales\Metadata',
+        'email' => 'string',
         'id' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2018_5\Sales\MemberReference',
         'notifyWho' => 'Spinen\ConnectWise\Models\v2018_5\Sales\NotificationRecipientReference',
         'status' => 'Spinen\ConnectWise\Models\v2018_5\Sales\OrderStatusReference',
-        'member' => 'Spinen\ConnectWise\Models\v2018_5\Sales\MemberReference',
-        'email' => 'string',
         'workflowStep' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Sales\Metadata',
     ];
 }

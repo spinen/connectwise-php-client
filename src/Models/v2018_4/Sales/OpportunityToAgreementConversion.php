@@ -9,22 +9,22 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OpportunityToAgreementConversion
  *
- * @property integer $agreementId
- * @property string $name
  * @property Spinen\ConnectWise\Models\v2018_4\Sales\AgreementTypeReference $type
- * @property string $startDate
- * @property string $endDate
- * @property boolean $noEndingDateFlag
- * @property integer $billCycleId
- * @property boolean $billOneTimeFlag
- * @property integer $locationId
- * @property integer $businessUnitId
- * @property boolean $includeAllNotesFlag
- * @property boolean $includeAllDocumentsFlag
- * @property boolean $includeAllProductsFlag
- * @property array $includeNoteIds
  * @property array $includeDocumentIds
+ * @property array $includeNoteIds
  * @property array $includeProductIds
+ * @property boolean $billOneTimeFlag
+ * @property boolean $includeAllDocumentsFlag
+ * @property boolean $includeAllNotesFlag
+ * @property boolean $includeAllProductsFlag
+ * @property boolean $noEndingDateFlag
+ * @property integer $agreementId
+ * @property integer $billCycleId
+ * @property integer $businessUnitId
+ * @property integer $locationId
+ * @property string $endDate
+ * @property string $name
+ * @property string $startDate
  */
 class OpportunityToAgreementConversion extends Model
 {
@@ -35,20 +35,20 @@ class OpportunityToAgreementConversion extends Model
      */
     protected $casts = [
         'agreementId' => 'integer',
-        'name' => 'string',
-        'type' => 'Spinen\ConnectWise\Models\v2018_4\Sales\AgreementTypeReference',
-        'startDate' => 'string',
-        'endDate' => 'string',
-        'noEndingDateFlag' => 'boolean',
         'billCycleId' => 'integer',
         'billOneTimeFlag' => 'boolean',
-        'locationId' => 'integer',
         'businessUnitId' => 'integer',
-        'includeAllNotesFlag' => 'boolean',
+        'endDate' => 'string',
         'includeAllDocumentsFlag' => 'boolean',
+        'includeAllNotesFlag' => 'boolean',
         'includeAllProductsFlag' => 'boolean',
-        'includeNoteIds' => 'array',
         'includeDocumentIds' => 'array',
+        'includeNoteIds' => 'array',
         'includeProductIds' => 'array',
+        'locationId' => 'integer',
+        'name' => 'string',
+        'noEndingDateFlag' => 'boolean',
+        'startDate' => 'string',
+        'type' => 'Spinen\ConnectWise\Models\v2018_4\Sales\AgreementTypeReference',
     ];
 }

@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ManagedDevicesIntegrationNotification
  *
- * @property integer $id
  * @property Spinen\ConnectWise\Models\v2019_1\Company\ManagedDevicesIntegrationReference $managedDevicesIntegration
- * @property Spinen\ConnectWise\Models\v2019_1\Company\NotificationRecipientReference $notifyWho
  * @property Spinen\ConnectWise\Models\v2019_1\Company\MemberReference $member
- * @property string $logType
  * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\NotificationRecipientReference $notifyWho
+ * @property integer $id
+ * @property string $logType
  */
 class ManagedDevicesIntegrationNotification extends Model
 {
@@ -24,11 +24,11 @@ class ManagedDevicesIntegrationNotification extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'managedDevicesIntegration' => 'Spinen\ConnectWise\Models\v2019_1\Company\ManagedDevicesIntegrationReference',
-        'notifyWho' => 'Spinen\ConnectWise\Models\v2019_1\Company\NotificationRecipientReference',
-        'member' => 'Spinen\ConnectWise\Models\v2019_1\Company\MemberReference',
-        'logType' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
+        'id' => 'integer',
+        'logType' => 'string',
+        'managedDevicesIntegration' => 'Spinen\ConnectWise\Models\v2019_1\Company\ManagedDevicesIntegrationReference',
+        'member' => 'Spinen\ConnectWise\Models\v2019_1\Company\MemberReference',
+        'notifyWho' => 'Spinen\ConnectWise\Models\v2019_1\Company\NotificationRecipientReference',
     ];
 }

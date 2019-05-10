@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for StatusIndicator
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\Metadata $_info
  * @property integer $id
- * @property string $identifier
- * @property string $name
  * @property string $color
  * @property string $icon
- * @property Spinen\ConnectWise\Models\v2019_3\Project\Metadata $_info
+ * @property string $identifier
+ * @property string $name
  */
 class StatusIndicator extends Model
 {
@@ -24,11 +24,11 @@ class StatusIndicator extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Project\Metadata',
+        'color' => 'string',
+        'icon' => 'string',
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',
-        'color' => 'string',
-        'icon' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Project\Metadata',
     ];
 }

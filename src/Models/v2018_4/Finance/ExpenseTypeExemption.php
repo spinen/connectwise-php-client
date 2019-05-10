@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ExpenseTypeExemption
  *
- * @property integer $id
  * @property Spinen\ConnectWise\Models\v2018_4\Finance\ExpenseTypeReference $expenseType
- * @property boolean $levelOneFlag
- * @property boolean $levelTwoFlag
- * @property boolean $levelThreeFlag
- * @property boolean $levelFourFlag
- * @property boolean $levelFiveFlag
- * @property boolean $levelSixFlag
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference $taxCode
  * @property Spinen\ConnectWise\Models\v2018_4\Finance\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference $taxCode
+ * @property boolean $levelFiveFlag
+ * @property boolean $levelFourFlag
+ * @property boolean $levelOneFlag
+ * @property boolean $levelSixFlag
+ * @property boolean $levelThreeFlag
+ * @property boolean $levelTwoFlag
+ * @property integer $id
  */
 class ExpenseTypeExemption extends Model
 {
@@ -28,15 +28,15 @@ class ExpenseTypeExemption extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'expenseType' => 'Spinen\ConnectWise\Models\v2018_4\Finance\ExpenseTypeReference',
-        'levelOneFlag' => 'boolean',
-        'levelTwoFlag' => 'boolean',
-        'levelThreeFlag' => 'boolean',
-        'levelFourFlag' => 'boolean',
-        'levelFiveFlag' => 'boolean',
-        'levelSixFlag' => 'boolean',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference',
         '_info' => 'Spinen\ConnectWise\Models\v2018_4\Finance\Metadata',
+        'expenseType' => 'Spinen\ConnectWise\Models\v2018_4\Finance\ExpenseTypeReference',
+        'id' => 'integer',
+        'levelFiveFlag' => 'boolean',
+        'levelFourFlag' => 'boolean',
+        'levelOneFlag' => 'boolean',
+        'levelSixFlag' => 'boolean',
+        'levelThreeFlag' => 'boolean',
+        'levelTwoFlag' => 'boolean',
+        'taxCode' => 'Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference',
     ];
 }

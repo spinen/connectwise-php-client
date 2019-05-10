@@ -9,20 +9,20 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Country
  *
- * @property integer $id
- * @property string $name
- * @property boolean $defaultFlag
- * @property Spinen\ConnectWise\Models\v2019_1\Company\CurrencyReference $currency
- * @property string $cityCaption
- * @property string $stateCaption
- * @property string $zipCaption
- * @property integer $zipMinimumLength
- * @property string $dialingPrefix
  * @property Spinen\ConnectWise\Models\v2019_1\Company\AddressFormatReference $addressFormat
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\CurrencyReference $currency
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
+ * @property boolean $defaultFlag
+ * @property integer $id
+ * @property integer $zipMinimumLength
+ * @property string $cityCaption
  * @property string $countryCode
+ * @property string $dialingPrefix
  * @property string $localizationCaptionOne
  * @property string $localizationValueOne
- * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
+ * @property string $name
+ * @property string $stateCaption
+ * @property string $zipCaption
  */
 class Country extends Model
 {
@@ -32,19 +32,19 @@ class Country extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'defaultFlag' => 'boolean',
-        'currency' => 'Spinen\ConnectWise\Models\v2019_1\Company\CurrencyReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
+        'addressFormat' => 'Spinen\ConnectWise\Models\v2019_1\Company\AddressFormatReference',
         'cityCaption' => 'string',
+        'countryCode' => 'string',
+        'currency' => 'Spinen\ConnectWise\Models\v2019_1\Company\CurrencyReference',
+        'defaultFlag' => 'boolean',
+        'dialingPrefix' => 'string',
+        'id' => 'integer',
+        'localizationCaptionOne' => 'string',
+        'localizationValueOne' => 'string',
+        'name' => 'string',
         'stateCaption' => 'string',
         'zipCaption' => 'string',
         'zipMinimumLength' => 'integer',
-        'dialingPrefix' => 'string',
-        'addressFormat' => 'Spinen\ConnectWise\Models\v2019_1\Company\AddressFormatReference',
-        'countryCode' => 'string',
-        'localizationCaptionOne' => 'string',
-        'localizationValueOne' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
     ];
 }

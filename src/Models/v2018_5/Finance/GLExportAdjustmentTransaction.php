@@ -9,15 +9,15 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportAdjustmentTransaction
  *
- * @property string $id
- * @property string $documentType
  * @property Carbon\Carbon $documentDate
- * @property string $glTypeID
- * @property string $accountNumber
- * @property string $memo
- * @property string $glClass
- * @property string $adjustmentDescription
  * @property array $adjustmentDetail
+ * @property string $accountNumber
+ * @property string $adjustmentDescription
+ * @property string $documentType
+ * @property string $glClass
+ * @property string $glTypeID
+ * @property string $id
+ * @property string $memo
  */
 class GLExportAdjustmentTransaction extends Model
 {
@@ -27,14 +27,14 @@ class GLExportAdjustmentTransaction extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'string',
-        'documentType' => 'string',
-        'documentDate' => 'Carbon\Carbon',
-        'glTypeID' => 'string',
         'accountNumber' => 'string',
-        'memo' => 'string',
-        'glClass' => 'string',
         'adjustmentDescription' => 'string',
         'adjustmentDetail' => 'array',
+        'documentDate' => 'Carbon\Carbon',
+        'documentType' => 'string',
+        'glClass' => 'string',
+        'glTypeID' => 'string',
+        'id' => 'string',
+        'memo' => 'string',
     ];
 }

@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProjectSecurityRoleSetting
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\Metadata $_info
+ * @property boolean $myFlag
  * @property integer $id
  * @property string $addLevel
- * @property string $editLevel
  * @property string $deleteLevel
+ * @property string $editLevel
  * @property string $inquireLevel
  * @property string $moduleIdentifier
- * @property boolean $myFlag
- * @property Spinen\ConnectWise\Models\v2018_6\Project\Metadata $_info
  */
 class ProjectSecurityRoleSetting extends Model
 {
@@ -26,13 +26,13 @@ class ProjectSecurityRoleSetting extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Project\Metadata',
         'addLevel' => 'string',
-        'editLevel' => 'string',
         'deleteLevel' => 'string',
+        'editLevel' => 'string',
+        'id' => 'integer',
         'inquireLevel' => 'string',
         'moduleIdentifier' => 'string',
         'myFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Project\Metadata',
     ];
 }

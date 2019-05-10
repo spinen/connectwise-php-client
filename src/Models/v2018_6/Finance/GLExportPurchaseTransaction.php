@@ -9,50 +9,50 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportPurchaseTransaction
  *
- * @property string $id
  * @property Carbon\Carbon $documentDate
- * @property string $documentNumber
- * @property string $description
- * @property string $memo
- * @property string $apAccountNumber
  * @property Carbon\Carbon $purchaseDate
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\CompanyTypeReference $companyType
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\ContactReference $contact
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\SiteReference $site
- * @property string $purchaseClass
- * @property float $freightAmount
- * @property string $freightPackingSlip
- * @property string $packingSlip
- * @property boolean $dropshipFlag
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\CurrencyReference $currency
- * @property float $total
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\BillingTermsReference $billingTerms
- * @property string $billingTermsXref
- * @property integer $dueDays
- * @property string $vendorNumber
- * @property string $vendorAccountNumber
  * @property Carbon\Carbon $vendorInvoiceDate
- * @property string $vendorInvoiceNumber
- * @property string $taxAgencyXref
- * @property string $stateTaxXref
- * @property string $countyTaxXref
- * @property string $cityTaxXref
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\BillingTermsReference $billingTerms
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference $company
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference $shipToCompany
- * @property string $shipToCompanyAccountNumber
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\CompanyTypeReference $companyType
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\CompanyTypeReference $shipToCompanyType
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\ContactReference $contact
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\ContactReference $shipToContact
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\CurrencyReference $currency
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\SiteReference $shipToSite
- * @property string $shipToTaxGroup
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\SiteReference $site
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\TaxCodeReference $taxCode
- * @property float $taxGroupRate
- * @property boolean $useAvalaraTaxFlag
- * @property string $purchaseHeaderTaxGroup
- * @property boolean $purchaseHeaderTaxableFlag
- * @property boolean $purchaseHeaderFreightTaxableFlag
- * @property array $taxLevels
  * @property array $purchaseDetail
  * @property array $purchaseDetailTax
+ * @property array $taxLevels
+ * @property boolean $dropshipFlag
+ * @property boolean $purchaseHeaderFreightTaxableFlag
+ * @property boolean $purchaseHeaderTaxableFlag
+ * @property boolean $useAvalaraTaxFlag
+ * @property float $freightAmount
+ * @property float $taxGroupRate
+ * @property float $total
+ * @property integer $dueDays
+ * @property string $apAccountNumber
+ * @property string $billingTermsXref
+ * @property string $cityTaxXref
+ * @property string $countyTaxXref
+ * @property string $description
+ * @property string $documentNumber
+ * @property string $freightPackingSlip
+ * @property string $id
+ * @property string $memo
+ * @property string $packingSlip
+ * @property string $purchaseClass
+ * @property string $purchaseHeaderTaxGroup
+ * @property string $shipToCompanyAccountNumber
+ * @property string $shipToTaxGroup
+ * @property string $stateTaxXref
+ * @property string $taxAgencyXref
+ * @property string $vendorAccountNumber
+ * @property string $vendorInvoiceNumber
+ * @property string $vendorNumber
  */
 class GLExportPurchaseTransaction extends Model
 {
@@ -62,49 +62,49 @@ class GLExportPurchaseTransaction extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'string',
-        'documentDate' => 'Carbon\Carbon',
-        'documentNumber' => 'string',
-        'description' => 'string',
-        'memo' => 'string',
         'apAccountNumber' => 'string',
-        'purchaseDate' => 'Carbon\Carbon',
+        'billingTerms' => 'Spinen\ConnectWise\Models\v2018_6\Finance\BillingTermsReference',
+        'billingTermsXref' => 'string',
+        'cityTaxXref' => 'string',
         'company' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference',
         'companyType' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CompanyTypeReference',
         'contact' => 'Spinen\ConnectWise\Models\v2018_6\Finance\ContactReference',
-        'site' => 'Spinen\ConnectWise\Models\v2018_6\Finance\SiteReference',
-        'purchaseClass' => 'string',
+        'countyTaxXref' => 'string',
+        'currency' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CurrencyReference',
+        'description' => 'string',
+        'documentDate' => 'Carbon\Carbon',
+        'documentNumber' => 'string',
+        'dropshipFlag' => 'boolean',
+        'dueDays' => 'integer',
         'freightAmount' => 'float',
         'freightPackingSlip' => 'string',
+        'id' => 'string',
+        'memo' => 'string',
         'packingSlip' => 'string',
-        'dropshipFlag' => 'boolean',
-        'currency' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CurrencyReference',
-        'total' => 'float',
-        'billingTerms' => 'Spinen\ConnectWise\Models\v2018_6\Finance\BillingTermsReference',
-        'billingTermsXref' => 'string',
-        'dueDays' => 'integer',
-        'vendorNumber' => 'string',
-        'vendorAccountNumber' => 'string',
-        'vendorInvoiceDate' => 'Carbon\Carbon',
-        'vendorInvoiceNumber' => 'string',
-        'taxAgencyXref' => 'string',
-        'stateTaxXref' => 'string',
-        'countyTaxXref' => 'string',
-        'cityTaxXref' => 'string',
+        'purchaseClass' => 'string',
+        'purchaseDate' => 'Carbon\Carbon',
+        'purchaseDetail' => 'array',
+        'purchaseDetailTax' => 'array',
+        'purchaseHeaderFreightTaxableFlag' => 'boolean',
+        'purchaseHeaderTaxGroup' => 'string',
+        'purchaseHeaderTaxableFlag' => 'boolean',
         'shipToCompany' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference',
         'shipToCompanyAccountNumber' => 'string',
         'shipToCompanyType' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CompanyTypeReference',
         'shipToContact' => 'Spinen\ConnectWise\Models\v2018_6\Finance\ContactReference',
         'shipToSite' => 'Spinen\ConnectWise\Models\v2018_6\Finance\SiteReference',
         'shipToTaxGroup' => 'string',
+        'site' => 'Spinen\ConnectWise\Models\v2018_6\Finance\SiteReference',
+        'stateTaxXref' => 'string',
+        'taxAgencyXref' => 'string',
         'taxCode' => 'Spinen\ConnectWise\Models\v2018_6\Finance\TaxCodeReference',
         'taxGroupRate' => 'float',
-        'useAvalaraTaxFlag' => 'boolean',
-        'purchaseHeaderTaxGroup' => 'string',
-        'purchaseHeaderTaxableFlag' => 'boolean',
-        'purchaseHeaderFreightTaxableFlag' => 'boolean',
         'taxLevels' => 'array',
-        'purchaseDetail' => 'array',
-        'purchaseDetailTax' => 'array',
+        'total' => 'float',
+        'useAvalaraTaxFlag' => 'boolean',
+        'vendorAccountNumber' => 'string',
+        'vendorInvoiceDate' => 'Carbon\Carbon',
+        'vendorInvoiceNumber' => 'string',
+        'vendorNumber' => 'string',
     ];
 }

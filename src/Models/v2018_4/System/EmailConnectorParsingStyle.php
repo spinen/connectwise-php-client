@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for EmailConnectorParsingStyle
  *
- * @property integer $id
  * @property Spinen\ConnectWise\Models\v2018_4\System\EmailConnectorParsingTypeReference $parsingType
- * @property string $parseRule
- * @property integer $priority
  * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
+ * @property integer $id
+ * @property integer $priority
+ * @property string $parseRule
  */
 class EmailConnectorParsingStyle extends Model
 {
@@ -23,10 +23,10 @@ class EmailConnectorParsingStyle extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'parsingType' => 'Spinen\ConnectWise\Models\v2018_4\System\EmailConnectorParsingTypeReference',
-        'parseRule' => 'string',
-        'priority' => 'integer',
         '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
+        'id' => 'integer',
+        'parseRule' => 'string',
+        'parsingType' => 'Spinen\ConnectWise\Models\v2018_4\System\EmailConnectorParsingTypeReference',
+        'priority' => 'integer',
     ];
 }

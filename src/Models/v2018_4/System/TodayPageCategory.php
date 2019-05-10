@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TodayPageCategory
  *
- * @property integer $id
- * @property string $name
- * @property integer $sortOrder
- * @property Spinen\ConnectWise\Models\v2018_4\System\SystemLocationReference $location
  * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_4\System\SystemLocationReference $location
+ * @property integer $id
+ * @property integer $sortOrder
+ * @property string $name
  */
 class TodayPageCategory extends Model
 {
@@ -23,10 +23,10 @@ class TodayPageCategory extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
         'id' => 'integer',
+        'location' => 'Spinen\ConnectWise\Models\v2018_4\System\SystemLocationReference',
         'name' => 'string',
         'sortOrder' => 'integer',
-        'location' => 'Spinen\ConnectWise\Models\v2018_4\System\SystemLocationReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
     ];
 }

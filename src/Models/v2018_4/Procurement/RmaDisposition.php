@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for RmaDisposition
  *
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
+ * @property boolean $defaultFlag
  * @property integer $id
  * @property string $name
- * @property boolean $defaultFlag
- * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
  */
 class RmaDisposition extends Model
 {
@@ -22,9 +22,9 @@ class RmaDisposition extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
+        'defaultFlag' => 'boolean',
         'id' => 'integer',
         'name' => 'string',
-        'defaultFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
     ];
 }

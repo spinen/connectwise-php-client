@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MemberSkill
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2018_6\System\SkillReference $skill
- * @property string $skillLevel
- * @property boolean $certifiedFlag
- * @property integer $yearsExperience
- * @property string $notes
  * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\System\SkillReference $skill
+ * @property boolean $certifiedFlag
+ * @property integer $id
+ * @property integer $yearsExperience
+ * @property string $notes
+ * @property string $skillLevel
  */
 class MemberSkill extends Model
 {
@@ -26,13 +26,13 @@ class MemberSkill extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
+        'certifiedFlag' => 'boolean',
         'id' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        'notes' => 'string',
         'skill' => 'Spinen\ConnectWise\Models\v2018_6\System\SkillReference',
         'skillLevel' => 'string',
-        'certifiedFlag' => 'boolean',
         'yearsExperience' => 'integer',
-        'notes' => 'string',
-        'member' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
     ];
 }

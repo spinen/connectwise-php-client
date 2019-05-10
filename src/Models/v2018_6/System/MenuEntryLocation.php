@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MenuEntryLocation
  *
- * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  * @property Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference $location
  * @property Spinen\ConnectWise\Models\v2018_6\System\SystemMenuEntryReference $menuEntry
- * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
+ * @property integer $id
  */
 class MenuEntryLocation extends Model
 {
@@ -22,9 +22,9 @@ class MenuEntryLocation extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
         'id' => 'integer',
         'location' => 'Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference',
         'menuEntry' => 'Spinen\ConnectWise\Models\v2018_6\System\SystemMenuEntryReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
     ];
 }

@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AuditTrailEntryInsertRequest
  *
- * @property string $text
  * @property array $objects
+ * @property string $text
  */
 class AuditTrailEntryInsertRequest extends Model
 {
@@ -20,7 +20,7 @@ class AuditTrailEntryInsertRequest extends Model
      * @var array
      */
     protected $casts = [
-        'text' => 'string',
         'objects' => 'array',
+        'text' => 'string',
     ];
 }

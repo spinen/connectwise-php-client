@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MemberDeactivationMyCompanyPresidentRole
  *
- * @property integer $count
  * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $reAssignToMember
+ * @property integer $count
  */
 class MemberDeactivationMyCompanyPresidentRole extends Model
 {

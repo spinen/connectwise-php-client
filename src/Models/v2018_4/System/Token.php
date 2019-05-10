@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Token
  *
- * @property string $publicKey
- * @property string $privateKey
  * @property string $expiration
+ * @property string $privateKey
+ * @property string $publicKey
  */
 class Token extends Model
 {
@@ -21,8 +21,8 @@ class Token extends Model
      * @var array
      */
     protected $casts = [
-        'publicKey' => 'string',
-        'privateKey' => 'string',
         'expiration' => 'string',
+        'privateKey' => 'string',
+        'publicKey' => 'string',
     ];
 }

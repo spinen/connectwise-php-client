@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ConfigurationType
  *
- * @property integer $id
- * @property string $name
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\Metadata $_info
  * @property boolean $inactiveFlag
  * @property boolean $systemFlag
- * @property Spinen\ConnectWise\Models\v2019_2\Company\Metadata $_info
+ * @property integer $id
+ * @property string $name
  */
 class ConfigurationType extends Model
 {
@@ -23,10 +23,10 @@ class ConfigurationType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'inactiveFlag' => 'boolean',
-        'systemFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2019_2\Company\Metadata',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
+        'systemFlag' => 'boolean',
     ];
 }

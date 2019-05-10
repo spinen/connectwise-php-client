@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SurveyQuestionValue
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2019_2\System\SurveyReference $survey
- * @property Spinen\ConnectWise\Models\v2019_2\System\SurveyQuestionReference $question
- * @property string $value
- * @property boolean $defaultFlag
- * @property integer $pointValue
- * @property boolean $inactiveFlag
  * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_2\System\SurveyQuestionReference $question
+ * @property Spinen\ConnectWise\Models\v2019_2\System\SurveyReference $survey
+ * @property boolean $defaultFlag
+ * @property boolean $inactiveFlag
+ * @property integer $id
+ * @property integer $pointValue
+ * @property string $value
  */
 class SurveyQuestionValue extends Model
 {
@@ -26,13 +26,13 @@ class SurveyQuestionValue extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'survey' => 'Spinen\ConnectWise\Models\v2019_2\System\SurveyReference',
-        'question' => 'Spinen\ConnectWise\Models\v2019_2\System\SurveyQuestionReference',
-        'value' => 'string',
-        'defaultFlag' => 'boolean',
-        'pointValue' => 'integer',
-        'inactiveFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        'defaultFlag' => 'boolean',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'pointValue' => 'integer',
+        'question' => 'Spinen\ConnectWise\Models\v2019_2\System\SurveyQuestionReference',
+        'survey' => 'Spinen\ConnectWise\Models\v2019_2\System\SurveyReference',
+        'value' => 'string',
     ];
 }

@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MemberAccrual
  *
- * @property integer $id
- * @property string $accrualType
- * @property integer $year
- * @property float $hours
- * @property string $reason
  * @property Spinen\ConnectWise\Models\v2019_3\System\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
+ * @property float $hours
+ * @property integer $id
+ * @property integer $year
+ * @property string $accrualType
+ * @property string $reason
  */
 class MemberAccrual extends Model
 {
@@ -25,12 +25,12 @@ class MemberAccrual extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'accrualType' => 'string',
-        'year' => 'integer',
-        'hours' => 'float',
-        'reason' => 'string',
-        'member' => 'Spinen\ConnectWise\Models\v2019_3\System\MemberReference',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
+        'accrualType' => 'string',
+        'hours' => 'float',
+        'id' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2019_3\System\MemberReference',
+        'reason' => 'string',
+        'year' => 'integer',
     ];
 }

@@ -9,6 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for JObject
  *
+
  */
 class JObject extends Model
 {
@@ -18,5 +19,6 @@ class JObject extends Model
      * @var array
      */
     protected $casts = [
+,
     ];
 }

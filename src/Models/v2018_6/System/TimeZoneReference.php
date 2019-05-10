@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * The system level time zone to which this setup is associated
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  */
 class TimeZoneReference extends Model
 {
@@ -21,8 +21,8 @@ class TimeZoneReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
         'id' => 'integer',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
     ];
 }

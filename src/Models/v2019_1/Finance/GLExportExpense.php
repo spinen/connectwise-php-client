@@ -9,26 +9,26 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportExpense
  *
- * @property integer $id
  * @property Carbon\Carbon $documentDate
- * @property string $documentType
+ * @property Carbon\Carbon $periodEndDate
+ * @property Carbon\Carbon $periodStartDate
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\CurrencyReference $currency
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\GLExportExpenseOffset $offset
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\ProjectReference $project
+ * @property float $total
+ * @property integer $id
+ * @property string $accountNumber
  * @property string $apAccountNumber
  * @property string $apClass
- * @property string $accountNumber
+ * @property string $companyAccountNumber
+ * @property string $description
+ * @property string $documentType
  * @property string $glClass
  * @property string $glTypeId
  * @property string $memo
- * @property string $description
- * @property Carbon\Carbon $periodStartDate
- * @property Carbon\Carbon $periodEndDate
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\MemberReference $member
  * @property string $vendorNumber
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\CompanyReference $company
- * @property string $companyAccountNumber
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\ProjectReference $project
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\CurrencyReference $currency
- * @property float $total
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\GLExportExpenseOffset $offset
  */
 class GLExportExpense extends Model
 {
@@ -38,25 +38,25 @@ class GLExportExpense extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'documentDate' => 'Carbon\Carbon',
-        'documentType' => 'string',
+        'accountNumber' => 'string',
         'apAccountNumber' => 'string',
         'apClass' => 'string',
-        'accountNumber' => 'string',
-        'glClass' => 'string',
-        'glTypeId' => 'string',
-        'memo' => 'string',
-        'description' => 'string',
-        'periodStartDate' => 'Carbon\Carbon',
-        'periodEndDate' => 'Carbon\Carbon',
-        'member' => 'Spinen\ConnectWise\Models\v2019_1\Finance\MemberReference',
-        'vendorNumber' => 'string',
         'company' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CompanyReference',
         'companyAccountNumber' => 'string',
-        'project' => 'Spinen\ConnectWise\Models\v2019_1\Finance\ProjectReference',
         'currency' => 'Spinen\ConnectWise\Models\v2019_1\Finance\CurrencyReference',
-        'total' => 'float',
+        'description' => 'string',
+        'documentDate' => 'Carbon\Carbon',
+        'documentType' => 'string',
+        'glClass' => 'string',
+        'glTypeId' => 'string',
+        'id' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2019_1\Finance\MemberReference',
+        'memo' => 'string',
         'offset' => 'Spinen\ConnectWise\Models\v2019_1\Finance\GLExportExpenseOffset',
+        'periodEndDate' => 'Carbon\Carbon',
+        'periodStartDate' => 'Carbon\Carbon',
+        'project' => 'Spinen\ConnectWise\Models\v2019_1\Finance\ProjectReference',
+        'total' => 'float',
+        'vendorNumber' => 'string',
     ];
 }

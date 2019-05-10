@@ -9,65 +9,65 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BillingSetup
  *
- * @property integer $id
- * @property string $remitName
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\SystemLocationReference $location
- * @property string $addressOne
- * @property string $addressTwo
- * @property string $city
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\StateReference $state
- * @property string $zip
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\CountryReference $country
- * @property string $phone
- * @property string $invoiceTitle
- * @property string $payableName
- * @property string $topcomment
- * @property string $invoiceFooter
- * @property string $quoteFooter
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference $overallInvoiceDefault
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference $standardInvoiceActual
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference $standardInvoiceFixed
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference $progressInvoice
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\CountryReference $localizedCountry
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\CurrencyReference $currency
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\EmailTemplateReference $emailTemplate
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference $agreementInvoice
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference $creditMemoInvoice
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference $downPaymentInvoice
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference $miscInvoice
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference $overallInvoiceDefault
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference $progressInvoice
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference $salesOrderInvoice
- * @property boolean $excludeDoNotBillTimeFlag
- * @property boolean $excludeDoNotBillExpenseFlag
- * @property boolean $excludeDoNotBillProductFlag
- * @property string $prefixSuffixFlag
- * @property string $prefixSuffixText
- * @property boolean $chargeAdjToFirmFlag
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference $standardInvoiceActual
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference $standardInvoiceFixed
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\StateReference $state
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\SystemLocationReference $location
  * @property boolean $NoWatermarkFlag
- * @property boolean $displayTaxFlag
  * @property boolean $allowRestrictedDeptOnRoutingFlag
- * @property boolean $billTicketSeparatelyFlag
- * @property boolean $billTicketCompleteFlag
- * @property boolean $billTicketUnapprovedFlag
+ * @property boolean $billProductAfterShipFlag
  * @property boolean $billProjectCompleteFlag
  * @property boolean $billProjectUnapprovedFlag
- * @property boolean $progressTimeFlag
- * @property boolean $restrictProjectDownpaymentFlag
  * @property boolean $billSalesOrderCompleteFlag
- * @property boolean $billProductAfterShipFlag
- * @property boolean $restrictDownpaymentFlag
+ * @property boolean $billTicketCompleteFlag
+ * @property boolean $billTicketSeparatelyFlag
+ * @property boolean $billTicketUnapprovedFlag
+ * @property boolean $chargeAdjToFirmFlag
+ * @property boolean $copyAgreementProductsFlag
  * @property boolean $copyNonServiceProductsFlag
  * @property boolean $copyServiceProductsFlag
- * @property boolean $copyAgreementProductsFlag
- * @property boolean $printLogoFlag
- * @property boolean $readReceiptFlag
  * @property boolean $deliveryReceiptFlag
  * @property boolean $disableRoutingEmailFlag
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\EmailTemplateReference $emailTemplate
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\CountryReference $localizedCountry
+ * @property boolean $displayTaxFlag
+ * @property boolean $excludeAvalaraFlag
+ * @property boolean $excludeDoNotBillExpenseFlag
+ * @property boolean $excludeDoNotBillProductFlag
+ * @property boolean $excludeDoNotBillTimeFlag
+ * @property boolean $printLogoFlag
+ * @property boolean $progressTimeFlag
+ * @property boolean $readReceiptFlag
+ * @property boolean $restrictDownpaymentFlag
+ * @property boolean $restrictProjectDownpaymentFlag
+ * @property integer $id
+ * @property string $addressOne
+ * @property string $addressTwo
  * @property string $businessNumber
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\CurrencyReference $currency
+ * @property string $city
+ * @property string $companyCode
  * @property string $customLabel
  * @property string $customText
- * @property string $companyCode
- * @property boolean $excludeAvalaraFlag
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\Metadata $_info
+ * @property string $invoiceFooter
+ * @property string $invoiceTitle
+ * @property string $payableName
+ * @property string $phone
+ * @property string $prefixSuffixFlag
+ * @property string $prefixSuffixText
+ * @property string $quoteFooter
+ * @property string $remitName
+ * @property string $topcomment
+ * @property string $zip
  */
 class BillingSetup extends Model
 {
@@ -77,64 +77,64 @@ class BillingSetup extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'remitName' => 'string',
-        'location' => 'Spinen\ConnectWise\Models\v2018_6\Finance\SystemLocationReference',
+        'NoWatermarkFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
         'addressOne' => 'string',
         'addressTwo' => 'string',
-        'city' => 'string',
-        'state' => 'Spinen\ConnectWise\Models\v2018_6\Finance\StateReference',
-        'zip' => 'string',
-        'country' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CountryReference',
-        'phone' => 'string',
-        'invoiceTitle' => 'string',
-        'payableName' => 'string',
-        'topcomment' => 'string',
-        'invoiceFooter' => 'string',
-        'quoteFooter' => 'string',
-        'overallInvoiceDefault' => 'Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference',
-        'standardInvoiceActual' => 'Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference',
-        'standardInvoiceFixed' => 'Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference',
-        'progressInvoice' => 'Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference',
         'agreementInvoice' => 'Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference',
-        'creditMemoInvoice' => 'Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference',
-        'downPaymentInvoice' => 'Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference',
-        'miscInvoice' => 'Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference',
-        'salesOrderInvoice' => 'Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference',
-        'excludeDoNotBillTimeFlag' => 'boolean',
-        'excludeDoNotBillExpenseFlag' => 'boolean',
-        'excludeDoNotBillProductFlag' => 'boolean',
-        'prefixSuffixFlag' => 'string',
-        'prefixSuffixText' => 'string',
-        'chargeAdjToFirmFlag' => 'boolean',
-        'NoWatermarkFlag' => 'boolean',
-        'displayTaxFlag' => 'boolean',
         'allowRestrictedDeptOnRoutingFlag' => 'boolean',
-        'billTicketSeparatelyFlag' => 'boolean',
-        'billTicketCompleteFlag' => 'boolean',
-        'billTicketUnapprovedFlag' => 'boolean',
+        'billProductAfterShipFlag' => 'boolean',
         'billProjectCompleteFlag' => 'boolean',
         'billProjectUnapprovedFlag' => 'boolean',
-        'progressTimeFlag' => 'boolean',
-        'restrictProjectDownpaymentFlag' => 'boolean',
         'billSalesOrderCompleteFlag' => 'boolean',
-        'billProductAfterShipFlag' => 'boolean',
-        'restrictDownpaymentFlag' => 'boolean',
+        'billTicketCompleteFlag' => 'boolean',
+        'billTicketSeparatelyFlag' => 'boolean',
+        'billTicketUnapprovedFlag' => 'boolean',
+        'businessNumber' => 'string',
+        'chargeAdjToFirmFlag' => 'boolean',
+        'city' => 'string',
+        'companyCode' => 'string',
+        'copyAgreementProductsFlag' => 'boolean',
         'copyNonServiceProductsFlag' => 'boolean',
         'copyServiceProductsFlag' => 'boolean',
-        'copyAgreementProductsFlag' => 'boolean',
-        'printLogoFlag' => 'boolean',
-        'readReceiptFlag' => 'boolean',
-        'deliveryReceiptFlag' => 'boolean',
-        'disableRoutingEmailFlag' => 'boolean',
-        'emailTemplate' => 'Spinen\ConnectWise\Models\v2018_6\Finance\EmailTemplateReference',
-        'localizedCountry' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CountryReference',
-        'businessNumber' => 'string',
+        'country' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CountryReference',
+        'creditMemoInvoice' => 'Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference',
         'currency' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CurrencyReference',
         'customLabel' => 'string',
         'customText' => 'string',
-        'companyCode' => 'string',
+        'deliveryReceiptFlag' => 'boolean',
+        'disableRoutingEmailFlag' => 'boolean',
+        'displayTaxFlag' => 'boolean',
+        'downPaymentInvoice' => 'Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference',
+        'emailTemplate' => 'Spinen\ConnectWise\Models\v2018_6\Finance\EmailTemplateReference',
         'excludeAvalaraFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
+        'excludeDoNotBillExpenseFlag' => 'boolean',
+        'excludeDoNotBillProductFlag' => 'boolean',
+        'excludeDoNotBillTimeFlag' => 'boolean',
+        'id' => 'integer',
+        'invoiceFooter' => 'string',
+        'invoiceTitle' => 'string',
+        'localizedCountry' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CountryReference',
+        'location' => 'Spinen\ConnectWise\Models\v2018_6\Finance\SystemLocationReference',
+        'miscInvoice' => 'Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference',
+        'overallInvoiceDefault' => 'Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference',
+        'payableName' => 'string',
+        'phone' => 'string',
+        'prefixSuffixFlag' => 'string',
+        'prefixSuffixText' => 'string',
+        'printLogoFlag' => 'boolean',
+        'progressInvoice' => 'Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference',
+        'progressTimeFlag' => 'boolean',
+        'quoteFooter' => 'string',
+        'readReceiptFlag' => 'boolean',
+        'remitName' => 'string',
+        'restrictDownpaymentFlag' => 'boolean',
+        'restrictProjectDownpaymentFlag' => 'boolean',
+        'salesOrderInvoice' => 'Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference',
+        'standardInvoiceActual' => 'Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference',
+        'standardInvoiceFixed' => 'Spinen\ConnectWise\Models\v2018_6\Finance\InvoiceTemplateReference',
+        'state' => 'Spinen\ConnectWise\Models\v2018_6\Finance\StateReference',
+        'topcomment' => 'string',
+        'zip' => 'string',
     ];
 }

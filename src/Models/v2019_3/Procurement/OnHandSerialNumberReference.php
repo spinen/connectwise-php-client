@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OnHandSerialNumberReference
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
  * @property integer $id
  * @property string $serialNumber
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
  */
 class OnHandSerialNumberReference extends Model
 {
@@ -21,8 +21,8 @@ class OnHandSerialNumberReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
         'id' => 'integer',
         'serialNumber' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
     ];
 }

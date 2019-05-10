@@ -9,22 +9,22 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProcurementSetting
  *
- * @property integer $id
- * @property integer $startingPurchaseOrderNum
- * @property string $purchaseOrderPrefix
- * @property string $purchaseOrderSuffix
- * @property string $prefixSuffixType
- * @property boolean $disableCostUpdatesFlag
- * @property boolean $disableNegativeInventoryFlag
- * @property string $costingMethod
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
+ * @property boolean $autoApprovePurchaseOrderFlag
  * @property boolean $autoClosePurchaseOrderFlag
  * @property boolean $autoClosePurchaseOrderItemFlag
- * @property boolean $autoApprovePurchaseOrderFlag
- * @property boolean $taxPurchaseOrderFlag
+ * @property boolean $disableCostUpdatesFlag
+ * @property boolean $disableNegativeInventoryFlag
  * @property boolean $taxFreightFlag
+ * @property boolean $taxPurchaseOrderFlag
  * @property boolean $useVendorTaxCodeFlag
+ * @property integer $id
  * @property integer $numDecimalPlaces
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
+ * @property integer $startingPurchaseOrderNum
+ * @property string $costingMethod
+ * @property string $prefixSuffixType
+ * @property string $purchaseOrderPrefix
+ * @property string $purchaseOrderSuffix
  */
 class ProcurementSetting extends Model
 {
@@ -34,21 +34,21 @@ class ProcurementSetting extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'startingPurchaseOrderNum' => 'integer',
-        'purchaseOrderPrefix' => 'string',
-        'purchaseOrderSuffix' => 'string',
-        'prefixSuffixType' => 'string',
-        'disableCostUpdatesFlag' => 'boolean',
-        'disableNegativeInventoryFlag' => 'boolean',
-        'costingMethod' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
+        'autoApprovePurchaseOrderFlag' => 'boolean',
         'autoClosePurchaseOrderFlag' => 'boolean',
         'autoClosePurchaseOrderItemFlag' => 'boolean',
-        'autoApprovePurchaseOrderFlag' => 'boolean',
-        'taxPurchaseOrderFlag' => 'boolean',
-        'taxFreightFlag' => 'boolean',
-        'useVendorTaxCodeFlag' => 'boolean',
+        'costingMethod' => 'string',
+        'disableCostUpdatesFlag' => 'boolean',
+        'disableNegativeInventoryFlag' => 'boolean',
+        'id' => 'integer',
         'numDecimalPlaces' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
+        'prefixSuffixType' => 'string',
+        'purchaseOrderPrefix' => 'string',
+        'purchaseOrderSuffix' => 'string',
+        'startingPurchaseOrderNum' => 'integer',
+        'taxFreightFlag' => 'boolean',
+        'taxPurchaseOrderFlag' => 'boolean',
+        'useVendorTaxCodeFlag' => 'boolean',
     ];
 }

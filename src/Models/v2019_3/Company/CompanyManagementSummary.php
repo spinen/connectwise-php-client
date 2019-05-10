@@ -9,41 +9,41 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CompanyManagementSummary
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2019_3\Company\ManagementSolutionReference $managementSolution
- * @property string $groupIdentifier
- * @property string $deviceType
  * @property Spinen\ConnectWise\Models\v2019_3\Company\AgreementReference $agreement
+ * @property Spinen\ConnectWise\Models\v2019_3\Company\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2019_3\Company\ManagementSolutionReference $managementSolution
+ * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
+ * @property float $cpuUtilization
+ * @property float $internetConnectivity
+ * @property float $memoryUtilization
+ * @property integer $diskCleanups
+ * @property integer $diskDefragmentations
+ * @property integer $diskSpaceCleanedMb
+ * @property integer $failedBackupJobs
+ * @property integer $fullyPatchedMachines
+ * @property integer $id
+ * @property integer $missingMoreFivePatchesMachines
+ * @property integer $missingOneTwoPatchesMachines
+ * @property integer $missingThreeFivePatchesMachines
+ * @property integer $missingUnscannedPatchesMachines
+ * @property integer $serverAvailability
+ * @property integer $serversDiskSpaceLow
+ * @property integer $serversOffline
  * @property integer $snmpMachines
- * @property integer $totalWorkstations
+ * @property integer $spywareItemsRemoved
+ * @property integer $successfulBackupJobs
+ * @property integer $totalManagedMachines
+ * @property integer $totalNotifications
  * @property integer $totalServers
  * @property integer $totalWindowsServers
  * @property integer $totalWindowsWorkstations
- * @property integer $totalManagedMachines
- * @property integer $serversOffline
- * @property integer $serversDiskSpaceLow
- * @property integer $failedBackupJobs
- * @property integer $totalNotifications
- * @property integer $successfulBackupJobs
- * @property integer $serverAvailability
+ * @property integer $totalWorkstations
  * @property integer $virusesRemoved
- * @property integer $spywareItemsRemoved
  * @property integer $windowsPatchesInstalled
- * @property integer $diskCleanups
- * @property integer $diskDefragmentations
- * @property integer $fullyPatchedMachines
- * @property integer $missingOneTwoPatchesMachines
- * @property integer $missingThreeFivePatchesMachines
- * @property integer $missingMoreFivePatchesMachines
- * @property integer $missingUnscannedPatchesMachines
  * @property string $alertsGenerated
- * @property float $internetConnectivity
- * @property integer $diskSpaceCleanedMb
+ * @property string $deviceType
+ * @property string $groupIdentifier
  * @property string $missingSecurityPatches
- * @property float $cpuUtilization
- * @property float $memoryUtilization
- * @property Spinen\ConnectWise\Models\v2019_3\Company\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
  */
 class CompanyManagementSummary extends Model
 {
@@ -53,40 +53,40 @@ class CompanyManagementSummary extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'managementSolution' => 'Spinen\ConnectWise\Models\v2019_3\Company\ManagementSolutionReference',
-        'groupIdentifier' => 'string',
-        'deviceType' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
         'agreement' => 'Spinen\ConnectWise\Models\v2019_3\Company\AgreementReference',
+        'alertsGenerated' => 'string',
+        'company' => 'Spinen\ConnectWise\Models\v2019_3\Company\CompanyReference',
+        'cpuUtilization' => 'float',
+        'deviceType' => 'string',
+        'diskCleanups' => 'integer',
+        'diskDefragmentations' => 'integer',
+        'diskSpaceCleanedMb' => 'integer',
+        'failedBackupJobs' => 'integer',
+        'fullyPatchedMachines' => 'integer',
+        'groupIdentifier' => 'string',
+        'id' => 'integer',
+        'internetConnectivity' => 'float',
+        'managementSolution' => 'Spinen\ConnectWise\Models\v2019_3\Company\ManagementSolutionReference',
+        'memoryUtilization' => 'float',
+        'missingMoreFivePatchesMachines' => 'integer',
+        'missingOneTwoPatchesMachines' => 'integer',
+        'missingSecurityPatches' => 'string',
+        'missingThreeFivePatchesMachines' => 'integer',
+        'missingUnscannedPatchesMachines' => 'integer',
+        'serverAvailability' => 'integer',
+        'serversDiskSpaceLow' => 'integer',
+        'serversOffline' => 'integer',
         'snmpMachines' => 'integer',
-        'totalWorkstations' => 'integer',
+        'spywareItemsRemoved' => 'integer',
+        'successfulBackupJobs' => 'integer',
+        'totalManagedMachines' => 'integer',
+        'totalNotifications' => 'integer',
         'totalServers' => 'integer',
         'totalWindowsServers' => 'integer',
         'totalWindowsWorkstations' => 'integer',
-        'totalManagedMachines' => 'integer',
-        'serversOffline' => 'integer',
-        'serversDiskSpaceLow' => 'integer',
-        'failedBackupJobs' => 'integer',
-        'totalNotifications' => 'integer',
-        'successfulBackupJobs' => 'integer',
-        'serverAvailability' => 'integer',
+        'totalWorkstations' => 'integer',
         'virusesRemoved' => 'integer',
-        'spywareItemsRemoved' => 'integer',
         'windowsPatchesInstalled' => 'integer',
-        'diskCleanups' => 'integer',
-        'diskDefragmentations' => 'integer',
-        'fullyPatchedMachines' => 'integer',
-        'missingOneTwoPatchesMachines' => 'integer',
-        'missingThreeFivePatchesMachines' => 'integer',
-        'missingMoreFivePatchesMachines' => 'integer',
-        'missingUnscannedPatchesMachines' => 'integer',
-        'alertsGenerated' => 'string',
-        'internetConnectivity' => 'float',
-        'diskSpaceCleanedMb' => 'integer',
-        'missingSecurityPatches' => 'string',
-        'cpuUtilization' => 'float',
-        'memoryUtilization' => 'float',
-        'company' => 'Spinen\ConnectWise\Models\v2019_3\Company\CompanyReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
     ];
 }

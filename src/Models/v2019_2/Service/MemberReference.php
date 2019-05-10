@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MemberReference
  *
+ * @property Spinen\ConnectWise\Models\v2019_2\Service\Metadata $_info
  * @property integer $id
  * @property string $identifier
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_2\Service\Metadata $_info
  */
 class MemberReference extends Model
 {
@@ -22,9 +22,9 @@ class MemberReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Service\Metadata',
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Service\Metadata',
     ];
 }

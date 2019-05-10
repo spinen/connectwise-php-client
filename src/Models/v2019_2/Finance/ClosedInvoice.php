@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ClosedInvoice
  *
- * @property integer $id
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\BillingStatusReference $status
  * @property Spinen\ConnectWise\Models\v2019_2\Finance\Metadata $_info
+ * @property integer $id
  */
 class ClosedInvoice extends Model
 {
@@ -21,8 +21,8 @@ class ClosedInvoice extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
         'id' => 'integer',
         'status' => 'Spinen\ConnectWise\Models\v2019_2\Finance\BillingStatusReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Finance\Metadata',
     ];
 }

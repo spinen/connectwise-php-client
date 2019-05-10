@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ConfigurationReference
  *
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
  * @property integer $id
  * @property string $deviceIdentifier
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
  */
 class ConfigurationReference extends Model
 {
@@ -21,8 +21,8 @@ class ConfigurationReference extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'deviceIdentifier' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
+        'deviceIdentifier' => 'string',
+        'id' => 'integer',
     ];
 }

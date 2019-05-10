@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TimePeriod
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2018_6\Time\TimePeriodSetupReference $timePeriodSetup
- * @property integer $period
- * @property string $startDate
- * @property string $endDate
- * @property string $deadlineDate
  * @property Spinen\ConnectWise\Models\v2018_6\Time\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\TimePeriodSetupReference $timePeriodSetup
+ * @property integer $id
+ * @property integer $period
+ * @property string $deadlineDate
+ * @property string $endDate
+ * @property string $startDate
  */
 class TimePeriod extends Model
 {
@@ -25,12 +25,12 @@ class TimePeriod extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Time\Metadata',
+        'deadlineDate' => 'string',
+        'endDate' => 'string',
         'id' => 'integer',
-        'timePeriodSetup' => 'Spinen\ConnectWise\Models\v2018_6\Time\TimePeriodSetupReference',
         'period' => 'integer',
         'startDate' => 'string',
-        'endDate' => 'string',
-        'deadlineDate' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Time\Metadata',
+        'timePeriodSetup' => 'Spinen\ConnectWise\Models\v2018_6\Time\TimePeriodSetupReference',
     ];
 }

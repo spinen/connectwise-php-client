@@ -9,29 +9,29 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CompanySite
  *
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\CalendarReference $calendar
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\CountryReference $country
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Guid $mobileGuid
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_5\Company\TimeZoneSetupReference $timeZone
+ * @property boolean $defaultBillingFlag
+ * @property boolean $defaultMailingFlag
+ * @property boolean $defaultShippingFlag
+ * @property boolean $inactiveFlag
+ * @property boolean $primaryAddressFlag
+ * @property float $expenseReimbursement
  * @property integer $id
- * @property string $name
+ * @property integer $taxCodeId
+ * @property string $addressFormat
  * @property string $addressLine1
  * @property string $addressLine2
  * @property string $city
+ * @property string $faxNumber
+ * @property string $name
+ * @property string $phoneNumber
  * @property string $state
  * @property string $zip
- * @property Spinen\ConnectWise\Models\v2018_5\Company\CountryReference $country
- * @property string $addressFormat
- * @property string $phoneNumber
- * @property string $faxNumber
- * @property integer $taxCodeId
- * @property float $expenseReimbursement
- * @property boolean $primaryAddressFlag
- * @property boolean $defaultShippingFlag
- * @property boolean $defaultBillingFlag
- * @property boolean $defaultMailingFlag
- * @property boolean $inactiveFlag
- * @property Spinen\ConnectWise\Models\v2018_5\Company\Guid $mobileGuid
- * @property Spinen\ConnectWise\Models\v2018_5\Company\CalendarReference $calendar
- * @property Spinen\ConnectWise\Models\v2018_5\Company\TimeZoneSetupReference $timeZone
- * @property Spinen\ConnectWise\Models\v2018_5\Company\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_5\Company\Metadata $_info
  */
 class CompanySite extends Model
 {
@@ -41,28 +41,28 @@ class CompanySite extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
+        'addressFormat' => 'string',
         'addressLine1' => 'string',
         'addressLine2' => 'string',
+        'calendar' => 'Spinen\ConnectWise\Models\v2018_5\Company\CalendarReference',
         'city' => 'string',
-        'state' => 'string',
-        'zip' => 'string',
+        'company' => 'Spinen\ConnectWise\Models\v2018_5\Company\CompanyReference',
         'country' => 'Spinen\ConnectWise\Models\v2018_5\Company\CountryReference',
-        'addressFormat' => 'string',
-        'phoneNumber' => 'string',
-        'faxNumber' => 'string',
-        'taxCodeId' => 'integer',
-        'expenseReimbursement' => 'float',
-        'primaryAddressFlag' => 'boolean',
-        'defaultShippingFlag' => 'boolean',
         'defaultBillingFlag' => 'boolean',
         'defaultMailingFlag' => 'boolean',
+        'defaultShippingFlag' => 'boolean',
+        'expenseReimbursement' => 'float',
+        'faxNumber' => 'string',
+        'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_5\Company\Guid',
-        'calendar' => 'Spinen\ConnectWise\Models\v2018_5\Company\CalendarReference',
+        'name' => 'string',
+        'phoneNumber' => 'string',
+        'primaryAddressFlag' => 'boolean',
+        'state' => 'string',
+        'taxCodeId' => 'integer',
         'timeZone' => 'Spinen\ConnectWise\Models\v2018_5\Company\TimeZoneSetupReference',
-        'company' => 'Spinen\ConnectWise\Models\v2018_5\Company\CompanyReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\Company\Metadata',
+        'zip' => 'string',
     ];
 }

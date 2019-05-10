@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ScheduleStatus
  *
- * @property integer $id
- * @property string $name
+ * @property Spinen\ConnectWise\Models\v2018_4\Schedule\Metadata $_info
  * @property boolean $defaultFlag
  * @property boolean $showAsTentativeFlag
- * @property Spinen\ConnectWise\Models\v2018_4\Schedule\Metadata $_info
+ * @property integer $id
+ * @property string $name
  */
 class ScheduleStatus extends Model
 {
@@ -23,10 +23,10 @@ class ScheduleStatus extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Schedule\Metadata',
+        'defaultFlag' => 'boolean',
         'id' => 'integer',
         'name' => 'string',
-        'defaultFlag' => 'boolean',
         'showAsTentativeFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Schedule\Metadata',
     ];
 }

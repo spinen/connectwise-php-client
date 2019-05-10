@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Certification
  *
- * @property integer $id
- * @property string $name
  * @property Spinen\ConnectWise\Models\v2018_5\System\CompanyReference $company
  * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
+ * @property integer $id
+ * @property string $name
  */
 class Certification extends Model
 {
@@ -22,9 +22,9 @@ class Certification extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
+        'company' => 'Spinen\ConnectWise\Models\v2018_5\System\CompanyReference',
         'id' => 'integer',
         'name' => 'string',
-        'company' => 'Spinen\ConnectWise\Models\v2018_5\System\CompanyReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
     ];
 }

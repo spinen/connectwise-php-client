@@ -9,31 +9,31 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Activity
  *
- * @property integer $id
- * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\ActivityTypeReference $type
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\ContactReference $contact
- * @property string $phoneNumber
- * @property string $email
+ * @property Carbon\Carbon $dateEnd
+ * @property Carbon\Carbon $dateStart
  * @property Spinen\ConnectWise\Models\v2019_2\Sales\ActivityStatusReference $status
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\OpportunityReference $opportunity
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\TicketReference $ticket
+ * @property Spinen\ConnectWise\Models\v2019_2\Sales\ActivityTypeReference $type
  * @property Spinen\ConnectWise\Models\v2019_2\Sales\AgreementReference $agreement
  * @property Spinen\ConnectWise\Models\v2019_2\Sales\CampaignReference $campaign
- * @property string $notes
- * @property Carbon\Carbon $dateStart
- * @property Carbon\Carbon $dateEnd
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\MemberReference $assignedBy
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\MemberReference $assignTo
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\ScheduleStatusReference $scheduleStatus
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\ReminderReference $reminder
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\ServiceLocationReference $where
- * @property boolean $notifyFlag
- * @property Spinen\ConnectWise\Models\v2019_2\Sales\Guid $mobileGuid
+ * @property Spinen\ConnectWise\Models\v2019_2\Sales\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2019_2\Sales\ContactReference $contact
  * @property Spinen\ConnectWise\Models\v2019_2\Sales\CurrencyReference $currency
+ * @property Spinen\ConnectWise\Models\v2019_2\Sales\Guid $mobileGuid
+ * @property Spinen\ConnectWise\Models\v2019_2\Sales\MemberReference $assignTo
+ * @property Spinen\ConnectWise\Models\v2019_2\Sales\MemberReference $assignedBy
  * @property Spinen\ConnectWise\Models\v2019_2\Sales\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_2\Sales\OpportunityReference $opportunity
+ * @property Spinen\ConnectWise\Models\v2019_2\Sales\ReminderReference $reminder
+ * @property Spinen\ConnectWise\Models\v2019_2\Sales\ScheduleStatusReference $scheduleStatus
+ * @property Spinen\ConnectWise\Models\v2019_2\Sales\ServiceLocationReference $where
+ * @property Spinen\ConnectWise\Models\v2019_2\Sales\TicketReference $ticket
  * @property array $customFields
+ * @property boolean $notifyFlag
+ * @property integer $id
+ * @property string $email
+ * @property string $name
+ * @property string $notes
+ * @property string $phoneNumber
  */
 class Activity extends Model
 {
@@ -43,30 +43,30 @@ class Activity extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'type' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ActivityTypeReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Sales\Metadata',
+        'agreement' => 'Spinen\ConnectWise\Models\v2019_2\Sales\AgreementReference',
+        'assignTo' => 'Spinen\ConnectWise\Models\v2019_2\Sales\MemberReference',
+        'assignedBy' => 'Spinen\ConnectWise\Models\v2019_2\Sales\MemberReference',
+        'campaign' => 'Spinen\ConnectWise\Models\v2019_2\Sales\CampaignReference',
         'company' => 'Spinen\ConnectWise\Models\v2019_2\Sales\CompanyReference',
         'contact' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ContactReference',
-        'phoneNumber' => 'string',
-        'email' => 'string',
-        'status' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ActivityStatusReference',
-        'opportunity' => 'Spinen\ConnectWise\Models\v2019_2\Sales\OpportunityReference',
-        'ticket' => 'Spinen\ConnectWise\Models\v2019_2\Sales\TicketReference',
-        'agreement' => 'Spinen\ConnectWise\Models\v2019_2\Sales\AgreementReference',
-        'campaign' => 'Spinen\ConnectWise\Models\v2019_2\Sales\CampaignReference',
-        'notes' => 'string',
-        'dateStart' => 'Carbon\Carbon',
-        'dateEnd' => 'Carbon\Carbon',
-        'assignedBy' => 'Spinen\ConnectWise\Models\v2019_2\Sales\MemberReference',
-        'assignTo' => 'Spinen\ConnectWise\Models\v2019_2\Sales\MemberReference',
-        'scheduleStatus' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ScheduleStatusReference',
-        'reminder' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ReminderReference',
-        'where' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ServiceLocationReference',
-        'notifyFlag' => 'boolean',
-        'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_2\Sales\Guid',
         'currency' => 'Spinen\ConnectWise\Models\v2019_2\Sales\CurrencyReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Sales\Metadata',
         'customFields' => 'array',
+        'dateEnd' => 'Carbon\Carbon',
+        'dateStart' => 'Carbon\Carbon',
+        'email' => 'string',
+        'id' => 'integer',
+        'mobileGuid' => 'Spinen\ConnectWise\Models\v2019_2\Sales\Guid',
+        'name' => 'string',
+        'notes' => 'string',
+        'notifyFlag' => 'boolean',
+        'opportunity' => 'Spinen\ConnectWise\Models\v2019_2\Sales\OpportunityReference',
+        'phoneNumber' => 'string',
+        'reminder' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ReminderReference',
+        'scheduleStatus' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ScheduleStatusReference',
+        'status' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ActivityStatusReference',
+        'ticket' => 'Spinen\ConnectWise\Models\v2019_2\Sales\TicketReference',
+        'type' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ActivityTypeReference',
+        'where' => 'Spinen\ConnectWise\Models\v2019_2\Sales\ServiceLocationReference',
     ];
 }

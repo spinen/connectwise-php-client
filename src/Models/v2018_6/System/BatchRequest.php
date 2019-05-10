@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BatchRequest
  *
- * @property string $id
- * @property array $requests
  * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $headers
+ * @property array $requests
+ * @property string $id
  */
 class BatchRequest extends Model
 {
@@ -21,8 +21,8 @@ class BatchRequest extends Model
      * @var array
      */
     protected $casts = [
+        'headers' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
         'id' => 'string',
         'requests' => 'array',
-        'headers' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
     ];
 }

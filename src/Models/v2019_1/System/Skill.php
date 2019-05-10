@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Skill
  *
+ * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_1\System\SkillCategoryReference $category
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_1\System\SkillCategoryReference $category
- * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  */
 class Skill extends Model
 {
@@ -22,9 +22,9 @@ class Skill extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
+        'category' => 'Spinen\ConnectWise\Models\v2019_1\System\SkillCategoryReference',
         'id' => 'integer',
         'name' => 'string',
-        'category' => 'Spinen\ConnectWise\Models\v2019_1\System\SkillCategoryReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
     ];
 }

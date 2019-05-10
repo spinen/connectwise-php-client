@@ -9,6 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for JArray
  *
+
  */
 class JArray extends Model
 {
@@ -18,5 +19,6 @@ class JArray extends Model
      * @var array
      */
     protected $casts = [
+,
     ];
 }

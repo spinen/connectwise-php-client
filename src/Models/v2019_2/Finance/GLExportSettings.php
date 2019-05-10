@@ -9,6 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Mapped to GlPreferences Class
  *
+
  */
 class GLExportSettings extends Model
 {
@@ -18,5 +19,6 @@ class GLExportSettings extends Model
      * @var array
      */
     protected $casts = [
+,
     ];
 }

@@ -9,65 +9,65 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportTransaction
  *
- * @property integer $id
- * @property string $glClass
- * @property string $glTypeId
  * @property Carbon\Carbon $documentDate
- * @property string $documentNumber
- * @property string $documentType
- * @property string $memo
- * @property string $description
- * @property string $attention
- * @property string $salesTerritory
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\CompanyTypeReference $companyType
- * @property string $companyAccountNumber
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\SiteReference $site
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\BillingTermsReference $billingTerms
- * @property string $billingTermsXref
- * @property integer $dueDays
  * @property Carbon\Carbon $dueDate
- * @property boolean $emailDeliveryFlag
- * @property boolean $printDeliveryFlag
- * @property boolean $agreementPrePaymentFlag
- * @property string $accountNumber
- * @property string $billingType
- * @property string $glEntryIds
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\PurchaseOrderReference $purchaseOrder
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\ProjectReference $project
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\BillingTermsReference $billingTerms
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\CompanyReference $shipToCompany
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\CompanyTypeReference $companyType
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\CompanyTypeReference $shipCompanyType
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\ContactReference $shipContact
  * @property Spinen\ConnectWise\Models\v2018_4\Finance\CurrencyReference $currency
- * @property float $total
- * @property string $salesRepId
- * @property string $salesRepName
- * @property boolean $taxable
- * @property float $taxableTotal
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\ProjectReference $project
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\PurchaseOrderReference $purchaseOrder
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\SiteReference $shipSite
+ * @property Spinen\ConnectWise\Models\v2018_4\Finance\SiteReference $site
  * @property Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference $taxCode
- * @property float $taxGroupRate
+ * @property array $detail
+ * @property boolean $agreementPrePaymentFlag
+ * @property boolean $emailDeliveryFlag
  * @property boolean $piggyBackFlag
- * @property string $taxAccountNumber
+ * @property boolean $printDeliveryFlag
+ * @property boolean $sendAvalaraTaxFlag
+ * @property boolean $taxDpAppliedFlag
+ * @property boolean $taxable
+ * @property boolean $useAvalaraFlag
+ * @property float $cityTax
+ * @property float $countyTax
  * @property float $salesTax
  * @property float $stateTax
- * @property float $countyTax
- * @property float $cityTax
+ * @property float $taxGroupRate
  * @property float $taxableAmount1
  * @property float $taxableAmount2
  * @property float $taxableAmount3
  * @property float $taxableAmount4
  * @property float $taxableAmount5
- * @property string $taxAgencyXref
- * @property string $stateTaxXref
+ * @property float $taxableTotal
+ * @property float $total
+ * @property integer $dueDays
+ * @property integer $id
+ * @property string $accountNumber
+ * @property string $attention
+ * @property string $billingTermsXref
+ * @property string $billingType
+ * @property string $companyAccountNumber
  * @property string $countyTaxXref
- * @property string $taxId
- * @property boolean $taxDpAppliedFlag
- * @property boolean $useAvalaraFlag
- * @property boolean $sendAvalaraTaxFlag
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\CompanyReference $shipToCompany
+ * @property string $description
+ * @property string $documentNumber
+ * @property string $documentType
+ * @property string $glClass
+ * @property string $glEntryIds
+ * @property string $glTypeId
+ * @property string $memo
+ * @property string $salesRepId
+ * @property string $salesRepName
+ * @property string $salesTerritory
  * @property string $shipCompanyAccountNumber
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\CompanyTypeReference $shipCompanyType
  * @property string $shipTaxId
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\SiteReference $shipSite
- * @property Spinen\ConnectWise\Models\v2018_4\Finance\ContactReference $shipContact
- * @property array $detail
+ * @property string $stateTaxXref
+ * @property string $taxAccountNumber
+ * @property string $taxAgencyXref
+ * @property string $taxId
  */
 class GLExportTransaction extends Model
 {
@@ -77,64 +77,64 @@ class GLExportTransaction extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'glClass' => 'string',
-        'glTypeId' => 'string',
+        'accountNumber' => 'string',
+        'agreementPrePaymentFlag' => 'boolean',
+        'attention' => 'string',
+        'billingTerms' => 'Spinen\ConnectWise\Models\v2018_4\Finance\BillingTermsReference',
+        'billingTermsXref' => 'string',
+        'billingType' => 'string',
+        'cityTax' => 'float',
+        'company' => 'Spinen\ConnectWise\Models\v2018_4\Finance\CompanyReference',
+        'companyAccountNumber' => 'string',
+        'companyType' => 'Spinen\ConnectWise\Models\v2018_4\Finance\CompanyTypeReference',
+        'countyTax' => 'float',
+        'countyTaxXref' => 'string',
+        'currency' => 'Spinen\ConnectWise\Models\v2018_4\Finance\CurrencyReference',
+        'description' => 'string',
+        'detail' => 'array',
         'documentDate' => 'Carbon\Carbon',
         'documentNumber' => 'string',
         'documentType' => 'string',
-        'memo' => 'string',
-        'description' => 'string',
-        'attention' => 'string',
-        'salesTerritory' => 'string',
-        'company' => 'Spinen\ConnectWise\Models\v2018_4\Finance\CompanyReference',
-        'companyType' => 'Spinen\ConnectWise\Models\v2018_4\Finance\CompanyTypeReference',
-        'companyAccountNumber' => 'string',
-        'site' => 'Spinen\ConnectWise\Models\v2018_4\Finance\SiteReference',
-        'billingTerms' => 'Spinen\ConnectWise\Models\v2018_4\Finance\BillingTermsReference',
-        'billingTermsXref' => 'string',
-        'dueDays' => 'integer',
         'dueDate' => 'Carbon\Carbon',
+        'dueDays' => 'integer',
         'emailDeliveryFlag' => 'boolean',
-        'printDeliveryFlag' => 'boolean',
-        'agreementPrePaymentFlag' => 'boolean',
-        'accountNumber' => 'string',
-        'billingType' => 'string',
+        'glClass' => 'string',
         'glEntryIds' => 'string',
-        'purchaseOrder' => 'Spinen\ConnectWise\Models\v2018_4\Finance\PurchaseOrderReference',
+        'glTypeId' => 'string',
+        'id' => 'integer',
+        'memo' => 'string',
+        'piggyBackFlag' => 'boolean',
+        'printDeliveryFlag' => 'boolean',
         'project' => 'Spinen\ConnectWise\Models\v2018_4\Finance\ProjectReference',
-        'currency' => 'Spinen\ConnectWise\Models\v2018_4\Finance\CurrencyReference',
-        'total' => 'float',
+        'purchaseOrder' => 'Spinen\ConnectWise\Models\v2018_4\Finance\PurchaseOrderReference',
         'salesRepId' => 'string',
         'salesRepName' => 'string',
-        'taxable' => 'boolean',
-        'taxableTotal' => 'float',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference',
-        'taxGroupRate' => 'float',
-        'piggyBackFlag' => 'boolean',
-        'taxAccountNumber' => 'string',
         'salesTax' => 'float',
+        'salesTerritory' => 'string',
+        'sendAvalaraTaxFlag' => 'boolean',
+        'shipCompanyAccountNumber' => 'string',
+        'shipCompanyType' => 'Spinen\ConnectWise\Models\v2018_4\Finance\CompanyTypeReference',
+        'shipContact' => 'Spinen\ConnectWise\Models\v2018_4\Finance\ContactReference',
+        'shipSite' => 'Spinen\ConnectWise\Models\v2018_4\Finance\SiteReference',
+        'shipTaxId' => 'string',
+        'shipToCompany' => 'Spinen\ConnectWise\Models\v2018_4\Finance\CompanyReference',
+        'site' => 'Spinen\ConnectWise\Models\v2018_4\Finance\SiteReference',
         'stateTax' => 'float',
-        'countyTax' => 'float',
-        'cityTax' => 'float',
+        'stateTaxXref' => 'string',
+        'taxAccountNumber' => 'string',
+        'taxAgencyXref' => 'string',
+        'taxCode' => 'Spinen\ConnectWise\Models\v2018_4\Finance\TaxCodeReference',
+        'taxDpAppliedFlag' => 'boolean',
+        'taxGroupRate' => 'float',
+        'taxId' => 'string',
+        'taxable' => 'boolean',
         'taxableAmount1' => 'float',
         'taxableAmount2' => 'float',
         'taxableAmount3' => 'float',
         'taxableAmount4' => 'float',
         'taxableAmount5' => 'float',
-        'taxAgencyXref' => 'string',
-        'stateTaxXref' => 'string',
-        'countyTaxXref' => 'string',
-        'taxId' => 'string',
-        'taxDpAppliedFlag' => 'boolean',
+        'taxableTotal' => 'float',
+        'total' => 'float',
         'useAvalaraFlag' => 'boolean',
-        'sendAvalaraTaxFlag' => 'boolean',
-        'shipToCompany' => 'Spinen\ConnectWise\Models\v2018_4\Finance\CompanyReference',
-        'shipCompanyAccountNumber' => 'string',
-        'shipCompanyType' => 'Spinen\ConnectWise\Models\v2018_4\Finance\CompanyTypeReference',
-        'shipTaxId' => 'string',
-        'shipSite' => 'Spinen\ConnectWise\Models\v2018_4\Finance\SiteReference',
-        'shipContact' => 'Spinen\ConnectWise\Models\v2018_4\Finance\ContactReference',
-        'detail' => 'array',
     ];
 }

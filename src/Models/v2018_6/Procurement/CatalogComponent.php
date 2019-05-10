@@ -9,19 +9,19 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CatalogComponent
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\CatalogItemReference $catalogItem
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\CatalogItemReference $parentCatalogItem
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
+ * @property boolean $hideDescriptionFlag
+ * @property boolean $hideExtendedPriceFlag
+ * @property boolean $hideItemIdentifierFlag
+ * @property boolean $hidePriceFlag
+ * @property boolean $hideQuantityFlag
+ * @property float $cost
+ * @property float $price
+ * @property float $quantity
  * @property integer $id
  * @property integer $sequenceNumber
- * @property float $quantity
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\CatalogItemReference $catalogItem
- * @property boolean $hidePriceFlag
- * @property boolean $hideItemIdentifierFlag
- * @property boolean $hideDescriptionFlag
- * @property boolean $hideQuantityFlag
- * @property boolean $hideExtendedPriceFlag
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\CatalogItemReference $parentCatalogItem
- * @property float $price
- * @property float $cost
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
  */
 class CatalogComponent extends Model
 {
@@ -31,18 +31,18 @@ class CatalogComponent extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'sequenceNumber' => 'integer',
-        'quantity' => 'float',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
         'catalogItem' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\CatalogItemReference',
-        'hidePriceFlag' => 'boolean',
-        'hideItemIdentifierFlag' => 'boolean',
+        'cost' => 'float',
         'hideDescriptionFlag' => 'boolean',
-        'hideQuantityFlag' => 'boolean',
         'hideExtendedPriceFlag' => 'boolean',
+        'hideItemIdentifierFlag' => 'boolean',
+        'hidePriceFlag' => 'boolean',
+        'hideQuantityFlag' => 'boolean',
+        'id' => 'integer',
         'parentCatalogItem' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\CatalogItemReference',
         'price' => 'float',
-        'cost' => 'float',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
+        'quantity' => 'float',
+        'sequenceNumber' => 'integer',
     ];
 }

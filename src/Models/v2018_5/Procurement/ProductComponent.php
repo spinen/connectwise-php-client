@@ -9,20 +9,20 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProductComponent
  *
- * @property integer $id
- * @property integer $sequenceNumber
- * @property float $quantity
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\CatalogItemReference $catalogItem
- * @property boolean $hidePriceFlag
- * @property boolean $hideItemIdentifierFlag
- * @property boolean $hideDescriptionFlag
- * @property boolean $hideQuantityFlag
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\CompanyReference $vendor
+ * @property Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata $_info
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\ProductItemReference $parentProductItem
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\ProductItemReference $productItem
- * @property float $price
+ * @property boolean $hideDescriptionFlag
+ * @property boolean $hideItemIdentifierFlag
+ * @property boolean $hidePriceFlag
+ * @property boolean $hideQuantityFlag
  * @property float $cost
- * @property Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata $_info
+ * @property float $price
+ * @property float $quantity
+ * @property integer $id
+ * @property integer $sequenceNumber
  */
 class ProductComponent extends Model
 {
@@ -32,19 +32,19 @@ class ProductComponent extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'sequenceNumber' => 'integer',
-        'quantity' => 'float',
-        'catalogItem' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\CatalogItemReference',
-        'hidePriceFlag' => 'boolean',
-        'hideItemIdentifierFlag' => 'boolean',
-        'hideDescriptionFlag' => 'boolean',
-        'hideQuantityFlag' => 'boolean',
-        'vendor' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\CompanyReference',
-        'parentProductItem' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\ProductItemReference',
-        'productItem' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\ProductItemReference',
-        'price' => 'float',
-        'cost' => 'float',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata',
+        'catalogItem' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\CatalogItemReference',
+        'cost' => 'float',
+        'hideDescriptionFlag' => 'boolean',
+        'hideItemIdentifierFlag' => 'boolean',
+        'hidePriceFlag' => 'boolean',
+        'hideQuantityFlag' => 'boolean',
+        'id' => 'integer',
+        'parentProductItem' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\ProductItemReference',
+        'price' => 'float',
+        'productItem' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\ProductItemReference',
+        'quantity' => 'float',
+        'sequenceNumber' => 'integer',
+        'vendor' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\CompanyReference',
     ];
 }

@@ -9,18 +9,18 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PortalCalendar
  *
- * @property integer $id
- * @property string $weekStart
- * @property string $adjust1Start
- * @property string $adjust1End
- * @property float $adjust1Hours
- * @property string $adjust2Start
- * @property string $adjust2End
- * @property float $adjust2Hours
- * @property string $adjust3Start
- * @property string $adjust3End
- * @property float $adjust3Hours
  * @property Spinen\ConnectWise\Models\v2019_2\Schedule\Metadata $_info
+ * @property float $adjust1Hours
+ * @property float $adjust2Hours
+ * @property float $adjust3Hours
+ * @property integer $id
+ * @property string $adjust1End
+ * @property string $adjust1Start
+ * @property string $adjust2End
+ * @property string $adjust2Start
+ * @property string $adjust3End
+ * @property string $adjust3Start
+ * @property string $weekStart
  */
 class PortalCalendar extends Model
 {
@@ -30,17 +30,17 @@ class PortalCalendar extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'weekStart' => 'string',
-        'adjust1Start' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\Metadata',
         'adjust1End' => 'string',
         'adjust1Hours' => 'float',
-        'adjust2Start' => 'string',
+        'adjust1Start' => 'string',
         'adjust2End' => 'string',
         'adjust2Hours' => 'float',
-        'adjust3Start' => 'string',
+        'adjust2Start' => 'string',
         'adjust3End' => 'string',
         'adjust3Hours' => 'float',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\Schedule\Metadata',
+        'adjust3Start' => 'string',
+        'id' => 'integer',
+        'weekStart' => 'string',
     ];
 }

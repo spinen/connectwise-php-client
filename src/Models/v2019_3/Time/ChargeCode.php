@@ -9,20 +9,20 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ChargeCode
  *
- * @property integer $id
- * @property string $name
  * @property Spinen\ConnectWise\Models\v2019_3\Time\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2019_3\Time\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2019_3\Time\SystemDepartmentReference $department
- * @property string $billTime
- * @property boolean $expenseEntryFlag
- * @property boolean $allowAllExpenseTypeFlag
- * @property boolean $timeEntryFlag
- * @property Spinen\ConnectWise\Models\v2019_3\Time\WorkTypeReference $workType
- * @property Spinen\ConnectWise\Models\v2019_3\Time\WorkRoleReference $workRole
- * @property string $integrationXref
- * @property array $expenseTypeIds
  * @property Spinen\ConnectWise\Models\v2019_3\Time\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_3\Time\SystemDepartmentReference $department
+ * @property Spinen\ConnectWise\Models\v2019_3\Time\SystemLocationReference $location
+ * @property Spinen\ConnectWise\Models\v2019_3\Time\WorkRoleReference $workRole
+ * @property Spinen\ConnectWise\Models\v2019_3\Time\WorkTypeReference $workType
+ * @property array $expenseTypeIds
+ * @property boolean $allowAllExpenseTypeFlag
+ * @property boolean $expenseEntryFlag
+ * @property boolean $timeEntryFlag
+ * @property integer $id
+ * @property string $billTime
+ * @property string $integrationXref
+ * @property string $name
  */
 class ChargeCode extends Model
 {
@@ -32,19 +32,19 @@ class ChargeCode extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'company' => 'Spinen\ConnectWise\Models\v2019_3\Time\CompanyReference',
-        'location' => 'Spinen\ConnectWise\Models\v2019_3\Time\SystemLocationReference',
-        'department' => 'Spinen\ConnectWise\Models\v2019_3\Time\SystemDepartmentReference',
-        'billTime' => 'string',
-        'expenseEntryFlag' => 'boolean',
-        'allowAllExpenseTypeFlag' => 'boolean',
-        'timeEntryFlag' => 'boolean',
-        'workType' => 'Spinen\ConnectWise\Models\v2019_3\Time\WorkTypeReference',
-        'workRole' => 'Spinen\ConnectWise\Models\v2019_3\Time\WorkRoleReference',
-        'integrationXref' => 'string',
-        'expenseTypeIds' => 'array',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Time\Metadata',
+        'allowAllExpenseTypeFlag' => 'boolean',
+        'billTime' => 'string',
+        'company' => 'Spinen\ConnectWise\Models\v2019_3\Time\CompanyReference',
+        'department' => 'Spinen\ConnectWise\Models\v2019_3\Time\SystemDepartmentReference',
+        'expenseEntryFlag' => 'boolean',
+        'expenseTypeIds' => 'array',
+        'id' => 'integer',
+        'integrationXref' => 'string',
+        'location' => 'Spinen\ConnectWise\Models\v2019_3\Time\SystemLocationReference',
+        'name' => 'string',
+        'timeEntryFlag' => 'boolean',
+        'workRole' => 'Spinen\ConnectWise\Models\v2019_3\Time\WorkRoleReference',
+        'workType' => 'Spinen\ConnectWise\Models\v2019_3\Time\WorkTypeReference',
     ];
 }

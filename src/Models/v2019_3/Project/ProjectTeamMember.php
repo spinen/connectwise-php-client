@@ -9,15 +9,15 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ProjectTeamMember
  *
- * @property integer $id
- * @property integer $projectId
- * @property float $hours
+ * @property Carbon\Carbon $endDate
+ * @property Carbon\Carbon $startDate
  * @property Spinen\ConnectWise\Models\v2019_3\Project\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2019_3\Project\Metadata $_info
  * @property Spinen\ConnectWise\Models\v2019_3\Project\ProjectRoleReference $projectRole
  * @property Spinen\ConnectWise\Models\v2019_3\Project\WorkRoleReference $workRole
- * @property Carbon\Carbon $startDate
- * @property Carbon\Carbon $endDate
- * @property Spinen\ConnectWise\Models\v2019_3\Project\Metadata $_info
+ * @property float $hours
+ * @property integer $id
+ * @property integer $projectId
  */
 class ProjectTeamMember extends Model
 {
@@ -27,14 +27,14 @@ class ProjectTeamMember extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'projectId' => 'integer',
-        'hours' => 'float',
-        'member' => 'Spinen\ConnectWise\Models\v2019_3\Project\MemberReference',
-        'projectRole' => 'Spinen\ConnectWise\Models\v2019_3\Project\ProjectRoleReference',
-        'workRole' => 'Spinen\ConnectWise\Models\v2019_3\Project\WorkRoleReference',
-        'startDate' => 'Carbon\Carbon',
-        'endDate' => 'Carbon\Carbon',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Project\Metadata',
+        'endDate' => 'Carbon\Carbon',
+        'hours' => 'float',
+        'id' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2019_3\Project\MemberReference',
+        'projectId' => 'integer',
+        'projectRole' => 'Spinen\ConnectWise\Models\v2019_3\Project\ProjectRoleReference',
+        'startDate' => 'Carbon\Carbon',
+        'workRole' => 'Spinen\ConnectWise\Models\v2019_3\Project\WorkRoleReference',
     ];
 }

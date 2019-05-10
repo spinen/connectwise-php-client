@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Required when notifyType is set to: "Create a Service Ticket"
  *
+ * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  * @property integer $id
  * @property string $name
  * @property string $summary
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  */
 class ServiceTemplateReference extends Model
 {
@@ -22,9 +22,9 @@ class ServiceTemplateReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
         'id' => 'integer',
         'name' => 'string',
         'summary' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
     ];
 }

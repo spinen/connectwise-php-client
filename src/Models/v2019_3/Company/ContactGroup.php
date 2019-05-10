@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ContactGroup
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2019_3\Company\GroupReference $group
  * @property Spinen\ConnectWise\Models\v2019_3\Company\ContactReference $contact
- * @property string $description
- * @property boolean $unsubscribeFlag
- * @property string $companyUnsubcribedEmailMessage
- * @property string $companyGroupUnsubscribedEmailMessage
- * @property string $contactUnsubscribedEmailMessage
- * @property string $contactGroupUnsubscribedEmailMessage
+ * @property Spinen\ConnectWise\Models\v2019_3\Company\GroupReference $group
  * @property Spinen\ConnectWise\Models\v2019_3\Company\Metadata $_info
+ * @property boolean $unsubscribeFlag
+ * @property integer $id
+ * @property string $companyGroupUnsubscribedEmailMessage
+ * @property string $companyUnsubcribedEmailMessage
+ * @property string $contactGroupUnsubscribedEmailMessage
+ * @property string $contactUnsubscribedEmailMessage
+ * @property string $description
  */
 class ContactGroup extends Model
 {
@@ -28,15 +28,15 @@ class ContactGroup extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'group' => 'Spinen\ConnectWise\Models\v2019_3\Company\GroupReference',
-        'contact' => 'Spinen\ConnectWise\Models\v2019_3\Company\ContactReference',
-        'description' => 'string',
-        'unsubscribeFlag' => 'boolean',
-        'companyUnsubcribedEmailMessage' => 'string',
-        'companyGroupUnsubscribedEmailMessage' => 'string',
-        'contactUnsubscribedEmailMessage' => 'string',
-        'contactGroupUnsubscribedEmailMessage' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Company\Metadata',
+        'companyGroupUnsubscribedEmailMessage' => 'string',
+        'companyUnsubcribedEmailMessage' => 'string',
+        'contact' => 'Spinen\ConnectWise\Models\v2019_3\Company\ContactReference',
+        'contactGroupUnsubscribedEmailMessage' => 'string',
+        'contactUnsubscribedEmailMessage' => 'string',
+        'description' => 'string',
+        'group' => 'Spinen\ConnectWise\Models\v2019_3\Company\GroupReference',
+        'id' => 'integer',
+        'unsubscribeFlag' => 'boolean',
     ];
 }

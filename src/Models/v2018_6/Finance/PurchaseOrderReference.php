@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PurchaseOrderReference
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\Metadata $_info
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\Metadata $_info
  */
 class PurchaseOrderReference extends Model
 {
@@ -21,8 +21,8 @@ class PurchaseOrderReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
         'id' => 'integer',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
     ];
 }

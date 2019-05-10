@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ContactCommunicationItem
  *
- * @property integer $id
  * @property Spinen\ConnectWise\Models\v2019_3\Company\CommunicationTypeReference $type
- * @property string $value
- * @property string $extension
  * @property boolean $defaultFlag
- * @property string $domain
+ * @property integer $id
  * @property string $communicationType
+ * @property string $domain
+ * @property string $extension
+ * @property string $value
  */
 class ContactCommunicationItem extends Model
 {
@@ -25,12 +25,12 @@ class ContactCommunicationItem extends Model
      * @var array
      */
     protected $casts = [
+        'communicationType' => 'string',
+        'defaultFlag' => 'boolean',
+        'domain' => 'string',
+        'extension' => 'string',
         'id' => 'integer',
         'type' => 'Spinen\ConnectWise\Models\v2019_3\Company\CommunicationTypeReference',
         'value' => 'string',
-        'extension' => 'string',
-        'defaultFlag' => 'boolean',
-        'domain' => 'string',
-        'communicationType' => 'string',
     ];
 }

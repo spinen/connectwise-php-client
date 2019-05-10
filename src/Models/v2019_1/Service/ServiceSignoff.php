@@ -9,63 +9,63 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ServiceSignoff
  *
- * @property integer $id
- * @property string $name
- * @property boolean $defaultFlag
- * @property boolean $visibleLogoFlag
- * @property boolean $companyInfoFlag
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
+ * @property boolean $billingMethodsTextFlag
  * @property boolean $billingTermsFlag
- * @property boolean $summaryFlag
- * @property boolean $discussionFlag
- * @property boolean $taskFlag
- * @property string $task
+ * @property boolean $companyInfoFlag
  * @property boolean $configurationsFlag
- * @property boolean $internalNotesFlag
- * @property boolean $resolutionFlag
- * @property boolean $timeFlag
- * @property boolean $timeMemberFlag
- * @property boolean $timeDateFlag
- * @property boolean $timeStartEndFlag
- * @property boolean $timeBillFlag
- * @property boolean $timeHoursFlag
- * @property boolean $timeRateFlag
- * @property boolean $timeExtendedAmountFlag
- * @property boolean $timeWorkTypeFlag
- * @property boolean $timeAgreementFlag
- * @property boolean $timeNotesFlag
- * @property boolean $timeManualFlag
- * @property integer $timeManualEntry
- * @property boolean $timeTaxFlag
- * @property boolean $expenseFlag
- * @property boolean $expenseDateFlag
- * @property boolean $expenseMemberFlag
- * @property boolean $expenseTypeFlag
- * @property boolean $expenseBillFlag
- * @property boolean $expenseAmountFlag
+ * @property boolean $creditCardFieldsFlag
+ * @property boolean $customerSignoffFieldsFlag
+ * @property boolean $customerSignoffTextFlag
+ * @property boolean $defaultFFFlag
+ * @property boolean $defaultFlag
+ * @property boolean $discussionFlag
  * @property boolean $expenseAgreementFlag
+ * @property boolean $expenseAmountFlag
+ * @property boolean $expenseBillFlag
+ * @property boolean $expenseDateFlag
+ * @property boolean $expenseFlag
+ * @property boolean $expenseManualFlag
+ * @property boolean $expenseMemberFlag
  * @property boolean $expenseNotesFlag
  * @property boolean $expenseTaxFlag
- * @property boolean $expenseManualFlag
- * @property integer $expenseManualEntry
- * @property boolean $productFlag
- * @property boolean $productDescriptionFlag
- * @property boolean $productBillFlag
- * @property boolean $productQuantityFlag
- * @property boolean $productPriceFlag
- * @property boolean $productExtendedAmountFlag
+ * @property boolean $expenseTypeFlag
+ * @property boolean $internalNotesFlag
  * @property boolean $productAgreementFlag
+ * @property boolean $productBillFlag
+ * @property boolean $productDescriptionFlag
+ * @property boolean $productExtendedAmountFlag
+ * @property boolean $productFlag
  * @property boolean $productManualFlag
- * @property integer $productManualEntry
+ * @property boolean $productPriceFlag
+ * @property boolean $productQuantityFlag
  * @property boolean $productTaxFlag
+ * @property boolean $resolutionFlag
+ * @property boolean $summaryFlag
+ * @property boolean $taskFlag
  * @property boolean $technicianSignoffFlag
- * @property boolean $customerSignoffTextFlag
- * @property string $customerSignoffText
- * @property boolean $customerSignoffFieldsFlag
- * @property boolean $billingMethodsTextFlag
+ * @property boolean $timeAgreementFlag
+ * @property boolean $timeBillFlag
+ * @property boolean $timeDateFlag
+ * @property boolean $timeExtendedAmountFlag
+ * @property boolean $timeFlag
+ * @property boolean $timeHoursFlag
+ * @property boolean $timeManualFlag
+ * @property boolean $timeMemberFlag
+ * @property boolean $timeNotesFlag
+ * @property boolean $timeRateFlag
+ * @property boolean $timeStartEndFlag
+ * @property boolean $timeTaxFlag
+ * @property boolean $timeWorkTypeFlag
+ * @property boolean $visibleLogoFlag
+ * @property integer $expenseManualEntry
+ * @property integer $id
+ * @property integer $productManualEntry
+ * @property integer $timeManualEntry
  * @property string $billingMethodsText
- * @property boolean $creditCardFieldsFlag
- * @property boolean $defaultFFFlag
- * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
+ * @property string $customerSignoffText
+ * @property string $name
+ * @property string $task
  */
 class ServiceSignoff extends Model
 {
@@ -75,62 +75,62 @@ class ServiceSignoff extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'defaultFlag' => 'boolean',
-        'visibleLogoFlag' => 'boolean',
-        'companyInfoFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
+        'billingMethodsText' => 'string',
+        'billingMethodsTextFlag' => 'boolean',
         'billingTermsFlag' => 'boolean',
-        'summaryFlag' => 'boolean',
-        'discussionFlag' => 'boolean',
-        'taskFlag' => 'boolean',
-        'task' => 'string',
+        'companyInfoFlag' => 'boolean',
         'configurationsFlag' => 'boolean',
-        'internalNotesFlag' => 'boolean',
-        'resolutionFlag' => 'boolean',
-        'timeFlag' => 'boolean',
-        'timeMemberFlag' => 'boolean',
-        'timeDateFlag' => 'boolean',
-        'timeStartEndFlag' => 'boolean',
-        'timeBillFlag' => 'boolean',
-        'timeHoursFlag' => 'boolean',
-        'timeRateFlag' => 'boolean',
-        'timeExtendedAmountFlag' => 'boolean',
-        'timeWorkTypeFlag' => 'boolean',
-        'timeAgreementFlag' => 'boolean',
-        'timeNotesFlag' => 'boolean',
-        'timeManualFlag' => 'boolean',
-        'timeManualEntry' => 'integer',
-        'timeTaxFlag' => 'boolean',
-        'expenseFlag' => 'boolean',
-        'expenseDateFlag' => 'boolean',
-        'expenseMemberFlag' => 'boolean',
-        'expenseTypeFlag' => 'boolean',
-        'expenseBillFlag' => 'boolean',
-        'expenseAmountFlag' => 'boolean',
+        'creditCardFieldsFlag' => 'boolean',
+        'customerSignoffFieldsFlag' => 'boolean',
+        'customerSignoffText' => 'string',
+        'customerSignoffTextFlag' => 'boolean',
+        'defaultFFFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'discussionFlag' => 'boolean',
         'expenseAgreementFlag' => 'boolean',
+        'expenseAmountFlag' => 'boolean',
+        'expenseBillFlag' => 'boolean',
+        'expenseDateFlag' => 'boolean',
+        'expenseFlag' => 'boolean',
+        'expenseManualEntry' => 'integer',
+        'expenseManualFlag' => 'boolean',
+        'expenseMemberFlag' => 'boolean',
         'expenseNotesFlag' => 'boolean',
         'expenseTaxFlag' => 'boolean',
-        'expenseManualFlag' => 'boolean',
-        'expenseManualEntry' => 'integer',
-        'productFlag' => 'boolean',
-        'productDescriptionFlag' => 'boolean',
-        'productBillFlag' => 'boolean',
-        'productQuantityFlag' => 'boolean',
-        'productPriceFlag' => 'boolean',
-        'productExtendedAmountFlag' => 'boolean',
+        'expenseTypeFlag' => 'boolean',
+        'id' => 'integer',
+        'internalNotesFlag' => 'boolean',
+        'name' => 'string',
         'productAgreementFlag' => 'boolean',
-        'productManualFlag' => 'boolean',
+        'productBillFlag' => 'boolean',
+        'productDescriptionFlag' => 'boolean',
+        'productExtendedAmountFlag' => 'boolean',
+        'productFlag' => 'boolean',
         'productManualEntry' => 'integer',
+        'productManualFlag' => 'boolean',
+        'productPriceFlag' => 'boolean',
+        'productQuantityFlag' => 'boolean',
         'productTaxFlag' => 'boolean',
+        'resolutionFlag' => 'boolean',
+        'summaryFlag' => 'boolean',
+        'task' => 'string',
+        'taskFlag' => 'boolean',
         'technicianSignoffFlag' => 'boolean',
-        'customerSignoffTextFlag' => 'boolean',
-        'customerSignoffText' => 'string',
-        'customerSignoffFieldsFlag' => 'boolean',
-        'billingMethodsTextFlag' => 'boolean',
-        'billingMethodsText' => 'string',
-        'creditCardFieldsFlag' => 'boolean',
-        'defaultFFFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
+        'timeAgreementFlag' => 'boolean',
+        'timeBillFlag' => 'boolean',
+        'timeDateFlag' => 'boolean',
+        'timeExtendedAmountFlag' => 'boolean',
+        'timeFlag' => 'boolean',
+        'timeHoursFlag' => 'boolean',
+        'timeManualEntry' => 'integer',
+        'timeManualFlag' => 'boolean',
+        'timeMemberFlag' => 'boolean',
+        'timeNotesFlag' => 'boolean',
+        'timeRateFlag' => 'boolean',
+        'timeStartEndFlag' => 'boolean',
+        'timeTaxFlag' => 'boolean',
+        'timeWorkTypeFlag' => 'boolean',
+        'visibleLogoFlag' => 'boolean',
     ];
 }

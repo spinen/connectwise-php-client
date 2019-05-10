@@ -9,17 +9,17 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for DepartmentLocation
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2018_6\System\SystemDepartmentReference $department
+ * @property Spinen\ConnectWise\Models\v2018_6\System\LdapConfigurationReference $ldapConfig
  * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $departmentManager
  * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $dispatch
- * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $serviceManager
  * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $dutyManager
- * @property Spinen\ConnectWise\Models\v2018_6\System\LdapConfigurationReference $ldapConfig
+ * @property Spinen\ConnectWise\Models\v2018_6\System\MemberReference $serviceManager
+ * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\System\SystemDepartmentReference $department
+ * @property Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference $location
  * @property boolean $addAllLocations
  * @property boolean $removeAllLocations
- * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
+ * @property integer $id
  */
 class DepartmentLocation extends Model
 {
@@ -29,16 +29,16 @@ class DepartmentLocation extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'location' => 'Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
+        'addAllLocations' => 'boolean',
         'department' => 'Spinen\ConnectWise\Models\v2018_6\System\SystemDepartmentReference',
         'departmentManager' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
         'dispatch' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
-        'serviceManager' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
         'dutyManager' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
+        'id' => 'integer',
         'ldapConfig' => 'Spinen\ConnectWise\Models\v2018_6\System\LdapConfigurationReference',
-        'addAllLocations' => 'boolean',
+        'location' => 'Spinen\ConnectWise\Models\v2018_6\System\SystemLocationReference',
         'removeAllLocations' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
+        'serviceManager' => 'Spinen\ConnectWise\Models\v2018_6\System\MemberReference',
     ];
 }

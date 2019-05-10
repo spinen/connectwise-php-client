@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for WorkRoleExemption
  *
- * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
  * @property Spinen\ConnectWise\Models\v2019_1\Finance\WorkRoleReference $workRole
  * @property array $taxableLevels
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
+ * @property integer $id
  */
 class WorkRoleExemption extends Model
 {
@@ -22,9 +22,9 @@ class WorkRoleExemption extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'workRole' => 'Spinen\ConnectWise\Models\v2019_1\Finance\WorkRoleReference',
-        'taxableLevels' => 'array',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
+        'id' => 'integer',
+        'taxableLevels' => 'array',
+        'workRole' => 'Spinen\ConnectWise\Models\v2019_1\Finance\WorkRoleReference',
     ];
 }

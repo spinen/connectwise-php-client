@@ -9,70 +9,70 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AgreementType
  *
- * @property integer $id
- * @property string $name
- * @property string $prefixSuffixOption
- * @property boolean $defaultFlag
- * @property boolean $inactiveFlag
- * @property boolean $prePaymentFlag
- * @property string $invoicePreSuffix
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\SystemDepartmentReference $department
- * @property boolean $restrictLocationFlag
- * @property boolean $restrictDepartmentFlag
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\SLAReference $sla
- * @property string $applicationUnits
- * @property float $applicationLimit
- * @property string $applicationCycle
- * @property boolean $applicationUnlimitedFlag
- * @property boolean $oneTimeFlag
- * @property boolean $coverAgreementTimeFlag
- * @property boolean $coverAgreementProductFlag
- * @property boolean $coverAgreementExpenseFlag
- * @property boolean $coverSalesTaxFlag
- * @property boolean $carryOverUnusedFlag
- * @property boolean $allowOverrunsFlag
- * @property integer $expiredDays
- * @property integer $limit
- * @property boolean $expireWhenZero
- * @property boolean $chargeToFirmFlag
- * @property string $employeeCompRate
- * @property string $employeeCompNotExceed
- * @property float $compHourlyRate
- * @property float $compLimitAmount
  * @property Spinen\ConnectWise\Models\v2019_1\Finance\BillingCycleReference $billingCycle
- * @property boolean $billOneTimeFlag
  * @property Spinen\ConnectWise\Models\v2019_1\Finance\BillingTermsReference $billingTerms
- * @property string $invoicingCycle
- * @property float $billAmount
- * @property boolean $taxableFlag
- * @property boolean $restrictDownPaymentFlag
- * @property string $invoiceDescription
- * @property boolean $topCommentFlag
- * @property boolean $bottomCommentFlag
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\EmailTemplateReference $emailTemplate
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference $invoiceTemplate
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\ProjectTypeReference $projectType
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\SLAReference $sla
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\SystemDepartmentReference $department
+ * @property Spinen\ConnectWise\Models\v2019_1\Finance\SystemLocationReference $location
  * @property Spinen\ConnectWise\Models\v2019_1\Finance\WorkRoleReference $workRole
  * @property Spinen\ConnectWise\Models\v2019_1\Finance\WorkTypeReference $workType
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\ProjectTypeReference $projectType
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference $invoiceTemplate
- * @property string $billTime
- * @property string $billExpenses
- * @property string $billProducts
- * @property boolean $billableTimeInvoiceFlag
+ * @property array $exclusionWorkRoleIds
+ * @property array $exclusionWorkTypeIds
+ * @property boolean $addAllWorkRoleExclusions
+ * @property boolean $addAllWorkTypeExclusions
+ * @property boolean $allowOverrunsFlag
+ * @property boolean $applicationUnlimitedFlag
+ * @property boolean $autoInvoiceFlag
+ * @property boolean $billOneTimeFlag
  * @property boolean $billableExpenseInvoiceFlag
  * @property boolean $billableProductInvoiceFlag
+ * @property boolean $billableTimeInvoiceFlag
+ * @property boolean $bottomCommentFlag
+ * @property boolean $carryOverUnusedFlag
+ * @property boolean $chargeToFirmFlag
  * @property boolean $copyWorkRolesFlag
  * @property boolean $copyWorkTypesFlag
- * @property array $exclusionWorkRoleIds
- * @property boolean $addAllWorkRoleExclusions
- * @property boolean $removeAllWorkRoleExclusions
- * @property array $exclusionWorkTypeIds
- * @property boolean $addAllWorkTypeExclusions
- * @property boolean $removeAllWorkTypeExclusions
- * @property string $integrationXRef
+ * @property boolean $coverAgreementExpenseFlag
+ * @property boolean $coverAgreementProductFlag
+ * @property boolean $coverAgreementTimeFlag
+ * @property boolean $coverSalesTaxFlag
+ * @property boolean $defaultFlag
+ * @property boolean $expireWhenZero
+ * @property boolean $inactiveFlag
+ * @property boolean $oneTimeFlag
+ * @property boolean $prePaymentFlag
  * @property boolean $prorateFlag
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\EmailTemplateReference $emailTemplate
- * @property boolean $autoInvoiceFlag
- * @property Spinen\ConnectWise\Models\v2019_1\Finance\Metadata $_info
+ * @property boolean $removeAllWorkRoleExclusions
+ * @property boolean $removeAllWorkTypeExclusions
+ * @property boolean $restrictDepartmentFlag
+ * @property boolean $restrictDownPaymentFlag
+ * @property boolean $restrictLocationFlag
+ * @property boolean $taxableFlag
+ * @property boolean $topCommentFlag
+ * @property float $applicationLimit
+ * @property float $billAmount
+ * @property float $compHourlyRate
+ * @property float $compLimitAmount
+ * @property integer $expiredDays
+ * @property integer $id
+ * @property integer $limit
+ * @property string $applicationCycle
+ * @property string $applicationUnits
+ * @property string $billExpenses
+ * @property string $billProducts
+ * @property string $billTime
+ * @property string $employeeCompNotExceed
+ * @property string $employeeCompRate
+ * @property string $integrationXRef
+ * @property string $invoiceDescription
+ * @property string $invoicePreSuffix
+ * @property string $invoicingCycle
+ * @property string $name
+ * @property string $prefixSuffixOption
  */
 class AgreementType extends Model
 {
@@ -82,69 +82,69 @@ class AgreementType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'prefixSuffixOption' => 'string',
-        'defaultFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
-        'prePaymentFlag' => 'boolean',
-        'invoicePreSuffix' => 'string',
-        'location' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SystemLocationReference',
-        'department' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SystemDepartmentReference',
-        'restrictLocationFlag' => 'boolean',
-        'restrictDepartmentFlag' => 'boolean',
-        'sla' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SLAReference',
-        'applicationUnits' => 'string',
-        'applicationLimit' => 'float',
-        'applicationCycle' => 'string',
-        'applicationUnlimitedFlag' => 'boolean',
-        'oneTimeFlag' => 'boolean',
-        'coverAgreementTimeFlag' => 'boolean',
-        'coverAgreementProductFlag' => 'boolean',
-        'coverAgreementExpenseFlag' => 'boolean',
-        'coverSalesTaxFlag' => 'boolean',
-        'carryOverUnusedFlag' => 'boolean',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
+        'addAllWorkRoleExclusions' => 'boolean',
+        'addAllWorkTypeExclusions' => 'boolean',
         'allowOverrunsFlag' => 'boolean',
-        'expiredDays' => 'integer',
-        'limit' => 'integer',
-        'expireWhenZero' => 'boolean',
-        'chargeToFirmFlag' => 'boolean',
-        'employeeCompRate' => 'string',
-        'employeeCompNotExceed' => 'string',
-        'compHourlyRate' => 'float',
-        'compLimitAmount' => 'float',
-        'billingCycle' => 'Spinen\ConnectWise\Models\v2019_1\Finance\BillingCycleReference',
-        'billOneTimeFlag' => 'boolean',
-        'billingTerms' => 'Spinen\ConnectWise\Models\v2019_1\Finance\BillingTermsReference',
-        'invoicingCycle' => 'string',
+        'applicationCycle' => 'string',
+        'applicationLimit' => 'float',
+        'applicationUnits' => 'string',
+        'applicationUnlimitedFlag' => 'boolean',
+        'autoInvoiceFlag' => 'boolean',
         'billAmount' => 'float',
-        'taxableFlag' => 'boolean',
-        'restrictDownPaymentFlag' => 'boolean',
-        'invoiceDescription' => 'string',
-        'topCommentFlag' => 'boolean',
-        'bottomCommentFlag' => 'boolean',
-        'workRole' => 'Spinen\ConnectWise\Models\v2019_1\Finance\WorkRoleReference',
-        'workType' => 'Spinen\ConnectWise\Models\v2019_1\Finance\WorkTypeReference',
-        'projectType' => 'Spinen\ConnectWise\Models\v2019_1\Finance\ProjectTypeReference',
-        'invoiceTemplate' => 'Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference',
-        'billTime' => 'string',
         'billExpenses' => 'string',
+        'billOneTimeFlag' => 'boolean',
         'billProducts' => 'string',
-        'billableTimeInvoiceFlag' => 'boolean',
+        'billTime' => 'string',
         'billableExpenseInvoiceFlag' => 'boolean',
         'billableProductInvoiceFlag' => 'boolean',
+        'billableTimeInvoiceFlag' => 'boolean',
+        'billingCycle' => 'Spinen\ConnectWise\Models\v2019_1\Finance\BillingCycleReference',
+        'billingTerms' => 'Spinen\ConnectWise\Models\v2019_1\Finance\BillingTermsReference',
+        'bottomCommentFlag' => 'boolean',
+        'carryOverUnusedFlag' => 'boolean',
+        'chargeToFirmFlag' => 'boolean',
+        'compHourlyRate' => 'float',
+        'compLimitAmount' => 'float',
         'copyWorkRolesFlag' => 'boolean',
         'copyWorkTypesFlag' => 'boolean',
-        'exclusionWorkRoleIds' => 'array',
-        'addAllWorkRoleExclusions' => 'boolean',
-        'removeAllWorkRoleExclusions' => 'boolean',
-        'exclusionWorkTypeIds' => 'array',
-        'addAllWorkTypeExclusions' => 'boolean',
-        'removeAllWorkTypeExclusions' => 'boolean',
-        'integrationXRef' => 'string',
-        'prorateFlag' => 'boolean',
+        'coverAgreementExpenseFlag' => 'boolean',
+        'coverAgreementProductFlag' => 'boolean',
+        'coverAgreementTimeFlag' => 'boolean',
+        'coverSalesTaxFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'department' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SystemDepartmentReference',
         'emailTemplate' => 'Spinen\ConnectWise\Models\v2019_1\Finance\EmailTemplateReference',
-        'autoInvoiceFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Finance\Metadata',
+        'employeeCompNotExceed' => 'string',
+        'employeeCompRate' => 'string',
+        'exclusionWorkRoleIds' => 'array',
+        'exclusionWorkTypeIds' => 'array',
+        'expireWhenZero' => 'boolean',
+        'expiredDays' => 'integer',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'integrationXRef' => 'string',
+        'invoiceDescription' => 'string',
+        'invoicePreSuffix' => 'string',
+        'invoiceTemplate' => 'Spinen\ConnectWise\Models\v2019_1\Finance\InvoiceTemplateReference',
+        'invoicingCycle' => 'string',
+        'limit' => 'integer',
+        'location' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SystemLocationReference',
+        'name' => 'string',
+        'oneTimeFlag' => 'boolean',
+        'prePaymentFlag' => 'boolean',
+        'prefixSuffixOption' => 'string',
+        'projectType' => 'Spinen\ConnectWise\Models\v2019_1\Finance\ProjectTypeReference',
+        'prorateFlag' => 'boolean',
+        'removeAllWorkRoleExclusions' => 'boolean',
+        'removeAllWorkTypeExclusions' => 'boolean',
+        'restrictDepartmentFlag' => 'boolean',
+        'restrictDownPaymentFlag' => 'boolean',
+        'restrictLocationFlag' => 'boolean',
+        'sla' => 'Spinen\ConnectWise\Models\v2019_1\Finance\SLAReference',
+        'taxableFlag' => 'boolean',
+        'topCommentFlag' => 'boolean',
+        'workRole' => 'Spinen\ConnectWise\Models\v2019_1\Finance\WorkRoleReference',
+        'workType' => 'Spinen\ConnectWise\Models\v2019_1\Finance\WorkTypeReference',
     ];
 }

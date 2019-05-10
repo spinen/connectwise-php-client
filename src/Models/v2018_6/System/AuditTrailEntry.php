@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AuditTrailEntry
  *
- * @property string $text
- * @property string $enteredDate
- * @property string $enteredBy
- * @property string $auditType
- * @property string $auditSubType
  * @property string $auditSource
+ * @property string $auditSubType
+ * @property string $auditType
+ * @property string $enteredBy
+ * @property string $enteredDate
+ * @property string $text
  */
 class AuditTrailEntry extends Model
 {
@@ -24,11 +24,11 @@ class AuditTrailEntry extends Model
      * @var array
      */
     protected $casts = [
-        'text' => 'string',
-        'enteredDate' => 'string',
-        'enteredBy' => 'string',
-        'auditType' => 'string',
-        'auditSubType' => 'string',
         'auditSource' => 'string',
+        'auditSubType' => 'string',
+        'auditType' => 'string',
+        'enteredBy' => 'string',
+        'enteredDate' => 'string',
+        'text' => 'string',
     ];
 }

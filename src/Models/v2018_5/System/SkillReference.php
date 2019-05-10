@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SkillReference
  *
+ * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
  */
 class SkillReference extends Model
 {
@@ -21,8 +21,8 @@ class SkillReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
         'id' => 'integer',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
     ];
 }

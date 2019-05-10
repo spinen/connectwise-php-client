@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for EndpointRequest
  *
- * @property string $id
+ * @property string $body
  * @property string $contentType
+ * @property string $id
  * @property string $method
  * @property string $relativeUrl
- * @property string $body
  */
 class EndpointRequest extends Model
 {
@@ -23,10 +23,10 @@ class EndpointRequest extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'string',
+        'body' => 'string',
         'contentType' => 'string',
+        'id' => 'string',
         'method' => 'string',
         'relativeUrl' => 'string',
-        'body' => 'string',
     ];
 }

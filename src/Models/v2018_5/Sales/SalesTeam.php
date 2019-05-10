@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SalesTeam
  *
- * @property integer $id
- * @property string $salesTeamIdentifier
- * @property string $salesTeamDescription
+ * @property Spinen\ConnectWise\Models\v2018_5\Sales\Metadata $_info
  * @property Spinen\ConnectWise\Models\v2018_5\Sales\SystemLocationReference $salesTeamLocation
  * @property boolean $inactiveFlag
- * @property Spinen\ConnectWise\Models\v2018_5\Sales\Metadata $_info
+ * @property integer $id
+ * @property string $salesTeamDescription
+ * @property string $salesTeamIdentifier
  */
 class SalesTeam extends Model
 {
@@ -24,11 +24,11 @@ class SalesTeam extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'salesTeamIdentifier' => 'string',
-        'salesTeamDescription' => 'string',
-        'salesTeamLocation' => 'Spinen\ConnectWise\Models\v2018_5\Sales\SystemLocationReference',
-        'inactiveFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Sales\Metadata',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'salesTeamDescription' => 'string',
+        'salesTeamIdentifier' => 'string',
+        'salesTeamLocation' => 'Spinen\ConnectWise\Models\v2018_5\Sales\SystemLocationReference',
     ];
 }

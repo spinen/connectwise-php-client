@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Based on CompanyEntityType Report
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
  */
 class EntityTypeReference extends Model
 {
@@ -21,8 +21,8 @@ class EntityTypeReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
         'id' => 'integer',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
     ];
 }

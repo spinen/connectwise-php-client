@@ -9,20 +9,20 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SsoConfiguration
  *
- * @property integer $id
- * @property string $name
- * @property string $ssoType
- * @property boolean $inactiveFlag
- * @property string $samlEntityId
- * @property string $samlSignInUrl
- * @property string $samlIdpCertificate
- * @property string $samlCertificateName
- * @property string $samlCertificateIssuedTo
- * @property string $samlCertificateThumbprint
  * @property Carbon\Carbon $samlCertificateValidFrom
  * @property Carbon\Carbon $samlCertificateValidTo
- * @property array $locationIds
  * @property Spinen\ConnectWise\Models\v2018_5\System\Metadata $_info
+ * @property array $locationIds
+ * @property boolean $inactiveFlag
+ * @property integer $id
+ * @property string $name
+ * @property string $samlCertificateIssuedTo
+ * @property string $samlCertificateName
+ * @property string $samlCertificateThumbprint
+ * @property string $samlEntityId
+ * @property string $samlIdpCertificate
+ * @property string $samlSignInUrl
+ * @property string $ssoType
  */
 class SsoConfiguration extends Model
 {
@@ -32,19 +32,19 @@ class SsoConfiguration extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
         'id' => 'integer',
-        'name' => 'string',
-        'ssoType' => 'string',
         'inactiveFlag' => 'boolean',
-        'samlEntityId' => 'string',
-        'samlSignInUrl' => 'string',
-        'samlIdpCertificate' => 'string',
-        'samlCertificateName' => 'string',
+        'locationIds' => 'array',
+        'name' => 'string',
         'samlCertificateIssuedTo' => 'string',
+        'samlCertificateName' => 'string',
         'samlCertificateThumbprint' => 'string',
         'samlCertificateValidFrom' => 'Carbon\Carbon',
         'samlCertificateValidTo' => 'Carbon\Carbon',
-        'locationIds' => 'array',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_5\System\Metadata',
+        'samlEntityId' => 'string',
+        'samlIdpCertificate' => 'string',
+        'samlSignInUrl' => 'string',
+        'ssoType' => 'string',
     ];
 }

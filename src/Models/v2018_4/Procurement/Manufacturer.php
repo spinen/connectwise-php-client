@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Manufacturer
  *
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
+ * @property boolean $inactiveFlag
  * @property integer $id
  * @property string $name
- * @property boolean $inactiveFlag
- * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
  */
 class Manufacturer extends Model
 {
@@ -22,9 +22,9 @@ class Manufacturer extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'inactiveFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
     ];
 }

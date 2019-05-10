@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ServiceSurveyQuestion
  *
- * @property integer $id
- * @property integer $sequenceNumber
- * @property string $type
- * @property string $question
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
  * @property array $options
  * @property boolean $includeFlag
  * @property boolean $requiredFlag
+ * @property integer $id
  * @property integer $noAnswerPoints
+ * @property integer $sequenceNumber
  * @property integer $surveyId
- * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
+ * @property string $question
+ * @property string $type
  */
 class ServiceSurveyQuestion extends Model
 {
@@ -28,15 +28,15 @@ class ServiceSurveyQuestion extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'sequenceNumber' => 'integer',
-        'type' => 'string',
-        'question' => 'string',
-        'options' => 'array',
-        'includeFlag' => 'boolean',
-        'requiredFlag' => 'boolean',
-        'noAnswerPoints' => 'integer',
-        'surveyId' => 'integer',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
+        'id' => 'integer',
+        'includeFlag' => 'boolean',
+        'noAnswerPoints' => 'integer',
+        'options' => 'array',
+        'question' => 'string',
+        'requiredFlag' => 'boolean',
+        'sequenceNumber' => 'integer',
+        'surveyId' => 'integer',
+        'type' => 'string',
     ];
 }

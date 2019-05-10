@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ServiceTemplateReference
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
  * @property integer $id
  * @property string $name
  * @property string $summary
- * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
  */
 class ServiceTemplateReference extends Model
 {
@@ -22,9 +22,9 @@ class ServiceTemplateReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
         'id' => 'integer',
         'name' => 'string',
         'summary' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
     ];
 }

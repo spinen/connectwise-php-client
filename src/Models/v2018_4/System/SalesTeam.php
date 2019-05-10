@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * A list of Sales Teams to which the member is assigned
  *
- * @property integer $count
  * @property Spinen\ConnectWise\Models\v2018_4\System\MemberReference $reAssignToMember
+ * @property integer $count
  */
 class SalesTeam extends Model
 {

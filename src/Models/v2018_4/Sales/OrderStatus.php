@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for OrderStatus
  *
- * @property integer $id
- * @property string $name
+ * @property Spinen\ConnectWise\Models\v2018_4\Sales\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_4\Sales\OrderStatusEmailTemplateReference $emailTemplate
+ * @property boolean $closedFlag
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
+ * @property integer $id
  * @property integer $sortOrder
- * @property boolean $closedFlag
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\OrderStatusEmailTemplateReference $emailTemplate
- * @property Spinen\ConnectWise\Models\v2018_4\Sales\Metadata $_info
+ * @property string $name
  */
 class OrderStatus extends Model
 {
@@ -26,13 +26,13 @@ class OrderStatus extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'defaultFlag' => 'boolean',
-        'inactiveFlag' => 'boolean',
-        'sortOrder' => 'integer',
-        'closedFlag' => 'boolean',
-        'emailTemplate' => 'Spinen\ConnectWise\Models\v2018_4\Sales\OrderStatusEmailTemplateReference',
         '_info' => 'Spinen\ConnectWise\Models\v2018_4\Sales\Metadata',
+        'closedFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'emailTemplate' => 'Spinen\ConnectWise\Models\v2018_4\Sales\OrderStatusEmailTemplateReference',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
+        'sortOrder' => 'integer',
     ];
 }

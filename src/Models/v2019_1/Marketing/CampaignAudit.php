@@ -9,15 +9,15 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CampaignAudit
  *
- * @property integer $id
- * @property integer $emailsSent
- * @property integer $emailsUnsent
- * @property integer $documentsCreated
- * @property string $emailSubject
  * @property Spinen\ConnectWise\Models\v2019_1\Marketing\GroupReference $group
  * @property integer $campaignId
+ * @property integer $documentsCreated
+ * @property integer $emailsSent
+ * @property integer $emailsUnsent
+ * @property integer $id
  * @property string $createdBy
  * @property string $dateCreated
+ * @property string $emailSubject
  */
 class CampaignAudit extends Model
 {
@@ -27,14 +27,14 @@ class CampaignAudit extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'emailsSent' => 'integer',
-        'emailsUnsent' => 'integer',
-        'documentsCreated' => 'integer',
-        'emailSubject' => 'string',
-        'group' => 'Spinen\ConnectWise\Models\v2019_1\Marketing\GroupReference',
         'campaignId' => 'integer',
         'createdBy' => 'string',
         'dateCreated' => 'string',
+        'documentsCreated' => 'integer',
+        'emailSubject' => 'string',
+        'emailsSent' => 'integer',
+        'emailsUnsent' => 'integer',
+        'group' => 'Spinen\ConnectWise\Models\v2019_1\Marketing\GroupReference',
+        'id' => 'integer',
     ];
 }

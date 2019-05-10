@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Code
  *
- * @property integer $id
- * @property string $name
- * @property string $description
- * @property integer $boardId
- * @property integer $locationId
- * @property integer $businessUnitId
  * @property Spinen\ConnectWise\Models\v2019_3\Service\Metadata $_info
+ * @property integer $boardId
+ * @property integer $businessUnitId
+ * @property integer $id
+ * @property integer $locationId
+ * @property string $description
+ * @property string $name
  */
 class Code extends Model
 {
@@ -25,12 +25,12 @@ class Code extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'description' => 'string',
-        'boardId' => 'integer',
-        'locationId' => 'integer',
-        'businessUnitId' => 'integer',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Service\Metadata',
+        'boardId' => 'integer',
+        'businessUnitId' => 'integer',
+        'description' => 'string',
+        'id' => 'integer',
+        'locationId' => 'integer',
+        'name' => 'string',
     ];
 }

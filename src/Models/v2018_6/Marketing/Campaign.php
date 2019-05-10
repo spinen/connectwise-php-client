@@ -9,32 +9,32 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Campaign
  *
- * @property integer $id
- * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_6\Marketing\CampaignTypeReference $type
- * @property Spinen\ConnectWise\Models\v2018_6\Marketing\CampaignSubTypeReference $subType
- * @property Spinen\ConnectWise\Models\v2018_6\Marketing\CampaignStatusReference $status
- * @property Carbon\Carbon $startDate
  * @property Carbon\Carbon $endDate
- * @property integer $locationId
- * @property Spinen\ConnectWise\Models\v2018_6\Marketing\MemberReference $member
- * @property boolean $inactive
- * @property integer $inactiveDaysAfterEnd
- * @property string $notes
+ * @property Carbon\Carbon $startDate
+ * @property Spinen\ConnectWise\Models\v2018_6\Marketing\CampaignStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2018_6\Marketing\CampaignSubTypeReference $subType
+ * @property Spinen\ConnectWise\Models\v2018_6\Marketing\CampaignTypeReference $type
  * @property Spinen\ConnectWise\Models\v2018_6\Marketing\GroupReference $defaultGroup
- * @property integer $marketingManagerDefaultTrackId
- * @property integer $opportunityDefaultTrackId
- * @property integer $impressions
- * @property float $budgetRevenue
- * @property float $budgetCost
+ * @property Spinen\ConnectWise\Models\v2018_6\Marketing\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2018_6\Marketing\Metadata $_info
+ * @property boolean $inactive
  * @property float $actualCost
- * @property float $budgetGrossMargin
- * @property float $budgetROI
- * @property float $actualRevenue
  * @property float $actualGrossMargin
  * @property float $actualROI
+ * @property float $actualRevenue
+ * @property float $budgetCost
+ * @property float $budgetGrossMargin
+ * @property float $budgetROI
+ * @property float $budgetRevenue
  * @property integer $emailsSent
- * @property Spinen\ConnectWise\Models\v2018_6\Marketing\Metadata $_info
+ * @property integer $id
+ * @property integer $impressions
+ * @property integer $inactiveDaysAfterEnd
+ * @property integer $locationId
+ * @property integer $marketingManagerDefaultTrackId
+ * @property integer $opportunityDefaultTrackId
+ * @property string $name
+ * @property string $notes
  */
 class Campaign extends Model
 {
@@ -44,31 +44,31 @@ class Campaign extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'type' => 'Spinen\ConnectWise\Models\v2018_6\Marketing\CampaignTypeReference',
-        'subType' => 'Spinen\ConnectWise\Models\v2018_6\Marketing\CampaignSubTypeReference',
-        'status' => 'Spinen\ConnectWise\Models\v2018_6\Marketing\CampaignStatusReference',
-        'startDate' => 'Carbon\Carbon',
-        'endDate' => 'Carbon\Carbon',
-        'locationId' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2018_6\Marketing\MemberReference',
-        'inactive' => 'boolean',
-        'inactiveDaysAfterEnd' => 'integer',
-        'notes' => 'string',
-        'defaultGroup' => 'Spinen\ConnectWise\Models\v2018_6\Marketing\GroupReference',
-        'marketingManagerDefaultTrackId' => 'integer',
-        'opportunityDefaultTrackId' => 'integer',
-        'impressions' => 'integer',
-        'budgetRevenue' => 'float',
-        'budgetCost' => 'float',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Marketing\Metadata',
         'actualCost' => 'float',
-        'budgetGrossMargin' => 'float',
-        'budgetROI' => 'float',
-        'actualRevenue' => 'float',
         'actualGrossMargin' => 'float',
         'actualROI' => 'float',
+        'actualRevenue' => 'float',
+        'budgetCost' => 'float',
+        'budgetGrossMargin' => 'float',
+        'budgetROI' => 'float',
+        'budgetRevenue' => 'float',
+        'defaultGroup' => 'Spinen\ConnectWise\Models\v2018_6\Marketing\GroupReference',
         'emailsSent' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Marketing\Metadata',
+        'endDate' => 'Carbon\Carbon',
+        'id' => 'integer',
+        'impressions' => 'integer',
+        'inactive' => 'boolean',
+        'inactiveDaysAfterEnd' => 'integer',
+        'locationId' => 'integer',
+        'marketingManagerDefaultTrackId' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2018_6\Marketing\MemberReference',
+        'name' => 'string',
+        'notes' => 'string',
+        'opportunityDefaultTrackId' => 'integer',
+        'startDate' => 'Carbon\Carbon',
+        'status' => 'Spinen\ConnectWise\Models\v2018_6\Marketing\CampaignStatusReference',
+        'subType' => 'Spinen\ConnectWise\Models\v2018_6\Marketing\CampaignSubTypeReference',
+        'type' => 'Spinen\ConnectWise\Models\v2018_6\Marketing\CampaignTypeReference',
     ];
 }

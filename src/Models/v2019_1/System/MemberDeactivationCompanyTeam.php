@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * A list of customers for which the member holds a team role
  *
+ * @property Spinen\ConnectWise\Models\v2019_1\System\ContactReference $reAssignToContact
+ * @property Spinen\ConnectWise\Models\v2019_1\System\MemberReference $reAssignToMember
  * @property integer $count
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_1\System\MemberReference $reAssignToMember
- * @property Spinen\ConnectWise\Models\v2019_1\System\ContactReference $reAssignToContact
  */
 class MemberDeactivationCompanyTeam extends Model
 {
@@ -26,7 +26,7 @@ class MemberDeactivationCompanyTeam extends Model
         'count' => 'integer',
         'id' => 'integer',
         'name' => 'string',
-        'reAssignToMember' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberReference',
         'reAssignToContact' => 'Spinen\ConnectWise\Models\v2019_1\System\ContactReference',
+        'reAssignToMember' => 'Spinen\ConnectWise\Models\v2019_1\System\MemberReference',
     ];
 }

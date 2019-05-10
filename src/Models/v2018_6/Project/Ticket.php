@@ -9,80 +9,80 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Ticket
  *
- * @property integer $id
- * @property string $summary
- * @property boolean $isIssueFlag
+ * @property Carbon\Carbon $estimatedStartDate
+ * @property Carbon\Carbon $requiredDate
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\AgreementReference $agreement
  * @property Spinen\ConnectWise\Models\v2018_6\Project\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2018_6\Project\ServiceStatusReference $status
- * @property Spinen\ConnectWise\Models\v2018_6\Project\ProjectReference $project
- * @property Spinen\ConnectWise\Models\v2018_6\Project\ProjectPhaseReference $phase
- * @property string $wbsCode
  * @property Spinen\ConnectWise\Models\v2018_6\Project\CompanyReference $company
- * @property Spinen\ConnectWise\Models\v2018_6\Project\SiteReference $site
- * @property string $siteName
- * @property string $addressLine1
- * @property string $addressLine2
- * @property string $city
- * @property string $stateIdentifier
- * @property string $zip
- * @property Spinen\ConnectWise\Models\v2018_6\Project\CountryReference $country
  * @property Spinen\ConnectWise\Models\v2018_6\Project\ContactReference $contact
- * @property string $contactName
- * @property string $contactPhoneNumber
- * @property string $contactPhoneExtension
- * @property string $contactEmailAddress
- * @property Spinen\ConnectWise\Models\v2018_6\Project\ServiceTypeReference $type
- * @property Spinen\ConnectWise\Models\v2018_6\Project\ServiceSubTypeReference $subType
- * @property Spinen\ConnectWise\Models\v2018_6\Project\ServiceItemReference $item
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\CountryReference $country
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\CurrencyReference $currency
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\Guid $mobileGuid
  * @property Spinen\ConnectWise\Models\v2018_6\Project\MemberReference $owner
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\OpportunityReference $opportunity
  * @property Spinen\ConnectWise\Models\v2018_6\Project\PriorityReference $priority
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\ProjectPhaseReference $phase
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\ProjectReference $project
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\ServiceItemReference $item
  * @property Spinen\ConnectWise\Models\v2018_6\Project\ServiceLocationReference $serviceLocation
  * @property Spinen\ConnectWise\Models\v2018_6\Project\ServiceSourceReference $source
- * @property Carbon\Carbon $requiredDate
- * @property float $budgetHours
- * @property Spinen\ConnectWise\Models\v2018_6\Project\OpportunityReference $opportunity
- * @property Spinen\ConnectWise\Models\v2018_6\Project\AgreementReference $agreement
- * @property integer $knowledgeBaseCategoryId
- * @property integer $knowledgeBaseSubCategoryId
- * @property integer $knowledgeBaseLinkId
- * @property string $knowledgeBaseLinkType
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\ServiceStatusReference $status
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\ServiceSubTypeReference $subType
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\ServiceTypeReference $type
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\SiteReference $site
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\SystemDepartmentReference $department
+ * @property Spinen\ConnectWise\Models\v2018_6\Project\SystemLocationReference $location
+ * @property array $customFields
  * @property boolean $allowAllClientsPortalView
- * @property boolean $customerUpdatedFlag
+ * @property boolean $approved
+ * @property boolean $automaticEmailCcFlag
  * @property boolean $automaticEmailContactFlag
  * @property boolean $automaticEmailResourceFlag
- * @property boolean $automaticEmailCcFlag
- * @property string $automaticEmailCc
- * @property string $closedDate
- * @property string $closedBy
  * @property boolean $closedFlag
+ * @property boolean $customerUpdatedFlag
+ * @property boolean $isIssueFlag
+ * @property boolean $lagNonworkingDaysFlag
+ * @property boolean $predecessorClosedFlag
+ * @property boolean $processNotifications
+ * @property boolean $skipCallback
  * @property float $actualHours
- * @property boolean $approved
- * @property string $subBillingMethod
+ * @property float $budgetHours
  * @property float $subBillingAmount
- * @property string $subDateAccepted
- * @property string $resources
- * @property string $billTime
+ * @property integer $duration
+ * @property integer $id
+ * @property integer $knowledgeBaseCategoryId
+ * @property integer $knowledgeBaseLinkId
+ * @property integer $knowledgeBaseSubCategoryId
+ * @property integer $lagDays
+ * @property integer $predecessorId
+ * @property string $addressLine1
+ * @property string $addressLine2
+ * @property string $automaticEmailCc
  * @property string $billExpenses
  * @property string $billProducts
- * @property string $predecessorType
- * @property integer $predecessorId
- * @property boolean $predecessorClosedFlag
- * @property integer $lagDays
- * @property boolean $lagNonworkingDaysFlag
- * @property Carbon\Carbon $estimatedStartDate
- * @property Spinen\ConnectWise\Models\v2018_6\Project\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2018_6\Project\SystemDepartmentReference $department
- * @property integer $duration
- * @property Spinen\ConnectWise\Models\v2018_6\Project\Guid $mobileGuid
- * @property Spinen\ConnectWise\Models\v2018_6\Project\CurrencyReference $currency
- * @property Spinen\ConnectWise\Models\v2018_6\Project\Metadata $_info
+ * @property string $billTime
+ * @property string $city
+ * @property string $closedBy
+ * @property string $closedDate
+ * @property string $contactEmailAddress
+ * @property string $contactEmailLookup
+ * @property string $contactName
+ * @property string $contactPhoneExtension
+ * @property string $contactPhoneNumber
  * @property string $initialDescription
  * @property string $initialInternalAnalysis
  * @property string $initialResolution
- * @property string $contactEmailLookup
- * @property boolean $processNotifications
- * @property boolean $skipCallback
- * @property array $customFields
+ * @property string $knowledgeBaseLinkType
+ * @property string $predecessorType
+ * @property string $resources
+ * @property string $siteName
+ * @property string $stateIdentifier
+ * @property string $subBillingMethod
+ * @property string $subDateAccepted
+ * @property string $summary
+ * @property string $wbsCode
+ * @property string $zip
  */
 class Ticket extends Model
 {
@@ -92,79 +92,79 @@ class Ticket extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'summary' => 'string',
-        'isIssueFlag' => 'boolean',
-        'board' => 'Spinen\ConnectWise\Models\v2018_6\Project\BoardReference',
-        'status' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceStatusReference',
-        'project' => 'Spinen\ConnectWise\Models\v2018_6\Project\ProjectReference',
-        'phase' => 'Spinen\ConnectWise\Models\v2018_6\Project\ProjectPhaseReference',
-        'wbsCode' => 'string',
-        'company' => 'Spinen\ConnectWise\Models\v2018_6\Project\CompanyReference',
-        'site' => 'Spinen\ConnectWise\Models\v2018_6\Project\SiteReference',
-        'siteName' => 'string',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Project\Metadata',
+        'actualHours' => 'float',
         'addressLine1' => 'string',
         'addressLine2' => 'string',
-        'city' => 'string',
-        'stateIdentifier' => 'string',
-        'zip' => 'string',
-        'country' => 'Spinen\ConnectWise\Models\v2018_6\Project\CountryReference',
-        'contact' => 'Spinen\ConnectWise\Models\v2018_6\Project\ContactReference',
-        'contactName' => 'string',
-        'contactPhoneNumber' => 'string',
-        'contactPhoneExtension' => 'string',
-        'contactEmailAddress' => 'string',
-        'type' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceTypeReference',
-        'subType' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceSubTypeReference',
-        'item' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceItemReference',
-        'owner' => 'Spinen\ConnectWise\Models\v2018_6\Project\MemberReference',
-        'priority' => 'Spinen\ConnectWise\Models\v2018_6\Project\PriorityReference',
-        'serviceLocation' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceLocationReference',
-        'source' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceSourceReference',
-        'requiredDate' => 'Carbon\Carbon',
-        'budgetHours' => 'float',
-        'opportunity' => 'Spinen\ConnectWise\Models\v2018_6\Project\OpportunityReference',
         'agreement' => 'Spinen\ConnectWise\Models\v2018_6\Project\AgreementReference',
-        'knowledgeBaseCategoryId' => 'integer',
-        'knowledgeBaseSubCategoryId' => 'integer',
-        'knowledgeBaseLinkId' => 'integer',
-        'knowledgeBaseLinkType' => 'string',
         'allowAllClientsPortalView' => 'boolean',
-        'customerUpdatedFlag' => 'boolean',
+        'approved' => 'boolean',
+        'automaticEmailCc' => 'string',
+        'automaticEmailCcFlag' => 'boolean',
         'automaticEmailContactFlag' => 'boolean',
         'automaticEmailResourceFlag' => 'boolean',
-        'automaticEmailCcFlag' => 'boolean',
-        'automaticEmailCc' => 'string',
-        'closedDate' => 'string',
-        'closedBy' => 'string',
-        'closedFlag' => 'boolean',
-        'actualHours' => 'float',
-        'approved' => 'boolean',
-        'subBillingMethod' => 'string',
-        'subBillingAmount' => 'float',
-        'subDateAccepted' => 'string',
-        'resources' => 'string',
-        'billTime' => 'string',
         'billExpenses' => 'string',
         'billProducts' => 'string',
-        'predecessorType' => 'string',
-        'predecessorId' => 'integer',
-        'predecessorClosedFlag' => 'boolean',
-        'lagDays' => 'integer',
-        'lagNonworkingDaysFlag' => 'boolean',
-        'estimatedStartDate' => 'Carbon\Carbon',
-        'location' => 'Spinen\ConnectWise\Models\v2018_6\Project\SystemLocationReference',
+        'billTime' => 'string',
+        'board' => 'Spinen\ConnectWise\Models\v2018_6\Project\BoardReference',
+        'budgetHours' => 'float',
+        'city' => 'string',
+        'closedBy' => 'string',
+        'closedDate' => 'string',
+        'closedFlag' => 'boolean',
+        'company' => 'Spinen\ConnectWise\Models\v2018_6\Project\CompanyReference',
+        'contact' => 'Spinen\ConnectWise\Models\v2018_6\Project\ContactReference',
+        'contactEmailAddress' => 'string',
+        'contactEmailLookup' => 'string',
+        'contactName' => 'string',
+        'contactPhoneExtension' => 'string',
+        'contactPhoneNumber' => 'string',
+        'country' => 'Spinen\ConnectWise\Models\v2018_6\Project\CountryReference',
+        'currency' => 'Spinen\ConnectWise\Models\v2018_6\Project\CurrencyReference',
+        'customFields' => 'array',
+        'customerUpdatedFlag' => 'boolean',
         'department' => 'Spinen\ConnectWise\Models\v2018_6\Project\SystemDepartmentReference',
         'duration' => 'integer',
-        'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_6\Project\Guid',
-        'currency' => 'Spinen\ConnectWise\Models\v2018_6\Project\CurrencyReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Project\Metadata',
+        'estimatedStartDate' => 'Carbon\Carbon',
+        'id' => 'integer',
         'initialDescription' => 'string',
         'initialInternalAnalysis' => 'string',
         'initialResolution' => 'string',
-        'contactEmailLookup' => 'string',
+        'isIssueFlag' => 'boolean',
+        'item' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceItemReference',
+        'knowledgeBaseCategoryId' => 'integer',
+        'knowledgeBaseLinkId' => 'integer',
+        'knowledgeBaseLinkType' => 'string',
+        'knowledgeBaseSubCategoryId' => 'integer',
+        'lagDays' => 'integer',
+        'lagNonworkingDaysFlag' => 'boolean',
+        'location' => 'Spinen\ConnectWise\Models\v2018_6\Project\SystemLocationReference',
+        'mobileGuid' => 'Spinen\ConnectWise\Models\v2018_6\Project\Guid',
+        'opportunity' => 'Spinen\ConnectWise\Models\v2018_6\Project\OpportunityReference',
+        'owner' => 'Spinen\ConnectWise\Models\v2018_6\Project\MemberReference',
+        'phase' => 'Spinen\ConnectWise\Models\v2018_6\Project\ProjectPhaseReference',
+        'predecessorClosedFlag' => 'boolean',
+        'predecessorId' => 'integer',
+        'predecessorType' => 'string',
+        'priority' => 'Spinen\ConnectWise\Models\v2018_6\Project\PriorityReference',
         'processNotifications' => 'boolean',
+        'project' => 'Spinen\ConnectWise\Models\v2018_6\Project\ProjectReference',
+        'requiredDate' => 'Carbon\Carbon',
+        'resources' => 'string',
+        'serviceLocation' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceLocationReference',
+        'site' => 'Spinen\ConnectWise\Models\v2018_6\Project\SiteReference',
+        'siteName' => 'string',
         'skipCallback' => 'boolean',
-        'customFields' => 'array',
+        'source' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceSourceReference',
+        'stateIdentifier' => 'string',
+        'status' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceStatusReference',
+        'subBillingAmount' => 'float',
+        'subBillingMethod' => 'string',
+        'subDateAccepted' => 'string',
+        'subType' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceSubTypeReference',
+        'summary' => 'string',
+        'type' => 'Spinen\ConnectWise\Models\v2018_6\Project\ServiceTypeReference',
+        'wbsCode' => 'string',
+        'zip' => 'string',
     ];
 }

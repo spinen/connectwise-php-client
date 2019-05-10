@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ExpenseTaxTypeInfo
  *
+ * @property Spinen\ConnectWise\Models\v2019_1\Expense\Metadata $_info
+ * @property boolean $inactive
  * @property integer $id
  * @property string $name
- * @property boolean $inactive
- * @property Spinen\ConnectWise\Models\v2019_1\Expense\Metadata $_info
  */
 class ExpenseTaxTypeInfo extends Model
 {
@@ -22,9 +22,9 @@ class ExpenseTaxTypeInfo extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'inactive' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\Expense\Metadata',
+        'id' => 'integer',
+        'inactive' => 'boolean',
+        'name' => 'string',
     ];
 }

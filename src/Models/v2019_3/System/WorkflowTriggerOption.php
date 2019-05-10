@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for WorkflowTriggerOption
  *
- * @property string $value
- * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_3\System\UserDefinedFieldReference $customField
  * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_3\System\UserDefinedFieldReference $customField
+ * @property string $name
+ * @property string $value
  */
 class WorkflowTriggerOption extends Model
 {
@@ -22,9 +22,9 @@ class WorkflowTriggerOption extends Model
      * @var array
      */
     protected $casts = [
-        'value' => 'string',
-        'name' => 'string',
-        'customField' => 'Spinen\ConnectWise\Models\v2019_3\System\UserDefinedFieldReference',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
+        'customField' => 'Spinen\ConnectWise\Models\v2019_3\System\UserDefinedFieldReference',
+        'name' => 'string',
+        'value' => 'string',
     ];
 }

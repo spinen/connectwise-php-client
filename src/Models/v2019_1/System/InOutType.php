@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for InOutType
  *
+ * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  * @property integer $id
  * @property string $description
- * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
  */
 class InOutType extends Model
 {
@@ -21,8 +21,8 @@ class InOutType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'description' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
+        'description' => 'string',
+        'id' => 'integer',
     ];
 }

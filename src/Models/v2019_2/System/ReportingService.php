@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ReportingService
  *
- * @property integer $id
- * @property string $reportingUserName
- * @property string $reportingPassword
- * @property string $reportingDomain
- * @property string $reportingUrl
  * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
+ * @property integer $id
+ * @property string $reportingDomain
+ * @property string $reportingPassword
+ * @property string $reportingUrl
+ * @property string $reportingUserName
  */
 class ReportingService extends Model
 {
@@ -24,11 +24,11 @@ class ReportingService extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'reportingUserName' => 'string',
-        'reportingPassword' => 'string',
-        'reportingDomain' => 'string',
-        'reportingUrl' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        'id' => 'integer',
+        'reportingDomain' => 'string',
+        'reportingPassword' => 'string',
+        'reportingUrl' => 'string',
+        'reportingUserName' => 'string',
     ];
 }

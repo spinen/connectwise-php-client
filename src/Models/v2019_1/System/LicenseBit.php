@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for LicenseBit
  *
- * @property string $name
  * @property boolean $activeFlag
+ * @property string $name
  */
 class LicenseBit extends Model
 {
@@ -20,7 +20,7 @@ class LicenseBit extends Model
      * @var array
      */
     protected $casts = [
-        'name' => 'string',
         'activeFlag' => 'boolean',
+        'name' => 'string',
     ];
 }

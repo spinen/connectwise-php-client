@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Priority
  *
- * @property integer $id
- * @property string $name
- * @property string $color
- * @property integer $sortOrder
- * @property boolean $defaultFlag
- * @property string $imageLink
  * @property Spinen\ConnectWise\Models\v2018_6\Service\Metadata $_info
+ * @property boolean $defaultFlag
+ * @property integer $id
+ * @property integer $sortOrder
+ * @property string $color
+ * @property string $imageLink
+ * @property string $name
  */
 class Priority extends Model
 {
@@ -25,12 +25,12 @@ class Priority extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'color' => 'string',
-        'sortOrder' => 'integer',
-        'defaultFlag' => 'boolean',
-        'imageLink' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Service\Metadata',
+        'color' => 'string',
+        'defaultFlag' => 'boolean',
+        'id' => 'integer',
+        'imageLink' => 'string',
+        'name' => 'string',
+        'sortOrder' => 'integer',
     ];
 }

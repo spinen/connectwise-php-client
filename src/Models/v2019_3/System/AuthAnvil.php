@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for AuthAnvil
  *
- * @property integer $id
- * @property string $serverLocationUrl
- * @property integer $siteId
  * @property Spinen\ConnectWise\Models\v2019_3\System\Metadata $_info
+ * @property integer $id
+ * @property integer $siteId
+ * @property string $serverLocationUrl
  */
 class AuthAnvil extends Model
 {
@@ -22,9 +22,9 @@ class AuthAnvil extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
         'id' => 'integer',
         'serverLocationUrl' => 'string',
         'siteId' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\System\Metadata',
     ];
 }

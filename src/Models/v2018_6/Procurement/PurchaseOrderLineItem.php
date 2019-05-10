@@ -9,37 +9,37 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PurchaseOrderLineItem
  *
- * @property integer $id
- * @property boolean $backorderedFlag
- * @property string $canceledBy
- * @property boolean $canceledFlag
- * @property string $canceledReason
- * @property boolean $closedFlag
  * @property Carbon\Carbon $dateCanceled
  * @property Carbon\Carbon $dateCanceledUtc
- * @property string $description
- * @property boolean $displayInternalNotesFlag
  * @property Carbon\Carbon $expectedShipDate
- * @property string $internalNotes
- * @property integer $lineNumber
- * @property string $packingSlip
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\IvItemReference $product
- * @property integer $purchaseOrderId
- * @property float $quantity
- * @property integer $receivedQuantity
- * @property string $serialNumbers
  * @property Carbon\Carbon $shipDate
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\ShipmentMethodReference $shipmentMethod
- * @property float $tax
- * @property string $trackingNumber
- * @property float $unitCost
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\UnitOfMeasureReference $unitOfMeasure
- * @property string $vendorOrderNumber
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\WarehouseReference $warehouse
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\WarehouseBinReference $warehouseBin
- * @property string $receivedStatus
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\IvItemReference $product
  * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\ShipmentMethodReference $shipmentMethod
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\UnitOfMeasureReference $unitOfMeasure
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\WarehouseBinReference $warehouseBin
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\WarehouseReference $warehouse
  * @property array $customFields
+ * @property boolean $backorderedFlag
+ * @property boolean $canceledFlag
+ * @property boolean $closedFlag
+ * @property boolean $displayInternalNotesFlag
+ * @property float $quantity
+ * @property float $tax
+ * @property float $unitCost
+ * @property integer $id
+ * @property integer $lineNumber
+ * @property integer $purchaseOrderId
+ * @property integer $receivedQuantity
+ * @property string $canceledBy
+ * @property string $canceledReason
+ * @property string $description
+ * @property string $internalNotes
+ * @property string $packingSlip
+ * @property string $receivedStatus
+ * @property string $serialNumbers
+ * @property string $trackingNumber
+ * @property string $vendorOrderNumber
  */
 class PurchaseOrderLineItem extends Model
 {
@@ -49,17 +49,19 @@ class PurchaseOrderLineItem extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
         'backorderedFlag' => 'boolean',
         'canceledBy' => 'string',
         'canceledFlag' => 'boolean',
         'canceledReason' => 'string',
         'closedFlag' => 'boolean',
+        'customFields' => 'array',
         'dateCanceled' => 'Carbon\Carbon',
         'dateCanceledUtc' => 'Carbon\Carbon',
         'description' => 'string',
         'displayInternalNotesFlag' => 'boolean',
         'expectedShipDate' => 'Carbon\Carbon',
+        'id' => 'integer',
         'internalNotes' => 'string',
         'lineNumber' => 'integer',
         'packingSlip' => 'string',
@@ -67,6 +69,7 @@ class PurchaseOrderLineItem extends Model
         'purchaseOrderId' => 'integer',
         'quantity' => 'float',
         'receivedQuantity' => 'integer',
+        'receivedStatus' => 'string',
         'serialNumbers' => 'string',
         'shipDate' => 'Carbon\Carbon',
         'shipmentMethod' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\ShipmentMethodReference',
@@ -77,8 +80,5 @@ class PurchaseOrderLineItem extends Model
         'vendorOrderNumber' => 'string',
         'warehouse' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\WarehouseReference',
         'warehouseBin' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\WarehouseBinReference',
-        'receivedStatus' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
-        'customFields' => 'array',
     ];
 }

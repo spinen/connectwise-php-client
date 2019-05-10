@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for RmaStatus
  *
- * @property integer $id
- * @property string $name
- * @property boolean $defaultFlag
- * @property integer $sortOrder
- * @property boolean $closedFlag
- * @property Spinen\ConnectWise\Models\v2019_1\Procurement\RmaStatusEmailTemplateReference $emailTemplate
  * @property Spinen\ConnectWise\Models\v2019_1\Procurement\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_1\Procurement\RmaStatusEmailTemplateReference $emailTemplate
+ * @property boolean $closedFlag
+ * @property boolean $defaultFlag
+ * @property integer $id
+ * @property integer $sortOrder
+ * @property string $name
  */
 class RmaStatus extends Model
 {
@@ -25,12 +25,12 @@ class RmaStatus extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\Metadata',
+        'closedFlag' => 'boolean',
+        'defaultFlag' => 'boolean',
+        'emailTemplate' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\RmaStatusEmailTemplateReference',
         'id' => 'integer',
         'name' => 'string',
-        'defaultFlag' => 'boolean',
         'sortOrder' => 'integer',
-        'closedFlag' => 'boolean',
-        'emailTemplate' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\RmaStatusEmailTemplateReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Procurement\Metadata',
     ];
 }

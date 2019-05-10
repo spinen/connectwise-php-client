@@ -9,24 +9,24 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for WarehouseBin
  *
- * @property integer $id
- * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseReference $warehouse
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\SystemDepartmentReference $department
- * @property float $minQuantity
- * @property float $maxQuantity
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseBinReference $overflowBin
  * @property Spinen\ConnectWise\Models\v2019_3\Procurement\MemberReference $manager
- * @property float $length
- * @property float $width
- * @property float $height
- * @property float $weight
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\SystemDepartmentReference $department
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\SystemLocationReference $location
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseBinReference $overflowBin
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseBinReference $transferBin
+ * @property Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseReference $warehouse
  * @property boolean $defaultFlag
  * @property boolean $inactiveFlag
+ * @property float $height
+ * @property float $length
+ * @property float $maxQuantity
+ * @property float $minQuantity
+ * @property float $weight
+ * @property float $width
+ * @property integer $id
  * @property integer $quantityOnHand
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseBinReference $transferBin
- * @property Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata $_info
+ * @property string $name
  */
 class WarehouseBin extends Model
 {
@@ -36,23 +36,23 @@ class WarehouseBin extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'warehouse' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseReference',
-        'location' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\SystemLocationReference',
-        'department' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\SystemDepartmentReference',
-        'minQuantity' => 'float',
-        'maxQuantity' => 'float',
-        'overflowBin' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseBinReference',
-        'manager' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\MemberReference',
-        'length' => 'float',
-        'width' => 'float',
-        'height' => 'float',
-        'weight' => 'float',
+        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
         'defaultFlag' => 'boolean',
+        'department' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\SystemDepartmentReference',
+        'height' => 'float',
+        'id' => 'integer',
         'inactiveFlag' => 'boolean',
+        'length' => 'float',
+        'location' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\SystemLocationReference',
+        'manager' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\MemberReference',
+        'maxQuantity' => 'float',
+        'minQuantity' => 'float',
+        'name' => 'string',
+        'overflowBin' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseBinReference',
         'quantityOnHand' => 'integer',
         'transferBin' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseBinReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\Metadata',
+        'warehouse' => 'Spinen\ConnectWise\Models\v2019_3\Procurement\WarehouseReference',
+        'weight' => 'float',
+        'width' => 'float',
     ];
 }

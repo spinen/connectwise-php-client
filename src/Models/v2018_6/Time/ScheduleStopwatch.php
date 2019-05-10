@@ -9,25 +9,25 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ScheduleStopwatch
  *
- * @property Spinen\ConnectWise\Models\v2018_6\Time\Metadata $_info
- * @property Spinen\ConnectWise\Models\v2018_6\Time\AgreementReference $agreement
- * @property string $billableOption
- * @property integer $businessUnitId
  * @property Carbon\Carbon $dateEntered
  * @property Carbon\Carbon $endTime
- * @property integer $id
- * @property string $internalNotes
- * @property integer $locationId
- * @property Spinen\ConnectWise\Models\v2018_6\Time\MemberReference $member
- * @property Spinen\ConnectWise\Models\v2018_6\Time\Guid $mobileGuid
- * @property string $notes
- * @property integer $scheduleId
- * @property Spinen\ConnectWise\Models\v2018_6\Time\Guid $scheduleMobileGuid
  * @property Carbon\Carbon $startTime
- * @property string $status
- * @property integer $totalPauseTime
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\AgreementReference $agreement
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\Guid $mobileGuid
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\Guid $scheduleMobileGuid
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2018_6\Time\Metadata $_info
  * @property Spinen\ConnectWise\Models\v2018_6\Time\WorkRoleReference $workRole
  * @property Spinen\ConnectWise\Models\v2018_6\Time\WorkTypeReference $workType
+ * @property integer $businessUnitId
+ * @property integer $id
+ * @property integer $locationId
+ * @property integer $scheduleId
+ * @property integer $totalPauseTime
+ * @property string $billableOption
+ * @property string $internalNotes
+ * @property string $notes
+ * @property string $status
  */
 class ScheduleStopwatch extends Model
 {

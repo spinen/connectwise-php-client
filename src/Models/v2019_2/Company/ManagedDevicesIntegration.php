@@ -9,22 +9,22 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ManagedDevicesIntegration
  *
- * @property integer $id
- * @property string $name
- * @property string $solution
- * @property string $portalUrl
- * @property string $loginBy
- * @property string $globalLoginUsername
- * @property string $globalLoginPassword
- * @property string $defaultBillingLevel
- * @property string $managementItSetupType
- * @property Spinen\ConnectWise\Models\v2019_2\Company\SystemLocationReference $defaultLocation
- * @property Spinen\ConnectWise\Models\v2019_2\Company\SystemDepartmentReference $defaultDepartment
  * @property Spinen\ConnectWise\Models\v2019_2\Company\IntegratorLoginReference $integratorLogin
- * @property boolean $matchOnSerialNumberFlag
- * @property boolean $disableNewCrossReferencesFlag
- * @property boolean $configBillCustomerFlag
  * @property Spinen\ConnectWise\Models\v2019_2\Company\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\SystemDepartmentReference $defaultDepartment
+ * @property Spinen\ConnectWise\Models\v2019_2\Company\SystemLocationReference $defaultLocation
+ * @property boolean $configBillCustomerFlag
+ * @property boolean $disableNewCrossReferencesFlag
+ * @property boolean $matchOnSerialNumberFlag
+ * @property integer $id
+ * @property string $defaultBillingLevel
+ * @property string $globalLoginPassword
+ * @property string $globalLoginUsername
+ * @property string $loginBy
+ * @property string $managementItSetupType
+ * @property string $name
+ * @property string $portalUrl
+ * @property string $solution
  */
 class ManagedDevicesIntegration extends Model
 {
@@ -34,21 +34,21 @@ class ManagedDevicesIntegration extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'solution' => 'string',
-        'portalUrl' => 'string',
-        'loginBy' => 'string',
-        'globalLoginUsername' => 'string',
-        'globalLoginPassword' => 'string',
-        'defaultBillingLevel' => 'string',
-        'managementItSetupType' => 'string',
-        'defaultLocation' => 'Spinen\ConnectWise\Models\v2019_2\Company\SystemLocationReference',
-        'defaultDepartment' => 'Spinen\ConnectWise\Models\v2019_2\Company\SystemDepartmentReference',
-        'integratorLogin' => 'Spinen\ConnectWise\Models\v2019_2\Company\IntegratorLoginReference',
-        'matchOnSerialNumberFlag' => 'boolean',
-        'disableNewCrossReferencesFlag' => 'boolean',
-        'configBillCustomerFlag' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2019_2\Company\Metadata',
+        'configBillCustomerFlag' => 'boolean',
+        'defaultBillingLevel' => 'string',
+        'defaultDepartment' => 'Spinen\ConnectWise\Models\v2019_2\Company\SystemDepartmentReference',
+        'defaultLocation' => 'Spinen\ConnectWise\Models\v2019_2\Company\SystemLocationReference',
+        'disableNewCrossReferencesFlag' => 'boolean',
+        'globalLoginPassword' => 'string',
+        'globalLoginUsername' => 'string',
+        'id' => 'integer',
+        'integratorLogin' => 'Spinen\ConnectWise\Models\v2019_2\Company\IntegratorLoginReference',
+        'loginBy' => 'string',
+        'managementItSetupType' => 'string',
+        'matchOnSerialNumberFlag' => 'boolean',
+        'name' => 'string',
+        'portalUrl' => 'string',
+        'solution' => 'string',
     ];
 }

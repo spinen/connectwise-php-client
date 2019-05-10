@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CompanyPickerItem
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2018_4\Company\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2018_4\Company\CompanyReference $company
  * @property Spinen\ConnectWise\Models\v2018_4\Company\CompanyStatusReference $companyStatus
  * @property Spinen\ConnectWise\Models\v2018_4\Company\CompanyTypeReference $companyType
+ * @property Spinen\ConnectWise\Models\v2018_4\Company\CountryReference $companyCountry
+ * @property Spinen\ConnectWise\Models\v2018_4\Company\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2018_4\Company\Metadata $_info
  * @property Spinen\ConnectWise\Models\v2018_4\Company\SiteReference $companySite
  * @property Spinen\ConnectWise\Models\v2018_4\Company\SystemLocationReference $companyLocation
- * @property Spinen\ConnectWise\Models\v2018_4\Company\CountryReference $companyCountry
  * @property boolean $vendorPickerFlag
- * @property Spinen\ConnectWise\Models\v2018_4\Company\Metadata $_info
+ * @property integer $id
  */
 class CompanyPickerItem extends Model
 {
@@ -28,15 +28,15 @@ class CompanyPickerItem extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'member' => 'Spinen\ConnectWise\Models\v2018_4\Company\MemberReference',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Company\Metadata',
         'company' => 'Spinen\ConnectWise\Models\v2018_4\Company\CompanyReference',
+        'companyCountry' => 'Spinen\ConnectWise\Models\v2018_4\Company\CountryReference',
+        'companyLocation' => 'Spinen\ConnectWise\Models\v2018_4\Company\SystemLocationReference',
+        'companySite' => 'Spinen\ConnectWise\Models\v2018_4\Company\SiteReference',
         'companyStatus' => 'Spinen\ConnectWise\Models\v2018_4\Company\CompanyStatusReference',
         'companyType' => 'Spinen\ConnectWise\Models\v2018_4\Company\CompanyTypeReference',
-        'companySite' => 'Spinen\ConnectWise\Models\v2018_4\Company\SiteReference',
-        'companyLocation' => 'Spinen\ConnectWise\Models\v2018_4\Company\SystemLocationReference',
-        'companyCountry' => 'Spinen\ConnectWise\Models\v2018_4\Company\CountryReference',
+        'id' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2018_4\Company\MemberReference',
         'vendorPickerFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Company\Metadata',
     ];
 }

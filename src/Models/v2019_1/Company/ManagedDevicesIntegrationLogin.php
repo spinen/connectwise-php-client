@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ManagedDevicesIntegrationLogin
  *
- * @property integer $id
  * @property Spinen\ConnectWise\Models\v2019_1\Company\ManagedDevicesIntegrationReference $managedDevicesIntegration
- * @property string $username
- * @property string $password
  * @property Spinen\ConnectWise\Models\v2019_1\Company\MemberReference $member
  * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
+ * @property integer $id
+ * @property string $password
+ * @property string $username
  */
 class ManagedDevicesIntegrationLogin extends Model
 {
@@ -24,11 +24,11 @@ class ManagedDevicesIntegrationLogin extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
         'id' => 'integer',
         'managedDevicesIntegration' => 'Spinen\ConnectWise\Models\v2019_1\Company\ManagedDevicesIntegrationReference',
-        'username' => 'string',
-        'password' => 'string',
         'member' => 'Spinen\ConnectWise\Models\v2019_1\Company\MemberReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
+        'password' => 'string',
+        'username' => 'string',
     ];
 }

@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for IntegrationRequest
  *
- * @property string $url
- * @property string $actionName
- * @property string $token
- * @property string $helpUrl
  * @property boolean $disabledFlag
+ * @property string $actionName
+ * @property string $helpUrl
+ * @property string $token
+ * @property string $url
  */
 class IntegrationRequest extends Model
 {
@@ -23,10 +23,10 @@ class IntegrationRequest extends Model
      * @var array
      */
     protected $casts = [
-        'url' => 'string',
         'actionName' => 'string',
-        'token' => 'string',
-        'helpUrl' => 'string',
         'disabledFlag' => 'boolean',
+        'helpUrl' => 'string',
+        'token' => 'string',
+        'url' => 'string',
     ];
 }

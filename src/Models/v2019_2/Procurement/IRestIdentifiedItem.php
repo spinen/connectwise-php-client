@@ -9,6 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for IRestIdentifiedItem
  *
+
  */
 class IRestIdentifiedItem extends Model
 {
@@ -18,5 +19,6 @@ class IRestIdentifiedItem extends Model
      * @var array
      */
     protected $casts = [
+,
     ];
 }

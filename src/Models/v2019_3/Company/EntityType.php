@@ -10,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for EntityType
  *
  * @property integer $id
- * @property string $name
  * @property string $code
+ * @property string $name
  */
 class EntityType extends Model
 {
@@ -21,8 +21,8 @@ class EntityType extends Model
      * @var array
      */
     protected $casts = [
+        'code' => 'string',
         'id' => 'integer',
         'name' => 'string',
-        'code' => 'string',
     ];
 }

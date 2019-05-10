@@ -9,20 +9,20 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ExportAccountingBatchRequest
  *
+ * @property Carbon\Carbon $thruDate
+ * @property array $excludedExpenseIds
+ * @property array $excludedInvoiceIds
+ * @property array $excludedProductIds
+ * @property array $includedExpenseIds
+ * @property array $includedInvoiceIds
+ * @property array $includedProductIds
+ * @property boolean $exportExpensesFlag
+ * @property boolean $exportInvoicesFlag
+ * @property boolean $exportProductsFlag
+ * @property integer $locationId
  * @property string $batchIdentifier
  * @property string $glInterfaceIdentifier
- * @property Carbon\Carbon $thruDate
- * @property integer $locationId
  * @property string $summarizeInvoices
- * @property boolean $exportInvoicesFlag
- * @property array $includedInvoiceIds
- * @property array $excludedInvoiceIds
- * @property boolean $exportExpensesFlag
- * @property array $includedExpenseIds
- * @property array $excludedExpenseIds
- * @property boolean $exportProductsFlag
- * @property array $includedProductIds
- * @property array $excludedProductIds
  */
 class ExportAccountingBatchRequest extends Model
 {
@@ -33,18 +33,18 @@ class ExportAccountingBatchRequest extends Model
      */
     protected $casts = [
         'batchIdentifier' => 'string',
+        'excludedExpenseIds' => 'array',
+        'excludedInvoiceIds' => 'array',
+        'excludedProductIds' => 'array',
+        'exportExpensesFlag' => 'boolean',
+        'exportInvoicesFlag' => 'boolean',
+        'exportProductsFlag' => 'boolean',
         'glInterfaceIdentifier' => 'string',
-        'thruDate' => 'Carbon\Carbon',
+        'includedExpenseIds' => 'array',
+        'includedInvoiceIds' => 'array',
+        'includedProductIds' => 'array',
         'locationId' => 'integer',
         'summarizeInvoices' => 'string',
-        'exportInvoicesFlag' => 'boolean',
-        'includedInvoiceIds' => 'array',
-        'excludedInvoiceIds' => 'array',
-        'exportExpensesFlag' => 'boolean',
-        'includedExpenseIds' => 'array',
-        'excludedExpenseIds' => 'array',
-        'exportProductsFlag' => 'boolean',
-        'includedProductIds' => 'array',
-        'excludedProductIds' => 'array',
+        'thruDate' => 'Carbon\Carbon',
     ];
 }

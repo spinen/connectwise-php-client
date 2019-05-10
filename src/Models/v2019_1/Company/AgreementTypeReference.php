@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * agreementType or configurationType is required
  *
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
  * @property integer $id
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
  */
 class AgreementTypeReference extends Model
 {
@@ -21,8 +21,8 @@ class AgreementTypeReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
         'id' => 'integer',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
     ];
 }

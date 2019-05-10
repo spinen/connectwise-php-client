@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BoardItemAssociation
  *
- * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\BoardReference $board
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\Service\ServiceItemReference $item
  * @property array $subTypeAssociationIds
  * @property boolean $addAllSubTypesFlag
  * @property boolean $removeAllSubTypesFlag
- * @property Spinen\ConnectWise\Models\v2018_6\Service\ServiceItemReference $item
- * @property Spinen\ConnectWise\Models\v2018_6\Service\BoardReference $board
- * @property Spinen\ConnectWise\Models\v2018_6\Service\Metadata $_info
+ * @property integer $id
  */
 class BoardItemAssociation extends Model
 {
@@ -25,12 +25,12 @@ class BoardItemAssociation extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'subTypeAssociationIds' => 'array',
-        'addAllSubTypesFlag' => 'boolean',
-        'removeAllSubTypesFlag' => 'boolean',
-        'item' => 'Spinen\ConnectWise\Models\v2018_6\Service\ServiceItemReference',
-        'board' => 'Spinen\ConnectWise\Models\v2018_6\Service\BoardReference',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Service\Metadata',
+        'addAllSubTypesFlag' => 'boolean',
+        'board' => 'Spinen\ConnectWise\Models\v2018_6\Service\BoardReference',
+        'id' => 'integer',
+        'item' => 'Spinen\ConnectWise\Models\v2018_6\Service\ServiceItemReference',
+        'removeAllSubTypesFlag' => 'boolean',
+        'subTypeAssociationIds' => 'array',
     ];
 }

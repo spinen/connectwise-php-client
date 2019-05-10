@@ -9,24 +9,24 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for WorkType
  *
- * @property integer $id
- * @property string $name
- * @property string $billTime
- * @property string $rateType
- * @property float $rate
- * @property float $hoursMin
- * @property float $hoursMax
- * @property float $roundBillHoursTo
  * @property Spinen\ConnectWise\Models\v2019_3\Time\ExternalWorkTypeIntegrationReference $externalIntegrationXRef
- * @property string $accrualType
+ * @property Spinen\ConnectWise\Models\v2019_3\Time\Metadata $_info
+ * @property boolean $activityDefaultFlag
+ * @property boolean $addAllAgreementExclusions
  * @property boolean $inactiveFlag
  * @property boolean $overallDefaultFlag
- * @property boolean $activityDefaultFlag
  * @property boolean $utilizationFlag
  * @property float $costMultiplier
+ * @property float $hoursMax
+ * @property float $hoursMin
+ * @property float $rate
+ * @property float $roundBillHoursTo
+ * @property integer $id
+ * @property string $accrualType
+ * @property string $billTime
  * @property string $integrationXRef
- * @property boolean $addAllAgreementExclusions
- * @property Spinen\ConnectWise\Models\v2019_3\Time\Metadata $_info
+ * @property string $name
+ * @property string $rateType
  */
 class WorkType extends Model
 {
@@ -36,23 +36,23 @@ class WorkType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'billTime' => 'string',
-        'rateType' => 'string',
-        'rate' => 'float',
-        'hoursMin' => 'float',
-        'hoursMax' => 'float',
-        'roundBillHoursTo' => 'float',
-        'externalIntegrationXRef' => 'Spinen\ConnectWise\Models\v2019_3\Time\ExternalWorkTypeIntegrationReference',
-        'accrualType' => 'string',
-        'inactiveFlag' => 'boolean',
-        'overallDefaultFlag' => 'boolean',
-        'activityDefaultFlag' => 'boolean',
-        'utilizationFlag' => 'boolean',
-        'costMultiplier' => 'float',
-        'integrationXRef' => 'string',
-        'addAllAgreementExclusions' => 'boolean',
         '_info' => 'Spinen\ConnectWise\Models\v2019_3\Time\Metadata',
+        'accrualType' => 'string',
+        'activityDefaultFlag' => 'boolean',
+        'addAllAgreementExclusions' => 'boolean',
+        'billTime' => 'string',
+        'costMultiplier' => 'float',
+        'externalIntegrationXRef' => 'Spinen\ConnectWise\Models\v2019_3\Time\ExternalWorkTypeIntegrationReference',
+        'hoursMax' => 'float',
+        'hoursMin' => 'float',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'integrationXRef' => 'string',
+        'name' => 'string',
+        'overallDefaultFlag' => 'boolean',
+        'rate' => 'float',
+        'rateType' => 'string',
+        'roundBillHoursTo' => 'float',
+        'utilizationFlag' => 'boolean',
     ];
 }

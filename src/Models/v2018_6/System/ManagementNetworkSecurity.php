@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ManagementNetworkSecurity
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  * @property integer $id
  * @property string $name
- * @property string $username
  * @property string $password
  * @property string $site
- * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
+ * @property string $username
  */
 class ManagementNetworkSecurity extends Model
 {
@@ -24,11 +24,11 @@ class ManagementNetworkSecurity extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
         'id' => 'integer',
         'name' => 'string',
-        'username' => 'string',
         'password' => 'string',
         'site' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
+        'username' => 'string',
     ];
 }

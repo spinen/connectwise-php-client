@@ -9,6 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Metadata of the entity
  *
+
  */
 class Metadata extends Model
 {
@@ -18,5 +19,6 @@ class Metadata extends Model
      * @var array
      */
     protected $casts = [
+,
     ];
 }

@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for LdapConfiguration
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  * @property integer $id
+ * @property string $domain
  * @property string $name
  * @property string $server
- * @property string $domain
- * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
  */
 class LdapConfiguration extends Model
 {
@@ -23,10 +23,10 @@ class LdapConfiguration extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
+        'domain' => 'string',
         'id' => 'integer',
         'name' => 'string',
         'server' => 'string',
-        'domain' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
     ];
 }

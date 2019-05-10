@@ -9,56 +9,56 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Invoice
  *
- * @property integer $id
- * @property string $invoiceNumber
- * @property string $type
+ * @property Carbon\Carbon $date
+ * @property Carbon\Carbon $dueDate
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\BillingStatusReference $status
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\BillingTermsReference $billingTerms
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference $billToCompany
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference $company
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference $shipToCompany
- * @property string $applyToType
- * @property integer $applyToId
- * @property string $attention
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\CurrencyReference $currency
+ * @property Spinen\ConnectWise\Models\v2018_6\Finance\Metadata $_info
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\SiteReference $billingSite
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\SiteReference $shippingSite
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\BillingTermsReference $billingTerms
- * @property string $reference
- * @property string $customerPO
- * @property integer $templateSetupId
- * @property integer $emailTemplateId
- * @property boolean $addToBatchEmailList
- * @property Carbon\Carbon $date
- * @property boolean $restrictDownpaymentFlag
- * @property integer $locationId
- * @property integer $departmentId
- * @property integer $territoryId
- * @property string $topComment
- * @property string $bottomComment
- * @property boolean $taxableFlag
  * @property Spinen\ConnectWise\Models\v2018_6\Finance\TaxCodeReference $taxCode
- * @property string $internalNotes
+ * @property array $customFields
+ * @property boolean $addToBatchEmailList
  * @property boolean $downpaymentPreviouslyTaxedFlag
- * @property float $serviceTotal
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\CurrencyReference $currency
- * @property Carbon\Carbon $dueDate
- * @property float $expenseTotal
- * @property float $productTotal
- * @property float $previousProgressApplied
- * @property float $serviceAdjustmentAmount
+ * @property boolean $restrictDownpaymentFlag
+ * @property boolean $specialInvoiceFlag
+ * @property boolean $taxableFlag
  * @property float $agreementAmount
+ * @property float $balance
+ * @property float $credits
  * @property float $downpaymentApplied
- * @property float $subtotal
- * @property float $total
+ * @property float $expenseTotal
+ * @property float $payments
+ * @property float $previousProgressApplied
+ * @property float $productTotal
  * @property float $remainingDownpayment
  * @property float $salesTax
- * @property string $adjustmentReason
+ * @property float $serviceAdjustmentAmount
+ * @property float $serviceTotal
+ * @property float $subtotal
+ * @property float $total
+ * @property integer $applyToId
+ * @property integer $departmentId
+ * @property integer $emailTemplateId
+ * @property integer $id
+ * @property integer $locationId
+ * @property integer $templateSetupId
+ * @property integer $territoryId
  * @property string $adjustedBy
- * @property float $payments
- * @property float $credits
- * @property float $balance
- * @property boolean $specialInvoiceFlag
- * @property Spinen\ConnectWise\Models\v2018_6\Finance\Metadata $_info
- * @property array $customFields
+ * @property string $adjustmentReason
+ * @property string $applyToType
+ * @property string $attention
+ * @property string $bottomComment
+ * @property string $customerPO
+ * @property string $internalNotes
+ * @property string $invoiceNumber
+ * @property string $reference
+ * @property string $topComment
+ * @property string $type
  */
 class Invoice extends Model
 {
@@ -68,55 +68,55 @@ class Invoice extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'invoiceNumber' => 'string',
-        'type' => 'string',
-        'status' => 'Spinen\ConnectWise\Models\v2018_6\Finance\BillingStatusReference',
-        'company' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference',
-        'billToCompany' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference',
-        'shipToCompany' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference',
-        'applyToType' => 'string',
-        'applyToId' => 'integer',
-        'attention' => 'string',
-        'billingSite' => 'Spinen\ConnectWise\Models\v2018_6\Finance\SiteReference',
-        'shippingSite' => 'Spinen\ConnectWise\Models\v2018_6\Finance\SiteReference',
-        'billingTerms' => 'Spinen\ConnectWise\Models\v2018_6\Finance\BillingTermsReference',
-        'reference' => 'string',
-        'customerPO' => 'string',
-        'templateSetupId' => 'integer',
-        'emailTemplateId' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
         'addToBatchEmailList' => 'boolean',
+        'adjustedBy' => 'string',
+        'adjustmentReason' => 'string',
+        'agreementAmount' => 'float',
+        'applyToId' => 'integer',
+        'applyToType' => 'string',
+        'attention' => 'string',
+        'balance' => 'float',
+        'billToCompany' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference',
+        'billingSite' => 'Spinen\ConnectWise\Models\v2018_6\Finance\SiteReference',
+        'billingTerms' => 'Spinen\ConnectWise\Models\v2018_6\Finance\BillingTermsReference',
+        'bottomComment' => 'string',
+        'company' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference',
+        'credits' => 'float',
+        'currency' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CurrencyReference',
+        'customFields' => 'array',
+        'customerPO' => 'string',
         'date' => 'Carbon\Carbon',
-        'restrictDownpaymentFlag' => 'boolean',
-        'locationId' => 'integer',
         'departmentId' => 'integer',
+        'downpaymentApplied' => 'float',
+        'downpaymentPreviouslyTaxedFlag' => 'boolean',
+        'dueDate' => 'Carbon\Carbon',
+        'emailTemplateId' => 'integer',
+        'expenseTotal' => 'float',
+        'id' => 'integer',
+        'internalNotes' => 'string',
+        'invoiceNumber' => 'string',
+        'locationId' => 'integer',
+        'payments' => 'float',
+        'previousProgressApplied' => 'float',
+        'productTotal' => 'float',
+        'reference' => 'string',
+        'remainingDownpayment' => 'float',
+        'restrictDownpaymentFlag' => 'boolean',
+        'salesTax' => 'float',
+        'serviceAdjustmentAmount' => 'float',
+        'serviceTotal' => 'float',
+        'shipToCompany' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CompanyReference',
+        'shippingSite' => 'Spinen\ConnectWise\Models\v2018_6\Finance\SiteReference',
+        'specialInvoiceFlag' => 'boolean',
+        'status' => 'Spinen\ConnectWise\Models\v2018_6\Finance\BillingStatusReference',
+        'subtotal' => 'float',
+        'taxCode' => 'Spinen\ConnectWise\Models\v2018_6\Finance\TaxCodeReference',
+        'taxableFlag' => 'boolean',
+        'templateSetupId' => 'integer',
         'territoryId' => 'integer',
         'topComment' => 'string',
-        'bottomComment' => 'string',
-        'taxableFlag' => 'boolean',
-        'taxCode' => 'Spinen\ConnectWise\Models\v2018_6\Finance\TaxCodeReference',
-        'internalNotes' => 'string',
-        'downpaymentPreviouslyTaxedFlag' => 'boolean',
-        'serviceTotal' => 'float',
-        'currency' => 'Spinen\ConnectWise\Models\v2018_6\Finance\CurrencyReference',
-        'dueDate' => 'Carbon\Carbon',
-        'expenseTotal' => 'float',
-        'productTotal' => 'float',
-        'previousProgressApplied' => 'float',
-        'serviceAdjustmentAmount' => 'float',
-        'agreementAmount' => 'float',
-        'downpaymentApplied' => 'float',
-        'subtotal' => 'float',
         'total' => 'float',
-        'remainingDownpayment' => 'float',
-        'salesTax' => 'float',
-        'adjustmentReason' => 'string',
-        'adjustedBy' => 'string',
-        'payments' => 'float',
-        'credits' => 'float',
-        'balance' => 'float',
-        'specialInvoiceFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Finance\Metadata',
-        'customFields' => 'array',
+        'type' => 'string',
     ];
 }

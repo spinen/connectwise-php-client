@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BundleResult
  *
- * @property integer $SequenceNumber
- * @property string $ResourceType
- * @property array $Entities
- * @property integer $Count
- * @property string $Version
- * @property boolean $Success
- * @property integer $StatusCode
  * @property Spinen\ConnectWise\Models\v2019_3\System\ErrorResponseMessage $Error
+ * @property array $Entities
+ * @property boolean $Success
+ * @property integer $Count
+ * @property integer $SequenceNumber
+ * @property integer $StatusCode
+ * @property string $ResourceType
+ * @property string $Version
  */
 class BundleResult extends Model
 {
@@ -26,13 +26,13 @@ class BundleResult extends Model
      * @var array
      */
     protected $casts = [
-        'SequenceNumber' => 'integer',
-        'ResourceType' => 'string',
-        'Entities' => 'array',
         'Count' => 'integer',
-        'Version' => 'string',
-        'Success' => 'boolean',
-        'StatusCode' => 'integer',
+        'Entities' => 'array',
         'Error' => 'Spinen\ConnectWise\Models\v2019_3\System\ErrorResponseMessage',
+        'ResourceType' => 'string',
+        'SequenceNumber' => 'integer',
+        'StatusCode' => 'integer',
+        'Success' => 'boolean',
+        'Version' => 'string',
     ];
 }

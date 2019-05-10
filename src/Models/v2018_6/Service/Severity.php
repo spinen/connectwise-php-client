@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Severity
  *
- * @property integer $id
- * @property string $name
- * @property string $description
- * @property boolean $defaultFlag
  * @property Spinen\ConnectWise\Models\v2018_6\Service\Metadata $_info
+ * @property boolean $defaultFlag
+ * @property integer $id
+ * @property string $description
+ * @property string $name
  */
 class Severity extends Model
 {
@@ -23,10 +23,10 @@ class Severity extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Service\Metadata',
+        'defaultFlag' => 'boolean',
+        'description' => 'string',
         'id' => 'integer',
         'name' => 'string',
-        'description' => 'string',
-        'defaultFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Service\Metadata',
     ];
 }

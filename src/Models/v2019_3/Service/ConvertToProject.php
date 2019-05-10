@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ConvertToProject
  *
+ * @property Spinen\ConnectWise\Models\v2019_3\Service\ProjectPhaseReference $phase
+ * @property Spinen\ConnectWise\Models\v2019_3\Service\ProjectReference $project
  * @property integer $id
  * @property string $recordType
- * @property Spinen\ConnectWise\Models\v2019_3\Service\ProjectReference $project
- * @property Spinen\ConnectWise\Models\v2019_3\Service\ProjectPhaseReference $phase
  * @property string $wbsCode
  */
 class ConvertToProject extends Model
@@ -24,9 +24,9 @@ class ConvertToProject extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'recordType' => 'string',
-        'project' => 'Spinen\ConnectWise\Models\v2019_3\Service\ProjectReference',
         'phase' => 'Spinen\ConnectWise\Models\v2019_3\Service\ProjectPhaseReference',
+        'project' => 'Spinen\ConnectWise\Models\v2019_3\Service\ProjectReference',
+        'recordType' => 'string',
         'wbsCode' => 'string',
     ];
 }

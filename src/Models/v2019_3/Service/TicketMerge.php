@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for TicketMerge
  *
- * @property array $mergeTicketIds
  * @property Spinen\ConnectWise\Models\v2019_3\Service\ServiceStatusReference $status
+ * @property array $mergeTicketIds
  */
 class TicketMerge extends Model
 {

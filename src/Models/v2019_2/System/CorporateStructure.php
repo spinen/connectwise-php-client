@@ -9,24 +9,24 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CorporateStructure
  *
+ * @property Spinen\ConnectWise\Models\v2019_2\System\CurrencyReference $baseCurrency
+ * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $chiefOperatingOfficer
+ * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $controller
+ * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $dispatcher
+ * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $dutyManager
+ * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $president
+ * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $serviceManager
+ * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  * @property integer $id
- * @property string $levelCount
+ * @property string $fiscalYearStart
+ * @property string $groupCaption
  * @property string $level1Name
  * @property string $level2Name
  * @property string $level3Name
  * @property string $level4Name
  * @property string $level5Name
- * @property string $fiscalYearStart
+ * @property string $levelCount
  * @property string $locationCaption
- * @property string $groupCaption
- * @property Spinen\ConnectWise\Models\v2019_2\System\CurrencyReference $baseCurrency
- * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $president
- * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $chiefOperatingOfficer
- * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $controller
- * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $dispatcher
- * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $serviceManager
- * @property Spinen\ConnectWise\Models\v2019_2\System\MemberReference $dutyManager
- * @property Spinen\ConnectWise\Models\v2019_2\System\Metadata $_info
  */
 class CorporateStructure extends Model
 {
@@ -36,23 +36,23 @@ class CorporateStructure extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
+        'baseCurrency' => 'Spinen\ConnectWise\Models\v2019_2\System\CurrencyReference',
+        'chiefOperatingOfficer' => 'Spinen\ConnectWise\Models\v2019_2\System\MemberReference',
+        'controller' => 'Spinen\ConnectWise\Models\v2019_2\System\MemberReference',
+        'dispatcher' => 'Spinen\ConnectWise\Models\v2019_2\System\MemberReference',
+        'dutyManager' => 'Spinen\ConnectWise\Models\v2019_2\System\MemberReference',
+        'fiscalYearStart' => 'string',
+        'groupCaption' => 'string',
         'id' => 'integer',
-        'levelCount' => 'string',
         'level1Name' => 'string',
         'level2Name' => 'string',
         'level3Name' => 'string',
         'level4Name' => 'string',
         'level5Name' => 'string',
-        'fiscalYearStart' => 'string',
+        'levelCount' => 'string',
         'locationCaption' => 'string',
-        'groupCaption' => 'string',
-        'baseCurrency' => 'Spinen\ConnectWise\Models\v2019_2\System\CurrencyReference',
         'president' => 'Spinen\ConnectWise\Models\v2019_2\System\MemberReference',
-        'chiefOperatingOfficer' => 'Spinen\ConnectWise\Models\v2019_2\System\MemberReference',
-        'controller' => 'Spinen\ConnectWise\Models\v2019_2\System\MemberReference',
-        'dispatcher' => 'Spinen\ConnectWise\Models\v2019_2\System\MemberReference',
         'serviceManager' => 'Spinen\ConnectWise\Models\v2019_2\System\MemberReference',
-        'dutyManager' => 'Spinen\ConnectWise\Models\v2019_2\System\MemberReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_2\System\Metadata',
     ];
 }

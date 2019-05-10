@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ExpenseTax
  *
- * @property integer $id
- * @property float $amount
  * @property Spinen\ConnectWise\Models\v2018_4\Expense\ExpenseTaxTypeReference $type
+ * @property float $amount
+ * @property integer $id
  */
 class ExpenseTax extends Model
 {
@@ -21,8 +21,8 @@ class ExpenseTax extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
         'amount' => 'float',
+        'id' => 'integer',
         'type' => 'Spinen\ConnectWise\Models\v2018_4\Expense\ExpenseTaxTypeReference',
     ];
 }

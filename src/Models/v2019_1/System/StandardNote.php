@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for StandardNote
  *
- * @property integer $id
- * @property string $name
- * @property string $contents
- * @property Spinen\ConnectWise\Models\v2019_1\System\SystemLocationReference $location
- * @property Spinen\ConnectWise\Models\v2019_1\System\SystemDepartmentReference $department
  * @property Spinen\ConnectWise\Models\v2019_1\System\BoardReference $board
  * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_1\System\SystemDepartmentReference $department
+ * @property Spinen\ConnectWise\Models\v2019_1\System\SystemLocationReference $location
+ * @property integer $id
+ * @property string $contents
+ * @property string $name
  */
 class StandardNote extends Model
 {
@@ -25,12 +25,12 @@ class StandardNote extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'contents' => 'string',
-        'location' => 'Spinen\ConnectWise\Models\v2019_1\System\SystemLocationReference',
-        'department' => 'Spinen\ConnectWise\Models\v2019_1\System\SystemDepartmentReference',
-        'board' => 'Spinen\ConnectWise\Models\v2019_1\System\BoardReference',
         '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
+        'board' => 'Spinen\ConnectWise\Models\v2019_1\System\BoardReference',
+        'contents' => 'string',
+        'department' => 'Spinen\ConnectWise\Models\v2019_1\System\SystemDepartmentReference',
+        'id' => 'integer',
+        'location' => 'Spinen\ConnectWise\Models\v2019_1\System\SystemLocationReference',
+        'name' => 'string',
     ];
 }

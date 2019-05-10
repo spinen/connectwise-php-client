@@ -9,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * A list of Projects that the member is the project manager
  *
- * @property integer $count
  * @property Spinen\ConnectWise\Models\v2018_4\System\MemberReference $reAssignToMember
+ * @property integer $count
  */
 class ProjectManager extends Model
 {

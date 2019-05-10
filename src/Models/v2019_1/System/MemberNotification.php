@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MemberNotification
  *
- * @property integer $id
- * @property string $message
  * @property Spinen\ConnectWise\Models\v2019_1\System\DocumentReference $attachment
- * @property string $notificationTrigger
- * @property integer $recordId
- * @property string $recordType
- * @property boolean $readFlag
  * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
+ * @property boolean $readFlag
+ * @property integer $id
+ * @property integer $recordId
+ * @property string $message
+ * @property string $notificationTrigger
+ * @property string $recordType
  */
 class MemberNotification extends Model
 {
@@ -26,13 +26,13 @@ class MemberNotification extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
+        'attachment' => 'Spinen\ConnectWise\Models\v2019_1\System\DocumentReference',
         'id' => 'integer',
         'message' => 'string',
-        'attachment' => 'Spinen\ConnectWise\Models\v2019_1\System\DocumentReference',
         'notificationTrigger' => 'string',
+        'readFlag' => 'boolean',
         'recordId' => 'integer',
         'recordType' => 'string',
-        'readFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
     ];
 }

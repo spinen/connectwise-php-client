@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for WorkflowNotifyType
  *
+ * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
+ * @property boolean $externalFlag
+ * @property boolean $isSetupFlag
  * @property integer $id
  * @property string $identifier
  * @property string $name
- * @property boolean $isSetupFlag
- * @property boolean $externalFlag
- * @property Spinen\ConnectWise\Models\v2018_4\System\Metadata $_info
  */
 class WorkflowNotifyType extends Model
 {
@@ -24,11 +24,11 @@ class WorkflowNotifyType extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
+        'externalFlag' => 'boolean',
         'id' => 'integer',
         'identifier' => 'string',
-        'name' => 'string',
         'isSetupFlag' => 'boolean',
-        'externalFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\System\Metadata',
+        'name' => 'string',
     ];
 }

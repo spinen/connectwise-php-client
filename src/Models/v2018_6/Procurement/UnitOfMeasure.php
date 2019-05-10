@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for UnitOfMeasure
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
+ * @property boolean $defaultFlag
+ * @property boolean $inactiveFlag
  * @property integer $id
  * @property string $name
- * @property boolean $inactiveFlag
- * @property boolean $defaultFlag
  * @property string $uomScheduleXref
- * @property Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata $_info
  */
 class UnitOfMeasure extends Model
 {
@@ -24,11 +24,11 @@ class UnitOfMeasure extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'name' => 'string',
-        'inactiveFlag' => 'boolean',
-        'defaultFlag' => 'boolean',
-        'uomScheduleXref' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Procurement\Metadata',
+        'defaultFlag' => 'boolean',
+        'id' => 'integer',
+        'inactiveFlag' => 'boolean',
+        'name' => 'string',
+        'uomScheduleXref' => 'string',
     ];
 }

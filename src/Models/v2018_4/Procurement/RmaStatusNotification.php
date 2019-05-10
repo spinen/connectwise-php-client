@@ -9,13 +9,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for RmaStatusNotification
  *
- * @property integer $id
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\MemberReference $member
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
  * @property Spinen\ConnectWise\Models\v2018_4\Procurement\NotificationRecipientReference $notifyWho
  * @property Spinen\ConnectWise\Models\v2018_4\Procurement\RmaStatusReference $status
- * @property Spinen\ConnectWise\Models\v2018_4\Procurement\MemberReference $member
- * @property string $email
+ * @property integer $id
  * @property integer $workflowStep
- * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
+ * @property string $email
  */
 class RmaStatusNotification extends Model
 {
@@ -25,12 +25,12 @@ class RmaStatusNotification extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
+        'email' => 'string',
         'id' => 'integer',
+        'member' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\MemberReference',
         'notifyWho' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\NotificationRecipientReference',
         'status' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\RmaStatusReference',
-        'member' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\MemberReference',
-        'email' => 'string',
         'workflowStep' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
     ];
 }

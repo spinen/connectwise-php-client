@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CompanyNoteType
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
+ * @property boolean $defaultFlag
+ * @property boolean $importFlag
  * @property integer $id
  * @property string $identifier
  * @property string $name
- * @property boolean $defaultFlag
- * @property boolean $importFlag
- * @property Spinen\ConnectWise\Models\v2018_6\Company\Metadata $_info
  */
 class CompanyNoteType extends Model
 {
@@ -24,11 +24,11 @@ class CompanyNoteType extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
+        'defaultFlag' => 'boolean',
         'id' => 'integer',
         'identifier' => 'string',
-        'name' => 'string',
-        'defaultFlag' => 'boolean',
         'importFlag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Company\Metadata',
+        'name' => 'string',
     ];
 }

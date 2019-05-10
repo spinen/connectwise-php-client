@@ -9,6 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Guid
  *
+
  */
 class Guid extends Model
 {
@@ -18,5 +19,6 @@ class Guid extends Model
      * @var array
      */
     protected $casts = [
+,
     ];
 }

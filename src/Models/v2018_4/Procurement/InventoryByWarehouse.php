@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for InventoryByWarehouse
  *
- * @property integer $id
  * @property Spinen\ConnectWise\Models\v2018_4\Procurement\CatalogItemReference $catalogItem
- * @property Spinen\ConnectWise\Models\v2018_4\Procurement\WarehouseReference $warehouse
- * @property Spinen\ConnectWise\Models\v2018_4\Procurement\WarehouseBinReference $warehouseBin
- * @property integer $onHand
  * @property Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\WarehouseBinReference $warehouseBin
+ * @property Spinen\ConnectWise\Models\v2018_4\Procurement\WarehouseReference $warehouse
+ * @property integer $id
+ * @property integer $onHand
  */
 class InventoryByWarehouse extends Model
 {
@@ -24,11 +24,11 @@ class InventoryByWarehouse extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
         'catalogItem' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\CatalogItemReference',
+        'id' => 'integer',
+        'onHand' => 'integer',
         'warehouse' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\WarehouseReference',
         'warehouseBin' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\WarehouseBinReference',
-        'onHand' => 'integer',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Procurement\Metadata',
     ];
 }

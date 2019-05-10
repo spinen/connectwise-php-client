@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SurveyOption
  *
- * @property integer $id
- * @property string $caption
- * @property integer $points
- * @property boolean $visibleflag
  * @property Spinen\ConnectWise\Models\v2018_4\Service\Metadata $_info
+ * @property boolean $visibleflag
+ * @property integer $id
+ * @property integer $points
+ * @property string $caption
  */
 class SurveyOption extends Model
 {
@@ -23,10 +23,10 @@ class SurveyOption extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
+        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Service\Metadata',
         'caption' => 'string',
+        'id' => 'integer',
         'points' => 'integer',
         'visibleflag' => 'boolean',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_4\Service\Metadata',
     ];
 }

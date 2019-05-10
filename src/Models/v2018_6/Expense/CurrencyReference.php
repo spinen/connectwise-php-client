@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CurrencyReference
  *
+ * @property Spinen\ConnectWise\Models\v2018_6\Expense\Metadata $_info
  * @property integer $id
- * @property string $symbol
  * @property string $isoCode
  * @property string $name
- * @property Spinen\ConnectWise\Models\v2018_6\Expense\Metadata $_info
+ * @property string $symbol
  */
 class CurrencyReference extends Model
 {
@@ -23,10 +23,10 @@ class CurrencyReference extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Expense\Metadata',
         'id' => 'integer',
-        'symbol' => 'string',
         'isoCode' => 'string',
         'name' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\Expense\Metadata',
+        'symbol' => 'string',
     ];
 }

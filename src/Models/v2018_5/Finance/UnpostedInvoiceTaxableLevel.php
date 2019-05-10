@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for UnpostedInvoiceTaxableLevel
  *
+ * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
+ * @property float $taxAmount
  * @property integer $id
  * @property integer $taxLevel
  * @property string $taxCodeXref
- * @property float $taxAmount
- * @property Spinen\ConnectWise\Models\v2018_5\Finance\Metadata $_info
  */
 class UnpostedInvoiceTaxableLevel extends Model
 {
@@ -23,10 +23,10 @@ class UnpostedInvoiceTaxableLevel extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'taxLevel' => 'integer',
-        'taxCodeXref' => 'string',
-        'taxAmount' => 'float',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Finance\Metadata',
+        'id' => 'integer',
+        'taxAmount' => 'float',
+        'taxCodeXref' => 'string',
+        'taxLevel' => 'integer',
     ];
 }

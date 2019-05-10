@@ -9,16 +9,16 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SLAPriority
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference $priority
- * @property float $respondHours
- * @property integer $respondPercent
- * @property float $planWithin
- * @property integer $planWithinPercent
- * @property float $resolutionHours
- * @property integer $resolutionPercent
- * @property Spinen\ConnectWise\Models\v2019_1\Service\SLAReference $sla
  * @property Spinen\ConnectWise\Models\v2019_1\Service\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference $priority
+ * @property Spinen\ConnectWise\Models\v2019_1\Service\SLAReference $sla
+ * @property float $planWithin
+ * @property float $resolutionHours
+ * @property float $respondHours
+ * @property integer $id
+ * @property integer $planWithinPercent
+ * @property integer $resolutionPercent
+ * @property integer $respondPercent
  */
 class SLAPriority extends Model
 {
@@ -28,15 +28,15 @@ class SLAPriority extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
         'id' => 'integer',
-        'priority' => 'Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference',
-        'respondHours' => 'float',
-        'respondPercent' => 'integer',
         'planWithin' => 'float',
         'planWithinPercent' => 'integer',
+        'priority' => 'Spinen\ConnectWise\Models\v2019_1\Service\PriorityReference',
         'resolutionHours' => 'float',
         'resolutionPercent' => 'integer',
+        'respondHours' => 'float',
+        'respondPercent' => 'integer',
         'sla' => 'Spinen\ConnectWise\Models\v2019_1\Service\SLAReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Service\Metadata',
     ];
 }

@@ -9,14 +9,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PricingBreak
  *
- * @property integer $id
- * @property integer $detailId
- * @property float $amount
- * @property float $quantityStart
- * @property float $quantityEnd
- * @property boolean $unlimited
- * @property string $priceMethod
  * @property Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata $_info
+ * @property boolean $unlimited
+ * @property float $amount
+ * @property float $quantityEnd
+ * @property float $quantityStart
+ * @property integer $detailId
+ * @property integer $id
+ * @property string $priceMethod
  */
 class PricingBreak extends Model
 {
@@ -26,13 +26,13 @@ class PricingBreak extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'detailId' => 'integer',
-        'amount' => 'float',
-        'quantityStart' => 'float',
-        'quantityEnd' => 'float',
-        'unlimited' => 'boolean',
-        'priceMethod' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2018_5\Procurement\Metadata',
+        'amount' => 'float',
+        'detailId' => 'integer',
+        'id' => 'integer',
+        'priceMethod' => 'string',
+        'quantityEnd' => 'float',
+        'quantityStart' => 'float',
+        'unlimited' => 'boolean',
     ];
 }

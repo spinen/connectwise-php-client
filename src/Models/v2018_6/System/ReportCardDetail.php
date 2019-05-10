@@ -9,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ReportCardDetail
  *
- * @property integer $id
  * @property Spinen\ConnectWise\Models\v2018_6\System\KPIReference $kpi
- * @property integer $sortOrder
- * @property Spinen\ConnectWise\Models\v2018_6\System\ReportCardReference $reportCard
  * @property Spinen\ConnectWise\Models\v2018_6\System\Metadata $_info
+ * @property Spinen\ConnectWise\Models\v2018_6\System\ReportCardReference $reportCard
+ * @property integer $id
+ * @property integer $sortOrder
  */
 class ReportCardDetail extends Model
 {
@@ -23,10 +23,10 @@ class ReportCardDetail extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
         'id' => 'integer',
         'kpi' => 'Spinen\ConnectWise\Models\v2018_6\System\KPIReference',
-        'sortOrder' => 'integer',
         'reportCard' => 'Spinen\ConnectWise\Models\v2018_6\System\ReportCardReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2018_6\System\Metadata',
+        'sortOrder' => 'integer',
     ];
 }

@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CampaignSubType
  *
- * @property integer $id
  * @property Spinen\ConnectWise\Models\v2018_6\Marketing\CampaignTypeReference $type
- * @property string $name
  * @property Spinen\ConnectWise\Models\v2018_6\Marketing\Metadata $_info
+ * @property integer $id
+ * @property string $name
  */
 class CampaignSubType extends Model
 {
@@ -22,9 +22,9 @@ class CampaignSubType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'type' => 'Spinen\ConnectWise\Models\v2018_6\Marketing\CampaignTypeReference',
-        'name' => 'string',
         '_info' => 'Spinen\ConnectWise\Models\v2018_6\Marketing\Metadata',
+        'id' => 'integer',
+        'name' => 'string',
+        'type' => 'Spinen\ConnectWise\Models\v2018_6\Marketing\CampaignTypeReference',
     ];
 }

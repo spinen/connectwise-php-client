@@ -9,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CompanyTypeAssociation
  *
- * @property integer $id
- * @property Spinen\ConnectWise\Models\v2019_1\Company\CompanyTypeReference $type
  * @property Spinen\ConnectWise\Models\v2019_1\Company\CompanyReference $company
+ * @property Spinen\ConnectWise\Models\v2019_1\Company\CompanyTypeReference $type
  * @property Spinen\ConnectWise\Models\v2019_1\Company\Metadata $_info
+ * @property integer $id
  */
 class CompanyTypeAssociation extends Model
 {
@@ -22,9 +22,9 @@ class CompanyTypeAssociation extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
+        'company' => 'Spinen\ConnectWise\Models\v2019_1\Company\CompanyReference',
         'id' => 'integer',
         'type' => 'Spinen\ConnectWise\Models\v2019_1\Company\CompanyTypeReference',
-        'company' => 'Spinen\ConnectWise\Models\v2019_1\Company\CompanyReference',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\Company\Metadata',
     ];
 }

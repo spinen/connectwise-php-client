@@ -9,9 +9,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Error
  *
+ * @property array $errors
  * @property string $code
  * @property string $message
- * @property array $errors
  */
 class Error extends Model
 {
@@ -22,7 +22,7 @@ class Error extends Model
      */
     protected $casts = [
         'code' => 'string',
-        'message' => 'string',
         'errors' => 'array',
+        'message' => 'string',
     ];
 }

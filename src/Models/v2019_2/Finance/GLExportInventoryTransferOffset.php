@@ -9,15 +9,15 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportInventoryTransferOffset
  *
- * @property integer $id
- * @property string $documentType
  * @property Carbon\Carbon $documentDate
- * @property string $accountNumber
- * @property string $glClass
  * @property float $total
- * @property string $memo
+ * @property integer $id
+ * @property string $accountNumber
  * @property string $description
+ * @property string $documentType
+ * @property string $glClass
  * @property string $glTypeId
+ * @property string $memo
  */
 class GLExportInventoryTransferOffset extends Model
 {
@@ -27,14 +27,14 @@ class GLExportInventoryTransferOffset extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
-        'documentType' => 'string',
-        'documentDate' => 'Carbon\Carbon',
         'accountNumber' => 'string',
-        'glClass' => 'string',
-        'total' => 'float',
-        'memo' => 'string',
         'description' => 'string',
+        'documentDate' => 'Carbon\Carbon',
+        'documentType' => 'string',
+        'glClass' => 'string',
         'glTypeId' => 'string',
+        'id' => 'integer',
+        'memo' => 'string',
+        'total' => 'float',
     ];
 }

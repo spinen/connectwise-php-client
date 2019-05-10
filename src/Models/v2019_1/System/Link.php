@@ -9,12 +9,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Link
  *
- * @property integer $id
- * @property string $name
- * @property integer $tableReferenceId
- * @property string $url
- * @property string $screenLink
  * @property Spinen\ConnectWise\Models\v2019_1\System\Metadata $_info
+ * @property integer $id
+ * @property integer $tableReferenceId
+ * @property string $name
+ * @property string $screenLink
+ * @property string $url
  */
 class Link extends Model
 {
@@ -24,11 +24,11 @@ class Link extends Model
      * @var array
      */
     protected $casts = [
+        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
         'id' => 'integer',
         'name' => 'string',
+        'screenLink' => 'string',
         'tableReferenceId' => 'integer',
         'url' => 'string',
-        'screenLink' => 'string',
-        '_info' => 'Spinen\ConnectWise\Models\v2019_1\System\Metadata',
     ];
 }
