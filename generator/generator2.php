@@ -65,7 +65,7 @@ EOF;
         $properties = null;
 
         foreach ($attributes['properties'] as $property => $keys) {
-            $type = $keys['type'] ?? $this->getNamespace(collect(explode('/', $keys['$ref']))->last());
+            $type = $this->parseType($keys);
 
             $casts .= "\n        '" . $property . "' => '" . $type . "',";
             $properties .= "\n * @property " . $type . ' $' . $property;
@@ -110,6 +110,46 @@ EOF;
         };
 
         return $this;
+    }
+
+    public function parseType(array $attributes)
+    {
+        // Cast to another model
+        if (array_key_exists('$ref', $attributes)) {
+            return $this->getNamespace(collect(explode('/', $attributes['$ref']))->last());
+        }
+
+        $format = $attributes['format'] ?? null;
+        $type = $attributes['type'];
+
+        // NOTE: We should consider supporting bigint, but for now, just int
+        if (in_array($format, ['int32', 'int64']) || 'integer' === $type) {
+            return 'integer';
+        }
+
+        if (in_array($format, ['double', 'float']) || 'number' === $type) {
+            return 'float';
+        }
+
+        if (in_array($format, ['date', 'date-time'])) {
+            return 'Carbon\Carbon';
+        }
+
+        // NOTE: Would be nice to parse the 'items' key to get the types of the properties
+        if ('array' === $type) {
+            return 'array';
+        }
+
+        if ('boolean' === $type) {
+            return 'boolean';
+        }
+
+        if ('object' === $type) {
+            return 'object';
+        }
+
+        // default to string
+        return 'string';
     }
 
     public function parsePaths()
@@ -193,7 +233,12 @@ foreach (glob(__DIR__ . "/swagger/*") as $version) {
         function (Swagger $swagger) use ($version) {
             $directory = __DIR__ . '/Generated/' . $version;
 
-            file_put_contents($directory . '/map.json', $swagger->map->toJson());
+            // TODO: Deal with file being empty for first run
+            $map = collect(json_decode(file_get_contents($directory . '/map.json'), true))
+                ->merge($swagger->map)
+                ->sort();
+
+            file_put_contents($directory . '/map.json', $map->toJson());
         }
     );
 }
