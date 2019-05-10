@@ -47,7 +47,8 @@ use Spinen\ConnectWise\Support\Model;
  * Class {{ Class }} Version {{ Version }}
  *
  * {{ Description }}
- *{{ Properties }}
+ *
+{{ Properties }}
  */
 class {{ Class }} extends Model
 {
@@ -56,20 +57,32 @@ class {{ Class }} extends Model
      *
      * @var array
      */
-    protected \$casts = [{{ Casts }}
+    protected \$casts = [
+{{ Casts }}
     ];
 }
 
 EOF;
-        $casts = null;
-        $properties = null;
 
-        foreach ($attributes['properties'] as $property => $keys) {
-            $type = $this->parseType($keys);
+        // Make array of types keyed by property
+        $property_type = collect($attributes['properties'])
+            ->map(function ($attributes) {
+                return $this->parseType($attributes);
+            });
 
-            $casts .= "\n        '" . $property . "' => '" . $type . "',";
-            $properties .= "\n * @property " . $type . ' $' . $property;
-        }
+        $casts = $property_type->map(function ($type, $property) {
+            return "        '${property}' => '${type}'";
+        })
+                               ->values()
+                               ->sort()
+                               ->implode(",\n") . ',';
+
+        $properties = $property_type->map(function ($type, $property) {
+            return " * @property ${type} $${property}";
+        })
+                                    ->values()
+                                    ->sort()
+                                    ->implode("\n");
 
         $model = preg_replace('|{{ Namespace }}|u', $this->getNamespace(), $template);
         $model = preg_replace('|{{ Version }}|u', $this->version, $model);
