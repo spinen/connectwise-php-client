@@ -3,12 +3,16 @@
 namespace Spinen\ConnectWise\Support;
 
 use ArrayAccess;
+use ArrayIterator;
 use Carbon\Carbon;
+use Countable;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
+use IteratorAggregate;
 use JsonSerializable;
+use Serializable;
 use Spinen\ConnectWise\Api\Client;
 
 /**
@@ -20,7 +24,14 @@ use Spinen\ConnectWise\Api\Client;
  *
  * @package Spinen\ConnectWise\Support
  */
-abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
+abstract class Model implements
+    ArrayAccess,
+    Arrayable,
+    Countable,
+    IteratorAggregate,
+    Jsonable,
+    JsonSerializable,
+    Serializable
 {
     /**
      * The collection of attributes for the model
@@ -198,6 +209,16 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     }
 
     /**
+     * Count the number of properties.
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return count($this->attributes);
+    }
+
+    /**
      * Store the collection of attributes on the model
      *
      * @param array $attributes
@@ -292,6 +313,16 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     }
 
     /**
+     * Get an iterator for the attributes.
+     *
+     * @return ArrayIterator
+     */
+    public function getIterator()
+    {
+        return new ArrayIterator($this->attributes);
+    }
+
+    /**
      * Build the name of the getter for an attribute
      *
      * @param string $attribute
@@ -322,7 +353,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     public function offsetExists($attribute)
     {
-        return isset($this->$attribute);
+        return isset($this->{$attribute});
     }
 
     /**
@@ -334,7 +365,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     public function offsetGet($attribute)
     {
-        return $this->$attribute;
+        return $this->{$attribute};
     }
 
     /**
@@ -345,7 +376,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     public function offsetSet($attribute, $value)
     {
-        $this->$attribute = $value;
+        $this->{$attribute} = $value;
     }
 
     /**
@@ -357,7 +388,17 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     public function offsetUnset($attribute)
     {
-        unset($this->$attribute);
+        unset($this->{$attribute});
+    }
+
+    /**
+     * Serialize the attributes
+     *
+     * @return string
+     */
+    public function serialize()
+    {
+        return serialize($this->attributes);
     }
 
     /**
@@ -419,5 +460,15 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     public function toJson($options = 0)
     {
         return json_encode($this->jsonSerialize(), $options);
+    }
+
+    /**
+     * Unserialize the attributes
+     *
+     * @param string $serialized
+     */
+    public function unserialize($serialized)
+    {
+        $this->attributes = unserialize($serialized);
     }
 }
