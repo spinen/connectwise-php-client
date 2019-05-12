@@ -40,7 +40,7 @@ The responses are cast into models with the properties cast into the types as de
 
 Some of the responses have links to the related resource.  If a property has a relationship, you can call it as a method, and the additional calls are automatically made & returned.  The value is stored in place of the original data, so once it is loaded it is cached.
 
-```php
+```
 $ psysh
 Psy Shell v0.8.18 (PHP 7.2.17 — cli) by Justin Hileman
 
