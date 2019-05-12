@@ -92,7 +92,7 @@ abstract class Model implements
         }
 
         // Look to see if the property has a relationship to call
-        if ($this->client && is_array($this->{$method}) && array_key_exists('_info', $this->{$method})) {
+        if ($this->client && ($this->{$method}->_info ?? null)) {
             foreach ($this->{$method}['_info'] as $k => $v) {
                 if (Str::startsWith($v, $this->client->getUrl())) {
                     // Cache so that other request will not trigger additional calls
