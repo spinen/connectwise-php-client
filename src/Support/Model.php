@@ -67,16 +67,6 @@ abstract class Model implements
     }
 
     /**
-     * Convert the model to its string representation.
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->toJson();
-    }
-
-    /**
      * Magic method to allow getting related items
      *
      * @param string $method
@@ -152,6 +142,16 @@ abstract class Model implements
     public function __set($attribute, $value)
     {
         $this->setAttribute($attribute, $value);
+    }
+
+    /**
+     * Convert the model to its string representation.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toJson();
     }
 
     /**
