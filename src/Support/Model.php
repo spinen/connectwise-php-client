@@ -3,11 +3,16 @@
 namespace Spinen\ConnectWise\Support;
 
 use ArrayAccess;
+use ArrayIterator;
 use Carbon\Carbon;
+use Countable;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
+use Illuminate\Support\Str;
 use InvalidArgumentException;
+use IteratorAggregate;
 use JsonSerializable;
+use Serializable;
 use Spinen\ConnectWise\Api\Client;
 
 /**
@@ -19,7 +24,14 @@ use Spinen\ConnectWise\Api\Client;
  *
  * @package Spinen\ConnectWise\Support
  */
-abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
+abstract class Model implements
+    ArrayAccess,
+    Arrayable,
+    Countable,
+    IteratorAggregate,
+    Jsonable,
+    JsonSerializable,
+    Serializable
 {
     /**
      * The collection of attributes for the model
@@ -55,16 +67,6 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     }
 
     /**
-     * Convert the model to its string representation.
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->toJson();
-    }
-
-    /**
      * Magic method to allow getting related items
      *
      * @param string $method
@@ -82,9 +84,9 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
         // Look to see if the property has a relationship to call
         if ($this->client && is_array($this->{$method}) && array_key_exists('_info', $this->{$method})) {
             foreach ($this->{$method}['_info'] as $k => $v) {
-                if (starts_with($v, $this->client->getUrl())) {
+                if (Str::startsWith($v, $this->client->getUrl())) {
                     // Cache so that other request will not trigger additional calls
-                    $this->{$method} = $this->client->get(str_replace_first($this->client->getUrl(), '', $v));
+                    $this->{$method} = $this->client->get(Str::replaceFirst($this->client->getUrl(), '', $v));
 
                     return $this->{$method};
                 }
@@ -92,6 +94,19 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
         }
 
         trigger_error('Call to undefined method ' . __CLASS__ . '::' . $method . '()', E_USER_ERROR);
+    }
+
+    /**
+     * Only return the attributes for a var_dump
+     *
+     * This object proxies the properties to the keys in the attributes array,so only
+     * expose it when doing a var_dump as the other properties are not needed in debugging.
+     *
+     * @return array
+     */
+    public function __debugInfo()
+    {
+        return $this->attributes;
     }
 
     /**
@@ -122,11 +137,21 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      * Set a property on the model in the attributes
      *
      * @param string $attribute
-     * @param mixed  $value
+     * @param mixed $value
      */
     public function __set($attribute, $value)
     {
         $this->setAttribute($attribute, $value);
+    }
+
+    /**
+     * Convert the model to its string representation.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toJson();
     }
 
     /**
@@ -142,25 +167,23 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     /**
      * Cast a item to a specific object or type
      *
-     * @param mixed  $value
+     * @param mixed $value
      * @param string $cast
      *
      * @return mixed
      */
     public function castTo($value, $cast)
     {
-        if (is_null($value)) {
+        if (is_null($value) || is_object($value)) {
             return $value;
-        }
-
-        $class = 'Spinen\ConnectWise\\' . studly_case($cast);
-
-        if (class_exists($class)) {
-            return new $class($value);
         }
 
         if (strcasecmp('carbon', $cast) == 0) {
             return Carbon::parse($value);
+        }
+
+        if (class_exists($cast)) {
+            return new $cast((array)$value);
         }
 
         if (strcasecmp('json', $cast) == 0) {
@@ -171,21 +194,21 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
             return new Collection((array)$value);
         }
 
-        if (in_array($cast, ["bool", "boolean"])) {
+        if (in_array($cast, ['bool', 'boolean'])) {
             return filter_var($value, FILTER_VALIDATE_BOOLEAN);
         }
 
         $cast_types = [
-            "array",
-            "bool",
-            "boolean",
-            "double",
-            "float",
-            "int",
-            "integer",
-            "null",
-            "object",
-            "string",
+            'array',
+            'bool',
+            'boolean',
+            'double',
+            'float',
+            'int',
+            'integer',
+            'null',
+            'object',
+            'string',
         ];
 
         if (!in_array($cast, $cast_types)) {
@@ -196,6 +219,16 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
 
         // settype returns true/false for pass/fail, not the value
         return $value;
+    }
+
+    /**
+     * Count the number of properties.
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return count($this->attributes);
     }
 
     /**
@@ -273,7 +306,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
             return $this->attributes[$attribute];
         };
 
-        trigger_error('Undefined property:'. __CLASS__ . '::$' . $attribute);
+        trigger_error('Undefined property:' . __CLASS__ . '::$' . $attribute);
     }
 
     /**
@@ -293,6 +326,16 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     }
 
     /**
+     * Get an iterator for the attributes.
+     *
+     * @return ArrayIterator
+     */
+    public function getIterator()
+    {
+        return new ArrayIterator($this->attributes);
+    }
+
+    /**
      * Build the name of the getter for an attribute
      *
      * @param string $attribute
@@ -301,7 +344,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     protected function getterMethodName($attribute)
     {
-        return 'get' . studly_case($attribute) . 'Attribute';
+        return 'get' . Str::studly($attribute) . 'Attribute';
     }
 
     /**
@@ -323,7 +366,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     public function offsetExists($attribute)
     {
-        return isset($this->$attribute);
+        return isset($this->{$attribute});
     }
 
     /**
@@ -335,20 +378,18 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     public function offsetGet($attribute)
     {
-        return $this->$attribute;
+        return $this->{$attribute};
     }
 
     /**
      * Allow the model to behave like an associate array, so set attribute
      *
      * @param string $attribute
-     * @param mixed  $value
-     *
-     * @return mixed
+     * @param mixed $value
      */
     public function offsetSet($attribute, $value)
     {
-        $this->$attribute = $value;
+        $this->{$attribute} = $value;
     }
 
     /**
@@ -360,7 +401,17 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     public function offsetUnset($attribute)
     {
-        unset($this->$attribute);
+        unset($this->{$attribute});
+    }
+
+    /**
+     * Serialize the attributes
+     *
+     * @return string
+     */
+    public function serialize()
+    {
+        return serialize($this->attributes);
     }
 
     /**
@@ -370,7 +421,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      * the attribute is supposed to be cast to a specific value before setting.  Finally, store the value on the model.
      *
      * @param string $attribute
-     * @param mixed  $value
+     * @param mixed $value
      *
      * @return $this
      */
@@ -398,7 +449,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     protected function setterMethodName($attribute)
     {
-        return 'set' . studly_case($attribute) . 'Attribute';
+        return 'set' . Str::studly($attribute) . 'Attribute';
     }
 
     /**
@@ -413,7 +464,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     }
 
     /**
-     * Return the model as an array
+     * Return the model as JSON
      *
      * @param int $options
      *
@@ -422,5 +473,15 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     public function toJson($options = 0)
     {
         return json_encode($this->jsonSerialize(), $options);
+    }
+
+    /**
+     * Unserialize the attributes
+     *
+     * @param string $serialized
+     */
+    public function unserialize($serialized)
+    {
+        $this->attributes = unserialize($serialized);
     }
 }
