@@ -161,7 +161,7 @@ abstract class Model implements
      */
     public function castTo($value, $cast)
     {
-        if (is_null($value)) {
+        if (is_null($value) || is_object($value)) {
             return $value;
         }
 
@@ -170,7 +170,7 @@ abstract class Model implements
         }
 
         if (class_exists($cast)) {
-            return new $cast($value);
+            return new $cast((array) $value);
         }
 
         if (strcasecmp('json', $cast) == 0) {
