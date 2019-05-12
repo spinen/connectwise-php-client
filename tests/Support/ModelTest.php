@@ -2,21 +2,47 @@
 
 namespace Spinen\ConnectWise\Support;
 
+use ArrayIterator;
 use Carbon\Carbon;
 use InvalidArgumentException;
 use Spinen\ConnectWise\Models\v2019_3\System\Info;
+use Spinen\ConnectWise\Support\Stubs\Model;
 use Spinen\ConnectWise\TestCase;
 
 class ModelTest extends TestCase
 {
     /**
+     * @var Model
+     */
+    protected $model;
+
+    protected function setUp()
+    {
+        parent::setUp();
+
+        $this->model = new Model(
+            [
+                'array_attribute'      => [],
+                'boolean_attribute'    => "false",
+                'carbon_attribute'     => 'January 1, 2017',
+                'collection_attribute' => [],
+                'float_attribute'      => "1.2",
+                'info_attribute'       => [],
+                'integer_attribute'    => "1",
+                'json_attribute'       => ['property' => 1],
+                'null_attribute'       => null,
+                'object_attribute'     => [],
+                'string_attribute'     => 'something',
+            ]
+        );
+    }
+
+    /**
      * @test
      */
     public function it_can_be_constructed()
     {
-        $model = new Stubs\Model([]);
-
-        $this->assertInstanceOf(Model::class, $model);
+        $this->assertInstanceOf(Model::class, $this->model);
     }
 
     /**
@@ -24,7 +50,7 @@ class ModelTest extends TestCase
      */
     public function it_can_be_constructed_with_an_array_of_attributes()
     {
-        $model = new Stubs\Model(
+        $model = new Model(
             [
                 'attribute' => 'one',
             ]
@@ -41,7 +67,7 @@ class ModelTest extends TestCase
      */
     public function it_cast_attributes_it_they_are_configured_in_the_casts_array()
     {
-        $model = new Stubs\Model(
+        $model = new Model(
             [
                 'array_attribute'      => [],
                 'boolean_attribute'    => "false",
@@ -80,7 +106,7 @@ class ModelTest extends TestCase
      */
     public function it_raises_exception_when_invalid_type_is_set()
     {
-        new Stubs\Model(
+        new Model(
             [
                 'invalid_attribute' => 'whatever',
             ]
@@ -92,7 +118,7 @@ class ModelTest extends TestCase
      */
     public function it_uses_getters_and_setters_if_they_are_defined()
     {
-        $model = new Stubs\Model(
+        $model = new Model(
             [
                 'getter' => 'Raw getter value',
                 'setter' => 'Raw setter value',
@@ -106,24 +132,71 @@ class ModelTest extends TestCase
     /**
      * @test
      */
+    public function it_can_be_cast_to_an_array()
+    {
+        $this->assertIsArray((array) $this->model, 'casts');
+        $this->assertIsArray($this->model->toArray(), 'method');
+    }
+
+    /**
+     * @test
+     */
     public function it_can_serialize_model_as_json()
     {
-        $model = new Stubs\Model(
-            [
-                'array_attribute'      => [],
-                'boolean_attribute'    => "false",
-                'carbon_attribute'     => 'January 1, 2017',
-                'collection_attribute' => [],
-                'float_attribute'      => "1.2",
-                'info_attribute'       => [],
-                'integer_attribute'    => "1",
-                'json_attribute'       => ['property' => 1],
-                'null_attribute'       => null,
-                'object_attribute'     => [],
-                'string_attribute'     => 'something',
-            ]
-        );
+        $this->assertJson($this->model->toJson());
+    }
 
-        $this->assertJson($model->toJson());
+    /**
+     * @test
+     */
+    public function it_gives_json_when_cast_as_a_string()
+    {
+        $this->assertJson((string) $this->model);
+    }
+
+    /**
+     * @test
+     */
+    public function it_can_act_as_an_array()
+    {
+        $this->assertIsInt(count($this->model), 'countable');
+
+        $this->assertTrue(is_iterable($this->model), 'is_iterable');
+
+        $this->assertInstanceOf(ArrayIterator::class, $this->model->getIterator(), 'iterable');
+
+        $this->assertTrue(isset($this->model['string_attribute']), 'offsetExists');
+
+        $this->assertTrue((boolean) $this->model['string_attribute'], 'offsetGet');
+
+        $this->model['string_attribute'] = 'something else';
+
+        $this->assertEquals('something else', $this->model['string_attribute'], 'offsetSet');
+
+        unset($this->model['string_attribute']);
+
+        $this->assertFalse(isset($this->model['string_attribute']), 'offsetUnset');
+    }
+
+    /**
+     * @test
+     */
+    public function it_can_be_serialized_and_unserialized()
+    {
+        $serialized = serialize($this->model);
+
+        $this->assertIsString($serialized, 'serialized');
+
+        $unserialized = unserialize($serialized);
+
+        $this->assertInstanceOf(Model::class, $unserialized, 'unserialized');
+    }
+
+    /**
+     * @test
+     */
+    public function it_only_returns_the_attributes_when_debugging()
+    {
+        $this->assertIsArray($this->model->__debugInfo(), 'array');
     }
 }
