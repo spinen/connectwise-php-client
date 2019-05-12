@@ -40,6 +40,21 @@ The responses are cast into models with the properties cast into the types as de
 
 Some of the responses have links to the related resource.  If a property has a relationship, you can call it as a method, and the additional calls are automatically made & returned.  The value is stored in place of the original data, so once it is loaded it is cached.
 
+```php
+$ psysh
+Psy Shell v0.8.18 (PHP 7.2.17 — cli) by Justin Hileman
+
+>>> // Using "$member" object for this example
+>>> get_class($member) // Verify that it is a "Memeber"
+=> "Spinen\ConnectWise\Models\v2019_3\System\Member"
+>>> get_class($member->defaultLocation) // On load, the "defaultLocation" is a "SystemLocationReference" object
+=> "Spinen\ConnectWise\Models\v2019_3\System\SystemLocationReference"
+>>> get_class($member->defaultLocation()) // Call it as a method to load the realationship
+=> "Spinen\ConnectWise\Models\v2019_3\System\Location"
+>>> get_class($member->defaultLocation) // Now it is cached as a "Location" object
+=> "Spinen\ConnectWise\Models\v2019_3\System\Location"
+```
+
 ## Install
 
 Install the ConnectWise PHP Client:
