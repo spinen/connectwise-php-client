@@ -3,12 +3,16 @@
 namespace Spinen\ConnectWise\Support;
 
 use ArrayAccess;
+use ArrayIterator;
 use Carbon\Carbon;
+use Countable;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
+use IteratorAggregate;
 use JsonSerializable;
+use Serializable;
 use Spinen\ConnectWise\Api\Client;
 
 /**
@@ -20,7 +24,14 @@ use Spinen\ConnectWise\Api\Client;
  *
  * @package Spinen\ConnectWise\Support
  */
-abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
+abstract class Model implements
+    ArrayAccess,
+    Arrayable,
+    Countable,
+    IteratorAggregate,
+    Jsonable,
+    JsonSerializable,
+    Serializable
 {
     /**
      * The collection of attributes for the model
@@ -56,16 +67,6 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     }
 
     /**
-     * Convert the model to its string representation.
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->toJson();
-    }
-
-    /**
      * Magic method to allow getting related items
      *
      * @param string $method
@@ -81,7 +82,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
         }
 
         // Look to see if the property has a relationship to call
-        if ($this->client && is_array($this->{$method}) && array_key_exists('_info', $this->{$method})) {
+        if ($this->client && ($this->{$method}->_info ?? null)) {
             foreach ($this->{$method}['_info'] as $k => $v) {
                 if (Str::startsWith($v, $this->client->getUrl())) {
                     // Cache so that other request will not trigger additional calls
@@ -93,6 +94,19 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
         }
 
         trigger_error('Call to undefined method ' . __CLASS__ . '::' . $method . '()', E_USER_ERROR);
+    }
+
+    /**
+     * Only return the attributes for a var_dump
+     *
+     * This object proxies the properties to the keys in the attributes array,so only
+     * expose it when doing a var_dump as the other properties are not needed in debugging.
+     *
+     * @return array
+     */
+    public function __debugInfo()
+    {
+        return $this->attributes;
     }
 
     /**
@@ -131,6 +145,16 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     }
 
     /**
+     * Convert the model to its string representation.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toJson();
+    }
+
+    /**
      * Unset a property on the model in the attributes
      *
      * @param string $attribute
@@ -150,7 +174,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     public function castTo($value, $cast)
     {
-        if (is_null($value)) {
+        if (is_null($value) || is_object($value)) {
             return $value;
         }
 
@@ -159,7 +183,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
         }
 
         if (class_exists($cast)) {
-            return new $cast($value);
+            return new $cast((array) $value);
         }
 
         if (strcasecmp('json', $cast) == 0) {
@@ -195,6 +219,16 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
 
         // settype returns true/false for pass/fail, not the value
         return $value;
+    }
+
+    /**
+     * Count the number of properties.
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return count($this->attributes);
     }
 
     /**
@@ -292,6 +326,16 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     }
 
     /**
+     * Get an iterator for the attributes.
+     *
+     * @return ArrayIterator
+     */
+    public function getIterator()
+    {
+        return new ArrayIterator($this->attributes);
+    }
+
+    /**
      * Build the name of the getter for an attribute
      *
      * @param string $attribute
@@ -322,7 +366,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     public function offsetExists($attribute)
     {
-        return isset($this->$attribute);
+        return isset($this->{$attribute});
     }
 
     /**
@@ -334,7 +378,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     public function offsetGet($attribute)
     {
-        return $this->$attribute;
+        return $this->{$attribute};
     }
 
     /**
@@ -345,7 +389,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     public function offsetSet($attribute, $value)
     {
-        $this->$attribute = $value;
+        $this->{$attribute} = $value;
     }
 
     /**
@@ -357,7 +401,17 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
      */
     public function offsetUnset($attribute)
     {
-        unset($this->$attribute);
+        unset($this->{$attribute});
+    }
+
+    /**
+     * Serialize the attributes
+     *
+     * @return string
+     */
+    public function serialize()
+    {
+        return serialize($this->attributes);
     }
 
     /**
@@ -419,5 +473,15 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
     public function toJson($options = 0)
     {
         return json_encode($this->jsonSerialize(), $options);
+    }
+
+    /**
+     * Unserialize the attributes
+     *
+     * @param string $serialized
+     */
+    public function unserialize($serialized)
+    {
+        $this->attributes = unserialize($serialized);
     }
 }
