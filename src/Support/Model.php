@@ -99,7 +99,7 @@ abstract class Model implements
     /**
      * Only return the attributes for a var_dump
      *
-     * This object proxies the properties to the keys in the attributes array,so only
+     * This object proxies the properties to the keys in the attributes array, so only
      * expose it when doing a var_dump as the other properties are not needed in debugging.
      *
      * @return array
