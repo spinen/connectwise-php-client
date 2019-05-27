@@ -473,7 +473,7 @@ class Client
         ];
 
         if (!in_array($version, $supported)) {
-            throw new InvalidArgumentException(sprintf("The Version provided[%] is not supported.", $version));
+            throw new InvalidArgumentException(sprintf("The Version provided[%s] is not supported.", $version));
         }
 
         $this->version = $version;
