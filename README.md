@@ -45,11 +45,11 @@ $ psysh
 Psy Shell v0.8.18 (PHP 7.2.17 — cli) by Justin Hileman
 
 >>> // Using "$member" object for this example
->>> get_class($member) // Verify that it is a "Memeber"
+>>> get_class($member) // Verify that it is a "Member"
 => "Spinen\ConnectWise\Models\v2019_3\System\Member"
 >>> get_class($member->defaultLocation) // On load, the "defaultLocation" is a "SystemLocationReference" object
 => "Spinen\ConnectWise\Models\v2019_3\System\SystemLocationReference"
->>> get_class($member->defaultLocation()) // Call it as a method to load the realationship
+>>> get_class($member->defaultLocation()) // Call it as a method to load the relationship
 => "Spinen\ConnectWise\Models\v2019_3\System\Location"
 >>> get_class($member->defaultLocation) // Now it is cached as a "Location" object
 => "Spinen\ConnectWise\Models\v2019_3\System\Location"
