@@ -86,7 +86,10 @@ abstract class Model implements
             foreach ($this->{$method}['_info'] as $k => $v) {
                 if (Str::startsWith($v, $this->client->getUrl())) {
                     // Cache so that other request will not trigger additional calls
-                    $this->{$method} = $this->client->get(Str::replaceFirst($this->client->getUrl(), '', $v));
+                    $this->setAttribute(
+                        $method,
+                        $this->client->get(Str::replaceFirst($this->client->getUrl(), '', $v))
+                    );
 
                     return $this->{$method};
                 }
@@ -137,7 +140,7 @@ abstract class Model implements
      * Set a property on the model in the attributes
      *
      * @param string $attribute
-     * @param mixed  $value
+     * @param mixed $value
      */
     public function __set($attribute, $value)
     {
@@ -167,7 +170,7 @@ abstract class Model implements
     /**
      * Cast a item to a specific object or type
      *
-     * @param mixed  $value
+     * @param mixed $value
      * @param string $cast
      *
      * @return mixed
@@ -183,7 +186,7 @@ abstract class Model implements
         }
 
         if (class_exists($cast)) {
-            return new $cast((array) $value);
+            return new $cast((array)$value);
         }
 
         if (strcasecmp('json', $cast) == 0) {
@@ -294,19 +297,34 @@ abstract class Model implements
      */
     public function getAttribute($attribute)
     {
+        // Guard against no attribute
         if (!$attribute) {
             return;
         }
 
+        // Use getter on model if there is one
         if ($this->hasGetter($attribute)) {
             return $this->{$this->getterMethodName($attribute)}();
         }
 
-        if (isset($this->$attribute)) {
+        // Allow for making related calls for "extra" properties in the "_info" property.
+        // Cache the results so only 1 call is made
+        if (!isset($this->{$attribute}) && isset($this->_info->{$attribute . '_href'})) {
+            $this->setAttribute(
+                $attribute,
+                $this->client->get(
+                    Str::replaceFirst($this->client->getUrl(), '', $this->_info->{$attribute . '_href'})
+                )
+            );
+        }
+
+        // Pull the value from the attributes
+        if (isset($this->{$attribute})) {
             return $this->attributes[$attribute];
         };
 
-        trigger_error('Undefined property:'. __CLASS__ . '::$' . $attribute);
+        // Attribute does not exist on the model
+        trigger_error('Undefined property:' . __CLASS__ . '::$' . $attribute);
     }
 
     /**
@@ -385,7 +403,7 @@ abstract class Model implements
      * Allow the model to behave like an associate array, so set attribute
      *
      * @param string $attribute
-     * @param mixed  $value
+     * @param mixed $value
      */
     public function offsetSet($attribute, $value)
     {
@@ -421,7 +439,7 @@ abstract class Model implements
      * the attribute is supposed to be cast to a specific value before setting.  Finally, store the value on the model.
      *
      * @param string $attribute
-     * @param mixed  $value
+     * @param mixed $value
      *
      * @return $this
      */
