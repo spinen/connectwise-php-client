@@ -24,7 +24,14 @@ use Spinen\ConnectWise\Api\Client;
  *
  * @package Spinen\ConnectWise\Support
  */
-abstract class Model implements ArrayAccess, Arrayable, Countable, IteratorAggregate, Jsonable, JsonSerializable, Serializable
+abstract class Model implements
+    ArrayAccess,
+    Arrayable,
+    Countable,
+    IteratorAggregate,
+    Jsonable,
+    JsonSerializable,
+    Serializable
 {
     /**
      * The collection of attributes for the model
