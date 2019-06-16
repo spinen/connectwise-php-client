@@ -294,18 +294,33 @@ abstract class Model implements
      */
     public function getAttribute($attribute)
     {
+        // Guard against no attribute
         if (!$attribute) {
             return;
         }
 
+        // Use getter on model if there is one
         if ($this->hasGetter($attribute)) {
             return $this->{$this->getterMethodName($attribute)}();
         }
 
-        if (isset($this->$attribute)) {
+        // Allow for making related calls for "extra" properties in the "_info" property.
+        // Cache the results so only 1 call is made
+        if (!isset($this->{$attribute}) && isset($this->_info->{$attribute . '_href'})) {
+            $this->setAttribute(
+                $attribute,
+                $this->client->get(
+                    Str::replaceFirst($this->client->getUrl(), '', $this->_info->{$attribute . '_href'})
+                )
+            );
+        }
+
+        // Pull the value from the attributes
+        if (isset($this->{$attribute})) {
             return $this->attributes[$attribute];
         };
 
+        // Attribute does not exist on the model
         trigger_error('Undefined property:'. __CLASS__ . '::$' . $attribute);
     }
 
