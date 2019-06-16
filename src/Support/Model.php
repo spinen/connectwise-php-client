@@ -24,14 +24,7 @@ use Spinen\ConnectWise\Api\Client;
  *
  * @package Spinen\ConnectWise\Support
  */
-abstract class Model implements
-    ArrayAccess,
-    Arrayable,
-    Countable,
-    IteratorAggregate,
-    Jsonable,
-    JsonSerializable,
-    Serializable
+abstract class Model implements ArrayAccess, Arrayable, Countable, IteratorAggregate, Jsonable, JsonSerializable, Serializable
 {
     /**
      * The collection of attributes for the model
@@ -86,7 +79,10 @@ abstract class Model implements
             foreach ($this->{$method}['_info'] as $k => $v) {
                 if (Str::startsWith($v, $this->client->getUrl())) {
                     // Cache so that other request will not trigger additional calls
-                    $this->{$method} = $this->client->get(Str::replaceFirst($this->client->getUrl(), '', $v));
+                    $this->setAttribute(
+                        $method,
+                        $this->client->get(Str::replaceFirst($this->client->getUrl(), '', $v))
+                    );
 
                     return $this->{$method};
                 }
@@ -137,7 +133,7 @@ abstract class Model implements
      * Set a property on the model in the attributes
      *
      * @param string $attribute
-     * @param mixed  $value
+     * @param mixed $value
      */
     public function __set($attribute, $value)
     {
@@ -167,7 +163,7 @@ abstract class Model implements
     /**
      * Cast a item to a specific object or type
      *
-     * @param mixed  $value
+     * @param mixed $value
      * @param string $cast
      *
      * @return mixed
@@ -183,7 +179,7 @@ abstract class Model implements
         }
 
         if (class_exists($cast)) {
-            return new $cast((array) $value);
+            return new $cast((array)$value);
         }
 
         if (strcasecmp('json', $cast) == 0) {
@@ -321,7 +317,7 @@ abstract class Model implements
         };
 
         // Attribute does not exist on the model
-        trigger_error('Undefined property:'. __CLASS__ . '::$' . $attribute);
+        trigger_error('Undefined property:' . __CLASS__ . '::$' . $attribute);
     }
 
     /**
@@ -400,7 +396,7 @@ abstract class Model implements
      * Allow the model to behave like an associate array, so set attribute
      *
      * @param string $attribute
-     * @param mixed  $value
+     * @param mixed $value
      */
     public function offsetSet($attribute, $value)
     {
@@ -436,7 +432,7 @@ abstract class Model implements
      * the attribute is supposed to be cast to a specific value before setting.  Finally, store the value on the model.
      *
      * @param string $attribute
-     * @param mixed  $value
+     * @param mixed $value
      *
      * @return $this
      */
