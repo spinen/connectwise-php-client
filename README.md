@@ -55,6 +55,45 @@ Psy Shell v0.8.18 (PHP 7.2.17 — cli) by Justin Hileman
 => "Spinen\ConnectWise\Models\v2019_3\System\Location"
 ```
 
+There are may also be "related" properties in the "_info" property that you can have the system load for you
+
+```
+$ psysh
+Psy Shell v0.8.18 (PHP 7.2.17 — cli) by Justin Hileman
+
+>>> // Using "$company" object for this example
+>>> get_class($company) // Verify that it is a "Company"
+=> "Spinen\ConnectWise\Models\v2018_6\Company\Company"
+>>> $company->_info // Look for potential relations
+=> Spinen\ConnectWise\Models\v2018_6\Company\Metadata {#5678
+     +"lastUpdated": "2019-05-20T18:12:38Z",
+     +"updatedBy": "someone",
+     +"dateEntered": "2006-06-21T16:04:59Z",
+     +"enteredBy": "someone",
+     +"contacts_href": "https://some.host/v4_6_release/apis/3.0/company/contacts?conditions=company/id=250",
+     +"agreements_href": "https://some.host/v4_6_release/apis/3.0/finance/agreements?conditions=company/id=250",
+     +"tickets_href": "https://some.host/v4_6_release/apis/3.0/service/tickets?conditions=company/id=250",
+     +"opportunities_href": "https://some.host/v4_6_release/apis/3.0/sales/opportunities?conditions=company/id=250",
+     +"activities_href": "https://some.host/v4_6_release/apis/3.0/sales/activities?conditions=company/id=250",
+     +"projects_href": "https://some.host/v4_6_release/apis/3.0/project/projects?conditions=company/id=250",
+     +"configurations_href": "https://some.host/v4_6_release/apis/3.0/company/configurations?conditions=company/id=250",
+     +"orders_href": "https://some.host/v4_6_release/apis/3.0/sales/orders?conditions=company/id=250",
+     +"documents_href": "https://some.host/v4_6_release/apis/3.0/system/documents?recordType=Company&recordId=250",
+     +"sites_href": "https://some.host/v4_6_release/apis/3.0/company/companies/250/sites",
+     +"teams_href": "https://some.host/v4_6_release/apis/3.0/company/companies/250/teams",
+     +"reports_href": "https://some.host/v4_6_release/apis/3.0/company/companies/250/managementSummaryReports",
+     +"notes_href": "https://some.host/v4_6_release/apis/3.0/company/companies/250/notes",
+   }
+>>> isset($company->agreements) // Not loaded before the call
+=> false
+>>> $company->agreements // Client goes to get "agreements" from the $company->_info->agreements_fref URI
+=> Spinen\ConnectWise\Support\Collection {#6123
+     // Removed to make example shorter
+   }
+>>> isset($company->agreements) // Cachec & loaded for next call
+=> true
+```
+
 ## Install
 
 Install the ConnectWise PHP Client:
