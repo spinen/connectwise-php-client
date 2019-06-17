@@ -38,7 +38,7 @@ The client supports the standard `http verbs` plus one extra one...
 
 * `delete`
 * `get` (ConnectWise default pagination is 25 records, so unless you specify a different `pageSize`, you will get 25 records)
-* `getAll` (Makes as many needed API calls to get all of the records in the collection.  You should be very careful when using this method as it could run your system ouf of memory.)
+* `getAll` (Makes as many needed API calls to get all of the records in the collection.  You should be very careful when using this method as your system may run out of memory.)
 * `head`
 * `put`
 * `post`
@@ -67,7 +67,7 @@ Psy Shell v0.8.18 (PHP 7.2.17 — cli) by Justin Hileman
 => "Spinen\ConnectWise\Models\v2019_3\System\Location"
 ```
 
-There are may also be "related" properties in the "_info" property that you can have the system load for you. [NOTE: This does a `getAll` for the related, so it will make as many API calls as needed to get all of the related items]
+There are may also be "related" properties in the "_info" property that you can have the system load for you. [NOTE: This does a `getAll` for the related properties, so it will make as many API calls as needed to get all of the related items]
 
 ```
 $ psysh
