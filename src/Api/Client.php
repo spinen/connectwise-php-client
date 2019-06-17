@@ -7,7 +7,10 @@ use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Response;
+use Illuminate\Support\Collection as LaravelCollection;
+use Illuminate\Support\Str;
 use InvalidArgumentException;
+use Psr\Http\Message\ResponseInterface;
 use Spinen\ConnectWise\Exceptions\MalformedRequest;
 use Spinen\ConnectWise\Support\Collection;
 use Spinen\ConnectWise\Support\Model;
@@ -18,12 +21,13 @@ use Spinen\ConnectWise\Support\ModelResolver;
  *
  * @package Spinen\ConnectWise\Api
  *
- * @method array delete(string $resource, array $options = [])
- * @method array get(string $resource, array $options = [])
- * @method array head(string $resource, array $options = [])
- * @method array patch(string $resource, array $options = [])
- * @method array post(string $resource, array $options = [])
- * @method array put(string $resource, array $options = [])
+ * @method LaravelCollection|Model delete(string $resource, array $options = [])
+ * @method LaravelCollection|Model get(string $resource, array $options = [])
+ * @method LaravelCollection|Model getAll(string $resource, array $options = [])
+ * @method LaravelCollection|Model head(string $resource, array $options = [])
+ * @method LaravelCollection|Model patch(string $resource, array $options = [])
+ * @method LaravelCollection|Model post(string $resource, array $options = [])
+ * @method LaravelCollection|Model put(string $resource, array $options = [])
  */
 class Client
 {
@@ -55,9 +59,23 @@ class Client
     protected $integrator;
 
     /**
+     * Current page
+     *
+     * @var integer
+     */
+    protected $page;
+
+    /**
+     * Number or records to retrieve
+     *
+     * @var int
+     */
+    protected $page_size = 100;
+
+    /**
      * Integration password for global calls
      *
-     * @var
+     * @var string
      */
     protected $password;
 
@@ -135,11 +153,14 @@ class Client
             throw new InvalidArgumentException('Magic request methods require a resource and optional options array');
         }
 
+        // For "getAll", set page to 1 & change verb to "get", otherwise, no page
+        ($verb === 'getAll') ? $this->page = 1 && $verb = 'get' : $this->page = 0;
+
         if (!in_array($verb, $this->verbs)) {
             throw new InvalidArgumentException(sprintf("Unsupported verb [%s] was requested.", $verb));
         }
 
-        return $this->request($verb, $args[0], $args[1] ?? []);
+        return $this->request($verb, $this->trimResourceAsNeeded($args[0]), $args[1] ?? []);
     }
 
     /**
@@ -202,7 +223,12 @@ class Client
      */
     public function buildUri($resource)
     {
-        $uri = $this->getUrl() . ltrim($resource, '/');
+        $uri = $this->getUrl($resource);
+
+        // For getAll calls, make sure to add pageSize & page to request
+        if ($this->page) {
+            $uri .= (preg_match('/\\?/u', $uri) ? '&' : '?') . 'pageSize=' . $this->page_size . '&page=' . $this->page;
+        }
 
         if (strlen($uri) > 2000) {
             throw new MalformedRequest(
@@ -291,11 +317,13 @@ class Client
     /**
      * Expose the url
      *
+     * @param string|null $path
+     *
      * @return string
      */
-    public function getUrl()
+    public function getUrl($path = null)
     {
-        return $this->url . '/v4_6_release/apis/3.0/';
+        return $this->url . '/v4_6_release/apis/3.0/' . ltrim($path, '/');
     }
 
     /**
@@ -309,16 +337,56 @@ class Client
     }
 
     /**
+     * Check to see if the array is a collection
+     *
+     * @param array $array
+     *
+     * @return bool
+     */
+    protected function isCollection(array $array)
+    {
+        // Keys of the array
+        $keys = array_keys($array);
+
+        // If the array keys of the keys match the keys, then the array must
+        // not be associative (e.g. the keys array looked like {0:0, 1:1...}).
+        return array_keys($keys) === $keys;
+    }
+
+    /**
+     * Check to see it there are more pages in a paginated call
+     *
+     * For paginated calls, ConnectWise returns a "Link" property in teh header with a single string.
+     *
+     * There appears to be 3 potential responses...
+     *  1) null -- The number of items in the collection is < the pageSize
+     *  2) string ends with rel="last" -- More pages to go
+     *  3) string ends with rel="first" -- On the last page
+     *
+     * Here are some examples...
+     *  <https://some.host/v4_6_release/apis/3.0/finance/agreements&pageSize=10&page=2>; rel="next", \
+     *      <https://some.host/v4_6_release/apis/3.0/finance/agreements&pageSize=10&page=3>; rel="last”
+     *
+     *  <https://some.host/v4_6_release/apis/3.0/finance/agreements&pageSize=10&page=3>; rel="next", \
+     *      <https://some.host/v4_6_release/apis/3.0/finance/agreements&pageSize=10&page=1>; rel="first”
+     *
+     * @param ResponseInterface $response
+     *
+     * @return boolean
+     */
+    protected function isLastPage(ResponseInterface $response)
+    {
+        return !(bool)preg_match('/rel="last"$/u', $response->getHeader('Link')[0] ?? null);
+    }
+
+    /**
      * Process the error received from ConnectWise
      *
      * @param RequestException $exception
      */
-    // TODO: Figure out what to really do with an error...
-    /**
-     * @param RequestException $exception
-     */
     protected function processError(RequestException $exception)
     {
+        // TODO: Figure out what to really do with an error...
         echo Psr7\str($exception->getRequest());
 
         if ($exception->hasResponse()) {
@@ -327,33 +395,38 @@ class Client
     }
 
     /**
-     * @param          $resource
-     * @param Response $response
+     * Parse the response for the given resource
      *
-     * @return Collection|Model|Response
+     * @param string $resource
+     * @param ResponseInterface $response
+     *
+     * @return Collection|Model|ResponseInterface
      */
-    protected function processResponse($resource, Response $response)
+    protected function processResponse($resource, ResponseInterface $response)
     {
         $response = (array)json_decode($response->getBody(), true);
 
-        if ($model = $this->resolver->find($resource, $this->getVersion())) {
-            if ($this->isCollection($response)) {
-                $response = array_map(
-                    function ($item) use ($model) {
-                        $item = new $model($item, $this);
+        // Nothing to map response, so just return it as is
+        if (!$model = $this->resolver->find($resource, $this->getVersion())) {
+            return $response;
+        }
 
-                        return $item;
-                    },
-                    $response
-                );
-
-                return new Collection($response);
-            }
-
+        // Not a collection of records, so cast to model
+        if (!$this->isCollection($response)) {
             return new $model($response, $this);
         }
 
-        return $response;
+        // Have a collection of records, so cast them all as a collection
+        return new Collection(
+            array_map(
+                function ($item) use ($model) {
+                    $item = new $model($item, $this);
+
+                    return $item;
+                },
+                $response
+            )
+        );
     }
 
     /**
@@ -363,7 +436,7 @@ class Client
      * @param string $resource
      * @param array|null $options
      *
-     * @return Collection|Model|Response
+     * @return LaravelCollection|Model|Response
      * @throws GuzzleException
      * @throws MalformedRequest
      */
@@ -372,7 +445,24 @@ class Client
         try {
             $response = $this->guzzle->request($method, $this->buildUri($resource), $this->buildOptions($options));
 
-            return $this->processResponse($resource, $response);
+            $processed = $this->processResponse($resource, $response);
+
+            // If, not a "gatAll" call, then return the response
+            if (!$this->page) {
+                return $processed;
+            }
+
+            // Get all of the other records
+            while (!$this->isLastPage($response)) {
+                $this->page = $this->page + 1;
+
+                // Make next call
+                $response = $this->guzzle->request($method, $this->buildUri($resource), $this->buildOptions($options));
+
+                $processed = $processed->merge($this->processResponse($resource, $response));
+            }
+
+            return $processed;
         } catch (RequestException $e) {
             $this->processError($e);
         }
@@ -437,6 +527,20 @@ class Client
     }
 
     /**
+     * Set the page size
+     *
+     * @param integer $page_size
+     *
+     * @return $this
+     */
+    public function setPageSize($page_size)
+    {
+        $this->page_size = $page_size;
+
+        return $this;
+    }
+
+    /**
      * Set the URL to ConnectWise
      *
      * @param string $url
@@ -481,13 +585,15 @@ class Client
         return $this;
     }
 
-    protected function isCollection(array $array)
+    /**
+     * Make the resource being request be relative without the leading slash
+     *
+     * @param string $resource
+     *
+     * @return string
+     */
+    protected function trimResourceAsNeeded($resource)
     {
-        // Keys of the array
-        $keys = array_keys($array);
-
-        // If the array keys of the keys match the keys, then the array must
-        // not be associative (e.g. the keys array looked like {0:0, 1:1...}).
-        return array_keys($keys) === $keys;
+        return ltrim(Str::replaceFirst($this->getUrl(), '', $resource), '/');
     }
 }
