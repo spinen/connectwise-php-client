@@ -404,24 +404,27 @@ class Client
     {
         $response = (array)json_decode($response->getBody(), true);
 
-        if ($model = $this->resolver->find($resource, $this->getVersion())) {
-            if ($this->isCollection($response)) {
-                $response = array_map(
-                    function ($item) use ($model) {
-                        $item = new $model($item, $this);
+        // Nothing to map response, so just return it as is
+        if (!$model = $this->resolver->find($resource, $this->getVersion())) {
+            return $response;
+        }
 
-                        return $item;
-                    },
-                    $response
-                );
-
-                return new Collection($response);
-            }
-
+        // Not a collection of records, so cast to model
+        if (!$this->isCollection($response)) {
             return new $model($response, $this);
         }
 
-        return $response;
+        // Have a collection of records, so cast them all as a collection
+        return new Collection(
+            array_map(
+                function ($item) use ($model) {
+                    $item = new $model($item, $this);
+
+                    return $item;
+                },
+                $response
+            )
+        );
     }
 
     /**
