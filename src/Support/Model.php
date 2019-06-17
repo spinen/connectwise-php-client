@@ -312,7 +312,7 @@ abstract class Model implements
         if (!isset($this->{$attribute}) && isset($this->_info->{$attribute . '_href'})) {
             $this->setAttribute(
                 $attribute,
-                $this->client->get(
+                $this->client->getAll(
                     Str::replaceFirst($this->client->getUrl(), '', $this->_info->{$attribute . '_href'})
                 )
             );
