@@ -32,6 +32,18 @@ As of 2019.3, they require a `clientId` when connecting to the API, so you will 
 
 [https://developer.connectwise.com/ClientID](https://developer.connectwise.com/ClientID)
 
+## Supported Actions
+
+The client supports the standard `http verbs` plus one extra one...
+
+* `delete`
+* `get` (ConnectWise default pagination is 25 records, so unless you specify a different `pageSize`, you will get 25 records)
+* `getAll` (Makes as many needed API calls to get all of the records in the collection.  You should be very careful when using this method as it could run your system ouf of memory.)
+* `head`
+* `put`
+* `post`
+* `patch`
+
 ## Models
 
 The responses are cast into models with the properties cast into the types as defined in the Swagger documentation.  You can review the models in the `src/Models` folder.  There is a property named `casts` on each model that instructs the factory on how to cast the properties from the response.  If the `casts` property is empty, then the properties are not defined in the swagger, so an array is returned.
@@ -55,7 +67,7 @@ Psy Shell v0.8.18 (PHP 7.2.17 — cli) by Justin Hileman
 => "Spinen\ConnectWise\Models\v2019_3\System\Location"
 ```
 
-There are may also be "related" properties in the "_info" property that you can have the system load for you
+There are may also be "related" properties in the "_info" property that you can have the system load for you. [NOTE: This does a `getAll` for the related, so it will make as many API calls as needed to get all of the related items]
 
 ```
 $ psysh
