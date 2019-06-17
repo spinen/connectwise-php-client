@@ -459,9 +459,6 @@ class Client
 
                     $processed = $processed->merge($this->processResponse($resource, $response));
                 }
-
-                // Reset getAll in case using a singleton
-                $this->page = null;
             }
 
             return $processed;
