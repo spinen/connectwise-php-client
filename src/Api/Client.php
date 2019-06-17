@@ -7,6 +7,7 @@ use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Response;
+use Illuminate\Support\Str;
 use InvalidArgumentException;
 use Spinen\ConnectWise\Exceptions\MalformedRequest;
 use Spinen\ConnectWise\Support\Collection;
@@ -150,13 +151,14 @@ class Client
             throw new InvalidArgumentException('Magic request methods require a resource and optional options array');
         }
 
+        // For "getAll", set page to 1 & change verb to "get", otherwise, no page
         ($verb === 'getAll') ? $this->page = 1 && $verb = 'get' : $this->page = 0;
 
         if (!in_array($verb, $this->verbs)) {
             throw new InvalidArgumentException(sprintf("Unsupported verb [%s] was requested.", $verb));
         }
 
-        return $this->request($verb, $args[0], $args[1] ?? []);
+        return $this->request($verb, $this->trimResourceAsNeeded($args[0]), $args[1] ?? []);
     }
 
     /**
@@ -219,8 +221,7 @@ class Client
      */
     public function buildUri($resource)
     {
-        // TODO: Check to see if resource already starts with Url to not have to trim it
-        $uri = $this->getUrl() . ltrim($resource, '/');
+        $uri = $this->getUrl($resource);
 
         // For getAll calls, make sure to add pageSize & page to request
         if ($this->page) {
@@ -314,11 +315,13 @@ class Client
     /**
      * Expose the url
      *
+     * @param string|null $path
+     *
      * @return string
      */
-    public function getUrl()
+    public function getUrl($path = null)
     {
-        return $this->url . '/v4_6_release/apis/3.0/';
+        return $this->url . '/v4_6_release/apis/3.0/' . ltrim($path, '/');
     }
 
     /**
@@ -579,5 +582,17 @@ class Client
         $this->version = $version;
 
         return $this;
+    }
+
+    /**
+     * Make the resource being request be relative without the leading slash
+     *
+     * @param string $resource
+     *
+     * @return string
+     */
+    protected function trimResourceAsNeeded($resource)
+    {
+        return ltrim(Str::replaceFirst($this->getUrl(), '', $resource), '/');
     }
 }
