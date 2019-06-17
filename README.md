@@ -90,7 +90,7 @@ Psy Shell v0.8.18 (PHP 7.2.17 — cli) by Justin Hileman
 => Spinen\ConnectWise\Support\Collection {#6123
      // Removed to make example shorter
    }
->>> isset($company->agreements) // Cachec & loaded for next call
+>>> isset($company->agreements) // Cached & loaded for next call
 => true
 ```
 
