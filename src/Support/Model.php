@@ -86,10 +86,7 @@ abstract class Model implements
             foreach ($this->{$method}['_info'] as $k => $v) {
                 if (Str::startsWith($v, $this->client->getUrl())) {
                     // Cache so that other request will not trigger additional calls
-                    $this->setAttribute(
-                        $method,
-                        $this->client->get(Str::replaceFirst($this->client->getUrl(), '', $v))
-                    );
+                    $this->setAttribute($method, $this->client->get($v));
 
                     return $this->{$method};
                 }
@@ -310,12 +307,7 @@ abstract class Model implements
         // Allow for making related calls for "extra" properties in the "_info" property.
         // Cache the results so only 1 call is made
         if (!isset($this->{$attribute}) && isset($this->_info->{$attribute . '_href'})) {
-            $this->setAttribute(
-                $attribute,
-                $this->client->get(
-                    Str::replaceFirst($this->client->getUrl(), '', $this->_info->{$attribute . '_href'})
-                )
-            );
+            $this->setAttribute($attribute, $this->client->getAll($this->_info->{$attribute . '_href'}));
         }
 
         // Pull the value from the attributes
