@@ -7,8 +7,10 @@ use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Response;
+use Illuminate\Support\Collection as LaravelCollection;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
+use Psr\Http\Message\ResponseInterface;
 use Spinen\ConnectWise\Exceptions\MalformedRequest;
 use Spinen\ConnectWise\Support\Collection;
 use Spinen\ConnectWise\Support\Model;
@@ -19,13 +21,13 @@ use Spinen\ConnectWise\Support\ModelResolver;
  *
  * @package Spinen\ConnectWise\Api
  *
- * @method Collection|Model delete(string $resource, array $options = [])
- * @method Collection|Model get(string $resource, array $options = [])
- * @method Collection|Model getAll(string $resource, array $options = [])
- * @method Collection|Model head(string $resource, array $options = [])
- * @method Collection|Model patch(string $resource, array $options = [])
- * @method Collection|Model post(string $resource, array $options = [])
- * @method Collection|Model put(string $resource, array $options = [])
+ * @method LaravelCollection|Model delete(string $resource, array $options = [])
+ * @method LaravelCollection|Model get(string $resource, array $options = [])
+ * @method LaravelCollection|Model getAll(string $resource, array $options = [])
+ * @method LaravelCollection|Model head(string $resource, array $options = [])
+ * @method LaravelCollection|Model patch(string $resource, array $options = [])
+ * @method LaravelCollection|Model post(string $resource, array $options = [])
+ * @method LaravelCollection|Model put(string $resource, array $options = [])
  */
 class Client
 {
@@ -368,11 +370,11 @@ class Client
      *  <https://some.host/v4_6_release/apis/3.0/finance/agreements&pageSize=10&page=3>; rel="next", \
      *      <https://some.host/v4_6_release/apis/3.0/finance/agreements&pageSize=10&page=1>; rel="first”
      *
-     * @param Response $response
+     * @param ResponseInterface $response
      *
      * @return boolean
      */
-    protected function isLastPage(Response $response)
+    protected function isLastPage(ResponseInterface $response)
     {
         return !(bool)preg_match('/rel="last"$/u', $response->getHeader('Link')[0] ?? null);
     }
@@ -384,9 +386,9 @@ class Client
      */
     protected function processError(RequestException $exception)
     {
+        // TODO: Figure out what to really do with an error...
         echo Psr7\str($exception->getRequest());
 
-        // TODO: Figure out what to really do with an error...
         if ($exception->hasResponse()) {
             echo Psr7\str($exception->getResponse());
         }
@@ -396,11 +398,11 @@ class Client
      * Parse the response for the given resource
      *
      * @param string $resource
-     * @param Response $response
+     * @param ResponseInterface $response
      *
-     * @return Collection|Model|Response
+     * @return Collection|Model|ResponseInterface
      */
-    protected function processResponse($resource, Response $response)
+    protected function processResponse($resource, ResponseInterface $response)
     {
         $response = (array)json_decode($response->getBody(), true);
 
@@ -434,7 +436,7 @@ class Client
      * @param string $resource
      * @param array|null $options
      *
-     * @return Collection|Model|Response
+     * @return LaravelCollection|Model|Response
      * @throws GuzzleException
      * @throws MalformedRequest
      */
@@ -445,20 +447,19 @@ class Client
 
             $processed = $this->processResponse($resource, $response);
 
-            // Are we doing a getAll?
-            if ($this->page) {
-                while (!$this->isLastPage($response)) {
-                    $this->page = $this->page + 1;
+            // If, not a "gatAll" call, then return the response
+            if (!$this->page) {
+                return $processed;
+            }
 
-                    // Make next call
-                    $response = $this->guzzle->request(
-                        $method,
-                        $this->buildUri($resource),
-                        $this->buildOptions($options)
-                    );
+            // Get all of the other records
+            while (!$this->isLastPage($response)) {
+                $this->page = $this->page + 1;
 
-                    $processed = $processed->merge($this->processResponse($resource, $response));
-                }
+                // Make next call
+                $response = $this->guzzle->request($method, $this->buildUri($resource), $this->buildOptions($options));
+
+                $processed = $processed->merge($this->processResponse($resource, $response));
             }
 
             return $processed;
