@@ -383,15 +383,17 @@ class Client
      * Process the error received from ConnectWise
      *
      * @param RequestException $exception
+     *
+     * @throws RequestException
      */
     protected function processError(RequestException $exception)
     {
         // TODO: Figure out what to really do with an error...
-        echo Psr7\str($exception->getRequest());
+        // Request is in here... Psr7\str($exception->getRequest()
+        // If $exception->hasResponse(), then response is in here... Psr7\str($exception->getResponse()
 
-        if ($exception->hasResponse()) {
-            echo Psr7\str($exception->getResponse());
-        }
+        // NOTE: For now, just rethrow the original exception
+        throw $exception;
     }
 
     /**
