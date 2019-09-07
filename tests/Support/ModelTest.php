@@ -5,7 +5,7 @@ namespace Spinen\ConnectWise\Support;
 use ArrayIterator;
 use Carbon\Carbon;
 use InvalidArgumentException;
-use Spinen\ConnectWise\Models\v2019_3\System\Info;
+use Spinen\ConnectWise\Models\v2019_4\System\Info;
 use Spinen\ConnectWise\Support\Stubs\Model;
 use Spinen\ConnectWise\TestCase;
 

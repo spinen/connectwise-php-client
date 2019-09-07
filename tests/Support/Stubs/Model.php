@@ -3,7 +3,7 @@
 namespace Spinen\ConnectWise\Support\Stubs;
 
 use Carbon\Carbon;
-use Spinen\ConnectWise\Models\v2019_3\System\Info;
+use Spinen\ConnectWise\Models\v2019_4\System\Info;
 use Spinen\ConnectWise\Support\Model as BaseModel;
 
 class Model extends BaseModel
