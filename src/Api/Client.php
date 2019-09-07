@@ -134,7 +134,7 @@ class Client
         $this->token = $token;
         $this->guzzle = $guzzle;
         $this->resolver = $resolver;
-        $this->setVersion($version ?? '2019.3');
+        $this->setVersion($version ?? '2019.4');
     }
 
     /**
@@ -576,6 +576,7 @@ class Client
             '2019.1',
             '2019.2',
             '2019.3',
+            '2019.4',
         ];
 
         if (!in_array($version, $supported)) {

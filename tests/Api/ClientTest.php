@@ -9,7 +9,7 @@ use InvalidArgumentException;
 use Mockery;
 use Mockery\Mock;
 use Spinen\ConnectWise\Exceptions\MalformedRequest;
-use Spinen\ConnectWise\Models\v2019_3\System\Info;
+use Spinen\ConnectWise\Models\v2019_4\System\Info;
 use Spinen\ConnectWise\Support\Collection;
 use Spinen\ConnectWise\Support\ModelResolver;
 use Spinen\ConnectWise\TestCase;
@@ -76,7 +76,7 @@ class ClientTest extends TestCase
         $this->resolver->shouldReceive('find')
                        ->once()
                        ->with('uri', Mockery::any())
-                       ->andReturn('Spinen\ConnectWise\Models\v2019_3\System\Info');
+                       ->andReturn('Spinen\ConnectWise\Models\v2019_4\System\Info');
 
         $this->token->shouldReceive('needsRefreshing')
                     ->once()
@@ -122,8 +122,8 @@ class ClientTest extends TestCase
 
         $this->resolver->shouldReceive('find')
                        ->once()
-                       ->with('uri', '2019.3')
-                       ->andReturn('Spinen\ConnectWise\Models\v2019_3\System\Info');
+                       ->with('uri', '2019.4')
+                       ->andReturn('Spinen\ConnectWise\Models\v2019_4\System\Info');
 
         $this->token->shouldReceive('needsRefreshing')
                     ->once()
@@ -167,7 +167,7 @@ class ClientTest extends TestCase
 
         $this->resolver->shouldReceive('find')
                        ->once()
-                       ->with('uri', '2019.3')
+                       ->with('uri', '2019.4')
                        ->andReturnNull();
 
         $this->token->shouldReceive('needsRefreshing')
@@ -291,7 +291,7 @@ class ClientTest extends TestCase
             'extra'   => 'option',
             'headers' => [
                 'added'         => 'header',
-                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.4',
                 'x-cw-usertype' => 'member',
                 'Authorization' => 'Basic dXNlcm5hbWU6cGFzc3dvcmQ=',
                 'clientId'      => 'some-client-id',
@@ -391,7 +391,7 @@ class ClientTest extends TestCase
 
         $this->assertEquals(
             [
-                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.4',
                 'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
                 'x-cw-usertype' => 'member',
                 'clientId'      => 'some-client-id',
@@ -409,7 +409,7 @@ class ClientTest extends TestCase
         $this->assertEquals(
             [
                 'added'         => 'header',
-                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.4',
                 'x-cw-usertype' => 'member',
                 'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
                 'clientId'      => 'some-client-id',
@@ -427,7 +427,7 @@ class ClientTest extends TestCase
         $this->assertEquals(
             [
                 'set'           => 'headers',
-                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.4',
                 'x-cw-usertype' => 'member',
                 'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
                 'clientId'      => 'some-client-id',
@@ -440,7 +440,7 @@ class ClientTest extends TestCase
 
         $this->assertEquals(
             [
-                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.3',
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.4',
                 'x-cw-usertype' => 'member',
                 'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
                 'clientId'      => 'some-client-id',
@@ -590,7 +590,7 @@ class ClientTest extends TestCase
 
         $this->resolver->shouldReceive('find')
                        ->once()
-                       ->with('uri', '2019.3')
+                       ->with('uri', '2019.4')
                        ->andReturn('Model');
 
         $this->token->shouldReceive('needsRefreshing')
@@ -619,8 +619,8 @@ class ClientTest extends TestCase
      */
     public function it_returns_supported_version_numbers()
     {
-        $this->client->setVersion('2019.3');
-        $this->assertEquals('2019.3', $this->client->getVersion());
+        $this->client->setVersion('2019.4');
+        $this->assertEquals('2019.4', $this->client->getVersion());
     }
 
     /**
