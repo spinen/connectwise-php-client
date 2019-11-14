@@ -54,14 +54,14 @@ class Client
     /**
      * Integrator username to make global calls
      *
-     * @var
+     * @var string
      */
     protected $integrator;
 
     /**
      * Current page
      *
-     * @var integer
+     * @var int
      */
     protected $page;
 
