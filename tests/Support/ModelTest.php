@@ -16,7 +16,7 @@ class ModelTest extends TestCase
      */
     protected $model;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -102,10 +102,11 @@ class ModelTest extends TestCase
 
     /**
      * @test
-     * @expectedException InvalidArgumentException
      */
     public function it_raises_exception_when_invalid_type_is_set()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         new Model(
             [
                 'invalid_attribute' => 'whatever',
