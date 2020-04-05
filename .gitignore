@@ -4,3 +4,4 @@ phpunit.xml
 composer.lock
 /generator/Generated
 /generator/swagger
+.phpunit.result.cache

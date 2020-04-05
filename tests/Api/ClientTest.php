@@ -36,7 +36,7 @@ class ClientTest extends TestCase
      */
     protected $token;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->token = Mockery::mock(Token::class);
         // I know that you don't mock what you don't own, but we cannot make actual API calls
@@ -210,10 +210,11 @@ class ClientTest extends TestCase
 
     /**
      * @test
-     * @expectedException InvalidArgumentException
      */
     public function it_raises_exception_when_setting_an_invalid_url()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $this->client->setUrl('invalid');
     }
 
@@ -558,19 +559,21 @@ class ClientTest extends TestCase
 
     /**
      * @test
-     * @expectedException InvalidArgumentException
      */
     public function it_raises_exception_when_calling_a_non_supported_verb()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $this->client->invalid('uri');
     }
 
     /**
      * @test
-     * @expectedException InvalidArgumentException
      */
     public function it_raises_exception_when_making_a_request_without_a_uri()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $this->client->get();
     }
 

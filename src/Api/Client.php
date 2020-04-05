@@ -552,7 +552,7 @@ class Client
     public function setUrl($url)
     {
         if (!filter_var($url, FILTER_VALIDATE_URL)) {
-            throw new InvalidArgumentException(sprintf("The URL provided[%] is not a valid format.", $url));
+            throw new InvalidArgumentException(sprintf("The URL provided[%s] is not a valid format.", $url));
         }
 
         $this->url = rtrim($url, '/');
