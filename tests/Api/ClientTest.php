@@ -36,7 +36,7 @@ class ClientTest extends TestCase
      */
     protected $token;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->token = Mockery::mock(Token::class);
         // I know that you don't mock what you don't own, but we cannot make actual API calls
@@ -122,7 +122,7 @@ class ClientTest extends TestCase
 
         $this->resolver->shouldReceive('find')
                        ->once()
-                       ->with('uri', '2019.4')
+                       ->with('uri', '2019.5')
                        ->andReturn('Spinen\ConnectWise\Models\v2019_4\System\Info');
 
         $this->token->shouldReceive('needsRefreshing')
@@ -167,7 +167,7 @@ class ClientTest extends TestCase
 
         $this->resolver->shouldReceive('find')
                        ->once()
-                       ->with('uri', '2019.4')
+                       ->with('uri', '2019.5')
                        ->andReturnNull();
 
         $this->token->shouldReceive('needsRefreshing')
@@ -210,10 +210,11 @@ class ClientTest extends TestCase
 
     /**
      * @test
-     * @expectedException InvalidArgumentException
      */
     public function it_raises_exception_when_setting_an_invalid_url()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $this->client->setUrl('invalid');
     }
 
@@ -291,7 +292,7 @@ class ClientTest extends TestCase
             'extra'   => 'option',
             'headers' => [
                 'added'         => 'header',
-                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.4',
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.5',
                 'x-cw-usertype' => 'member',
                 'Authorization' => 'Basic dXNlcm5hbWU6cGFzc3dvcmQ=',
                 'clientId'      => 'some-client-id',
@@ -391,7 +392,7 @@ class ClientTest extends TestCase
 
         $this->assertEquals(
             [
-                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.4',
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.5',
                 'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
                 'x-cw-usertype' => 'member',
                 'clientId'      => 'some-client-id',
@@ -409,7 +410,7 @@ class ClientTest extends TestCase
         $this->assertEquals(
             [
                 'added'         => 'header',
-                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.4',
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.5',
                 'x-cw-usertype' => 'member',
                 'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
                 'clientId'      => 'some-client-id',
@@ -427,7 +428,7 @@ class ClientTest extends TestCase
         $this->assertEquals(
             [
                 'set'           => 'headers',
-                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.4',
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.5',
                 'x-cw-usertype' => 'member',
                 'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
                 'clientId'      => 'some-client-id',
@@ -440,7 +441,7 @@ class ClientTest extends TestCase
 
         $this->assertEquals(
             [
-                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.4',
+                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.5',
                 'x-cw-usertype' => 'member',
                 'Authorization' => 'Basic aW50ZWdyYXRvcjpwYXNzd29yZA==',
                 'clientId'      => 'some-client-id',
@@ -558,19 +559,21 @@ class ClientTest extends TestCase
 
     /**
      * @test
-     * @expectedException InvalidArgumentException
      */
     public function it_raises_exception_when_calling_a_non_supported_verb()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $this->client->invalid('uri');
     }
 
     /**
      * @test
-     * @expectedException InvalidArgumentException
      */
     public function it_raises_exception_when_making_a_request_without_a_uri()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $this->client->get();
     }
 
@@ -590,7 +593,7 @@ class ClientTest extends TestCase
 
         $this->resolver->shouldReceive('find')
                        ->once()
-                       ->with('uri', '2019.4')
+                       ->with('uri', '2019.5')
                        ->andReturn('Model');
 
         $this->token->shouldReceive('needsRefreshing')
@@ -619,8 +622,8 @@ class ClientTest extends TestCase
      */
     public function it_returns_supported_version_numbers()
     {
-        $this->client->setVersion('2019.4');
-        $this->assertEquals('2019.4', $this->client->getVersion());
+        $this->client->setVersion('2019.5');
+        $this->assertEquals('2019.5', $this->client->getVersion());
     }
 
     /**

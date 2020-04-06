@@ -7,6 +7,7 @@ use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Response;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Collection as LaravelCollection;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
@@ -54,14 +55,14 @@ class Client
     /**
      * Integrator username to make global calls
      *
-     * @var
+     * @var string
      */
     protected $integrator;
 
     /**
      * Current page
      *
-     * @var integer
+     * @var int
      */
     protected $page;
 
@@ -85,6 +86,22 @@ class Client
      * @var ModelResolver
      */
     protected $resolver;
+
+    /**
+     * The supported versions
+     *
+     * @var array
+     */
+    public $supported = [
+        '2018.4',
+        '2018.5',
+        '2018.6',
+        '2019.1',
+        '2019.2',
+        '2019.3',
+        '2019.4',
+        '2019.5',
+    ];
 
     /**
      * Public & private keys to log into CW
@@ -134,7 +151,7 @@ class Client
         $this->token = $token;
         $this->guzzle = $guzzle;
         $this->resolver = $resolver;
-        $this->setVersion($version ?? '2019.4');
+        $this->setVersion($version ?? Arr::last($this->supported));
     }
 
     /**
@@ -552,7 +569,7 @@ class Client
     public function setUrl($url)
     {
         if (!filter_var($url, FILTER_VALIDATE_URL)) {
-            throw new InvalidArgumentException(sprintf("The URL provided[%] is not a valid format.", $url));
+            throw new InvalidArgumentException(sprintf("The URL provided[%s] is not a valid format.", $url));
         }
 
         $this->url = rtrim($url, '/');
@@ -569,17 +586,7 @@ class Client
      */
     public function setVersion($version)
     {
-        $supported = [
-            '2018.4',
-            '2018.5',
-            '2018.6',
-            '2019.1',
-            '2019.2',
-            '2019.3',
-            '2019.4',
-        ];
-
-        if (!in_array($version, $supported)) {
+        if (!in_array($version, $this->supported)) {
             throw new InvalidArgumentException(sprintf("The Version provided[%s] is not supported.", $version));
         }
 
