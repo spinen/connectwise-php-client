@@ -300,6 +300,7 @@ The supported versions are:
 * 2019.1
 * 2019.2
 * 2019.3
-* 2019.4 `(default)`
+* 2019.4
+* 2019.5 `(default)`
 
 You can see the differences of the models by looking at the `casts` property on the individual `models` in `src/Models/<version>` directory.
