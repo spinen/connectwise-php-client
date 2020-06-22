@@ -146,7 +146,7 @@ class Token
     }
 
     /**
-     * Check to see if tokens has been setup
+     * Check to see if tokens have been setup
      *
      * @return bool
      */
@@ -220,9 +220,9 @@ class Token
     }
 
     /**
-     * Setter for the expiration
+     * Setter for the expiration timestamp
      *
-     * Make sure to cast to a Carbon object
+     * Make sure to cast it to a Carbon object
      *
      * @param $expiration
      *

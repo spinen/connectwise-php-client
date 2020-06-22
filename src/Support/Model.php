@@ -19,8 +19,8 @@ use Spinen\ConnectWise\Api\Client;
  * Class Model
  *
  * This class is heavily modeled after Laravel's Eloquent model.  We are wanting the API to be familiar as we use
- * Laravel for most of our projects & want it to be very easily to have our developers use it.  Additionally, it is
- * just so well done, that there there is not a reason to not copy/reuse some of the code.
+ * Laravel for most of our projects & want it to be very easy for our developers to use it.  Additionally, it is
+ * just so well done that there is no reason not to copy/reuse some of the code.
  *
  * @package Spinen\ConnectWise\Support
  */
@@ -55,7 +55,7 @@ abstract class Model implements
     protected $client;
 
     /**
-     * Model constructor.
+     * Model constructor
      *
      * @param array $attributes
      * @param Client|null $client
@@ -145,7 +145,7 @@ abstract class Model implements
     }
 
     /**
-     * Convert the model to its string representation.
+     * Convert the model to its string representation
      *
      * @return string
      */
@@ -222,7 +222,7 @@ abstract class Model implements
     }
 
     /**
-     * Count the number of properties.
+     * Count the number of properties
      *
      * @return int
      */
@@ -336,7 +336,7 @@ abstract class Model implements
     }
 
     /**
-     * Get an iterator for the attributes.
+     * Get an iterator for the attributes
      *
      * @return ArrayIterator
      */
@@ -368,7 +368,7 @@ abstract class Model implements
     }
 
     /**
-     * Allow the model to behave like an associate array, so see if attribute is set
+     * Allow the model to behave like an associative array, so see if the attribute is set
      *
      * @param string $attribute
      *
@@ -380,7 +380,7 @@ abstract class Model implements
     }
 
     /**
-     * Allow the model to behave like an associate array, so get attribute
+     * Allow the model to behave like an associative array, so get attribute
      *
      * @param string $attribute
      *
@@ -392,7 +392,7 @@ abstract class Model implements
     }
 
     /**
-     * Allow the model to behave like an associate array, so set attribute
+     * Allow the model to behave like an associative array, so set attribute
      *
      * @param string $attribute
      * @param mixed $value
@@ -403,7 +403,7 @@ abstract class Model implements
     }
 
     /**
-     * Allow the model to behave like an associate array, so unset attribute
+     * Allow the model to behave like an associative array, so unset attribute
      *
      * @param mixed $attribute
      *

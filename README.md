@@ -24,7 +24,7 @@ We are using the "Member Impersonation" model where you set up an integrator use
 application.
 
 We make all of our ConnectWise users' member ID equal to their email (i.e. joe.doe@spinen.com has
-a member ID of joedoe in connectwise) [NOTE: The "." was removed from joe.doe as ConnectWise does not allow periods in the
+a member ID of joedoe in ConnectWise) [NOTE: The "." was removed from joe.doe as ConnectWise does not allow periods in the
 member ID]. By following this convention, we can infer the member ID from the logged in user's email address in our
 applications. We have included a trait that you can use on the User model that will perform the logic above.
 
