@@ -21,7 +21,7 @@ class ModelResolver
      *
      * This is a little more complicated than you would think that it needs to be, but we have to map the response to
      * a model by looking at the URI.  If the URI is for a specific id, then the id has to be converted to the wildcard
-     * in the map or it is a single resource & not a collection, then the id has to be removed from the end.
+     * in the map. If it is a single resource & not a collection then the id has to be removed from the end.
      *
      * @param string $uri
      * @param string $version
@@ -56,7 +56,7 @@ class ModelResolver
     }
 
     /**
-     * Load in the uri to class for the version if not already loaded
+     * If not already loaded, load in the uri to class for the version
      *
      * @param string $version
      */

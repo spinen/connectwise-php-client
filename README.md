@@ -15,8 +15,8 @@ outside of Laravel, and have some documentation about it below.
 
 | Branch | Status | Coverage | Code Quality |
 | ------ | :----: | :------: | :----------: |
-| Develop | [![Build Status](https://travis-ci.org/spinen/connectwise-php-client.svg?branch=develop)](https://travis-ci.org/spinen/connectwise-php-client) | [![Code Coverage](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/badges/coverage.png?b=develop)](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/?branch=develop) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/?branch=develop) |
-| Master | [![Build Status](https://travis-ci.org/spinen/connectwise-php-client.svg?branch=master)](https://travis-ci.org/spinen/connectwise-php-client) | [![Code Coverage](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/?branch=master) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/?branch=master) |
+| Develop | [![Build Status](https://github.com/spinen/connectwise-php-client/workflows/CI/badge.svg?branch=develop)](https://github.com/spinen/connectwise-php-client/workflows/CI/badge.svg?branch=develop) | [![Code Coverage](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/badges/coverage.png?b=develop)](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/?branch=develop) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/?branch=develop) |
+| Master | [![Build Status](https://github.com/spinen/connectwise-php-client/workflows/CI/badge.svg?branch=master)](https://github.com/spinen/connectwise-php-client/workflows/CI/badge.svg?branch=master) | [![Code Coverage](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/?branch=master) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/spinen/connectwise-php-client/?branch=master) |
 
 ## Note about the integration
 We are using the "Member Impersonation" model where you set up an integrator username & password with access to the
@@ -24,7 +24,7 @@ We are using the "Member Impersonation" model where you set up an integrator use
 application.
 
 We make all of our ConnectWise users' member ID equal to their email (i.e. joe.doe@spinen.com has
-a member ID of joedoe in connectwise) [NOTE: The "." was removed from joe.doe as ConnectWise does not allow periods in the
+a member ID of joedoe in ConnectWise) [NOTE: The "." was removed from joe.doe as ConnectWise does not allow periods in the
 member ID]. By following this convention, we can infer the member ID from the logged in user's email address in our
 applications. We have included a trait that you can use on the User model that will perform the logic above.
 

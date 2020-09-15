@@ -5,7 +5,6 @@ namespace Spinen\ConnectWise\Api;
 use GuzzleHttp\Client as Guzzle;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection as LaravelCollection;
@@ -46,7 +45,7 @@ class Client
     protected $guzzle;
 
     /**
-     * Headers that needs to be used with token
+     * Headers that need to be used with token
      *
      * @var array
      */
@@ -67,7 +66,7 @@ class Client
     protected $page;
 
     /**
-     * Number or records to retrieve
+     * Number of records to retrieve
      *
      * @var int
      */
@@ -155,7 +154,7 @@ class Client
     }
 
     /**
-     * Magic method to allow short cut to the request types
+     * Magic method to allow shortcuts to the request types
      *
      * @param string $verb
      * @param array $args
@@ -197,7 +196,7 @@ class Client
     }
 
     /**
-     * Build authorization headers to send CW API
+     * Build authorization headers to send to CW API
      *
      * @return string
      */
@@ -211,9 +210,9 @@ class Client
     }
 
     /**
-     * Build the options to send to API
+     * Build the options to send to CW API
      *
-     * We allays need to login with Basic Auth, so add the "auth" option for Guzzle to use when logging in.
+     * We always need to login with Basic Auth, so add the "auth" option for Guzzle to use when logging in.
      * Additionally, pass any headers that have been set.
      *
      * @param array $options
@@ -281,7 +280,7 @@ class Client
     /**
      * The headers to send
      *
-     * When making an integrator call (expired token), then you have to only send the "x-cw-usertype" header.
+     * When making an integrator call (expired token), then you only have to send the "x-cw-usertype" header.
      *
      * @return array
      */
@@ -373,7 +372,7 @@ class Client
     /**
      * Check to see it there are more pages in a paginated call
      *
-     * For paginated calls, ConnectWise returns a "Link" property in teh header with a single string.
+     * For paginated calls, ConnectWise returns a "Link" property in the header with a single string.
      *
      * There appears to be 3 potential responses...
      *  1) null -- The number of items in the collection is < the pageSize
@@ -425,17 +424,17 @@ class Client
     {
         $response = (array)json_decode($response->getBody(), true);
 
-        // Nothing to map response, so just return it as is
+        // Nothing to map the response to, so just return it as-is
         if (!$model = $this->resolver->find($resource, $this->getVersion())) {
             return $response;
         }
 
-        // Not a collection of records, so cast to model
+        // Not a collection of records, so cast to a model
         if (!$this->isCollection($response)) {
             return new $model($response, $this);
         }
 
-        // Have a collection of records, so cast them all as a collection
+        // Have a collection of records, so cast them all as a Collection
         return new Collection(
             array_map(
                 function ($item) use ($model) {
@@ -504,7 +503,7 @@ class Client
     /**
      * Set the headers
      *
-     * There is an "addHeader" method to push a single header onto the stack.  Otherwise,this replaces the headers.
+     * There is an "addHeader" method to push a single header onto the stack. Otherwise, this replaces the headers.
      *
      * @param array $headers
      *
@@ -596,7 +595,7 @@ class Client
     }
 
     /**
-     * Make the resource being request be relative without the leading slash
+     * Make the resource being requested be relative without the leading slash
      *
      * @param string $resource
      *
