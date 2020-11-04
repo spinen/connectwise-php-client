@@ -545,7 +545,7 @@ class Client
     }
 
     /**
-     * Set the page size
+     * Set the page size, not allowing < 0
      *
      * @param integer $page_size
      *
@@ -553,7 +553,7 @@ class Client
      */
     public function setPageSize($page_size)
     {
-        $this->page_size = $page_size;
+        $this->page_size = $page_size >= 0 ? $page_size : 0;
 
         return $this;
     }
