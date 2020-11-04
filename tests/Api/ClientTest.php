@@ -34,6 +34,11 @@ class ClientTest extends TestCase
     /**
      * @var Mock
      */
+    protected $response;
+
+    /**
+     * @var Mock
+     */
     protected $token;
 
     protected function setUp(): void
@@ -61,9 +66,9 @@ class ClientTest extends TestCase
      */
     public function it_returns_a_model_for_an_object_response()
     {
-        $response = Mockery::mock(Response::class);
+        $this->response = Mockery::mock(Response::class);
 
-        $response->shouldReceive('getBody')
+        $this->response->shouldReceive('getBody')
                  ->once()
                  ->withNoArgs()
                  ->andReturn('{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"}');
@@ -71,7 +76,7 @@ class ClientTest extends TestCase
         $this->guzzle->shouldReceive('request')
                      ->once()
                      ->withAnyArgs()
-                     ->andReturn($response);
+                     ->andReturn($this->response);
 
         $this->resolver->shouldReceive('find')
                        ->once()
@@ -106,9 +111,9 @@ class ClientTest extends TestCase
      */
     public function it_returns_a_collection_for_an_array_response()
     {
-        $response = Mockery::mock(Response::class);
+        $this->response = Mockery::mock(Response::class);
 
-        $response->shouldReceive('getBody')
+        $this->response->shouldReceive('getBody')
                  ->once()
                  ->withNoArgs()
                  ->andReturn(
@@ -118,7 +123,7 @@ class ClientTest extends TestCase
         $this->guzzle->shouldReceive('request')
                      ->once()
                      ->withAnyArgs()
-                     ->andReturn($response);
+                     ->andReturn($this->response);
 
         $this->resolver->shouldReceive('find')
                        ->once()
@@ -153,9 +158,9 @@ class ClientTest extends TestCase
      */
     public function it_returns_an_array_when_there_is_not_a_model_to_map()
     {
-        $response = Mockery::mock(Response::class);
+        $this->response = Mockery::mock(Response::class);
 
-        $response->shouldReceive('getBody')
+        $this->response->shouldReceive('getBody')
                  ->once()
                  ->withNoArgs()
                  ->andReturn('{"version":"v2016.6.43325","isCloud":false,"serverTimeZone":"Eastern Standard Time"}');
@@ -163,7 +168,7 @@ class ClientTest extends TestCase
         $this->guzzle->shouldReceive('request')
                      ->once()
                      ->withAnyArgs()
-                     ->andReturn($response);
+                     ->andReturn($this->response);
 
         $this->resolver->shouldReceive('find')
                        ->once()
@@ -579,9 +584,9 @@ class ClientTest extends TestCase
 
     protected function mockOutEverythingForTestingThatGuzzleIsCalled()
     {
-        $response = Mockery::mock(Response::class);
+        $this->response = Mockery::mock(Response::class);
 
-        $response->shouldReceive('getBody')
+        $this->response->shouldReceive('getBody')
                  ->once()
                  ->withNoArgs()
                  ->andReturn("{'responded': true}");
@@ -589,7 +594,7 @@ class ClientTest extends TestCase
         $this->guzzle->shouldReceive('request')
                      ->once()
                      ->withAnyArgs()
-                     ->andReturn($response);
+                     ->andReturn($this->response);
 
         $this->resolver->shouldReceive('find')
                        ->once()
@@ -635,5 +640,22 @@ class ClientTest extends TestCase
 
         $this->client->setVersion('2012.2');
         $this->assertNotEquals('2012.2', $this->client->getVersion());
+    }
+
+    /**
+     * @test
+     */
+    public function it_has_a_getAll_method_that_it_passes_to_guzzle_as_paginated_get_calls()
+    {
+        $this->mockOutEverythingForTestingThatGuzzleIsCalled();
+        $get_header_link = '<https://some.host/v4_6_release/apis/3.0/finance/agreements&pageSize=10&page=2>; \
+               rel="next", <https://some.host/v4_6_release/apis/3.0/finance/agreements&pageSize=10&page=3>; rel="last"';
+
+        $this->response->shouldReceive('getHeader')
+                       ->once()
+                       ->with('Link')
+                       ->andReturn($get_header_link);
+
+        $this->client->getAll('uri');
     }
 }
