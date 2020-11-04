@@ -34,6 +34,11 @@ abstract class Model implements
     Serializable
 {
     /**
+     * _info property
+     */
+    protected $_info = null;
+
+    /**
      * The collection of attributes for the model
      *
      * @var array
@@ -322,7 +327,7 @@ abstract class Model implements
     /**
      * Get the array of cast or a specific cast for an attribute
      *
-     * @param null $attribute
+     * @param mixed|null $attribute
      *
      * @return mixed
      */
