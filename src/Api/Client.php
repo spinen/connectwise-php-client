@@ -143,7 +143,7 @@ class Client
      * @param Token $token
      * @param Guzzle $guzzle
      * @param ModelResolver $resolver
-     * @param string $version Version of the models to use with the API responses
+     * @param string|null $version Version of the models to use with the API responses
      */
     public function __construct(Token $token, Guzzle $guzzle, ModelResolver $resolver, $version = null)
     {
@@ -170,7 +170,10 @@ class Client
         }
 
         // For "getAll", set page to 1 & change verb to "get", otherwise, no page
-        ($verb === 'getAll') ? $this->page = 1 && $verb = 'get' : $this->page = 0;
+        if ($verb === 'getAll') {
+            $this->page = 1;
+            $verb = 'get';
+        }
 
         if (!in_array($verb, $this->verbs)) {
             throw new InvalidArgumentException(sprintf("Unsupported verb [%s] was requested.", $verb));
@@ -381,10 +384,10 @@ class Client
      *
      * Here are some examples...
      *  <https://some.host/v4_6_release/apis/3.0/finance/agreements&pageSize=10&page=2>; rel="next", \
-     *      <https://some.host/v4_6_release/apis/3.0/finance/agreements&pageSize=10&page=3>; rel="last”
+     *      <https://some.host/v4_6_release/apis/3.0/finance/agreements&pageSize=10&page=3>; rel="last"
      *
      *  <https://some.host/v4_6_release/apis/3.0/finance/agreements&pageSize=10&page=3>; rel="next", \
-     *      <https://some.host/v4_6_release/apis/3.0/finance/agreements&pageSize=10&page=1>; rel="first”
+     *      <https://some.host/v4_6_release/apis/3.0/finance/agreements&pageSize=10&page=1>; rel="first"
      *
      * @param ResponseInterface $response
      *
@@ -418,7 +421,7 @@ class Client
      * @param string $resource
      * @param ResponseInterface $response
      *
-     * @return Collection|Model|ResponseInterface
+     * @return Collection|Model|ResponseInterface|array
      */
     protected function processResponse($resource, ResponseInterface $response)
     {
@@ -465,7 +468,7 @@ class Client
 
             $processed = $this->processResponse($resource, $response);
 
-            // If, not a "gatAll" call, then return the response
+            // If, not a "getAll" call, then return the response
             if (!$this->page) {
                 return $processed;
             }
@@ -545,7 +548,7 @@ class Client
     }
 
     /**
-     * Set the page size
+     * Set the page size, not allowing < 0
      *
      * @param integer $page_size
      *
@@ -553,7 +556,7 @@ class Client
      */
     public function setPageSize($page_size)
     {
-        $this->page_size = $page_size;
+        $this->page_size = $page_size >= 0 ? $page_size : 0;
 
         return $this;
     }
