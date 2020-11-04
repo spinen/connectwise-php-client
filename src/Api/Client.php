@@ -170,7 +170,10 @@ class Client
         }
 
         // For "getAll", set page to 1 & change verb to "get", otherwise, no page
-        ($verb === 'getAll') ? $this->page = 1 && $verb = 'get' : $this->page = 0;
+        if ($verb === 'getAll') {
+            $this->page = 1;
+            $verb = 'get';
+        }
 
         if (!in_array($verb, $this->verbs)) {
             throw new InvalidArgumentException(sprintf("Unsupported verb [%s] was requested.", $verb));
