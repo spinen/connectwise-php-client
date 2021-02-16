@@ -338,7 +338,7 @@ class Client
      *
      * @return string
      */
-    public function getUrl($path = null)
+    public function getUrl($path = '')
     {
         return $this->url . '/v4_6_release/apis/3.0/' . ltrim($path, '/');
     }
@@ -393,7 +393,7 @@ class Client
      */
     protected function isLastPage(ResponseInterface $response)
     {
-        return !(bool)preg_match('/rel="last"$/u', $response->getHeader('Link')[0] ?? null);
+        return !(bool)preg_match('/rel="last"$/u', $response->getHeader('Link')[0] ?? '');
     }
 
     /**
