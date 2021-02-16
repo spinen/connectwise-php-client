@@ -224,12 +224,10 @@ class Client
      */
     public function buildOptions(array $options = [])
     {
-        return array_merge_recursive(
-            $options,
-            [
-                'headers' => $this->getHeaders(),
-            ]
-        );
+        return [
+            'body'    => json_encode($options ?? []),
+            'headers' => $this->getHeaders(),
+        ];
     }
 
     /**
