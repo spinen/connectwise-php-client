@@ -294,7 +294,7 @@ class ClientTest extends TestCase
         $this->client->setIntegrator($username);
 
         $options = [
-            'extra'   => 'option',
+            'body'    => json_encode(['extra' => 'option']),
             'headers' => [
                 'added'         => 'header',
                 'Accept'        => 'application/vnd.connectwise.com+json; version=2019.5',
