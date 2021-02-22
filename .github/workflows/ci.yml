@@ -36,6 +36,10 @@ jobs:
       - name: Install dependencies
         run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-suggest
 
+      - name: PHP Security Checker
+        uses: symfonycorp/security-checker-action@v2
+        if: ${{ matrix.stability == 'prefer-stable' }}
+
       - name: Execute tests
         run: vendor/bin/phpunit --coverage-clover=coverage.clover --verbose
 
