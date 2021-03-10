@@ -225,7 +225,7 @@ class Client
     public function buildOptions(array $options = [])
     {
         return [
-            'body'    => json_encode($options ?? []),
+            'body'    => empty($options) ? null : json_encode($options),
             'headers' => $this->getHeaders(),
         ];
     }
