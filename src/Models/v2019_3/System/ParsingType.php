@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ParsingType
  *
  * @property Metadata $_info
- * @property boolean $defaultFlag
- * @property integer $id
+ * @property bool $defaultFlag
+ * @property int $id
  * @property string $name
  * @property string $parseRule
  */
@@ -28,6 +27,6 @@ class ParsingType extends Model
         'defaultFlag' => 'boolean',
         'id' => 'integer',
         'name' => 'string',
-        'parseRule' => 'string'
+        'parseRule' => 'string',
     ];
 }

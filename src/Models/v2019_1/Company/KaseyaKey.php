@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -22,6 +21,6 @@ class KaseyaKey extends Model
      */
     protected $casts = [
         'Key' => 'string',
-        'PrivateKey' => 'string'
+        'PrivateKey' => 'string',
     ];
 }

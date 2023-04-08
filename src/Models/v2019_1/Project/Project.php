@@ -41,13 +41,13 @@ use Spinen\ConnectWise\Support\Model;
  * @property SystemLocationReference $location
  * @property TaxCodeReference $taxCode
  * @property array $customFields
- * @property boolean $billProjectAfterClosedFlag
- * @property boolean $billUnapprovedTimeAndExpense
- * @property boolean $budgetFlag
- * @property boolean $doNotDisplayInPortalFlag
- * @property boolean $includeDependenciesFlag
- * @property boolean $includeEstimatesFlag
- * @property boolean $restrictDownPaymentFlag
+ * @property bool $billProjectAfterClosedFlag
+ * @property bool $billUnapprovedTimeAndExpense
+ * @property bool $budgetFlag
+ * @property bool $doNotDisplayInPortalFlag
+ * @property bool $includeDependenciesFlag
+ * @property bool $includeEstimatesFlag
+ * @property bool $restrictDownPaymentFlag
  * @property float $actualHours
  * @property float $billingAmount
  * @property float $budgetHours
@@ -61,8 +61,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property float $estimatedTimeRevenue
  * @property float $percentComplete
  * @property float $scheduledHours
- * @property integer $id
- * @property integer $projectTemplateId
+ * @property int $id
+ * @property int $projectTemplateId
  * @property string $billExpenses
  * @property string $billProducts
  * @property string $billTime
@@ -144,6 +144,6 @@ class Project extends Model
         'status' => ProjectStatusReference::class,
         'taxCode' => TaxCodeReference::class,
         'timeApprover' => MemberReference::class,
-        'type' => ProjectTypeReference::class
+        'type' => ProjectTypeReference::class,
     ];
 }

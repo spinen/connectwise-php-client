@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -22,6 +21,6 @@ class ValidatePortalRequest extends Model
      */
     protected $casts = [
         'email' => 'string',
-        'password' => 'string'
+        'password' => 'string',
     ];
 }

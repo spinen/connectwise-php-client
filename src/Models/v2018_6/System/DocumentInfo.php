@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,13 +10,13 @@ use Spinen\ConnectWise\Support\Model;
  * Model for DocumentInfo
  *
  * @property Metadata $_info
- * @property boolean $htmlTemplateFlag
- * @property boolean $imageFlag
- * @property boolean $linkFlag
- * @property boolean $publicFlag
- * @property boolean $readOnlyFlag
- * @property integer $id
- * @property integer $size
+ * @property bool $htmlTemplateFlag
+ * @property bool $imageFlag
+ * @property bool $linkFlag
+ * @property bool $publicFlag
+ * @property bool $readOnlyFlag
+ * @property int $id
+ * @property int $size
  * @property string $fileName
  * @property string $owner
  * @property string $serverFileName
@@ -42,6 +41,6 @@ class DocumentInfo extends Model
         'readOnlyFlag' => 'boolean',
         'serverFileName' => 'string',
         'size' => 'integer',
-        'title' => 'string'
+        'title' => 'string',
     ];
 }

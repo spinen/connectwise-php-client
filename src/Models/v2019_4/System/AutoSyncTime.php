@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property TimeZoneSetupReference $timeZone
- * @property integer $id
+ * @property int $id
  * @property string $syncTime
  */
 class AutoSyncTime extends Model
@@ -26,6 +25,6 @@ class AutoSyncTime extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'syncTime' => 'string',
-        'timeZone' => TimeZoneSetupReference::class
+        'timeZone' => TimeZoneSetupReference::class,
     ];
 }

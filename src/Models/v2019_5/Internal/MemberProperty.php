@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Internal;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for MemberProperty
  *
  * @property Metadata $_info
- * @property integer $id
- * @property integer $memberRecId
+ * @property int $id
+ * @property int $memberRecId
  * @property string $name
  * @property string $value
  */
@@ -28,6 +27,6 @@ class MemberProperty extends Model
         'id' => 'integer',
         'memberRecId' => 'integer',
         'name' => 'string',
-        'value' => 'string'
+        'value' => 'string',
     ];
 }

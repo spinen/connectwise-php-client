@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -15,13 +14,13 @@ use Spinen\ConnectWise\Support\Model;
  * @property LdapConfigurationReference $defaultLdap
  * @property Metadata $_info
  * @property TimeZoneSetupReference $serverTimeZone
- * @property boolean $includePortalLinkFlag
- * @property boolean $syncLeadsFlag
- * @property boolean $updateMemberTimeZonesFlag
- * @property boolean $useExpandedFormatActivityFlag
- * @property boolean $useExpandedFormatTimeFlag
- * @property boolean $useSslFlag
- * @property integer $id
+ * @property bool $includePortalLinkFlag
+ * @property bool $syncLeadsFlag
+ * @property bool $updateMemberTimeZonesFlag
+ * @property bool $useExpandedFormatActivityFlag
+ * @property bool $useExpandedFormatTimeFlag
+ * @property bool $useSslFlag
+ * @property int $id
  * @property string $contactSync
  * @property string $defaultFromAddress
  * @property string $logoPath
@@ -52,6 +51,6 @@ class Other extends Model
         'updateMemberTimeZonesFlag' => 'boolean',
         'useExpandedFormatActivityFlag' => 'boolean',
         'useExpandedFormatTimeFlag' => 'boolean',
-        'useSslFlag' => 'boolean'
+        'useSslFlag' => 'boolean',
     ];
 }

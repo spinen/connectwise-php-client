@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -32,7 +31,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Workflow $workflowEmail
  * @property array $companyTeam
  * @property array $serviceStatusWorkflow
- * @property boolean $deleteOpenTimeSheetsFlag
+ * @property bool $deleteOpenTimeSheetsFlag
  */
 class MemberDeactivation extends Model
 {
@@ -64,6 +63,6 @@ class MemberDeactivation extends Model
         'serviceStatusWorkflow' => 'array',
         'serviceTeam' => ServiceTeam::class,
         'ticketTemplate' => ServiceTemplate::class,
-        'workflowEmail' => Workflow::class
+        'workflowEmail' => Workflow::class,
     ];
 }

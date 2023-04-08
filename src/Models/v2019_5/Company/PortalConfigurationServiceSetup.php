@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,25 +12,25 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property ServiceSignoffReference $fixedFeeTicketTemplate
  * @property ServiceSignoffReference $timeMaterialsTicketTemplate
- * @property boolean $actualHoursFlag
- * @property boolean $approvalStatusFlag
- * @property boolean $assignedResourcesFlag
- * @property boolean $budgetHoursFlag
- * @property boolean $closedTasksFlag
- * @property boolean $contactFlag
- * @property boolean $enableChatAssistFlag
- * @property boolean $enteredDateFlag
- * @property boolean $lastUpdateFlag
- * @property boolean $openTasksFlag
- * @property boolean $requiredDateFlag
- * @property boolean $serviceBoardFlag
- * @property boolean $serviceSubTypeFlag
- * @property boolean $serviceSubTypeItemFlag
- * @property boolean $serviceTypeFlag
- * @property boolean $siteNameFlag
- * @property boolean $slaInfoFlag
- * @property boolean $statusFlag
- * @property integer $id
+ * @property bool $actualHoursFlag
+ * @property bool $approvalStatusFlag
+ * @property bool $assignedResourcesFlag
+ * @property bool $budgetHoursFlag
+ * @property bool $closedTasksFlag
+ * @property bool $contactFlag
+ * @property bool $enableChatAssistFlag
+ * @property bool $enteredDateFlag
+ * @property bool $lastUpdateFlag
+ * @property bool $openTasksFlag
+ * @property bool $requiredDateFlag
+ * @property bool $serviceBoardFlag
+ * @property bool $serviceSubTypeFlag
+ * @property bool $serviceSubTypeItemFlag
+ * @property bool $serviceTypeFlag
+ * @property bool $siteNameFlag
+ * @property bool $slaInfoFlag
+ * @property bool $statusFlag
+ * @property int $id
  * @property string $displayClosedTicketsOption
  */
 class PortalConfigurationServiceSetup extends Model
@@ -64,6 +63,6 @@ class PortalConfigurationServiceSetup extends Model
         'siteNameFlag' => 'boolean',
         'slaInfoFlag' => 'boolean',
         'statusFlag' => 'boolean',
-        'timeMaterialsTicketTemplate' => ServiceSignoffReference::class
+        'timeMaterialsTicketTemplate' => ServiceSignoffReference::class,
     ];
 }

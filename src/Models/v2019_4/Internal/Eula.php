@@ -13,7 +13,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Carbon $signedDate
  * @property MemberReference $signedMember
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $eulaKey
  * @property string $eulaServiceLink
  * @property string $eulaUiLink
@@ -32,6 +32,6 @@ class Eula extends Model
         'eulaUiLink' => 'string',
         'id' => 'integer',
         'signedDate' => Carbon::class,
-        'signedMember' => MemberReference::class
+        'signedMember' => MemberReference::class,
     ];
 }

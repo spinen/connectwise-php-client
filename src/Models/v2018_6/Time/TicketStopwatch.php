@@ -22,15 +22,15 @@ use Spinen\ConnectWise\Support\Model;
  * @property TicketReference $ticket
  * @property WorkRoleReference $workRole
  * @property WorkTypeReference $workType
- * @property boolean $emailNotesToContactFlag
- * @property boolean $emailNotesToResourcesFlag
- * @property boolean $showNotesInDiscussionFlag
- * @property boolean $showNotesInInternalFlag
- * @property boolean $showNotesInResolutionFlag
- * @property integer $businessUnitId
- * @property integer $id
- * @property integer $locationId
- * @property integer $totalPauseTime
+ * @property bool $emailNotesToContactFlag
+ * @property bool $emailNotesToResourcesFlag
+ * @property bool $showNotesInDiscussionFlag
+ * @property bool $showNotesInInternalFlag
+ * @property bool $showNotesInResolutionFlag
+ * @property int $businessUnitId
+ * @property int $id
+ * @property int $locationId
+ * @property int $totalPauseTime
  * @property string $billableOption
  * @property string $internalNotes
  * @property string $notes
@@ -68,6 +68,6 @@ class TicketStopwatch extends Model
         'ticketMobileGuid' => Guid::class,
         'totalPauseTime' => 'integer',
         'workRole' => WorkRoleReference::class,
-        'workType' => WorkTypeReference::class
+        'workType' => WorkTypeReference::class,
     ];
 }

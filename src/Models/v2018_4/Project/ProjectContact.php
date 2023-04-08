@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Project;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property ContactReference $contact
  * @property Metadata $_info
- * @property integer $id
- * @property integer $projectId
+ * @property int $id
+ * @property int $projectId
  */
 class ProjectContact extends Model
 {
@@ -26,6 +25,6 @@ class ProjectContact extends Model
         '_info' => Metadata::class,
         'contact' => ContactReference::class,
         'id' => 'integer',
-        'projectId' => 'integer'
+        'projectId' => 'integer',
     ];
 }

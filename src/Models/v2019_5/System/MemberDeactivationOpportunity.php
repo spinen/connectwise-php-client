@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * A list of the member's currently assigned Opportunities
  *
  * @property MemberReference $reAssignToMember
- * @property integer $count
+ * @property int $count
  */
 class MemberDeactivationOpportunity extends Model
 {
@@ -22,6 +21,6 @@ class MemberDeactivationOpportunity extends Model
      */
     protected $casts = [
         'count' => 'integer',
-        'reAssignToMember' => MemberReference::class
+        'reAssignToMember' => MemberReference::class,
     ];
 }

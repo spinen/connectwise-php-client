@@ -14,8 +14,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Carbon $startDate
  * @property float $recurringCost
  * @property float $recurringRevenue
- * @property integer $billCycleId
- * @property integer $cycles
+ * @property int $billCycleId
+ * @property int $cycles
  * @property string $cycleType
  */
 class ProductRecurring extends Model
@@ -32,6 +32,6 @@ class ProductRecurring extends Model
         'endDate' => Carbon::class,
         'recurringCost' => 'float',
         'recurringRevenue' => 'float',
-        'startDate' => Carbon::class
+        'startDate' => Carbon::class,
     ];
 }

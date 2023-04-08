@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property SkillCategoryReference $category
- * @property integer $id
+ * @property int $id
  * @property string $name
  */
 class Skill extends Model
@@ -26,6 +25,6 @@ class Skill extends Model
         '_info' => Metadata::class,
         'category' => SkillCategoryReference::class,
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

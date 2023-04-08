@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,7 +12,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property IvItemReference $item
  * @property float $cost
  * @property float $total
- * @property integer $quantity
+ * @property int $quantity
  * @property string $accountNumber
  * @property string $costAccountNumber
  * @property string $description
@@ -40,6 +39,6 @@ class GLExportAdjustmentTransactionDetail extends Model
         'memo' => 'string',
         'productAccountNumber' => 'string',
         'quantity' => 'integer',
-        'total' => 'float'
+        'total' => 'float',
     ];
 }

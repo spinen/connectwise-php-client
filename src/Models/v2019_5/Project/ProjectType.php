@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Project;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ProjectType
  *
  * @property Metadata $_info
- * @property boolean $defaultFlag
- * @property boolean $inactiveFlag
- * @property integer $id
+ * @property bool $defaultFlag
+ * @property bool $inactiveFlag
+ * @property int $id
  * @property string $integrationXref
  * @property string $name
  */
@@ -30,6 +29,6 @@ class ProjectType extends Model
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'integrationXref' => 'string',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

@@ -12,17 +12,17 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Carbon $goLiveDate
  * @property Metadata $_info
- * @property boolean $crmFlag
- * @property boolean $teamsAudioVisualFlag
- * @property boolean $teamsCloudServiceProviderFlag
- * @property boolean $teamsInternalItFlag
- * @property boolean $teamsManagedSecurityFlag
- * @property boolean $teamsManagedServicesFlag
- * @property boolean $teamsPhysicalSecurityFlag
- * @property boolean $teamsValueAddedResellerFlag
- * @property boolean $ticketingFlag
- * @property boolean $timeTrackingFlag
- * @property integer $id
+ * @property bool $crmFlag
+ * @property bool $teamsAudioVisualFlag
+ * @property bool $teamsCloudServiceProviderFlag
+ * @property bool $teamsInternalItFlag
+ * @property bool $teamsManagedSecurityFlag
+ * @property bool $teamsManagedServicesFlag
+ * @property bool $teamsPhysicalSecurityFlag
+ * @property bool $teamsValueAddedResellerFlag
+ * @property bool $ticketingFlag
+ * @property bool $timeTrackingFlag
+ * @property int $id
  */
 class CWStartDetail extends Model
 {
@@ -44,6 +44,6 @@ class CWStartDetail extends Model
         'teamsPhysicalSecurityFlag' => 'boolean',
         'teamsValueAddedResellerFlag' => 'boolean',
         'ticketingFlag' => 'boolean',
-        'timeTrackingFlag' => 'boolean'
+        'timeTrackingFlag' => 'boolean',
     ];
 }

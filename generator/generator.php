@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Collection;
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 
 class Swagger
 {
@@ -81,7 +81,7 @@ EOF;
                 'string',
             ];
 
-            return "        '${property}' => " . ((in_array($type, $primitives)) ? "'${type}'" : "${type}::class");
+            return "        '${property}' => ".((in_array($type, $primitives)) ? "'${type}'" : "${type}::class");
         })
                                ->values()
                                ->sort()
@@ -97,7 +97,7 @@ EOF;
         $model = preg_replace('|{{ Namespace }}|u', $this->getNamespace(), $template);
         $model = preg_replace('|{{ Version }}|u', $this->version, $model);
         $model = preg_replace('|{{ Class }}|u', $class, $model);
-        $model = preg_replace('|{{ Description }}|u', $attributes['description'] ?? 'Model for ' . $class, $model);
+        $model = preg_replace('|{{ Description }}|u', $attributes['description'] ?? 'Model for '.$class, $model);
         $model = preg_replace('|{{ Casts }}|u', $casts, $model);
         $model = preg_replace('|{{ Properties }}|u', $properties, $model);
 
@@ -130,7 +130,7 @@ EOF;
     {
         foreach ($this->specs['definitions'] as $class => $attributes) {
             $this->models[$class] = $this->convertDefinitionToModel($class, $attributes);
-        };
+        }
 
         return $this;
     }
@@ -186,7 +186,7 @@ EOF;
 
                 $this->map[$path] = $this->getNamespace(collect(explode('/', $ref))->last());
             }
-        };
+        }
 
         return $this;
     }
@@ -210,7 +210,7 @@ class Loader
 
         $this->swaggers = collect([]);
 
-        foreach (glob(__DIR__ . "/swagger/" . $this->version . "/*.json") as $swaggerfile) {
+        foreach (glob(__DIR__.'/swagger/'.$this->version.'/*.json') as $swaggerfile) {
             $this->swaggers->push(new Swagger($swaggerfile, $this->version));
         }
 
@@ -234,31 +234,29 @@ class Loader
 /** @var Loader $loader */
 $loader = new Loader();
 
-foreach (glob(__DIR__ . "/swagger/*") as $version) {
+foreach (glob(__DIR__.'/swagger/*') as $version) {
     $version = basename($version);
 
     echo "Working on version ${version}\n";
 
     $loader->loadVersion($version)
            ->process()->swaggers->each(function (Swagger $swagger) use ($version) {
-                $directory = __DIR__ . '/Generated/' . $version;
+                $directory = __DIR__.'/Generated/'.$version;
 
-                echo "Writing " . $swagger->getTitle() . "\n";
+                echo 'Writing '.$swagger->getTitle()."\n";
 
-                mkdir($directory . '/' . $swagger->getTitle(), 0755, true);
+                mkdir($directory.'/'.$swagger->getTitle(), 0755, true);
 
                 $swagger->models->each(function ($contents, $model) use ($directory, $swagger) {
-                    file_put_contents($directory . '/' . $swagger->getTitle() . '/' . $model . '.php', $contents);
+                    file_put_contents($directory.'/'.$swagger->getTitle().'/'.$model.'.php', $contents);
                 });
 
                 echo "Appending map\n";
 
-                $map = collect(json_decode(@ file_get_contents($directory . '/map.json'), true))
+                $map = collect(json_decode(@file_get_contents($directory.'/map.json'), true))
                     ->merge($swagger->map)
                     ->sort();
 
-                file_put_contents($directory . '/map.json', $map->toJson());
+                file_put_contents($directory.'/map.json', $map->toJson());
            });
 }
-
-

@@ -39,10 +39,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property TaxCodeReference $taxCode
  * @property array $customFields
  * @property float $totalSalesTax
- * @property integer $businessUnitId
- * @property integer $companyLocationId
- * @property integer $id
- * @property integer $locationId
+ * @property int $businessUnitId
+ * @property int $companyLocationId
+ * @property int $id
+ * @property int $locationId
  * @property string $customerPO
  * @property string $name
  * @property string $notes
@@ -92,6 +92,6 @@ class Opportunity extends Model
         'status' => OpportunityStatusReference::class,
         'taxCode' => TaxCodeReference::class,
         'totalSalesTax' => 'float',
-        'type' => OpportunityTypeReference::class
+        'type' => OpportunityTypeReference::class,
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,7 +12,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property MemberReference $member
  * @property Metadata $_info
  * @property NotificationRecipientReference $notifyWho
- * @property integer $id
+ * @property int $id
  */
 class BoardAutoAssignResource extends Model
 {
@@ -26,6 +25,6 @@ class BoardAutoAssignResource extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'member' => MemberReference::class,
-        'notifyWho' => NotificationRecipientReference::class
+        'notifyWho' => NotificationRecipientReference::class,
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,12 +10,12 @@ use Spinen\ConnectWise\Support\Model;
  * Model for BillingStatus
  *
  * @property Metadata $_info
- * @property boolean $closedFlag
- * @property boolean $defaultFlag
- * @property boolean $inactiveFlag
- * @property boolean $sentFlag
- * @property integer $id
- * @property integer $sortOrder
+ * @property bool $closedFlag
+ * @property bool $defaultFlag
+ * @property bool $inactiveFlag
+ * @property bool $sentFlag
+ * @property int $id
+ * @property int $sortOrder
  * @property string $name
  */
 class BillingStatus extends Model
@@ -34,6 +33,6 @@ class BillingStatus extends Model
         'inactiveFlag' => 'boolean',
         'name' => 'string',
         'sentFlag' => 'boolean',
-        'sortOrder' => 'integer'
+        'sortOrder' => 'integer',
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,8 +13,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property MemberReference $member
  * @property Metadata $_info
  * @property NotificationRecipientReference $notifyWho
- * @property boolean $globalFlag
- * @property integer $id
+ * @property bool $globalFlag
+ * @property int $id
  * @property string $email
  */
 class ManagementReportNotification extends Model
@@ -32,6 +31,6 @@ class ManagementReportNotification extends Model
         'globalFlag' => 'boolean',
         'id' => 'integer',
         'member' => MemberReference::class,
-        'notifyWho' => NotificationRecipientReference::class
+        'notifyWho' => NotificationRecipientReference::class,
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,9 +12,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property BillingStatusReference $invoiceStatus
  * @property Metadata $_info
  * @property ServiceSurveyReference $serviceSurvey
- * @property boolean $copySenderFlag
- * @property boolean $useSenderFlag
- * @property integer $id
+ * @property bool $copySenderFlag
+ * @property bool $useSenderFlag
+ * @property int $id
  * @property string $body
  * @property string $emailAddress
  * @property string $firstName
@@ -42,6 +41,6 @@ class InvoiceEmailTemplate extends Model
         'name' => 'string',
         'serviceSurvey' => ServiceSurveyReference::class,
         'subject' => 'string',
-        'useSenderFlag' => 'boolean'
+        'useSenderFlag' => 'boolean',
     ];
 }

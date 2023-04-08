@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ProductReference
  *
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $description
  */
 class ProductReference extends Model
@@ -24,6 +23,6 @@ class ProductReference extends Model
     protected $casts = [
         '_info' => Metadata::class,
         'description' => 'string',
-        'id' => 'integer'
+        'id' => 'integer',
     ];
 }

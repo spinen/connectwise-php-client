@@ -14,7 +14,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property InOutTypeReference $inOutType
  * @property MemberReference $member
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $additionalInfo
  */
 class InOutBoard extends Model
@@ -30,6 +30,6 @@ class InOutBoard extends Model
         'dateBack' => Carbon::class,
         'id' => 'integer',
         'inOutType' => InOutTypeReference::class,
-        'member' => MemberReference::class
+        'member' => MemberReference::class,
     ];
 }

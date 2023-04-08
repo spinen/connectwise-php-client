@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,10 +9,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for UserDefinedFieldOption
  *
- * @property boolean $defaultFlag
- * @property boolean $inactiveFlag
- * @property integer $id
- * @property integer $sortOrder
+ * @property bool $defaultFlag
+ * @property bool $inactiveFlag
+ * @property int $id
+ * @property int $sortOrder
  * @property string $optionValue
  */
 class UserDefinedFieldOption extends Model
@@ -28,6 +27,6 @@ class UserDefinedFieldOption extends Model
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'optionValue' => 'string',
-        'sortOrder' => 'integer'
+        'sortOrder' => 'integer',
     ];
 }

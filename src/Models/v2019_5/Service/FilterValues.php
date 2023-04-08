@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -28,6 +27,6 @@ class FilterValues extends Model
         'conditions' => 'string',
         'customfieldconditions' => 'string',
         'fields' => 'string',
-        'orderBy' => 'string'
+        'orderBy' => 'string',
     ];
 }

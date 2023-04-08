@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Sales;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -16,12 +15,12 @@ use Spinen\ConnectWise\Support\Model;
  * @property array $includeDocumentIds
  * @property array $includeNoteIds
  * @property array $includeProductIds
- * @property boolean $includeAllDocumentsFlag
- * @property boolean $includeAllNotesFlag
- * @property boolean $includeAllProductsFlag
- * @property integer $businessUnitId
- * @property integer $locationId
- * @property integer $projectId
+ * @property bool $includeAllDocumentsFlag
+ * @property bool $includeAllNotesFlag
+ * @property bool $includeAllProductsFlag
+ * @property int $businessUnitId
+ * @property int $locationId
+ * @property int $projectId
  * @property string $estimatedEnd
  * @property string $estimatedStart
  * @property string $name
@@ -48,6 +47,6 @@ class OpportunityToProjectConversion extends Model
         'manager' => MemberReference::class,
         'name' => 'string',
         'projectId' => 'integer',
-        'status' => ProjectStatusReference::class
+        'status' => ProjectStatusReference::class,
     ];
 }

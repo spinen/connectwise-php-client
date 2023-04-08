@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property array $notifyActionIds
- * @property boolean $inactiveFlag
- * @property integer $id
+ * @property bool $inactiveFlag
+ * @property int $id
  * @property string $name
  */
 class Track extends Model
@@ -28,6 +27,6 @@ class Track extends Model
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'name' => 'string',
-        'notifyActionIds' => 'array'
+        'notifyActionIds' => 'array',
     ];
 }

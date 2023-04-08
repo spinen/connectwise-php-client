@@ -27,10 +27,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property float $amount
  * @property float $billAmount
  * @property float $invoiceAmount
- * @property integer $businessUnitId
- * @property integer $chargeToId
- * @property integer $id
- * @property integer $locationId
+ * @property int $businessUnitId
+ * @property int $chargeToId
+ * @property int $id
+ * @property int $locationId
  * @property string $billableOption
  * @property string $chargeToType
  * @property string $notes
@@ -68,6 +68,6 @@ class ExpenseEntry extends Model
         'paymentMethod' => PaymentMethodReference::class,
         'status' => 'string',
         'taxes' => 'array',
-        'type' => ExpenseTypeReference::class
+        'type' => ExpenseTypeReference::class,
     ];
 }

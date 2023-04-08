@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ContactCommunicationItem
  *
  * @property CommunicationTypeReference $type
- * @property boolean $defaultFlag
- * @property integer $id
+ * @property bool $defaultFlag
+ * @property int $id
  * @property string $communicationType
  * @property string $domain
  * @property string $extension
@@ -32,6 +31,6 @@ class ContactCommunicationItem extends Model
         'extension' => 'string',
         'id' => 'integer',
         'type' => CommunicationTypeReference::class,
-        'value' => 'string'
+        'value' => 'string',
     ];
 }

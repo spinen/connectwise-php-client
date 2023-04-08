@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Project;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,11 +11,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property StatusIndicatorReference $statusIndicator
- * @property boolean $closedFlag
- * @property boolean $defaultFlag
- * @property boolean $inactiveFlag
- * @property boolean $noTimeFlag
- * @property integer $id
+ * @property bool $closedFlag
+ * @property bool $defaultFlag
+ * @property bool $inactiveFlag
+ * @property bool $noTimeFlag
+ * @property int $id
  * @property string $customStatusIndicatorName
  * @property string $name
  */
@@ -36,6 +35,6 @@ class ProjectStatus extends Model
         'inactiveFlag' => 'boolean',
         'name' => 'string',
         'noTimeFlag' => 'boolean',
-        'statusIndicator' => StatusIndicatorReference::class
+        'statusIndicator' => StatusIndicatorReference::class,
     ];
 }

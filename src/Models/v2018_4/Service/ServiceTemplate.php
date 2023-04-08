@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -27,27 +26,27 @@ use Spinen\ConnectWise\Support\Model;
  * @property SiteReference $site
  * @property SystemDepartmentReference $department
  * @property SystemLocationReference $location
- * @property boolean $BillComplete_Flag
- * @property boolean $assignedNotifyFlag
- * @property boolean $attachScheduleToNewServiceFlag
- * @property boolean $billServiceSeparatelyFlag
- * @property boolean $billUnapprovedTimeAndExpensesFlag
- * @property boolean $emailCCFlag
- * @property boolean $emailContactFlag
- * @property boolean $emailResourceFlag
- * @property boolean $expenseBillableFlag
- * @property boolean $expenseInvoiceFlag
- * @property boolean $overrideFlag
- * @property boolean $productInvoiceFlag
- * @property boolean $restrictDownpaymentFlag
- * @property boolean $templateFlag
- * @property boolean $timeBillableFlag
- * @property boolean $timeInvoiceFlag
+ * @property bool $BillComplete_Flag
+ * @property bool $assignedNotifyFlag
+ * @property bool $attachScheduleToNewServiceFlag
+ * @property bool $billServiceSeparatelyFlag
+ * @property bool $billUnapprovedTimeAndExpensesFlag
+ * @property bool $emailCCFlag
+ * @property bool $emailContactFlag
+ * @property bool $emailResourceFlag
+ * @property bool $expenseBillableFlag
+ * @property bool $expenseInvoiceFlag
+ * @property bool $overrideFlag
+ * @property bool $productInvoiceFlag
+ * @property bool $restrictDownpaymentFlag
+ * @property bool $templateFlag
+ * @property bool $timeBillableFlag
+ * @property bool $timeInvoiceFlag
  * @property float $billingAmount
  * @property float $hoursBudget
- * @property integer $id
- * @property integer $scheduleDaysBefore
- * @property integer $serviceDaysBefore
+ * @property int $id
+ * @property int $scheduleDaysBefore
+ * @property int $serviceDaysBefore
  * @property string $billingMethod
  * @property string $emailCC
  * @property string $impact
@@ -114,6 +113,6 @@ class ServiceTemplate extends Model
         'templateFlag' => 'boolean',
         'timeBillableFlag' => 'boolean',
         'timeInvoiceFlag' => 'boolean',
-        'type' => ServiceTypeReference::class
+        'type' => ServiceTypeReference::class,
     ];
 }

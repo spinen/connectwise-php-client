@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for SurveyOption
  *
  * @property Metadata $_info
- * @property boolean $visibleflag
- * @property integer $id
- * @property integer $points
+ * @property bool $visibleflag
+ * @property int $id
+ * @property int $points
  * @property string $caption
  */
 class SurveyOption extends Model
@@ -28,6 +27,6 @@ class SurveyOption extends Model
         'caption' => 'string',
         'id' => 'integer',
         'points' => 'integer',
-        'visibleflag' => 'boolean'
+        'visibleflag' => 'boolean',
     ];
 }

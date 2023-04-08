@@ -36,6 +36,6 @@ class GLExportAdjustmentTransaction extends Model
         'glClass' => 'string',
         'glTypeID' => 'string',
         'id' => 'string',
-        'memo' => 'string'
+        'memo' => 'string',
     ];
 }

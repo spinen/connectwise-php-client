@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,10 +11,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property PortalConfigurationReference $portalConfiguration
- * @property boolean $customFlag
- * @property boolean $displayFlag
- * @property boolean $openSameWindowFlag
- * @property integer $id
+ * @property bool $customFlag
+ * @property bool $displayFlag
+ * @property bool $openSameWindowFlag
+ * @property int $id
  * @property string $name
  * @property string $url
  */
@@ -34,6 +33,6 @@ class PortalReport extends Model
         'name' => 'string',
         'openSameWindowFlag' => 'boolean',
         'portalConfiguration' => PortalConfigurationReference::class,
-        'url' => 'string'
+        'url' => 'string',
     ];
 }

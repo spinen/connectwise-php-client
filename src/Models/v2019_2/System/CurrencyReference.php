@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for CurrencyReference
  *
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $isoCode
  * @property string $name
  * @property string $symbol
@@ -28,6 +27,6 @@ class CurrencyReference extends Model
         'id' => 'integer',
         'isoCode' => 'string',
         'name' => 'string',
-        'symbol' => 'string'
+        'symbol' => 'string',
     ];
 }

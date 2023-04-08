@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for NoteType
  *
  * @property Metadata $_info
- * @property boolean $defaultFlag
- * @property boolean $importFlag
- * @property integer $id
+ * @property bool $defaultFlag
+ * @property bool $importFlag
+ * @property int $id
  * @property string $identifier
  * @property string $name
  */
@@ -30,6 +29,6 @@ class NoteType extends Model
         'id' => 'integer',
         'identifier' => 'string',
         'importFlag' => 'boolean',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

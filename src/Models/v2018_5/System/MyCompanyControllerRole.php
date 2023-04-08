@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for MyCompanyControllerRole
  *
  * @property MemberReference $reAssignToMember
- * @property integer $count
+ * @property int $count
  */
 class MyCompanyControllerRole extends Model
 {
@@ -22,6 +21,6 @@ class MyCompanyControllerRole extends Model
      */
     protected $casts = [
         'count' => 'integer',
-        'reAssignToMember' => MemberReference::class
+        'reAssignToMember' => MemberReference::class,
     ];
 }

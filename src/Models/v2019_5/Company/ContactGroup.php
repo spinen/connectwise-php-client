@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,8 +12,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property ContactReference $contact
  * @property GroupReference $group
  * @property Metadata $_info
- * @property boolean $unsubscribeFlag
- * @property integer $id
+ * @property bool $unsubscribeFlag
+ * @property int $id
  * @property string $companyGroupUnsubscribedEmailMessage
  * @property string $companyUnsubcribedEmailMessage
  * @property string $contactGroupUnsubscribedEmailMessage
@@ -38,6 +37,6 @@ class ContactGroup extends Model
         'description' => 'string',
         'group' => GroupReference::class,
         'id' => 'integer',
-        'unsubscribeFlag' => 'boolean'
+        'unsubscribeFlag' => 'boolean',
     ];
 }

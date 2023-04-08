@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -24,6 +23,6 @@ class ErrorResponseMessage extends Model
     protected $casts = [
         'code' => 'string',
         'errors' => 'array',
-        'message' => 'string'
+        'message' => 'string',
     ];
 }

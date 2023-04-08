@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Internal;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ChargeToReference
  *
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $name
  * @property string $type
  */
@@ -26,6 +25,6 @@ class ChargeToReference extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'name' => 'string',
-        'type' => 'string'
+        'type' => 'string',
     ];
 }

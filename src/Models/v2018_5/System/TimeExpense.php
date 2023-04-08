@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,14 +11,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property CompanyReference $internalCompany
  * @property Metadata $_info
- * @property boolean $disableTimeEntryFlag
- * @property boolean $requireExpenseNoteFlag
- * @property boolean $requireTimeNoteFlag
- * @property boolean $tier1ApprovalFlag
- * @property boolean $tier2ApprovalFlag
+ * @property bool $disableTimeEntryFlag
+ * @property bool $requireExpenseNoteFlag
+ * @property bool $requireTimeNoteFlag
+ * @property bool $tier1ApprovalFlag
+ * @property bool $tier2ApprovalFlag
  * @property float $roundingFactor
- * @property integer $id
- * @property integer $invoiceStart
+ * @property int $id
+ * @property int $invoiceStart
  */
 class TimeExpense extends Model
 {
@@ -38,6 +37,6 @@ class TimeExpense extends Model
         'requireTimeNoteFlag' => 'boolean',
         'roundingFactor' => 'float',
         'tier1ApprovalFlag' => 'boolean',
-        'tier2ApprovalFlag' => 'boolean'
+        'tier2ApprovalFlag' => 'boolean',
     ];
 }

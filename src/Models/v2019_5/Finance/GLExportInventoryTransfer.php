@@ -22,13 +22,13 @@ use Spinen\ConnectWise\Support\Model;
  * @property WarehouseBinReference $transferFromBin
  * @property WarehouseBinReference $transferToBin
  * @property WarehouseReference $warehouse
- * @property boolean $serializedFlag
- * @property boolean $taxable
+ * @property bool $serializedFlag
+ * @property bool $taxable
  * @property float $cost
  * @property float $itemPrice
  * @property float $quantity
  * @property float $total
- * @property integer $transferId
+ * @property int $transferId
  * @property string $accountNumber
  * @property string $cogsXref
  * @property string $costAcccountNumber
@@ -102,6 +102,6 @@ class GLExportInventoryTransfer extends Model
         'transferToLocationXref' => 'string',
         'unitOfMeasure' => UnitOfMeasureReference::class,
         'uomScheduleXref' => 'string',
-        'warehouse' => WarehouseReference::class
+        'warehouse' => WarehouseReference::class,
     ];
 }

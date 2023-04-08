@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Time;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,15 +10,15 @@ use Spinen\ConnectWise\Support\Model;
  * Model for TimePeriodSetup
  *
  * @property Metadata $_info
- * @property boolean $lastDayFlag
- * @property boolean $semiMonthlyLastDayFlag
- * @property integer $daysPastEndDate
- * @property integer $id
- * @property integer $monthlyPeriodEnds
- * @property integer $numberFuturePeriods
- * @property integer $semiMonthlyFirstPeriod
- * @property integer $semiMonthlySecondPeriod
- * @property integer $year
+ * @property bool $lastDayFlag
+ * @property bool $semiMonthlyLastDayFlag
+ * @property int $daysPastEndDate
+ * @property int $id
+ * @property int $monthlyPeriodEnds
+ * @property int $numberFuturePeriods
+ * @property int $semiMonthlyFirstPeriod
+ * @property int $semiMonthlySecondPeriod
+ * @property int $year
  * @property string $description
  * @property string $firstPeriodEndDate
  * @property string $periodApplyTo
@@ -46,6 +45,6 @@ class TimePeriodSetup extends Model
         'semiMonthlyLastDayFlag' => 'boolean',
         'semiMonthlySecondPeriod' => 'integer',
         'type' => 'string',
-        'year' => 'integer'
+        'year' => 'integer',
     ];
 }

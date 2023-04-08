@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property SystemLocationReference $location
- * @property integer $id
- * @property integer $sortOrder
+ * @property int $id
+ * @property int $sortOrder
  * @property string $name
  */
 class TodayPageCategory extends Model
@@ -28,6 +27,6 @@ class TodayPageCategory extends Model
         'id' => 'integer',
         'location' => SystemLocationReference::class,
         'name' => 'string',
-        'sortOrder' => 'integer'
+        'sortOrder' => 'integer',
     ];
 }

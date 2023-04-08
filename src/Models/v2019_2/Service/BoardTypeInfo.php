@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property BoardReference $board
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $name
  */
 class BoardTypeInfo extends Model
@@ -26,6 +25,6 @@ class BoardTypeInfo extends Model
         '_info' => Metadata::class,
         'board' => BoardReference::class,
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

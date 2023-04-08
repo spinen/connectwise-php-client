@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ManagementNetworkSecurity
  *
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $name
  * @property string $password
  * @property string $site
@@ -30,6 +29,6 @@ class ManagementNetworkSecurity extends Model
         'name' => 'string',
         'password' => 'string',
         'site' => 'string',
-        'username' => 'string'
+        'username' => 'string',
     ];
 }

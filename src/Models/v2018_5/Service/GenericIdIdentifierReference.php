@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GenericIdIdentifierReference
  *
- * @property integer $id
+ * @property int $id
  * @property string $identifier
  * @property string $name
  */
@@ -24,6 +23,6 @@ class GenericIdIdentifierReference extends Model
     protected $casts = [
         'id' => 'integer',
         'identifier' => 'string',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

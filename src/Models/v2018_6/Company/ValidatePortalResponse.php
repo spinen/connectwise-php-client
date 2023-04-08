@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ValidatePortalResponse
  *
- * @property boolean $success
- * @property integer $contactId
+ * @property bool $success
+ * @property int $contactId
  */
 class ValidatePortalResponse extends Model
 {
@@ -22,6 +21,6 @@ class ValidatePortalResponse extends Model
      */
     protected $casts = [
         'contactId' => 'integer',
-        'success' => 'boolean'
+        'success' => 'boolean',
     ];
 }

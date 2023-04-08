@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CloudBusMessage
  *
- * @property integer $id
- * @property integer $timestamp
+ * @property int $id
+ * @property int $timestamp
  * @property string $messageGuid
  * @property string $messageType
  * @property string $payload
@@ -32,6 +31,6 @@ class CloudBusMessage extends Model
         'payload' => 'string',
         'source' => 'string',
         'timestamp' => 'integer',
-        'version' => 'string'
+        'version' => 'string',
     ];
 }

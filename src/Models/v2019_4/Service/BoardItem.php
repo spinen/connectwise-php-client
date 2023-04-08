@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property BoardReference $board
  * @property Metadata $_info
- * @property boolean $inactiveFlag
- * @property integer $id
+ * @property bool $inactiveFlag
+ * @property int $id
  * @property string $name
  */
 class BoardItem extends Model
@@ -28,6 +27,6 @@ class BoardItem extends Model
         'board' => BoardReference::class,
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

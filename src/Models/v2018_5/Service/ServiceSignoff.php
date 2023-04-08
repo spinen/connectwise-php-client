@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,58 +10,58 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ServiceSignoff
  *
  * @property Metadata $_info
- * @property boolean $billingMethodsTextFlag
- * @property boolean $billingTermsFlag
- * @property boolean $companyInfoFlag
- * @property boolean $configurationsFlag
- * @property boolean $creditCardFieldsFlag
- * @property boolean $customerSignoffFieldsFlag
- * @property boolean $customerSignoffTextFlag
- * @property boolean $defaultFFFlag
- * @property boolean $defaultFlag
- * @property boolean $discussionFlag
- * @property boolean $expenseAgreementFlag
- * @property boolean $expenseAmountFlag
- * @property boolean $expenseBillFlag
- * @property boolean $expenseDateFlag
- * @property boolean $expenseFlag
- * @property boolean $expenseManualFlag
- * @property boolean $expenseMemberFlag
- * @property boolean $expenseNotesFlag
- * @property boolean $expenseTaxFlag
- * @property boolean $expenseTypeFlag
- * @property boolean $internalNotesFlag
- * @property boolean $productAgreementFlag
- * @property boolean $productBillFlag
- * @property boolean $productDescriptionFlag
- * @property boolean $productExtendedAmountFlag
- * @property boolean $productFlag
- * @property boolean $productManualFlag
- * @property boolean $productPriceFlag
- * @property boolean $productQuantityFlag
- * @property boolean $productTaxFlag
- * @property boolean $resolutionFlag
- * @property boolean $summaryFlag
- * @property boolean $taskFlag
- * @property boolean $technicianSignoffFlag
- * @property boolean $timeAgreementFlag
- * @property boolean $timeBillFlag
- * @property boolean $timeDateFlag
- * @property boolean $timeExtendedAmountFlag
- * @property boolean $timeFlag
- * @property boolean $timeHoursFlag
- * @property boolean $timeManualFlag
- * @property boolean $timeMemberFlag
- * @property boolean $timeNotesFlag
- * @property boolean $timeRateFlag
- * @property boolean $timeStartEndFlag
- * @property boolean $timeTaxFlag
- * @property boolean $timeWorkTypeFlag
- * @property boolean $visibleLogoFlag
- * @property integer $expenseManualEntry
- * @property integer $id
- * @property integer $productManualEntry
- * @property integer $timeManualEntry
+ * @property bool $billingMethodsTextFlag
+ * @property bool $billingTermsFlag
+ * @property bool $companyInfoFlag
+ * @property bool $configurationsFlag
+ * @property bool $creditCardFieldsFlag
+ * @property bool $customerSignoffFieldsFlag
+ * @property bool $customerSignoffTextFlag
+ * @property bool $defaultFFFlag
+ * @property bool $defaultFlag
+ * @property bool $discussionFlag
+ * @property bool $expenseAgreementFlag
+ * @property bool $expenseAmountFlag
+ * @property bool $expenseBillFlag
+ * @property bool $expenseDateFlag
+ * @property bool $expenseFlag
+ * @property bool $expenseManualFlag
+ * @property bool $expenseMemberFlag
+ * @property bool $expenseNotesFlag
+ * @property bool $expenseTaxFlag
+ * @property bool $expenseTypeFlag
+ * @property bool $internalNotesFlag
+ * @property bool $productAgreementFlag
+ * @property bool $productBillFlag
+ * @property bool $productDescriptionFlag
+ * @property bool $productExtendedAmountFlag
+ * @property bool $productFlag
+ * @property bool $productManualFlag
+ * @property bool $productPriceFlag
+ * @property bool $productQuantityFlag
+ * @property bool $productTaxFlag
+ * @property bool $resolutionFlag
+ * @property bool $summaryFlag
+ * @property bool $taskFlag
+ * @property bool $technicianSignoffFlag
+ * @property bool $timeAgreementFlag
+ * @property bool $timeBillFlag
+ * @property bool $timeDateFlag
+ * @property bool $timeExtendedAmountFlag
+ * @property bool $timeFlag
+ * @property bool $timeHoursFlag
+ * @property bool $timeManualFlag
+ * @property bool $timeMemberFlag
+ * @property bool $timeNotesFlag
+ * @property bool $timeRateFlag
+ * @property bool $timeStartEndFlag
+ * @property bool $timeTaxFlag
+ * @property bool $timeWorkTypeFlag
+ * @property bool $visibleLogoFlag
+ * @property int $expenseManualEntry
+ * @property int $id
+ * @property int $productManualEntry
+ * @property int $timeManualEntry
  * @property string $billingMethodsText
  * @property string $customerSignoffText
  * @property string $name
@@ -132,6 +131,6 @@ class ServiceSignoff extends Model
         'timeStartEndFlag' => 'boolean',
         'timeTaxFlag' => 'boolean',
         'timeWorkTypeFlag' => 'boolean',
-        'visibleLogoFlag' => 'boolean'
+        'visibleLogoFlag' => 'boolean',
     ];
 }

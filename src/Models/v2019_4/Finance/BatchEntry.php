@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -19,7 +18,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property float $cost
  * @property float $credit
  * @property float $debit
- * @property integer $id
+ * @property int $id
  * @property string $accountNumber
  * @property string $accountType
  * @property string $costOfGoodsSoldAccountNumber
@@ -52,6 +51,6 @@ class BatchEntry extends Model
         'name' => 'string',
         'purchaseOrder' => PurchaseOrderReference::class,
         'salesCode' => 'string',
-        'transfer' => 'string'
+        'transfer' => 'string',
     ];
 }

@@ -2,15 +2,12 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Internal;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class UploadToMarketplaceRequest Version v2018_4
  *
  * Model for UploadToMarketplaceRequest
- *
-
  */
 class UploadToMarketplaceRequest extends Model
 {

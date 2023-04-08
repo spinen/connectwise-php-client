@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property DocumentReference $attachment
  * @property Metadata $_info
- * @property boolean $readFlag
- * @property integer $id
- * @property integer $recordId
+ * @property bool $readFlag
+ * @property int $id
+ * @property int $recordId
  * @property string $message
  * @property string $notificationTrigger
  * @property string $recordType
@@ -34,6 +33,6 @@ class MemberNotification extends Model
         'notificationTrigger' => 'string',
         'readFlag' => 'boolean',
         'recordId' => 'integer',
-        'recordType' => 'string'
+        'recordType' => 'string',
     ];
 }

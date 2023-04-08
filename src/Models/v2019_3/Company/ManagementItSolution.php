@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,12 +10,12 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ManagementItSolution
  *
  * @property Metadata $_info
- * @property boolean $globalLoginFlag
- * @property boolean $noDisplayFlag
- * @property boolean $overrideLoginLocationFlag
- * @property boolean $overrideWebServiceLocationFlag
- * @property boolean $usingSslFlag
- * @property integer $id
+ * @property bool $globalLoginFlag
+ * @property bool $noDisplayFlag
+ * @property bool $overrideLoginLocationFlag
+ * @property bool $overrideWebServiceLocationFlag
+ * @property bool $usingSslFlag
+ * @property int $id
  * @property string $continuumApiPassword
  * @property string $continuumApiUsername
  * @property string $globalLoginPassword
@@ -62,6 +61,6 @@ class ManagementItSolution extends Model
         'overrideWebServiceLocationFlag' => 'boolean',
         'portalOverrideLoginUrl' => 'string',
         'usingSslFlag' => 'boolean',
-        'webserviceOverrideUrl' => 'string'
+        'webserviceOverrideUrl' => 'string',
     ];
 }

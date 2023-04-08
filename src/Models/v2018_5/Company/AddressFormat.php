@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,10 +11,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property array $countryIds
- * @property boolean $addAllCountries
- * @property boolean $defaultFlag
- * @property boolean $removeAllCountries
- * @property integer $id
+ * @property bool $addAllCountries
+ * @property bool $defaultFlag
+ * @property bool $removeAllCountries
+ * @property int $id
  * @property string $format
  * @property string $name
  */
@@ -34,6 +33,6 @@ class AddressFormat extends Model
         'format' => 'string',
         'id' => 'integer',
         'name' => 'string',
-        'removeAllCountries' => 'boolean'
+        'removeAllCountries' => 'boolean',
     ];
 }

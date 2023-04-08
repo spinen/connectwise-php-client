@@ -21,16 +21,16 @@ use Spinen\ConnectWise\Support\Model;
  * @property ScheduleStatusReference $status
  * @property ScheduleTypeReference $type
  * @property ServiceLocationReference $where
- * @property boolean $acknowledgedFlag
- * @property boolean $addMemberToProjectFlag
- * @property boolean $allowScheduleConflictsFlag
- * @property boolean $doneFlag
- * @property boolean $meetingFlag
- * @property boolean $ownerFlag
+ * @property bool $acknowledgedFlag
+ * @property bool $addMemberToProjectFlag
+ * @property bool $allowScheduleConflictsFlag
+ * @property bool $doneFlag
+ * @property bool $meetingFlag
+ * @property bool $ownerFlag
  * @property float $hours
- * @property integer $id
- * @property integer $objectId
- * @property integer $projectRoleId
+ * @property int $id
+ * @property int $objectId
+ * @property int $projectRoleId
  * @property string $name
  */
 class ScheduleEntry extends Model
@@ -62,6 +62,6 @@ class ScheduleEntry extends Model
         'span' => ScheduleSpanReference::class,
         'status' => ScheduleStatusReference::class,
         'type' => ScheduleTypeReference::class,
-        'where' => ServiceLocationReference::class
+        'where' => ServiceLocationReference::class,
     ];
 }

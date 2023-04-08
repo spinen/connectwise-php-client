@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Based on CompanyEntityType Report
  *
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $name
  */
 class EntityTypeReference extends Model
@@ -24,6 +23,6 @@ class EntityTypeReference extends Model
     protected $casts = [
         '_info' => Metadata::class,
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,8 +13,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property SystemDepartmentReference $department
  * @property SystemLocationReference $location
- * @property boolean $deleteNotifyFlag
- * @property integer $id
+ * @property bool $deleteNotifyFlag
+ * @property int $id
  * @property string $name
  */
 class ServiceTeam extends Model
@@ -32,6 +31,6 @@ class ServiceTeam extends Model
         'id' => 'integer',
         'leader' => MemberReference::class,
         'location' => SystemLocationReference::class,
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

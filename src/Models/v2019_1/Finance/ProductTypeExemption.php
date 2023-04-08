@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,7 +12,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property ProductTypeReference $productType
  * @property array $taxableLevels
- * @property integer $id
+ * @property int $id
  */
 class ProductTypeExemption extends Model
 {
@@ -26,6 +25,6 @@ class ProductTypeExemption extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'productType' => ProductTypeReference::class,
-        'taxableLevels' => 'array'
+        'taxableLevels' => 'array',
     ];
 }

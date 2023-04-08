@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Time;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -17,10 +16,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property WorkRoleReference $workRole
  * @property WorkTypeReference $workType
  * @property array $expenseTypeIds
- * @property boolean $allowAllExpenseTypeFlag
- * @property boolean $expenseEntryFlag
- * @property boolean $timeEntryFlag
- * @property integer $id
+ * @property bool $allowAllExpenseTypeFlag
+ * @property bool $expenseEntryFlag
+ * @property bool $timeEntryFlag
+ * @property int $id
  * @property string $billTime
  * @property string $integrationXref
  * @property string $name
@@ -46,6 +45,6 @@ class ChargeCode extends Model
         'name' => 'string',
         'timeEntryFlag' => 'boolean',
         'workRole' => WorkRoleReference::class,
-        'workType' => WorkTypeReference::class
+        'workType' => WorkTypeReference::class,
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for CompanyType
  *
  * @property Metadata $_info
- * @property boolean $defaultFlag
- * @property boolean $vendorFlag
- * @property integer $id
+ * @property bool $defaultFlag
+ * @property bool $vendorFlag
+ * @property int $id
  * @property string $name
  */
 class CompanyType extends Model
@@ -28,6 +27,6 @@ class CompanyType extends Model
         'defaultFlag' => 'boolean',
         'id' => 'integer',
         'name' => 'string',
-        'vendorFlag' => 'boolean'
+        'vendorFlag' => 'boolean',
     ];
 }

@@ -16,10 +16,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property OpportunityReference $opportunity
  * @property array $customFields
- * @property boolean $prorateCurrentPeriodFlag
- * @property boolean $purchaseItemFlag
- * @property boolean $specialOrderFlag
- * @property boolean $taxableFlag
+ * @property bool $prorateCurrentPeriodFlag
+ * @property bool $purchaseItemFlag
+ * @property bool $specialOrderFlag
+ * @property bool $taxableFlag
  * @property float $billedQuantity
  * @property float $extCost
  * @property float $extPrice
@@ -33,8 +33,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property float $sequenceNumber
  * @property float $unitCost
  * @property float $unitPrice
- * @property integer $agreementId
- * @property integer $id
+ * @property int $agreementId
+ * @property int $id
  * @property string $billCustomer
  * @property string $description
  * @property string $invoiceDescription
@@ -78,6 +78,6 @@ class Addition extends Model
         'taxableFlag' => 'boolean',
         'unitCost' => 'float',
         'unitPrice' => 'float',
-        'uom' => 'string'
+        'uom' => 'string',
     ];
 }

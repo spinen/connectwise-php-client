@@ -12,8 +12,6 @@ use Spinen\ConnectWise\Support\ModelResolver;
 
 /**
  * Class ConnectWiseProvider
- *
- * @package Spinen\ConnectWise\Laravel
  */
 class ServiceProvider extends LaravelServiceProvider
 {
@@ -39,7 +37,6 @@ class ServiceProvider extends LaravelServiceProvider
      *
      * Allow a default member id to use for the API calls if there is no logged in user.
      *
-     * @return mixed
      * @throws NoLoggedInUser
      */
     protected function determineMemberId()
@@ -48,11 +45,11 @@ class ServiceProvider extends LaravelServiceProvider
             return $this->app->auth->user()->connect_wise_member_id;
         }
 
-        if (!empty($this->app->config->get('services.connectwise.default_member_id'))) {
+        if (! empty($this->app->config->get('services.connectwise.default_member_id'))) {
             return $this->app->config->get('services.connectwise.default_member_id');
         }
 
-        throw new NoLoggedInUser("There is not a currently logged in user.");
+        throw new NoLoggedInUser('There is not a currently logged in user.');
     }
 
     /**

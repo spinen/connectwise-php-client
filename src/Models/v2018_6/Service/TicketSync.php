@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,10 +12,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property CompanyReference $company
  * @property IntegratorLoginReference $integratorLogin
  * @property Metadata $_info
- * @property boolean $internalAnalysisFlag
- * @property boolean $problemDescriptionFlag
- * @property boolean $resolutionFlag
- * @property integer $id
+ * @property bool $internalAnalysisFlag
+ * @property bool $problemDescriptionFlag
+ * @property bool $resolutionFlag
+ * @property int $id
  * @property string $name
  * @property string $password
  * @property string $psg
@@ -44,6 +43,6 @@ class TicketSync extends Model
         'resolutionFlag' => 'boolean',
         'url' => 'string',
         'userName' => 'string',
-        'vendorType' => 'string'
+        'vendorType' => 'string',
     ];
 }

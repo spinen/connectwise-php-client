@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,10 +12,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property CompanyReference $company
  * @property ContactReference $contact
  * @property Metadata $_info
- * @property integer $actionRemaining
- * @property integer $actionTaken
- * @property integer $id
- * @property integer $trackId
+ * @property int $actionRemaining
+ * @property int $actionTaken
+ * @property int $id
+ * @property int $trackId
  * @property string $endDate
  * @property string $name
  * @property string $startDate
@@ -40,6 +39,6 @@ class ContactTrack extends Model
         'name' => 'string',
         'startDate' => 'string',
         'startedBy' => 'string',
-        'trackId' => 'integer'
+        'trackId' => 'integer',
     ];
 }

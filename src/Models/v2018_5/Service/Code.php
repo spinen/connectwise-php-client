@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,10 +10,10 @@ use Spinen\ConnectWise\Support\Model;
  * Model for Code
  *
  * @property Metadata $_info
- * @property integer $boardId
- * @property integer $businessUnitId
- * @property integer $id
- * @property integer $locationId
+ * @property int $boardId
+ * @property int $businessUnitId
+ * @property int $id
+ * @property int $locationId
  * @property string $description
  * @property string $name
  */
@@ -32,6 +31,6 @@ class Code extends Model
         'description' => 'string',
         'id' => 'integer',
         'locationId' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for BoardCopy
  *
- * @property integer $id
+ * @property int $id
  * @property string $name
  */
 class BoardCopy extends Model
@@ -22,6 +21,6 @@ class BoardCopy extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

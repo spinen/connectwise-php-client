@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,13 +13,13 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property ServiceStatusReference $serviceStatus
  * @property ServiceSurveyReference $serviceSurvey
- * @property boolean $copySenderFlag
- * @property boolean $externalContactNotifications
- * @property boolean $internalContactNotifications
- * @property boolean $resourceRecordsFlag
- * @property boolean $tasksFlag
- * @property boolean $useSenderFlag
- * @property integer $id
+ * @property bool $copySenderFlag
+ * @property bool $externalContactNotifications
+ * @property bool $internalContactNotifications
+ * @property bool $resourceRecordsFlag
+ * @property bool $tasksFlag
+ * @property bool $useSenderFlag
+ * @property int $id
  * @property string $body
  * @property string $emailAddress
  * @property string $firstName
@@ -52,6 +51,6 @@ class ServiceEmailTemplate extends Model
         'subject' => 'string',
         'tasksFlag' => 'boolean',
         'type' => 'string',
-        'useSenderFlag' => 'boolean'
+        'useSenderFlag' => 'boolean',
     ];
 }

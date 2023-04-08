@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,10 +11,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property ErrorResponseMessage $Error
  * @property array $Entities
- * @property boolean $Success
- * @property integer $Count
- * @property integer $SequenceNumber
- * @property integer $StatusCode
+ * @property bool $Success
+ * @property int $Count
+ * @property int $SequenceNumber
+ * @property int $StatusCode
  * @property string $ResourceType
  * @property string $Version
  */
@@ -34,6 +33,6 @@ class BundleResult extends Model
         'SequenceNumber' => 'integer',
         'StatusCode' => 'integer',
         'Success' => 'boolean',
-        'Version' => 'string'
+        'Version' => 'string',
     ];
 }

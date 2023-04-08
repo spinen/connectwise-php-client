@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -25,39 +24,39 @@ use Spinen\ConnectWise\Support\Model;
  * @property SystemLocationReference $location
  * @property WorkRoleReference $workRole
  * @property WorkTypeReference $workType
- * @property boolean $autoAssignNewECTicketsFlag
- * @property boolean $autoAssignNewPortalTicketsFlag
- * @property boolean $autoAssignNewTicketsFlag
- * @property boolean $autoAssignTicketOwnerFlag
- * @property boolean $billTicketSeparatelyFlag
- * @property boolean $billTicketsAfterClosedFlag
- * @property boolean $billUnapprovedTimeExpenseFlag
- * @property boolean $closedLoopAllFlag
- * @property boolean $closedLoopDiscussionsFlag
- * @property boolean $closedLoopInternalAnalysisFlag
- * @property boolean $closedLoopResolutionFlag
- * @property boolean $discussionsLockedFlag
- * @property boolean $emailConnectorAllowReopenClosedFlag
- * @property boolean $emailConnectorNeverReopenByDaysClosedFlag
- * @property boolean $emailConnectorNeverReopenByDaysFlag
- * @property boolean $emailConnectorNewTicketNoMatchFlag
- * @property boolean $emailConnectorReopenResourcesFlag
- * @property boolean $inactiveFlag
- * @property boolean $overrideBillingSetupFlag
- * @property boolean $projectFlag
- * @property boolean $sendToCCFlag
- * @property boolean $sendToContactFlag
- * @property boolean $sendToResourceFlag
- * @property boolean $showDependenciesFlag
- * @property boolean $showEstimatesFlag
- * @property boolean $timeEntryDiscussionFlag
- * @property boolean $timeEntryInternalAnalysisFlag
- * @property boolean $timeEntryLockedFlag
- * @property boolean $timeEntryResolutionFlag
- * @property boolean $useMemberDisplayNameFlag
- * @property integer $emailConnectorReopenDaysClosedLimit
- * @property integer $emailConnectorReopenDaysLimit
- * @property integer $id
+ * @property bool $autoAssignNewECTicketsFlag
+ * @property bool $autoAssignNewPortalTicketsFlag
+ * @property bool $autoAssignNewTicketsFlag
+ * @property bool $autoAssignTicketOwnerFlag
+ * @property bool $billTicketSeparatelyFlag
+ * @property bool $billTicketsAfterClosedFlag
+ * @property bool $billUnapprovedTimeExpenseFlag
+ * @property bool $closedLoopAllFlag
+ * @property bool $closedLoopDiscussionsFlag
+ * @property bool $closedLoopInternalAnalysisFlag
+ * @property bool $closedLoopResolutionFlag
+ * @property bool $discussionsLockedFlag
+ * @property bool $emailConnectorAllowReopenClosedFlag
+ * @property bool $emailConnectorNeverReopenByDaysClosedFlag
+ * @property bool $emailConnectorNeverReopenByDaysFlag
+ * @property bool $emailConnectorNewTicketNoMatchFlag
+ * @property bool $emailConnectorReopenResourcesFlag
+ * @property bool $inactiveFlag
+ * @property bool $overrideBillingSetupFlag
+ * @property bool $projectFlag
+ * @property bool $sendToCCFlag
+ * @property bool $sendToContactFlag
+ * @property bool $sendToResourceFlag
+ * @property bool $showDependenciesFlag
+ * @property bool $showEstimatesFlag
+ * @property bool $timeEntryDiscussionFlag
+ * @property bool $timeEntryInternalAnalysisFlag
+ * @property bool $timeEntryLockedFlag
+ * @property bool $timeEntryResolutionFlag
+ * @property bool $useMemberDisplayNameFlag
+ * @property int $emailConnectorReopenDaysClosedLimit
+ * @property int $emailConnectorReopenDaysLimit
+ * @property int $id
  * @property string $allSort
  * @property string $billExpense
  * @property string $billProduct
@@ -136,6 +135,6 @@ class Board extends Model
         'timeEntryResolutionFlag' => 'boolean',
         'useMemberDisplayNameFlag' => 'boolean',
         'workRole' => WorkRoleReference::class,
-        'workType' => WorkTypeReference::class
+        'workType' => WorkTypeReference::class,
     ];
 }

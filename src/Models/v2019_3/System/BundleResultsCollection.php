@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -22,6 +21,6 @@ class BundleResultsCollection extends Model
      */
     protected $casts = [
         'Info' => Metadata::class,
-        'Results' => 'array'
+        'Results' => 'array',
     ];
 }

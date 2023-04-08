@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,14 +11,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property CalendarSetupReference $calendarSetup
  * @property Metadata $_info
- * @property boolean $allowCCFlag
- * @property boolean $allowTOFlag
- * @property boolean $contactColorDisableFlag
- * @property boolean $headerColorDisableFlag
- * @property boolean $hideDelimiterFlag
- * @property boolean $memberColorDisableFlag
- * @property boolean $unknownColorDisableFlag
- * @property integer $id
+ * @property bool $allowCCFlag
+ * @property bool $allowTOFlag
+ * @property bool $contactColorDisableFlag
+ * @property bool $headerColorDisableFlag
+ * @property bool $hideDelimiterFlag
+ * @property bool $memberColorDisableFlag
+ * @property bool $unknownColorDisableFlag
+ * @property int $id
  * @property string $contactColor
  * @property string $headerColor
  * @property string $memberColor
@@ -50,6 +49,6 @@ class Service extends Model
         'scheduleSpan' => 'string',
         'srNotify' => 'string',
         'unknownColor' => 'string',
-        'unknownColorDisableFlag' => 'boolean'
+        'unknownColorDisableFlag' => 'boolean',
     ];
 }

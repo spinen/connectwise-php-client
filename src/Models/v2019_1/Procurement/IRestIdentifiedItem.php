@@ -2,15 +2,12 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class IRestIdentifiedItem Version v2019_1
  *
  * Model for IRestIdentifiedItem
- *
-
  */
 class IRestIdentifiedItem extends Model
 {

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,9 +12,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property ConfigurationTypeQuestionReference $question
  * @property ConfigurationTypeReference $configurationType
  * @property Metadata $_info
- * @property boolean $defaultFlag
- * @property boolean $inactiveFlag
- * @property integer $id
+ * @property bool $defaultFlag
+ * @property bool $inactiveFlag
+ * @property int $id
  * @property string $value
  */
 class ConfigurationTypeQuestionValue extends Model
@@ -32,6 +31,6 @@ class ConfigurationTypeQuestionValue extends Model
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'question' => ConfigurationTypeQuestionReference::class,
-        'value' => 'string'
+        'value' => 'string',
     ];
 }

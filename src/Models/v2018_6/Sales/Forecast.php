@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Sales;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,13 +12,13 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property OpportunityStatusReference $status
  * @property ProductRecurring $recurring
- * @property boolean $includedFlag
+ * @property bool $includedFlag
  * @property float $cost
  * @property float $margin
  * @property float $percent
  * @property float $revenue
- * @property integer $id
- * @property integer $opportunityId
+ * @property int $id
+ * @property int $opportunityId
  * @property string $QuoteName
  * @property string $QuoteNumber
  * @property string $name
@@ -46,6 +45,6 @@ class Forecast extends Model
         'recurring' => ProductRecurring::class,
         'revenue' => 'float',
         'status' => OpportunityStatusReference::class,
-        'type' => 'string'
+        'type' => 'string',
     ];
 }

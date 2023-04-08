@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,10 +12,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property BoardReference $board
  * @property Metadata $_info
  * @property array $typeAssociationIds
- * @property boolean $addAllTypesFlag
- * @property boolean $inactiveFlag
- * @property boolean $removeAllTypesFlag
- * @property integer $id
+ * @property bool $addAllTypesFlag
+ * @property bool $inactiveFlag
+ * @property bool $removeAllTypesFlag
+ * @property int $id
  * @property string $name
  */
 class BoardSubType extends Model
@@ -34,6 +33,6 @@ class BoardSubType extends Model
         'inactiveFlag' => 'boolean',
         'name' => 'string',
         'removeAllTypesFlag' => 'boolean',
-        'typeAssociationIds' => 'array'
+        'typeAssociationIds' => 'array',
     ];
 }

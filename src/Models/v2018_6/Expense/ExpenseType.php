@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Expense;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,14 +11,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property ExternalExpenseTypeIntegrationReference $externalIntegrationXRef
  * @property Metadata $_info
- * @property boolean $advancedAmountFlag
- * @property boolean $inactiveFlag
- * @property boolean $mileageFlag
- * @property boolean $quantityFlag
+ * @property bool $advancedAmountFlag
+ * @property bool $inactiveFlag
+ * @property bool $mileageFlag
+ * @property bool $quantityFlag
  * @property float $invoiceMarkupAmount
  * @property float $maxAmount
  * @property float $reimbursementRate
- * @property integer $id
+ * @property int $id
  * @property string $amountCaption
  * @property string $billExpenses
  * @property string $integrationXRef
@@ -48,6 +47,6 @@ class ExpenseType extends Model
         'mileageFlag' => 'boolean',
         'name' => 'string',
         'quantityFlag' => 'boolean',
-        'reimbursementRate' => 'float'
+        'reimbursementRate' => 'float',
     ];
 }

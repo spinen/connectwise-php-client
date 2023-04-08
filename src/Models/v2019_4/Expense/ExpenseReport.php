@@ -16,9 +16,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property MemberReference $member
  * @property Metadata $_info
  * @property float $total
- * @property integer $id
- * @property integer $period
- * @property integer $year
+ * @property int $id
+ * @property int $period
+ * @property int $year
  * @property string $status
  */
 class ExpenseReport extends Model
@@ -38,6 +38,6 @@ class ExpenseReport extends Model
         'period' => 'integer',
         'status' => 'string',
         'total' => 'float',
-        'year' => 'integer'
+        'year' => 'integer',
     ];
 }

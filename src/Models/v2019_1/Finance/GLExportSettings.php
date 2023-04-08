@@ -2,15 +2,12 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class GLExportSettings Version v2019_1
  *
  * Mapped to GlPreferences Class
- *
-
  */
 class GLExportSettings extends Model
 {

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Time;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,17 +11,17 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property ExternalWorkTypeIntegrationReference $externalIntegrationXRef
  * @property Metadata $_info
- * @property boolean $activityDefaultFlag
- * @property boolean $addAllAgreementExclusions
- * @property boolean $inactiveFlag
- * @property boolean $overallDefaultFlag
- * @property boolean $utilizationFlag
+ * @property bool $activityDefaultFlag
+ * @property bool $addAllAgreementExclusions
+ * @property bool $inactiveFlag
+ * @property bool $overallDefaultFlag
+ * @property bool $utilizationFlag
  * @property float $costMultiplier
  * @property float $hoursMax
  * @property float $hoursMin
  * @property float $rate
  * @property float $roundBillHoursTo
- * @property integer $id
+ * @property int $id
  * @property string $accrualType
  * @property string $billTime
  * @property string $integrationXRef
@@ -54,6 +53,6 @@ class WorkType extends Model
         'rate' => 'float',
         'rateType' => 'string',
         'roundBillHoursTo' => 'float',
-        'utilizationFlag' => 'boolean'
+        'utilizationFlag' => 'boolean',
     ];
 }

@@ -21,18 +21,18 @@ use Spinen\ConnectWise\Support\Model;
  * @property SiteReference $site
  * @property array $communicationItems
  * @property array $customFields
- * @property boolean $childrenFlag
- * @property boolean $defaultBillingFlag
- * @property boolean $defaultFlag
- * @property boolean $disablePortalLoginFlag
- * @property boolean $inactiveFlag
- * @property boolean $marriedFlag
- * @property boolean $unsubscribeFlag
- * @property integer $assistantContactId
- * @property integer $defaultMergeContactId
- * @property integer $id
- * @property integer $managerContactId
- * @property integer $portalSecurityLevel
+ * @property bool $childrenFlag
+ * @property bool $defaultBillingFlag
+ * @property bool $defaultFlag
+ * @property bool $disablePortalLoginFlag
+ * @property bool $inactiveFlag
+ * @property bool $marriedFlag
+ * @property bool $unsubscribeFlag
+ * @property int $assistantContactId
+ * @property int $defaultMergeContactId
+ * @property int $id
+ * @property int $managerContactId
+ * @property int $portalSecurityLevel
  * @property string $addressLine1
  * @property string $addressLine2
  * @property string $city
@@ -102,6 +102,6 @@ class Contact extends Model
         'twitterUrl' => 'string',
         'type' => ContactTypeReference::class,
         'unsubscribeFlag' => 'boolean',
-        'zip' => 'string'
+        'zip' => 'string',
     ];
 }

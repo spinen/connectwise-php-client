@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -16,8 +15,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property ServiceSubTypeReference $subtype
  * @property ServiceTemplateReference $serviceTemplate
  * @property ServiceTypeReference $type
- * @property boolean $autoApplyFlag
- * @property integer $id
+ * @property bool $autoApplyFlag
+ * @property int $id
  * @property string $budgetHoursSetting
  * @property string $discussionSetting
  * @property string $documentsSetting
@@ -54,6 +53,6 @@ class BoardAutoTemplate extends Model
         'subtype' => ServiceSubTypeReference::class,
         'summarySetting' => 'string',
         'tasksSetting' => 'string',
-        'type' => ServiceTypeReference::class
+        'type' => ServiceTypeReference::class,
     ];
 }

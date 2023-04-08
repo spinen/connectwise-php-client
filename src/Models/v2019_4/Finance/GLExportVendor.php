@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -17,7 +16,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property MemberReference $member
  * @property SiteReference $site
  * @property TaxCodeReference $taxCode
- * @property integer $dueDays
+ * @property int $dueDays
  * @property string $accountNumber
  * @property string $vendorNumber
  */
@@ -38,6 +37,6 @@ class GLExportVendor extends Model
         'site' => SiteReference::class,
         'taxCode' => TaxCodeReference::class,
         'vendor' => CompanyReference::class,
-        'vendorNumber' => 'string'
+        'vendorNumber' => 'string',
     ];
 }

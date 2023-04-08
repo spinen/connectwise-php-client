@@ -30,13 +30,13 @@ use Spinen\ConnectWise\Support\Model;
  * @property SystemLocationReference $location
  * @property SystemLocationReference $territory
  * @property TicketReference $ticket
- * @property boolean $agreementsFlag
- * @property boolean $myOpportunitiesFlag
- * @property boolean $productsFlag
- * @property boolean $servicesFlag
+ * @property bool $agreementsFlag
+ * @property bool $myOpportunitiesFlag
+ * @property bool $productsFlag
+ * @property bool $servicesFlag
  * @property float $commissionPercent
- * @property integer $id
- * @property integer $numberOfMonths
+ * @property int $id
+ * @property int $numberOfMonths
  * @property string $billingMethod
  * @property string $commissionBasis
  * @property string $invoiceOption
@@ -78,6 +78,6 @@ class Commission extends Model
         'servicesFlag' => 'boolean',
         'site' => SiteReference::class,
         'territory' => SystemLocationReference::class,
-        'ticket' => TicketReference::class
+        'ticket' => TicketReference::class,
     ];
 }

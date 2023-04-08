@@ -27,20 +27,20 @@ use Spinen\ConnectWise\Support\Model;
  * @property SiteReference $site
  * @property array $customFields
  * @property array $questions
- * @property boolean $activeFlag
- * @property boolean $billFlag
- * @property boolean $displayVendorFlag
+ * @property bool $activeFlag
+ * @property bool $billFlag
+ * @property bool $displayVendorFlag
  * @property float $backupBillableSpaceGb
- * @property integer $backupFailed
- * @property integer $backupIncomplete
- * @property integer $backupMonth
- * @property integer $backupRestores
- * @property integer $backupSuccesses
- * @property integer $backupYear
- * @property integer $businessUnitId
- * @property integer $id
- * @property integer $locationId
- * @property integer $parentConfigurationId
+ * @property int $backupFailed
+ * @property int $backupIncomplete
+ * @property int $backupMonth
+ * @property int $backupRestores
+ * @property int $backupSuccesses
+ * @property int $backupYear
+ * @property int $businessUnitId
+ * @property int $id
+ * @property int $locationId
+ * @property int $parentConfigurationId
  * @property string $backupProtectedDeviceList
  * @property string $backupServerName
  * @property string $cpuSpeed
@@ -120,6 +120,6 @@ class Configuration extends Model
         'type' => ConfigurationTypeReference::class,
         'vendor' => CompanyReference::class,
         'vendorNotes' => 'string',
-        'warrantyExpirationDate' => Carbon::class
+        'warrantyExpirationDate' => Carbon::class,
     ];
 }

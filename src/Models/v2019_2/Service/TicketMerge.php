@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -22,6 +21,6 @@ class TicketMerge extends Model
      */
     protected $casts = [
         'mergeTicketIds' => 'array',
-        'status' => ServiceStatusReference::class
+        'status' => ServiceStatusReference::class,
     ];
 }

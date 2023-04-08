@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for BoardExcludedMember
  *
  * @property Metadata $_info
- * @property integer $boardId
- * @property integer $id
- * @property integer $memberId
+ * @property int $boardId
+ * @property int $id
+ * @property int $memberId
  */
 class BoardExcludedMember extends Model
 {
@@ -26,6 +25,6 @@ class BoardExcludedMember extends Model
         '_info' => Metadata::class,
         'boardId' => 'integer',
         'id' => 'integer',
-        'memberId' => 'integer'
+        'memberId' => 'integer',
     ];
 }

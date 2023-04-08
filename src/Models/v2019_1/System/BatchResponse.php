@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -22,6 +21,6 @@ class BatchResponse extends Model
      */
     protected $casts = [
         'id' => 'string',
-        'responses' => 'array'
+        'responses' => 'array',
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -19,8 +18,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property ServiceStatusReference $serviceStatus
  * @property ServiceSubTypeReference $serviceSubType
  * @property ServiceTypeReference $serviceType
- * @property integer $id
- * @property integer $priority
+ * @property int $id
+ * @property int $priority
  * @property string $searchTerm
  */
 class EmailConnectorParsingRule extends Model
@@ -42,6 +41,6 @@ class EmailConnectorParsingRule extends Model
         'servicePriority' => PriorityReference::class,
         'serviceStatus' => ServiceStatusReference::class,
         'serviceSubType' => ServiceSubTypeReference::class,
-        'serviceType' => ServiceTypeReference::class
+        'serviceType' => ServiceTypeReference::class,
     ];
 }

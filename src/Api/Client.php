@@ -19,7 +19,6 @@ use Spinen\ConnectWise\Support\ModelResolver;
 /**
  * Class Client
  *
- * @package Spinen\ConnectWise\Api
  *
  * @method LaravelCollection|Model delete(string $resource, array $options = [])
  * @method LaravelCollection|Model get(string $resource, array $options = [])
@@ -35,6 +34,7 @@ class Client
      * The Client Id
      *
      * @var string
+     *
      * @see https://developer.connectwise.com/ClientID
      */
     protected $clientId;
@@ -114,10 +114,7 @@ class Client
     /**
      * Client constructor.
      *
-     * @param Token $token
-     * @param Guzzle $guzzle
-     * @param ModelResolver $resolver
-     * @param string|null $version Version of the models to use with the API responses
+     * @param  string|null  $version Version of the models to use with the API responses
      */
     public function __construct(
         protected Token $token = new Token,
@@ -134,10 +131,10 @@ class Client
     /**
      * Magic method to allow shortcuts to the request types
      *
-     * @param string $verb
-     * @param array $args
-     *
+     * @param  string  $verb
+     * @param  array  $args
      * @return Collection|Model|Response
+     *
      * @throws GuzzleException
      * @throws MalformedRequest
      */
@@ -153,8 +150,8 @@ class Client
             $verb = 'get';
         }
 
-        if (!in_array($verb, $this->verbs)) {
-            throw new InvalidArgumentException(sprintf("Unsupported verb [%s] was requested.", $verb));
+        if (! in_array($verb, $this->verbs)) {
+            throw new InvalidArgumentException(sprintf('Unsupported verb [%s] was requested.', $verb));
         }
 
         return $this->request($verb, $this->trimResourceAsNeeded($args[0]), $args[1] ?? []);
@@ -163,7 +160,6 @@ class Client
     /**
      * Adds key/value pair to the header to be sent
      *
-     * @param array $header
      *
      * @return $this
      */
@@ -187,7 +183,7 @@ class Client
             $this->token->refresh($this);
         }
 
-        return 'Basic ' . base64_encode($this->token->getUsername() . ':' . $this->token->getPassword());
+        return 'Basic '.base64_encode($this->token->getUsername().':'.$this->token->getPassword());
     }
 
     /**
@@ -196,14 +192,13 @@ class Client
      * We always need to login with Basic Auth, so add the "auth" option for Guzzle to use when logging in.
      * Additionally, pass any headers that have been set.
      *
-     * @param array $options
      *
      * @return array
      */
     public function buildOptions(array $options = [])
     {
         return [
-            'body'    => empty($options) ? null : json_encode($options),
+            'body' => empty($options) ? null : json_encode($options),
             'headers' => $this->getHeaders(),
         ];
     }
@@ -211,9 +206,9 @@ class Client
     /**
      * Build the full path to the CW resource
      *
-     * @param string $resource
-     *
+     * @param  string  $resource
      * @return string
+     *
      * @throws MalformedRequest
      */
     public function buildUri($resource)
@@ -222,12 +217,12 @@ class Client
 
         // For getAll calls, make sure to add pageSize & page to request
         if ($this->page) {
-            $uri .= (preg_match('/\\?/u', $uri) ? '&' : '?') . 'pageSize=' . $this->page_size . '&page=' . $this->page;
+            $uri .= (preg_match('/\\?/u', $uri) ? '&' : '?').'pageSize='.$this->page_size.'&page='.$this->page;
         }
 
         if (strlen($uri) > 2000) {
             throw new MalformedRequest(
-                sprintf("The uri is too long. It is %s character(s) over the 2000 limit.", strlen($uri) - 2000)
+                sprintf('The uri is too long. It is %s character(s) over the 2000 limit.', strlen($uri) - 2000)
             );
         }
 
@@ -266,7 +261,7 @@ class Client
     public function getHeaders()
     {
         $authorization_headers = [
-            'clientId'      => $this->getClientId(),
+            'clientId' => $this->getClientId(),
             'Authorization' => $this->buildAuth(),
         ];
 
@@ -282,7 +277,7 @@ class Client
         return array_merge(
             [
                 'x-cw-usertype' => 'member',
-                'Accept'        => 'application/vnd.connectwise.com+json; version=' . $this->getVersion(),
+                'Accept' => 'application/vnd.connectwise.com+json; version='.$this->getVersion(),
             ],
             $authorization_headers,
             $this->headers
@@ -312,13 +307,12 @@ class Client
     /**
      * Expose the url
      *
-     * @param string|null $path
-     *
+     * @param  string|null  $path
      * @return string
      */
     public function getUrl($path = '')
     {
-        return $this->url . '/v4_6_release/apis/3.0/' . ltrim((string)$path, '/');
+        return $this->url.'/v4_6_release/apis/3.0/'.ltrim((string) $path, '/');
     }
 
     /**
@@ -334,7 +328,6 @@ class Client
     /**
      * Check to see if the array is a collection
      *
-     * @param array $array
      *
      * @return bool
      */
@@ -365,19 +358,17 @@ class Client
      *  <https://some.host/v4_6_release/apis/3.0/finance/agreements&pageSize=10&page=3>; rel="next", \
      *      <https://some.host/v4_6_release/apis/3.0/finance/agreements&pageSize=10&page=1>; rel="first"
      *
-     * @param ResponseInterface $response
      *
-     * @return boolean
+     * @return bool
      */
     protected function isLastPage(ResponseInterface $response)
     {
-        return !(bool)preg_match('/rel="last"$/u', $response->getHeader('Link')[0] ?? '');
+        return ! (bool) preg_match('/rel="last"$/u', $response->getHeader('Link')[0] ?? '');
     }
 
     /**
      * Process the error received from ConnectWise
      *
-     * @param RequestException $exception
      *
      * @throws RequestException
      */
@@ -394,22 +385,20 @@ class Client
     /**
      * Parse the response for the given resource
      *
-     * @param string $resource
-     * @param ResponseInterface $response
-     *
+     * @param  string  $resource
      * @return Collection|Model|ResponseInterface|array
      */
     protected function processResponse($resource, ResponseInterface $response)
     {
-        $response = (array)json_decode($response->getBody(), true);
+        $response = (array) json_decode($response->getBody(), true);
 
         // Nothing to map the response to, so just return it as-is
-        if (!$model = $this->resolver->find($resource, $this->getVersion())) {
+        if (! $model = $this->resolver->find($resource, $this->getVersion())) {
             return $response;
         }
 
         // Not a collection of records, so cast to a model
-        if (!$this->isCollection($response)) {
+        if (! $this->isCollection($response)) {
             return new $model($response, $this);
         }
 
@@ -429,11 +418,11 @@ class Client
     /**
      * Make call to the resource
      *
-     * @param string $method
-     * @param string $resource
-     * @param array|null $options
-     *
+     * @param  string  $method
+     * @param  string  $resource
+     * @param  array|null  $options
      * @return LaravelCollection|Model|Response
+     *
      * @throws GuzzleException
      * @throws MalformedRequest
      */
@@ -445,12 +434,12 @@ class Client
             $processed = $this->processResponse($resource, $response);
 
             // If, not a "getAll" call, then return the response
-            if (!$this->page) {
+            if (! $this->page) {
                 return $processed;
             }
 
             // Get all of the other records
-            while (!$this->isLastPage($response)) {
+            while (! $this->isLastPage($response)) {
                 $this->page = $this->page + 1;
 
                 // Make next call
@@ -468,8 +457,7 @@ class Client
     /**
      * Set the Client Id
      *
-     * @param string $clientId
-     *
+     * @param  string  $clientId
      * @return $this
      */
     public function setClientId($clientId)
@@ -484,7 +472,6 @@ class Client
      *
      * There is an "addHeader" method to push a single header onto the stack. Otherwise, this replaces the headers.
      *
-     * @param array $headers
      *
      * @return $this
      */
@@ -498,8 +485,7 @@ class Client
     /**
      * Set the integrator username
      *
-     * @param string $integrator
-     *
+     * @param  string  $integrator
      * @return $this
      */
     public function setIntegrator($integrator)
@@ -512,8 +498,7 @@ class Client
     /**
      * Set the integrator password
      *
-     * @param string $password
-     *
+     * @param  string  $password
      * @return $this
      */
     public function setPassword($password)
@@ -526,8 +511,7 @@ class Client
     /**
      * Set the page size, not allowing < 0
      *
-     * @param integer $page_size
-     *
+     * @param  int  $page_size
      * @return $this
      */
     public function setPageSize($page_size)
@@ -540,14 +524,13 @@ class Client
     /**
      * Set the URL to ConnectWise
      *
-     * @param string $url
-     *
+     * @param  string  $url
      * @return $this
      */
     public function setUrl($url)
     {
-        if (!filter_var($url, FILTER_VALIDATE_URL)) {
-            throw new InvalidArgumentException(sprintf("The URL provided[%s] is not a valid format.", $url));
+        if (! filter_var($url, FILTER_VALIDATE_URL)) {
+            throw new InvalidArgumentException(sprintf('The URL provided[%s] is not a valid format.', $url));
         }
 
         $this->url = rtrim($url, '/');
@@ -558,14 +541,13 @@ class Client
     /**
      * Set the version of the API response models
      *
-     * @param string $version
-     *
+     * @param  string  $version
      * @return $this
      */
     public function setVersion($version)
     {
-        if (!in_array($version, $this->supported)) {
-            throw new InvalidArgumentException(sprintf("The Version provided[%s] is not supported.", $version));
+        if (! in_array($version, $this->supported)) {
+            throw new InvalidArgumentException(sprintf('The Version provided[%s] is not supported.', $version));
         }
 
         $this->version = $version;
@@ -576,8 +558,7 @@ class Client
     /**
      * Make the resource being requested be relative without the leading slash
      *
-     * @param string $resource
-     *
+     * @param  string  $resource
      * @return string
      */
     protected function trimResourceAsNeeded($resource)

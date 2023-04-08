@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Expense;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ExpenseTaxTypeInfo
  *
  * @property Metadata $_info
- * @property boolean $inactive
- * @property integer $id
+ * @property bool $inactive
+ * @property int $id
  * @property string $name
  */
 class ExpenseTaxTypeInfo extends Model
@@ -26,6 +25,6 @@ class ExpenseTaxTypeInfo extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'inactive' => 'boolean',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

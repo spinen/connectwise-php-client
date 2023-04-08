@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for DocumentSetup
  *
  * @property Metadata $_info
- * @property boolean $isPublicFlag
- * @property boolean $uploadAsLinkFlag
- * @property integer $id
+ * @property bool $isPublicFlag
+ * @property bool $uploadAsLinkFlag
+ * @property int $id
  * @property string $docPath
  * @property string $templateOutputPath
  * @property string $templatePath
@@ -32,6 +31,6 @@ class DocumentSetup extends Model
         'isPublicFlag' => 'boolean',
         'templateOutputPath' => 'string',
         'templatePath' => 'string',
-        'uploadAsLinkFlag' => 'boolean'
+        'uploadAsLinkFlag' => 'boolean',
     ];
 }

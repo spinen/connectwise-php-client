@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Sales;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property OpportunityProbabilityReference $probability
- * @property integer $id
- * @property integer $sequenceNumber
+ * @property int $id
+ * @property int $sequenceNumber
  * @property string $color
  * @property string $name
  */
@@ -30,6 +29,6 @@ class OpportunityStage extends Model
         'id' => 'integer',
         'name' => 'string',
         'probability' => OpportunityProbabilityReference::class,
-        'sequenceNumber' => 'integer'
+        'sequenceNumber' => 'integer',
     ];
 }

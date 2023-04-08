@@ -17,10 +17,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property array $includedExpenseIds
  * @property array $includedInvoiceIds
  * @property array $includedProductIds
- * @property boolean $exportExpensesFlag
- * @property boolean $exportInvoicesFlag
- * @property boolean $exportProductsFlag
- * @property integer $locationId
+ * @property bool $exportExpensesFlag
+ * @property bool $exportInvoicesFlag
+ * @property bool $exportProductsFlag
+ * @property int $locationId
  * @property string $batchIdentifier
  * @property string $glInterfaceIdentifier
  * @property string $summarizeInvoices
@@ -46,6 +46,6 @@ class ExportAccountingBatchRequest extends Model
         'includedProductIds' => 'array',
         'locationId' => 'integer',
         'summarizeInvoices' => 'string',
-        'thruDate' => Carbon::class
+        'thruDate' => Carbon::class,
     ];
 }

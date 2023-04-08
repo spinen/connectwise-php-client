@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * The specified system time zone for the Company
  *
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $name
  */
 class TimeZoneSetupReference extends Model
@@ -24,6 +23,6 @@ class TimeZoneSetupReference extends Model
     protected $casts = [
         '_info' => Metadata::class,
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

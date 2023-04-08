@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,12 +11,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property CurrencyCodeReference $currencyCode
  * @property Metadata $_info
- * @property boolean $displayIdFlag
- * @property boolean $displaySymbolFlag
- * @property boolean $negativeParenthesesFlag
- * @property boolean $rightAlign
- * @property integer $id
- * @property integer $numberOfDecimals
+ * @property bool $displayIdFlag
+ * @property bool $displaySymbolFlag
+ * @property bool $negativeParenthesesFlag
+ * @property bool $rightAlign
+ * @property int $id
+ * @property int $numberOfDecimals
  * @property string $currencyIdentifier
  * @property string $decimalSeparator
  * @property string $name
@@ -46,6 +45,6 @@ class Currency extends Model
         'reportFormat' => 'string',
         'rightAlign' => 'boolean',
         'symbol' => 'string',
-        'thousandsSeparator' => 'string'
+        'thousandsSeparator' => 'string',
     ];
 }

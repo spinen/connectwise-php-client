@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Project;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,7 +13,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property ProjectRoleReference $projectRole
  * @property WorkRoleReference $workRole
- * @property integer $id
+ * @property int $id
  */
 class ProjectBoardTeamMember extends Model
 {
@@ -28,6 +27,6 @@ class ProjectBoardTeamMember extends Model
         'id' => 'integer',
         'member' => MemberReference::class,
         'projectRole' => ProjectRoleReference::class,
-        'workRole' => WorkRoleReference::class
+        'workRole' => WorkRoleReference::class,
     ];
 }

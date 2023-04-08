@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,7 +12,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property SystemDepartmentReference $department
  * @property SystemLocationReference $location
- * @property integer $id
+ * @property int $id
  */
 class DepartmentLocationInfo extends Model
 {
@@ -26,6 +25,6 @@ class DepartmentLocationInfo extends Model
         '_info' => Metadata::class,
         'department' => SystemDepartmentReference::class,
         'id' => 'integer',
-        'location' => SystemLocationReference::class
+        'location' => SystemLocationReference::class,
     ];
 }

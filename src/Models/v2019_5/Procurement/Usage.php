@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Usage
  *
- * @property integer $count
- * @property integer $id
+ * @property int $count
+ * @property int $id
  * @property string $description
  * @property string $hyperlink
  * @property string $type
@@ -28,6 +27,6 @@ class Usage extends Model
         'description' => 'string',
         'hyperlink' => 'string',
         'id' => 'integer',
-        'type' => 'string'
+        'type' => 'string',
     ];
 }

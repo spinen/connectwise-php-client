@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for LegacySubCategory
  *
  * @property Metadata $_info
- * @property boolean $inactiveFlag
- * @property integer $id
+ * @property bool $inactiveFlag
+ * @property int $id
  * @property string $name
  */
 class LegacySubCategory extends Model
@@ -26,6 +25,6 @@ class LegacySubCategory extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

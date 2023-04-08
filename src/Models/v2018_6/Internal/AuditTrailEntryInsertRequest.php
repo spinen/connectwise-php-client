@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Internal;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -22,6 +21,6 @@ class AuditTrailEntryInsertRequest extends Model
      */
     protected $casts = [
         'objects' => 'array',
-        'text' => 'string'
+        'text' => 'string',
     ];
 }

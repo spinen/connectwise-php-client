@@ -20,16 +20,16 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property PurchaseOrderReference $purchaseOrder
  * @property TaxCodeReference $taxCode
- * @property boolean $avalaraTaxFlag
- * @property boolean $cityTaxFlag
- * @property boolean $compositeTaxFlag
- * @property boolean $countryTaxFlag
- * @property boolean $countyTaxFlag
- * @property boolean $itemTaxableFlag
- * @property boolean $levelSixTaxFlag
- * @property boolean $purchaseOrderTaxableFlag
- * @property boolean $stateTaxFlag
- * @property boolean $taxFreightFlag
+ * @property bool $avalaraTaxFlag
+ * @property bool $cityTaxFlag
+ * @property bool $compositeTaxFlag
+ * @property bool $countryTaxFlag
+ * @property bool $countyTaxFlag
+ * @property bool $itemTaxableFlag
+ * @property bool $levelSixTaxFlag
+ * @property bool $purchaseOrderTaxableFlag
+ * @property bool $stateTaxFlag
+ * @property bool $taxFreightFlag
  * @property float $cityTaxAmount
  * @property float $compositeTaxAmount
  * @property float $countryTaxAmount
@@ -40,9 +40,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property float $stateTaxAmount
  * @property float $taxTotal
  * @property float $total
- * @property integer $departmentId
- * @property integer $id
- * @property integer $locationId
+ * @property int $departmentId
+ * @property int $id
+ * @property int $locationId
  * @property string $cityTaxXref
  * @property string $compositeTaxXref
  * @property string $countryTaxXref
@@ -108,6 +108,6 @@ class UnpostedProcurement extends Model
         'vendor' => CompanyReference::class,
         'vendorAccountNumber' => 'string',
         'vendorInvoiceDate' => Carbon::class,
-        'vendorInvoiceNumber' => 'string'
+        'vendorInvoiceNumber' => 'string',
     ];
 }

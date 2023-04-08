@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Required when notifyType is set to: "Run Connectwise Automate Script"
  *
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $name
  */
 class AutomateScriptReference extends Model
@@ -24,6 +23,6 @@ class AutomateScriptReference extends Model
     protected $casts = [
         '_info' => Metadata::class,
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

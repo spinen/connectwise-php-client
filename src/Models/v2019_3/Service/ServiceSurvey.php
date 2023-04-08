@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,12 +12,12 @@ use Spinen\ConnectWise\Support\Model;
  * @property GenericIdIdentifierReference $notifyWho
  * @property MemberReference $notifyMember
  * @property Metadata $_info
- * @property boolean $footerTextVisibleFlag
- * @property boolean $headerIncludeLogoFlag
- * @property boolean $headerTextVisibleFlag
- * @property boolean $inactiveFlag
- * @property boolean $notifyWhoVisibleFlag
- * @property integer $id
+ * @property bool $footerTextVisibleFlag
+ * @property bool $headerIncludeLogoFlag
+ * @property bool $headerTextVisibleFlag
+ * @property bool $inactiveFlag
+ * @property bool $notifyWhoVisibleFlag
+ * @property int $id
  * @property string $footerText
  * @property string $headerText
  * @property string $name
@@ -44,6 +43,6 @@ class ServiceSurvey extends Model
         'notifyMember' => MemberReference::class,
         'notifyWho' => GenericIdIdentifierReference::class,
         'notifyWhoVisibleFlag' => 'boolean',
-        'thankYouText' => 'string'
+        'thankYouText' => 'string',
     ];
 }

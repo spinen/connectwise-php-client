@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Time;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,12 +11,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property array $locationIds
- * @property boolean $addAllAgreementExclusions
- * @property boolean $addAllLocations
- * @property boolean $inactiveFlag
- * @property boolean $removeAllLocations
+ * @property bool $addAllAgreementExclusions
+ * @property bool $addAllLocations
+ * @property bool $inactiveFlag
+ * @property bool $removeAllLocations
  * @property float $hourlyRate
- * @property integer $id
+ * @property int $id
  * @property string $integrationXref
  * @property string $name
  */
@@ -38,6 +37,6 @@ class WorkRole extends Model
         'integrationXref' => 'string',
         'locationIds' => 'array',
         'name' => 'string',
-        'removeAllLocations' => 'boolean'
+        'removeAllLocations' => 'boolean',
     ];
 }

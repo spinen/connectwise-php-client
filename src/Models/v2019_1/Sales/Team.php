@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Sales;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,11 +12,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property MemberReference $member
  * @property Metadata $_info
  * @property SalesTeamReference $salesTeam
- * @property boolean $referralFlag
- * @property boolean $responsibleFlag
- * @property integer $commissionPercent
- * @property integer $id
- * @property integer $opportunityId
+ * @property bool $referralFlag
+ * @property bool $responsibleFlag
+ * @property int $commissionPercent
+ * @property int $id
+ * @property int $opportunityId
  * @property string $type
  */
 class Team extends Model
@@ -36,6 +35,6 @@ class Team extends Model
         'referralFlag' => 'boolean',
         'responsibleFlag' => 'boolean',
         'salesTeam' => SalesTeamReference::class,
-        'type' => 'string'
+        'type' => 'string',
     ];
 }

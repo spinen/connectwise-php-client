@@ -14,7 +14,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property MemberReference $lastPaymentSyncBy
  * @property Metadata $_info
  * @property SystemLocationReference $location
- * @property integer $id
+ * @property int $id
  * @property string $databaseName
  * @property string $path
  * @property string $sqlServerName
@@ -34,6 +34,6 @@ class GLPath extends Model
         'lastPaymentSyncBy' => MemberReference::class,
         'location' => SystemLocationReference::class,
         'path' => 'string',
-        'sqlServerName' => 'string'
+        'sqlServerName' => 'string',
     ];
 }

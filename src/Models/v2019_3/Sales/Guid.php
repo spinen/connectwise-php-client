@@ -2,15 +2,12 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Sales;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Guid Version v2019_3
  *
  * Model for Guid
- *
-
  */
 class Guid extends Model
 {

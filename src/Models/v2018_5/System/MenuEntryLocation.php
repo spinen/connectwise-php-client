@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,7 +12,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property SystemLocationReference $location
  * @property SystemMenuEntryReference $menuEntry
- * @property integer $id
+ * @property int $id
  */
 class MenuEntryLocation extends Model
 {
@@ -26,6 +25,6 @@ class MenuEntryLocation extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'location' => SystemLocationReference::class,
-        'menuEntry' => SystemMenuEntryReference::class
+        'menuEntry' => SystemMenuEntryReference::class,
     ];
 }

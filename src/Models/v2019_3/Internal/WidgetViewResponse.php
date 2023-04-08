@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Internal;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -20,6 +19,6 @@ class WidgetViewResponse extends Model
      * @var array
      */
     protected $casts = [
-        'widget_data' => JObject::class
+        'widget_data' => JObject::class,
     ];
 }

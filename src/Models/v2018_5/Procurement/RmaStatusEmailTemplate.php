@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property RmaStatusReference $status
- * @property boolean $copySenderFlag
- * @property boolean $useSenderFlag
- * @property integer $id
+ * @property bool $copySenderFlag
+ * @property bool $useSenderFlag
+ * @property int $id
  * @property string $body
  * @property string $emailAddress
  * @property string $firstName
@@ -38,6 +37,6 @@ class RmaStatusEmailTemplate extends Model
         'lastName' => 'string',
         'status' => RmaStatusReference::class,
         'subject' => 'string',
-        'useSenderFlag' => 'boolean'
+        'useSenderFlag' => 'boolean',
     ];
 }

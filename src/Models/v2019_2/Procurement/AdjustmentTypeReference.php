@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for AdjustmentTypeReference
  *
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $identifier
  */
 class AdjustmentTypeReference extends Model
@@ -24,6 +23,6 @@ class AdjustmentTypeReference extends Model
     protected $casts = [
         '_info' => Metadata::class,
         'id' => 'integer',
-        'identifier' => 'string'
+        'identifier' => 'string',
     ];
 }

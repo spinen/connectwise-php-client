@@ -25,14 +25,14 @@ use Spinen\ConnectWise\Support\Model;
  * @property SiteReference $site
  * @property TaxCodeReference $taxCode
  * @property array $detail
- * @property boolean $agreementPrePaymentFlag
- * @property boolean $emailDeliveryFlag
- * @property boolean $piggyBackFlag
- * @property boolean $printDeliveryFlag
- * @property boolean $sendAvalaraTaxFlag
- * @property boolean $taxDpAppliedFlag
- * @property boolean $taxable
- * @property boolean $useAvalaraFlag
+ * @property bool $agreementPrePaymentFlag
+ * @property bool $emailDeliveryFlag
+ * @property bool $piggyBackFlag
+ * @property bool $printDeliveryFlag
+ * @property bool $sendAvalaraTaxFlag
+ * @property bool $taxDpAppliedFlag
+ * @property bool $taxable
+ * @property bool $useAvalaraFlag
  * @property float $cityTax
  * @property float $countyTax
  * @property float $salesTax
@@ -45,8 +45,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property float $taxableAmount5
  * @property float $taxableTotal
  * @property float $total
- * @property integer $dueDays
- * @property integer $id
+ * @property int $dueDays
+ * @property int $id
  * @property string $accountNumber
  * @property string $attention
  * @property string $billingTermsXref
@@ -136,6 +136,6 @@ class GLExportTransaction extends Model
         'taxableAmount5' => 'float',
         'taxableTotal' => 'float',
         'total' => 'float',
-        'useAvalaraFlag' => 'boolean'
+        'useAvalaraFlag' => 'boolean',
     ];
 }

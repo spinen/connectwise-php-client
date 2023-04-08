@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -17,10 +16,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property SiteReference $site
  * @property SystemDepartmentReference $department
  * @property SystemLocationReference $location
- * @property boolean $inactiveFlag
- * @property boolean $locationDefaultFlag
- * @property boolean $overallDefaultFlag
- * @property integer $id
+ * @property bool $inactiveFlag
+ * @property bool $locationDefaultFlag
+ * @property bool $overallDefaultFlag
+ * @property int $id
  * @property string $locationXref
  * @property string $name
  */
@@ -44,6 +43,6 @@ class Warehouse extends Model
         'manager' => MemberReference::class,
         'name' => 'string',
         'overallDefaultFlag' => 'boolean',
-        'site' => SiteReference::class
+        'site' => SiteReference::class,
     ];
 }

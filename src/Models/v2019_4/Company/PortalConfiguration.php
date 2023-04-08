@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -16,10 +15,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property array $boardIds
  * @property array $configTypeIds
  * @property array $locationIds
- * @property boolean $defaultFlag
- * @property boolean $displayVendorFlag
- * @property boolean $portalImageCopySuccessFlag
- * @property integer $id
+ * @property bool $defaultFlag
+ * @property bool $displayVendorFlag
+ * @property bool $portalImageCopySuccessFlag
+ * @property int $id
  * @property string $buttonColor
  * @property string $headerColor
  * @property string $language
@@ -56,6 +55,6 @@ class PortalConfiguration extends Model
         'portalBackgroundColor' => 'string',
         'portalImageCopySuccessFlag' => 'boolean',
         'url' => 'string',
-        'welcomeText' => 'string'
+        'welcomeText' => 'string',
     ];
 }

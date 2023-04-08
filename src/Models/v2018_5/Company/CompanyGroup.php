@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,11 +13,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property GroupReference $group
  * @property Metadata $_info
  * @property array $contactIds
- * @property boolean $allContactsFlag
- * @property boolean $defaultContactFlag
- * @property boolean $removeAllContactsFlag
- * @property boolean $unsubscribeFlag
- * @property integer $id
+ * @property bool $allContactsFlag
+ * @property bool $defaultContactFlag
+ * @property bool $removeAllContactsFlag
+ * @property bool $unsubscribeFlag
+ * @property int $id
  */
 class CompanyGroup extends Model
 {
@@ -36,6 +35,6 @@ class CompanyGroup extends Model
         'group' => GroupReference::class,
         'id' => 'integer',
         'removeAllContactsFlag' => 'boolean',
-        'unsubscribeFlag' => 'boolean'
+        'unsubscribeFlag' => 'boolean',
     ];
 }
