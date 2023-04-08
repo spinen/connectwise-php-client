@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Countable;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
+use Illuminate\Database\Eloquent\JsonEncodingException;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
 use IteratorAggregate;
@@ -30,8 +31,7 @@ abstract class Model implements
     Countable,
     IteratorAggregate,
     Jsonable,
-    JsonSerializable,
-    Serializable
+    JsonSerializable
 {
     /**
      * _info property
@@ -231,7 +231,7 @@ abstract class Model implements
      *
      * @return int
      */
-    public function count()
+    public function count(): int
     {
         return count($this->attributes);
     }
@@ -345,7 +345,7 @@ abstract class Model implements
      *
      * @return ArrayIterator
      */
-    public function getIterator()
+    public function getIterator(): ArrayIterator
     {
         return new ArrayIterator($this->attributes);
     }
@@ -367,7 +367,7 @@ abstract class Model implements
      *
      * @return array
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return $this->toArray();
     }
@@ -379,7 +379,7 @@ abstract class Model implements
      *
      * @return boolean
      */
-    public function offsetExists($attribute)
+    public function offsetExists($attribute): bool
     {
         return isset($this->{$attribute});
     }
@@ -391,7 +391,7 @@ abstract class Model implements
      *
      * @return mixed
      */
-    public function offsetGet($attribute)
+    public function offsetGet($attribute): mixed
     {
         return $this->{$attribute};
     }
@@ -402,7 +402,7 @@ abstract class Model implements
      * @param string $attribute
      * @param mixed $value
      */
-    public function offsetSet($attribute, $value)
+    public function offsetSet($attribute, $value): void
     {
         $this->{$attribute} = $value;
     }
@@ -414,7 +414,7 @@ abstract class Model implements
      *
      * @return void
      */
-    public function offsetUnset($attribute)
+    public function offsetUnset($attribute): void
     {
         unset($this->{$attribute});
     }
@@ -484,10 +484,20 @@ abstract class Model implements
      * @param int $options
      *
      * @return string
+     *
+     * @throws JsonEncodingException
      */
-    public function toJson($options = 0)
+    public function toJson($options = 0): string
     {
-        return json_encode($this->jsonSerialize(), $options);
+        $json = json_encode($this->jsonSerialize(), $options);
+
+        // @codeCoverageIgnoreStart
+        if (JSON_ERROR_NONE !== json_last_error()) {
+            throw JsonEncodingException::forModel($this, json_last_error_msg());
+        }
+        // @codeCoverageIgnoreEnd
+
+        return $json;
     }
 
     /**
