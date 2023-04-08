@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for Currency
  *
  * @property Metadata $_info
- * @property boolean $displayIdFlag
- * @property boolean $displaySymbolFlag
- * @property integer $id
+ * @property bool $displayIdFlag
+ * @property bool $displaySymbolFlag
+ * @property int $id
  * @property string $currencyIdentifier
  * @property string $isoCode
  * @property string $name
@@ -34,6 +33,6 @@ class Currency extends Model
         'id' => 'integer',
         'isoCode' => 'string',
         'name' => 'string',
-        'symbol' => 'string'
+        'symbol' => 'string',
     ];
 }

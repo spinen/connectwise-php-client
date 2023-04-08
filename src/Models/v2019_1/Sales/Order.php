@@ -33,16 +33,16 @@ use Spinen\ConnectWise\Support\Model;
  * @property array $documentIds
  * @property array $invoiceIds
  * @property array $productIds
- * @property boolean $billClosedFlag
- * @property boolean $billShippedFlag
- * @property boolean $bottomCommentFlag
- * @property boolean $restrictDownpaymentFlag
- * @property boolean $topCommentFlag
+ * @property bool $billClosedFlag
+ * @property bool $billShippedFlag
+ * @property bool $bottomCommentFlag
+ * @property bool $restrictDownpaymentFlag
+ * @property bool $topCommentFlag
  * @property float $taxTotal
  * @property float $total
- * @property integer $businessUnitId
- * @property integer $id
- * @property integer $locationId
+ * @property int $businessUnitId
+ * @property int $id
+ * @property int $locationId
  * @property string $description
  * @property string $email
  * @property string $notes
@@ -96,6 +96,6 @@ class Order extends Model
         'taxCode' => TaxCodeReference::class,
         'taxTotal' => 'float',
         'topCommentFlag' => 'boolean',
-        'total' => 'float'
+        'total' => 'float',
     ];
 }

@@ -37,12 +37,12 @@ use Spinen\ConnectWise\Support\Model;
  * @property TimeZoneSetupReference $timeZoneSetup
  * @property array $customFields
  * @property array $typeIds
- * @property boolean $deletedFlag
- * @property boolean $leadFlag
- * @property boolean $unsubscribeFlag
+ * @property bool $deletedFlag
+ * @property bool $leadFlag
+ * @property bool $unsubscribeFlag
  * @property float $annualRevenue
- * @property integer $id
- * @property integer $numberOfEmployees
+ * @property int $id
+ * @property int $numberOfEmployees
  * @property string $accountNumber
  * @property string $addressLine1
  * @property string $addressLine2
@@ -144,6 +144,6 @@ class Company extends Model
         'userDefinedField9' => 'string',
         'vendorIdentifier' => 'string',
         'website' => 'string',
-        'zip' => 'string'
+        'zip' => 'string',
     ];
 }

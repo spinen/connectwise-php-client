@@ -20,11 +20,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property WorkRoleReference $workRole
  * @property WorkTypeReference $workType
- * @property integer $activityId
- * @property integer $businessUnitId
- * @property integer $id
- * @property integer $locationId
- * @property integer $totalPauseTime
+ * @property int $activityId
+ * @property int $businessUnitId
+ * @property int $id
+ * @property int $locationId
+ * @property int $totalPauseTime
  * @property string $billableOption
  * @property string $internalNotes
  * @property string $notes
@@ -56,6 +56,6 @@ class ActivityStopwatch extends Model
         'status' => 'string',
         'totalPauseTime' => 'integer',
         'workRole' => WorkRoleReference::class,
-        'workType' => WorkTypeReference::class
+        'workType' => WorkTypeReference::class,
     ];
 }

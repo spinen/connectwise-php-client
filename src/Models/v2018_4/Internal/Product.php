@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Internal;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for Product
  *
  * @property Metadata $_info
- * @property boolean $installedFlag
+ * @property bool $installedFlag
  * @property string $identifier
  * @property string $password
  */
@@ -26,6 +25,6 @@ class Product extends Model
         '_info' => Metadata::class,
         'identifier' => 'string',
         'installedFlag' => 'boolean',
-        'password' => 'string'
+        'password' => 'string',
     ];
 }

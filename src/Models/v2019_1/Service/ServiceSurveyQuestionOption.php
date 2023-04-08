@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ServiceSurveyQuestionOption
  *
- * @property boolean $includeFlag
- * @property integer $points
+ * @property bool $includeFlag
+ * @property int $points
  * @property string $caption
  */
 class ServiceSurveyQuestionOption extends Model
@@ -24,6 +23,6 @@ class ServiceSurveyQuestionOption extends Model
     protected $casts = [
         'caption' => 'string',
         'includeFlag' => 'boolean',
-        'points' => 'integer'
+        'points' => 'integer',
     ];
 }

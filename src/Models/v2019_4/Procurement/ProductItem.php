@@ -28,19 +28,19 @@ use Spinen\ConnectWise\Support\Model;
  * @property TicketReference $ticket
  * @property array $customFields
  * @property array $serialNumberIds
- * @property boolean $addComponentsFlag
- * @property boolean $bypassForecastUpdate
- * @property boolean $calculatedCostFlag
- * @property boolean $calculatedPriceFlag
- * @property boolean $cancelledFlag
- * @property boolean $dropshipFlag
- * @property boolean $ignorePricingSchedulesFlag
- * @property boolean $minimumStockFlag
- * @property boolean $needToPurchaseFlag
- * @property boolean $phaseProductFlag
- * @property boolean $productSuppliedFlag
- * @property boolean $specialOrderFlag
- * @property boolean $taxableFlag
+ * @property bool $addComponentsFlag
+ * @property bool $bypassForecastUpdate
+ * @property bool $calculatedCostFlag
+ * @property bool $calculatedPriceFlag
+ * @property bool $cancelledFlag
+ * @property bool $dropshipFlag
+ * @property bool $ignorePricingSchedulesFlag
+ * @property bool $minimumStockFlag
+ * @property bool $needToPurchaseFlag
+ * @property bool $phaseProductFlag
+ * @property bool $productSuppliedFlag
+ * @property bool $specialOrderFlag
+ * @property bool $taxableFlag
  * @property float $calculatedCost
  * @property float $calculatedPrice
  * @property float $cost
@@ -51,15 +51,15 @@ use Spinen\ConnectWise\Support\Model;
  * @property float $quantityCancelled
  * @property float $sequenceNumber
  * @property float $subContractorAmountLimit
- * @property integer $businessUnitId
- * @property integer $cancelledBy
- * @property integer $forecastDetailId
- * @property integer $id
- * @property integer $locationId
- * @property integer $needToOrderQuantity
- * @property integer $subContractorShipToId
- * @property integer $warehouseBinId
- * @property integer $warehouseId
+ * @property int $businessUnitId
+ * @property int $cancelledBy
+ * @property int $forecastDetailId
+ * @property int $id
+ * @property int $locationId
+ * @property int $needToOrderQuantity
+ * @property int $subContractorShipToId
+ * @property int $warehouseBinId
+ * @property int $warehouseId
  * @property string $billableOption
  * @property string $cancelledReason
  * @property string $customerDescription
@@ -142,6 +142,6 @@ class ProductItem extends Model
         'warehouse' => 'string',
         'warehouseBin' => 'string',
         'warehouseBinId' => 'integer',
-        'warehouseId' => 'integer'
+        'warehouseId' => 'integer',
     ];
 }

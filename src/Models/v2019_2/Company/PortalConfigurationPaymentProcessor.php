@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PortalConfigurationPaymentProcessor
  *
- * @property integer $id
+ * @property int $id
  * @property string $name
  * @property string $testURL
  */
@@ -24,6 +23,6 @@ class PortalConfigurationPaymentProcessor extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'testURL' => 'string'
+        'testURL' => 'string',
     ];
 }

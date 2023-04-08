@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -17,30 +16,30 @@ use Spinen\ConnectWise\Support\Model;
  * @property float $cpuUtilization
  * @property float $internetConnectivity
  * @property float $memoryUtilization
- * @property integer $diskCleanups
- * @property integer $diskDefragmentations
- * @property integer $diskSpaceCleanedMb
- * @property integer $failedBackupJobs
- * @property integer $fullyPatchedMachines
- * @property integer $id
- * @property integer $missingMoreFivePatchesMachines
- * @property integer $missingOneTwoPatchesMachines
- * @property integer $missingThreeFivePatchesMachines
- * @property integer $missingUnscannedPatchesMachines
- * @property integer $serverAvailability
- * @property integer $serversDiskSpaceLow
- * @property integer $serversOffline
- * @property integer $snmpMachines
- * @property integer $spywareItemsRemoved
- * @property integer $successfulBackupJobs
- * @property integer $totalManagedMachines
- * @property integer $totalNotifications
- * @property integer $totalServers
- * @property integer $totalWindowsServers
- * @property integer $totalWindowsWorkstations
- * @property integer $totalWorkstations
- * @property integer $virusesRemoved
- * @property integer $windowsPatchesInstalled
+ * @property int $diskCleanups
+ * @property int $diskDefragmentations
+ * @property int $diskSpaceCleanedMb
+ * @property int $failedBackupJobs
+ * @property int $fullyPatchedMachines
+ * @property int $id
+ * @property int $missingMoreFivePatchesMachines
+ * @property int $missingOneTwoPatchesMachines
+ * @property int $missingThreeFivePatchesMachines
+ * @property int $missingUnscannedPatchesMachines
+ * @property int $serverAvailability
+ * @property int $serversDiskSpaceLow
+ * @property int $serversOffline
+ * @property int $snmpMachines
+ * @property int $spywareItemsRemoved
+ * @property int $successfulBackupJobs
+ * @property int $totalManagedMachines
+ * @property int $totalNotifications
+ * @property int $totalServers
+ * @property int $totalWindowsServers
+ * @property int $totalWindowsWorkstations
+ * @property int $totalWorkstations
+ * @property int $virusesRemoved
+ * @property int $windowsPatchesInstalled
  * @property string $alertsGenerated
  * @property string $deviceType
  * @property string $groupIdentifier
@@ -88,6 +87,6 @@ class CompanyManagementSummary extends Model
         'totalWindowsWorkstations' => 'integer',
         'totalWorkstations' => 'integer',
         'virusesRemoved' => 'integer',
-        'windowsPatchesInstalled' => 'integer'
+        'windowsPatchesInstalled' => 'integer',
     ];
 }

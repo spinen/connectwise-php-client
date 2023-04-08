@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Schedule;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ScheduleTypeReference
  *
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $identifier
  */
 class ScheduleTypeReference extends Model
@@ -24,6 +23,6 @@ class ScheduleTypeReference extends Model
     protected $casts = [
         '_info' => Metadata::class,
         'id' => 'integer',
-        'identifier' => 'string'
+        'identifier' => 'string',
     ];
 }

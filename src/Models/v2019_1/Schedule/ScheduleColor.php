@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Schedule;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ScheduleColor
  *
  * @property Metadata $_info
- * @property integer $endPercent
- * @property integer $id
- * @property integer $startPercent
+ * @property int $endPercent
+ * @property int $id
+ * @property int $startPercent
  * @property string $color
  */
 class ScheduleColor extends Model
@@ -28,6 +27,6 @@ class ScheduleColor extends Model
         'color' => 'string',
         'endPercent' => 'integer',
         'id' => 'integer',
-        'startPercent' => 'integer'
+        'startPercent' => 'integer',
     ];
 }

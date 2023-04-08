@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for Survey
  *
  * @property Metadata $_info
- * @property boolean $inactiveFlag
- * @property integer $id
+ * @property bool $inactiveFlag
+ * @property int $id
  * @property string $instructions
  * @property string $name
  */
@@ -28,6 +27,6 @@ class Survey extends Model
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'instructions' => 'string',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

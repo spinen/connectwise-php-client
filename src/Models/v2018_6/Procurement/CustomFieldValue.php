@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CustomFieldValue
  *
- * @property integer $id
- * @property integer $numberOfDecimals
+ * @property int $id
+ * @property int $numberOfDecimals
  * @property string $caption
  * @property string $entryMethod
  * @property string $type
@@ -30,6 +29,6 @@ class CustomFieldValue extends Model
         'id' => 'integer',
         'numberOfDecimals' => 'integer',
         'type' => 'string',
-        'value' => 'string'
+        'value' => 'string',
     ];
 }

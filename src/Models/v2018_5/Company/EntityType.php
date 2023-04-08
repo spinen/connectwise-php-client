@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for EntityType
  *
- * @property integer $id
+ * @property int $id
  * @property string $code
  * @property string $name
  */
@@ -24,6 +23,6 @@ class EntityType extends Model
     protected $casts = [
         'code' => 'string',
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

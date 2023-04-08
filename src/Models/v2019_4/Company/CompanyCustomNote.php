@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,7 +12,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property CompanyReference $company
  * @property CompanyStatusReference $status
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $customNote
  */
 class CompanyCustomNote extends Model
@@ -28,6 +27,6 @@ class CompanyCustomNote extends Model
         'company' => CompanyReference::class,
         'customNote' => 'string',
         'id' => 'integer',
-        'status' => CompanyStatusReference::class
+        'status' => CompanyStatusReference::class,
     ];
 }

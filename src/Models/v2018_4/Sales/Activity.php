@@ -29,8 +29,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property ServiceLocationReference $where
  * @property TicketReference $ticket
  * @property array $customFields
- * @property boolean $notifyFlag
- * @property integer $id
+ * @property bool $notifyFlag
+ * @property int $id
  * @property string $email
  * @property string $name
  * @property string $notes
@@ -68,6 +68,6 @@ class Activity extends Model
         'status' => ActivityStatusReference::class,
         'ticket' => TicketReference::class,
         'type' => ActivityTypeReference::class,
-        'where' => ServiceLocationReference::class
+        'where' => ServiceLocationReference::class,
     ];
 }

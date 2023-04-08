@@ -26,10 +26,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property SiteReference $billToSite
  * @property SiteReference $shipToSite
  * @property array $customFields
- * @property boolean $billPhaseClosedFlag
- * @property boolean $billProjectClosedFlag
- * @property boolean $billSeparatelyFlag
- * @property boolean $markAsMilestoneFlag
+ * @property bool $billPhaseClosedFlag
+ * @property bool $billProjectClosedFlag
+ * @property bool $billSeparatelyFlag
+ * @property bool $markAsMilestoneFlag
  * @property float $actualHours
  * @property float $budgetHours
  * @property float $downpayment
@@ -42,10 +42,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property float $hourlyRate
  * @property float $poAmount
  * @property float $scheduledHours
- * @property integer $businessUnitId
- * @property integer $id
- * @property integer $locationId
- * @property integer $projectId
+ * @property int $businessUnitId
+ * @property int $id
+ * @property int $locationId
+ * @property int $projectId
  * @property string $actualEnd
  * @property string $actualStart
  * @property string $billExpenses
@@ -114,6 +114,6 @@ class ProjectPhase extends Model
         'shipToContact' => ContactReference::class,
         'shipToSite' => SiteReference::class,
         'status' => PhaseStatusReference::class,
-        'wbsCode' => 'string'
+        'wbsCode' => 'string',
     ];
 }

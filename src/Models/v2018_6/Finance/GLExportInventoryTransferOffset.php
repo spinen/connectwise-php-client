@@ -12,7 +12,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Carbon $documentDate
  * @property float $total
- * @property integer $id
+ * @property int $id
  * @property string $accountNumber
  * @property string $description
  * @property string $documentType
@@ -36,6 +36,6 @@ class GLExportInventoryTransferOffset extends Model
         'glTypeId' => 'string',
         'id' => 'integer',
         'memo' => 'string',
-        'total' => 'float'
+        'total' => 'float',
     ];
 }

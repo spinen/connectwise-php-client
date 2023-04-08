@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Marketing;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for MarketingContact
  *
  * @property Metadata $_info
- * @property boolean $unsubscribeFlag
- * @property integer $groupId
- * @property integer $id
+ * @property bool $unsubscribeFlag
+ * @property int $groupId
+ * @property int $id
  * @property string $note
  */
 class MarketingContact extends Model
@@ -28,6 +27,6 @@ class MarketingContact extends Model
         'groupId' => 'integer',
         'id' => 'integer',
         'note' => 'string',
-        'unsubscribeFlag' => 'boolean'
+        'unsubscribeFlag' => 'boolean',
     ];
 }

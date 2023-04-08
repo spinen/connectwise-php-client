@@ -13,8 +13,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property AdjustmentTypeReference $type
  * @property Carbon $closedDate
  * @property Metadata $_info
- * @property boolean $closedFlag
- * @property integer $id
+ * @property bool $closedFlag
+ * @property int $id
  * @property string $closedBy
  * @property string $identifier
  * @property string $notes
@@ -36,6 +36,6 @@ class Adjustment extends Model
         'identifier' => 'string',
         'notes' => 'string',
         'reason' => 'string',
-        'type' => AdjustmentTypeReference::class
+        'type' => AdjustmentTypeReference::class,
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Sales;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for PriorityReference
  *
  * @property Metadata $_info
- * @property integer $id
- * @property integer $sort
+ * @property int $id
+ * @property int $sort
  * @property string $name
  */
 class PriorityReference extends Model
@@ -26,6 +25,6 @@ class PriorityReference extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'name' => 'string',
-        'sort' => 'integer'
+        'sort' => 'integer',
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -15,12 +14,12 @@ use Spinen\ConnectWise\Support\Model;
  * @property MemberReference $member
  * @property Metadata $_info
  * @property TeamRoleReference $teamRole
- * @property boolean $accountManagerFlag
- * @property boolean $salesFlag
- * @property boolean $techFlag
- * @property integer $businessUnitId
- * @property integer $id
- * @property integer $locationId
+ * @property bool $accountManagerFlag
+ * @property bool $salesFlag
+ * @property bool $techFlag
+ * @property int $businessUnitId
+ * @property int $id
+ * @property int $locationId
  */
 class CompanyTeam extends Model
 {
@@ -40,6 +39,6 @@ class CompanyTeam extends Model
         'member' => MemberReference::class,
         'salesFlag' => 'boolean',
         'teamRole' => TeamRoleReference::class,
-        'techFlag' => 'boolean'
+        'techFlag' => 'boolean',
     ];
 }

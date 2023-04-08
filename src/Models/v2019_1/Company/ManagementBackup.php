@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,7 +12,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property AgreementTypeReference $type
  * @property CatalogItemReference $item
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $billingLevel
  */
 class ManagementBackup extends Model
@@ -28,6 +27,6 @@ class ManagementBackup extends Model
         'billingLevel' => 'string',
         'id' => 'integer',
         'item' => CatalogItemReference::class,
-        'type' => AgreementTypeReference::class
+        'type' => AgreementTypeReference::class,
     ];
 }

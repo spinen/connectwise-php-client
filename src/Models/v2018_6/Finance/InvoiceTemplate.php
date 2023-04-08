@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,39 +10,39 @@ use Spinen\ConnectWise\Support\Model;
  * Model for InvoiceTemplate
  *
  * @property Metadata $_info
- * @property boolean $headerAccountVisibleFlag
- * @property boolean $headerDueDateVisibleFlag
- * @property boolean $headerPoNumberVisibleFlag
- * @property boolean $headerReferenceVisibleFlag
- * @property boolean $headerShipToVisibleFlag
- * @property boolean $headerTaxIdVisibleFlag
- * @property boolean $headerTermsVisibleFlag
- * @property boolean $headerTitleVisibleFlag
- * @property boolean $logoVisibleFlag
- * @property boolean $projectHeaderAmountVisibleFlag
- * @property boolean $projectHeaderBillingMethodVisibleFlag
- * @property boolean $projectHeaderBillingTypeVisibleFlag
- * @property boolean $projectHeaderCompanyNameVisibleFlag
- * @property boolean $projectHeaderContactNameVisibleFlag
- * @property boolean $projectHeaderOriginalDownpaymentVisibleFlag
- * @property boolean $projectHeaderProjectNameVisibleFlag
- * @property boolean $remitToVisibleFlag
- * @property boolean $serviceHeaderAmountVisibleFlag
- * @property boolean $serviceHeaderBillingMethodVisibleFlag
- * @property boolean $serviceHeaderBundledTicketsVisibleFlag
- * @property boolean $serviceHeaderClosedTasksVisibleFlag
- * @property boolean $serviceHeaderCompanyNameVisibleFlag
- * @property boolean $serviceHeaderContactNameVisibleFlag
- * @property boolean $serviceHeaderDetailDescriptionVisibleFlag
- * @property boolean $serviceHeaderOpenTasksVisibleFlag
- * @property boolean $serviceHeaderResolutionVisibleFlag
- * @property boolean $serviceHeaderSummaryVisibleFlag
- * @property boolean $serviceHeaderTicketNumberVisibleFlag
+ * @property bool $headerAccountVisibleFlag
+ * @property bool $headerDueDateVisibleFlag
+ * @property bool $headerPoNumberVisibleFlag
+ * @property bool $headerReferenceVisibleFlag
+ * @property bool $headerShipToVisibleFlag
+ * @property bool $headerTaxIdVisibleFlag
+ * @property bool $headerTermsVisibleFlag
+ * @property bool $headerTitleVisibleFlag
+ * @property bool $logoVisibleFlag
+ * @property bool $projectHeaderAmountVisibleFlag
+ * @property bool $projectHeaderBillingMethodVisibleFlag
+ * @property bool $projectHeaderBillingTypeVisibleFlag
+ * @property bool $projectHeaderCompanyNameVisibleFlag
+ * @property bool $projectHeaderContactNameVisibleFlag
+ * @property bool $projectHeaderOriginalDownpaymentVisibleFlag
+ * @property bool $projectHeaderProjectNameVisibleFlag
+ * @property bool $remitToVisibleFlag
+ * @property bool $serviceHeaderAmountVisibleFlag
+ * @property bool $serviceHeaderBillingMethodVisibleFlag
+ * @property bool $serviceHeaderBundledTicketsVisibleFlag
+ * @property bool $serviceHeaderClosedTasksVisibleFlag
+ * @property bool $serviceHeaderCompanyNameVisibleFlag
+ * @property bool $serviceHeaderContactNameVisibleFlag
+ * @property bool $serviceHeaderDetailDescriptionVisibleFlag
+ * @property bool $serviceHeaderOpenTasksVisibleFlag
+ * @property bool $serviceHeaderResolutionVisibleFlag
+ * @property bool $serviceHeaderSummaryVisibleFlag
+ * @property bool $serviceHeaderTicketNumberVisibleFlag
  * @property float $marginBottom
  * @property float $marginLeft
  * @property float $marginRight
  * @property float $marginTop
- * @property integer $id
+ * @property int $id
  * @property string $headerAccountCaption
  * @property string $headerAddressPosition
  * @property string $headerDueDateCaption
@@ -142,6 +141,6 @@ class InvoiceTemplate extends Model
         'serviceHeaderSummaryCaption' => 'string',
         'serviceHeaderSummaryVisibleFlag' => 'boolean',
         'serviceHeaderTicketNumberCaption' => 'string',
-        'serviceHeaderTicketNumberVisibleFlag' => 'boolean'
+        'serviceHeaderTicketNumberVisibleFlag' => 'boolean',
     ];
 }

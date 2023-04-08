@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Time;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,9 +12,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property TimeAccrualReference $timeAccrual
  * @property float $hours
- * @property integer $endYear
- * @property integer $id
- * @property integer $startYear
+ * @property int $endYear
+ * @property int $id
+ * @property int $startYear
  * @property string $accrualType
  */
 class TimeAccrualDetail extends Model
@@ -32,6 +31,6 @@ class TimeAccrualDetail extends Model
         'hours' => 'float',
         'id' => 'integer',
         'startYear' => 'integer',
-        'timeAccrual' => TimeAccrualReference::class
+        'timeAccrual' => TimeAccrualReference::class,
     ];
 }

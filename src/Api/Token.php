@@ -7,8 +7,6 @@ use Illuminate\Contracts\Support\Arrayable;
 
 /**
  * Class Token
- *
- * @package Spinen\ConnectWise\Api
  */
 class Token
 {
@@ -58,13 +56,11 @@ class Token
      */
     protected function endpoint()
     {
-        return 'system/members/' . $this->member_id . '/tokens';
+        return 'system/members/'.$this->member_id.'/tokens';
     }
 
     /**
      * Call CW & get temp tokens for the user
-     *
-     * @param Client $client
      */
     public function fetch(Client $client)
     {
@@ -118,7 +114,7 @@ class Token
      */
     public function getUsername()
     {
-        return $this->company_id . '+' . $this->username;
+        return $this->company_id.'+'.$this->username;
     }
 
     /**
@@ -128,7 +124,7 @@ class Token
      */
     public function isExpired()
     {
-        return !is_null($this->expiration) &&
+        return ! is_null($this->expiration) &&
                Carbon::now()
                      ->gte($this->expiration);
     }
@@ -136,7 +132,6 @@ class Token
     /**
      * Check to see if the token is for the integrator
      *
-     * @param $username
      *
      * @return bool
      */
@@ -162,13 +157,13 @@ class Token
      */
     public function needsRefreshing()
     {
-        return $this->isExpired() || !$this->isLoaded();
+        return $this->isExpired() || ! $this->isLoaded();
     }
 
     /**
      * Parse the tokens into properties
      *
-     * @param Arrayable|array $token
+     * @param  Arrayable|array  $token
      */
     protected function parse($token)
     {
@@ -180,8 +175,6 @@ class Token
 
     /**
      * Erase the token & get new one
-     *
-     * @param Client $client
      */
     public function refresh(Client $client)
     {
@@ -194,7 +187,6 @@ class Token
     /**
      * Setter for the company id
      *
-     * @param $company_id
      *
      * @return $this
      */
@@ -208,7 +200,6 @@ class Token
     /**
      * Setter for the member id
      *
-     * @param $member_id
      *
      * @return $this
      */
@@ -224,7 +215,6 @@ class Token
      *
      * Make sure to cast it to a Carbon object
      *
-     * @param $expiration
      *
      * @return $this
      */

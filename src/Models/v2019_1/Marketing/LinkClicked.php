@@ -11,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for LinkClicked
  *
  * @property Carbon $dateClicked
- * @property integer $campaignId
- * @property integer $contactId
- * @property integer $id
+ * @property int $campaignId
+ * @property int $contactId
+ * @property int $id
  * @property string $queryString
  * @property string $url
  */
@@ -30,6 +30,6 @@ class LinkClicked extends Model
         'dateClicked' => Carbon::class,
         'id' => 'integer',
         'queryString' => 'string',
-        'url' => 'string'
+        'url' => 'string',
     ];
 }

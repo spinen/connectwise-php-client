@@ -47,43 +47,43 @@ use Spinen\ConnectWise\Support\Model;
  * @property array $excludedServiceBoardIds
  * @property array $memberPersonas
  * @property array $serviceBoardTeamIds
- * @property boolean $adminFlag
- * @property boolean $allowExpensesEnteredAgainstCompaniesFlag
- * @property boolean $allowInCellEntryOnTimeSheet
- * @property boolean $calendarSyncIntegrationFlag
- * @property boolean $disableOnlineFlag
- * @property boolean $enableLdapAuthenticationFlag
- * @property boolean $enableMobileFlag
- * @property boolean $enableMobileGpsFlag
- * @property boolean $enterTimeAgainstCompanyFlag
- * @property boolean $hideMemberInDispatchPortalFlag
- * @property boolean $inactiveFlag
- * @property boolean $includeInUtilizationReportingFlag
- * @property boolean $partnerPortalFlag
- * @property boolean $requireExpenseEntryFlag
- * @property boolean $requireStartAndEndTimeOnTimeEntryFlag
- * @property boolean $requireTimeSheetEntryFlag
- * @property boolean $restrictDefaultSalesTerritoryFlag
- * @property boolean $restrictDefaultWarehouseBinFlag
- * @property boolean $restrictDefaultWarehouseFlag
- * @property boolean $restrictDepartmentFlag
- * @property boolean $restrictLocationFlag
- * @property boolean $restrictProjectDefaultDepartmentFlag
- * @property boolean $restrictProjectDefaultLocationFlag
- * @property boolean $restrictScheduleFlag
- * @property boolean $restrictServiceDefaultDepartmentFlag
- * @property boolean $restrictServiceDefaultLocationFlag
- * @property boolean $timeReminderEmailFlag
- * @property boolean $timebasedOneTimePasswordActivated
- * @property boolean $toastNotificationFlag
+ * @property bool $adminFlag
+ * @property bool $allowExpensesEnteredAgainstCompaniesFlag
+ * @property bool $allowInCellEntryOnTimeSheet
+ * @property bool $calendarSyncIntegrationFlag
+ * @property bool $disableOnlineFlag
+ * @property bool $enableLdapAuthenticationFlag
+ * @property bool $enableMobileFlag
+ * @property bool $enableMobileGpsFlag
+ * @property bool $enterTimeAgainstCompanyFlag
+ * @property bool $hideMemberInDispatchPortalFlag
+ * @property bool $inactiveFlag
+ * @property bool $includeInUtilizationReportingFlag
+ * @property bool $partnerPortalFlag
+ * @property bool $requireExpenseEntryFlag
+ * @property bool $requireStartAndEndTimeOnTimeEntryFlag
+ * @property bool $requireTimeSheetEntryFlag
+ * @property bool $restrictDefaultSalesTerritoryFlag
+ * @property bool $restrictDefaultWarehouseBinFlag
+ * @property bool $restrictDefaultWarehouseFlag
+ * @property bool $restrictDepartmentFlag
+ * @property bool $restrictLocationFlag
+ * @property bool $restrictProjectDefaultDepartmentFlag
+ * @property bool $restrictProjectDefaultLocationFlag
+ * @property bool $restrictScheduleFlag
+ * @property bool $restrictServiceDefaultDepartmentFlag
+ * @property bool $restrictServiceDefaultLocationFlag
+ * @property bool $timeReminderEmailFlag
+ * @property bool $timebasedOneTimePasswordActivated
+ * @property bool $toastNotificationFlag
  * @property float $billableForecast
  * @property float $dailyCapacity
  * @property float $hourlyCost
  * @property float $hourlyRate
  * @property float $minimumHours
  * @property float $scheduleCapacity
- * @property integer $daysTolerance
- * @property integer $id
+ * @property int $daysTolerance
+ * @property int $id
  * @property string $agreementInvoicingDisplayOptions
  * @property string $authenticationServiceType
  * @property string $clientId
@@ -242,6 +242,6 @@ class Member extends Model
         'warehouse' => WarehouseReference::class,
         'warehouseBin' => WarehouseBinReference::class,
         'workRole' => WorkRoleReference::class,
-        'workType' => WorkTypeReference::class
+        'workType' => WorkTypeReference::class,
     ];
 }

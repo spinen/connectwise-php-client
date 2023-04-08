@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Schedule;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,8 +12,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property ChargeCodeReference $chargeCode
  * @property Metadata $_info
  * @property ServiceLocationReference $where
- * @property boolean $systemFlag
- * @property integer $id
+ * @property bool $systemFlag
+ * @property int $id
  * @property string $identifier
  * @property string $name
  */
@@ -32,6 +31,6 @@ class ScheduleType extends Model
         'identifier' => 'string',
         'name' => 'string',
         'systemFlag' => 'boolean',
-        'where' => ServiceLocationReference::class
+        'where' => ServiceLocationReference::class,
     ];
 }

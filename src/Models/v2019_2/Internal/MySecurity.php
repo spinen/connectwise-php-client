@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Internal;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,12 +11,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property MemberReference $member
  * @property Metadata $_info
- * @property boolean $customFlag
- * @property boolean $myAllFlag
- * @property boolean $reportFlag
- * @property boolean $restrictFlag
- * @property integer $id
- * @property integer $sortOrder
+ * @property bool $customFlag
+ * @property bool $myAllFlag
+ * @property bool $reportFlag
+ * @property bool $restrictFlag
+ * @property int $id
+ * @property int $sortOrder
  * @property string $addLevel
  * @property string $deleteLevel
  * @property string $editLevel
@@ -54,6 +53,6 @@ class MySecurity extends Model
         'myAllFlag' => 'boolean',
         'reportFlag' => 'boolean',
         'restrictFlag' => 'boolean',
-        'sortOrder' => 'integer'
+        'sortOrder' => 'integer',
     ];
 }

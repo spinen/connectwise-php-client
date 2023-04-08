@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for LocaleInfo
  *
- * @property integer $id
+ * @property int $id
  * @property string $localeCode
  * @property string $name
  */
@@ -24,6 +23,6 @@ class LocaleInfo extends Model
     protected $casts = [
         'id' => 'integer',
         'localeCode' => 'string',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

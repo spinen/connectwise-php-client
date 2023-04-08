@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,17 +10,17 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ProcurementSetting
  *
  * @property Metadata $_info
- * @property boolean $autoApprovePurchaseOrderFlag
- * @property boolean $autoClosePurchaseOrderFlag
- * @property boolean $autoClosePurchaseOrderItemFlag
- * @property boolean $disableCostUpdatesFlag
- * @property boolean $disableNegativeInventoryFlag
- * @property boolean $taxFreightFlag
- * @property boolean $taxPurchaseOrderFlag
- * @property boolean $useVendorTaxCodeFlag
- * @property integer $id
- * @property integer $numDecimalPlaces
- * @property integer $startingPurchaseOrderNum
+ * @property bool $autoApprovePurchaseOrderFlag
+ * @property bool $autoClosePurchaseOrderFlag
+ * @property bool $autoClosePurchaseOrderItemFlag
+ * @property bool $disableCostUpdatesFlag
+ * @property bool $disableNegativeInventoryFlag
+ * @property bool $taxFreightFlag
+ * @property bool $taxPurchaseOrderFlag
+ * @property bool $useVendorTaxCodeFlag
+ * @property int $id
+ * @property int $numDecimalPlaces
+ * @property int $startingPurchaseOrderNum
  * @property string $costingMethod
  * @property string $prefixSuffixType
  * @property string $purchaseOrderPrefix
@@ -50,6 +49,6 @@ class ProcurementSetting extends Model
         'startingPurchaseOrderNum' => 'integer',
         'taxFreightFlag' => 'boolean',
         'taxPurchaseOrderFlag' => 'boolean',
-        'useVendorTaxCodeFlag' => 'boolean'
+        'useVendorTaxCodeFlag' => 'boolean',
     ];
 }

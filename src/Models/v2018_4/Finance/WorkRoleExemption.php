@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,13 +12,13 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property TaxCodeReference $taxCode
  * @property WorkRoleReference $workRole
- * @property boolean $levelFiveFlag
- * @property boolean $levelFourFlag
- * @property boolean $levelOneFlag
- * @property boolean $levelSixFlag
- * @property boolean $levelThreeFlag
- * @property boolean $levelTwoFlag
- * @property integer $id
+ * @property bool $levelFiveFlag
+ * @property bool $levelFourFlag
+ * @property bool $levelOneFlag
+ * @property bool $levelSixFlag
+ * @property bool $levelThreeFlag
+ * @property bool $levelTwoFlag
+ * @property int $id
  */
 class WorkRoleExemption extends Model
 {
@@ -38,6 +37,6 @@ class WorkRoleExemption extends Model
         'levelThreeFlag' => 'boolean',
         'levelTwoFlag' => 'boolean',
         'taxCode' => TaxCodeReference::class,
-        'workRole' => WorkRoleReference::class
+        'workRole' => WorkRoleReference::class,
     ];
 }

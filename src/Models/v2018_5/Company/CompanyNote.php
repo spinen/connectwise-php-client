@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,8 +12,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property CompanyReference $company
  * @property Metadata $_info
  * @property NoteTypeReference $type
- * @property boolean $flagged
- * @property integer $id
+ * @property bool $flagged
+ * @property int $id
  * @property string $enteredBy
  * @property string $text
  */
@@ -32,6 +31,6 @@ class CompanyNote extends Model
         'flagged' => 'boolean',
         'id' => 'integer',
         'text' => 'string',
-        'type' => NoteTypeReference::class
+        'type' => NoteTypeReference::class,
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -23,14 +22,14 @@ use Spinen\ConnectWise\Support\Model;
  * @property ServiceTypeReference $typeOverride
  * @property SystemDepartmentReference $department
  * @property SystemLocationReference $location
- * @property boolean $addCcFlag
- * @property boolean $createContactFlag
- * @property boolean $discardDuplicatesFlag
- * @property boolean $neverRespondFlag
- * @property boolean $noResponseFlag
- * @property boolean $postRepliesToTicketFlag
- * @property boolean $setEmailToDefaultContactFlag
- * @property integer $id
+ * @property bool $addCcFlag
+ * @property bool $createContactFlag
+ * @property bool $discardDuplicatesFlag
+ * @property bool $neverRespondFlag
+ * @property bool $noResponseFlag
+ * @property bool $postRepliesToTicketFlag
+ * @property bool $setEmailToDefaultContactFlag
+ * @property int $id
  * @property string $bccEmailTo
  * @property string $emailErrorsTo
  * @property string $emailNotifyFrom
@@ -70,6 +69,6 @@ class EmailConnector extends Model
         'sourceOverride' => ServiceSourceReference::class,
         'statusOverride' => ServiceStatusReference::class,
         'subTypeOverride' => ServiceSubTypeReference::class,
-        'typeOverride' => ServiceTypeReference::class
+        'typeOverride' => ServiceTypeReference::class,
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ServiceTicketLink
  *
  * @property Metadata $_info
- * @property boolean $enabledFlag
- * @property integer $id
+ * @property bool $enabledFlag
+ * @property int $id
  * @property string $linkText
  * @property string $name
  * @property string $url
@@ -30,6 +29,6 @@ class ServiceTicketLink extends Model
         'id' => 'integer',
         'linkText' => 'string',
         'name' => 'string',
-        'url' => 'string'
+        'url' => 'string',
     ];
 }

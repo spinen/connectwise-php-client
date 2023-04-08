@@ -13,7 +13,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Carbon $documentDate
  * @property MemberReference $member
  * @property float $total
- * @property integer $id
+ * @property int $id
  * @property string $accountNumber
  * @property string $description
  * @property string $documentType
@@ -38,6 +38,6 @@ class GLExportExpenseOffset extends Model
         'id' => 'integer',
         'member' => MemberReference::class,
         'memo' => 'string',
-        'total' => 'float'
+        'total' => 'float',
     ];
 }

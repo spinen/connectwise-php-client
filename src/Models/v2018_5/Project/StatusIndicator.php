@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Project;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for StatusIndicator
  *
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $color
  * @property string $icon
  * @property string $identifier
@@ -30,6 +29,6 @@ class StatusIndicator extends Model
         'icon' => 'string',
         'id' => 'integer',
         'identifier' => 'string',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

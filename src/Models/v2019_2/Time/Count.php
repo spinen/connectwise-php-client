@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Time;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for Count
  *
- * @property integer $count
+ * @property int $count
  */
 class Count extends Model
 {
@@ -20,6 +19,6 @@ class Count extends Model
      * @var array
      */
     protected $casts = [
-        'count' => 'integer'
+        'count' => 'integer',
     ];
 }

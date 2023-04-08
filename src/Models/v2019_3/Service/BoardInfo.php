@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,9 +12,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property SystemDepartmentReference $department
  * @property SystemLocationReference $location
- * @property boolean $inactiveFlag
- * @property boolean $projectFlag
- * @property integer $id
+ * @property bool $inactiveFlag
+ * @property bool $projectFlag
+ * @property int $id
  * @property string $name
  */
 class BoardInfo extends Model
@@ -32,6 +31,6 @@ class BoardInfo extends Model
         'inactiveFlag' => 'boolean',
         'location' => SystemLocationReference::class,
         'name' => 'string',
-        'projectFlag' => 'boolean'
+        'projectFlag' => 'boolean',
     ];
 }

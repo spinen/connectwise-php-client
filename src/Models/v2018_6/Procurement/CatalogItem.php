@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -21,19 +20,19 @@ use Spinen\ConnectWise\Support\Model;
  * @property SLAReference $sla
  * @property UnitOfMeasureReference $unitOfMeasure
  * @property array $customFields
- * @property boolean $inactiveFlag
- * @property boolean $phaseProductFlag
- * @property boolean $recurringFlag
- * @property boolean $recurringOneTimeFlag
- * @property boolean $serializedCostFlag
- * @property boolean $serializedFlag
- * @property boolean $taxableFlag
+ * @property bool $inactiveFlag
+ * @property bool $phaseProductFlag
+ * @property bool $recurringFlag
+ * @property bool $recurringOneTimeFlag
+ * @property bool $serializedCostFlag
+ * @property bool $serializedFlag
+ * @property bool $taxableFlag
  * @property float $cost
  * @property float $price
  * @property float $recurringCost
  * @property float $recurringRevenue
- * @property integer $id
- * @property integer $minStockLevel
+ * @property int $id
+ * @property int $minStockLevel
  * @property string $customerDescription
  * @property string $dateEntered
  * @property string $description
@@ -88,6 +87,6 @@ class CatalogItem extends Model
         'type' => ProductTypeReference::class,
         'unitOfMeasure' => UnitOfMeasureReference::class,
         'vendor' => CompanyReference::class,
-        'vendorSku' => 'string'
+        'vendorSku' => 'string',
     ];
 }

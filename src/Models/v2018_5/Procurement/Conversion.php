@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,7 +13,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property UnitOfMeasureReference $parentUOM
  * @property UnitOfMeasureReference $uomType
  * @property float $quantity
- * @property integer $id
+ * @property int $id
  */
 class Conversion extends Model
 {
@@ -28,6 +27,6 @@ class Conversion extends Model
         'id' => 'integer',
         'parentUOM' => UnitOfMeasureReference::class,
         'quantity' => 'float',
-        'uomType' => UnitOfMeasureReference::class
+        'uomType' => UnitOfMeasureReference::class,
     ];
 }

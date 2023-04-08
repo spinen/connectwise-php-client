@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -19,21 +18,21 @@ use Spinen\ConnectWise\Support\Model;
  * @property OpportunityStatusReference $rejectionOpportunityStatus
  * @property array $opportunityStatusRecIDs
  * @property array $opportunityTypeRecIDs
- * @property boolean $acceptanceChangeStatusFlag
- * @property boolean $acceptanceCreateActivityFlag
- * @property boolean $acceptanceSendEmailFlag
- * @property boolean $addAllOpportunityStatuses
- * @property boolean $addAllOpportunityTypes
- * @property boolean $confirmationEmailUseDefaultCompanyEmailAddressFlag
- * @property boolean $confirmationSendEmailFlag
- * @property boolean $rejectionChangeStatusFlag
- * @property boolean $rejectionCreateActivityFlag
- * @property boolean $rejectionSendEmailFlag
- * @property boolean $removeAllOpportunityStatuses
- * @property boolean $removeAllOpportunityTypes
- * @property boolean $restrictViewByOpportunityStatusFlag
- * @property boolean $restrictViewByOpportunityTypeFlag
- * @property integer $id
+ * @property bool $acceptanceChangeStatusFlag
+ * @property bool $acceptanceCreateActivityFlag
+ * @property bool $acceptanceSendEmailFlag
+ * @property bool $addAllOpportunityStatuses
+ * @property bool $addAllOpportunityTypes
+ * @property bool $confirmationEmailUseDefaultCompanyEmailAddressFlag
+ * @property bool $confirmationSendEmailFlag
+ * @property bool $rejectionChangeStatusFlag
+ * @property bool $rejectionCreateActivityFlag
+ * @property bool $rejectionSendEmailFlag
+ * @property bool $removeAllOpportunityStatuses
+ * @property bool $removeAllOpportunityTypes
+ * @property bool $restrictViewByOpportunityStatusFlag
+ * @property bool $restrictViewByOpportunityTypeFlag
+ * @property int $id
  * @property string $acceptanceEmailBody
  * @property string $acceptanceEmailFromFirstName
  * @property string $acceptanceEmailFromLastName
@@ -96,6 +95,6 @@ class PortalConfigurationOpportunitySetup extends Model
         'removeAllOpportunityStatuses' => 'boolean',
         'removeAllOpportunityTypes' => 'boolean',
         'restrictViewByOpportunityStatusFlag' => 'boolean',
-        'restrictViewByOpportunityTypeFlag' => 'boolean'
+        'restrictViewByOpportunityTypeFlag' => 'boolean',
     ];
 }

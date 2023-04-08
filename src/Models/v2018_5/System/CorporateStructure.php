@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -18,7 +17,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property MemberReference $president
  * @property MemberReference $serviceManager
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $fiscalYearStart
  * @property string $groupCaption
  * @property string $level1Name
@@ -54,6 +53,6 @@ class CorporateStructure extends Model
         'levelCount' => 'string',
         'locationCaption' => 'string',
         'president' => MemberReference::class,
-        'serviceManager' => MemberReference::class
+        'serviceManager' => MemberReference::class,
     ];
 }

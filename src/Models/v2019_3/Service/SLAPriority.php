@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -16,10 +15,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property float $planWithin
  * @property float $resolutionHours
  * @property float $respondHours
- * @property integer $id
- * @property integer $planWithinPercent
- * @property integer $resolutionPercent
- * @property integer $respondPercent
+ * @property int $id
+ * @property int $planWithinPercent
+ * @property int $resolutionPercent
+ * @property int $respondPercent
  */
 class SLAPriority extends Model
 {
@@ -38,6 +37,6 @@ class SLAPriority extends Model
         'resolutionPercent' => 'integer',
         'respondHours' => 'float',
         'respondPercent' => 'integer',
-        'sla' => SLAReference::class
+        'sla' => SLAReference::class,
     ];
 }

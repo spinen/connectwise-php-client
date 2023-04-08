@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Expense;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property ClassificationReference $classification
  * @property Metadata $_info
- * @property boolean $companyFlag
- * @property boolean $defaultFlag
- * @property integer $id
+ * @property bool $companyFlag
+ * @property bool $defaultFlag
+ * @property int $id
  * @property string $name
  */
 class PaymentType extends Model
@@ -30,6 +29,6 @@ class PaymentType extends Model
         'companyFlag' => 'boolean',
         'defaultFlag' => 'boolean',
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

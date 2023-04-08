@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ServiceEmailTemplateReference
  *
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $identifier
  * @property string $name
  * @property string $type
@@ -28,6 +27,6 @@ class ServiceEmailTemplateReference extends Model
         'id' => 'integer',
         'identifier' => 'string',
         'name' => 'string',
-        'type' => 'string'
+        'type' => 'string',
     ];
 }

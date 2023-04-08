@@ -2,15 +2,12 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class TemplateGeneratedCountsModel Version v2018_6
  *
  * Model for TemplateGeneratedCountsModel
- *
-
  */
 class TemplateGeneratedCountsModel extends Model
 {

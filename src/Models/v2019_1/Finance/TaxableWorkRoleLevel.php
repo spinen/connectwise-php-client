@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property TaxCodeLevelReference $taxCodeLevel
- * @property integer $id
+ * @property int $id
  */
 class TaxableWorkRoleLevel extends Model
 {
@@ -24,6 +23,6 @@ class TaxableWorkRoleLevel extends Model
     protected $casts = [
         '_info' => Metadata::class,
         'id' => 'integer',
-        'taxCodeLevel' => TaxCodeLevelReference::class
+        'taxCodeLevel' => TaxCodeLevelReference::class,
     ];
 }

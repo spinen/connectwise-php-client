@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for BillingTerm
  *
  * @property Metadata $_info
- * @property boolean $defaultFlag
- * @property integer $dueDays
- * @property integer $id
+ * @property bool $defaultFlag
+ * @property int $dueDays
+ * @property int $id
  * @property string $name
  * @property string $termsXref
  */
@@ -30,6 +29,6 @@ class BillingTerm extends Model
         'dueDays' => 'integer',
         'id' => 'integer',
         'name' => 'string',
-        'termsXref' => 'string'
+        'termsXref' => 'string',
     ];
 }

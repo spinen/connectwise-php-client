@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -19,10 +18,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property TimeZoneSetupReference $timeZoneSetup
  * @property array $departmentIds
  * @property array $workRoleIds
- * @property boolean $clientFlag
- * @property boolean $locationFlag
- * @property integer $id
- * @property integer $ownerLevelId
+ * @property bool $clientFlag
+ * @property bool $locationFlag
+ * @property int $id
+ * @property int $ownerLevelId
  * @property string $name
  * @property string $overrideAddressLine1
  * @property string $overrideAddressLine2
@@ -66,6 +65,6 @@ class Location extends Model
         'salesRep' => 'string',
         'structureLevel' => CorporateStructureLevelReference::class,
         'timeZoneSetup' => TimeZoneSetupReference::class,
-        'workRoleIds' => 'array'
+        'workRoleIds' => 'array',
     ];
 }

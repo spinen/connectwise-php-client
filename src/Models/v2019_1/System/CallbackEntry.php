@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,10 +10,10 @@ use Spinen\ConnectWise\Support\Model;
  * Model for CallbackEntry
  *
  * @property Metadata $_info
- * @property boolean $inactiveFlag
- * @property integer $id
- * @property integer $memberId
- * @property integer $objectId
+ * @property bool $inactiveFlag
+ * @property int $id
+ * @property int $memberId
+ * @property int $objectId
  * @property string $description
  * @property string $level
  * @property string $type
@@ -36,6 +35,6 @@ class CallbackEntry extends Model
         'memberId' => 'integer',
         'objectId' => 'integer',
         'type' => 'string',
-        'url' => 'string'
+        'url' => 'string',
     ];
 }

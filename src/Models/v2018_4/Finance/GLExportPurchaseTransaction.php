@@ -26,14 +26,14 @@ use Spinen\ConnectWise\Support\Model;
  * @property TaxCodeReference $taxCode
  * @property array $purchaseDetail
  * @property array $purchaseDetailTax
- * @property boolean $dropshipFlag
- * @property boolean $purchaseHeaderFreightTaxableFlag
- * @property boolean $purchaseHeaderTaxableFlag
- * @property boolean $useAvalaraTaxFlag
+ * @property bool $dropshipFlag
+ * @property bool $purchaseHeaderFreightTaxableFlag
+ * @property bool $purchaseHeaderTaxableFlag
+ * @property bool $useAvalaraTaxFlag
  * @property float $freightAmount
  * @property float $taxGroupRate
  * @property float $total
- * @property integer $dueDays
+ * @property int $dueDays
  * @property string $apAccountNumber
  * @property string $billingTermsXref
  * @property string $cityTaxXref
@@ -104,6 +104,6 @@ class GLExportPurchaseTransaction extends Model
         'vendorAccountNumber' => 'string',
         'vendorInvoiceDate' => Carbon::class,
         'vendorInvoiceNumber' => 'string',
-        'vendorNumber' => 'string'
+        'vendorNumber' => 'string',
     ];
 }

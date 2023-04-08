@@ -19,17 +19,17 @@ use Spinen\ConnectWise\Support\Model;
  * @property TaxCodeReference $taxCode
  * @property UnitOfMeasureReference $unitOfMeasure
  * @property WarehouseBinReference $warehouseBin
- * @property boolean $dropShippedFlag
- * @property boolean $serializedFlag
- * @property boolean $taxable
+ * @property bool $dropShippedFlag
+ * @property bool $serializedFlag
+ * @property bool $taxable
  * @property float $cost
  * @property float $itemCost
  * @property float $itemPrice
  * @property float $quantity
  * @property float $taxRate
  * @property float $total
- * @property integer $id
- * @property integer $lineNumber
+ * @property int $id
+ * @property int $lineNumber
  * @property string $accountNumber
  * @property string $cogsXref
  * @property string $costAccountNumber
@@ -106,6 +106,6 @@ class GLExportPurchaseTransactionDetail extends Model
         'vendorAccountNumber' => 'string',
         'vendorNumber' => 'string',
         'warehouseBin' => WarehouseBinReference::class,
-        'warehouseSite' => SiteReference::class
+        'warehouseSite' => SiteReference::class,
     ];
 }

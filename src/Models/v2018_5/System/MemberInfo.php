@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property DocumentReference $photo
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $defaultEmail
  * @property string $firstName
  * @property string $fullName
@@ -36,6 +35,6 @@ class MemberInfo extends Model
         'identifier' => 'string',
         'lastName' => 'string',
         'middleInitial' => 'string',
-        'photo' => DocumentReference::class
+        'photo' => DocumentReference::class,
     ];
 }

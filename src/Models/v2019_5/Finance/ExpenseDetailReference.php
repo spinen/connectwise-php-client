@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property float $amount
- * @property integer $id
+ * @property int $id
  */
 class ExpenseDetailReference extends Model
 {
@@ -24,6 +23,6 @@ class ExpenseDetailReference extends Model
     protected $casts = [
         '_info' => Metadata::class,
         'amount' => 'float',
-        'id' => 'integer'
+        'id' => 'integer',
     ];
 }

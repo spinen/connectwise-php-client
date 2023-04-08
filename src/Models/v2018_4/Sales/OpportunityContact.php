@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Sales;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,9 +13,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property ContactReference $contact
  * @property Metadata $_info
  * @property OpportunitySalesRoleReference $role
- * @property boolean $referralFlag
- * @property integer $id
- * @property integer $opportunityId
+ * @property bool $referralFlag
+ * @property int $id
+ * @property int $opportunityId
  * @property string $emailAddress
  * @property string $notes
  * @property string $phoneNumber
@@ -38,6 +37,6 @@ class OpportunityContact extends Model
         'opportunityId' => 'integer',
         'phoneNumber' => 'string',
         'referralFlag' => 'boolean',
-        'role' => OpportunitySalesRoleReference::class
+        'role' => OpportunitySalesRoleReference::class,
     ];
 }

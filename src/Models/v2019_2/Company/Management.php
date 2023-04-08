@@ -15,11 +15,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property ConfigurationStatusReference $deletedConfigurationStatus
  * @property IntegratorLoginReference $integratorLogin
  * @property Metadata $_info
- * @property boolean $scheduleExecutiveSummaryReportFlag
- * @property integer $executiveSummaryReportScheduleDay
- * @property integer $executiveSummaryReportScheduleHour
- * @property integer $executiveSummaryReportScheduleMinute
- * @property integer $id
+ * @property bool $scheduleExecutiveSummaryReportFlag
+ * @property int $executiveSummaryReportScheduleDay
+ * @property int $executiveSummaryReportScheduleHour
+ * @property int $executiveSummaryReportScheduleMinute
+ * @property int $id
  */
 class Management extends Model
 {
@@ -38,6 +38,6 @@ class Management extends Model
         'id' => 'integer',
         'integratorLogin' => IntegratorLoginReference::class,
         'runTime' => Carbon::class,
-        'scheduleExecutiveSummaryReportFlag' => 'boolean'
+        'scheduleExecutiveSummaryReportFlag' => 'boolean',
     ];
 }

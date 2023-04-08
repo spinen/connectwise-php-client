@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -20,6 +19,6 @@ class IdCollection extends Model
      * @var array
      */
     protected $casts = [
-        'ids' => 'array'
+        'ids' => 'array',
     ];
 }

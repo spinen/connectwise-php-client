@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for TimeEntryReference
  *
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  */
 class TimeEntryReference extends Model
 {
@@ -22,6 +21,6 @@ class TimeEntryReference extends Model
      */
     protected $casts = [
         '_info' => Metadata::class,
-        'id' => 'integer'
+        'id' => 'integer',
     ];
 }

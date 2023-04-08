@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Internal;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for CalculateInvoiceTax
  *
  * @property float $salesTax
- * @property integer $id
+ * @property int $id
  */
 class CalculateInvoiceTax extends Model
 {
@@ -22,6 +21,6 @@ class CalculateInvoiceTax extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'salesTax' => 'float'
+        'salesTax' => 'float',
     ];
 }

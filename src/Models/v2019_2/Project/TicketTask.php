@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Project;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,11 +12,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property ScheduleEntryReference $schedule
  * @property ServiceCodeReference $code
- * @property boolean $closedFlag
- * @property integer $childTicketId
- * @property integer $id
- * @property integer $priority
- * @property integer $ticketId
+ * @property bool $closedFlag
+ * @property int $childTicketId
+ * @property int $id
+ * @property int $priority
+ * @property int $ticketId
  * @property string $childScheduleAction
  * @property string $notes
  * @property string $resolution
@@ -40,6 +39,6 @@ class TicketTask extends Model
         'priority' => 'integer',
         'resolution' => 'string',
         'schedule' => ScheduleEntryReference::class,
-        'ticketId' => 'integer'
+        'ticketId' => 'integer',
     ];
 }

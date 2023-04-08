@@ -15,18 +15,18 @@ use Spinen\ConnectWise\Support\Model;
  * @property array $businessUnitIds
  * @property array $locationIds
  * @property array $options
- * @property boolean $addAllBusinessUnits
- * @property boolean $addAllLocations
- * @property boolean $displayOnScreenFlag
- * @property boolean $listViewFlag
- * @property boolean $readOnlyFlag
- * @property boolean $removeAllBusinessUnits
- * @property boolean $removeAllLocations
- * @property boolean $requiredFlag
- * @property integer $id
- * @property integer $numberDecimals
- * @property integer $podId
- * @property integer $sequenceNumber
+ * @property bool $addAllBusinessUnits
+ * @property bool $addAllLocations
+ * @property bool $displayOnScreenFlag
+ * @property bool $listViewFlag
+ * @property bool $readOnlyFlag
+ * @property bool $removeAllBusinessUnits
+ * @property bool $removeAllLocations
+ * @property bool $requiredFlag
+ * @property int $id
+ * @property int $numberDecimals
+ * @property int $podId
+ * @property int $sequenceNumber
  * @property string $buttonUrl
  * @property string $caption
  * @property string $entryTypeIdentifier
@@ -62,6 +62,6 @@ class UserDefinedField extends Model
         'removeAllBusinessUnits' => 'boolean',
         'removeAllLocations' => 'boolean',
         'requiredFlag' => 'boolean',
-        'sequenceNumber' => 'integer'
+        'sequenceNumber' => 'integer',
     ];
 }

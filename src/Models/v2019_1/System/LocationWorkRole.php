@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,8 +12,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property SystemLocationReference $location
  * @property WorkRoleReference $workRole
- * @property boolean $workRoleInactiveFlag
- * @property integer $id
+ * @property bool $workRoleInactiveFlag
+ * @property int $id
  */
 class LocationWorkRole extends Model
 {
@@ -28,6 +27,6 @@ class LocationWorkRole extends Model
         'id' => 'integer',
         'location' => SystemLocationReference::class,
         'workRole' => WorkRoleReference::class,
-        'workRoleInactiveFlag' => 'boolean'
+        'workRoleInactiveFlag' => 'boolean',
     ];
 }

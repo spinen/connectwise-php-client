@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,21 +9,21 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for EmailToken
  *
- * @property boolean $addressFlag
- * @property boolean $agreementFlag
- * @property boolean $companyFlag
- * @property boolean $configFlag
- * @property boolean $contactFlag
- * @property boolean $invoiceFlag
- * @property boolean $portalPasswordFlag
- * @property boolean $purchaseOrderFlag
- * @property boolean $purchaseOrderStatusFlag
- * @property boolean $rmaFlag
- * @property boolean $salesFlag
- * @property boolean $serviceFlag
- * @property boolean $tracksFlag
- * @property boolean $workflowFlag
- * @property integer $id
+ * @property bool $addressFlag
+ * @property bool $agreementFlag
+ * @property bool $companyFlag
+ * @property bool $configFlag
+ * @property bool $contactFlag
+ * @property bool $invoiceFlag
+ * @property bool $portalPasswordFlag
+ * @property bool $purchaseOrderFlag
+ * @property bool $purchaseOrderStatusFlag
+ * @property bool $rmaFlag
+ * @property bool $salesFlag
+ * @property bool $serviceFlag
+ * @property bool $tracksFlag
+ * @property bool $workflowFlag
+ * @property int $id
  * @property string $description
  * @property string $token
  */
@@ -52,6 +51,6 @@ class EmailToken extends Model
         'serviceFlag' => 'boolean',
         'token' => 'string',
         'tracksFlag' => 'boolean',
-        'workflowFlag' => 'boolean'
+        'workflowFlag' => 'boolean',
     ];
 }

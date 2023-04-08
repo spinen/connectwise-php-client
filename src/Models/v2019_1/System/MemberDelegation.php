@@ -15,7 +15,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property MemberReference $delegatedTo
  * @property MemberReference $member
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $delegationType
  */
 class MemberDelegation extends Model
@@ -32,6 +32,6 @@ class MemberDelegation extends Model
         'delegatedTo' => MemberReference::class,
         'delegationType' => 'string',
         'id' => 'integer',
-        'member' => MemberReference::class
+        'member' => MemberReference::class,
     ];
 }

@@ -28,15 +28,15 @@ use Spinen\ConnectWise\Support\Model;
  * @property TicketReference $ticket
  * @property array $customFields
  * @property array $serialNumberIds
- * @property boolean $bypassForecastUpdate
- * @property boolean $cancelledFlag
- * @property boolean $dropshipFlag
- * @property boolean $minimumStockFlag
- * @property boolean $needToPurchaseFlag
- * @property boolean $phaseProductFlag
- * @property boolean $productSuppliedFlag
- * @property boolean $specialOrderFlag
- * @property boolean $taxableFlag
+ * @property bool $bypassForecastUpdate
+ * @property bool $cancelledFlag
+ * @property bool $dropshipFlag
+ * @property bool $minimumStockFlag
+ * @property bool $needToPurchaseFlag
+ * @property bool $phaseProductFlag
+ * @property bool $productSuppliedFlag
+ * @property bool $specialOrderFlag
+ * @property bool $taxableFlag
  * @property float $cost
  * @property float $discount
  * @property float $listPrice
@@ -45,12 +45,12 @@ use Spinen\ConnectWise\Support\Model;
  * @property float $quantityCancelled
  * @property float $sequenceNumber
  * @property float $subContractorAmountLimit
- * @property integer $businessUnitId
- * @property integer $cancelledBy
- * @property integer $forecastDetailId
- * @property integer $id
- * @property integer $locationId
- * @property integer $subContractorShipToId
+ * @property int $businessUnitId
+ * @property int $cancelledBy
+ * @property int $forecastDetailId
+ * @property int $id
+ * @property int $locationId
+ * @property int $subContractorShipToId
  * @property string $billableOption
  * @property string $cancelledReason
  * @property string $customerDescription
@@ -122,6 +122,6 @@ class ProductItem extends Model
         'vendor' => CompanyReference::class,
         'vendorSku' => 'string',
         'warehouse' => 'string',
-        'warehouseBin' => 'string'
+        'warehouseBin' => 'string',
     ];
 }

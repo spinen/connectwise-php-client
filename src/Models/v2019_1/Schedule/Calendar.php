@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Schedule;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property HolidayListReference $holidayList
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $fridayEndTime
  * @property string $fridayStartTime
  * @property string $mondayEndTime
@@ -54,6 +53,6 @@ class Calendar extends Model
         'tuesdayEndTime' => 'string',
         'tuesdayStartTime' => 'string',
         'wednesdayEndTime' => 'string',
-        'wednesdayStartTime' => 'string'
+        'wednesdayStartTime' => 'string',
     ];
 }

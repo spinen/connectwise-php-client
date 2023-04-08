@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Project;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ProjectSecurityRoleSetting
  *
  * @property Metadata $_info
- * @property boolean $myFlag
- * @property integer $id
+ * @property bool $myFlag
+ * @property int $id
  * @property string $addLevel
  * @property string $deleteLevel
  * @property string $editLevel
@@ -34,6 +33,6 @@ class ProjectSecurityRoleSetting extends Model
         'id' => 'integer',
         'inquireLevel' => 'string',
         'moduleIdentifier' => 'string',
-        'myFlag' => 'boolean'
+        'myFlag' => 'boolean',
     ];
 }

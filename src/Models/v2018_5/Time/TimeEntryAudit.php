@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Time;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,7 +13,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property AuditType $type
  * @property MemberReference $member
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $message
  * @property string $newValue
  * @property string $oldValue
@@ -36,6 +35,6 @@ class TimeEntryAudit extends Model
         'oldValue' => 'string',
         'source' => AuditSource::class,
         'type' => AuditType::class,
-        'value' => 'string'
+        'value' => 'string',
     ];
 }

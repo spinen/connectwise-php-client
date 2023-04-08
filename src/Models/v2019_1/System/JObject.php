@@ -2,15 +2,12 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class JObject Version v2019_1
  *
  * Model for JObject
- *
-
  */
 class JObject extends Model
 {

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,10 +11,10 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property array $locationIds
- * @property boolean $addAllLocations
- * @property boolean $inactiveFlag
- * @property boolean $removeAllLocations
- * @property integer $id
+ * @property bool $addAllLocations
+ * @property bool $inactiveFlag
+ * @property bool $removeAllLocations
+ * @property int $id
  * @property string $integrationXref
  * @property string $name
  * @property string $priceLevelXref
@@ -36,6 +35,6 @@ class Category extends Model
         'locationIds' => 'array',
         'name' => 'string',
         'priceLevelXref' => 'string',
-        'removeAllLocations' => 'boolean'
+        'removeAllLocations' => 'boolean',
     ];
 }

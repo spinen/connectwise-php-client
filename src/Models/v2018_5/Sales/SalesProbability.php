@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Sales;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for SalesProbability
  *
  * @property Metadata $_info
- * @property integer $id
- * @property integer $probability
+ * @property int $id
+ * @property int $probability
  */
 class SalesProbability extends Model
 {
@@ -24,6 +23,6 @@ class SalesProbability extends Model
     protected $casts = [
         '_info' => Metadata::class,
         'id' => 'integer',
-        'probability' => 'integer'
+        'probability' => 'integer',
     ];
 }

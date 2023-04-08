@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,48 +11,48 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property PortalConfigurationReference $portalConfig
- * @property boolean $billingMethodFlag
- * @property boolean $contactFlag
- * @property boolean $descriptionFlag
- * @property boolean $estimatedEndFlag
- * @property boolean $estimatedStartFlag
- * @property boolean $fixedFeeActualFinishFlag
- * @property boolean $fixedFeeActualHrsFlag
- * @property boolean $fixedFeeActualStartFlag
- * @property boolean $fixedFeeAssignedFlag
- * @property boolean $fixedFeeBillFlag
- * @property boolean $fixedFeeBudgetHrsFlag
- * @property boolean $fixedFeeScheduledFinishFlag
- * @property boolean $fixedFeeScheduledHrsFlag
- * @property boolean $fixedFeeScheduledStartFlag
- * @property boolean $fixedFeeStatusFlag
- * @property boolean $lastUpdatedFlag
- * @property boolean $projectDetailTotalHoursFlag
- * @property boolean $projectIssueActualFinishFlag
- * @property boolean $projectIssueActualHrsFlag
- * @property boolean $projectIssueActualStartFlag
- * @property boolean $projectIssueAssignedFlag
- * @property boolean $projectIssueBillFlag
- * @property boolean $projectIssueBudgetHrsFlag
- * @property boolean $projectIssueScheduledFinishFlag
- * @property boolean $projectIssueScheduledHrsFlag
- * @property boolean $projectIssueScheduledStartFlag
- * @property boolean $projectIssueStatusFlag
- * @property boolean $projectManagerFlag
- * @property boolean $projectNameFlag
- * @property boolean $projectTypeFlag
- * @property boolean $statusFlag
- * @property boolean $timeMaterialActualFinishFlag
- * @property boolean $timeMaterialActualHrsFlag
- * @property boolean $timeMaterialActualStartFlag
- * @property boolean $timeMaterialAssignedFlag
- * @property boolean $timeMaterialBillFlag
- * @property boolean $timeMaterialBudgetHrsFlag
- * @property boolean $timeMaterialScheduledFinishFlag
- * @property boolean $timeMaterialScheduledHrsFlag
- * @property boolean $timeMaterialScheduledStartFlag
- * @property boolean $timeMaterialStatusFlag
- * @property integer $id
+ * @property bool $billingMethodFlag
+ * @property bool $contactFlag
+ * @property bool $descriptionFlag
+ * @property bool $estimatedEndFlag
+ * @property bool $estimatedStartFlag
+ * @property bool $fixedFeeActualFinishFlag
+ * @property bool $fixedFeeActualHrsFlag
+ * @property bool $fixedFeeActualStartFlag
+ * @property bool $fixedFeeAssignedFlag
+ * @property bool $fixedFeeBillFlag
+ * @property bool $fixedFeeBudgetHrsFlag
+ * @property bool $fixedFeeScheduledFinishFlag
+ * @property bool $fixedFeeScheduledHrsFlag
+ * @property bool $fixedFeeScheduledStartFlag
+ * @property bool $fixedFeeStatusFlag
+ * @property bool $lastUpdatedFlag
+ * @property bool $projectDetailTotalHoursFlag
+ * @property bool $projectIssueActualFinishFlag
+ * @property bool $projectIssueActualHrsFlag
+ * @property bool $projectIssueActualStartFlag
+ * @property bool $projectIssueAssignedFlag
+ * @property bool $projectIssueBillFlag
+ * @property bool $projectIssueBudgetHrsFlag
+ * @property bool $projectIssueScheduledFinishFlag
+ * @property bool $projectIssueScheduledHrsFlag
+ * @property bool $projectIssueScheduledStartFlag
+ * @property bool $projectIssueStatusFlag
+ * @property bool $projectManagerFlag
+ * @property bool $projectNameFlag
+ * @property bool $projectTypeFlag
+ * @property bool $statusFlag
+ * @property bool $timeMaterialActualFinishFlag
+ * @property bool $timeMaterialActualHrsFlag
+ * @property bool $timeMaterialActualStartFlag
+ * @property bool $timeMaterialAssignedFlag
+ * @property bool $timeMaterialBillFlag
+ * @property bool $timeMaterialBudgetHrsFlag
+ * @property bool $timeMaterialScheduledFinishFlag
+ * @property bool $timeMaterialScheduledHrsFlag
+ * @property bool $timeMaterialScheduledStartFlag
+ * @property bool $timeMaterialStatusFlag
+ * @property int $id
  * @property string $onlyDisplay
  */
 class PortalConfigurationProjectSetup extends Model
@@ -108,6 +107,6 @@ class PortalConfigurationProjectSetup extends Model
         'timeMaterialScheduledFinishFlag' => 'boolean',
         'timeMaterialScheduledHrsFlag' => 'boolean',
         'timeMaterialScheduledStartFlag' => 'boolean',
-        'timeMaterialStatusFlag' => 'boolean'
+        'timeMaterialStatusFlag' => 'boolean',
     ];
 }

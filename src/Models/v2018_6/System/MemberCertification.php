@@ -16,8 +16,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property CompanyReference $company
  * @property MemberReference $member
  * @property Metadata $_info
- * @property integer $id
- * @property integer $percentComplete
+ * @property int $id
+ * @property int $percentComplete
  * @property string $certificationNumber
  * @property string $notes
  */
@@ -38,6 +38,6 @@ class MemberCertification extends Model
         'id' => 'integer',
         'member' => MemberReference::class,
         'notes' => 'string',
-        'percentComplete' => 'integer'
+        'percentComplete' => 'integer',
     ];
 }

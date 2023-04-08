@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -35,13 +34,13 @@ use Spinen\ConnectWise\Support\Model;
  * @property ServiceTypeReference $serviceType
  * @property TrackReference $attachedTrack
  * @property array $attachments
- * @property boolean $auditNotesFlag
- * @property boolean $detailNotesFlag
- * @property boolean $internalNotesFlag
- * @property boolean $updateOwnerFlag
- * @property integer $daysToExecute
- * @property integer $id
- * @property integer $invoiceMinDays
+ * @property bool $auditNotesFlag
+ * @property bool $detailNotesFlag
+ * @property bool $internalNotesFlag
+ * @property bool $updateOwnerFlag
+ * @property int $daysToExecute
+ * @property int $id
+ * @property int $invoiceMinDays
  * @property string $emailFrom
  * @property string $emailRecipient
  * @property string $notes
@@ -90,6 +89,6 @@ class WorkflowAction extends Model
         'specificMemberTo' => MemberReference::class,
         'specificTeamTo' => GenericBoardTeamReference::class,
         'subject' => 'string',
-        'updateOwnerFlag' => 'boolean'
+        'updateOwnerFlag' => 'boolean',
     ];
 }

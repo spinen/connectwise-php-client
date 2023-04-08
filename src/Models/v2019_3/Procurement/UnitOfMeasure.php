@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for UnitOfMeasure
  *
  * @property Metadata $_info
- * @property boolean $defaultFlag
- * @property boolean $inactiveFlag
- * @property integer $id
+ * @property bool $defaultFlag
+ * @property bool $inactiveFlag
+ * @property int $id
  * @property string $name
  * @property string $uomScheduleXref
  */
@@ -30,6 +29,6 @@ class UnitOfMeasure extends Model
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'name' => 'string',
-        'uomScheduleXref' => 'string'
+        'uomScheduleXref' => 'string',
     ];
 }

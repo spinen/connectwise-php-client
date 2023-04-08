@@ -6,8 +6,6 @@ use Exception;
 
 /**
  * Class NoLoggedInUser
- *
- * @package Spinen\ConnectWise\Exceptions
  */
 class NoLoggedInUser extends Exception
 {

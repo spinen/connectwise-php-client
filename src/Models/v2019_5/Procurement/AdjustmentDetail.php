@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -17,8 +16,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property WarehouseReference $warehouse
  * @property float $quantityOnHand
  * @property float $unitCost
- * @property integer $id
- * @property integer $quantityAdjusted
+ * @property int $id
+ * @property int $quantityAdjusted
  * @property string $description
  * @property string $serialNumber
  */
@@ -40,6 +39,6 @@ class AdjustmentDetail extends Model
         'serialNumber' => 'string',
         'unitCost' => 'float',
         'warehouse' => WarehouseReference::class,
-        'warehouseBin' => WarehouseBinReference::class
+        'warehouseBin' => WarehouseBinReference::class,
     ];
 }

@@ -27,46 +27,46 @@ use Spinen\ConnectWise\Support\Model;
  * @property WorkRoleReference $workRole
  * @property WorkTypeReference $workType
  * @property array $customFields
- * @property boolean $allowOverruns
- * @property boolean $applicationUnlimitedFlag
- * @property boolean $billOneTimeFlag
- * @property boolean $billableExpenseInvoice
- * @property boolean $billableProductInvoice
- * @property boolean $billableTimeInvoice
- * @property boolean $bottomComment
- * @property boolean $cancelledFlag
- * @property boolean $carryOverUnused
- * @property boolean $chargeToFirm
- * @property boolean $coverAgreementExpense
- * @property boolean $coverAgreementProduct
- * @property boolean $coverAgreementTime
- * @property boolean $coverSalesTax
- * @property boolean $expireWhenZero
- * @property boolean $noEndingDateFlag
- * @property boolean $oneTimeFlag
- * @property boolean $prorateFlag
- * @property boolean $restrictDepartmentFlag
- * @property boolean $restrictDownPayment
- * @property boolean $restrictLocationFlag
- * @property boolean $taxable
- * @property boolean $topComment
+ * @property bool $allowOverruns
+ * @property bool $applicationUnlimitedFlag
+ * @property bool $billOneTimeFlag
+ * @property bool $billableExpenseInvoice
+ * @property bool $billableProductInvoice
+ * @property bool $billableTimeInvoice
+ * @property bool $bottomComment
+ * @property bool $cancelledFlag
+ * @property bool $carryOverUnused
+ * @property bool $chargeToFirm
+ * @property bool $coverAgreementExpense
+ * @property bool $coverAgreementProduct
+ * @property bool $coverAgreementTime
+ * @property bool $coverSalesTax
+ * @property bool $expireWhenZero
+ * @property bool $noEndingDateFlag
+ * @property bool $oneTimeFlag
+ * @property bool $prorateFlag
+ * @property bool $restrictDepartmentFlag
+ * @property bool $restrictDownPayment
+ * @property bool $restrictLocationFlag
+ * @property bool $taxable
+ * @property bool $topComment
  * @property float $applicationLimit
  * @property float $billAmount
  * @property float $compHourlyRate
  * @property float $compLimitAmount
  * @property float $prorateFirstBill
- * @property integer $billCycleId
- * @property integer $billTermsId
- * @property integer $businessUnitId
- * @property integer $expiredDays
- * @property integer $id
- * @property integer $invoiceTemplateSetupId
- * @property integer $limit
- * @property integer $locationId
- * @property integer $parentAgreementId
- * @property integer $projectTypeId
- * @property integer $slaId
- * @property integer $taxCodeId
+ * @property int $billCycleId
+ * @property int $billTermsId
+ * @property int $businessUnitId
+ * @property int $expiredDays
+ * @property int $id
+ * @property int $invoiceTemplateSetupId
+ * @property int $limit
+ * @property int $locationId
+ * @property int $parentAgreementId
+ * @property int $projectTypeId
+ * @property int $slaId
+ * @property int $taxCodeId
  * @property string $applicationCycle
  * @property string $applicationUnits
  * @property string $billExpenses
@@ -162,6 +162,6 @@ class Agreement extends Model
         'type' => AgreementTypeReference::class,
         'workOrder' => 'string',
         'workRole' => WorkRoleReference::class,
-        'workType' => WorkTypeReference::class
+        'workType' => WorkTypeReference::class,
     ];
 }

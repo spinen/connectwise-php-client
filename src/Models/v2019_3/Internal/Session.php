@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Internal;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property MemberReference $member
  * @property TicketReference $ticket
- * @property integer $configurationId
- * @property integer $id
+ * @property int $configurationId
+ * @property int $id
  * @property string $sessionGuid
  */
 class Session extends Model
@@ -28,6 +27,6 @@ class Session extends Model
         'id' => 'integer',
         'member' => MemberReference::class,
         'sessionGuid' => 'string',
-        'ticket' => TicketReference::class
+        'ticket' => TicketReference::class,
     ];
 }

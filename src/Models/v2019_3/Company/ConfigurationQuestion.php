@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,11 +9,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for ConfigurationQuestion
  *
- * @property boolean $requiredFlag
+ * @property bool $requiredFlag
  * @property float $sequenceNumber
- * @property integer $answerId
- * @property integer $numberOfDecimals
- * @property integer $questionId
+ * @property int $answerId
+ * @property int $numberOfDecimals
+ * @property int $questionId
  * @property string $answer
  * @property string $fieldType
  * @property string $question
@@ -34,6 +33,6 @@ class ConfigurationQuestion extends Model
         'question' => 'string',
         'questionId' => 'integer',
         'requiredFlag' => 'boolean',
-        'sequenceNumber' => 'float'
+        'sequenceNumber' => 'float',
     ];
 }

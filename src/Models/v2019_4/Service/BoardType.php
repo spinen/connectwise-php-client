@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,10 +13,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property SystemDepartmentReference $department
  * @property SystemLocationReference $location
- * @property boolean $defaultFlag
- * @property boolean $inactiveFlag
- * @property boolean $requestForChangeFlag
- * @property integer $id
+ * @property bool $defaultFlag
+ * @property bool $inactiveFlag
+ * @property bool $requestForChangeFlag
+ * @property int $id
  * @property string $category
  * @property string $integrationXref
  * @property string $name
@@ -40,6 +39,6 @@ class BoardType extends Model
         'integrationXref' => 'string',
         'location' => SystemLocationReference::class,
         'name' => 'string',
-        'requestForChangeFlag' => 'boolean'
+        'requestForChangeFlag' => 'boolean',
     ];
 }

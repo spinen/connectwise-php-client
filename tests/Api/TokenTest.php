@@ -58,7 +58,7 @@ class TokenTest extends TestCase
                                   ->addHours(4)
                                   ->toDateTimeString(),
             'privateKey' => 'private',
-            'publicKey'  => 'public',
+            'publicKey' => 'public',
         ];
 
         $this->token->setCompanyId($company_id);
@@ -66,7 +66,7 @@ class TokenTest extends TestCase
 
         $client->shouldReceive('post')
                ->once()
-               ->with('system/members/' . $member_id . '/tokens')
+               ->with('system/members/'.$member_id.'/tokens')
                ->andReturn($response);
 
         $this->token->fetch($client);
@@ -92,7 +92,7 @@ class TokenTest extends TestCase
                                   ->addHours(4)
                                   ->toDateTimeString(),
             'privateKey' => 'private',
-            'publicKey'  => 'public',
+            'publicKey' => 'public',
         ];
 
         $this->token->setCompanyId($company_id);
@@ -134,7 +134,7 @@ class TokenTest extends TestCase
             'expiration' => Carbon::now()
                                   ->addHours(4),
             'privateKey' => 'private',
-            'publicKey'  => 'public',
+            'publicKey' => 'public',
         ];
 
         $this->token->setCompanyId($company_id);
@@ -146,7 +146,7 @@ class TokenTest extends TestCase
 
         $this->token->fetch($client);
 
-        $this->assertEquals($company_id . '+' . $response['publicKey'], $this->token->getUsername());
+        $this->assertEquals($company_id.'+'.$response['publicKey'], $this->token->getUsername());
     }
 
     /**
@@ -160,7 +160,7 @@ class TokenTest extends TestCase
             'expiration' => Carbon::now()
                                   ->addHours(4),
             'privateKey' => 'private',
-            'publicKey'  => 'public',
+            'publicKey' => 'public',
         ];
 
         $client->shouldReceive('post')
@@ -198,7 +198,7 @@ class TokenTest extends TestCase
             'expiration' => Carbon::now()
                                   ->addHours(4),
             'privateKey' => 'private',
-            'publicKey'  => 'public',
+            'publicKey' => 'public',
         ];
 
         $client->shouldReceive('post')
@@ -224,7 +224,7 @@ class TokenTest extends TestCase
             'expiration' => Carbon::now()
                                   ->addHours(4),
             'privateKey' => 'private',
-            'publicKey'  => 'public',
+            'publicKey' => 'public',
         ];
 
         $client->shouldReceive('post')
@@ -250,7 +250,7 @@ class TokenTest extends TestCase
             'expiration' => Carbon::now()
                                   ->addHours(4),
             'privateKey' => 'private',
-            'publicKey'  => 'public',
+            'publicKey' => 'public',
         ];
 
         $client->shouldReceive('post')

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Marketing;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for Group
  *
  * @property Metadata $_info
- * @property boolean $inactiveFlag
- * @property boolean $publicFlag
- * @property integer $id
+ * @property bool $inactiveFlag
+ * @property bool $publicFlag
+ * @property int $id
  * @property string $name
  * @property string $publicDescription
  */
@@ -30,6 +29,6 @@ class Group extends Model
         'inactiveFlag' => 'boolean',
         'name' => 'string',
         'publicDescription' => 'string',
-        'publicFlag' => 'boolean'
+        'publicFlag' => 'boolean',
     ];
 }

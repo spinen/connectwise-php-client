@@ -15,7 +15,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property InvoiceReference $invoice
  * @property Metadata $_info
  * @property float $amount
- * @property integer $id
+ * @property int $id
  * @property string $appliedBy
  * @property string $type
  */
@@ -34,6 +34,6 @@ class Payment extends Model
         'id' => 'integer',
         'invoice' => InvoiceReference::class,
         'paymentDate' => Carbon::class,
-        'type' => 'string'
+        'type' => 'string',
     ];
 }

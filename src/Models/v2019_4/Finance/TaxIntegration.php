@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,12 +10,12 @@ use Spinen\ConnectWise\Support\Model;
  * Model for TaxIntegration
  *
  * @property Metadata $_info
- * @property boolean $accountingIntegrationFlag
- * @property boolean $commitTransactionsFlag
- * @property boolean $enabledFlag
- * @property boolean $salesInvoiceFlag
- * @property boolean $taxLineFlag
- * @property integer $id
+ * @property bool $accountingIntegrationFlag
+ * @property bool $commitTransactionsFlag
+ * @property bool $enabledFlag
+ * @property bool $salesInvoiceFlag
+ * @property bool $taxLineFlag
+ * @property int $id
  * @property string $accountNumber
  * @property string $companyCode
  * @property string $expenseTaxCode
@@ -52,6 +51,6 @@ class TaxIntegration extends Model
         'serviceUrl' => 'string',
         'taxIntegrationType' => 'string',
         'taxLineFlag' => 'boolean',
-        'timeTaxCode' => 'string'
+        'timeTaxCode' => 'string',
     ];
 }

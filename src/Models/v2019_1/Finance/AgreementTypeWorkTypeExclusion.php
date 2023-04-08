@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,7 +12,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property AgreementTypeReference $type
  * @property Metadata $_info
  * @property WorkTypeReference $workType
- * @property integer $id
+ * @property int $id
  */
 class AgreementTypeWorkTypeExclusion extends Model
 {
@@ -26,6 +25,6 @@ class AgreementTypeWorkTypeExclusion extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'type' => AgreementTypeReference::class,
-        'workType' => WorkTypeReference::class
+        'workType' => WorkTypeReference::class,
     ];
 }

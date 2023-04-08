@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ConfigurationType
  *
  * @property Metadata $_info
- * @property boolean $inactiveFlag
- * @property boolean $systemFlag
- * @property integer $id
+ * @property bool $inactiveFlag
+ * @property bool $systemFlag
+ * @property int $id
  * @property string $name
  */
 class ConfigurationType extends Model
@@ -28,6 +27,6 @@ class ConfigurationType extends Model
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'name' => 'string',
-        'systemFlag' => 'boolean'
+        'systemFlag' => 'boolean',
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Internal;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,7 +13,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property ServiceStatusReference $status
  * @property TicketReference $ticket
- * @property integer $id
+ * @property int $id
  */
 class TicketsPipeline extends Model
 {
@@ -28,6 +27,6 @@ class TicketsPipeline extends Model
         'board' => BoardReference::class,
         'id' => 'integer',
         'status' => ServiceStatusReference::class,
-        'ticket' => TicketReference::class
+        'ticket' => TicketReference::class,
     ];
 }

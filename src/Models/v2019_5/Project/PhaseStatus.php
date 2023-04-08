@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Project;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,11 +12,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property StatusIndicatorReference $statusIndicator
  * @property array $boardAssociationIds
- * @property boolean $closedFlag
- * @property boolean $collapsedFlag
- * @property boolean $defaultFlag
- * @property boolean $inactiveFlag
- * @property integer $id
+ * @property bool $closedFlag
+ * @property bool $collapsedFlag
+ * @property bool $defaultFlag
+ * @property bool $inactiveFlag
+ * @property int $id
  * @property string $customStatusIndicatorName
  * @property string $name
  */
@@ -38,6 +37,6 @@ class PhaseStatus extends Model
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'name' => 'string',
-        'statusIndicator' => StatusIndicatorReference::class
+        'statusIndicator' => StatusIndicatorReference::class,
     ];
 }

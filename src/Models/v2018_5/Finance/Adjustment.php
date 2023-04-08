@@ -14,8 +14,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property array $customFields
  * @property float $amount
- * @property integer $agreementId
- * @property integer $id
+ * @property int $agreementId
+ * @property int $id
  * @property string $description
  */
 class Adjustment extends Model
@@ -32,6 +32,6 @@ class Adjustment extends Model
         'customFields' => 'array',
         'description' => 'string',
         'effectiveDate' => Carbon::class,
-        'id' => 'integer'
+        'id' => 'integer',
     ];
 }

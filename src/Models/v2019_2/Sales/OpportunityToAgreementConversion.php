@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Sales;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,15 +13,15 @@ use Spinen\ConnectWise\Support\Model;
  * @property array $includeDocumentIds
  * @property array $includeNoteIds
  * @property array $includeProductIds
- * @property boolean $billOneTimeFlag
- * @property boolean $includeAllDocumentsFlag
- * @property boolean $includeAllNotesFlag
- * @property boolean $includeAllProductsFlag
- * @property boolean $noEndingDateFlag
- * @property integer $agreementId
- * @property integer $billCycleId
- * @property integer $businessUnitId
- * @property integer $locationId
+ * @property bool $billOneTimeFlag
+ * @property bool $includeAllDocumentsFlag
+ * @property bool $includeAllNotesFlag
+ * @property bool $includeAllProductsFlag
+ * @property bool $noEndingDateFlag
+ * @property int $agreementId
+ * @property int $billCycleId
+ * @property int $businessUnitId
+ * @property int $locationId
  * @property string $endDate
  * @property string $name
  * @property string $startDate
@@ -50,6 +49,6 @@ class OpportunityToAgreementConversion extends Model
         'name' => 'string',
         'noEndingDateFlag' => 'boolean',
         'startDate' => 'string',
-        'type' => AgreementTypeReference::class
+        'type' => AgreementTypeReference::class,
     ];
 }

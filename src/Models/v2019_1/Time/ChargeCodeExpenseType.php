@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Time;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,7 +12,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property ChargeCodeReference $chargeCode
  * @property ExpenseTypeReference $type
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  */
 class ChargeCodeExpenseType extends Model
 {
@@ -26,6 +25,6 @@ class ChargeCodeExpenseType extends Model
         '_info' => Metadata::class,
         'chargeCode' => ChargeCodeReference::class,
         'id' => 'integer',
-        'type' => ExpenseTypeReference::class
+        'type' => ExpenseTypeReference::class,
     ];
 }

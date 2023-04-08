@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for EndpointResponse
  *
- * @property integer $code
- * @property integer $sort
+ * @property int $code
+ * @property int $sort
  * @property string $id
  * @property string $message
  */
@@ -26,6 +25,6 @@ class EndpointResponse extends Model
         'code' => 'integer',
         'id' => 'string',
         'message' => 'string',
-        'sort' => 'integer'
+        'sort' => 'integer',
     ];
 }

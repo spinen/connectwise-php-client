@@ -2,15 +2,12 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Time;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class TimePeriodSetupDefaults Version v2018_4
  *
  * Model for TimePeriodSetupDefaults
- *
-
  */
 class TimePeriodSetupDefaults extends Model
 {

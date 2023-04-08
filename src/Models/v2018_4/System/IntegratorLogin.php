@@ -15,48 +15,48 @@ use Spinen\ConnectWise\Support\Model;
  * @property MemberReference $inactivatedBy
  * @property MemberReference $member
  * @property Metadata $_info
- * @property boolean $CompanyLegacyCallbackFlag
- * @property boolean $activityApiFlag
- * @property boolean $activityLegacyCallbackFlag
- * @property boolean $agreementApiFlag
- * @property boolean $agreementCallbackLegacyFlag
- * @property boolean $canAccessAllApisFlag
- * @property boolean $canAccessAllRecordsFlag
- * @property boolean $companyApiFlag
- * @property boolean $configurationApiFlag
- * @property boolean $configurationAutoChildFlag
- * @property boolean $configurationChildlingFlag
- * @property boolean $configurationLegacyCallbackFlag
- * @property boolean $contactApiFlag
- * @property boolean $contactLegacyCallbackFlag
- * @property boolean $documentApiFlag
- * @property boolean $inactiveFlag
- * @property boolean $invoiceApiFlag
- * @property boolean $logMeInSupportApiFlag
- * @property boolean $managedServicesApiFlag
- * @property boolean $managedServicesAutoChildFlag
- * @property boolean $managedServicesChildingFlag
- * @property boolean $marketingApiFlag
- * @property boolean $memberApiFlag
- * @property boolean $ntrSupportApiFlag
- * @property boolean $opportunityApiFlag
- * @property boolean $opportunityConversionApiFlag
- * @property boolean $opportunityLegacyCallbackFlag
- * @property boolean $productApiFlag
- * @property boolean $productLegacyCallbackFlag
- * @property boolean $projectApiFlag
- * @property boolean $projectLegacyCallbackFlag
- * @property boolean $purchasingApiFlag
- * @property boolean $purchasingLegacyCallbackFlag
- * @property boolean $reportingApiFlag
- * @property boolean $scheduleApiFlag
- * @property boolean $scheduleLegacyCallbackFlag
- * @property boolean $serviceBoardLegacyCallbackFlag
- * @property boolean $serviceTicketApiFlag
- * @property boolean $systemApiFlag
- * @property boolean $timeEntryApiFlag
- * @property boolean $timeEntryLegacyCallbackFlag
- * @property integer $id
+ * @property bool $CompanyLegacyCallbackFlag
+ * @property bool $activityApiFlag
+ * @property bool $activityLegacyCallbackFlag
+ * @property bool $agreementApiFlag
+ * @property bool $agreementCallbackLegacyFlag
+ * @property bool $canAccessAllApisFlag
+ * @property bool $canAccessAllRecordsFlag
+ * @property bool $companyApiFlag
+ * @property bool $configurationApiFlag
+ * @property bool $configurationAutoChildFlag
+ * @property bool $configurationChildlingFlag
+ * @property bool $configurationLegacyCallbackFlag
+ * @property bool $contactApiFlag
+ * @property bool $contactLegacyCallbackFlag
+ * @property bool $documentApiFlag
+ * @property bool $inactiveFlag
+ * @property bool $invoiceApiFlag
+ * @property bool $logMeInSupportApiFlag
+ * @property bool $managedServicesApiFlag
+ * @property bool $managedServicesAutoChildFlag
+ * @property bool $managedServicesChildingFlag
+ * @property bool $marketingApiFlag
+ * @property bool $memberApiFlag
+ * @property bool $ntrSupportApiFlag
+ * @property bool $opportunityApiFlag
+ * @property bool $opportunityConversionApiFlag
+ * @property bool $opportunityLegacyCallbackFlag
+ * @property bool $productApiFlag
+ * @property bool $productLegacyCallbackFlag
+ * @property bool $projectApiFlag
+ * @property bool $projectLegacyCallbackFlag
+ * @property bool $purchasingApiFlag
+ * @property bool $purchasingLegacyCallbackFlag
+ * @property bool $reportingApiFlag
+ * @property bool $scheduleApiFlag
+ * @property bool $scheduleLegacyCallbackFlag
+ * @property bool $serviceBoardLegacyCallbackFlag
+ * @property bool $serviceTicketApiFlag
+ * @property bool $systemApiFlag
+ * @property bool $timeEntryApiFlag
+ * @property bool $timeEntryLegacyCallbackFlag
+ * @property int $id
  * @property string $activityCallbackUrl
  * @property string $agreementCallbackUrl
  * @property string $companyCallbackUrl
@@ -140,6 +140,6 @@ class IntegratorLogin extends Model
         'timeEntryApiFlag' => 'boolean',
         'timeEntryCallbackUrl' => 'string',
         'timeEntryLegacyCallbackFlag' => 'boolean',
-        'username' => 'string'
+        'username' => 'string',
     ];
 }

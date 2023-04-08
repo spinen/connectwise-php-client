@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,8 +13,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property WarehouseBinReference $warehouseBin
  * @property WarehouseReference $warehouse
- * @property integer $id
- * @property integer $onHand
+ * @property int $id
+ * @property int $onHand
  */
 class InventoryByWarehouse extends Model
 {
@@ -30,6 +29,6 @@ class InventoryByWarehouse extends Model
         'id' => 'integer',
         'onHand' => 'integer',
         'warehouse' => WarehouseReference::class,
-        'warehouseBin' => WarehouseBinReference::class
+        'warehouseBin' => WarehouseBinReference::class,
     ];
 }

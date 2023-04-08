@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -26,32 +25,32 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property StateReference $state
  * @property SystemLocationReference $location
- * @property boolean $NoWatermarkFlag
- * @property boolean $allowRestrictedDeptOnRoutingFlag
- * @property boolean $billProductAfterShipFlag
- * @property boolean $billProjectCompleteFlag
- * @property boolean $billProjectUnapprovedFlag
- * @property boolean $billSalesOrderCompleteFlag
- * @property boolean $billTicketCompleteFlag
- * @property boolean $billTicketSeparatelyFlag
- * @property boolean $billTicketUnapprovedFlag
- * @property boolean $chargeAdjToFirmFlag
- * @property boolean $copyAgreementProductsFlag
- * @property boolean $copyNonServiceProductsFlag
- * @property boolean $copyServiceProductsFlag
- * @property boolean $deliveryReceiptFlag
- * @property boolean $disableRoutingEmailFlag
- * @property boolean $displayTaxFlag
- * @property boolean $excludeAvalaraFlag
- * @property boolean $excludeDoNotBillExpenseFlag
- * @property boolean $excludeDoNotBillProductFlag
- * @property boolean $excludeDoNotBillTimeFlag
- * @property boolean $printLogoFlag
- * @property boolean $progressTimeFlag
- * @property boolean $readReceiptFlag
- * @property boolean $restrictDownpaymentFlag
- * @property boolean $restrictProjectDownpaymentFlag
- * @property integer $id
+ * @property bool $NoWatermarkFlag
+ * @property bool $allowRestrictedDeptOnRoutingFlag
+ * @property bool $billProductAfterShipFlag
+ * @property bool $billProjectCompleteFlag
+ * @property bool $billProjectUnapprovedFlag
+ * @property bool $billSalesOrderCompleteFlag
+ * @property bool $billTicketCompleteFlag
+ * @property bool $billTicketSeparatelyFlag
+ * @property bool $billTicketUnapprovedFlag
+ * @property bool $chargeAdjToFirmFlag
+ * @property bool $copyAgreementProductsFlag
+ * @property bool $copyNonServiceProductsFlag
+ * @property bool $copyServiceProductsFlag
+ * @property bool $deliveryReceiptFlag
+ * @property bool $disableRoutingEmailFlag
+ * @property bool $displayTaxFlag
+ * @property bool $excludeAvalaraFlag
+ * @property bool $excludeDoNotBillExpenseFlag
+ * @property bool $excludeDoNotBillProductFlag
+ * @property bool $excludeDoNotBillTimeFlag
+ * @property bool $printLogoFlag
+ * @property bool $progressTimeFlag
+ * @property bool $readReceiptFlag
+ * @property bool $restrictDownpaymentFlag
+ * @property bool $restrictProjectDownpaymentFlag
+ * @property int $id
  * @property string $addressOne
  * @property string $addressTwo
  * @property string $businessNumber
@@ -136,6 +135,6 @@ class BillingSetup extends Model
         'standardInvoiceFixed' => InvoiceTemplateReference::class,
         'state' => StateReference::class,
         'topcomment' => 'string',
-        'zip' => 'string'
+        'zip' => 'string',
     ];
 }

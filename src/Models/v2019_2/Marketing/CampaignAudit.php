@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Marketing;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,11 +10,11 @@ use Spinen\ConnectWise\Support\Model;
  * Model for CampaignAudit
  *
  * @property GroupReference $group
- * @property integer $campaignId
- * @property integer $documentsCreated
- * @property integer $emailsSent
- * @property integer $emailsUnsent
- * @property integer $id
+ * @property int $campaignId
+ * @property int $documentsCreated
+ * @property int $emailsSent
+ * @property int $emailsUnsent
+ * @property int $id
  * @property string $createdBy
  * @property string $dateCreated
  * @property string $emailSubject
@@ -36,6 +35,6 @@ class CampaignAudit extends Model
         'emailsSent' => 'integer',
         'emailsUnsent' => 'integer',
         'group' => GroupReference::class,
-        'id' => 'integer'
+        'id' => 'integer',
     ];
 }

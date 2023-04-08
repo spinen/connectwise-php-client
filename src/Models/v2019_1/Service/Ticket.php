@@ -35,20 +35,20 @@ use Spinen\ConnectWise\Support\Model;
  * @property ServiceTypeReference $type
  * @property SiteReference $site
  * @property TicketReference $mergedParentTicket
- * @property boolean $allowAllClientsPortalView
- * @property boolean $approved
- * @property boolean $automaticEmailCcFlag
- * @property boolean $automaticEmailContactFlag
- * @property boolean $automaticEmailResourceFlag
- * @property boolean $closedFlag
- * @property boolean $customerUpdatedFlag
- * @property boolean $hasChildTicket
- * @property boolean $hasMergedChildTicketFlag
- * @property boolean $isInSla
- * @property boolean $lagNonworkingDaysFlag
- * @property boolean $predecessorClosedFlag
- * @property boolean $processNotifications
- * @property boolean $skipCallback
+ * @property bool $allowAllClientsPortalView
+ * @property bool $approved
+ * @property bool $automaticEmailCcFlag
+ * @property bool $automaticEmailContactFlag
+ * @property bool $automaticEmailResourceFlag
+ * @property bool $closedFlag
+ * @property bool $customerUpdatedFlag
+ * @property bool $hasChildTicket
+ * @property bool $hasMergedChildTicketFlag
+ * @property bool $isInSla
+ * @property bool $lagNonworkingDaysFlag
+ * @property bool $predecessorClosedFlag
+ * @property bool $processNotifications
+ * @property bool $skipCallback
  * @property float $actualHours
  * @property float $billingAmount
  * @property float $budgetHours
@@ -60,19 +60,19 @@ use Spinen\ConnectWise\Support\Model;
  * @property float $estimatedTimeRevenue
  * @property float $hourlyRate
  * @property float $subBillingAmount
- * @property integer $businessUnitId
- * @property integer $duration
- * @property integer $id
- * @property integer $knowledgeBaseCategoryId
- * @property integer $knowledgeBaseLinkId
- * @property integer $knowledgeBaseSubCategoryId
- * @property integer $lagDays
- * @property integer $locationId
- * @property integer $parentTicketId
- * @property integer $predecessorId
- * @property integer $resPlanMinutes
- * @property integer $resolveMinutes
- * @property integer $respondMinutes
+ * @property int $businessUnitId
+ * @property int $duration
+ * @property int $id
+ * @property int $knowledgeBaseCategoryId
+ * @property int $knowledgeBaseLinkId
+ * @property int $knowledgeBaseSubCategoryId
+ * @property int $lagDays
+ * @property int $locationId
+ * @property int $parentTicketId
+ * @property int $predecessorId
+ * @property int $resPlanMinutes
+ * @property int $resolveMinutes
+ * @property int $respondMinutes
  * @property string $addressLine1
  * @property string $addressLine2
  * @property string $automaticEmailCc
@@ -220,6 +220,6 @@ class Ticket extends Model
         'team' => ServiceTeamReference::class,
         'type' => ServiceTypeReference::class,
         'wbsCode' => 'string',
-        'zip' => 'string'
+        'zip' => 'string',
     ];
 }

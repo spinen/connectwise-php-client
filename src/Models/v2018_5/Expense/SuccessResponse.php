@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Expense;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SuccessResponse
  *
- * @property boolean $success
+ * @property bool $success
  * @property string $message
  */
 class SuccessResponse extends Model
@@ -22,6 +21,6 @@ class SuccessResponse extends Model
      */
     protected $casts = [
         'message' => 'string',
-        'success' => 'boolean'
+        'success' => 'boolean',
     ];
 }

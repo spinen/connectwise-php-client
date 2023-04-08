@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Sales;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,13 +10,13 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ActivityType
  *
  * @property Metadata $_info
- * @property boolean $defaultFlag
- * @property boolean $emailFlag
- * @property boolean $historyFlag
- * @property boolean $inactiveFlag
- * @property boolean $memoFlag
- * @property integer $id
- * @property integer $points
+ * @property bool $defaultFlag
+ * @property bool $emailFlag
+ * @property bool $historyFlag
+ * @property bool $inactiveFlag
+ * @property bool $memoFlag
+ * @property int $id
+ * @property int $points
  * @property string $name
  */
 class ActivityType extends Model
@@ -36,6 +35,6 @@ class ActivityType extends Model
         'inactiveFlag' => 'boolean',
         'memoFlag' => 'boolean',
         'name' => 'string',
-        'points' => 'integer'
+        'points' => 'integer',
     ];
 }

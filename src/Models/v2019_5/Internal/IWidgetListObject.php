@@ -2,15 +2,12 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Internal;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class IWidgetListObject Version v2019_5
  *
  * Model for IWidgetListObject
- *
-
  */
 class IWidgetListObject extends Model
 {

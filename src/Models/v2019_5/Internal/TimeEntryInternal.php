@@ -25,17 +25,17 @@ use Spinen\ConnectWise\Support\Model;
  * @property WorkRoleReference $workRole
  * @property WorkTypeReference $workType
  * @property array $customFields
- * @property boolean $addToDetailDescriptionFlag
- * @property boolean $addToInternalAnalysisFlag
- * @property boolean $addToResolutionFlag
- * @property boolean $emailCcFlag
- * @property boolean $emailContactFlag
- * @property boolean $emailResourceFlag
+ * @property bool $addToDetailDescriptionFlag
+ * @property bool $addToInternalAnalysisFlag
+ * @property bool $addToResolutionFlag
+ * @property bool $emailCcFlag
+ * @property bool $emailContactFlag
+ * @property bool $emailResourceFlag
  * @property float $actualHours
  * @property float $hourlyRate
  * @property float $hoursBilled
  * @property float $hoursDeduct
- * @property integer $id
+ * @property int $id
  * @property string $billableOption
  * @property string $emailCc
  * @property string $internalNotes
@@ -80,6 +80,6 @@ class TimeEntryInternal extends Model
         'timeSheet' => TimeSheetReference::class,
         'timeStart' => Carbon::class,
         'workRole' => WorkRoleReference::class,
-        'workType' => WorkTypeReference::class
+        'workType' => WorkTypeReference::class,
     ];
 }

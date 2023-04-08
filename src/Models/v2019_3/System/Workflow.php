@@ -16,9 +16,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property SystemDepartmentReference $department
  * @property SystemLocationReference $location
  * @property WorkflowTableTypeReference $tableType
- * @property boolean $activateFlag
- * @property integer $batchInterval
- * @property integer $id
+ * @property bool $activateFlag
+ * @property int $batchInterval
+ * @property int $id
  * @property string $batchFrequencyUnit
  * @property string $batchSchedule
  * @property string $name
@@ -42,6 +42,6 @@ class Workflow extends Model
         'id' => 'integer',
         'location' => SystemLocationReference::class,
         'name' => 'string',
-        'tableType' => WorkflowTableTypeReference::class
+        'tableType' => WorkflowTableTypeReference::class,
     ];
 }

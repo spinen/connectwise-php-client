@@ -11,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for EmailOpened
  *
  * @property Carbon $dateOpened
- * @property integer $campaignId
- * @property integer $contactId
- * @property integer $id
+ * @property int $campaignId
+ * @property int $contactId
+ * @property int $id
  */
 class EmailOpened extends Model
 {
@@ -26,6 +26,6 @@ class EmailOpened extends Model
         'campaignId' => 'integer',
         'contactId' => 'integer',
         'dateOpened' => Carbon::class,
-        'id' => 'integer'
+        'id' => 'integer',
     ];
 }

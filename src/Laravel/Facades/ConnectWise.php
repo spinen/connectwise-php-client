@@ -6,8 +6,6 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * Class ConnectWiseFacade
- *
- * @package Spinen\ConnectWise\Laravel\Facades
  */
 class ConnectWise extends Facade
 {

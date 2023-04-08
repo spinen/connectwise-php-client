@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -19,13 +18,13 @@ use Spinen\ConnectWise\Support\Model;
  * @property StateReference $stateReference
  * @property TaxCodeReference $taxCode
  * @property TimeZoneSetupReference $timeZone
- * @property boolean $defaultBillingFlag
- * @property boolean $defaultMailingFlag
- * @property boolean $defaultShippingFlag
- * @property boolean $inactiveFlag
- * @property boolean $primaryAddressFlag
+ * @property bool $defaultBillingFlag
+ * @property bool $defaultMailingFlag
+ * @property bool $defaultShippingFlag
+ * @property bool $inactiveFlag
+ * @property bool $primaryAddressFlag
  * @property float $expenseReimbursement
- * @property integer $id
+ * @property int $id
  * @property string $addressFormat
  * @property string $addressLine1
  * @property string $addressLine2
@@ -66,6 +65,6 @@ class CompanySite extends Model
         'stateReference' => StateReference::class,
         'taxCode' => TaxCodeReference::class,
         'timeZone' => TimeZoneSetupReference::class,
-        'zip' => 'string'
+        'zip' => 'string',
     ];
 }

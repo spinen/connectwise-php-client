@@ -22,9 +22,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property float $overageRate
  * @property float $rate
  * @property float $roundBillHours
- * @property integer $agreementId
- * @property integer $id
- * @property integer $locationId
+ * @property int $agreementId
+ * @property int $id
+ * @property int $locationId
  * @property string $billTime
  * @property string $overageRateType
  * @property string $rateType
@@ -54,6 +54,6 @@ class AgreementWorkType extends Model
         'rateType' => 'string',
         'roundBillHours' => 'float',
         'site' => SiteReference::class,
-        'workType' => WorkTypeReference::class
+        'workType' => WorkTypeReference::class,
     ];
 }

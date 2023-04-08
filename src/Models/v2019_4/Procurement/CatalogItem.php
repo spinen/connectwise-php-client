@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -21,25 +20,25 @@ use Spinen\ConnectWise\Support\Model;
  * @property SLAReference $sla
  * @property UnitOfMeasureReference $unitOfMeasure
  * @property array $customFields
- * @property boolean $calculatedCostFlag
- * @property boolean $calculatedPriceFlag
- * @property boolean $dropShipFlag
- * @property boolean $inactiveFlag
- * @property boolean $phaseProductFlag
- * @property boolean $recurringFlag
- * @property boolean $recurringOneTimeFlag
- * @property boolean $serializedCostFlag
- * @property boolean $serializedFlag
- * @property boolean $specialOrderFlag
- * @property boolean $taxableFlag
+ * @property bool $calculatedCostFlag
+ * @property bool $calculatedPriceFlag
+ * @property bool $dropShipFlag
+ * @property bool $inactiveFlag
+ * @property bool $phaseProductFlag
+ * @property bool $recurringFlag
+ * @property bool $recurringOneTimeFlag
+ * @property bool $serializedCostFlag
+ * @property bool $serializedFlag
+ * @property bool $specialOrderFlag
+ * @property bool $taxableFlag
  * @property float $calculatedCost
  * @property float $calculatedPrice
  * @property float $cost
  * @property float $price
  * @property float $recurringCost
  * @property float $recurringRevenue
- * @property integer $id
- * @property integer $minStockLevel
+ * @property int $id
+ * @property int $minStockLevel
  * @property string $customerDescription
  * @property string $dateEntered
  * @property string $description
@@ -100,6 +99,6 @@ class CatalogItem extends Model
         'type' => ProductTypeReference::class,
         'unitOfMeasure' => UnitOfMeasureReference::class,
         'vendor' => CompanyReference::class,
-        'vendorSku' => 'string'
+        'vendorSku' => 'string',
     ];
 }

@@ -26,16 +26,16 @@ use Spinen\ConnectWise\Support\Model;
  * @property array $customFields
  * @property array $integratorTags
  * @property array $typeIds
- * @property boolean $childrenFlag
- * @property boolean $defaultBillingFlag
- * @property boolean $defaultFlag
- * @property boolean $disablePortalLoginFlag
- * @property boolean $inactiveFlag
- * @property boolean $marriedFlag
- * @property boolean $unsubscribeFlag
- * @property integer $defaultMergeContactId
- * @property integer $id
- * @property integer $portalSecurityLevel
+ * @property bool $childrenFlag
+ * @property bool $defaultBillingFlag
+ * @property bool $defaultFlag
+ * @property bool $disablePortalLoginFlag
+ * @property bool $inactiveFlag
+ * @property bool $marriedFlag
+ * @property bool $unsubscribeFlag
+ * @property int $defaultMergeContactId
+ * @property int $id
+ * @property int $portalSecurityLevel
  * @property string $addressLine1
  * @property string $addressLine2
  * @property string $city
@@ -114,6 +114,6 @@ class Contact extends Model
         'twitterUrl' => 'string',
         'typeIds' => 'array',
         'unsubscribeFlag' => 'boolean',
-        'zip' => 'string'
+        'zip' => 'string',
     ];
 }

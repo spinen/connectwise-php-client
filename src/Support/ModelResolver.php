@@ -4,8 +4,6 @@ namespace Spinen\ConnectWise\Support;
 
 /**
  * Class ModelResolver
- *
- * @package Spinen\ConnectWise\Support
  */
 class ModelResolver
 {
@@ -23,9 +21,8 @@ class ModelResolver
      * a model by looking at the URI.  If the URI is for a specific id, then the id has to be converted to the wildcard
      * in the map. If it is a single resource & not a collection then the id has to be removed from the end.
      *
-     * @param string $uri
-     * @param string $version
-     *
+     * @param  string  $uri
+     * @param  string  $version
      * @return string|null
      */
     public function find($uri, $version)
@@ -45,7 +42,7 @@ class ModelResolver
         $pattern = preg_replace('|(/)\\d+(/?)|u', '$1{id}$2', $pattern);
 
         // Make regex
-        $pattern = '|^/' . $pattern . '$|ui';
+        $pattern = '|^/'.$pattern.'$|ui';
 
         // Search the map for the uri that matches
         return ($uri = $this->maps[$version]->search(
@@ -58,14 +55,14 @@ class ModelResolver
     /**
      * If not already loaded, load in the uri to class for the version
      *
-     * @param string $version
+     * @param  string  $version
      */
     protected function loadVersionIfNeeded($version)
     {
-        if (!array_key_exists($version, $this->maps)) {
+        if (! array_key_exists($version, $this->maps)) {
             $this->maps[$version] = collect(
                 json_decode(
-                    @file_get_contents(__DIR__ . '/../Models/v' . str_replace('.', '_', $version) . '/map.json'),
+                    @file_get_contents(__DIR__.'/../Models/v'.str_replace('.', '_', $version).'/map.json'),
                     true
                 )
             );

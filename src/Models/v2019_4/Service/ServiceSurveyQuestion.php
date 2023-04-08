@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,12 +11,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property array $options
- * @property boolean $includeFlag
- * @property boolean $requiredFlag
- * @property integer $id
- * @property integer $noAnswerPoints
- * @property integer $sequenceNumber
- * @property integer $surveyId
+ * @property bool $includeFlag
+ * @property bool $requiredFlag
+ * @property int $id
+ * @property int $noAnswerPoints
+ * @property int $sequenceNumber
+ * @property int $surveyId
  * @property string $question
  * @property string $type
  */
@@ -38,6 +37,6 @@ class ServiceSurveyQuestion extends Model
         'requiredFlag' => 'boolean',
         'sequenceNumber' => 'integer',
         'surveyId' => 'integer',
-        'type' => 'string'
+        'type' => 'string',
     ];
 }

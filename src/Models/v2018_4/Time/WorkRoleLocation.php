@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Time;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,7 +13,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property SystemLocationReference $location
  * @property WorkRoleReference $workRole
  * @property float $hourlyRate
- * @property integer $id
+ * @property int $id
  */
 class WorkRoleLocation extends Model
 {
@@ -28,6 +27,6 @@ class WorkRoleLocation extends Model
         'hourlyRate' => 'float',
         'id' => 'integer',
         'location' => SystemLocationReference::class,
-        'workRole' => WorkRoleReference::class
+        'workRole' => WorkRoleReference::class,
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for PortalSecurityLevel
  *
  * @property Metadata $_info
- * @property boolean $isDefaultFlag
- * @property integer $id
+ * @property bool $isDefaultFlag
+ * @property int $id
  * @property string $caption
  * @property string $captionIdentifier
  */
@@ -28,6 +27,6 @@ class PortalSecurityLevel extends Model
         'caption' => 'string',
         'captionIdentifier' => 'string',
         'id' => 'integer',
-        'isDefaultFlag' => 'boolean'
+        'isDefaultFlag' => 'boolean',
     ];
 }

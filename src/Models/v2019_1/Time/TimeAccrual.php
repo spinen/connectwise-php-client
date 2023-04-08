@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Time;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,19 +11,19 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property SystemLocationReference $location
- * @property boolean $holidayCarryoverAllowedFlag
- * @property boolean $holidayFlag
- * @property boolean $ptoCarryoverAllowedFlag
- * @property boolean $ptoFlag
- * @property boolean $sickCarryoverAllowedFlag
- * @property boolean $sickFlag
- * @property boolean $vacationCarryoverAllowedFlag
- * @property boolean $vacationFlag
+ * @property bool $holidayCarryoverAllowedFlag
+ * @property bool $holidayFlag
+ * @property bool $ptoCarryoverAllowedFlag
+ * @property bool $ptoFlag
+ * @property bool $sickCarryoverAllowedFlag
+ * @property bool $sickFlag
+ * @property bool $vacationCarryoverAllowedFlag
+ * @property bool $vacationFlag
  * @property float $holidayCarryoverLimit
  * @property float $ptoCarryoverLimit
  * @property float $sickCarryoverLimit
  * @property float $vacationCarryoverLimit
- * @property integer $id
+ * @property int $id
  * @property string $holidayAvailableType
  * @property string $ptoAvailableType
  * @property string $sickAvailableType
@@ -56,6 +55,6 @@ class TimeAccrual extends Model
         'vacationAvailableType' => 'string',
         'vacationCarryoverAllowedFlag' => 'boolean',
         'vacationCarryoverLimit' => 'float',
-        'vacationFlag' => 'boolean'
+        'vacationFlag' => 'boolean',
     ];
 }

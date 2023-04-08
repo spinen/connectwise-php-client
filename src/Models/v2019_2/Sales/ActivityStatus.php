@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Sales;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,11 +10,11 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ActivityStatus
  *
  * @property Metadata $_info
- * @property boolean $closedFlag
- * @property boolean $defaultFlag
- * @property boolean $inactiveFlag
- * @property boolean $spawnFollowupFlag
- * @property integer $id
+ * @property bool $closedFlag
+ * @property bool $defaultFlag
+ * @property bool $inactiveFlag
+ * @property bool $spawnFollowupFlag
+ * @property int $id
  * @property string $name
  */
 class ActivityStatus extends Model
@@ -32,6 +31,6 @@ class ActivityStatus extends Model
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'name' => 'string',
-        'spawnFollowupFlag' => 'boolean'
+        'spawnFollowupFlag' => 'boolean',
     ];
 }

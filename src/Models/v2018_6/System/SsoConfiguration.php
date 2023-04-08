@@ -14,8 +14,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Carbon $samlCertificateValidTo
  * @property Metadata $_info
  * @property array $locationIds
- * @property boolean $inactiveFlag
- * @property integer $id
+ * @property bool $inactiveFlag
+ * @property int $id
  * @property string $name
  * @property string $samlCertificateIssuedTo
  * @property string $samlCertificateName
@@ -46,6 +46,6 @@ class SsoConfiguration extends Model
         'samlEntityId' => 'string',
         'samlIdpCertificate' => 'string',
         'samlSignInUrl' => 'string',
-        'ssoType' => 'string'
+        'ssoType' => 'string',
     ];
 }

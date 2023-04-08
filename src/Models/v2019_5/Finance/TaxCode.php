@@ -17,39 +17,39 @@ use Spinen\ConnectWise\Support\Model;
  * @property array $expenseTypeIds
  * @property array $productTypeIds
  * @property array $workRoleIds
- * @property boolean $addAllExpenseTypes
- * @property boolean $addAllProductTypes
- * @property boolean $addAllWorkRoles
- * @property boolean $canadaCalculateGSTFlag
- * @property boolean $defaultFlag
- * @property boolean $displayOnInvoiceFlag
- * @property boolean $levelFiveApplySingleUnitFlag
- * @property boolean $levelFiveExpensesFlag
- * @property boolean $levelFiveProductsFlag
- * @property boolean $levelFiveServicesFlag
- * @property boolean $levelFourApplySingleUnitFlag
- * @property boolean $levelFourExpensesFlag
- * @property boolean $levelFourProductsFlag
- * @property boolean $levelFourServicesFlag
- * @property boolean $levelOneApplySingleUnitFlag
- * @property boolean $levelOneExpensesFlag
- * @property boolean $levelOneProductsFlag
- * @property boolean $levelOneServicesFlag
- * @property boolean $levelSixApplySingleUnitFlag
- * @property boolean $levelSixExpensesFlag
- * @property boolean $levelSixProductsFlag
- * @property boolean $levelSixServicesFlag
- * @property boolean $levelThreeApplySingleUnitFlag
- * @property boolean $levelThreeExpensesFlag
- * @property boolean $levelThreeProductsFlag
- * @property boolean $levelThreeServicesFlag
- * @property boolean $levelTwoApplySingleUnitFlag
- * @property boolean $levelTwoExpensesFlag
- * @property boolean $levelTwoProductsFlag
- * @property boolean $levelTwoServicesFlag
- * @property boolean $removeAllExpenseTypes
- * @property boolean $removeAllProductTypes
- * @property boolean $removeAllWorkRoles
+ * @property bool $addAllExpenseTypes
+ * @property bool $addAllProductTypes
+ * @property bool $addAllWorkRoles
+ * @property bool $canadaCalculateGSTFlag
+ * @property bool $defaultFlag
+ * @property bool $displayOnInvoiceFlag
+ * @property bool $levelFiveApplySingleUnitFlag
+ * @property bool $levelFiveExpensesFlag
+ * @property bool $levelFiveProductsFlag
+ * @property bool $levelFiveServicesFlag
+ * @property bool $levelFourApplySingleUnitFlag
+ * @property bool $levelFourExpensesFlag
+ * @property bool $levelFourProductsFlag
+ * @property bool $levelFourServicesFlag
+ * @property bool $levelOneApplySingleUnitFlag
+ * @property bool $levelOneExpensesFlag
+ * @property bool $levelOneProductsFlag
+ * @property bool $levelOneServicesFlag
+ * @property bool $levelSixApplySingleUnitFlag
+ * @property bool $levelSixExpensesFlag
+ * @property bool $levelSixProductsFlag
+ * @property bool $levelSixServicesFlag
+ * @property bool $levelThreeApplySingleUnitFlag
+ * @property bool $levelThreeExpensesFlag
+ * @property bool $levelThreeProductsFlag
+ * @property bool $levelThreeServicesFlag
+ * @property bool $levelTwoApplySingleUnitFlag
+ * @property bool $levelTwoExpensesFlag
+ * @property bool $levelTwoProductsFlag
+ * @property bool $levelTwoServicesFlag
+ * @property bool $removeAllExpenseTypes
+ * @property bool $removeAllProductTypes
+ * @property bool $removeAllWorkRoles
  * @property float $levelFiveApplySingleUnitMax
  * @property float $levelFiveApplySingleUnitMin
  * @property float $levelFiveRate
@@ -74,7 +74,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property float $levelTwoApplySingleUnitMin
  * @property float $levelTwoRate
  * @property float $levelTwoTaxableMax
- * @property integer $id
+ * @property int $id
  * @property string $description
  * @property string $identifier
  * @property string $invoiceCaption
@@ -202,6 +202,6 @@ class TaxCode extends Model
         'removeAllExpenseTypes' => 'boolean',
         'removeAllProductTypes' => 'boolean',
         'removeAllWorkRoles' => 'boolean',
-        'workRoleIds' => 'array'
+        'workRoleIds' => 'array',
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,8 +13,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property MemberReference $member
  * @property Metadata $_info
  * @property ServiceTeamReference $team
- * @property boolean $teamLeaderFlag
- * @property integer $id
+ * @property bool $teamLeaderFlag
+ * @property int $id
  */
 class TeamMember extends Model
 {
@@ -30,6 +29,6 @@ class TeamMember extends Model
         'id' => 'integer',
         'member' => MemberReference::class,
         'team' => ServiceTeamReference::class,
-        'teamLeaderFlag' => 'boolean'
+        'teamLeaderFlag' => 'boolean',
     ];
 }

@@ -2,15 +2,12 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class ManagementLogDocumentInfo Version v2019_1
  *
  * Model for ManagementLogDocumentInfo
- *
-
  */
 class ManagementLogDocumentInfo extends Model
 {

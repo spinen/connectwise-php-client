@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Schedule;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property HolidayListReference $holidayList
  * @property Metadata $_info
- * @property boolean $allDayFlag
- * @property integer $id
+ * @property bool $allDayFlag
+ * @property int $id
  * @property string $date
  * @property string $name
  * @property string $timeEnd
@@ -34,6 +33,6 @@ class Holiday extends Model
         'id' => 'integer',
         'name' => 'string',
         'timeEnd' => 'string',
-        'timeStart' => 'string'
+        'timeStart' => 'string',
     ];
 }

@@ -29,20 +29,20 @@ use Spinen\ConnectWise\Support\Model;
  * @property TaxCodeReference $taxCode
  * @property WarehouseReference $warehouse
  * @property array $customFields
- * @property boolean $closedFlag
- * @property boolean $dropShipCustomerFlag
- * @property boolean $taxFreightFlag
- * @property boolean $taxPoFlag
- * @property boolean $updateShipmentInfo
- * @property boolean $updateVendorOrderNumber
+ * @property bool $closedFlag
+ * @property bool $dropShipCustomerFlag
+ * @property bool $taxFreightFlag
+ * @property bool $taxPoFlag
+ * @property bool $updateShipmentInfo
+ * @property bool $updateVendorOrderNumber
  * @property float $freightCost
  * @property float $freightTaxTotal
  * @property float $salesTax
  * @property float $subTotal
  * @property float $total
- * @property integer $businessUnitId
- * @property integer $id
- * @property integer $locationId
+ * @property int $businessUnitId
+ * @property int $id
+ * @property int $locationId
  * @property string $cancelReason
  * @property string $customerCity
  * @property string $customerExtension
@@ -120,6 +120,6 @@ class PurchaseOrder extends Model
         'vendorInvoiceNumber' => 'string',
         'vendorOrderNumber' => 'string',
         'vendorSite' => SiteReference::class,
-        'warehouse' => WarehouseReference::class
+        'warehouse' => WarehouseReference::class,
     ];
 }

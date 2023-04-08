@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Sales;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property SystemLocationReference $salesTeamLocation
- * @property boolean $inactiveFlag
- * @property integer $id
+ * @property bool $inactiveFlag
+ * @property int $id
  * @property string $salesTeamDescription
  * @property string $salesTeamIdentifier
  */
@@ -30,6 +29,6 @@ class SalesTeam extends Model
         'inactiveFlag' => 'boolean',
         'salesTeamDescription' => 'string',
         'salesTeamIdentifier' => 'string',
-        'salesTeamLocation' => SystemLocationReference::class
+        'salesTeamLocation' => SystemLocationReference::class,
     ];
 }
