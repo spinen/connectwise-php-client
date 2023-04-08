@@ -40,11 +40,6 @@ class Client
     protected $clientId;
 
     /**
-     * @var Guzzle
-     */
-    protected $guzzle;
-
-    /**
      * Headers that need to be used with token
      *
      * @var array
@@ -80,13 +75,6 @@ class Client
     protected $password;
 
     /**
-     * Resolves a model for the uri
-     *
-     * @var ModelResolver
-     */
-    protected $resolver;
-
-    /**
      * The supported versions
      *
      * @var array
@@ -101,13 +89,6 @@ class Client
         '2019.4',
         '2019.5',
     ];
-
-    /**
-     * Public & private keys to log into CW
-     *
-     * @var Token
-     */
-    protected $token;
 
     /**
      * URL to the ConnectWise installation
@@ -131,13 +112,6 @@ class Client
     ];
 
     /**
-     * Version of the API being requested
-     *
-     * @var string
-     */
-    protected $version;
-
-    /**
      * Client constructor.
      *
      * @param Token $token
@@ -145,11 +119,15 @@ class Client
      * @param ModelResolver $resolver
      * @param string|null $version Version of the models to use with the API responses
      */
-    public function __construct(Token $token, Guzzle $guzzle, ModelResolver $resolver, $version = null)
-    {
-        $this->token = $token;
-        $this->guzzle = $guzzle;
-        $this->resolver = $resolver;
+    public function __construct(
+        protected Token $token = new Token,
+        protected Guzzle $guzzle = new Guzzle,
+        protected ModelResolver $resolver = new ModelResolver,
+        protected ?string $version = null,
+    ) {
+        // $this->token = $token;
+        // $this->guzzle = $guzzle;
+        // $this->resolver = $resolver;
         $this->setVersion($version ?? Arr::last($this->supported));
     }
 
@@ -340,7 +318,7 @@ class Client
      */
     public function getUrl($path = '')
     {
-        return $this->url . '/v4_6_release/apis/3.0/' . ltrim($path, '/');
+        return $this->url . '/v4_6_release/apis/3.0/' . ltrim((string)$path, '/');
     }
 
     /**
