@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,12 +11,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property PurchaseOrderStatusEmailTemplateReference $emailTemplate
- * @property boolean $closedFlag
- * @property boolean $defaultClosedFlag
- * @property boolean $defaultFlag
- * @property boolean $inactiveFlag
- * @property integer $id
- * @property integer $sortOrder
+ * @property bool $closedFlag
+ * @property bool $defaultClosedFlag
+ * @property bool $defaultFlag
+ * @property bool $inactiveFlag
+ * @property int $id
+ * @property int $sortOrder
  * @property string $name
  */
 class PurchaseOrderStatus extends Model
@@ -36,6 +35,6 @@ class PurchaseOrderStatus extends Model
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'name' => 'string',
-        'sortOrder' => 'integer'
+        'sortOrder' => 'integer',
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,12 +13,12 @@ use Spinen\ConnectWise\Support\Model;
  * @property TeamRoleReference $accountManagerRole
  * @property TeamRoleReference $salesRepRole
  * @property TeamRoleReference $technicalContactRole
- * @property boolean $companyIdGenerationFlag
- * @property boolean $defaultYear
- * @property boolean $excludeSpacesFlag
- * @property boolean $lockProbabilityFlag
- * @property integer $companyListCount
- * @property integer $id
+ * @property bool $companyIdGenerationFlag
+ * @property bool $defaultYear
+ * @property bool $excludeSpacesFlag
+ * @property bool $lockProbabilityFlag
+ * @property int $companyListCount
+ * @property int $id
  * @property string $field10Caption
  * @property string $field1Caption
  * @property string $field2Caption
@@ -66,6 +65,6 @@ class Crm extends Model
         'primaryRepCaption' => 'string',
         'salesRepRole' => TeamRoleReference::class,
         'secondaryRepCaption' => 'string',
-        'technicalContactRole' => TeamRoleReference::class
+        'technicalContactRole' => TeamRoleReference::class,
     ];
 }

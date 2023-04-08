@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -22,6 +21,6 @@ class ReportDataResponse extends Model
      */
     protected $casts = [
         'column_definitions' => 'array',
-        'row_values' => 'array'
+        'row_values' => 'array',
     ];
 }

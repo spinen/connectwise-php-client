@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Sales;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,10 +12,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property array $includeDocumentIds
  * @property array $includeNoteIds
  * @property array $includeProductIds
- * @property boolean $includeAllDocumentsFlag
- * @property boolean $includeAllNotesFlag
- * @property boolean $includeAllProductsFlag
- * @property integer $ticketId
+ * @property bool $includeAllDocumentsFlag
+ * @property bool $includeAllNotesFlag
+ * @property bool $includeAllProductsFlag
+ * @property int $ticketId
  * @property string $summary
  */
 class OpportunityToServiceTicketConversion extends Model
@@ -34,6 +33,6 @@ class OpportunityToServiceTicketConversion extends Model
         'includeNoteIds' => 'array',
         'includeProductIds' => 'array',
         'summary' => 'string',
-        'ticketId' => 'integer'
+        'ticketId' => 'integer',
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,10 +13,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property SystemDepartmentReference $defaultDepartment
  * @property SystemLocationReference $defaultLocation
- * @property boolean $configBillCustomerFlag
- * @property boolean $disableNewCrossReferencesFlag
- * @property boolean $matchOnSerialNumberFlag
- * @property integer $id
+ * @property bool $configBillCustomerFlag
+ * @property bool $disableNewCrossReferencesFlag
+ * @property bool $matchOnSerialNumberFlag
+ * @property int $id
  * @property string $defaultBillingLevel
  * @property string $globalLoginPassword
  * @property string $globalLoginUsername
@@ -50,6 +49,6 @@ class ManagedDevicesIntegration extends Model
         'matchOnSerialNumberFlag' => 'boolean',
         'name' => 'string',
         'portalUrl' => 'string',
-        'solution' => 'string'
+        'solution' => 'string',
     ];
 }

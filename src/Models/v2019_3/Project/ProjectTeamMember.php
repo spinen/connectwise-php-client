@@ -17,8 +17,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property ProjectRoleReference $projectRole
  * @property WorkRoleReference $workRole
  * @property float $hours
- * @property integer $id
- * @property integer $projectId
+ * @property int $id
+ * @property int $projectId
  */
 class ProjectTeamMember extends Model
 {
@@ -36,6 +36,6 @@ class ProjectTeamMember extends Model
         'projectId' => 'integer',
         'projectRole' => ProjectRoleReference::class,
         'startDate' => Carbon::class,
-        'workRole' => WorkRoleReference::class
+        'workRole' => WorkRoleReference::class,
     ];
 }

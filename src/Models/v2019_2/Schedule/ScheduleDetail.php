@@ -15,7 +15,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property MemberReference $member
  * @property Metadata $_info
  * @property ScheduleEntryReference $scheduleEntry
- * @property integer $id
+ * @property int $id
  */
 class ScheduleDetail extends Model
 {
@@ -30,6 +30,6 @@ class ScheduleDetail extends Model
         'dateStart' => Carbon::class,
         'id' => 'integer',
         'member' => MemberReference::class,
-        'scheduleEntry' => ScheduleEntryReference::class
+        'scheduleEntry' => ScheduleEntryReference::class,
     ];
 }

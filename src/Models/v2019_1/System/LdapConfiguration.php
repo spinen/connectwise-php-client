@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for LdapConfiguration
  *
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $domain
  * @property string $name
  * @property string $server
@@ -28,6 +27,6 @@ class LdapConfiguration extends Model
         'domain' => 'string',
         'id' => 'integer',
         'name' => 'string',
-        'server' => 'string'
+        'server' => 'string',
     ];
 }

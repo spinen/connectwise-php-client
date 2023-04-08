@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -28,6 +27,6 @@ class ValidationError extends Model
         'details' => 'string',
         'field' => 'string',
         'message' => 'string',
-        'resource' => 'string'
+        'resource' => 'string',
     ];
 }

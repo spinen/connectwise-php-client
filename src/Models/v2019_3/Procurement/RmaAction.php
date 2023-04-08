@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for RmaAction
  *
  * @property Metadata $_info
- * @property boolean $defaultFlag
- * @property integer $id
+ * @property bool $defaultFlag
+ * @property int $id
  * @property string $name
  */
 class RmaAction extends Model
@@ -26,6 +25,6 @@ class RmaAction extends Model
         '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

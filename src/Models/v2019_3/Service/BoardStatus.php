@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -15,14 +14,14 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property ServiceEmailTemplateReference $emailTemplate
  * @property StatusIndicatorReference $statusIndicator
- * @property boolean $closedStatus
- * @property boolean $customerPortalFlag
- * @property boolean $defaultFlag
- * @property boolean $displayOnBoard
- * @property boolean $inactive
- * @property boolean $timeEntryNotAllowed
- * @property integer $id
- * @property integer $sortOrder
+ * @property bool $closedStatus
+ * @property bool $customerPortalFlag
+ * @property bool $defaultFlag
+ * @property bool $displayOnBoard
+ * @property bool $inactive
+ * @property bool $timeEntryNotAllowed
+ * @property int $id
+ * @property int $sortOrder
  * @property string $customStatusIndicatorName
  * @property string $customerPortalDescription
  * @property string $escalationStatus
@@ -52,6 +51,6 @@ class BoardStatus extends Model
         'name' => 'string',
         'sortOrder' => 'integer',
         'statusIndicator' => StatusIndicatorReference::class,
-        'timeEntryNotAllowed' => 'boolean'
+        'timeEntryNotAllowed' => 'boolean',
     ];
 }

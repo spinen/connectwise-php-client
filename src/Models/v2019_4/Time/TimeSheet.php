@@ -16,9 +16,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property MemberReference $member
  * @property Metadata $_info
  * @property float $hours
- * @property integer $id
- * @property integer $period
- * @property integer $year
+ * @property int $id
+ * @property int $period
+ * @property int $year
  * @property string $status
  */
 class TimeSheet extends Model
@@ -38,6 +38,6 @@ class TimeSheet extends Model
         'member' => MemberReference::class,
         'period' => 'integer',
         'status' => 'string',
-        'year' => 'integer'
+        'year' => 'integer',
     ];
 }

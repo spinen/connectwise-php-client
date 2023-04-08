@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property SystemLocationReference $location
- * @property boolean $allLocationsFlag
- * @property boolean $newWindowFlag
- * @property integer $id
+ * @property bool $allLocationsFlag
+ * @property bool $newWindowFlag
+ * @property int $id
  * @property string $link
  */
 class QuoteLink extends Model
@@ -30,6 +29,6 @@ class QuoteLink extends Model
         'id' => 'integer',
         'link' => 'string',
         'location' => SystemLocationReference::class,
-        'newWindowFlag' => 'boolean'
+        'newWindowFlag' => 'boolean',
     ];
 }

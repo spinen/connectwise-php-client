@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -23,8 +22,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property NotificationRecipientReference $notifyWho
  * @property ServiceTemplateReference $serviceTemplate
  * @property TrackReference $track
- * @property integer $daysToExecute
- * @property integer $id
+ * @property int $daysToExecute
+ * @property int $id
  * @property string $emailFrom
  * @property string $emailRecipient
  * @property string $notes
@@ -58,6 +57,6 @@ class TrackAction extends Model
         'specificMemberFrom' => MemberReference::class,
         'specificMemberTo' => MemberReference::class,
         'subject' => 'string',
-        'track' => TrackReference::class
+        'track' => TrackReference::class,
     ];
 }

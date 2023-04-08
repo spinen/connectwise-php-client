@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Project;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,16 +12,16 @@ use Spinen\ConnectWise\Support\Model;
  * @property ContactReference $contact
  * @property MemberReference $member
  * @property Metadata $_info
- * @property boolean $customerUpdatedFlag
- * @property boolean $detailDescriptionFlag
- * @property boolean $externalFlag
- * @property boolean $internalAnalysisFlag
- * @property boolean $internalFlag
- * @property boolean $issueFlag
- * @property boolean $processNotifications
- * @property boolean $resolutionFlag
- * @property integer $id
- * @property integer $ticketId
+ * @property bool $customerUpdatedFlag
+ * @property bool $detailDescriptionFlag
+ * @property bool $externalFlag
+ * @property bool $internalAnalysisFlag
+ * @property bool $internalFlag
+ * @property bool $issueFlag
+ * @property bool $processNotifications
+ * @property bool $resolutionFlag
+ * @property int $id
+ * @property int $ticketId
  * @property string $text
  */
 class TicketNote extends Model
@@ -46,6 +45,6 @@ class TicketNote extends Model
         'processNotifications' => 'boolean',
         'resolutionFlag' => 'boolean',
         'text' => 'string',
-        'ticketId' => 'integer'
+        'ticketId' => 'integer',
     ];
 }

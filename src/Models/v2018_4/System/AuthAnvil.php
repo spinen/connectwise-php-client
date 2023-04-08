@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for AuthAnvil
  *
  * @property Metadata $_info
- * @property integer $id
- * @property integer $siteId
+ * @property int $id
+ * @property int $siteId
  * @property string $serverLocationUrl
  */
 class AuthAnvil extends Model
@@ -26,6 +25,6 @@ class AuthAnvil extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'serverLocationUrl' => 'string',
-        'siteId' => 'integer'
+        'siteId' => 'integer',
     ];
 }

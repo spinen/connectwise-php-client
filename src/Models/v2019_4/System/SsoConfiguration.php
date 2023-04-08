@@ -14,10 +14,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property Carbon $samlCertificateValidTo
  * @property Metadata $_info
  * @property array $locationIds
- * @property boolean $allMembersSubmitted
- * @property boolean $inactiveFlag
- * @property integer $id
- * @property integer $submittedMemberCount
+ * @property bool $allMembersSubmitted
+ * @property bool $inactiveFlag
+ * @property int $id
+ * @property int $submittedMemberCount
  * @property string $clientId
  * @property string $name
  * @property string $samlCertificateIssuedTo
@@ -58,6 +58,6 @@ class SsoConfiguration extends Model
         'stsBaseUrl' => 'string',
         'stsUserAdminUrl' => 'string',
         'submittedMemberCount' => 'integer',
-        'token' => 'string'
+        'token' => 'string',
     ];
 }

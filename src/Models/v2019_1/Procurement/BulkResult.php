@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -22,6 +21,6 @@ class BulkResult extends Model
      */
     protected $casts = [
         '_info' => Metadata::class,
-        'payload' => 'array'
+        'payload' => 'array',
     ];
 }

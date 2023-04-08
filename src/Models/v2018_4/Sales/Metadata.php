@@ -2,15 +2,12 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Sales;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class Metadata Version v2018_4
  *
  * Metadata of the entity
- *
-
  */
 class Metadata extends Model
 {

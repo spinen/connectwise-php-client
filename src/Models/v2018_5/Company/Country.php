@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,9 +12,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property AddressFormatReference $addressFormat
  * @property CurrencyReference $currency
  * @property Metadata $_info
- * @property boolean $defaultFlag
- * @property integer $id
- * @property integer $zipMinimumLength
+ * @property bool $defaultFlag
+ * @property int $id
+ * @property int $zipMinimumLength
  * @property string $cityCaption
  * @property string $countryCode
  * @property string $dialingPrefix
@@ -46,6 +45,6 @@ class Country extends Model
         'name' => 'string',
         'stateCaption' => 'string',
         'zipCaption' => 'string',
-        'zipMinimumLength' => 'integer'
+        'zipMinimumLength' => 'integer',
     ];
 }

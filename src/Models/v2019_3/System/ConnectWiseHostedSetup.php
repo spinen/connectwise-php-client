@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,14 +11,14 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property array $locationIds
- * @property boolean $disabledFlag
- * @property boolean $locationsEnabledFlag
- * @property integer $id
- * @property integer $podHeight
- * @property integer $screenId
- * @property integer $toolbarButtonDialogHeight
- * @property integer $toolbarButtonDialogWidth
- * @property integer $toolbarButtonIconDocumentId
+ * @property bool $disabledFlag
+ * @property bool $locationsEnabledFlag
+ * @property int $id
+ * @property int $podHeight
+ * @property int $screenId
+ * @property int $toolbarButtonDialogHeight
+ * @property int $toolbarButtonDialogWidth
+ * @property int $toolbarButtonIconDocumentId
  * @property string $createdBy
  * @property string $dateCreated
  * @property string $description
@@ -54,6 +53,6 @@ class ConnectWiseHostedSetup extends Model
         'toolbarButtonText' => 'string',
         'toolbarButtonToolTip' => 'string',
         'type' => 'string',
-        'url' => 'string'
+        'url' => 'string',
     ];
 }

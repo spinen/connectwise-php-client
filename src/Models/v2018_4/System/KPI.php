@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for KPI
  *
  * @property KPICategoryReference $category
- * @property boolean $inactiveFlag
- * @property integer $id
- * @property integer $sortOrder
+ * @property bool $inactiveFlag
+ * @property int $id
+ * @property int $sortOrder
  * @property string $dateFilter
  * @property string $name
  */
@@ -30,6 +29,6 @@ class KPI extends Model
         'id' => 'integer',
         'inactiveFlag' => 'boolean',
         'name' => 'string',
-        'sortOrder' => 'integer'
+        'sortOrder' => 'integer',
     ];
 }

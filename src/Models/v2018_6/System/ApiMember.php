@@ -20,8 +20,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property SystemLocationReference $securityLocation
  * @property TimeZoneSetupReference $timeZone
  * @property array $excludedServiceBoardIds
- * @property boolean $inactiveFlag
- * @property integer $id
+ * @property bool $inactiveFlag
+ * @property int $id
  * @property string $emailAddress
  * @property string $identifier
  * @property string $name
@@ -50,6 +50,6 @@ class ApiMember extends Model
         'securityRole' => SecurityRoleReference::class,
         'serviceDefaultBoard' => BoardReference::class,
         'structureLevel' => StructureReference::class,
-        'timeZone' => TimeZoneSetupReference::class
+        'timeZone' => TimeZoneSetupReference::class,
     ];
 }

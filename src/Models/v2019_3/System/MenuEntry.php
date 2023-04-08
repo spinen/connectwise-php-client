@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,12 +12,12 @@ use Spinen\ConnectWise\Support\Model;
  * @property MenuLocationReference $menuLocation
  * @property Metadata $_info
  * @property array $locationIds
- * @property boolean $addAllLocations
- * @property boolean $newWindowFlag
- * @property boolean $removeAllLocations
- * @property integer $id
- * @property integer $largeMenuIconId
- * @property integer $smallMenuIconId
+ * @property bool $addAllLocations
+ * @property bool $newWindowFlag
+ * @property bool $removeAllLocations
+ * @property int $id
+ * @property int $largeMenuIconId
+ * @property int $smallMenuIconId
  * @property string $caption
  * @property string $link
  * @property string $origin
@@ -42,6 +41,6 @@ class MenuEntry extends Model
         'newWindowFlag' => 'boolean',
         'origin' => 'string',
         'removeAllLocations' => 'boolean',
-        'smallMenuIconId' => 'integer'
+        'smallMenuIconId' => 'integer',
     ];
 }

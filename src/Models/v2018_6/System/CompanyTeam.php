@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property ContactReference $reAssignToContact
  * @property MemberReference $reAssignToMember
- * @property integer $count
- * @property integer $id
+ * @property int $count
+ * @property int $id
  * @property string $name
  */
 class CompanyTeam extends Model
@@ -28,6 +27,6 @@ class CompanyTeam extends Model
         'id' => 'integer',
         'name' => 'string',
         'reAssignToContact' => ContactReference::class,
-        'reAssignToMember' => MemberReference::class
+        'reAssignToMember' => MemberReference::class,
     ];
 }

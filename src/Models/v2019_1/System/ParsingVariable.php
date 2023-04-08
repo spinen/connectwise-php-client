@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ParsingVariable
  *
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $code
  * @property string $name
  */
@@ -26,6 +25,6 @@ class ParsingVariable extends Model
         '_info' => Metadata::class,
         'code' => 'string',
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

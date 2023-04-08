@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for WorkflowNotifyType
  *
  * @property Metadata $_info
- * @property boolean $externalFlag
- * @property boolean $isSetupFlag
- * @property integer $id
+ * @property bool $externalFlag
+ * @property bool $isSetupFlag
+ * @property int $id
  * @property string $identifier
  * @property string $name
  */
@@ -30,6 +29,6 @@ class WorkflowNotifyType extends Model
         'id' => 'integer',
         'identifier' => 'string',
         'isSetupFlag' => 'boolean',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

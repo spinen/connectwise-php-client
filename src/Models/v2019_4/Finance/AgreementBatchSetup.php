@@ -12,8 +12,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Carbon $nextRunDate
  * @property Metadata $_info
- * @property integer $daysInAdvance
- * @property integer $id
+ * @property int $daysInAdvance
+ * @property int $id
  */
 class AgreementBatchSetup extends Model
 {
@@ -26,6 +26,6 @@ class AgreementBatchSetup extends Model
         '_info' => Metadata::class,
         'daysInAdvance' => 'integer',
         'id' => 'integer',
-        'nextRunDate' => Carbon::class
+        'nextRunDate' => Carbon::class,
     ];
 }

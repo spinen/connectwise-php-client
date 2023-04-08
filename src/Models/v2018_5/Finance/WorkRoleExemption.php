@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,7 +12,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property WorkRoleReference $workRole
  * @property array $taxableLevels
- * @property integer $id
+ * @property int $id
  */
 class WorkRoleExemption extends Model
 {
@@ -26,6 +25,6 @@ class WorkRoleExemption extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'taxableLevels' => 'array',
-        'workRole' => WorkRoleReference::class
+        'workRole' => WorkRoleReference::class,
     ];
 }

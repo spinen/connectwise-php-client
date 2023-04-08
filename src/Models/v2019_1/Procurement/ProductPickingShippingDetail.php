@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -16,11 +15,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property WarehouseBinReference $warehouseBin
  * @property WarehouseReference $warehouse
  * @property array $serialNumberIds
- * @property integer $id
- * @property integer $lineNumber
- * @property integer $pickedQuantity
- * @property integer $quantity
- * @property integer $shippedQuantity
+ * @property int $id
+ * @property int $lineNumber
+ * @property int $pickedQuantity
+ * @property int $quantity
+ * @property int $shippedQuantity
  * @property string $serialNumber
  * @property string $trackingNumber
  */
@@ -44,6 +43,6 @@ class ProductPickingShippingDetail extends Model
         'shippedQuantity' => 'integer',
         'trackingNumber' => 'string',
         'warehouse' => WarehouseReference::class,
-        'warehouseBin' => WarehouseBinReference::class
+        'warehouseBin' => WarehouseBinReference::class,
     ];
 }

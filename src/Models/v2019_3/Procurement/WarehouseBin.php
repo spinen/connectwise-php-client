@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -17,16 +16,16 @@ use Spinen\ConnectWise\Support\Model;
  * @property WarehouseBinReference $overflowBin
  * @property WarehouseBinReference $transferBin
  * @property WarehouseReference $warehouse
- * @property boolean $defaultFlag
- * @property boolean $inactiveFlag
+ * @property bool $defaultFlag
+ * @property bool $inactiveFlag
  * @property float $height
  * @property float $length
  * @property float $maxQuantity
  * @property float $minQuantity
  * @property float $weight
  * @property float $width
- * @property integer $id
- * @property integer $quantityOnHand
+ * @property int $id
+ * @property int $quantityOnHand
  * @property string $name
  */
 class WarehouseBin extends Model
@@ -54,6 +53,6 @@ class WarehouseBin extends Model
         'transferBin' => WarehouseBinReference::class,
         'warehouse' => WarehouseReference::class,
         'weight' => 'float',
-        'width' => 'float'
+        'width' => 'float',
     ];
 }

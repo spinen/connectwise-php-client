@@ -17,7 +17,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property WorkRoleReference $workRole
  * @property float $limitTo
  * @property float $rate
- * @property integer $id
+ * @property int $id
  * @property string $rateType
  */
 class AgreementTypeWorkRole extends Model
@@ -36,6 +36,6 @@ class AgreementTypeWorkRole extends Model
         'rate' => 'float',
         'rateType' => 'string',
         'type' => AgreementTypeReference::class,
-        'workRole' => WorkRoleReference::class
+        'workRole' => WorkRoleReference::class,
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for PortalSecurity
  *
- * @property boolean $enabled
+ * @property bool $enabled
  * @property string $identifier
  */
 class PortalSecurity extends Model
@@ -22,6 +21,6 @@ class PortalSecurity extends Model
      */
     protected $casts = [
         'enabled' => 'boolean',
-        'identifier' => 'string'
+        'identifier' => 'string',
     ];
 }

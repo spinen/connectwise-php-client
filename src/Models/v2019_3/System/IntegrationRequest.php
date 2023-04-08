@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for IntegrationRequest
  *
- * @property boolean $disabledFlag
+ * @property bool $disabledFlag
  * @property string $actionName
  * @property string $helpUrl
  * @property string $token
@@ -28,6 +27,6 @@ class IntegrationRequest extends Model
         'disabledFlag' => 'boolean',
         'helpUrl' => 'string',
         'token' => 'string',
-        'url' => 'string'
+        'url' => 'string',
     ];
 }

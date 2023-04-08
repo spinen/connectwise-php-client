@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,7 +13,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property SystemDepartmentReference $department
  * @property SystemLocationReference $location
- * @property integer $id
+ * @property int $id
  * @property string $contents
  * @property string $name
  */
@@ -32,6 +31,6 @@ class StandardNote extends Model
         'department' => SystemDepartmentReference::class,
         'id' => 'integer',
         'location' => SystemLocationReference::class,
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property EmailConnectorReference $emailConnector
  * @property Metadata $_info
- * @property boolean $sslFlag
- * @property integer $id
- * @property integer $port
+ * @property bool $sslFlag
+ * @property int $id
+ * @property int $port
  * @property string $imapName
  * @property string $name
  * @property string $password
@@ -40,6 +39,6 @@ class Imap extends Model
         'processedName' => 'string',
         'server' => 'string',
         'sslFlag' => 'boolean',
-        'userName' => 'string'
+        'userName' => 'string',
     ];
 }

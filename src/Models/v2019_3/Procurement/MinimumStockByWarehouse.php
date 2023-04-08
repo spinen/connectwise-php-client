@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property WarehouseReference $warehouse
- * @property integer $id
- * @property integer $minimumStock
+ * @property int $id
+ * @property int $minimumStock
  */
 class MinimumStockByWarehouse extends Model
 {
@@ -26,6 +25,6 @@ class MinimumStockByWarehouse extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'minimumStock' => 'integer',
-        'warehouse' => WarehouseReference::class
+        'warehouse' => WarehouseReference::class,
     ];
 }

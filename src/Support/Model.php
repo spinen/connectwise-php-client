@@ -13,7 +13,6 @@ use Illuminate\Support\Str;
 use InvalidArgumentException;
 use IteratorAggregate;
 use JsonSerializable;
-use Serializable;
 use Spinen\ConnectWise\Api\Client;
 
 /**
@@ -22,16 +21,8 @@ use Spinen\ConnectWise\Api\Client;
  * This class is heavily modeled after Laravel's Eloquent model.  We are wanting the API to be familiar as we use
  * Laravel for most of our projects & want it to be very easy for our developers to use it.  Additionally, it is
  * just so well done that there is no reason not to copy/reuse some of the code.
- *
- * @package Spinen\ConnectWise\Support
  */
-abstract class Model implements
-    ArrayAccess,
-    Arrayable,
-    Countable,
-    IteratorAggregate,
-    Jsonable,
-    JsonSerializable
+abstract class Model implements ArrayAccess, Arrayable, Countable, IteratorAggregate, Jsonable, JsonSerializable
 {
     /**
      * _info property
@@ -61,9 +52,6 @@ abstract class Model implements
 
     /**
      * Model constructor
-     *
-     * @param array $attributes
-     * @param Client|null $client
      */
     public function __construct(array $attributes, Client $client = null)
     {
@@ -74,10 +62,7 @@ abstract class Model implements
     /**
      * Magic method to allow getting related items
      *
-     * @param string $method
-     * @param mixed $arguments
-     *
-     * @return mixed
+     * @param  string  $method
      */
     public function __call($method, $arguments)
     {
@@ -98,7 +83,7 @@ abstract class Model implements
             }
         }
 
-        trigger_error('Call to undefined method ' . __CLASS__ . '::' . $method . '()', E_USER_ERROR);
+        trigger_error('Call to undefined method '.__CLASS__.'::'.$method.'()', E_USER_ERROR);
     }
 
     /**
@@ -117,9 +102,7 @@ abstract class Model implements
     /**
      * Allow the attributes of the model to be accessed like a public property
      *
-     * @param string $attribute
-     *
-     * @return mixed
+     * @param  string  $attribute
      */
     public function __get($attribute)
     {
@@ -129,8 +112,7 @@ abstract class Model implements
     /**
      * Allow checking to see if the model has an attribute set
      *
-     * @param string $attribute
-     *
+     * @param  string  $attribute
      * @return bool
      */
     public function __isset($attribute)
@@ -141,8 +123,7 @@ abstract class Model implements
     /**
      * Set a property on the model in the attributes
      *
-     * @param string $attribute
-     * @param mixed $value
+     * @param  string  $attribute
      */
     public function __set($attribute, $value)
     {
@@ -162,7 +143,7 @@ abstract class Model implements
     /**
      * Unset a property on the model in the attributes
      *
-     * @param string $attribute
+     * @param  string  $attribute
      */
     public function __unset($attribute)
     {
@@ -172,10 +153,7 @@ abstract class Model implements
     /**
      * Cast a item to a specific object or type
      *
-     * @param mixed $value
-     * @param string $cast
-     *
-     * @return mixed
+     * @param  string  $cast
      */
     public function castTo($value, $cast)
     {
@@ -188,15 +166,15 @@ abstract class Model implements
         }
 
         if (class_exists($cast)) {
-            return new $cast((array)$value);
+            return new $cast((array) $value);
         }
 
         if (strcasecmp('json', $cast) == 0) {
-            return json_encode((array)$value);
+            return json_encode((array) $value);
         }
 
         if (strcasecmp('collection', $cast) == 0) {
-            return new Collection((array)$value);
+            return new Collection((array) $value);
         }
 
         if (in_array($cast, ['bool', 'boolean'])) {
@@ -216,8 +194,8 @@ abstract class Model implements
             'string',
         ];
 
-        if (!in_array($cast, $cast_types)) {
-            throw new InvalidArgumentException(sprintf("Attributes cannot be casted to [%s] type.", $cast));
+        if (! in_array($cast, $cast_types)) {
+            throw new InvalidArgumentException(sprintf('Attributes cannot be casted to [%s] type.', $cast));
         }
 
         settype($value, $cast);
@@ -228,8 +206,6 @@ abstract class Model implements
 
     /**
      * Count the number of properties
-     *
-     * @return int
      */
     public function count(): int
     {
@@ -239,7 +215,6 @@ abstract class Model implements
     /**
      * Store the collection of attributes on the model
      *
-     * @param array $attributes
      *
      * @return $this
      */
@@ -255,8 +230,7 @@ abstract class Model implements
     /**
      * Check to see if there is a getter for the attribute
      *
-     * @param string $attribute
-     *
+     * @param  string  $attribute
      * @return bool
      */
     public function hasGetter($attribute)
@@ -267,8 +241,7 @@ abstract class Model implements
     /**
      * Check to see if there is a setter for the attribute
      *
-     * @param string $attribute
-     *
+     * @param  string  $attribute
      * @return bool
      */
     public function hasSetter($attribute)
@@ -279,28 +252,25 @@ abstract class Model implements
     /**
      * Is the attribute supposed to be cast
      *
-     * @param string $attribute
-     *
+     * @param  string  $attribute
      * @return bool
      */
     public function hasCast($attribute)
     {
         $cast = $this->getCasts($attribute);
 
-        return !empty($cast) && is_string($cast);
+        return ! empty($cast) && is_string($cast);
     }
 
     /**
      * Get the attribute from the model
      *
-     * @param string $attribute
-     *
-     * @return mixed
+     * @param  string  $attribute
      */
     public function getAttribute($attribute)
     {
         // Guard against no attribute
-        if (!$attribute) {
+        if (! $attribute) {
             return;
         }
 
@@ -311,25 +281,23 @@ abstract class Model implements
 
         // Allow for making related calls for "extra" properties in the "_info" property.
         // Cache the results so only 1 call is made
-        if (!isset($this->{$attribute}) && isset($this->_info->{$attribute . '_href'})) {
-            $this->setAttribute($attribute, $this->client->getAll($this->_info->{$attribute . '_href'}));
+        if (! isset($this->{$attribute}) && isset($this->_info->{$attribute.'_href'})) {
+            $this->setAttribute($attribute, $this->client->getAll($this->_info->{$attribute.'_href'}));
         }
 
         // Pull the value from the attributes
         if (isset($this->{$attribute})) {
             return $this->attributes[$attribute];
-        };
+        }
 
         // Attribute does not exist on the model
-        trigger_error('Undefined property:' . __CLASS__ . '::$' . $attribute);
+        trigger_error('Undefined property:'.__CLASS__.'::$'.$attribute);
     }
 
     /**
      * Get the array of cast or a specific cast for an attribute
      *
-     * @param mixed|null $attribute
-     *
-     * @return mixed
+     * @param  mixed|null  $attribute
      */
     public function getCasts($attribute = null)
     {
@@ -342,8 +310,6 @@ abstract class Model implements
 
     /**
      * Get an iterator for the attributes
-     *
-     * @return ArrayIterator
      */
     public function getIterator(): ArrayIterator
     {
@@ -353,19 +319,16 @@ abstract class Model implements
     /**
      * Build the name of the getter for an attribute
      *
-     * @param string $attribute
-     *
+     * @param  string  $attribute
      * @return string
      */
     protected function getterMethodName($attribute)
     {
-        return 'get' . Str::studly($attribute) . 'Attribute';
+        return 'get'.Str::studly($attribute).'Attribute';
     }
 
     /**
      * Serialize Json (convert it to an array)
-     *
-     * @return array
      */
     public function jsonSerialize(): array
     {
@@ -375,9 +338,7 @@ abstract class Model implements
     /**
      * Allow the model to behave like an associative array, so see if the attribute is set
      *
-     * @param string $attribute
-     *
-     * @return boolean
+     * @param  string  $attribute
      */
     public function offsetExists($attribute): bool
     {
@@ -387,9 +348,7 @@ abstract class Model implements
     /**
      * Allow the model to behave like an associative array, so get attribute
      *
-     * @param string $attribute
-     *
-     * @return mixed
+     * @param  string  $attribute
      */
     public function offsetGet($attribute): mixed
     {
@@ -399,8 +358,7 @@ abstract class Model implements
     /**
      * Allow the model to behave like an associative array, so set attribute
      *
-     * @param string $attribute
-     * @param mixed $value
+     * @param  string  $attribute
      */
     public function offsetSet($attribute, $value): void
     {
@@ -409,10 +367,6 @@ abstract class Model implements
 
     /**
      * Allow the model to behave like an associative array, so unset attribute
-     *
-     * @param mixed $attribute
-     *
-     * @return void
      */
     public function offsetUnset($attribute): void
     {
@@ -435,9 +389,7 @@ abstract class Model implements
      * Since there can be a setter for an attribute, look to see if there is one to delegate the setting.  Then see if
      * the attribute is supposed to be cast to a specific value before setting.  Finally, store the value on the model.
      *
-     * @param string $attribute
-     * @param mixed $value
-     *
+     * @param  string  $attribute
      * @return $this
      */
     public function setAttribute($attribute, $value)
@@ -458,13 +410,12 @@ abstract class Model implements
     /**
      * Build the name of the setter for an attribute
      *
-     * @param string $attribute
-     *
+     * @param  string  $attribute
      * @return string
      */
     protected function setterMethodName($attribute)
     {
-        return 'set' . Str::studly($attribute) . 'Attribute';
+        return 'set'.Str::studly($attribute).'Attribute';
     }
 
     /**
@@ -481,9 +432,7 @@ abstract class Model implements
     /**
      * Return the model as JSON
      *
-     * @param int $options
-     *
-     * @return string
+     * @param  int  $options
      *
      * @throws JsonEncodingException
      */
@@ -503,7 +452,7 @@ abstract class Model implements
     /**
      * Unserialize the attributes
      *
-     * @param string $serialized
+     * @param  string  $serialized
      */
     public function unserialize($serialized)
     {

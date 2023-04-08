@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * The Service (Ticket) Templates on which the Member is the assignedTo resource
  *
  * @property MemberReference $reAssignToMember
- * @property integer $count
+ * @property int $count
  */
 class MemberDeactivationServiceTemplate extends Model
 {
@@ -22,6 +21,6 @@ class MemberDeactivationServiceTemplate extends Model
      */
     protected $casts = [
         'count' => 'integer',
-        'reAssignToMember' => MemberReference::class
+        'reAssignToMember' => MemberReference::class,
     ];
 }

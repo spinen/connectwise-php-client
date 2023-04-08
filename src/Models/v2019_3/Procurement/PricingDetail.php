@@ -16,8 +16,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property ProductCategoryReference $category
  * @property ProductSubCategoryReference $subCategory
- * @property boolean $noEndDate
- * @property integer $id
+ * @property bool $noEndDate
+ * @property int $id
  */
 class PricingDetail extends Model
 {
@@ -34,6 +34,6 @@ class PricingDetail extends Model
         'noEndDate' => 'boolean',
         'product' => CatalogItemReference::class,
         'startDate' => Carbon::class,
-        'subCategory' => ProductSubCategoryReference::class
+        'subCategory' => ProductSubCategoryReference::class,
     ];
 }

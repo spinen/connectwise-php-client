@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -23,43 +22,43 @@ use Spinen\ConnectWise\Support\Model;
  * @property WorkTypeReference $workType
  * @property array $exclusionWorkRoleIds
  * @property array $exclusionWorkTypeIds
- * @property boolean $addAllWorkRoleExclusions
- * @property boolean $addAllWorkTypeExclusions
- * @property boolean $allowOverrunsFlag
- * @property boolean $applicationUnlimitedFlag
- * @property boolean $billOneTimeFlag
- * @property boolean $billableExpenseInvoiceFlag
- * @property boolean $billableProductInvoiceFlag
- * @property boolean $billableTimeInvoiceFlag
- * @property boolean $bottomCommentFlag
- * @property boolean $carryOverUnusedFlag
- * @property boolean $chargeToFirmFlag
- * @property boolean $copyWorkRolesFlag
- * @property boolean $copyWorkTypesFlag
- * @property boolean $coverAgreementExpenseFlag
- * @property boolean $coverAgreementProductFlag
- * @property boolean $coverAgreementTimeFlag
- * @property boolean $coverSalesTaxFlag
- * @property boolean $defaultFlag
- * @property boolean $expireWhenZero
- * @property boolean $inactiveFlag
- * @property boolean $oneTimeFlag
- * @property boolean $prePaymentFlag
- * @property boolean $prorateFlag
- * @property boolean $removeAllWorkRoleExclusions
- * @property boolean $removeAllWorkTypeExclusions
- * @property boolean $restrictDepartmentFlag
- * @property boolean $restrictDownPaymentFlag
- * @property boolean $restrictLocationFlag
- * @property boolean $taxableFlag
- * @property boolean $topCommentFlag
+ * @property bool $addAllWorkRoleExclusions
+ * @property bool $addAllWorkTypeExclusions
+ * @property bool $allowOverrunsFlag
+ * @property bool $applicationUnlimitedFlag
+ * @property bool $billOneTimeFlag
+ * @property bool $billableExpenseInvoiceFlag
+ * @property bool $billableProductInvoiceFlag
+ * @property bool $billableTimeInvoiceFlag
+ * @property bool $bottomCommentFlag
+ * @property bool $carryOverUnusedFlag
+ * @property bool $chargeToFirmFlag
+ * @property bool $copyWorkRolesFlag
+ * @property bool $copyWorkTypesFlag
+ * @property bool $coverAgreementExpenseFlag
+ * @property bool $coverAgreementProductFlag
+ * @property bool $coverAgreementTimeFlag
+ * @property bool $coverSalesTaxFlag
+ * @property bool $defaultFlag
+ * @property bool $expireWhenZero
+ * @property bool $inactiveFlag
+ * @property bool $oneTimeFlag
+ * @property bool $prePaymentFlag
+ * @property bool $prorateFlag
+ * @property bool $removeAllWorkRoleExclusions
+ * @property bool $removeAllWorkTypeExclusions
+ * @property bool $restrictDepartmentFlag
+ * @property bool $restrictDownPaymentFlag
+ * @property bool $restrictLocationFlag
+ * @property bool $taxableFlag
+ * @property bool $topCommentFlag
  * @property float $applicationLimit
  * @property float $billAmount
  * @property float $compHourlyRate
  * @property float $compLimitAmount
- * @property integer $expiredDays
- * @property integer $id
- * @property integer $limit
+ * @property int $expiredDays
+ * @property int $id
+ * @property int $limit
  * @property string $applicationCycle
  * @property string $applicationUnits
  * @property string $billExpenses
@@ -144,6 +143,6 @@ class AgreementType extends Model
         'taxableFlag' => 'boolean',
         'topCommentFlag' => 'boolean',
         'workRole' => WorkRoleReference::class,
-        'workType' => WorkTypeReference::class
+        'workType' => WorkTypeReference::class,
     ];
 }

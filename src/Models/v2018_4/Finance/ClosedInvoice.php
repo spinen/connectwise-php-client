@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property BillingStatusReference $status
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  */
 class ClosedInvoice extends Model
 {
@@ -24,6 +23,6 @@ class ClosedInvoice extends Model
     protected $casts = [
         '_info' => Metadata::class,
         'id' => 'integer',
-        'status' => BillingStatusReference::class
+        'status' => BillingStatusReference::class,
     ];
 }

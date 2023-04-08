@@ -92,7 +92,6 @@ class ModelResolverTest extends TestCase
 /**
  * Override to inject "fake" file
  *
- * @param $file
  *
  * @return false|string
  */
@@ -100,8 +99,8 @@ function file_get_contents($file)
 {
     return json_encode(
         [
-            '/some/uri'          => 'Some/Model',
-            '/some/uri/{id}'     => 'Some/ModelWithParam',
+            '/some/uri' => 'Some/Model',
+            '/some/uri/{id}' => 'Some/ModelWithParam',
             '/specific/{id}/uri' => 'Other/Model',
         ]
     );

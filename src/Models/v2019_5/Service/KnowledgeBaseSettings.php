@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property MemberReference $defaultApprover
  * @property Metadata $_info
- * @property boolean $requireApproval
- * @property integer $id
+ * @property bool $requireApproval
+ * @property int $id
  */
 class KnowledgeBaseSettings extends Model
 {
@@ -26,6 +25,6 @@ class KnowledgeBaseSettings extends Model
         '_info' => Metadata::class,
         'defaultApprover' => MemberReference::class,
         'id' => 'integer',
-        'requireApproval' => 'boolean'
+        'requireApproval' => 'boolean',
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property NoteTypeReference $type
- * @property boolean $flagged
- * @property integer $contactId
- * @property integer $id
+ * @property bool $flagged
+ * @property int $contactId
+ * @property int $id
  * @property string $enteredBy
  * @property string $text
  */
@@ -32,6 +31,6 @@ class ContactNote extends Model
         'flagged' => 'boolean',
         'id' => 'integer',
         'text' => 'string',
-        'type' => NoteTypeReference::class
+        'type' => NoteTypeReference::class,
     ];
 }

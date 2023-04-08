@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -15,8 +14,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property IvItemReference $product
  * @property ManagedDevicesIntegrationReference $managedDevicesIntegration
  * @property Metadata $_info
- * @property boolean $inactiveFlag
- * @property integer $id
+ * @property bool $inactiveFlag
+ * @property int $id
  * @property string $vendorLevel
  * @property string $vendorType
  */
@@ -36,6 +35,6 @@ class ManagedDevicesIntegrationCrossReference extends Model
         'managedDevicesIntegration' => ManagedDevicesIntegrationReference::class,
         'product' => IvItemReference::class,
         'vendorLevel' => 'string',
-        'vendorType' => 'string'
+        'vendorType' => 'string',
     ];
 }

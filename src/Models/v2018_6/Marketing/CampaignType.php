@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Marketing;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for CampaignType
  *
  * @property Metadata $_info
- * @property boolean $defaultFlag
- * @property integer $id
+ * @property bool $defaultFlag
+ * @property int $id
  * @property string $name
  */
 class CampaignType extends Model
@@ -26,6 +25,6 @@ class CampaignType extends Model
         '_info' => Metadata::class,
         'defaultFlag' => 'boolean',
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

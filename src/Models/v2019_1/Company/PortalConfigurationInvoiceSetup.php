@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -15,11 +14,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property PortalConfigurationReference $portalConfiguration
  * @property SystemLocationReference $location
  * @property array $billingStatusIds
- * @property boolean $addAllStatuses
- * @property boolean $allowInvPmtFlag
- * @property boolean $displayInvPmtFlag
- * @property boolean $removeAllStatuses
- * @property integer $id
+ * @property bool $addAllStatuses
+ * @property bool $allowInvPmtFlag
+ * @property bool $displayInvPmtFlag
+ * @property bool $removeAllStatuses
+ * @property int $id
  * @property string $login
  * @property string $password
  * @property string $urlOverride
@@ -44,6 +43,6 @@ class PortalConfigurationInvoiceSetup extends Model
         'paymentProcessor' => PortalConfigurationPaymentProcessorReference::class,
         'portalConfiguration' => PortalConfigurationReference::class,
         'removeAllStatuses' => 'boolean',
-        'urlOverride' => 'string'
+        'urlOverride' => 'string',
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ProductDemand
  *
  * @property float $cost
- * @property integer $productRecId
- * @property integer $quantity
+ * @property int $productRecId
+ * @property int $quantity
  */
 class ProductDemand extends Model
 {
@@ -24,6 +23,6 @@ class ProductDemand extends Model
     protected $casts = [
         'cost' => 'float',
         'productRecId' => 'integer',
-        'quantity' => 'integer'
+        'quantity' => 'integer',
     ];
 }

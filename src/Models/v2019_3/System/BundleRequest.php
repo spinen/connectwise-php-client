@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Model for BundleRequest
  *
  * @property ApiRequest $ApiRequest
- * @property integer $SequenceNumber
+ * @property int $SequenceNumber
  * @property string $ResourceType
  * @property string $Version
  */
@@ -26,6 +25,6 @@ class BundleRequest extends Model
         'ApiRequest' => ApiRequest::class,
         'ResourceType' => 'string',
         'SequenceNumber' => 'integer',
-        'Version' => 'string'
+        'Version' => 'string',
     ];
 }

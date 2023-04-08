@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,13 +11,13 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property TrackReference $track
- * @property boolean $cancelOpenTracksFlag
- * @property boolean $customNoteFlag
- * @property boolean $defaultFlag
- * @property boolean $disallowSavingFlag
- * @property boolean $inactiveFlag
- * @property boolean $notifyFlag
- * @property integer $id
+ * @property bool $cancelOpenTracksFlag
+ * @property bool $customNoteFlag
+ * @property bool $defaultFlag
+ * @property bool $disallowSavingFlag
+ * @property bool $inactiveFlag
+ * @property bool $notifyFlag
+ * @property int $id
  * @property string $name
  * @property string $notificationMessage
  */
@@ -40,6 +39,6 @@ class CompanyStatus extends Model
         'name' => 'string',
         'notificationMessage' => 'string',
         'notifyFlag' => 'boolean',
-        'track' => TrackReference::class
+        'track' => TrackReference::class,
     ];
 }

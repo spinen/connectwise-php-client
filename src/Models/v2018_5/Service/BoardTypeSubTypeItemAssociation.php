@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -15,7 +14,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property ServiceItemReference $item
  * @property ServiceSubTypeReference $subType
  * @property ServiceTypeReference $type
- * @property integer $id
+ * @property int $id
  */
 class BoardTypeSubTypeItemAssociation extends Model
 {
@@ -30,6 +29,6 @@ class BoardTypeSubTypeItemAssociation extends Model
         'id' => 'integer',
         'item' => ServiceItemReference::class,
         'subType' => ServiceSubTypeReference::class,
-        'type' => ServiceTypeReference::class
+        'type' => ServiceTypeReference::class,
     ];
 }

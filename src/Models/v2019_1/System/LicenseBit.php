@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for LicenseBit
  *
- * @property boolean $activeFlag
+ * @property bool $activeFlag
  * @property string $name
  */
 class LicenseBit extends Model
@@ -22,6 +21,6 @@ class LicenseBit extends Model
      */
     protected $casts = [
         'activeFlag' => 'boolean',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

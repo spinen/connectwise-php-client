@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,12 +10,12 @@ use Spinen\ConnectWise\Support\Model;
  * Model for DeliveryMethod
  *
  * @property Metadata $_info
- * @property boolean $defaultFlag
- * @property boolean $emailFlag
- * @property boolean $integrationActiveFlag
- * @property boolean $integrationEmailFlag
- * @property boolean $integrationPrintFlag
- * @property integer $id
+ * @property bool $defaultFlag
+ * @property bool $emailFlag
+ * @property bool $integrationActiveFlag
+ * @property bool $integrationEmailFlag
+ * @property bool $integrationPrintFlag
+ * @property int $id
  * @property string $name
  */
 class DeliveryMethod extends Model
@@ -34,6 +33,6 @@ class DeliveryMethod extends Model
         'integrationActiveFlag' => 'boolean',
         'integrationEmailFlag' => 'boolean',
         'integrationPrintFlag' => 'boolean',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

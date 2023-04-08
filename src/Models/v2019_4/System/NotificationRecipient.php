@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,19 +10,19 @@ use Spinen\ConnectWise\Support\Model;
  * Model for NotificationRecipient
  *
  * @property Metadata $_info
- * @property boolean $agreementFlag
- * @property boolean $configFlag
- * @property boolean $externalFlag
- * @property boolean $invoiceFlag
- * @property boolean $knowledgeBaseFlag
- * @property boolean $memberFlag
- * @property boolean $mspFlag
- * @property boolean $procurementFlag
- * @property boolean $projectFlag
- * @property boolean $salesFlag
- * @property boolean $serviceFlag
- * @property boolean $trackFlag
- * @property integer $id
+ * @property bool $agreementFlag
+ * @property bool $configFlag
+ * @property bool $externalFlag
+ * @property bool $invoiceFlag
+ * @property bool $knowledgeBaseFlag
+ * @property bool $memberFlag
+ * @property bool $mspFlag
+ * @property bool $procurementFlag
+ * @property bool $projectFlag
+ * @property bool $salesFlag
+ * @property bool $serviceFlag
+ * @property bool $trackFlag
+ * @property int $id
  * @property string $identifier
  * @property string $name
  */
@@ -50,6 +49,6 @@ class NotificationRecipient extends Model
         'projectFlag' => 'boolean',
         'salesFlag' => 'boolean',
         'serviceFlag' => 'boolean',
-        'trackFlag' => 'boolean'
+        'trackFlag' => 'boolean',
     ];
 }

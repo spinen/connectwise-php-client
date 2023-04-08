@@ -19,9 +19,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property TaxCodeReference $taxCode
  * @property UnitOfMeasureReference $unitOfMeasure
  * @property WarehouseBinReference $warehouseBin
- * @property boolean $dropShippedFlag
- * @property boolean $serializedFlag
- * @property boolean $taxableFlag
+ * @property bool $dropShippedFlag
+ * @property bool $serializedFlag
+ * @property bool $taxableFlag
  * @property float $cost
  * @property float $itemCost
  * @property float $itemPrice
@@ -29,8 +29,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property float $taxRate
  * @property float $taxRatePercent
  * @property float $total
- * @property integer $id
- * @property integer $lineNumber
+ * @property int $id
+ * @property int $lineNumber
  * @property string $accountNumber
  * @property string $cogsXref
  * @property string $costAccountNumber
@@ -104,6 +104,6 @@ class GLExportPurchaseTransactionDetailTax extends Model
         'vendorAccountNumber' => 'string',
         'vendorNumber' => 'string',
         'warehouseBin' => WarehouseBinReference::class,
-        'warehouseSite' => SiteReference::class
+        'warehouseSite' => SiteReference::class,
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,8 +12,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property KPIReference $kpi
  * @property Metadata $_info
  * @property ReportCardReference $reportCard
- * @property integer $id
- * @property integer $sortOrder
+ * @property int $id
+ * @property int $sortOrder
  */
 class ReportCardDetail extends Model
 {
@@ -28,6 +27,6 @@ class ReportCardDetail extends Model
         'id' => 'integer',
         'kpi' => KPIReference::class,
         'reportCard' => ReportCardReference::class,
-        'sortOrder' => 'integer'
+        'sortOrder' => 'integer',
     ];
 }

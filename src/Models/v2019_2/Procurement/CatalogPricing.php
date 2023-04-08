@@ -15,7 +15,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property CompanyReference $company
  * @property SystemLocationReference $location
  * @property float $price
- * @property integer $quantity
+ * @property int $quantity
  */
 class CatalogPricing extends Model
 {
@@ -30,6 +30,6 @@ class CatalogPricing extends Model
         'date' => Carbon::class,
         'location' => SystemLocationReference::class,
         'price' => 'float',
-        'quantity' => 'integer'
+        'quantity' => 'integer',
     ];
 }

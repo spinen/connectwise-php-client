@@ -21,17 +21,17 @@ use Spinen\ConnectWise\Support\Model;
  * @property WarehouseBinReference $warehouseBin
  * @property WarehouseReference $warehouse
  * @property array $customFields
- * @property boolean $backorderedFlag
- * @property boolean $canceledFlag
- * @property boolean $closedFlag
- * @property boolean $displayInternalNotesFlag
+ * @property bool $backorderedFlag
+ * @property bool $canceledFlag
+ * @property bool $closedFlag
+ * @property bool $displayInternalNotesFlag
  * @property float $quantity
  * @property float $tax
  * @property float $unitCost
- * @property integer $id
- * @property integer $lineNumber
- * @property integer $purchaseOrderId
- * @property integer $receivedQuantity
+ * @property int $id
+ * @property int $lineNumber
+ * @property int $purchaseOrderId
+ * @property int $receivedQuantity
  * @property string $canceledBy
  * @property string $canceledReason
  * @property string $description
@@ -78,6 +78,6 @@ class PurchaseOrderLineItem extends Model
         'unitOfMeasure' => UnitOfMeasureReference::class,
         'vendorOrderNumber' => 'string',
         'warehouse' => WarehouseReference::class,
-        'warehouseBin' => WarehouseBinReference::class
+        'warehouseBin' => WarehouseBinReference::class,
     ];
 }

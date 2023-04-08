@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property ErrorResponseMessage $error
  * @property IRestIdentifiedItem $data
- * @property boolean $success
- * @property integer $originalIndex
- * @property integer $statusCode
+ * @property bool $success
+ * @property int $originalIndex
+ * @property int $statusCode
  */
 class ResultInfo extends Model
 {
@@ -28,6 +27,6 @@ class ResultInfo extends Model
         'error' => ErrorResponseMessage::class,
         'originalIndex' => 'integer',
         'statusCode' => 'integer',
-        'success' => 'boolean'
+        'success' => 'boolean',
     ];
 }

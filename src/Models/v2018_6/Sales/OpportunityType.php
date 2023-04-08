@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Sales;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,8 +10,8 @@ use Spinen\ConnectWise\Support\Model;
  * Model for OpportunityType
  *
  * @property Metadata $_info
- * @property boolean $inactiveFlag
- * @property integer $id
+ * @property bool $inactiveFlag
+ * @property int $id
  * @property string $description
  */
 class OpportunityType extends Model
@@ -26,6 +25,6 @@ class OpportunityType extends Model
         '_info' => Metadata::class,
         'description' => 'string',
         'id' => 'integer',
-        'inactiveFlag' => 'boolean'
+        'inactiveFlag' => 'boolean',
     ];
 }

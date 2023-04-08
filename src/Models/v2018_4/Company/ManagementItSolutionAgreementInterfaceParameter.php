@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -16,7 +15,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property IvItemReference $workstationProduct
  * @property ManagedDevicesIntegrationReference $managedDevicesIntegration
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  */
 class ManagementItSolutionAgreementInterfaceParameter extends Model
 {
@@ -32,6 +31,6 @@ class ManagementItSolutionAgreementInterfaceParameter extends Model
         'managedDevicesIntegration' => ManagedDevicesIntegrationReference::class,
         'serverProduct' => IvItemReference::class,
         'spamStatsProduct' => IvItemReference::class,
-        'workstationProduct' => IvItemReference::class
+        'workstationProduct' => IvItemReference::class,
     ];
 }

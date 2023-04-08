@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -28,6 +27,6 @@ class EndpointRequest extends Model
         'contentType' => 'string',
         'id' => 'string',
         'method' => 'string',
-        'relativeUrl' => 'string'
+        'relativeUrl' => 'string',
     ];
 }

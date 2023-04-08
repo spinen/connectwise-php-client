@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,7 +10,7 @@ use Spinen\ConnectWise\Support\Model;
  * Required when notifyType is set to: "Create a Service Ticket"
  *
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  * @property string $name
  * @property string $summary
  */
@@ -26,6 +25,6 @@ class ServiceTemplateReference extends Model
         '_info' => Metadata::class,
         'id' => 'integer',
         'name' => 'string',
-        'summary' => 'string'
+        'summary' => 'string',
     ];
 }

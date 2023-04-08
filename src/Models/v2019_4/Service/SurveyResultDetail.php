@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for SurveyResultDetail
  *
- * @property integer $questionId
+ * @property int $questionId
  * @property string $answer
  */
 class SurveyResultDetail extends Model
@@ -22,6 +21,6 @@ class SurveyResultDetail extends Model
      */
     protected $casts = [
         'answer' => 'string',
-        'questionId' => 'integer'
+        'questionId' => 'integer',
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ContactType
  *
  * @property Metadata $_info
- * @property boolean $defaultFlag
- * @property boolean $serviceAlertFlag
- * @property integer $id
+ * @property bool $defaultFlag
+ * @property bool $serviceAlertFlag
+ * @property int $id
  * @property string $description
  * @property string $serviceAlertMessage
  */
@@ -30,6 +29,6 @@ class ContactType extends Model
         'description' => 'string',
         'id' => 'integer',
         'serviceAlertFlag' => 'boolean',
-        'serviceAlertMessage' => 'string'
+        'serviceAlertMessage' => 'string',
     ];
 }

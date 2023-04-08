@@ -22,17 +22,17 @@ class ModelTest extends TestCase
 
         $this->model = new Model(
             [
-                'array_attribute'      => [],
-                'boolean_attribute'    => "false",
-                'carbon_attribute'     => 'January 1, 2017',
+                'array_attribute' => [],
+                'boolean_attribute' => 'false',
+                'carbon_attribute' => 'January 1, 2017',
                 'collection_attribute' => [],
-                'float_attribute'      => "1.2",
-                'info_attribute'       => [],
-                'integer_attribute'    => "1",
-                'json_attribute'       => ['property' => 1],
-                'null_attribute'       => null,
-                'object_attribute'     => [],
-                'string_attribute'     => 'something',
+                'float_attribute' => '1.2',
+                'info_attribute' => [],
+                'integer_attribute' => '1',
+                'json_attribute' => ['property' => 1],
+                'null_attribute' => null,
+                'object_attribute' => [],
+                'string_attribute' => 'something',
             ]
         );
     }
@@ -69,17 +69,17 @@ class ModelTest extends TestCase
     {
         $model = new Model(
             [
-                'array_attribute'      => [],
-                'boolean_attribute'    => "false",
-                'carbon_attribute'     => 'January 1, 2017',
+                'array_attribute' => [],
+                'boolean_attribute' => 'false',
+                'carbon_attribute' => 'January 1, 2017',
                 'collection_attribute' => [],
-                'float_attribute'      => "1.2",
-                'info_attribute'       => [],
-                'integer_attribute'    => "1",
-                'json_attribute'       => ['property' => 1],
-                'null_attribute'       => null,
-                'object_attribute'     => [],
-                'string_attribute'     => 'something',
+                'float_attribute' => '1.2',
+                'info_attribute' => [],
+                'integer_attribute' => '1',
+                'json_attribute' => ['property' => 1],
+                'null_attribute' => null,
+                'object_attribute' => [],
+                'string_attribute' => 'something',
             ]
         );
 
@@ -168,7 +168,7 @@ class ModelTest extends TestCase
 
         $this->assertTrue(isset($this->model['string_attribute']), 'offsetExists');
 
-        $this->assertTrue((boolean) $this->model['string_attribute'], 'offsetGet');
+        $this->assertTrue((bool) $this->model['string_attribute'], 'offsetGet');
 
         $this->model['string_attribute'] = 'something else';
 

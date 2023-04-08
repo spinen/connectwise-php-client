@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,16 +10,16 @@ use Spinen\ConnectWise\Support\Model;
  * Model for TaxCodeLevel
  *
  * @property Metadata $_info
- * @property boolean $singleUnitFlag
- * @property boolean $taxExpensesFlag
- * @property boolean $taxProductsFlag
- * @property boolean $taxServicesFlag
+ * @property bool $singleUnitFlag
+ * @property bool $taxExpensesFlag
+ * @property bool $taxProductsFlag
+ * @property bool $taxServicesFlag
  * @property float $singleUnitMaximum
  * @property float $singleUnitMinimum
  * @property float $taxRate
  * @property float $taxableMax
- * @property integer $id
- * @property integer $taxLevel
+ * @property int $id
+ * @property int $taxLevel
  * @property string $agencyXref
  * @property string $caption
  * @property string $rateType
@@ -48,6 +47,6 @@ class TaxCodeLevel extends Model
         'taxProductsFlag' => 'boolean',
         'taxRate' => 'float',
         'taxServicesFlag' => 'boolean',
-        'taxableMax' => 'float'
+        'taxableMax' => 'float',
     ];
 }

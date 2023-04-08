@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,9 +12,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property FilterValues $Filters
  * @property IRestIdentifiedItem $Entity
  * @property PageValues $Page
- * @property integer $GrandParentId
- * @property integer $Id
- * @property integer $ParentId
+ * @property int $GrandParentId
+ * @property int $Id
+ * @property int $ParentId
  * @property string $Fields
  * @property string $Format
  */
@@ -34,6 +33,6 @@ class ApiRequest extends Model
         'GrandParentId' => 'integer',
         'Id' => 'integer',
         'Page' => PageValues::class,
-        'ParentId' => 'integer'
+        'ParentId' => 'integer',
     ];
 }

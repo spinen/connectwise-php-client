@@ -12,8 +12,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Carbon $dateCreated
  * @property Metadata $_info
- * @property boolean $auditTrailFlag
- * @property integer $id
+ * @property bool $auditTrailFlag
+ * @property int $id
  * @property string $createdBy
  * @property string $identifier
  * @property string $name
@@ -32,6 +32,6 @@ class AdjustmentType extends Model
         'dateCreated' => Carbon::class,
         'id' => 'integer',
         'identifier' => 'string',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

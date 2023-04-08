@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,8 +11,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property MemberReference $member
  * @property Metadata $_info
- * @property integer $id
- * @property integer $sequenceNumber
+ * @property int $id
+ * @property int $sequenceNumber
  * @property string $invoiceRule
  * @property string $routingRule
  */
@@ -30,6 +29,6 @@ class BillingSetupRouting extends Model
         'invoiceRule' => 'string',
         'member' => MemberReference::class,
         'routingRule' => 'string',
-        'sequenceNumber' => 'integer'
+        'sequenceNumber' => 'integer',
     ];
 }

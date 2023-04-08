@@ -12,12 +12,12 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Carbon $dateEntered
  * @property Metadata $_info
- * @property boolean $closedFlag
- * @property boolean $defaultFlag
- * @property boolean $inactiveFlag
- * @property boolean $lostFlag
- * @property boolean $wonFlag
- * @property integer $id
+ * @property bool $closedFlag
+ * @property bool $defaultFlag
+ * @property bool $inactiveFlag
+ * @property bool $lostFlag
+ * @property bool $wonFlag
+ * @property int $id
  * @property string $enteredBy
  * @property string $name
  */
@@ -38,6 +38,6 @@ class OpportunityStatus extends Model
         'inactiveFlag' => 'boolean',
         'lostFlag' => 'boolean',
         'name' => 'string',
-        'wonFlag' => 'boolean'
+        'wonFlag' => 'boolean',
     ];
 }

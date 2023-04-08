@@ -38,13 +38,13 @@ use Spinen\ConnectWise\Support\Model;
  * @property array $customFields
  * @property array $integratorTags
  * @property array $typeIds
- * @property boolean $deletedFlag
- * @property boolean $leadFlag
- * @property boolean $unsubscribeFlag
+ * @property bool $deletedFlag
+ * @property bool $leadFlag
+ * @property bool $unsubscribeFlag
  * @property float $annualRevenue
- * @property integer $id
- * @property integer $numberOfEmployees
- * @property integer $yearEstablished
+ * @property int $id
+ * @property int $numberOfEmployees
+ * @property int $yearEstablished
  * @property string $accountNumber
  * @property string $addressLine1
  * @property string $addressLine2
@@ -150,6 +150,6 @@ class Company extends Model
         'vendorIdentifier' => 'string',
         'website' => 'string',
         'yearEstablished' => 'integer',
-        'zip' => 'string'
+        'zip' => 'string',
     ];
 }

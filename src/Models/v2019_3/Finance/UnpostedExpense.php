@@ -24,15 +24,15 @@ use Spinen\ConnectWise\Support\Model;
  * @property ProjectReference $project
  * @property TaxCodeReference $taxCode
  * @property TicketReference $ticket
- * @property boolean $avalaraTaxFlag
- * @property boolean $cityTaxFlag
- * @property boolean $compositeTaxFlag
- * @property boolean $countryTaxFlag
- * @property boolean $countyTaxFlag
- * @property boolean $inPolicy
- * @property boolean $itemTaxableFlag
- * @property boolean $levelSixTaxFlag
- * @property boolean $stateTaxFlag
+ * @property bool $avalaraTaxFlag
+ * @property bool $cityTaxFlag
+ * @property bool $compositeTaxFlag
+ * @property bool $countryTaxFlag
+ * @property bool $countyTaxFlag
+ * @property bool $inPolicy
+ * @property bool $itemTaxableFlag
+ * @property bool $levelSixTaxFlag
+ * @property bool $stateTaxFlag
  * @property float $agreementAmountCovered
  * @property float $billableAmount
  * @property float $cityTaxAmount
@@ -44,10 +44,10 @@ use Spinen\ConnectWise\Support\Model;
  * @property float $salesTaxAmount
  * @property float $stateTaxAmount
  * @property float $total
- * @property integer $departmentId
- * @property integer $expenseDetailId
- * @property integer $id
- * @property integer $locationId
+ * @property int $departmentId
+ * @property int $expenseDetailId
+ * @property int $id
+ * @property int $locationId
  * @property string $accountNumber
  * @property string $chargeDescription
  * @property string $cityTaxXref
@@ -116,6 +116,6 @@ class UnpostedExpense extends Model
         'stateTaxXref' => 'string',
         'taxCode' => TaxCodeReference::class,
         'ticket' => TicketReference::class,
-        'total' => 'float'
+        'total' => 'float',
     ];
 }

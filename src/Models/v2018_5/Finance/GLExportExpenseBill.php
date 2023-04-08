@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,7 +13,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property MemberReference $member
  * @property array $detail
  * @property float $total
- * @property integer $id
+ * @property int $id
  * @property string $apAccountNumber
  * @property string $documentDate
  * @property string $documentNumber
@@ -42,6 +41,6 @@ class GLExportExpenseBill extends Model
         'member' => MemberReference::class,
         'memo' => 'string',
         'total' => 'float',
-        'vendorNumber' => 'string'
+        'vendorNumber' => 'string',
     ];
 }

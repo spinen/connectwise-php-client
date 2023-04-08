@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,52 +10,52 @@ use Spinen\ConnectWise\Support\Model;
  * Model for CustomReport
  *
  * @property Metadata $_info
- * @property boolean $agreementFlag
- * @property boolean $agreementTypeFlag
- * @property boolean $companyFlag
- * @property boolean $departmentDefaultFlag
- * @property boolean $departmentFlag
- * @property boolean $endDateFlag
- * @property boolean $generatedFlag
- * @property boolean $invoiceFlag
- * @property boolean $locationDefaultFlag
- * @property boolean $locationFlag
- * @property boolean $marketingCampaignFlag
- * @property boolean $memberFlag
- * @property boolean $oppTypeFlag
- * @property boolean $opportunityFlag
- * @property boolean $projectFlag
- * @property boolean $projectTypeFlag
- * @property boolean $serviceBoardDefaultFlag
- * @property boolean $serviceBoardFlag
- * @property boolean $serviceStatusFlag
- * @property boolean $serviceTypeFlag
- * @property boolean $startDateFlag
- * @property boolean $territoryDefaultFlag
- * @property boolean $territoryFlag
- * @property boolean $workRoleFlag
- * @property boolean $workTypeFlag
- * @property integer $agreementParamId
- * @property integer $agreementTypeParamId
- * @property integer $companyParamId
- * @property integer $departmentParamId
- * @property integer $endDateParamId
- * @property integer $id
- * @property integer $invoiceParamId
- * @property integer $locationParamId
- * @property integer $marketingCampaignParamId
- * @property integer $memberParamId
- * @property integer $oppTypeParamId
- * @property integer $opportunityParamId
- * @property integer $projectParamId
- * @property integer $projectTypeParamId
- * @property integer $serviceBoardParamId
- * @property integer $serviceStatusParamId
- * @property integer $serviceTypeParamId
- * @property integer $startDateParamId
- * @property integer $territoryParamId
- * @property integer $workRoleParamId
- * @property integer $workTypeParamId
+ * @property bool $agreementFlag
+ * @property bool $agreementTypeFlag
+ * @property bool $companyFlag
+ * @property bool $departmentDefaultFlag
+ * @property bool $departmentFlag
+ * @property bool $endDateFlag
+ * @property bool $generatedFlag
+ * @property bool $invoiceFlag
+ * @property bool $locationDefaultFlag
+ * @property bool $locationFlag
+ * @property bool $marketingCampaignFlag
+ * @property bool $memberFlag
+ * @property bool $oppTypeFlag
+ * @property bool $opportunityFlag
+ * @property bool $projectFlag
+ * @property bool $projectTypeFlag
+ * @property bool $serviceBoardDefaultFlag
+ * @property bool $serviceBoardFlag
+ * @property bool $serviceStatusFlag
+ * @property bool $serviceTypeFlag
+ * @property bool $startDateFlag
+ * @property bool $territoryDefaultFlag
+ * @property bool $territoryFlag
+ * @property bool $workRoleFlag
+ * @property bool $workTypeFlag
+ * @property int $agreementParamId
+ * @property int $agreementTypeParamId
+ * @property int $companyParamId
+ * @property int $departmentParamId
+ * @property int $endDateParamId
+ * @property int $id
+ * @property int $invoiceParamId
+ * @property int $locationParamId
+ * @property int $marketingCampaignParamId
+ * @property int $memberParamId
+ * @property int $oppTypeParamId
+ * @property int $opportunityParamId
+ * @property int $projectParamId
+ * @property int $projectTypeParamId
+ * @property int $serviceBoardParamId
+ * @property int $serviceStatusParamId
+ * @property int $serviceTypeParamId
+ * @property int $startDateParamId
+ * @property int $territoryParamId
+ * @property int $workRoleParamId
+ * @property int $workTypeParamId
  * @property string $agreementOverride
  * @property string $agreementTypeOverride
  * @property string $companyOverride
@@ -168,6 +167,6 @@ class CustomReport extends Model
         'workRoleParamId' => 'integer',
         'workTypeFlag' => 'boolean',
         'workTypeOverride' => 'string',
-        'workTypeParamId' => 'integer'
+        'workTypeParamId' => 'integer',
     ];
 }

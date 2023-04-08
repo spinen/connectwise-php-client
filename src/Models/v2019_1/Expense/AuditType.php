@@ -2,15 +2,12 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Expense;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class AuditType Version v2019_1
  *
  * Model for AuditType
- *
-
  */
 class AuditType extends Model
 {

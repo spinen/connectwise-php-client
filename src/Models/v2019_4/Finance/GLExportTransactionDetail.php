@@ -22,14 +22,14 @@ use Spinen\ConnectWise\Support\Model;
  * @property UnitOfMeasureReference $unitOfMeasure
  * @property WarehouseBinReference $warehouseBin
  * @property array $taxLevels
- * @property boolean $dropShippedFlag
- * @property boolean $itemTaxableFlag
- * @property boolean $serializedFlag
- * @property boolean $taxable2Flag
- * @property boolean $taxable3Flag
- * @property boolean $taxable4Flag
- * @property boolean $taxable5Flag
- * @property boolean $taxableFlag
+ * @property bool $dropShippedFlag
+ * @property bool $itemTaxableFlag
+ * @property bool $serializedFlag
+ * @property bool $taxable2Flag
+ * @property bool $taxable3Flag
+ * @property bool $taxable4Flag
+ * @property bool $taxable5Flag
+ * @property bool $taxableFlag
  * @property float $cost
  * @property float $itemCost
  * @property float $itemPrice
@@ -37,8 +37,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property float $taxRate
  * @property float $taxRatePercent
  * @property float $total
- * @property integer $id
- * @property integer $invoiceSummaryOption
+ * @property int $id
+ * @property int $invoiceSummaryOption
  * @property string $accountNumber
  * @property string $cogsXref
  * @property string $costAccountNumber
@@ -122,6 +122,6 @@ class GLExportTransactionDetail extends Model
         'unitOfMeasure' => UnitOfMeasureReference::class,
         'uomScheduleXref' => 'string',
         'warehouseBin' => WarehouseBinReference::class,
-        'warehouseSite' => SiteReference::class
+        'warehouseSite' => SiteReference::class,
     ];
 }

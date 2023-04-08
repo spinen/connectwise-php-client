@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for MappedType
  *
- * @property integer $id
- * @property integer $sortOrder
+ * @property int $id
+ * @property int $sortOrder
  * @property string $glType
  * @property string $name
  * @property string $recIdField
@@ -30,6 +29,6 @@ class MappedType extends Model
         'name' => 'string',
         'recIdField' => 'string',
         'sortOrder' => 'integer',
-        'table' => 'string'
+        'table' => 'string',
     ];
 }

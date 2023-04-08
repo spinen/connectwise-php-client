@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -30,6 +29,6 @@ class AuditTrailEntry extends Model
         'auditType' => 'string',
         'enteredBy' => 'string',
         'enteredDate' => 'string',
-        'text' => 'string'
+        'text' => 'string',
     ];
 }

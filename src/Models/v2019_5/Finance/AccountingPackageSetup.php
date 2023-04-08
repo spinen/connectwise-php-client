@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,22 +10,22 @@ use Spinen\ConnectWise\Support\Model;
  * Model for AccountingPackageSetup
  *
  * @property AccountingPackageReference $accountingPackage
- * @property boolean $directTransferFlag
- * @property boolean $enableTaxGroupsFlag
- * @property boolean $includeCogsDropShipFlag
- * @property boolean $includeCogsEntriesFlag
- * @property boolean $includeExpensesFlag
- * @property boolean $includeInvoicesFlag
- * @property boolean $includeItemsFlag
- * @property boolean $includeSalesTaxFlag
- * @property boolean $inventorySOHFlag
- * @property boolean $sendComponentAmountFlag
- * @property boolean $sendUomFlag
- * @property boolean $suppressMemoFlag
- * @property boolean $syncPaymentInfoFlag
- * @property boolean $transferExpensesAsBillFlag
- * @property boolean $zeroDollarTaxAmountsFlag
- * @property integer $id
+ * @property bool $directTransferFlag
+ * @property bool $enableTaxGroupsFlag
+ * @property bool $includeCogsDropShipFlag
+ * @property bool $includeCogsEntriesFlag
+ * @property bool $includeExpensesFlag
+ * @property bool $includeInvoicesFlag
+ * @property bool $includeItemsFlag
+ * @property bool $includeSalesTaxFlag
+ * @property bool $inventorySOHFlag
+ * @property bool $sendComponentAmountFlag
+ * @property bool $sendUomFlag
+ * @property bool $suppressMemoFlag
+ * @property bool $syncPaymentInfoFlag
+ * @property bool $transferExpensesAsBillFlag
+ * @property bool $zeroDollarTaxAmountsFlag
+ * @property int $id
  * @property string $expenseFormat
  * @property string $invoiceFormat
  */
@@ -56,6 +55,6 @@ class AccountingPackageSetup extends Model
         'suppressMemoFlag' => 'boolean',
         'syncPaymentInfoFlag' => 'boolean',
         'transferExpensesAsBillFlag' => 'boolean',
-        'zeroDollarTaxAmountsFlag' => 'boolean'
+        'zeroDollarTaxAmountsFlag' => 'boolean',
     ];
 }

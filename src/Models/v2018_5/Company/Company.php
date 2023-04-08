@@ -34,15 +34,15 @@ use Spinen\ConnectWise\Support\Model;
  * @property TaxCodeReference $taxCode
  * @property TimeZoneSetupReference $timeZone
  * @property array $customFields
- * @property boolean $deletedFlag
- * @property boolean $leadFlag
- * @property boolean $unsubscribeFlag
+ * @property bool $deletedFlag
+ * @property bool $leadFlag
+ * @property bool $unsubscribeFlag
  * @property float $annualRevenue
- * @property integer $calendarId
- * @property integer $id
- * @property integer $marketId
- * @property integer $numberOfEmployees
- * @property integer $territoryId
+ * @property int $calendarId
+ * @property int $id
+ * @property int $marketId
+ * @property int $numberOfEmployees
+ * @property int $territoryId
  * @property string $accountNumber
  * @property string $addressLine1
  * @property string $addressLine2
@@ -144,6 +144,6 @@ class Company extends Model
         'userDefinedField9' => 'string',
         'vendorIdentifier' => 'string',
         'website' => 'string',
-        'zip' => 'string'
+        'zip' => 'string',
     ];
 }

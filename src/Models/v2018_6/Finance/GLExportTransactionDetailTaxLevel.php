@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,8 +9,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for GLExportTransactionDetailTaxLevel
  *
- * @property boolean $taxableFlag
- * @property integer $taxLevel
+ * @property bool $taxableFlag
+ * @property int $taxLevel
  */
 class GLExportTransactionDetailTaxLevel extends Model
 {
@@ -22,6 +21,6 @@ class GLExportTransactionDetailTaxLevel extends Model
      */
     protected $casts = [
         'taxLevel' => 'integer',
-        'taxableFlag' => 'boolean'
+        'taxableFlag' => 'boolean',
     ];
 }

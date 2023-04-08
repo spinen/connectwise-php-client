@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Metadata $_info
  * @property UserDefinedFieldReference $customField
- * @property boolean $hasOperatorFlag
- * @property boolean $hasOptionsFlag
- * @property integer $id
+ * @property bool $hasOperatorFlag
+ * @property bool $hasOptionsFlag
+ * @property int $id
  * @property string $description
  * @property string $expectedType
  * @property string $name
@@ -34,6 +33,6 @@ class WorkflowTrigger extends Model
         'hasOperatorFlag' => 'boolean',
         'hasOptionsFlag' => 'boolean',
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

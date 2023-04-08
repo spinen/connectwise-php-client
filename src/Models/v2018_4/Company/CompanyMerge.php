@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -10,7 +9,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * Model for CompanyMerge
  *
- * @property integer $toCompanyId
+ * @property int $toCompanyId
  * @property string $accountNumber
  * @property string $activities
  * @property string $billingAddress
@@ -102,6 +101,6 @@ class CompanyMerge extends Model
         'userDefinedField7' => 'string',
         'userDefinedField8' => 'string',
         'userDefinedField9' => 'string',
-        'website' => 'string'
+        'website' => 'string',
     ];
 }

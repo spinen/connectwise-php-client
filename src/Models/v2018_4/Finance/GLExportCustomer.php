@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -17,14 +16,14 @@ use Spinen\ConnectWise\Support\Model;
  * @property CurrencyReference $currency
  * @property SiteReference $site
  * @property TaxCodeReference $taxCode
- * @property boolean $taxable
+ * @property bool $taxable
  * @property float $cityTaxRate
  * @property float $compositeTaxRate
  * @property float $countryTaxRate
  * @property float $countyTaxRate
  * @property float $stateTaxRate
  * @property float $taxGroupRate
- * @property integer $dueDays
+ * @property int $dueDays
  * @property string $accountNumber
  * @property string $billingTermsXref
  * @property string $cityTaxAgencyXref
@@ -74,6 +73,6 @@ class GLExportCustomer extends Model
         'taxAgencyXref' => 'string',
         'taxCode' => TaxCodeReference::class,
         'taxGroupRate' => 'float',
-        'taxable' => 'boolean'
+        'taxable' => 'boolean',
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,11 +11,11 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property BoardReference $board
  * @property Metadata $_info
- * @property integer $businessUnitId
- * @property integer $categoryId
- * @property integer $id
- * @property integer $locationId
- * @property integer $subCategoryId
+ * @property int $businessUnitId
+ * @property int $categoryId
+ * @property int $id
+ * @property int $locationId
+ * @property int $subCategoryId
  * @property string $createdBy
  * @property string $dateCreated
  * @property string $issue
@@ -42,6 +41,6 @@ class KnowledgeBaseArticle extends Model
         'locationId' => 'integer',
         'resolution' => 'string',
         'subCategoryId' => 'integer',
-        'title' => 'string'
+        'title' => 'string',
     ];
 }

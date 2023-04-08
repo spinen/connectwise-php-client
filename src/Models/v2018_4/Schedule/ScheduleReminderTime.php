@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Schedule;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for ScheduleReminderTime
  *
  * @property Metadata $_info
- * @property boolean $defaultFlag
- * @property integer $id
- * @property integer $time
+ * @property bool $defaultFlag
+ * @property int $id
+ * @property int $time
  * @property string $name
  */
 class ScheduleReminderTime extends Model
@@ -28,6 +27,6 @@ class ScheduleReminderTime extends Model
         'defaultFlag' => 'boolean',
         'id' => 'integer',
         'name' => 'string',
-        'time' => 'integer'
+        'time' => 'integer',
     ];
 }

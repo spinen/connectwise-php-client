@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -21,15 +20,15 @@ use Spinen\ConnectWise\Support\Model;
  * @property PriorityReference $medImpactHiUrgency
  * @property PriorityReference $medImpactLowUrgency
  * @property PriorityReference $medImpactMedUrgency
- * @property boolean $defaultFlag
+ * @property bool $defaultFlag
  * @property float $planWithin
  * @property float $resolutionHours
  * @property float $respondHours
- * @property integer $applicationOrder
- * @property integer $id
- * @property integer $planWithinPercent
- * @property integer $resolutionPercent
- * @property integer $respondPercent
+ * @property int $applicationOrder
+ * @property int $id
+ * @property int $planWithinPercent
+ * @property int $resolutionPercent
+ * @property int $respondPercent
  * @property string $basedOn
  * @property string $name
  */
@@ -62,6 +61,6 @@ class SLA extends Model
         'resolutionHours' => 'float',
         'resolutionPercent' => 'integer',
         'respondHours' => 'float',
-        'respondPercent' => 'integer'
+        'respondPercent' => 'integer',
     ];
 }

@@ -23,11 +23,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property SiteReference $shippingSite
  * @property TaxCodeReference $taxCode
  * @property array $customFields
- * @property boolean $addToBatchEmailList
- * @property boolean $downpaymentPreviouslyTaxedFlag
- * @property boolean $restrictDownpaymentFlag
- * @property boolean $specialInvoiceFlag
- * @property boolean $taxableFlag
+ * @property bool $addToBatchEmailList
+ * @property bool $downpaymentPreviouslyTaxedFlag
+ * @property bool $restrictDownpaymentFlag
+ * @property bool $specialInvoiceFlag
+ * @property bool $taxableFlag
  * @property float $agreementAmount
  * @property float $balance
  * @property float $credits
@@ -42,13 +42,13 @@ use Spinen\ConnectWise\Support\Model;
  * @property float $serviceTotal
  * @property float $subtotal
  * @property float $total
- * @property integer $applyToId
- * @property integer $departmentId
- * @property integer $emailTemplateId
- * @property integer $id
- * @property integer $locationId
- * @property integer $templateSetupId
- * @property integer $territoryId
+ * @property int $applyToId
+ * @property int $departmentId
+ * @property int $emailTemplateId
+ * @property int $id
+ * @property int $locationId
+ * @property int $templateSetupId
+ * @property int $territoryId
  * @property string $adjustedBy
  * @property string $adjustmentReason
  * @property string $applyToType
@@ -118,6 +118,6 @@ class Invoice extends Model
         'territoryId' => 'integer',
         'topComment' => 'string',
         'total' => 'float',
-        'type' => 'string'
+        'type' => 'string',
     ];
 }

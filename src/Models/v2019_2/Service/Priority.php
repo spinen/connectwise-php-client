@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Service;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for Priority
  *
  * @property Metadata $_info
- * @property boolean $defaultFlag
- * @property integer $id
- * @property integer $sortOrder
+ * @property bool $defaultFlag
+ * @property int $id
+ * @property int $sortOrder
  * @property string $color
  * @property string $imageLink
  * @property string $name
@@ -32,6 +31,6 @@ class Priority extends Model
         'id' => 'integer',
         'imageLink' => 'string',
         'name' => 'string',
-        'sortOrder' => 'integer'
+        'sortOrder' => 'integer',
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -18,9 +17,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property SystemDepartmentReference $department
  * @property SystemLocationReference $location
- * @property boolean $addAllLocations
- * @property boolean $removeAllLocations
- * @property integer $id
+ * @property bool $addAllLocations
+ * @property bool $removeAllLocations
+ * @property int $id
  */
 class DepartmentLocation extends Model
 {
@@ -40,6 +39,6 @@ class DepartmentLocation extends Model
         'ldapConfig' => LdapConfigurationReference::class,
         'location' => SystemLocationReference::class,
         'removeAllLocations' => 'boolean',
-        'serviceManager' => MemberReference::class
+        'serviceManager' => MemberReference::class,
     ];
 }

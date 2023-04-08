@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_5\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,9 +12,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property MemberReference $member
  * @property Metadata $_info
  * @property SkillReference $skill
- * @property boolean $certifiedFlag
- * @property integer $id
- * @property integer $yearsExperience
+ * @property bool $certifiedFlag
+ * @property int $id
+ * @property int $yearsExperience
  * @property string $notes
  * @property string $skillLevel
  */
@@ -34,6 +33,6 @@ class MemberSkill extends Model
         'notes' => 'string',
         'skill' => SkillReference::class,
         'skillLevel' => 'string',
-        'yearsExperience' => 'integer'
+        'yearsExperience' => 'integer',
     ];
 }

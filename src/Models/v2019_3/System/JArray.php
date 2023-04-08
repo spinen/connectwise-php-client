@@ -2,15 +2,12 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
  * Class JArray Version v2019_3
  *
  * Model for JArray
- *
-
  */
 class JArray extends Model
 {

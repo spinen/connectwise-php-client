@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_1\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -11,9 +10,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for WorkflowEvent
  *
  * @property Metadata $_info
- * @property integer $frequencyOfExecution
- * @property integer $id
- * @property integer $maxNumberOfExecution
+ * @property int $frequencyOfExecution
+ * @property int $id
+ * @property int $maxNumberOfExecution
  * @property string $eventCondition
  * @property string $executionTime
  * @property string $frequencyUnit
@@ -34,6 +33,6 @@ class WorkflowEvent extends Model
         'frequencyUnit' => 'string',
         'id' => 'integer',
         'maxNumberOfExecution' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

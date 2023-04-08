@@ -35,28 +35,28 @@ use Spinen\ConnectWise\Support\Model;
  * @property SystemDepartmentReference $department
  * @property SystemLocationReference $location
  * @property array $customFields
- * @property boolean $allowAllClientsPortalView
- * @property boolean $approved
- * @property boolean $automaticEmailCcFlag
- * @property boolean $automaticEmailContactFlag
- * @property boolean $automaticEmailResourceFlag
- * @property boolean $closedFlag
- * @property boolean $customerUpdatedFlag
- * @property boolean $isIssueFlag
- * @property boolean $lagNonworkingDaysFlag
- * @property boolean $predecessorClosedFlag
- * @property boolean $processNotifications
- * @property boolean $skipCallback
+ * @property bool $allowAllClientsPortalView
+ * @property bool $approved
+ * @property bool $automaticEmailCcFlag
+ * @property bool $automaticEmailContactFlag
+ * @property bool $automaticEmailResourceFlag
+ * @property bool $closedFlag
+ * @property bool $customerUpdatedFlag
+ * @property bool $isIssueFlag
+ * @property bool $lagNonworkingDaysFlag
+ * @property bool $predecessorClosedFlag
+ * @property bool $processNotifications
+ * @property bool $skipCallback
  * @property float $actualHours
  * @property float $budgetHours
  * @property float $subBillingAmount
- * @property integer $duration
- * @property integer $id
- * @property integer $knowledgeBaseCategoryId
- * @property integer $knowledgeBaseLinkId
- * @property integer $knowledgeBaseSubCategoryId
- * @property integer $lagDays
- * @property integer $predecessorId
+ * @property int $duration
+ * @property int $id
+ * @property int $knowledgeBaseCategoryId
+ * @property int $knowledgeBaseLinkId
+ * @property int $knowledgeBaseSubCategoryId
+ * @property int $lagDays
+ * @property int $predecessorId
  * @property string $addressLine1
  * @property string $addressLine2
  * @property string $automaticEmailCc
@@ -166,6 +166,6 @@ class ProjectTicket extends Model
         'summary' => 'string',
         'type' => ServiceTypeReference::class,
         'wbsCode' => 'string',
-        'zip' => 'string'
+        'zip' => 'string',
     ];
 }

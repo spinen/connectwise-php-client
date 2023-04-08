@@ -18,7 +18,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property GroupReference $defaultGroup
  * @property MemberReference $member
  * @property Metadata $_info
- * @property boolean $inactive
+ * @property bool $inactive
  * @property float $actualCost
  * @property float $actualGrossMargin
  * @property float $actualROI
@@ -27,13 +27,13 @@ use Spinen\ConnectWise\Support\Model;
  * @property float $budgetGrossMargin
  * @property float $budgetROI
  * @property float $budgetRevenue
- * @property integer $emailsSent
- * @property integer $id
- * @property integer $impressions
- * @property integer $inactiveDaysAfterEnd
- * @property integer $locationId
- * @property integer $marketingManagerDefaultTrackId
- * @property integer $opportunityDefaultTrackId
+ * @property int $emailsSent
+ * @property int $id
+ * @property int $impressions
+ * @property int $inactiveDaysAfterEnd
+ * @property int $locationId
+ * @property int $marketingManagerDefaultTrackId
+ * @property int $opportunityDefaultTrackId
  * @property string $name
  * @property string $notes
  */
@@ -70,6 +70,6 @@ class Campaign extends Model
         'startDate' => Carbon::class,
         'status' => CampaignStatusReference::class,
         'subType' => CampaignSubTypeReference::class,
-        'type' => CampaignTypeReference::class
+        'type' => CampaignTypeReference::class,
     ];
 }

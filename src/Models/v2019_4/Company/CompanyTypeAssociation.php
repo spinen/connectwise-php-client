@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,7 +12,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property CompanyReference $company
  * @property CompanyTypeReference $type
  * @property Metadata $_info
- * @property integer $id
+ * @property int $id
  */
 class CompanyTypeAssociation extends Model
 {
@@ -26,6 +25,6 @@ class CompanyTypeAssociation extends Model
         '_info' => Metadata::class,
         'company' => CompanyReference::class,
         'id' => 'integer',
-        'type' => CompanyTypeReference::class
+        'type' => CompanyTypeReference::class,
     ];
 }

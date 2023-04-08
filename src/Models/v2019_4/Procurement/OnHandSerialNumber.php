@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,7 +13,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property WarehouseBinReference $warehouseBin
  * @property WarehouseReference $warehouse
- * @property integer $id
+ * @property int $id
  * @property string $serial
  */
 class OnHandSerialNumber extends Model
@@ -30,6 +29,6 @@ class OnHandSerialNumber extends Model
         'id' => 'integer',
         'serial' => 'string',
         'warehouse' => WarehouseReference::class,
-        'warehouseBin' => WarehouseBinReference::class
+        'warehouseBin' => WarehouseBinReference::class,
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\Project;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -12,7 +11,7 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property ProjectPhaseReference $phase
  * @property ProjectReference $project
- * @property integer $id
+ * @property int $id
  * @property string $recordType
  * @property string $wbsCode
  */
@@ -28,6 +27,6 @@ class Convert extends Model
         'phase' => ProjectPhaseReference::class,
         'project' => ProjectReference::class,
         'recordType' => 'string',
-        'wbsCode' => 'string'
+        'wbsCode' => 'string',
     ];
 }

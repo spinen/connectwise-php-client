@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_4\Company;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -14,7 +13,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property MemberReference $member
  * @property Metadata $_info
  * @property NotificationRecipientReference $notifyWho
- * @property integer $id
+ * @property int $id
  * @property string $logType
  */
 class ManagedDevicesIntegrationNotification extends Model
@@ -30,6 +29,6 @@ class ManagedDevicesIntegrationNotification extends Model
         'logType' => 'string',
         'managedDevicesIntegration' => ManagedDevicesIntegrationReference::class,
         'member' => MemberReference::class,
-        'notifyWho' => NotificationRecipientReference::class
+        'notifyWho' => NotificationRecipientReference::class,
     ];
 }

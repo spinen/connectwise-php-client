@@ -13,9 +13,9 @@ use Spinen\ConnectWise\Support\Model;
  * @property Carbon $endDate
  * @property Carbon $startDate
  * @property Metadata $_info
- * @property boolean $daylightSavingsFlag
+ * @property bool $daylightSavingsFlag
  * @property float $offset
- * @property integer $id
+ * @property int $id
  * @property string $name
  */
 class TimeZone extends Model
@@ -32,6 +32,6 @@ class TimeZone extends Model
         'id' => 'integer',
         'name' => 'string',
         'offset' => 'float',
-        'startDate' => Carbon::class
+        'startDate' => Carbon::class,
     ];
 }

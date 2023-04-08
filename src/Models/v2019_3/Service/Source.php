@@ -12,8 +12,8 @@ use Spinen\ConnectWise\Support\Model;
  *
  * @property Carbon $dateEntered
  * @property Metadata $_info
- * @property boolean $defaultFlag
- * @property integer $id
+ * @property bool $defaultFlag
+ * @property int $id
  * @property string $enteredBy
  * @property string $name
  */
@@ -30,6 +30,6 @@ class Source extends Model
         'defaultFlag' => 'boolean',
         'enteredBy' => 'string',
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

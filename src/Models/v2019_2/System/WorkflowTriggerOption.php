@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_2\System;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -26,6 +25,6 @@ class WorkflowTriggerOption extends Model
         '_info' => Metadata::class,
         'customField' => UserDefinedFieldReference::class,
         'name' => 'string',
-        'value' => 'string'
+        'value' => 'string',
     ];
 }

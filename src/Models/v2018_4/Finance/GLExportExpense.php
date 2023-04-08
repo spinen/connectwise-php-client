@@ -19,7 +19,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property MemberReference $member
  * @property ProjectReference $project
  * @property float $total
- * @property integer $id
+ * @property int $id
  * @property string $accountNumber
  * @property string $apAccountNumber
  * @property string $apClass
@@ -58,6 +58,6 @@ class GLExportExpense extends Model
         'periodStartDate' => Carbon::class,
         'project' => ProjectReference::class,
         'total' => 'float',
-        'vendorNumber' => 'string'
+        'vendorNumber' => 'string',
     ];
 }

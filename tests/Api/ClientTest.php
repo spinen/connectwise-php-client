@@ -253,7 +253,7 @@ class ClientTest extends TestCase
                     ->withNoArgs()
                     ->andReturn($password);
 
-        $this->assertEquals('Basic ' . base64_encode($integrator . ':' . $password), $client->buildAuth());
+        $this->assertEquals('Basic '.base64_encode($integrator.':'.$password), $client->buildAuth());
     }
 
     /**
@@ -281,7 +281,7 @@ class ClientTest extends TestCase
                     ->withNoArgs()
                     ->andReturn($password);
 
-        $this->assertEquals('Basic ' . base64_encode($member . ':' . $password), $client->buildAuth());
+        $this->assertEquals('Basic '.base64_encode($member.':'.$password), $client->buildAuth());
     }
 
     /**
@@ -298,13 +298,13 @@ class ClientTest extends TestCase
             ->setIntegrator($username);
 
         $options = [
-            'body'    => json_encode(['extra' => 'option']),
+            'body' => json_encode(['extra' => 'option']),
             'headers' => [
-                'added'         => 'header',
-                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.5',
+                'added' => 'header',
+                'Accept' => 'application/vnd.connectwise.com+json; version=2019.5',
                 'x-cw-usertype' => 'member',
-                'Authorization' => 'Basic ' . base64_encode($username. ':' . $password),
-                'clientId'      => $clientId,
+                'Authorization' => 'Basic '.base64_encode($username.':'.$password),
+                'clientId' => $clientId,
             ],
         ];
 
@@ -368,7 +368,7 @@ class ClientTest extends TestCase
 
         $this->expectException(MalformedRequest::class);
 
-        $client->buildUri($resource . '1');
+        $client->buildUri($resource.'1');
     }
 
     /**
@@ -406,10 +406,10 @@ class ClientTest extends TestCase
 
         $this->assertEquals(
             [
-                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.5',
-                'Authorization' => 'Basic ' . base64_encode($integrator. ':' . $password),
+                'Accept' => 'application/vnd.connectwise.com+json; version=2019.5',
+                'Authorization' => 'Basic '.base64_encode($integrator.':'.$password),
                 'x-cw-usertype' => 'member',
-                'clientId'      => $clientId,
+                'clientId' => $clientId,
             ],
             $client->getHeaders(),
             'Normal headers'
@@ -423,11 +423,11 @@ class ClientTest extends TestCase
 
         $this->assertEquals(
             [
-                'added'         => 'header',
-                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.5',
+                'added' => 'header',
+                'Accept' => 'application/vnd.connectwise.com+json; version=2019.5',
                 'x-cw-usertype' => 'member',
-                'Authorization' => 'Basic ' . base64_encode($integrator. ':' . $password),
-                'clientId'      => $clientId,
+                'Authorization' => 'Basic '.base64_encode($integrator.':'.$password),
+                'clientId' => $clientId,
             ],
             $client->getHeaders(),
             'Added header'
@@ -441,11 +441,11 @@ class ClientTest extends TestCase
 
         $this->assertEquals(
             [
-                'set'           => 'headers',
-                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.5',
+                'set' => 'headers',
+                'Accept' => 'application/vnd.connectwise.com+json; version=2019.5',
                 'x-cw-usertype' => 'member',
-                'Authorization' => 'Basic ' . base64_encode($integrator. ':' . $password),
-                'clientId'      => $clientId,
+                'Authorization' => 'Basic '.base64_encode($integrator.':'.$password),
+                'clientId' => $clientId,
             ],
             $client->getHeaders(),
             'Set header'
@@ -455,10 +455,10 @@ class ClientTest extends TestCase
 
         $this->assertEquals(
             [
-                'Accept'        => 'application/vnd.connectwise.com+json; version=2019.5',
+                'Accept' => 'application/vnd.connectwise.com+json; version=2019.5',
                 'x-cw-usertype' => 'member',
-                'Authorization' => 'Basic ' . base64_encode($integrator. ':' . $password),
-                'clientId'      => $clientId,
+                'Authorization' => 'Basic '.base64_encode($integrator.':'.$password),
+                'clientId' => $clientId,
             ],
             $client->getHeaders(),
             'Empty headers'
@@ -507,8 +507,8 @@ class ClientTest extends TestCase
         $this->assertEquals(
             [
                 'x-cw-usertype' => 'integrator',
-                'Authorization' => 'Basic ' . base64_encode($integrator. ':' . $password),
-                'clientId'      => $clientId,
+                'Authorization' => 'Basic '.base64_encode($integrator.':'.$password),
+                'clientId' => $clientId,
             ],
             $client->getHeaders()
         );
@@ -615,7 +615,7 @@ class ClientTest extends TestCase
                     ->with(Mockery::any())
                     ->andReturn(false);
 
-        return (new Client(
+        return new Client(
             guzzle: new Guzzle([
                 'handler' => HandlerStack::create(new MockHandler([
                     new Response(body: "{'responded': true}"),
@@ -623,7 +623,7 @@ class ClientTest extends TestCase
             ]),
             resolver: $this->resolver,
             token: $this->token,
-        ));
+        );
     }
 
     /**

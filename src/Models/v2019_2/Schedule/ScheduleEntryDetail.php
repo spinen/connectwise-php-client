@@ -15,7 +15,7 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property ScheduleEntryReference $scheduleEntry
  * @property float $hoursScheduled
- * @property integer $id
+ * @property int $id
  */
 class ScheduleEntryDetail extends Model
 {
@@ -30,6 +30,6 @@ class ScheduleEntryDetail extends Model
         'dateStart' => Carbon::class,
         'hoursScheduled' => 'float',
         'id' => 'integer',
-        'scheduleEntry' => ScheduleEntryReference::class
+        'scheduleEntry' => ScheduleEntryReference::class,
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2018_6\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -24,6 +23,6 @@ class Error extends Model
     protected $casts = [
         'code' => 'string',
         'errors' => 'array',
-        'message' => 'string'
+        'message' => 'string',
     ];
 }

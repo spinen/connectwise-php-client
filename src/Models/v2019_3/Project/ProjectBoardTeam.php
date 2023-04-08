@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_3\Project;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,8 +12,8 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property SystemDepartmentReference $department
  * @property SystemLocationReference $location
- * @property boolean $defaultFlag
- * @property integer $id
+ * @property bool $defaultFlag
+ * @property int $id
  * @property string $name
  */
 class ProjectBoardTeam extends Model
@@ -30,6 +29,6 @@ class ProjectBoardTeam extends Model
         'department' => SystemDepartmentReference::class,
         'id' => 'integer',
         'location' => SystemLocationReference::class,
-        'name' => 'string'
+        'name' => 'string',
     ];
 }

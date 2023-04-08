@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_5\Procurement;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -15,16 +14,16 @@ use Spinen\ConnectWise\Support\Model;
  * @property Metadata $_info
  * @property ProductItemReference $parentProductItem
  * @property ProductItemReference $productItem
- * @property boolean $hideDescriptionFlag
- * @property boolean $hideExtendedPriceFlag
- * @property boolean $hideItemIdentifierFlag
- * @property boolean $hidePriceFlag
- * @property boolean $hideQuantityFlag
+ * @property bool $hideDescriptionFlag
+ * @property bool $hideExtendedPriceFlag
+ * @property bool $hideItemIdentifierFlag
+ * @property bool $hidePriceFlag
+ * @property bool $hideQuantityFlag
  * @property float $cost
  * @property float $price
  * @property float $quantity
- * @property integer $id
- * @property integer $sequenceNumber
+ * @property int $id
+ * @property int $sequenceNumber
  */
 class ProductComponent extends Model
 {
@@ -48,6 +47,6 @@ class ProductComponent extends Model
         'productItem' => ProductItemReference::class,
         'quantity' => 'float',
         'sequenceNumber' => 'integer',
-        'vendor' => CompanyReference::class
+        'vendor' => CompanyReference::class,
     ];
 }

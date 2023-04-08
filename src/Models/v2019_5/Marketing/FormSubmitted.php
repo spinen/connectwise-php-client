@@ -11,9 +11,9 @@ use Spinen\ConnectWise\Support\Model;
  * Model for FormSubmitted
  *
  * @property Carbon $dateSubmitted
- * @property integer $campaignId
- * @property integer $contactId
- * @property integer $id
+ * @property int $campaignId
+ * @property int $contactId
+ * @property int $id
  * @property string $pageSubType
  * @property string $pageType
  * @property string $queryString
@@ -40,6 +40,6 @@ class FormSubmitted extends Model
         'status' => 'string',
         'topic' => 'string',
         'url' => 'string',
-        'version' => 'string'
+        'version' => 'string',
     ];
 }

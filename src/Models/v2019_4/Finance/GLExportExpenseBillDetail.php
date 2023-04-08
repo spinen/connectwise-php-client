@@ -2,7 +2,6 @@
 
 namespace Spinen\ConnectWise\Models\v2019_4\Finance;
 
-use Carbon\Carbon;
 use Spinen\ConnectWise\Support\Model;
 
 /**
@@ -13,11 +12,11 @@ use Spinen\ConnectWise\Support\Model;
  * @property ClassificationReference $expenseClass
  * @property CompanyReference $company
  * @property CurrencyReference $currency
- * @property boolean $billable
- * @property boolean $companyAdvance
- * @property boolean $reimbursable
+ * @property bool $billable
+ * @property bool $companyAdvance
+ * @property bool $reimbursable
  * @property float $total
- * @property integer $id
+ * @property int $id
  * @property string $accountNumber
  * @property string $documentDate
  * @property string $glTypeId
@@ -42,6 +41,6 @@ class GLExportExpenseBillDetail extends Model
         'id' => 'integer',
         'memo' => 'string',
         'reimbursable' => 'boolean',
-        'total' => 'float'
+        'total' => 'float',
     ];
 }
