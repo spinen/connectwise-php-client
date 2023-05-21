@@ -25,11 +25,6 @@ use Spinen\ConnectWise\Api\Client;
 abstract class Model implements ArrayAccess, Arrayable, Countable, IteratorAggregate, Jsonable, JsonSerializable
 {
     /**
-     * _info property
-     */
-    protected $_info = null;
-
-    /**
      * The collection of attributes for the model
      *
      * @var array
