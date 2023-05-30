@@ -19,7 +19,6 @@ use Spinen\ConnectWise\Support\ModelResolver;
 /**
  * Class Client
  *
- *
  * @method LaravelCollection|Model delete(string $resource, array $options = [])
  * @method LaravelCollection|Model get(string $resource, array $options = [])
  * @method LaravelCollection|Model getAll(string $resource, array $options = [])
@@ -55,17 +54,13 @@ class Client
 
     /**
      * Current page
-     *
-     * @var int
      */
-    protected $page;
+    protected ?int $page = null;
 
     /**
      * Number of records to retrieve
-     *
-     * @var int
      */
-    protected $page_size = 100;
+    protected int $page_size = 1000;
 
     /**
      * Integration password for global calls
@@ -122,9 +117,6 @@ class Client
         protected ModelResolver $resolver = new ModelResolver,
         protected ?string $version = null,
     ) {
-        // $this->token = $token;
-        // $this->guzzle = $guzzle;
-        // $this->resolver = $resolver;
         $this->setVersion($version ?? Arr::last($this->supported));
     }
 
@@ -447,6 +439,9 @@ class Client
 
                 $processed = $processed->merge($this->processResponse($resource, $response));
             }
+
+            //Reset for multiple calls
+            $this->page = null;
 
             return $processed;
         } catch (RequestException $e) {
