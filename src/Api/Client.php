@@ -444,7 +444,7 @@ class Client
     protected function request($method, $resource, array $body = [], array $options = [], bool $raw = false)
     {
         try {
-            $response = $this->guzzle->request($method, $this->buildUri($resource), dump($this->buildOptions($body, $options)));
+            $response = $this->guzzle->request($method, $this->buildUri($resource), $this->buildOptions($body, $options));
 
             if ($raw) {
                 return $response;
