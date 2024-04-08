@@ -11,6 +11,7 @@ use Illuminate\Support\Collection as LaravelCollection;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\StreamInterface;
 use Spinen\ConnectWise\Exceptions\MalformedRequest;
 use Spinen\ConnectWise\Support\Collection;
 use Spinen\ConnectWise\Support\Model;
@@ -18,7 +19,6 @@ use Spinen\ConnectWise\Support\ModelResolver;
 
 /**
  * Class Client
- *
  *
  * @method LaravelCollection|Model delete(string $resource, array $options = [])
  * @method LaravelCollection|Model get(string $resource, array $options = [])
@@ -55,17 +55,13 @@ class Client
 
     /**
      * Current page
-     *
-     * @var int
      */
-    protected $page;
+    protected ?int $page = null;
 
     /**
      * Number of records to retrieve
-     *
-     * @var int
      */
-    protected $page_size = 100;
+    protected int $page_size = 1000;
 
     /**
      * Integration password for global calls
@@ -122,9 +118,6 @@ class Client
         protected ModelResolver $resolver = new ModelResolver,
         protected ?string $version = null,
     ) {
-        // $this->token = $token;
-        // $this->guzzle = $guzzle;
-        // $this->resolver = $resolver;
         $this->setVersion($version ?? Arr::last($this->supported));
     }
 
@@ -154,7 +147,7 @@ class Client
             throw new InvalidArgumentException(sprintf('Unsupported verb [%s] was requested.', $verb));
         }
 
-        return $this->request($verb, $this->trimResourceAsNeeded($args[0]), $args[1] ?? []);
+        return $this->request($verb, $this->trimResourceAsNeeded($args[0]), $args[1] ?? [], $args[2] ?? []);
     }
 
     /**
@@ -192,15 +185,17 @@ class Client
      * We always need to login with Basic Auth, so add the "auth" option for Guzzle to use when logging in.
      * Additionally, pass any headers that have been set.
      *
-     *
      * @return array
      */
-    public function buildOptions(array $options = [])
+    public function buildOptions(array $body = [], array $options = [])
     {
-        return [
-            'body' => empty($options) ? null : json_encode($options),
-            'headers' => $this->getHeaders(),
-        ];
+        return array_merge(
+            $options,
+            [
+                'body' => empty($body) ? null : json_encode($body),
+                'headers' => $this->getHeaders(),
+            ]
+        );
     }
 
     /**
@@ -227,6 +222,24 @@ class Client
         }
 
         return $uri;
+    }
+
+    /**
+     * Download a file to path
+     *
+     * @param string $resource
+     * @param mixed $sink
+     * @param string $verb
+     * @param array $body
+     *
+     * @return LaravelCollection|Model|Response
+     *
+     * @throws GuzzleException
+     * @throws MalformedRequest
+     */
+    public function download(string $resource, mixed $sink, string $verb = 'GET', array $body = [])
+    {
+        return $this->request($verb, $resource, $body, ['sink' => $sink]);
     }
 
     /**
@@ -420,16 +433,22 @@ class Client
      *
      * @param  string  $method
      * @param  string  $resource
+     * @param  array|null  $body
      * @param  array|null  $options
+     * @param  bool|null $raw
      * @return LaravelCollection|Model|Response
      *
      * @throws GuzzleException
      * @throws MalformedRequest
      */
-    protected function request($method, $resource, array $options = [])
+    protected function request($method, $resource, array $body = [], array $options = [], bool $raw = false)
     {
         try {
-            $response = $this->guzzle->request($method, $this->buildUri($resource), $this->buildOptions($options));
+            $response = $this->guzzle->request($method, $this->buildUri($resource), $this->buildOptions($body, $options));
+
+            if ($raw) {
+                return $response;
+            }
 
             $processed = $this->processResponse($resource, $response);
 
@@ -448,10 +467,30 @@ class Client
                 $processed = $processed->merge($this->processResponse($resource, $response));
             }
 
+            //Reset for multiple calls
+            $this->page = null;
+
             return $processed;
         } catch (RequestException $e) {
             $this->processError($e);
         }
+    }
+
+    /**
+     * Shortcut to request with raw set
+     *
+     * @param  string  $method
+     * @param  string  $resource
+     * @param  array|null  $body
+     * @param  array|null  $options
+     * @return LaravelCollection|Model|Response
+     *
+     * @throws GuzzleException
+     * @throws MalformedRequest
+     */
+    protected function requestRaw($method, $resource, array $body = [], array $options = [])
+    {
+        return $this->request($method, $resource, $body, $options, true);
     }
 
     /**
@@ -553,6 +592,24 @@ class Client
         $this->version = $version;
 
         return $this;
+    }
+
+    /**
+     * Steam a file
+     *
+     * @param string $resource
+     * @param string $verb
+     * @param array $body
+     *
+     * @return StreamInterface
+     *
+     * @throws GuzzleException
+     * @throws MalformedRequest
+     * @throws InvalidArgumentException
+     */
+    public function stream(string $resource, string $verb = 'GET', array $body = [])
+    {
+        return $this->requestRaw($verb, $resource, $body, ['stream' => true])->getBody();
     }
 
     /**
